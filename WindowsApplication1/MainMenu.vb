@@ -15,7 +15,11 @@ Public Class MainMenu
 
     Private Sub playerNewbtn_Click(sender As Object, e As EventArgs) Handles playerNewbtn.Click
         nameString = InputBox("Enter a name.",, "name")
-        playerSelectionlst.Items.Add(NewPlayer(nameString, 1, 0, -0))
+        Try
+            playerSelectionlst.Items.Add(NewPlayer(nameString, 1, 0, -0))
+        Catch ex As Exception
+            MsgBox("Unable to create new player.")
+        End Try
     End Sub
 
     Private Sub playerSelectionlst_SelectedIndexChanged(sender As Object, e As EventArgs) Handles playerSelectionlst.SelectedIndexChanged
@@ -48,7 +52,7 @@ Public Class MainMenu
         Catch ex As Exception
             LogNewPlayer(newRow, False)  'from log.vb
             MsgBox("Failed to add player to database.")
-        Exit Function
+            Exit Function
         End Try
     End Function
 End Class

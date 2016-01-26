@@ -994,9 +994,9 @@ Partial Class AdventureWindow
         Me.playerTeamlbl.AutoSize = True
         Me.playerTeamlbl.Location = New System.Drawing.Point(121, 34)
         Me.playerTeamlbl.Name = "playerTeamlbl"
-        Me.playerTeamlbl.Size = New System.Drawing.Size(163, 13)
+        Me.playerTeamlbl.Size = New System.Drawing.Size(73, 13)
         Me.playerTeamlbl.TabIndex = 0
-        Me.playerTeamlbl.Text = "currentPlayer(1).name & ""'s Team"""
+        Me.playerTeamlbl.Text = "Player's Team"
         '
         'MenuStrip1
         '
@@ -1087,6 +1087,7 @@ Partial Class AdventureWindow
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.BattlesTableAdapter = Nothing
         Me.TableAdapterManager.CreaturesTableAdapter = Me.CreaturesTableAdapter
+        Me.TableAdapterManager.ItemsTableAdapter = Nothing
         Me.TableAdapterManager.PlayersTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '

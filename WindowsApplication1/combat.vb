@@ -2,6 +2,7 @@
 
     Private Sub AdventureWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Text = currentPlayer.level & " " & currentPlayer.name
+        playerTeamlbl.Text = currentPlayer.name & "'s Team"
     End Sub
 
     'Called in the following cases:
