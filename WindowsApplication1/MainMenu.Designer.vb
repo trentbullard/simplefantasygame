@@ -27,21 +27,19 @@ Partial Class MainMenu
         Me.playerSelectionlst = New System.Windows.Forms.ListBox()
         Me.playerSelectionlbl = New System.Windows.Forms.Label()
         Me.playerNewbtn = New System.Windows.Forms.Button()
-        Me.GameDatabaseDataSet = New WindowsApplication1.GameDatabaseDataSet()
-        Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
-        Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LevelDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ExperienceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GoldDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TeamidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.InventoryidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GameDatabaseDataSet = New WindowsApplication1.GameDatabaseDataSet()
+        Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
+        Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'titlelbl
@@ -80,40 +78,17 @@ Partial Class MainMenu
         Me.playerNewbtn.Text = "New Player"
         Me.playerNewbtn.UseVisualStyleBackColor = True
         '
-        'GameDatabaseDataSet
-        '
-        Me.GameDatabaseDataSet.DataSetName = "GameDatabaseDataSet"
-        Me.GameDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'PlayersBindingSource
-        '
-        Me.PlayersBindingSource.DataMember = "Players"
-        Me.PlayersBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'PlayersTableAdapter
-        '
-        Me.PlayersTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.AttacksTableAdapter = Nothing
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.BattlesTableAdapter = Nothing
-        Me.TableAdapterManager.CreaturesTableAdapter = Nothing
-        Me.TableAdapterManager.PlayersTableAdapter = Me.PlayersTableAdapter
-        Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
         'DataGridView1
         '
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn, Me.LevelDataGridViewTextBoxColumn, Me.ExperienceDataGridViewTextBoxColumn, Me.GoldDataGridViewTextBoxColumn, Me.TeamidDataGridViewTextBoxColumn, Me.InventoryidDataGridViewTextBoxColumn})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn, Me.LevelDataGridViewTextBoxColumn, Me.ExperienceDataGridViewTextBoxColumn, Me.GoldDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.PlayersBindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(226, 13)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(462, 187)
+        Me.DataGridView1.Size = New System.Drawing.Size(314, 187)
         Me.DataGridView1.TabIndex = 4
         '
         'IdDataGridViewTextBoxColumn
@@ -152,25 +127,35 @@ Partial Class MainMenu
         Me.GoldDataGridViewTextBoxColumn.Name = "GoldDataGridViewTextBoxColumn"
         Me.GoldDataGridViewTextBoxColumn.Width = 52
         '
-        'TeamidDataGridViewTextBoxColumn
+        'PlayersBindingSource
         '
-        Me.TeamidDataGridViewTextBoxColumn.DataPropertyName = "teamid"
-        Me.TeamidDataGridViewTextBoxColumn.HeaderText = "teamid"
-        Me.TeamidDataGridViewTextBoxColumn.Name = "TeamidDataGridViewTextBoxColumn"
-        Me.TeamidDataGridViewTextBoxColumn.Width = 63
+        Me.PlayersBindingSource.DataMember = "Players"
+        Me.PlayersBindingSource.DataSource = Me.GameDatabaseDataSet
         '
-        'InventoryidDataGridViewTextBoxColumn
+        'GameDatabaseDataSet
         '
-        Me.InventoryidDataGridViewTextBoxColumn.DataPropertyName = "inventoryid"
-        Me.InventoryidDataGridViewTextBoxColumn.HeaderText = "inventoryid"
-        Me.InventoryidDataGridViewTextBoxColumn.Name = "InventoryidDataGridViewTextBoxColumn"
-        Me.InventoryidDataGridViewTextBoxColumn.Width = 83
+        Me.GameDatabaseDataSet.DataSetName = "GameDatabaseDataSet"
+        Me.GameDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'PlayersTableAdapter
+        '
+        Me.PlayersTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.AttacksTableAdapter = Nothing
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.BattlesTableAdapter = Nothing
+        Me.TableAdapterManager.CreaturesTableAdapter = Nothing
+        Me.TableAdapterManager.ItemsTableAdapter = Nothing
+        Me.TableAdapterManager.PlayersTableAdapter = Me.PlayersTableAdapter
+        Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'MainMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(700, 212)
+        Me.ClientSize = New System.Drawing.Size(552, 212)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.playerNewbtn)
         Me.Controls.Add(Me.playerSelectionlbl)
@@ -179,9 +164,9 @@ Partial Class MainMenu
         Me.Name = "MainMenu"
         Me.ShowIcon = False
         Me.Text = "Main Menu"
-        CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

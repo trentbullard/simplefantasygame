@@ -4,8 +4,6 @@
     Private playerLevel As Integer
     Private playerExperience As Integer
     Private playerGold As Integer
-    Private playerTeam As Collection
-    Private playerInventory As Collection
 
     Public Sub New()
         playerid = -1
@@ -13,18 +11,14 @@
         playerLevel = 1
         playerExperience = 0
         playerGold = 0
-        playerTeam = New Collection()
-        playerInventory = New Collection()
     End Sub
 
-    Public Sub New(id, name, level, exp, gold, team, inv)
+    Public Sub New(id, name, level, exp, gold)
         playerid = id
         playerName = name
         playerLevel = level
         playerExperience = exp
         playerGold = gold
-        playerTeam = team
-        playerInventory = inv
     End Sub
 
     Public Property id()
@@ -69,24 +63,6 @@
         End Get
         Set(value)
             playerGold = value
-        End Set
-    End Property
-
-    Public Property team()
-        Get
-            Return playerTeam
-        End Get
-        Set(value)
-            playerTeam = value
-        End Set
-    End Property
-
-    Public Property inv()
-        Get
-            Return playerInventory
-        End Get
-        Set(value)
-            playerInventory = value
         End Set
     End Property
 
