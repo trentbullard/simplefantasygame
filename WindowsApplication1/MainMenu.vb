@@ -6,7 +6,7 @@ Public Class MainMenu
     Public nameString As String
 
     Private Sub MainMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.PlayersTableAdapter.Fill(Me.GameDatabaseDataSet.Players)
+        PlayersTableAdapter.Fill(GameDatabaseDataSet.Players)
 
         StartLog()  'From log.vb
 
@@ -64,4 +64,10 @@ Public Class MainMenu
             Exit Function
         End Try
     End Function
+
+    Private Sub playerDeletebtn_Click(sender As Object, e As EventArgs) Handles playerDeletebtn.Click
+        Dim oForm As New DeletePlayersWindow
+        oForm.Show()
+        Me.Close()
+    End Sub
 End Class

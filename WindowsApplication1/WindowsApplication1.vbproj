@@ -117,6 +117,12 @@
     <Compile Include="currentCreatures.vb" />
     <Compile Include="currentItems.vb" />
     <Compile Include="currentPlayers.vb" />
+    <Compile Include="DeletePlayersWindow.Designer.vb">
+      <DependentUpon>DeletePlayersWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DeletePlayersWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="dice.vb" />
     <Compile Include="Combat.vb">
       <SubType>Form</SubType>
@@ -164,6 +170,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Combat.resx">
       <DependentUpon>Combat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeletePlayersWindow.resx">
+      <DependentUpon>DeletePlayersWindow.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.vb</DependentUpon>
