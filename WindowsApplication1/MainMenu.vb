@@ -6,6 +6,8 @@ Public Class MainMenu
     Public nameString As String
 
     Private Sub MainMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.PlayersTableAdapter.Fill(Me.GameDatabaseDataSet.Players)
+
         StartLog()  'From log.vb
 
         For Each row As DataRow In GameDatabaseDataSet.Players

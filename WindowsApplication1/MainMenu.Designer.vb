@@ -27,17 +27,10 @@ Partial Class MainMenu
         Me.playerSelectionlst = New System.Windows.Forms.ListBox()
         Me.playerSelectionlbl = New System.Windows.Forms.Label()
         Me.playerNewbtn = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LevelDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ExperienceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.GoldDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GameDatabaseDataSet = New WindowsApplication1.GameDatabaseDataSet()
         Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
         Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -46,7 +39,7 @@ Partial Class MainMenu
         '
         Me.titlelbl.AutoSize = True
         Me.titlelbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.titlelbl.Location = New System.Drawing.Point(14, 17)
+        Me.titlelbl.Location = New System.Drawing.Point(16, 17)
         Me.titlelbl.Name = "titlelbl"
         Me.titlelbl.Size = New System.Drawing.Size(205, 24)
         Me.titlelbl.TabIndex = 0
@@ -55,7 +48,7 @@ Partial Class MainMenu
         'playerSelectionlst
         '
         Me.playerSelectionlst.FormattingEnabled = True
-        Me.playerSelectionlst.Location = New System.Drawing.Point(56, 72)
+        Me.playerSelectionlst.Location = New System.Drawing.Point(58, 72)
         Me.playerSelectionlst.Name = "playerSelectionlst"
         Me.playerSelectionlst.Size = New System.Drawing.Size(120, 95)
         Me.playerSelectionlst.TabIndex = 1
@@ -63,7 +56,7 @@ Partial Class MainMenu
         'playerSelectionlbl
         '
         Me.playerSelectionlbl.AutoSize = True
-        Me.playerSelectionlbl.Location = New System.Drawing.Point(68, 56)
+        Me.playerSelectionlbl.Location = New System.Drawing.Point(70, 56)
         Me.playerSelectionlbl.Name = "playerSelectionlbl"
         Me.playerSelectionlbl.Size = New System.Drawing.Size(97, 13)
         Me.playerSelectionlbl.TabIndex = 2
@@ -71,61 +64,12 @@ Partial Class MainMenu
         '
         'playerNewbtn
         '
-        Me.playerNewbtn.Location = New System.Drawing.Point(79, 173)
+        Me.playerNewbtn.Location = New System.Drawing.Point(81, 173)
         Me.playerNewbtn.Name = "playerNewbtn"
         Me.playerNewbtn.Size = New System.Drawing.Size(75, 23)
         Me.playerNewbtn.TabIndex = 3
         Me.playerNewbtn.Text = "New Player"
         Me.playerNewbtn.UseVisualStyleBackColor = True
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.AutoGenerateColumns = False
-        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn, Me.LevelDataGridViewTextBoxColumn, Me.ExperienceDataGridViewTextBoxColumn, Me.GoldDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.PlayersBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(226, 13)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(314, 187)
-        Me.DataGridView1.TabIndex = 4
-        '
-        'IdDataGridViewTextBoxColumn
-        '
-        Me.IdDataGridViewTextBoxColumn.DataPropertyName = "id"
-        Me.IdDataGridViewTextBoxColumn.HeaderText = "id"
-        Me.IdDataGridViewTextBoxColumn.Name = "IdDataGridViewTextBoxColumn"
-        Me.IdDataGridViewTextBoxColumn.ReadOnly = True
-        Me.IdDataGridViewTextBoxColumn.Width = 40
-        '
-        'NameDataGridViewTextBoxColumn
-        '
-        Me.NameDataGridViewTextBoxColumn.DataPropertyName = "name"
-        Me.NameDataGridViewTextBoxColumn.HeaderText = "name"
-        Me.NameDataGridViewTextBoxColumn.Name = "NameDataGridViewTextBoxColumn"
-        Me.NameDataGridViewTextBoxColumn.Width = 58
-        '
-        'LevelDataGridViewTextBoxColumn
-        '
-        Me.LevelDataGridViewTextBoxColumn.DataPropertyName = "level"
-        Me.LevelDataGridViewTextBoxColumn.HeaderText = "level"
-        Me.LevelDataGridViewTextBoxColumn.Name = "LevelDataGridViewTextBoxColumn"
-        Me.LevelDataGridViewTextBoxColumn.Width = 54
-        '
-        'ExperienceDataGridViewTextBoxColumn
-        '
-        Me.ExperienceDataGridViewTextBoxColumn.DataPropertyName = "experience"
-        Me.ExperienceDataGridViewTextBoxColumn.HeaderText = "experience"
-        Me.ExperienceDataGridViewTextBoxColumn.Name = "ExperienceDataGridViewTextBoxColumn"
-        Me.ExperienceDataGridViewTextBoxColumn.Width = 84
-        '
-        'GoldDataGridViewTextBoxColumn
-        '
-        Me.GoldDataGridViewTextBoxColumn.DataPropertyName = "gold"
-        Me.GoldDataGridViewTextBoxColumn.HeaderText = "gold"
-        Me.GoldDataGridViewTextBoxColumn.Name = "GoldDataGridViewTextBoxColumn"
-        Me.GoldDataGridViewTextBoxColumn.Width = 52
         '
         'PlayersBindingSource
         '
@@ -155,8 +99,7 @@ Partial Class MainMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(552, 212)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.ClientSize = New System.Drawing.Size(237, 212)
         Me.Controls.Add(Me.playerNewbtn)
         Me.Controls.Add(Me.playerSelectionlbl)
         Me.Controls.Add(Me.playerSelectionlst)
@@ -164,7 +107,6 @@ Partial Class MainMenu
         Me.Name = "MainMenu"
         Me.ShowIcon = False
         Me.Text = "Main Menu"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -180,12 +122,6 @@ Partial Class MainMenu
     Friend WithEvents PlayersBindingSource As BindingSource
     Friend WithEvents PlayersTableAdapter As GameDatabaseDataSetTableAdapters.PlayersTableAdapter
     Friend WithEvents TableAdapterManager As GameDatabaseDataSetTableAdapters.TableAdapterManager
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents IdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents NameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents LevelDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ExperienceDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents GoldDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TeamidDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents InventoryidDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

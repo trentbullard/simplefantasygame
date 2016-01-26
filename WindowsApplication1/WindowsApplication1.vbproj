@@ -203,11 +203,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="GameDatabase.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="GameDatabase_log.ldf">
       <DependentUpon>GameDatabase.mdf</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="todo.txt" />
   </ItemGroup>

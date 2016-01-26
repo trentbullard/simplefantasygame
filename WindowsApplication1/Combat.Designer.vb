@@ -138,12 +138,15 @@ Partial Class AdventureWindow
         Me.tavernbtn = New System.Windows.Forms.Button()
         Me.shopbtn = New System.Windows.Forms.Button()
         Me.mainMenubtn = New System.Windows.Forms.Button()
+        Me.ItemsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ItemsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.ItemsTableAdapter()
         Me.TopPanel.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BattlesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AttacksBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ItemsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TopPanel
@@ -1003,7 +1006,7 @@ Partial Class AdventureWindow
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EditToolStripMenuItem, Me.ViewToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1021, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1029, 24)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -1170,12 +1173,21 @@ Partial Class AdventureWindow
         Me.mainMenubtn.Text = "Main Menu"
         Me.mainMenubtn.UseVisualStyleBackColor = True
         '
+        'ItemsBindingSource
+        '
+        Me.ItemsBindingSource.DataMember = "Items"
+        Me.ItemsBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'ItemsTableAdapter
+        '
+        Me.ItemsTableAdapter.ClearBeforeFill = True
+        '
         'AdventureWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1021, 730)
+        Me.ClientSize = New System.Drawing.Size(1029, 732)
         Me.Controls.Add(Me.mainMenubtn)
         Me.Controls.Add(Me.shopbtn)
         Me.Controls.Add(Me.tavernbtn)
@@ -1196,6 +1208,7 @@ Partial Class AdventureWindow
         CType(Me.CreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BattlesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AttacksBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ItemsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1317,4 +1330,6 @@ Partial Class AdventureWindow
     Friend WithEvents Label4 As Label
     Friend WithEvents TextBox5 As TextBox
     Friend WithEvents Label5 As Label
+    Friend WithEvents ItemsBindingSource As BindingSource
+    Friend WithEvents ItemsTableAdapter As GameDatabaseDataSetTableAdapters.ItemsTableAdapter
 End Class

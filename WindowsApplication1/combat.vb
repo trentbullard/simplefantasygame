@@ -1,6 +1,12 @@
 ﻿Public Class AdventureWindow
 
     Private Sub AdventureWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.ItemsTableAdapter.Fill(Me.GameDatabaseDataSet.Items)
+        Me.CreaturesTableAdapter.Fill(Me.GameDatabaseDataSet.Creatures)
+        Me.BattlesTableAdapter.Fill(Me.GameDatabaseDataSet.Battles)
+        Me.AttacksTableAdapter.Fill(Me.GameDatabaseDataSet.Attacks)
+        Me.ItemsTableAdapter.Fill(Me.GameDatabaseDataSet.Items)
+
         Me.Text = currentPlayer.level & " " & currentPlayer.name
         playerTeamlbl.Text = currentPlayer.name & "'s Team"
     End Sub
