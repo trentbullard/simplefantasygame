@@ -11,24 +11,31 @@ Public Class MainMenu
         StartLog()  'From log.vb
 
         For Each row As DataRow In GameDatabaseDataSet.Players
-            playerSelectionlst.Items.Add(New player(row("id"), row("name"), row("level"), row("experience"), row("gold")))
+            playerSelectlstv.Items.Add(New player(row("id"), row("name"), row("level"), row("experience"), row("gold")).level)
+            playerSelectlstv.Items(playerSelectlstv.Items.Count - 1).SubItems.Add(row("name").ToString)
         Next
     End Sub
 
     Private Sub playerNewbtn_Click(sender As Object, e As EventArgs) Handles playerNewbtn.Click
         nameString = InputBox("Enter a name.",, "name")
+
+        Dim player As player = NewPlayer(nameString, 1, 0, -0)
         Try
-            playerSelectionlst.Items.Add(NewPlayer(nameString, 1, 0, -0))
+            playerSelectlstv.Items.Add(player.level)
+            playerSelectlstv.Items(playerSelectlstv.Items.Count - 1).SubItems.Add(player.name)
         Catch ex As Exception
             MsgBox("Unable to create new player.")
         End Try
     End Sub
 
-    Private Sub playerSelectionlst_SelectedIndexChanged(sender As Object, e As EventArgs) Handles playerSelectionlst.SelectedIndexChanged
-        currentPlayer = playerSelectionlst.SelectedItem
-        Dim oForm As New AdventureWindow
-        oForm.Show()
-        Me.Close()
+    Private Sub playerSelectlstv_SelectedIndexChanged(sender As Object, e As EventArgs) Handles playerSelectlstv.SelectedIndexChanged
+        Dim row As DataRow = GameDatabaseDataSet.Players(playerSelectlstv.SelectedIndices(0))
+        If Not playerSelectlstv.SelectedIndices(0) = -1 Then
+            currentPlayer = New player(row("id"), row("name"), row("level"), row("experience"), row("gold"))
+            Dim oForm As New AdventureWindow
+            oForm.Show()
+            Me.Close()
+        End If
     End Sub
 
     Private Function NewPlayer(name, level, experience, gold)

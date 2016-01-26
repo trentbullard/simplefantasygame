@@ -24,13 +24,16 @@ Partial Class MainMenu
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.titlelbl = New System.Windows.Forms.Label()
-        Me.playerSelectionlst = New System.Windows.Forms.ListBox()
         Me.playerSelectionlbl = New System.Windows.Forms.Label()
         Me.playerNewbtn = New System.Windows.Forms.Button()
         Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GameDatabaseDataSet = New WindowsApplication1.GameDatabaseDataSet()
         Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
         Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
+        Me.playerSelectlstv = New System.Windows.Forms.ListView()
+        Me.playerLevel = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.playerName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.playerDeletebtn = New System.Windows.Forms.Button()
         CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -39,24 +42,16 @@ Partial Class MainMenu
         '
         Me.titlelbl.AutoSize = True
         Me.titlelbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.titlelbl.Location = New System.Drawing.Point(16, 17)
+        Me.titlelbl.Location = New System.Drawing.Point(13, 18)
         Me.titlelbl.Name = "titlelbl"
         Me.titlelbl.Size = New System.Drawing.Size(205, 24)
         Me.titlelbl.TabIndex = 0
         Me.titlelbl.Text = "Fantasy Game by Trent"
         '
-        'playerSelectionlst
-        '
-        Me.playerSelectionlst.FormattingEnabled = True
-        Me.playerSelectionlst.Location = New System.Drawing.Point(58, 72)
-        Me.playerSelectionlst.Name = "playerSelectionlst"
-        Me.playerSelectionlst.Size = New System.Drawing.Size(120, 95)
-        Me.playerSelectionlst.TabIndex = 1
-        '
         'playerSelectionlbl
         '
         Me.playerSelectionlbl.AutoSize = True
-        Me.playerSelectionlbl.Location = New System.Drawing.Point(70, 56)
+        Me.playerSelectionlbl.Location = New System.Drawing.Point(65, 53)
         Me.playerSelectionlbl.Name = "playerSelectionlbl"
         Me.playerSelectionlbl.Size = New System.Drawing.Size(97, 13)
         Me.playerSelectionlbl.TabIndex = 2
@@ -64,11 +59,11 @@ Partial Class MainMenu
         '
         'playerNewbtn
         '
-        Me.playerNewbtn.Location = New System.Drawing.Point(81, 173)
+        Me.playerNewbtn.Location = New System.Drawing.Point(37, 172)
         Me.playerNewbtn.Name = "playerNewbtn"
         Me.playerNewbtn.Size = New System.Drawing.Size(75, 23)
         Me.playerNewbtn.TabIndex = 3
-        Me.playerNewbtn.Text = "New Player"
+        Me.playerNewbtn.Text = "New"
         Me.playerNewbtn.UseVisualStyleBackColor = True
         '
         'PlayersBindingSource
@@ -95,14 +90,50 @@ Partial Class MainMenu
         Me.TableAdapterManager.PlayersTableAdapter = Me.PlayersTableAdapter
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
+        'playerSelectlstv
+        '
+        Me.playerSelectlstv.AutoArrange = False
+        Me.playerSelectlstv.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.playerLevel, Me.playerName})
+        Me.playerSelectlstv.FullRowSelect = True
+        Me.playerSelectlstv.GridLines = True
+        Me.playerSelectlstv.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
+        Me.playerSelectlstv.Location = New System.Drawing.Point(54, 69)
+        Me.playerSelectlstv.MultiSelect = False
+        Me.playerSelectlstv.Name = "playerSelectlstv"
+        Me.playerSelectlstv.Size = New System.Drawing.Size(125, 97)
+        Me.playerSelectlstv.TabIndex = 4
+        Me.playerSelectlstv.UseCompatibleStateImageBehavior = False
+        Me.playerSelectlstv.View = System.Windows.Forms.View.Details
+        '
+        'playerLevel
+        '
+        Me.playerLevel.Text = "Level"
+        Me.playerLevel.Width = 40
+        '
+        'playerName
+        '
+        Me.playerName.Text = "Name"
+        Me.playerName.Width = 81
+        '
+        'playerDeletebtn
+        '
+        Me.playerDeletebtn.Location = New System.Drawing.Point(118, 172)
+        Me.playerDeletebtn.Name = "playerDeletebtn"
+        Me.playerDeletebtn.Size = New System.Drawing.Size(75, 23)
+        Me.playerDeletebtn.TabIndex = 5
+        Me.playerDeletebtn.Text = "Delete"
+        Me.playerDeletebtn.UseVisualStyleBackColor = True
+        '
         'MainMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(237, 212)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(231, 212)
+        Me.Controls.Add(Me.playerDeletebtn)
+        Me.Controls.Add(Me.playerSelectlstv)
         Me.Controls.Add(Me.playerNewbtn)
         Me.Controls.Add(Me.playerSelectionlbl)
-        Me.Controls.Add(Me.playerSelectionlst)
         Me.Controls.Add(Me.titlelbl)
         Me.Name = "MainMenu"
         Me.ShowIcon = False
@@ -115,7 +146,6 @@ Partial Class MainMenu
     End Sub
 
     Friend WithEvents titlelbl As Label
-    Friend WithEvents playerSelectionlst As ListBox
     Friend WithEvents playerSelectionlbl As Label
     Friend WithEvents playerNewbtn As Button
     Friend WithEvents GameDatabaseDataSet As GameDatabaseDataSet
@@ -124,4 +154,8 @@ Partial Class MainMenu
     Friend WithEvents TableAdapterManager As GameDatabaseDataSetTableAdapters.TableAdapterManager
     Friend WithEvents TeamidDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents InventoryidDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents playerSelectlstv As ListView
+    Friend WithEvents playerLevel As ColumnHeader
+    Friend WithEvents playerName As ColumnHeader
+    Friend WithEvents playerDeletebtn As Button
 End Class
