@@ -13,9 +13,21 @@
         creatureid = -1
         creatureName = "name"
         creatureSpecies = "species"
-        creatureHealth = -1
-        creatureStrength = -1
-        creatureArmor = -1
+        creatureHealth = 1
+        creatureStrength = 1
+        creatureArmor = 1
+        creatureLevel = 1
+        creatureExperience = 0
+        creatureOwner = currentPlayer
+    End Sub
+
+    Public Sub New(name As String)
+        creatureid = -1
+        creatureName = name
+        creatureSpecies = "species"
+        creatureHealth = 1
+        creatureStrength = 1
+        creatureArmor = 1
         creatureLevel = 1
         creatureExperience = 0
         creatureOwner = currentPlayer
@@ -108,7 +120,7 @@
         End Set
     End Property
 
-    Public Property experience() As Integer
+    Public Property exp() As Integer
         Get
             Return creatureExperience
         End Get

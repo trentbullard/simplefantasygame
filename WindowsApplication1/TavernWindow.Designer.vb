@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class TavernWindow
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,8 +20,9 @@ Partial Class TavernWindow
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.tavernSlot1pnl = New System.Windows.Forms.Panel()
         Me.tavernSlot1Nametxt = New System.Windows.Forms.TextBox()
         Me.tavernSlot1Namelbl = New System.Windows.Forms.Label()
@@ -75,6 +76,10 @@ Partial Class TavernWindow
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.GameDatabaseDataSet = New WindowsApplication1.GameDatabaseDataSet()
+        Me.CreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.CreaturesTableAdapter()
+        Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
         Me.tavernSlot1pnl.SuspendLayout()
         Me.tavernSlot2pnl.SuspendLayout()
         Me.tavernSlot3pnl.SuspendLayout()
@@ -84,6 +89,8 @@ Partial Class TavernWindow
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel5.SuspendLayout()
+        CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tavernSlot1pnl
@@ -577,6 +584,30 @@ Partial Class TavernWindow
         Me.Panel5.Size = New System.Drawing.Size(361, 360)
         Me.Panel5.TabIndex = 27
         '
+        'GameDatabaseDataSet
+        '
+        Me.GameDatabaseDataSet.DataSetName = "GameDatabaseDataSet"
+        Me.GameDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'CreaturesBindingSource
+        '
+        Me.CreaturesBindingSource.DataMember = "Creatures"
+        Me.CreaturesBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'CreaturesTableAdapter
+        '
+        Me.CreaturesTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.AttacksTableAdapter = Nothing
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.BattlesTableAdapter = Nothing
+        Me.TableAdapterManager.CreaturesTableAdapter = Me.CreaturesTableAdapter
+        Me.TableAdapterManager.ItemsTableAdapter = Nothing
+        Me.TableAdapterManager.PlayersTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
         'TavernWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -599,6 +630,8 @@ Partial Class TavernWindow
         Me.Panel3.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
+        CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -656,4 +689,8 @@ Partial Class TavernWindow
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Panel5 As Panel
+    Friend WithEvents GameDatabaseDataSet As GameDatabaseDataSet
+    Friend WithEvents CreaturesBindingSource As BindingSource
+    Friend WithEvents CreaturesTableAdapter As GameDatabaseDataSetTableAdapters.CreaturesTableAdapter
+    Friend WithEvents TableAdapterManager As GameDatabaseDataSetTableAdapters.TableAdapterManager
 End Class

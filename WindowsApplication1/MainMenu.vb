@@ -38,8 +38,8 @@ Public Class MainMenu
         Dim row As DataRow = GameDatabaseDataSet.Players(playerSelectlstv.SelectedIndices(0))
         If Not playerSelectlstv.SelectedIndices(0) = -1 Then
             currentPlayer = New player(row("id"), row("name"), row("level"), row("experience"), row("gold"))
-            Dim oForm As New AdventureWindow
-            oForm.Show()
+            currentAdventureWindow = New AdventureWindow
+            currentAdventureWindow.Show()
             Me.Close()
         End If
     End Sub
@@ -72,8 +72,8 @@ Public Class MainMenu
     End Function
 
     Private Sub playerDeletebtn_Click(sender As Object, e As EventArgs) Handles playerDeletebtn.Click
-        Dim oForm As New DeletePlayersWindow
-        oForm.Show()
+        currentDeletePlayersWindow = New DeletePlayersWindow
+        currentDeletePlayersWindow.Show()
         Me.Close()
     End Sub
 End Class

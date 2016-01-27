@@ -134,6 +134,7 @@
     End Sub
 
     Private Sub tavernbtn_Click(sender As Object, e As EventArgs) Handles tavernbtn.Click
-
+        currentTavernWindow = New TavernWindow
+        currentTavernWindow.Show()
     End Sub
 End Class
