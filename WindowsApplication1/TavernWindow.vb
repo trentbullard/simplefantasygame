@@ -7,7 +7,7 @@
         currentTavernWindow = Me
 
         For ctr = 1 To 4
-            tavernCreatures(ctr) = New creature
+            tavernCreatures(ctr) = New creature("creature " & ctr)
             FillCreatureSlot(tavernCreatures(ctr), ctr)
         Next
 
@@ -16,25 +16,25 @@
     Private Sub tavernSlot1Hirebtn_Click(sender As Object, e As EventArgs) Handles tavernSlot1Hirebtn.Click
         NewCreature(tavernCreatures(1))
         currentAdventureWindow.hireListlst.Items.Add(New creature(CreaturesTableAdapter.GetLastRow().First))
-        Me.Close()
+        ClearCreatureSlot(1)
     End Sub
 
     Private Sub tavernSlot2Hirebtn_Click(sender As Object, e As EventArgs) Handles tavernSlot2Hirebtn.Click
         NewCreature(tavernCreatures(2))
         currentAdventureWindow.hireListlst.Items.Add(New creature(CreaturesTableAdapter.GetLastRow().First))
-        Me.Close()
+        ClearCreatureSlot(2)
     End Sub
 
     Private Sub tavernSlot3Hirebtn_Click(sender As Object, e As EventArgs) Handles tavernSlot3Hirebtn.Click
         NewCreature(tavernCreatures(3))
         currentAdventureWindow.hireListlst.Items.Add(New creature(CreaturesTableAdapter.GetLastRow().First))
-        Me.Close()
+        ClearCreatureSlot(3)
     End Sub
 
     Private Sub tavernSlot4Hirebtn_Click(sender As Object, e As EventArgs) Handles tavernSlot4Hirebtn.Click
         NewCreature(tavernCreatures(4))
         currentAdventureWindow.hireListlst.Items.Add(New creature(CreaturesTableAdapter.GetLastRow().First))
-        Me.Close()
+        ClearCreatureSlot(4)
     End Sub
 
     Private Sub NewCreature(creature)
@@ -89,6 +89,35 @@
                 tavernSlot4Healthtxt.Text = creature.health
                 tavernSlot4Strengthtxt.Text = creature.strength
                 tavernSlot4Armortxt.Text = creature.armor
+        End Select
+    End Sub
+
+    Private Sub ClearCreatureSlot(slot)
+        Select Case slot
+            Case 1
+                tavernSlot1Nametxt.Clear()
+                tavernSlot1Speciestxt.Clear()
+                tavernSlot1Healthtxt.Clear()
+                tavernSlot1Strengthtxt.Clear()
+                tavernSlot1Armortxt.Clear()
+            Case 2
+                tavernSlot2Nametxt.Clear()
+                tavernSlot2Speciestxt.Clear()
+                tavernSlot2Healthtxt.Clear()
+                tavernSlot2Strengthtxt.Clear()
+                tavernSlot2Armortxt.Clear()
+            Case 3
+                tavernSlot3Nametxt.Clear()
+                tavernSlot3Speciestxt.Clear()
+                tavernSlot3Healthtxt.Clear()
+                tavernSlot3Strengthtxt.Clear()
+                tavernSlot3Armortxt.Clear()
+            Case 4
+                tavernSlot4Nametxt.Clear()
+                tavernSlot4Speciestxt.Clear()
+                tavernSlot4Healthtxt.Clear()
+                tavernSlot4Strengthtxt.Clear()
+                tavernSlot4Armortxt.Clear()
         End Select
     End Sub
 End Class
