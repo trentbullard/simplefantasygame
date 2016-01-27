@@ -7,7 +7,7 @@
         Me.AttacksTableAdapter.Fill(Me.GameDatabaseDataSet.Attacks)
         Me.ItemsTableAdapter.Fill(Me.GameDatabaseDataSet.Items)
 
-        Me.Text = currentPlayer.level & " " & currentPlayer.name
+        Me.Text = "Simple Fantasy Game - Level " & currentPlayer.level & " " & currentPlayer.name
         playerTeamlbl.Text = currentPlayer.name & "'s Team"
     End Sub
 

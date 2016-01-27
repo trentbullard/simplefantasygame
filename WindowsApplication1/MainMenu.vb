@@ -3,8 +3,6 @@ Imports System.IO
 Imports System.Text
 
 Public Class MainMenu
-    Public nameString As String
-
     Private Sub MainMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PlayersTableAdapter.Fill(GameDatabaseDataSet.Players)
 
@@ -17,7 +15,15 @@ Public Class MainMenu
     End Sub
 
     Private Sub playerNewbtn_Click(sender As Object, e As EventArgs) Handles playerNewbtn.Click
-        nameString = InputBox("Enter a name.",, "name")
+        Dim nameString As String = InputBox("Enter a name.",, "name")
+        If String.IsNullOrWhiteSpace(nameString) Then
+            MsgBox("Name cannot be blank.")
+            Exit Sub
+        End If
+
+        'Called from Names.vb
+        'Converts any string into a proper-cased trimmed string
+        nameString = ProperCase(nameString)
 
         Dim player As player = NewPlayer(nameString, 1, 0, -0)
         Try
