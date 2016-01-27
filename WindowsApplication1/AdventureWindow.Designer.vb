@@ -133,6 +133,14 @@ Partial Class AdventureWindow
         Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.playerItemslst = New System.Windows.Forms.ListBox()
+        Me.playerInventorylbl = New System.Windows.Forms.Label()
+        Me.hireListlbl = New System.Windows.Forms.Label()
+        Me.hireListlst = New System.Windows.Forms.ListBox()
+        Me.tavernbtn = New System.Windows.Forms.Button()
+        Me.shopbtn = New System.Windows.Forms.Button()
+        Me.mainMenubtn = New System.Windows.Forms.Button()
+        Me.tavernlbl = New System.Windows.Forms.Label()
         Me.GameDatabaseDataSet = New WindowsApplication1.GameDatabaseDataSet()
         Me.CreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.CreaturesTableAdapter()
@@ -141,16 +149,8 @@ Partial Class AdventureWindow
         Me.BattlesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.BattlesTableAdapter()
         Me.AttacksBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.AttacksTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.AttacksTableAdapter()
-        Me.playerItemslst = New System.Windows.Forms.ListBox()
-        Me.playerInventorylbl = New System.Windows.Forms.Label()
-        Me.hireListlbl = New System.Windows.Forms.Label()
-        Me.hireListlst = New System.Windows.Forms.ListBox()
-        Me.tavernbtn = New System.Windows.Forms.Button()
-        Me.shopbtn = New System.Windows.Forms.Button()
-        Me.mainMenubtn = New System.Windows.Forms.Button()
         Me.ItemsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ItemsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.ItemsTableAdapter()
-        Me.tavernlbl = New System.Windows.Forms.Label()
         Me.Combatpnl.SuspendLayout()
         Me.playersTeampnl.SuspendLayout()
         Me.playerSlot4pnl.SuspendLayout()
@@ -1105,7 +1105,7 @@ Partial Class AdventureWindow
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EditToolStripMenuItem, Me.ViewToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1029, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1033, 24)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -1169,6 +1169,76 @@ Partial Class AdventureWindow
         Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
+        'playerItemslst
+        '
+        Me.playerItemslst.CausesValidation = False
+        Me.playerItemslst.Location = New System.Drawing.Point(16, 489)
+        Me.playerItemslst.Name = "playerItemslst"
+        Me.playerItemslst.Size = New System.Drawing.Size(174, 160)
+        Me.playerItemslst.TabIndex = 2
+        '
+        'playerInventorylbl
+        '
+        Me.playerInventorylbl.AutoSize = True
+        Me.playerInventorylbl.Location = New System.Drawing.Point(62, 473)
+        Me.playerInventorylbl.Name = "playerInventorylbl"
+        Me.playerInventorylbl.Size = New System.Drawing.Size(83, 13)
+        Me.playerInventorylbl.TabIndex = 3
+        Me.playerInventorylbl.Text = "Player Inventory"
+        '
+        'hireListlbl
+        '
+        Me.hireListlbl.AutoSize = True
+        Me.hireListlbl.Location = New System.Drawing.Point(243, 473)
+        Me.hireListlbl.Name = "hireListlbl"
+        Me.hireListlbl.Size = New System.Drawing.Size(80, 13)
+        Me.hireListlbl.TabIndex = 5
+        Me.hireListlbl.Text = "Hired Creatures"
+        '
+        'hireListlst
+        '
+        Me.hireListlst.CausesValidation = False
+        Me.hireListlst.Location = New System.Drawing.Point(196, 489)
+        Me.hireListlst.Name = "hireListlst"
+        Me.hireListlst.Size = New System.Drawing.Size(174, 160)
+        Me.hireListlst.TabIndex = 4
+        '
+        'tavernbtn
+        '
+        Me.tavernbtn.Location = New System.Drawing.Point(938, 476)
+        Me.tavernbtn.Name = "tavernbtn"
+        Me.tavernbtn.Size = New System.Drawing.Size(75, 23)
+        Me.tavernbtn.TabIndex = 6
+        Me.tavernbtn.Text = "Tavern"
+        Me.tavernbtn.UseVisualStyleBackColor = True
+        '
+        'shopbtn
+        '
+        Me.shopbtn.Location = New System.Drawing.Point(938, 505)
+        Me.shopbtn.Name = "shopbtn"
+        Me.shopbtn.Size = New System.Drawing.Size(75, 23)
+        Me.shopbtn.TabIndex = 7
+        Me.shopbtn.Text = "Shop"
+        Me.shopbtn.UseVisualStyleBackColor = True
+        '
+        'mainMenubtn
+        '
+        Me.mainMenubtn.Location = New System.Drawing.Point(938, 534)
+        Me.mainMenubtn.Name = "mainMenubtn"
+        Me.mainMenubtn.Size = New System.Drawing.Size(75, 23)
+        Me.mainMenubtn.TabIndex = 8
+        Me.mainMenubtn.Text = "Main Menu"
+        Me.mainMenubtn.UseVisualStyleBackColor = True
+        '
+        'tavernlbl
+        '
+        Me.tavernlbl.AutoSize = True
+        Me.tavernlbl.Location = New System.Drawing.Point(832, 481)
+        Me.tavernlbl.Name = "tavernlbl"
+        Me.tavernlbl.Size = New System.Drawing.Size(100, 13)
+        Me.tavernlbl.TabIndex = 9
+        Me.tavernlbl.Text = "Hire creatures here!"
+        '
         'GameDatabaseDataSet
         '
         Me.GameDatabaseDataSet.DataSetName = "GameDatabaseDataSet"
@@ -1211,67 +1281,6 @@ Partial Class AdventureWindow
         '
         Me.AttacksTableAdapter.ClearBeforeFill = True
         '
-        'playerItemslst
-        '
-        Me.playerItemslst.FormattingEnabled = True
-        Me.playerItemslst.Location = New System.Drawing.Point(16, 489)
-        Me.playerItemslst.Name = "playerItemslst"
-        Me.playerItemslst.Size = New System.Drawing.Size(174, 160)
-        Me.playerItemslst.TabIndex = 2
-        '
-        'playerInventorylbl
-        '
-        Me.playerInventorylbl.AutoSize = True
-        Me.playerInventorylbl.Location = New System.Drawing.Point(62, 473)
-        Me.playerInventorylbl.Name = "playerInventorylbl"
-        Me.playerInventorylbl.Size = New System.Drawing.Size(83, 13)
-        Me.playerInventorylbl.TabIndex = 3
-        Me.playerInventorylbl.Text = "Player Inventory"
-        '
-        'hireListlbl
-        '
-        Me.hireListlbl.AutoSize = True
-        Me.hireListlbl.Location = New System.Drawing.Point(243, 473)
-        Me.hireListlbl.Name = "hireListlbl"
-        Me.hireListlbl.Size = New System.Drawing.Size(80, 13)
-        Me.hireListlbl.TabIndex = 5
-        Me.hireListlbl.Text = "Hired Creatures"
-        '
-        'hireListlst
-        '
-        Me.hireListlst.FormattingEnabled = True
-        Me.hireListlst.Location = New System.Drawing.Point(196, 489)
-        Me.hireListlst.Name = "hireListlst"
-        Me.hireListlst.Size = New System.Drawing.Size(174, 160)
-        Me.hireListlst.TabIndex = 4
-        '
-        'tavernbtn
-        '
-        Me.tavernbtn.Location = New System.Drawing.Point(938, 476)
-        Me.tavernbtn.Name = "tavernbtn"
-        Me.tavernbtn.Size = New System.Drawing.Size(75, 23)
-        Me.tavernbtn.TabIndex = 6
-        Me.tavernbtn.Text = "Tavern"
-        Me.tavernbtn.UseVisualStyleBackColor = True
-        '
-        'shopbtn
-        '
-        Me.shopbtn.Location = New System.Drawing.Point(938, 505)
-        Me.shopbtn.Name = "shopbtn"
-        Me.shopbtn.Size = New System.Drawing.Size(75, 23)
-        Me.shopbtn.TabIndex = 7
-        Me.shopbtn.Text = "Shop"
-        Me.shopbtn.UseVisualStyleBackColor = True
-        '
-        'mainMenubtn
-        '
-        Me.mainMenubtn.Location = New System.Drawing.Point(938, 534)
-        Me.mainMenubtn.Name = "mainMenubtn"
-        Me.mainMenubtn.Size = New System.Drawing.Size(75, 23)
-        Me.mainMenubtn.TabIndex = 8
-        Me.mainMenubtn.Text = "Main Menu"
-        Me.mainMenubtn.UseVisualStyleBackColor = True
-        '
         'ItemsBindingSource
         '
         Me.ItemsBindingSource.DataMember = "Items"
@@ -1281,21 +1290,12 @@ Partial Class AdventureWindow
         '
         Me.ItemsTableAdapter.ClearBeforeFill = True
         '
-        'tavernlbl
-        '
-        Me.tavernlbl.AutoSize = True
-        Me.tavernlbl.Location = New System.Drawing.Point(832, 481)
-        Me.tavernlbl.Name = "tavernlbl"
-        Me.tavernlbl.Size = New System.Drawing.Size(100, 13)
-        Me.tavernlbl.TabIndex = 9
-        Me.tavernlbl.Text = "Hire creatures here!"
-        '
         'AdventureWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1029, 664)
+        Me.ClientSize = New System.Drawing.Size(1033, 667)
         Me.Controls.Add(Me.tavernlbl)
         Me.Controls.Add(Me.mainMenubtn)
         Me.Controls.Add(Me.shopbtn)
@@ -1390,7 +1390,6 @@ Partial Class AdventureWindow
     Friend WithEvents playerItemslst As ListBox
     Friend WithEvents playerInventorylbl As Label
     Friend WithEvents hireListlbl As Label
-    Friend WithEvents hireListlst As ListBox
     Friend WithEvents tavernbtn As Button
     Friend WithEvents shopbtn As Button
     Friend WithEvents mainMenubtn As Button
@@ -1468,4 +1467,5 @@ Partial Class AdventureWindow
     Friend WithEvents enemySlot2pnl As Panel
     Friend WithEvents enemySlot1pnl As Panel
     Friend WithEvents tavernlbl As Label
+    Friend WithEvents hireListlst As ListBox
 End Class

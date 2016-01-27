@@ -13,7 +13,7 @@
         If CreaturesTableAdapter.GetRowsByPlayer(currentPlayer.id).Any Then
             tavernlbl.Hide()
             For Each row In CreaturesTableAdapter.GetRowsByPlayer(currentPlayer.id)
-                hireListlst.Items.Add(New creature(row("id"), row("name"), row("species"), row("health"), row("strength"), row("armor"), row("level"), row("experience"), currentPlayer))
+                hireListlst.Items.Add(New creature(row))
             Next
         End If
     End Sub
@@ -25,7 +25,7 @@
     'First attempts to create a new record in the Creatures DataTable.
     'If this is successful, it uses that record (specifically the record Id)
     'to create a new Creature instance using the same attributes.
-    Private Function NewCreature(name, species, health, strength, armor, level, exp, owner)
+    Private Sub NewCreature(name, species, health, strength, armor, level, exp, owner)
         Dim newRow As DataRow = GameDatabaseDataSet.Tables("Creatures").NewRow()
 
         newRow("name") = name
@@ -34,7 +34,7 @@
         newRow("strength") = strength
         newRow("armor") = armor
         newRow("level") = level
-        newRow("exp") = exp
+        newRow("experience") = exp
         newRow("playerid") = owner.id
 
         GameDatabaseDataSet.Tables("Creatures").Rows.Add(newRow)
@@ -46,13 +46,10 @@
             Validate()
             CreaturesBindingSource.EndEdit()
             CreaturesTableAdapter.Update(GameDatabaseDataSet.Creatures)
-            newRow = CreaturesTableAdapter.GetLastRow().Select().First
-            Return New creature(newRow("id"), name, species, health, strength, armor, level, exp, owner)
         Catch ex As Exception
             MsgBox("Failed to add creature to database.")
-            Exit Function
         End Try
-    End Function
+    End Sub
 
     'Called in the following cases:
     ' 1) By NewAttack() from this document at first run of program when 
@@ -134,5 +131,9 @@
         Dim oForm As New MainMenu
         oForm.Show()
         Me.Close()
+    End Sub
+
+    Private Sub tavernbtn_Click(sender As Object, e As EventArgs) Handles tavernbtn.Click
+
     End Sub
 End Class

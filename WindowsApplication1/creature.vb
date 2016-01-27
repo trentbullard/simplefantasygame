@@ -21,7 +21,7 @@
         creatureOwner = currentPlayer
     End Sub
 
-    Public Sub New(id, name, species, health, strength, armor, level, exp, owner)
+    Public Sub New(id As Integer, name As String, species As String, health As Integer, strength As Integer, armor As Integer, level As Integer, exp As Integer, owner As player)
         creatureid = id
         creatureName = name
         creatureSpecies = species
@@ -31,6 +31,18 @@
         creatureLevel = level
         creatureExperience = exp
         creatureOwner = owner
+    End Sub
+
+    Public Sub New(row As GameDatabaseDataSet.CreaturesRow)
+        creatureid = row("id")
+        creatureName = row("name")
+        creatureSpecies = row("species")
+        creatureHealth = row("health")
+        creatureStrength = row("strength")
+        creatureArmor = row("armor")
+        creatureLevel = row("level")
+        creatureExperience = row("experience")
+        creatureOwner = currentPlayer
     End Sub
 
     Public Property id() As Integer
@@ -115,7 +127,7 @@
     End Property
 
     Public Overloads Overrides Function Equals(creature) As Boolean
-        If creatureid = creature.creatureid Then
+        If creatureid = creature.id Then
             Return True
         Else
             Return False
