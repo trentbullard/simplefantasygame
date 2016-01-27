@@ -9,6 +9,13 @@
 
         Me.Text = "Simple Fantasy Game - Level " & currentPlayer.level & " " & currentPlayer.name
         playerTeamlbl.Text = currentPlayer.name & "'s Team"
+
+        If CreaturesTableAdapter.GetRowsByPlayer(currentPlayer.id).Any Then
+            tavernlbl.Hide()
+            For Each row In CreaturesTableAdapter.GetRowsByPlayer(currentPlayer.id)
+                hireListlst.Items.Add(New creature(row("id"), row("name"), row("species"), row("health"), row("strength"), row("armor"), row("level"), row("experience"), currentPlayer))
+            Next
+        End If
     End Sub
 
     'Called in the following cases:
@@ -18,7 +25,7 @@
     'First attempts to create a new record in the Creatures DataTable.
     'If this is successful, it uses that record (specifically the record Id)
     'to create a new Creature instance using the same attributes.
-    Private Function NewCreature(name, species, health, strength, armor)
+    Private Function NewCreature(name, species, health, strength, armor, level, exp, owner)
         Dim newRow As DataRow = GameDatabaseDataSet.Tables("Creatures").NewRow()
 
         newRow("name") = name
@@ -26,6 +33,9 @@
         newRow("health") = health
         newRow("strength") = strength
         newRow("armor") = armor
+        newRow("level") = level
+        newRow("exp") = exp
+        newRow("playerid") = owner.id
 
         GameDatabaseDataSet.Tables("Creatures").Rows.Add(newRow)
 
@@ -37,7 +47,7 @@
             CreaturesBindingSource.EndEdit()
             CreaturesTableAdapter.Update(GameDatabaseDataSet.Creatures)
             newRow = CreaturesTableAdapter.GetLastRow().Select().First
-            Return New creature(newRow("id"), name, species, health, strength, armor)
+            Return New creature(newRow("id"), name, species, health, strength, armor, level, exp, owner)
         Catch ex As Exception
             MsgBox("Failed to add creature to database.")
             Exit Function
@@ -116,8 +126,8 @@
         End Try
     End Sub
 
-    Private Sub player1Itemslst_SelectedIndexChanged(sender As Object, e As EventArgs) Handles player1Itemslst.SelectedIndexChanged
-        currentItem = player1Itemslst.SelectedItem
+    Private Sub player1Itemslst_SelectedIndexChanged(sender As Object, e As EventArgs) Handles playerItemslst.SelectedIndexChanged
+        currentItem = playerItemslst.SelectedItem
     End Sub
 
     Private Sub mainMenubtn_Click(sender As Object, e As EventArgs) Handles mainMenubtn.Click

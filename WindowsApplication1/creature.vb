@@ -5,6 +5,9 @@
     Private creatureHealth As Integer
     Private creatureStrength As Integer
     Private creatureArmor As Integer
+    Private creatureLevel As Integer
+    Private creatureExperience As Integer
+    Private creatureOwner As player
 
     Public Sub New()
         creatureid = -1
@@ -13,15 +16,21 @@
         creatureHealth = -1
         creatureStrength = -1
         creatureArmor = -1
+        creatureLevel = 1
+        creatureExperience = 0
+        creatureOwner = currentPlayer
     End Sub
 
-    Public Sub New(id, name, species, health, strength, armor)
+    Public Sub New(id, name, species, health, strength, armor, level, exp, owner)
         creatureid = id
         creatureName = name
         creatureSpecies = species
         creatureHealth = health
         creatureStrength = strength
         creatureArmor = armor
+        creatureLevel = level
+        creatureExperience = exp
+        creatureOwner = owner
     End Sub
 
     Public Property id() As Integer
@@ -78,6 +87,33 @@
         End Set
     End Property
 
+    Public Property level() As Integer
+        Get
+            Return creatureLevel
+        End Get
+        Set(value As Integer)
+            creatureLevel = value
+        End Set
+    End Property
+
+    Public Property experience() As Integer
+        Get
+            Return creatureExperience
+        End Get
+        Set(value As Integer)
+            creatureExperience = value
+        End Set
+    End Property
+
+    Public Property owner() As player
+        Get
+            Return creatureOwner
+        End Get
+        Set(value As player)
+            creatureOwner = value
+        End Set
+    End Property
+
     Public Overloads Overrides Function Equals(creature) As Boolean
         If creatureid = creature.creatureid Then
             Return True
@@ -98,6 +134,6 @@
     End Sub
 
     Public Overrides Function ToString() As String
-        Return "(" & Me.id & ") " & Me.name & " the " & Me.species
+        Return Me.name & " the level " & Me.creatureLevel & Space(1) & Me.species
     End Function
 End Class

@@ -192,7 +192,6 @@
     </None>
     <None Include="GameDatabaseDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>GameDatabaseDataSet.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="GameDatabaseDataSet.xss">
