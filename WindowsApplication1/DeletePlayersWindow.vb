@@ -1,5 +1,5 @@
 ﻿Public Class DeletePlayersWindow
-    Dim playerSelection As ListBox.SelectedIndexCollection
+    Dim playerSelection As ListBox.SelectedObjectCollection
 
     Private Sub DeletePlayersWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PlayersTableAdapter.Fill(GameDatabaseDataSet.Players)
@@ -12,7 +12,7 @@
     End Sub
 
     Private Sub deletePlayersclst_SelectedIndexChanged(sender As Object, e As EventArgs) Handles deletePlayersclst.SelectedIndexChanged
-        playerSelection = deletePlayersclst.SelectedIndices
+        playerSelection = deletePlayersclst.SelectedItems
     End Sub
 
     Private Sub deletePlayersbtn_Click(sender As Object, e As EventArgs) Handles deletePlayersbtn.Click
@@ -20,16 +20,16 @@
         Dim response = MsgBox("Are you sure??", style, "Confirm Deletion")
         Dim oForm As New MainMenu
         Dim oldPlayersRow As GameDatabaseDataSet.PlayersRow
-        oldPlayersRow = GameDatabaseDataSet.Players.FindByid(playerSelection(0) + 1)
 
         If response = MsgBoxResult.Yes Then
             Try
+                oldPlayersRow = GameDatabaseDataSet.Players.FindByid(playerSelection(0).id)
                 oldPlayersRow.Delete()
                 Validate()
                 PlayersBindingSource.EndEdit()
                 PlayersTableAdapter.Update(GameDatabaseDataSet.Players)
             Catch ex As Exception
-                MsgBox("Failed to remove player from database.")
+                MsgBox("Failed to remove players from database.")
             End Try
 
             oForm.Show()
@@ -38,6 +38,5 @@
             oForm.Show()
             Me.Close()
         End If
-
     End Sub
 End Class
