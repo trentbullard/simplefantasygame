@@ -1,4 +1,8 @@
 ﻿Public Class CombatWindow
+    Dim enemyCreature1 As New creature
+    Dim enemyCreature2 As New creature
+    Dim enemyCreature3 As New creature
+    Dim enemyCreature4 As New creature
 
     Private Sub CombatWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.ItemsTableAdapter.Fill(Me.GameDatabaseDataSet.Items)
@@ -136,5 +140,21 @@
     Private Sub tavernbtn_Click(sender As Object, e As EventArgs) Handles tavernbtn.Click
         currentTavernWindow = New TavernWindow
         currentTavernWindow.Show()
+    End Sub
+
+    Private Sub enemySlot1Targetrad_CheckedChanged(sender As Object, e As EventArgs) Handles enemySlot1Targetrad.CheckedChanged
+        playerTarget = enemyCreature1
+    End Sub
+
+    Private Sub enemySlot2Targetrad_CheckedChanged(sender As Object, e As EventArgs) Handles enemySlot2Targetrad.CheckedChanged
+        playerTarget = enemyCreature2
+    End Sub
+
+    Private Sub enemySlot3Targetrad_CheckedChanged(sender As Object, e As EventArgs) Handles enemySlot3Targetrad.CheckedChanged
+        playerTarget = enemyCreature3
+    End Sub
+
+    Private Sub enemySlot4Targetrad_CheckedChanged(sender As Object, e As EventArgs) Handles enemySlot4Targetrad.CheckedChanged
+        playerTarget = enemyCreature4
     End Sub
 End Class
