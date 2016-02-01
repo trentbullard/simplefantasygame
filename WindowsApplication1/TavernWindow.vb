@@ -15,25 +15,25 @@
 
     Private Sub tavernSlot1Hirebtn_Click(sender As Object, e As EventArgs) Handles tavernSlot1Hirebtn.Click
         NewCreature(tavernCreatures(1))
-        currentAdventureWindow.hireListlst.Items.Add(New creature(CreaturesTableAdapter.GetLastRow().First))
+        currentCombatWindow.hireListlst.Items.Add(New creature(CreaturesTableAdapter.GetLastRow().First))
         ClearCreatureSlot(1)
     End Sub
 
     Private Sub tavernSlot2Hirebtn_Click(sender As Object, e As EventArgs) Handles tavernSlot2Hirebtn.Click
         NewCreature(tavernCreatures(2))
-        currentAdventureWindow.hireListlst.Items.Add(New creature(CreaturesTableAdapter.GetLastRow().First))
+        currentCombatWindow.hireListlst.Items.Add(New creature(CreaturesTableAdapter.GetLastRow().First))
         ClearCreatureSlot(2)
     End Sub
 
     Private Sub tavernSlot3Hirebtn_Click(sender As Object, e As EventArgs) Handles tavernSlot3Hirebtn.Click
         NewCreature(tavernCreatures(3))
-        currentAdventureWindow.hireListlst.Items.Add(New creature(CreaturesTableAdapter.GetLastRow().First))
+        currentCombatWindow.hireListlst.Items.Add(New creature(CreaturesTableAdapter.GetLastRow().First))
         ClearCreatureSlot(3)
     End Sub
 
     Private Sub tavernSlot4Hirebtn_Click(sender As Object, e As EventArgs) Handles tavernSlot4Hirebtn.Click
         NewCreature(tavernCreatures(4))
-        currentAdventureWindow.hireListlst.Items.Add(New creature(CreaturesTableAdapter.GetLastRow().First))
+        currentCombatWindow.hireListlst.Items.Add(New creature(CreaturesTableAdapter.GetLastRow().First))
         ClearCreatureSlot(4)
     End Sub
 

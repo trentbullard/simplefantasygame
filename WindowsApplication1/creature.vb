@@ -7,6 +7,10 @@
     Private creatureArmor As Integer
     Private creatureLevel As Integer
     Private creatureExperience As Integer
+    Private creatureInitiative As Integer
+    Private creatureIntelligence As Integer
+    Private creatureWisdom As Integer
+    Private creatureDexterity As Integer
     Private creatureOwner As player
 
     Public Sub New()

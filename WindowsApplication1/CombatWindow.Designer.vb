@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class AdventureWindow
+Partial Class CombatWindow
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -24,27 +24,8 @@ Partial Class AdventureWindow
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Combatpnl = New System.Windows.Forms.Panel()
-        Me.playerTeamlbl = New System.Windows.Forms.Label()
-        Me.enemySlot2Armortxt = New System.Windows.Forms.TextBox()
-        Me.enemySlot2Armorlbl = New System.Windows.Forms.Label()
-        Me.enemySlot2Strengthtxt = New System.Windows.Forms.TextBox()
-        Me.enemySlot2Strengthlbl = New System.Windows.Forms.Label()
-        Me.enemySlot2Healthtxt = New System.Windows.Forms.TextBox()
-        Me.enemySlot2Healthlbl = New System.Windows.Forms.Label()
-        Me.enemySlot2Speciestxt = New System.Windows.Forms.TextBox()
-        Me.enemySlot2Specieslbl = New System.Windows.Forms.Label()
-        Me.enemySlot2Nametxt = New System.Windows.Forms.TextBox()
-        Me.enemySlot2Namelbl = New System.Windows.Forms.Label()
-        Me.enemySlot1Armortxt = New System.Windows.Forms.TextBox()
-        Me.enemySlot1Armorlbl = New System.Windows.Forms.Label()
-        Me.enemySlot1Strengthtxt = New System.Windows.Forms.TextBox()
-        Me.enemySlot1Strengthlbl = New System.Windows.Forms.Label()
-        Me.enemySlot1Healthtxt = New System.Windows.Forms.TextBox()
-        Me.enemySlot1Healthlbl = New System.Windows.Forms.Label()
-        Me.enemySlot1Speciestxt = New System.Windows.Forms.TextBox()
-        Me.enemySlot1Specieslbl = New System.Windows.Forms.Label()
-        Me.enemySlot1Nametxt = New System.Windows.Forms.TextBox()
-        Me.enemySlot1Namelbl = New System.Windows.Forms.Label()
+        Me.combatListpnl = New System.Windows.Forms.Panel()
+        Me.combatlst = New System.Windows.Forms.ListBox()
         Me.playersTeampnl = New System.Windows.Forms.Panel()
         Me.playerSlot4pnl = New System.Windows.Forms.Panel()
         Me.playerSlot4Nametxt = New System.Windows.Forms.TextBox()
@@ -57,6 +38,7 @@ Partial Class AdventureWindow
         Me.playerSlot4Strengthtxt = New System.Windows.Forms.TextBox()
         Me.playerSlot4Armorlbl = New System.Windows.Forms.Label()
         Me.playerSlot4Armortxt = New System.Windows.Forms.TextBox()
+        Me.playerTeamlbl = New System.Windows.Forms.Label()
         Me.playerSlot3pnl = New System.Windows.Forms.Panel()
         Me.playerSlot3Nametxt = New System.Windows.Forms.TextBox()
         Me.playerSlot3Namelbl = New System.Windows.Forms.Label()
@@ -114,8 +96,28 @@ Partial Class AdventureWindow
         Me.enemySlot3Armorlbl = New System.Windows.Forms.Label()
         Me.enemySlot3Armortxt = New System.Windows.Forms.TextBox()
         Me.enemySlot2pnl = New System.Windows.Forms.Panel()
+        Me.enemySlot2Namelbl = New System.Windows.Forms.Label()
+        Me.enemySlot2Armortxt = New System.Windows.Forms.TextBox()
+        Me.enemySlot2Nametxt = New System.Windows.Forms.TextBox()
+        Me.enemySlot2Armorlbl = New System.Windows.Forms.Label()
+        Me.enemySlot2Specieslbl = New System.Windows.Forms.Label()
+        Me.enemySlot2Strengthtxt = New System.Windows.Forms.TextBox()
+        Me.enemySlot2Speciestxt = New System.Windows.Forms.TextBox()
+        Me.enemySlot2Strengthlbl = New System.Windows.Forms.Label()
+        Me.enemySlot2Healthlbl = New System.Windows.Forms.Label()
+        Me.enemySlot2Healthtxt = New System.Windows.Forms.TextBox()
         Me.enemySlot1pnl = New System.Windows.Forms.Panel()
-        Me.creature2 = New System.Windows.Forms.Label()
+        Me.enemySlot1Namelbl = New System.Windows.Forms.Label()
+        Me.enemySlot1Nametxt = New System.Windows.Forms.TextBox()
+        Me.enemySlot1Armortxt = New System.Windows.Forms.TextBox()
+        Me.enemySlot1Specieslbl = New System.Windows.Forms.Label()
+        Me.enemySlot1Armorlbl = New System.Windows.Forms.Label()
+        Me.enemySlot1Speciestxt = New System.Windows.Forms.TextBox()
+        Me.enemySlot1Strengthtxt = New System.Windows.Forms.TextBox()
+        Me.enemySlot1Healthlbl = New System.Windows.Forms.Label()
+        Me.enemySlot1Strengthlbl = New System.Windows.Forms.Label()
+        Me.enemySlot1Healthtxt = New System.Windows.Forms.TextBox()
+        Me.enemyTeamlbl = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -144,11 +146,38 @@ Partial Class AdventureWindow
         Me.AttacksTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.AttacksTableAdapter()
         Me.ItemsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ItemsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.ItemsTableAdapter()
-        Me.combatlst = New System.Windows.Forms.ListBox()
-        Me.combatListpnl = New System.Windows.Forms.Panel()
         Me.inventorypnl = New System.Windows.Forms.Panel()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.hiredCreaturesListpnl = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.playerInfopnl = New System.Windows.Forms.Panel()
+        Me.playerExperiencelbl = New System.Windows.Forms.Label()
+        Me.playerLevellbl = New System.Windows.Forms.Label()
+        Me.playerLeveltxt = New System.Windows.Forms.TextBox()
+        Me.playerGoldlbl = New System.Windows.Forms.Label()
+        Me.playerGoldtxt = New System.Windows.Forms.TextBox()
+        Me.playerSlot1Leveltxt = New System.Windows.Forms.TextBox()
+        Me.playerSlot1Levellbl = New System.Windows.Forms.Label()
+        Me.playerSlot2Leveltxt = New System.Windows.Forms.TextBox()
+        Me.playerSlot2Levellbl = New System.Windows.Forms.Label()
+        Me.enemySlot1Leveltxt = New System.Windows.Forms.TextBox()
+        Me.enemySlot1Levellbl = New System.Windows.Forms.Label()
+        Me.enemySlot2Leveltxt = New System.Windows.Forms.TextBox()
+        Me.enemySlot2Levellbl = New System.Windows.Forms.Label()
+        Me.playerSlot3Leveltxt = New System.Windows.Forms.TextBox()
+        Me.playerSlot3Levellbl = New System.Windows.Forms.Label()
+        Me.playerSlot4Leveltxt = New System.Windows.Forms.TextBox()
+        Me.playerSlot4Levellbl = New System.Windows.Forms.Label()
+        Me.enemySlot3Leveltxt = New System.Windows.Forms.TextBox()
+        Me.enemySlot3Levellbl = New System.Windows.Forms.Label()
+        Me.enemySlot4Leveltxt = New System.Windows.Forms.TextBox()
+        Me.enemySlot4Levellbl = New System.Windows.Forms.Label()
+        Me.playerSlot1Fillbtn = New System.Windows.Forms.Button()
+        Me.playerSlot2Fillbtn = New System.Windows.Forms.Button()
+        Me.playerSlot3Fillbtn = New System.Windows.Forms.Button()
+        Me.playerSlot4Fillbtn = New System.Windows.Forms.Button()
+        Me.playerExperiencebar = New System.Windows.Forms.ProgressBar()
         Me.Combatpnl.SuspendLayout()
+        Me.combatListpnl.SuspendLayout()
         Me.playersTeampnl.SuspendLayout()
         Me.playerSlot4pnl.SuspendLayout()
         Me.playerSlot3pnl.SuspendLayout()
@@ -165,9 +194,9 @@ Partial Class AdventureWindow
         CType(Me.BattlesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AttacksBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ItemsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.combatListpnl.SuspendLayout()
         Me.inventorypnl.SuspendLayout()
-        Me.Panel1.SuspendLayout()
+        Me.hiredCreaturesListpnl.SuspendLayout()
+        Me.playerInfopnl.SuspendLayout()
         Me.SuspendLayout()
         '
         'Combatpnl
@@ -177,188 +206,25 @@ Partial Class AdventureWindow
         Me.Combatpnl.Controls.Add(Me.enemyTeampnl)
         Me.Combatpnl.Location = New System.Drawing.Point(16, 27)
         Me.Combatpnl.Name = "Combatpnl"
-        Me.Combatpnl.Size = New System.Drawing.Size(953, 326)
+        Me.Combatpnl.Size = New System.Drawing.Size(953, 461)
         Me.Combatpnl.TabIndex = 0
         '
-        'playerTeamlbl
+        'combatListpnl
         '
-        Me.playerTeamlbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.playerTeamlbl.Location = New System.Drawing.Point(3, 4)
-        Me.playerTeamlbl.Name = "playerTeamlbl"
-        Me.playerTeamlbl.Size = New System.Drawing.Size(342, 23)
-        Me.playerTeamlbl.TabIndex = 0
-        Me.playerTeamlbl.Text = "Player's Team"
-        Me.playerTeamlbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.combatListpnl.Controls.Add(Me.combatlst)
+        Me.combatListpnl.Location = New System.Drawing.Point(357, 3)
+        Me.combatListpnl.Name = "combatListpnl"
+        Me.combatListpnl.Size = New System.Drawing.Size(239, 455)
+        Me.combatListpnl.TabIndex = 11
         '
-        'enemySlot2Armortxt
+        'combatlst
         '
-        Me.enemySlot2Armortxt.Location = New System.Drawing.Point(55, 111)
-        Me.enemySlot2Armortxt.Name = "enemySlot2Armortxt"
-        Me.enemySlot2Armortxt.ReadOnly = True
-        Me.enemySlot2Armortxt.Size = New System.Drawing.Size(100, 20)
-        Me.enemySlot2Armortxt.TabIndex = 66
-        '
-        'enemySlot2Armorlbl
-        '
-        Me.enemySlot2Armorlbl.AutoSize = True
-        Me.enemySlot2Armorlbl.Location = New System.Drawing.Point(16, 114)
-        Me.enemySlot2Armorlbl.Name = "enemySlot2Armorlbl"
-        Me.enemySlot2Armorlbl.Size = New System.Drawing.Size(33, 13)
-        Me.enemySlot2Armorlbl.TabIndex = 65
-        Me.enemySlot2Armorlbl.Text = "armor"
-        '
-        'enemySlot2Strengthtxt
-        '
-        Me.enemySlot2Strengthtxt.Location = New System.Drawing.Point(55, 85)
-        Me.enemySlot2Strengthtxt.Name = "enemySlot2Strengthtxt"
-        Me.enemySlot2Strengthtxt.ReadOnly = True
-        Me.enemySlot2Strengthtxt.Size = New System.Drawing.Size(100, 20)
-        Me.enemySlot2Strengthtxt.TabIndex = 64
-        '
-        'enemySlot2Strengthlbl
-        '
-        Me.enemySlot2Strengthlbl.AutoSize = True
-        Me.enemySlot2Strengthlbl.Location = New System.Drawing.Point(4, 88)
-        Me.enemySlot2Strengthlbl.Name = "enemySlot2Strengthlbl"
-        Me.enemySlot2Strengthlbl.Size = New System.Drawing.Size(45, 13)
-        Me.enemySlot2Strengthlbl.TabIndex = 63
-        Me.enemySlot2Strengthlbl.Text = "strength"
-        '
-        'enemySlot2Healthtxt
-        '
-        Me.enemySlot2Healthtxt.Location = New System.Drawing.Point(55, 59)
-        Me.enemySlot2Healthtxt.Name = "enemySlot2Healthtxt"
-        Me.enemySlot2Healthtxt.ReadOnly = True
-        Me.enemySlot2Healthtxt.Size = New System.Drawing.Size(100, 20)
-        Me.enemySlot2Healthtxt.TabIndex = 62
-        '
-        'enemySlot2Healthlbl
-        '
-        Me.enemySlot2Healthlbl.AutoSize = True
-        Me.enemySlot2Healthlbl.Location = New System.Drawing.Point(13, 62)
-        Me.enemySlot2Healthlbl.Name = "enemySlot2Healthlbl"
-        Me.enemySlot2Healthlbl.Size = New System.Drawing.Size(36, 13)
-        Me.enemySlot2Healthlbl.TabIndex = 61
-        Me.enemySlot2Healthlbl.Text = "health"
-        '
-        'enemySlot2Speciestxt
-        '
-        Me.enemySlot2Speciestxt.Location = New System.Drawing.Point(55, 33)
-        Me.enemySlot2Speciestxt.Name = "enemySlot2Speciestxt"
-        Me.enemySlot2Speciestxt.ReadOnly = True
-        Me.enemySlot2Speciestxt.Size = New System.Drawing.Size(100, 20)
-        Me.enemySlot2Speciestxt.TabIndex = 60
-        '
-        'enemySlot2Specieslbl
-        '
-        Me.enemySlot2Specieslbl.AutoSize = True
-        Me.enemySlot2Specieslbl.Location = New System.Drawing.Point(6, 36)
-        Me.enemySlot2Specieslbl.Name = "enemySlot2Specieslbl"
-        Me.enemySlot2Specieslbl.Size = New System.Drawing.Size(43, 13)
-        Me.enemySlot2Specieslbl.TabIndex = 59
-        Me.enemySlot2Specieslbl.Text = "species"
-        '
-        'enemySlot2Nametxt
-        '
-        Me.enemySlot2Nametxt.Location = New System.Drawing.Point(55, 7)
-        Me.enemySlot2Nametxt.Name = "enemySlot2Nametxt"
-        Me.enemySlot2Nametxt.ReadOnly = True
-        Me.enemySlot2Nametxt.Size = New System.Drawing.Size(100, 20)
-        Me.enemySlot2Nametxt.TabIndex = 58
-        '
-        'enemySlot2Namelbl
-        '
-        Me.enemySlot2Namelbl.AutoSize = True
-        Me.enemySlot2Namelbl.Location = New System.Drawing.Point(16, 10)
-        Me.enemySlot2Namelbl.Name = "enemySlot2Namelbl"
-        Me.enemySlot2Namelbl.Size = New System.Drawing.Size(33, 13)
-        Me.enemySlot2Namelbl.TabIndex = 57
-        Me.enemySlot2Namelbl.Text = "name"
-        '
-        'enemySlot1Armortxt
-        '
-        Me.enemySlot1Armortxt.Location = New System.Drawing.Point(55, 111)
-        Me.enemySlot1Armortxt.Name = "enemySlot1Armortxt"
-        Me.enemySlot1Armortxt.ReadOnly = True
-        Me.enemySlot1Armortxt.Size = New System.Drawing.Size(100, 20)
-        Me.enemySlot1Armortxt.TabIndex = 21
-        '
-        'enemySlot1Armorlbl
-        '
-        Me.enemySlot1Armorlbl.AutoSize = True
-        Me.enemySlot1Armorlbl.Location = New System.Drawing.Point(16, 114)
-        Me.enemySlot1Armorlbl.Name = "enemySlot1Armorlbl"
-        Me.enemySlot1Armorlbl.Size = New System.Drawing.Size(33, 13)
-        Me.enemySlot1Armorlbl.TabIndex = 20
-        Me.enemySlot1Armorlbl.Text = "armor"
-        '
-        'enemySlot1Strengthtxt
-        '
-        Me.enemySlot1Strengthtxt.Location = New System.Drawing.Point(55, 85)
-        Me.enemySlot1Strengthtxt.Name = "enemySlot1Strengthtxt"
-        Me.enemySlot1Strengthtxt.ReadOnly = True
-        Me.enemySlot1Strengthtxt.Size = New System.Drawing.Size(100, 20)
-        Me.enemySlot1Strengthtxt.TabIndex = 17
-        '
-        'enemySlot1Strengthlbl
-        '
-        Me.enemySlot1Strengthlbl.AutoSize = True
-        Me.enemySlot1Strengthlbl.Location = New System.Drawing.Point(4, 88)
-        Me.enemySlot1Strengthlbl.Name = "enemySlot1Strengthlbl"
-        Me.enemySlot1Strengthlbl.Size = New System.Drawing.Size(45, 13)
-        Me.enemySlot1Strengthlbl.TabIndex = 16
-        Me.enemySlot1Strengthlbl.Text = "strength"
-        '
-        'enemySlot1Healthtxt
-        '
-        Me.enemySlot1Healthtxt.Location = New System.Drawing.Point(55, 59)
-        Me.enemySlot1Healthtxt.Name = "enemySlot1Healthtxt"
-        Me.enemySlot1Healthtxt.ReadOnly = True
-        Me.enemySlot1Healthtxt.Size = New System.Drawing.Size(100, 20)
-        Me.enemySlot1Healthtxt.TabIndex = 13
-        '
-        'enemySlot1Healthlbl
-        '
-        Me.enemySlot1Healthlbl.AutoSize = True
-        Me.enemySlot1Healthlbl.Location = New System.Drawing.Point(13, 62)
-        Me.enemySlot1Healthlbl.Name = "enemySlot1Healthlbl"
-        Me.enemySlot1Healthlbl.Size = New System.Drawing.Size(36, 13)
-        Me.enemySlot1Healthlbl.TabIndex = 12
-        Me.enemySlot1Healthlbl.Text = "health"
-        '
-        'enemySlot1Speciestxt
-        '
-        Me.enemySlot1Speciestxt.Location = New System.Drawing.Point(55, 33)
-        Me.enemySlot1Speciestxt.Name = "enemySlot1Speciestxt"
-        Me.enemySlot1Speciestxt.ReadOnly = True
-        Me.enemySlot1Speciestxt.Size = New System.Drawing.Size(100, 20)
-        Me.enemySlot1Speciestxt.TabIndex = 9
-        '
-        'enemySlot1Specieslbl
-        '
-        Me.enemySlot1Specieslbl.AutoSize = True
-        Me.enemySlot1Specieslbl.Location = New System.Drawing.Point(6, 36)
-        Me.enemySlot1Specieslbl.Name = "enemySlot1Specieslbl"
-        Me.enemySlot1Specieslbl.Size = New System.Drawing.Size(43, 13)
-        Me.enemySlot1Specieslbl.TabIndex = 8
-        Me.enemySlot1Specieslbl.Text = "species"
-        '
-        'enemySlot1Nametxt
-        '
-        Me.enemySlot1Nametxt.Location = New System.Drawing.Point(55, 7)
-        Me.enemySlot1Nametxt.Name = "enemySlot1Nametxt"
-        Me.enemySlot1Nametxt.ReadOnly = True
-        Me.enemySlot1Nametxt.Size = New System.Drawing.Size(100, 20)
-        Me.enemySlot1Nametxt.TabIndex = 5
-        '
-        'enemySlot1Namelbl
-        '
-        Me.enemySlot1Namelbl.AutoSize = True
-        Me.enemySlot1Namelbl.Location = New System.Drawing.Point(16, 10)
-        Me.enemySlot1Namelbl.Name = "enemySlot1Namelbl"
-        Me.enemySlot1Namelbl.Size = New System.Drawing.Size(33, 13)
-        Me.enemySlot1Namelbl.TabIndex = 4
-        Me.enemySlot1Namelbl.Text = "name"
+        Me.combatlst.CausesValidation = False
+        Me.combatlst.Location = New System.Drawing.Point(3, 37)
+        Me.combatlst.Name = "combatlst"
+        Me.combatlst.SelectionMode = System.Windows.Forms.SelectionMode.None
+        Me.combatlst.Size = New System.Drawing.Size(233, 277)
+        Me.combatlst.TabIndex = 10
         '
         'playersTeampnl
         '
@@ -369,11 +235,14 @@ Partial Class AdventureWindow
         Me.playersTeampnl.Controls.Add(Me.playerSlot1pnl)
         Me.playersTeampnl.Location = New System.Drawing.Point(3, 3)
         Me.playersTeampnl.Name = "playersTeampnl"
-        Me.playersTeampnl.Size = New System.Drawing.Size(348, 319)
+        Me.playersTeampnl.Size = New System.Drawing.Size(348, 455)
         Me.playersTeampnl.TabIndex = 9
         '
         'playerSlot4pnl
         '
+        Me.playerSlot4pnl.Controls.Add(Me.playerSlot4Fillbtn)
+        Me.playerSlot4pnl.Controls.Add(Me.playerSlot4Leveltxt)
+        Me.playerSlot4pnl.Controls.Add(Me.playerSlot4Levellbl)
         Me.playerSlot4pnl.Controls.Add(Me.playerSlot4Nametxt)
         Me.playerSlot4pnl.Controls.Add(Me.playerSlot4Namelbl)
         Me.playerSlot4pnl.Controls.Add(Me.playerSlot4Specieslbl)
@@ -384,9 +253,9 @@ Partial Class AdventureWindow
         Me.playerSlot4pnl.Controls.Add(Me.playerSlot4Strengthtxt)
         Me.playerSlot4pnl.Controls.Add(Me.playerSlot4Armorlbl)
         Me.playerSlot4pnl.Controls.Add(Me.playerSlot4Armortxt)
-        Me.playerSlot4pnl.Location = New System.Drawing.Point(177, 176)
+        Me.playerSlot4pnl.Location = New System.Drawing.Point(177, 259)
         Me.playerSlot4pnl.Name = "playerSlot4pnl"
-        Me.playerSlot4pnl.Size = New System.Drawing.Size(168, 140)
+        Me.playerSlot4pnl.Size = New System.Drawing.Size(168, 193)
         Me.playerSlot4pnl.TabIndex = 9
         '
         'playerSlot4Nametxt
@@ -409,7 +278,7 @@ Partial Class AdventureWindow
         'playerSlot4Specieslbl
         '
         Me.playerSlot4Specieslbl.AutoSize = True
-        Me.playerSlot4Specieslbl.Location = New System.Drawing.Point(7, 37)
+        Me.playerSlot4Specieslbl.Location = New System.Drawing.Point(7, 63)
         Me.playerSlot4Specieslbl.Name = "playerSlot4Specieslbl"
         Me.playerSlot4Specieslbl.Size = New System.Drawing.Size(43, 13)
         Me.playerSlot4Specieslbl.TabIndex = 49
@@ -417,7 +286,7 @@ Partial Class AdventureWindow
         '
         'playerSlot4Speciestxt
         '
-        Me.playerSlot4Speciestxt.Location = New System.Drawing.Point(56, 34)
+        Me.playerSlot4Speciestxt.Location = New System.Drawing.Point(56, 60)
         Me.playerSlot4Speciestxt.Name = "playerSlot4Speciestxt"
         Me.playerSlot4Speciestxt.ReadOnly = True
         Me.playerSlot4Speciestxt.Size = New System.Drawing.Size(100, 20)
@@ -426,7 +295,7 @@ Partial Class AdventureWindow
         'playerSlot4Healthlbl
         '
         Me.playerSlot4Healthlbl.AutoSize = True
-        Me.playerSlot4Healthlbl.Location = New System.Drawing.Point(14, 63)
+        Me.playerSlot4Healthlbl.Location = New System.Drawing.Point(14, 89)
         Me.playerSlot4Healthlbl.Name = "playerSlot4Healthlbl"
         Me.playerSlot4Healthlbl.Size = New System.Drawing.Size(36, 13)
         Me.playerSlot4Healthlbl.TabIndex = 51
@@ -434,7 +303,7 @@ Partial Class AdventureWindow
         '
         'playerSlot4Healthtxt
         '
-        Me.playerSlot4Healthtxt.Location = New System.Drawing.Point(56, 60)
+        Me.playerSlot4Healthtxt.Location = New System.Drawing.Point(56, 86)
         Me.playerSlot4Healthtxt.Name = "playerSlot4Healthtxt"
         Me.playerSlot4Healthtxt.ReadOnly = True
         Me.playerSlot4Healthtxt.Size = New System.Drawing.Size(100, 20)
@@ -443,7 +312,7 @@ Partial Class AdventureWindow
         'playerSlot4Strengthlbl
         '
         Me.playerSlot4Strengthlbl.AutoSize = True
-        Me.playerSlot4Strengthlbl.Location = New System.Drawing.Point(5, 89)
+        Me.playerSlot4Strengthlbl.Location = New System.Drawing.Point(5, 115)
         Me.playerSlot4Strengthlbl.Name = "playerSlot4Strengthlbl"
         Me.playerSlot4Strengthlbl.Size = New System.Drawing.Size(45, 13)
         Me.playerSlot4Strengthlbl.TabIndex = 53
@@ -451,7 +320,7 @@ Partial Class AdventureWindow
         '
         'playerSlot4Strengthtxt
         '
-        Me.playerSlot4Strengthtxt.Location = New System.Drawing.Point(56, 86)
+        Me.playerSlot4Strengthtxt.Location = New System.Drawing.Point(56, 112)
         Me.playerSlot4Strengthtxt.Name = "playerSlot4Strengthtxt"
         Me.playerSlot4Strengthtxt.ReadOnly = True
         Me.playerSlot4Strengthtxt.Size = New System.Drawing.Size(100, 20)
@@ -460,7 +329,7 @@ Partial Class AdventureWindow
         'playerSlot4Armorlbl
         '
         Me.playerSlot4Armorlbl.AutoSize = True
-        Me.playerSlot4Armorlbl.Location = New System.Drawing.Point(17, 115)
+        Me.playerSlot4Armorlbl.Location = New System.Drawing.Point(17, 141)
         Me.playerSlot4Armorlbl.Name = "playerSlot4Armorlbl"
         Me.playerSlot4Armorlbl.Size = New System.Drawing.Size(33, 13)
         Me.playerSlot4Armorlbl.TabIndex = 55
@@ -468,14 +337,27 @@ Partial Class AdventureWindow
         '
         'playerSlot4Armortxt
         '
-        Me.playerSlot4Armortxt.Location = New System.Drawing.Point(56, 112)
+        Me.playerSlot4Armortxt.Location = New System.Drawing.Point(56, 138)
         Me.playerSlot4Armortxt.Name = "playerSlot4Armortxt"
         Me.playerSlot4Armortxt.ReadOnly = True
         Me.playerSlot4Armortxt.Size = New System.Drawing.Size(100, 20)
         Me.playerSlot4Armortxt.TabIndex = 56
         '
+        'playerTeamlbl
+        '
+        Me.playerTeamlbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.playerTeamlbl.Location = New System.Drawing.Point(3, 4)
+        Me.playerTeamlbl.Name = "playerTeamlbl"
+        Me.playerTeamlbl.Size = New System.Drawing.Size(342, 23)
+        Me.playerTeamlbl.TabIndex = 0
+        Me.playerTeamlbl.Text = "Player's Team"
+        Me.playerTeamlbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'playerSlot3pnl
         '
+        Me.playerSlot3pnl.Controls.Add(Me.playerSlot3Fillbtn)
+        Me.playerSlot3pnl.Controls.Add(Me.playerSlot3Leveltxt)
+        Me.playerSlot3pnl.Controls.Add(Me.playerSlot3Levellbl)
         Me.playerSlot3pnl.Controls.Add(Me.playerSlot3Nametxt)
         Me.playerSlot3pnl.Controls.Add(Me.playerSlot3Namelbl)
         Me.playerSlot3pnl.Controls.Add(Me.playerSlot3Specieslbl)
@@ -486,9 +368,9 @@ Partial Class AdventureWindow
         Me.playerSlot3pnl.Controls.Add(Me.playerSlot3Strengthtxt)
         Me.playerSlot3pnl.Controls.Add(Me.playerSlot3Armorlbl)
         Me.playerSlot3pnl.Controls.Add(Me.playerSlot3Armortxt)
-        Me.playerSlot3pnl.Location = New System.Drawing.Point(3, 176)
+        Me.playerSlot3pnl.Location = New System.Drawing.Point(3, 259)
         Me.playerSlot3pnl.Name = "playerSlot3pnl"
-        Me.playerSlot3pnl.Size = New System.Drawing.Size(168, 140)
+        Me.playerSlot3pnl.Size = New System.Drawing.Size(168, 193)
         Me.playerSlot3pnl.TabIndex = 9
         '
         'playerSlot3Nametxt
@@ -511,7 +393,7 @@ Partial Class AdventureWindow
         'playerSlot3Specieslbl
         '
         Me.playerSlot3Specieslbl.AutoSize = True
-        Me.playerSlot3Specieslbl.Location = New System.Drawing.Point(9, 37)
+        Me.playerSlot3Specieslbl.Location = New System.Drawing.Point(9, 63)
         Me.playerSlot3Specieslbl.Name = "playerSlot3Specieslbl"
         Me.playerSlot3Specieslbl.Size = New System.Drawing.Size(43, 13)
         Me.playerSlot3Specieslbl.TabIndex = 39
@@ -519,7 +401,7 @@ Partial Class AdventureWindow
         '
         'playerSlot3Speciestxt
         '
-        Me.playerSlot3Speciestxt.Location = New System.Drawing.Point(58, 34)
+        Me.playerSlot3Speciestxt.Location = New System.Drawing.Point(58, 60)
         Me.playerSlot3Speciestxt.Name = "playerSlot3Speciestxt"
         Me.playerSlot3Speciestxt.ReadOnly = True
         Me.playerSlot3Speciestxt.Size = New System.Drawing.Size(100, 20)
@@ -528,7 +410,7 @@ Partial Class AdventureWindow
         'playerSlot3Healthlbl
         '
         Me.playerSlot3Healthlbl.AutoSize = True
-        Me.playerSlot3Healthlbl.Location = New System.Drawing.Point(16, 63)
+        Me.playerSlot3Healthlbl.Location = New System.Drawing.Point(16, 89)
         Me.playerSlot3Healthlbl.Name = "playerSlot3Healthlbl"
         Me.playerSlot3Healthlbl.Size = New System.Drawing.Size(36, 13)
         Me.playerSlot3Healthlbl.TabIndex = 41
@@ -536,7 +418,7 @@ Partial Class AdventureWindow
         '
         'playerSlot3Healthtxt
         '
-        Me.playerSlot3Healthtxt.Location = New System.Drawing.Point(58, 60)
+        Me.playerSlot3Healthtxt.Location = New System.Drawing.Point(58, 86)
         Me.playerSlot3Healthtxt.Name = "playerSlot3Healthtxt"
         Me.playerSlot3Healthtxt.ReadOnly = True
         Me.playerSlot3Healthtxt.Size = New System.Drawing.Size(100, 20)
@@ -545,7 +427,7 @@ Partial Class AdventureWindow
         'playerSlot3Strengthlbl
         '
         Me.playerSlot3Strengthlbl.AutoSize = True
-        Me.playerSlot3Strengthlbl.Location = New System.Drawing.Point(7, 89)
+        Me.playerSlot3Strengthlbl.Location = New System.Drawing.Point(7, 115)
         Me.playerSlot3Strengthlbl.Name = "playerSlot3Strengthlbl"
         Me.playerSlot3Strengthlbl.Size = New System.Drawing.Size(45, 13)
         Me.playerSlot3Strengthlbl.TabIndex = 43
@@ -553,7 +435,7 @@ Partial Class AdventureWindow
         '
         'playerSlot3Strengthtxt
         '
-        Me.playerSlot3Strengthtxt.Location = New System.Drawing.Point(58, 86)
+        Me.playerSlot3Strengthtxt.Location = New System.Drawing.Point(58, 112)
         Me.playerSlot3Strengthtxt.Name = "playerSlot3Strengthtxt"
         Me.playerSlot3Strengthtxt.ReadOnly = True
         Me.playerSlot3Strengthtxt.Size = New System.Drawing.Size(100, 20)
@@ -562,7 +444,7 @@ Partial Class AdventureWindow
         'playerSlot3Armorlbl
         '
         Me.playerSlot3Armorlbl.AutoSize = True
-        Me.playerSlot3Armorlbl.Location = New System.Drawing.Point(19, 115)
+        Me.playerSlot3Armorlbl.Location = New System.Drawing.Point(19, 141)
         Me.playerSlot3Armorlbl.Name = "playerSlot3Armorlbl"
         Me.playerSlot3Armorlbl.Size = New System.Drawing.Size(33, 13)
         Me.playerSlot3Armorlbl.TabIndex = 45
@@ -570,7 +452,7 @@ Partial Class AdventureWindow
         '
         'playerSlot3Armortxt
         '
-        Me.playerSlot3Armortxt.Location = New System.Drawing.Point(58, 112)
+        Me.playerSlot3Armortxt.Location = New System.Drawing.Point(58, 138)
         Me.playerSlot3Armortxt.Name = "playerSlot3Armortxt"
         Me.playerSlot3Armortxt.ReadOnly = True
         Me.playerSlot3Armortxt.Size = New System.Drawing.Size(100, 20)
@@ -578,6 +460,9 @@ Partial Class AdventureWindow
         '
         'playerSlot2pnl
         '
+        Me.playerSlot2pnl.Controls.Add(Me.playerSlot2Fillbtn)
+        Me.playerSlot2pnl.Controls.Add(Me.playerSlot2Leveltxt)
+        Me.playerSlot2pnl.Controls.Add(Me.playerSlot2Levellbl)
         Me.playerSlot2pnl.Controls.Add(Me.playerSlot2Nametxt)
         Me.playerSlot2pnl.Controls.Add(Me.playerSlot2Namelbl)
         Me.playerSlot2pnl.Controls.Add(Me.playerSlot2Specieslbl)
@@ -590,7 +475,7 @@ Partial Class AdventureWindow
         Me.playerSlot2pnl.Controls.Add(Me.playerSlot2Armortxt)
         Me.playerSlot2pnl.Location = New System.Drawing.Point(177, 30)
         Me.playerSlot2pnl.Name = "playerSlot2pnl"
-        Me.playerSlot2pnl.Size = New System.Drawing.Size(168, 140)
+        Me.playerSlot2pnl.Size = New System.Drawing.Size(168, 213)
         Me.playerSlot2pnl.TabIndex = 1
         '
         'playerSlot2Nametxt
@@ -613,7 +498,7 @@ Partial Class AdventureWindow
         'playerSlot2Specieslbl
         '
         Me.playerSlot2Specieslbl.AutoSize = True
-        Me.playerSlot2Specieslbl.Location = New System.Drawing.Point(7, 36)
+        Me.playerSlot2Specieslbl.Location = New System.Drawing.Point(7, 62)
         Me.playerSlot2Specieslbl.Name = "playerSlot2Specieslbl"
         Me.playerSlot2Specieslbl.Size = New System.Drawing.Size(43, 13)
         Me.playerSlot2Specieslbl.TabIndex = 29
@@ -621,7 +506,7 @@ Partial Class AdventureWindow
         '
         'playerSlot2Speciestxt
         '
-        Me.playerSlot2Speciestxt.Location = New System.Drawing.Point(56, 33)
+        Me.playerSlot2Speciestxt.Location = New System.Drawing.Point(56, 59)
         Me.playerSlot2Speciestxt.Name = "playerSlot2Speciestxt"
         Me.playerSlot2Speciestxt.ReadOnly = True
         Me.playerSlot2Speciestxt.Size = New System.Drawing.Size(100, 20)
@@ -630,7 +515,7 @@ Partial Class AdventureWindow
         'playerSlot2Healthlbl
         '
         Me.playerSlot2Healthlbl.AutoSize = True
-        Me.playerSlot2Healthlbl.Location = New System.Drawing.Point(14, 62)
+        Me.playerSlot2Healthlbl.Location = New System.Drawing.Point(14, 88)
         Me.playerSlot2Healthlbl.Name = "playerSlot2Healthlbl"
         Me.playerSlot2Healthlbl.Size = New System.Drawing.Size(36, 13)
         Me.playerSlot2Healthlbl.TabIndex = 31
@@ -638,7 +523,7 @@ Partial Class AdventureWindow
         '
         'playerSlot2Healthtxt
         '
-        Me.playerSlot2Healthtxt.Location = New System.Drawing.Point(56, 59)
+        Me.playerSlot2Healthtxt.Location = New System.Drawing.Point(56, 85)
         Me.playerSlot2Healthtxt.Name = "playerSlot2Healthtxt"
         Me.playerSlot2Healthtxt.ReadOnly = True
         Me.playerSlot2Healthtxt.Size = New System.Drawing.Size(100, 20)
@@ -647,7 +532,7 @@ Partial Class AdventureWindow
         'playerSlot2Strengthlbl
         '
         Me.playerSlot2Strengthlbl.AutoSize = True
-        Me.playerSlot2Strengthlbl.Location = New System.Drawing.Point(5, 88)
+        Me.playerSlot2Strengthlbl.Location = New System.Drawing.Point(5, 114)
         Me.playerSlot2Strengthlbl.Name = "playerSlot2Strengthlbl"
         Me.playerSlot2Strengthlbl.Size = New System.Drawing.Size(45, 13)
         Me.playerSlot2Strengthlbl.TabIndex = 33
@@ -655,7 +540,7 @@ Partial Class AdventureWindow
         '
         'playerSlot2Strengthtxt
         '
-        Me.playerSlot2Strengthtxt.Location = New System.Drawing.Point(56, 85)
+        Me.playerSlot2Strengthtxt.Location = New System.Drawing.Point(56, 111)
         Me.playerSlot2Strengthtxt.Name = "playerSlot2Strengthtxt"
         Me.playerSlot2Strengthtxt.ReadOnly = True
         Me.playerSlot2Strengthtxt.Size = New System.Drawing.Size(100, 20)
@@ -664,7 +549,7 @@ Partial Class AdventureWindow
         'playerSlot2Armorlbl
         '
         Me.playerSlot2Armorlbl.AutoSize = True
-        Me.playerSlot2Armorlbl.Location = New System.Drawing.Point(17, 114)
+        Me.playerSlot2Armorlbl.Location = New System.Drawing.Point(17, 140)
         Me.playerSlot2Armorlbl.Name = "playerSlot2Armorlbl"
         Me.playerSlot2Armorlbl.Size = New System.Drawing.Size(33, 13)
         Me.playerSlot2Armorlbl.TabIndex = 35
@@ -672,7 +557,7 @@ Partial Class AdventureWindow
         '
         'playerSlot2Armortxt
         '
-        Me.playerSlot2Armortxt.Location = New System.Drawing.Point(56, 111)
+        Me.playerSlot2Armortxt.Location = New System.Drawing.Point(56, 137)
         Me.playerSlot2Armortxt.Name = "playerSlot2Armortxt"
         Me.playerSlot2Armortxt.ReadOnly = True
         Me.playerSlot2Armortxt.Size = New System.Drawing.Size(100, 20)
@@ -680,6 +565,9 @@ Partial Class AdventureWindow
         '
         'playerSlot1pnl
         '
+        Me.playerSlot1pnl.Controls.Add(Me.playerSlot1Fillbtn)
+        Me.playerSlot1pnl.Controls.Add(Me.playerSlot1Leveltxt)
+        Me.playerSlot1pnl.Controls.Add(Me.playerSlot1Levellbl)
         Me.playerSlot1pnl.Controls.Add(Me.playerSlot1Nametxt)
         Me.playerSlot1pnl.Controls.Add(Me.playerSlot1Namelbl)
         Me.playerSlot1pnl.Controls.Add(Me.playerSlot1Specieslbl)
@@ -692,7 +580,7 @@ Partial Class AdventureWindow
         Me.playerSlot1pnl.Controls.Add(Me.playerSlot1Armortxt)
         Me.playerSlot1pnl.Location = New System.Drawing.Point(3, 30)
         Me.playerSlot1pnl.Name = "playerSlot1pnl"
-        Me.playerSlot1pnl.Size = New System.Drawing.Size(168, 140)
+        Me.playerSlot1pnl.Size = New System.Drawing.Size(168, 213)
         Me.playerSlot1pnl.TabIndex = 0
         '
         'playerSlot1Nametxt
@@ -715,7 +603,7 @@ Partial Class AdventureWindow
         'playerSlot1Specieslbl
         '
         Me.playerSlot1Specieslbl.AutoSize = True
-        Me.playerSlot1Specieslbl.Location = New System.Drawing.Point(9, 36)
+        Me.playerSlot1Specieslbl.Location = New System.Drawing.Point(9, 62)
         Me.playerSlot1Specieslbl.Name = "playerSlot1Specieslbl"
         Me.playerSlot1Specieslbl.Size = New System.Drawing.Size(43, 13)
         Me.playerSlot1Specieslbl.TabIndex = 6
@@ -723,7 +611,7 @@ Partial Class AdventureWindow
         '
         'playerSlot1Speciestxt
         '
-        Me.playerSlot1Speciestxt.Location = New System.Drawing.Point(58, 33)
+        Me.playerSlot1Speciestxt.Location = New System.Drawing.Point(58, 59)
         Me.playerSlot1Speciestxt.Name = "playerSlot1Speciestxt"
         Me.playerSlot1Speciestxt.ReadOnly = True
         Me.playerSlot1Speciestxt.Size = New System.Drawing.Size(100, 20)
@@ -732,7 +620,7 @@ Partial Class AdventureWindow
         'playerSlot1Healthlbl
         '
         Me.playerSlot1Healthlbl.AutoSize = True
-        Me.playerSlot1Healthlbl.Location = New System.Drawing.Point(16, 62)
+        Me.playerSlot1Healthlbl.Location = New System.Drawing.Point(16, 88)
         Me.playerSlot1Healthlbl.Name = "playerSlot1Healthlbl"
         Me.playerSlot1Healthlbl.Size = New System.Drawing.Size(36, 13)
         Me.playerSlot1Healthlbl.TabIndex = 10
@@ -740,7 +628,7 @@ Partial Class AdventureWindow
         '
         'playerSlot1Healthtxt
         '
-        Me.playerSlot1Healthtxt.Location = New System.Drawing.Point(58, 59)
+        Me.playerSlot1Healthtxt.Location = New System.Drawing.Point(58, 85)
         Me.playerSlot1Healthtxt.Name = "playerSlot1Healthtxt"
         Me.playerSlot1Healthtxt.ReadOnly = True
         Me.playerSlot1Healthtxt.Size = New System.Drawing.Size(100, 20)
@@ -749,7 +637,7 @@ Partial Class AdventureWindow
         'playerSlot1Strengthlbl
         '
         Me.playerSlot1Strengthlbl.AutoSize = True
-        Me.playerSlot1Strengthlbl.Location = New System.Drawing.Point(7, 88)
+        Me.playerSlot1Strengthlbl.Location = New System.Drawing.Point(7, 114)
         Me.playerSlot1Strengthlbl.Name = "playerSlot1Strengthlbl"
         Me.playerSlot1Strengthlbl.Size = New System.Drawing.Size(45, 13)
         Me.playerSlot1Strengthlbl.TabIndex = 14
@@ -757,7 +645,7 @@ Partial Class AdventureWindow
         '
         'playerSlot1Strengthtxt
         '
-        Me.playerSlot1Strengthtxt.Location = New System.Drawing.Point(58, 85)
+        Me.playerSlot1Strengthtxt.Location = New System.Drawing.Point(58, 111)
         Me.playerSlot1Strengthtxt.Name = "playerSlot1Strengthtxt"
         Me.playerSlot1Strengthtxt.ReadOnly = True
         Me.playerSlot1Strengthtxt.Size = New System.Drawing.Size(100, 20)
@@ -766,7 +654,7 @@ Partial Class AdventureWindow
         'playerSlot1Armorlbl
         '
         Me.playerSlot1Armorlbl.AutoSize = True
-        Me.playerSlot1Armorlbl.Location = New System.Drawing.Point(19, 114)
+        Me.playerSlot1Armorlbl.Location = New System.Drawing.Point(19, 140)
         Me.playerSlot1Armorlbl.Name = "playerSlot1Armorlbl"
         Me.playerSlot1Armorlbl.Size = New System.Drawing.Size(33, 13)
         Me.playerSlot1Armorlbl.TabIndex = 18
@@ -774,7 +662,7 @@ Partial Class AdventureWindow
         '
         'playerSlot1Armortxt
         '
-        Me.playerSlot1Armortxt.Location = New System.Drawing.Point(58, 111)
+        Me.playerSlot1Armortxt.Location = New System.Drawing.Point(58, 137)
         Me.playerSlot1Armortxt.Name = "playerSlot1Armortxt"
         Me.playerSlot1Armortxt.ReadOnly = True
         Me.playerSlot1Armortxt.Size = New System.Drawing.Size(100, 20)
@@ -786,14 +674,16 @@ Partial Class AdventureWindow
         Me.enemyTeampnl.Controls.Add(Me.enemySlot3pnl)
         Me.enemyTeampnl.Controls.Add(Me.enemySlot2pnl)
         Me.enemyTeampnl.Controls.Add(Me.enemySlot1pnl)
-        Me.enemyTeampnl.Controls.Add(Me.creature2)
+        Me.enemyTeampnl.Controls.Add(Me.enemyTeamlbl)
         Me.enemyTeampnl.Location = New System.Drawing.Point(602, 3)
         Me.enemyTeampnl.Name = "enemyTeampnl"
-        Me.enemyTeampnl.Size = New System.Drawing.Size(348, 319)
+        Me.enemyTeampnl.Size = New System.Drawing.Size(348, 455)
         Me.enemyTeampnl.TabIndex = 10
         '
         'enemySlot4pnl
         '
+        Me.enemySlot4pnl.Controls.Add(Me.enemySlot4Leveltxt)
+        Me.enemySlot4pnl.Controls.Add(Me.enemySlot4Levellbl)
         Me.enemySlot4pnl.Controls.Add(Me.enemySlot4Nametxt)
         Me.enemySlot4pnl.Controls.Add(Me.enemySlot4Armortxt)
         Me.enemySlot4pnl.Controls.Add(Me.enemySlot4Namelbl)
@@ -804,14 +694,14 @@ Partial Class AdventureWindow
         Me.enemySlot4pnl.Controls.Add(Me.enemySlot4Strengthlbl)
         Me.enemySlot4pnl.Controls.Add(Me.enemySlot4Healthlbl)
         Me.enemySlot4pnl.Controls.Add(Me.enemySlot4Healthtxt)
-        Me.enemySlot4pnl.Location = New System.Drawing.Point(177, 176)
+        Me.enemySlot4pnl.Location = New System.Drawing.Point(177, 259)
         Me.enemySlot4pnl.Name = "enemySlot4pnl"
-        Me.enemySlot4pnl.Size = New System.Drawing.Size(168, 140)
+        Me.enemySlot4pnl.Size = New System.Drawing.Size(168, 193)
         Me.enemySlot4pnl.TabIndex = 9
         '
         'enemySlot4Nametxt
         '
-        Me.enemySlot4Nametxt.Location = New System.Drawing.Point(59, 8)
+        Me.enemySlot4Nametxt.Location = New System.Drawing.Point(55, 8)
         Me.enemySlot4Nametxt.Name = "enemySlot4Nametxt"
         Me.enemySlot4Nametxt.ReadOnly = True
         Me.enemySlot4Nametxt.Size = New System.Drawing.Size(100, 20)
@@ -819,7 +709,7 @@ Partial Class AdventureWindow
         '
         'enemySlot4Armortxt
         '
-        Me.enemySlot4Armortxt.Location = New System.Drawing.Point(59, 112)
+        Me.enemySlot4Armortxt.Location = New System.Drawing.Point(55, 138)
         Me.enemySlot4Armortxt.Name = "enemySlot4Armortxt"
         Me.enemySlot4Armortxt.ReadOnly = True
         Me.enemySlot4Armortxt.Size = New System.Drawing.Size(100, 20)
@@ -828,7 +718,7 @@ Partial Class AdventureWindow
         'enemySlot4Namelbl
         '
         Me.enemySlot4Namelbl.AutoSize = True
-        Me.enemySlot4Namelbl.Location = New System.Drawing.Point(20, 11)
+        Me.enemySlot4Namelbl.Location = New System.Drawing.Point(16, 11)
         Me.enemySlot4Namelbl.Name = "enemySlot4Namelbl"
         Me.enemySlot4Namelbl.Size = New System.Drawing.Size(33, 13)
         Me.enemySlot4Namelbl.TabIndex = 77
@@ -837,7 +727,7 @@ Partial Class AdventureWindow
         'enemySlot4Armorlbl
         '
         Me.enemySlot4Armorlbl.AutoSize = True
-        Me.enemySlot4Armorlbl.Location = New System.Drawing.Point(20, 115)
+        Me.enemySlot4Armorlbl.Location = New System.Drawing.Point(16, 141)
         Me.enemySlot4Armorlbl.Name = "enemySlot4Armorlbl"
         Me.enemySlot4Armorlbl.Size = New System.Drawing.Size(33, 13)
         Me.enemySlot4Armorlbl.TabIndex = 85
@@ -846,7 +736,7 @@ Partial Class AdventureWindow
         'enemySlot4Specieslbl
         '
         Me.enemySlot4Specieslbl.AutoSize = True
-        Me.enemySlot4Specieslbl.Location = New System.Drawing.Point(10, 37)
+        Me.enemySlot4Specieslbl.Location = New System.Drawing.Point(6, 63)
         Me.enemySlot4Specieslbl.Name = "enemySlot4Specieslbl"
         Me.enemySlot4Specieslbl.Size = New System.Drawing.Size(43, 13)
         Me.enemySlot4Specieslbl.TabIndex = 79
@@ -854,7 +744,7 @@ Partial Class AdventureWindow
         '
         'enemySlot4Strengthtxt
         '
-        Me.enemySlot4Strengthtxt.Location = New System.Drawing.Point(59, 86)
+        Me.enemySlot4Strengthtxt.Location = New System.Drawing.Point(55, 112)
         Me.enemySlot4Strengthtxt.Name = "enemySlot4Strengthtxt"
         Me.enemySlot4Strengthtxt.ReadOnly = True
         Me.enemySlot4Strengthtxt.Size = New System.Drawing.Size(100, 20)
@@ -862,7 +752,7 @@ Partial Class AdventureWindow
         '
         'enemySlot4Speciestxt
         '
-        Me.enemySlot4Speciestxt.Location = New System.Drawing.Point(59, 34)
+        Me.enemySlot4Speciestxt.Location = New System.Drawing.Point(55, 60)
         Me.enemySlot4Speciestxt.Name = "enemySlot4Speciestxt"
         Me.enemySlot4Speciestxt.ReadOnly = True
         Me.enemySlot4Speciestxt.Size = New System.Drawing.Size(100, 20)
@@ -871,7 +761,7 @@ Partial Class AdventureWindow
         'enemySlot4Strengthlbl
         '
         Me.enemySlot4Strengthlbl.AutoSize = True
-        Me.enemySlot4Strengthlbl.Location = New System.Drawing.Point(8, 89)
+        Me.enemySlot4Strengthlbl.Location = New System.Drawing.Point(4, 115)
         Me.enemySlot4Strengthlbl.Name = "enemySlot4Strengthlbl"
         Me.enemySlot4Strengthlbl.Size = New System.Drawing.Size(45, 13)
         Me.enemySlot4Strengthlbl.TabIndex = 83
@@ -880,7 +770,7 @@ Partial Class AdventureWindow
         'enemySlot4Healthlbl
         '
         Me.enemySlot4Healthlbl.AutoSize = True
-        Me.enemySlot4Healthlbl.Location = New System.Drawing.Point(17, 63)
+        Me.enemySlot4Healthlbl.Location = New System.Drawing.Point(13, 89)
         Me.enemySlot4Healthlbl.Name = "enemySlot4Healthlbl"
         Me.enemySlot4Healthlbl.Size = New System.Drawing.Size(36, 13)
         Me.enemySlot4Healthlbl.TabIndex = 81
@@ -888,7 +778,7 @@ Partial Class AdventureWindow
         '
         'enemySlot4Healthtxt
         '
-        Me.enemySlot4Healthtxt.Location = New System.Drawing.Point(59, 60)
+        Me.enemySlot4Healthtxt.Location = New System.Drawing.Point(55, 86)
         Me.enemySlot4Healthtxt.Name = "enemySlot4Healthtxt"
         Me.enemySlot4Healthtxt.ReadOnly = True
         Me.enemySlot4Healthtxt.Size = New System.Drawing.Size(100, 20)
@@ -896,6 +786,8 @@ Partial Class AdventureWindow
         '
         'enemySlot3pnl
         '
+        Me.enemySlot3pnl.Controls.Add(Me.enemySlot3Leveltxt)
+        Me.enemySlot3pnl.Controls.Add(Me.enemySlot3Levellbl)
         Me.enemySlot3pnl.Controls.Add(Me.enemySlot3Nametxt)
         Me.enemySlot3pnl.Controls.Add(Me.enemySlot3Namelbl)
         Me.enemySlot3pnl.Controls.Add(Me.enemySlot3Specieslbl)
@@ -906,14 +798,14 @@ Partial Class AdventureWindow
         Me.enemySlot3pnl.Controls.Add(Me.enemySlot3Strengthtxt)
         Me.enemySlot3pnl.Controls.Add(Me.enemySlot3Armorlbl)
         Me.enemySlot3pnl.Controls.Add(Me.enemySlot3Armortxt)
-        Me.enemySlot3pnl.Location = New System.Drawing.Point(3, 176)
+        Me.enemySlot3pnl.Location = New System.Drawing.Point(3, 259)
         Me.enemySlot3pnl.Name = "enemySlot3pnl"
-        Me.enemySlot3pnl.Size = New System.Drawing.Size(168, 140)
+        Me.enemySlot3pnl.Size = New System.Drawing.Size(168, 193)
         Me.enemySlot3pnl.TabIndex = 9
         '
         'enemySlot3Nametxt
         '
-        Me.enemySlot3Nametxt.Location = New System.Drawing.Point(58, 8)
+        Me.enemySlot3Nametxt.Location = New System.Drawing.Point(55, 8)
         Me.enemySlot3Nametxt.Name = "enemySlot3Nametxt"
         Me.enemySlot3Nametxt.ReadOnly = True
         Me.enemySlot3Nametxt.Size = New System.Drawing.Size(100, 20)
@@ -922,7 +814,7 @@ Partial Class AdventureWindow
         'enemySlot3Namelbl
         '
         Me.enemySlot3Namelbl.AutoSize = True
-        Me.enemySlot3Namelbl.Location = New System.Drawing.Point(19, 11)
+        Me.enemySlot3Namelbl.Location = New System.Drawing.Point(16, 11)
         Me.enemySlot3Namelbl.Name = "enemySlot3Namelbl"
         Me.enemySlot3Namelbl.Size = New System.Drawing.Size(33, 13)
         Me.enemySlot3Namelbl.TabIndex = 67
@@ -931,7 +823,7 @@ Partial Class AdventureWindow
         'enemySlot3Specieslbl
         '
         Me.enemySlot3Specieslbl.AutoSize = True
-        Me.enemySlot3Specieslbl.Location = New System.Drawing.Point(9, 37)
+        Me.enemySlot3Specieslbl.Location = New System.Drawing.Point(6, 63)
         Me.enemySlot3Specieslbl.Name = "enemySlot3Specieslbl"
         Me.enemySlot3Specieslbl.Size = New System.Drawing.Size(43, 13)
         Me.enemySlot3Specieslbl.TabIndex = 69
@@ -939,7 +831,7 @@ Partial Class AdventureWindow
         '
         'enemySlot3Speciestxt
         '
-        Me.enemySlot3Speciestxt.Location = New System.Drawing.Point(58, 34)
+        Me.enemySlot3Speciestxt.Location = New System.Drawing.Point(55, 60)
         Me.enemySlot3Speciestxt.Name = "enemySlot3Speciestxt"
         Me.enemySlot3Speciestxt.ReadOnly = True
         Me.enemySlot3Speciestxt.Size = New System.Drawing.Size(100, 20)
@@ -948,7 +840,7 @@ Partial Class AdventureWindow
         'enemySlot3Healthlbl
         '
         Me.enemySlot3Healthlbl.AutoSize = True
-        Me.enemySlot3Healthlbl.Location = New System.Drawing.Point(16, 63)
+        Me.enemySlot3Healthlbl.Location = New System.Drawing.Point(13, 89)
         Me.enemySlot3Healthlbl.Name = "enemySlot3Healthlbl"
         Me.enemySlot3Healthlbl.Size = New System.Drawing.Size(36, 13)
         Me.enemySlot3Healthlbl.TabIndex = 71
@@ -956,7 +848,7 @@ Partial Class AdventureWindow
         '
         'enemySlot3Healthtxt
         '
-        Me.enemySlot3Healthtxt.Location = New System.Drawing.Point(58, 60)
+        Me.enemySlot3Healthtxt.Location = New System.Drawing.Point(55, 86)
         Me.enemySlot3Healthtxt.Name = "enemySlot3Healthtxt"
         Me.enemySlot3Healthtxt.ReadOnly = True
         Me.enemySlot3Healthtxt.Size = New System.Drawing.Size(100, 20)
@@ -965,7 +857,7 @@ Partial Class AdventureWindow
         'enemySlot3Strengthlbl
         '
         Me.enemySlot3Strengthlbl.AutoSize = True
-        Me.enemySlot3Strengthlbl.Location = New System.Drawing.Point(7, 89)
+        Me.enemySlot3Strengthlbl.Location = New System.Drawing.Point(4, 115)
         Me.enemySlot3Strengthlbl.Name = "enemySlot3Strengthlbl"
         Me.enemySlot3Strengthlbl.Size = New System.Drawing.Size(45, 13)
         Me.enemySlot3Strengthlbl.TabIndex = 73
@@ -973,7 +865,7 @@ Partial Class AdventureWindow
         '
         'enemySlot3Strengthtxt
         '
-        Me.enemySlot3Strengthtxt.Location = New System.Drawing.Point(58, 86)
+        Me.enemySlot3Strengthtxt.Location = New System.Drawing.Point(55, 112)
         Me.enemySlot3Strengthtxt.Name = "enemySlot3Strengthtxt"
         Me.enemySlot3Strengthtxt.ReadOnly = True
         Me.enemySlot3Strengthtxt.Size = New System.Drawing.Size(100, 20)
@@ -982,7 +874,7 @@ Partial Class AdventureWindow
         'enemySlot3Armorlbl
         '
         Me.enemySlot3Armorlbl.AutoSize = True
-        Me.enemySlot3Armorlbl.Location = New System.Drawing.Point(19, 115)
+        Me.enemySlot3Armorlbl.Location = New System.Drawing.Point(16, 141)
         Me.enemySlot3Armorlbl.Name = "enemySlot3Armorlbl"
         Me.enemySlot3Armorlbl.Size = New System.Drawing.Size(33, 13)
         Me.enemySlot3Armorlbl.TabIndex = 75
@@ -990,7 +882,7 @@ Partial Class AdventureWindow
         '
         'enemySlot3Armortxt
         '
-        Me.enemySlot3Armortxt.Location = New System.Drawing.Point(58, 112)
+        Me.enemySlot3Armortxt.Location = New System.Drawing.Point(55, 138)
         Me.enemySlot3Armortxt.Name = "enemySlot3Armortxt"
         Me.enemySlot3Armortxt.ReadOnly = True
         Me.enemySlot3Armortxt.Size = New System.Drawing.Size(100, 20)
@@ -998,6 +890,8 @@ Partial Class AdventureWindow
         '
         'enemySlot2pnl
         '
+        Me.enemySlot2pnl.Controls.Add(Me.enemySlot2Leveltxt)
+        Me.enemySlot2pnl.Controls.Add(Me.enemySlot2Levellbl)
         Me.enemySlot2pnl.Controls.Add(Me.enemySlot2Namelbl)
         Me.enemySlot2pnl.Controls.Add(Me.enemySlot2Armortxt)
         Me.enemySlot2pnl.Controls.Add(Me.enemySlot2Nametxt)
@@ -1010,11 +904,98 @@ Partial Class AdventureWindow
         Me.enemySlot2pnl.Controls.Add(Me.enemySlot2Healthtxt)
         Me.enemySlot2pnl.Location = New System.Drawing.Point(177, 30)
         Me.enemySlot2pnl.Name = "enemySlot2pnl"
-        Me.enemySlot2pnl.Size = New System.Drawing.Size(168, 140)
+        Me.enemySlot2pnl.Size = New System.Drawing.Size(168, 213)
         Me.enemySlot2pnl.TabIndex = 1
+        '
+        'enemySlot2Namelbl
+        '
+        Me.enemySlot2Namelbl.AutoSize = True
+        Me.enemySlot2Namelbl.Location = New System.Drawing.Point(16, 10)
+        Me.enemySlot2Namelbl.Name = "enemySlot2Namelbl"
+        Me.enemySlot2Namelbl.Size = New System.Drawing.Size(33, 13)
+        Me.enemySlot2Namelbl.TabIndex = 57
+        Me.enemySlot2Namelbl.Text = "name"
+        '
+        'enemySlot2Armortxt
+        '
+        Me.enemySlot2Armortxt.Location = New System.Drawing.Point(55, 137)
+        Me.enemySlot2Armortxt.Name = "enemySlot2Armortxt"
+        Me.enemySlot2Armortxt.ReadOnly = True
+        Me.enemySlot2Armortxt.Size = New System.Drawing.Size(100, 20)
+        Me.enemySlot2Armortxt.TabIndex = 66
+        '
+        'enemySlot2Nametxt
+        '
+        Me.enemySlot2Nametxt.Location = New System.Drawing.Point(55, 7)
+        Me.enemySlot2Nametxt.Name = "enemySlot2Nametxt"
+        Me.enemySlot2Nametxt.ReadOnly = True
+        Me.enemySlot2Nametxt.Size = New System.Drawing.Size(100, 20)
+        Me.enemySlot2Nametxt.TabIndex = 58
+        '
+        'enemySlot2Armorlbl
+        '
+        Me.enemySlot2Armorlbl.AutoSize = True
+        Me.enemySlot2Armorlbl.Location = New System.Drawing.Point(16, 140)
+        Me.enemySlot2Armorlbl.Name = "enemySlot2Armorlbl"
+        Me.enemySlot2Armorlbl.Size = New System.Drawing.Size(33, 13)
+        Me.enemySlot2Armorlbl.TabIndex = 65
+        Me.enemySlot2Armorlbl.Text = "armor"
+        '
+        'enemySlot2Specieslbl
+        '
+        Me.enemySlot2Specieslbl.AutoSize = True
+        Me.enemySlot2Specieslbl.Location = New System.Drawing.Point(6, 62)
+        Me.enemySlot2Specieslbl.Name = "enemySlot2Specieslbl"
+        Me.enemySlot2Specieslbl.Size = New System.Drawing.Size(43, 13)
+        Me.enemySlot2Specieslbl.TabIndex = 59
+        Me.enemySlot2Specieslbl.Text = "species"
+        '
+        'enemySlot2Strengthtxt
+        '
+        Me.enemySlot2Strengthtxt.Location = New System.Drawing.Point(55, 111)
+        Me.enemySlot2Strengthtxt.Name = "enemySlot2Strengthtxt"
+        Me.enemySlot2Strengthtxt.ReadOnly = True
+        Me.enemySlot2Strengthtxt.Size = New System.Drawing.Size(100, 20)
+        Me.enemySlot2Strengthtxt.TabIndex = 64
+        '
+        'enemySlot2Speciestxt
+        '
+        Me.enemySlot2Speciestxt.Location = New System.Drawing.Point(55, 59)
+        Me.enemySlot2Speciestxt.Name = "enemySlot2Speciestxt"
+        Me.enemySlot2Speciestxt.ReadOnly = True
+        Me.enemySlot2Speciestxt.Size = New System.Drawing.Size(100, 20)
+        Me.enemySlot2Speciestxt.TabIndex = 60
+        '
+        'enemySlot2Strengthlbl
+        '
+        Me.enemySlot2Strengthlbl.AutoSize = True
+        Me.enemySlot2Strengthlbl.Location = New System.Drawing.Point(4, 114)
+        Me.enemySlot2Strengthlbl.Name = "enemySlot2Strengthlbl"
+        Me.enemySlot2Strengthlbl.Size = New System.Drawing.Size(45, 13)
+        Me.enemySlot2Strengthlbl.TabIndex = 63
+        Me.enemySlot2Strengthlbl.Text = "strength"
+        '
+        'enemySlot2Healthlbl
+        '
+        Me.enemySlot2Healthlbl.AutoSize = True
+        Me.enemySlot2Healthlbl.Location = New System.Drawing.Point(13, 88)
+        Me.enemySlot2Healthlbl.Name = "enemySlot2Healthlbl"
+        Me.enemySlot2Healthlbl.Size = New System.Drawing.Size(36, 13)
+        Me.enemySlot2Healthlbl.TabIndex = 61
+        Me.enemySlot2Healthlbl.Text = "health"
+        '
+        'enemySlot2Healthtxt
+        '
+        Me.enemySlot2Healthtxt.Location = New System.Drawing.Point(55, 85)
+        Me.enemySlot2Healthtxt.Name = "enemySlot2Healthtxt"
+        Me.enemySlot2Healthtxt.ReadOnly = True
+        Me.enemySlot2Healthtxt.Size = New System.Drawing.Size(100, 20)
+        Me.enemySlot2Healthtxt.TabIndex = 62
         '
         'enemySlot1pnl
         '
+        Me.enemySlot1pnl.Controls.Add(Me.enemySlot1Leveltxt)
+        Me.enemySlot1pnl.Controls.Add(Me.enemySlot1Levellbl)
         Me.enemySlot1pnl.Controls.Add(Me.enemySlot1Namelbl)
         Me.enemySlot1pnl.Controls.Add(Me.enemySlot1Nametxt)
         Me.enemySlot1pnl.Controls.Add(Me.enemySlot1Armortxt)
@@ -1027,18 +1008,103 @@ Partial Class AdventureWindow
         Me.enemySlot1pnl.Controls.Add(Me.enemySlot1Healthtxt)
         Me.enemySlot1pnl.Location = New System.Drawing.Point(3, 30)
         Me.enemySlot1pnl.Name = "enemySlot1pnl"
-        Me.enemySlot1pnl.Size = New System.Drawing.Size(168, 140)
+        Me.enemySlot1pnl.Size = New System.Drawing.Size(168, 213)
         Me.enemySlot1pnl.TabIndex = 0
         '
-        'creature2
+        'enemySlot1Namelbl
         '
-        Me.creature2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.creature2.Location = New System.Drawing.Point(3, 4)
-        Me.creature2.Name = "creature2"
-        Me.creature2.Size = New System.Drawing.Size(342, 23)
-        Me.creature2.TabIndex = 1
-        Me.creature2.Text = "Enemy Team"
-        Me.creature2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.enemySlot1Namelbl.AutoSize = True
+        Me.enemySlot1Namelbl.Location = New System.Drawing.Point(16, 10)
+        Me.enemySlot1Namelbl.Name = "enemySlot1Namelbl"
+        Me.enemySlot1Namelbl.Size = New System.Drawing.Size(33, 13)
+        Me.enemySlot1Namelbl.TabIndex = 4
+        Me.enemySlot1Namelbl.Text = "name"
+        '
+        'enemySlot1Nametxt
+        '
+        Me.enemySlot1Nametxt.Location = New System.Drawing.Point(55, 7)
+        Me.enemySlot1Nametxt.Name = "enemySlot1Nametxt"
+        Me.enemySlot1Nametxt.ReadOnly = True
+        Me.enemySlot1Nametxt.Size = New System.Drawing.Size(100, 20)
+        Me.enemySlot1Nametxt.TabIndex = 5
+        '
+        'enemySlot1Armortxt
+        '
+        Me.enemySlot1Armortxt.Location = New System.Drawing.Point(55, 137)
+        Me.enemySlot1Armortxt.Name = "enemySlot1Armortxt"
+        Me.enemySlot1Armortxt.ReadOnly = True
+        Me.enemySlot1Armortxt.Size = New System.Drawing.Size(100, 20)
+        Me.enemySlot1Armortxt.TabIndex = 21
+        '
+        'enemySlot1Specieslbl
+        '
+        Me.enemySlot1Specieslbl.AutoSize = True
+        Me.enemySlot1Specieslbl.Location = New System.Drawing.Point(6, 62)
+        Me.enemySlot1Specieslbl.Name = "enemySlot1Specieslbl"
+        Me.enemySlot1Specieslbl.Size = New System.Drawing.Size(43, 13)
+        Me.enemySlot1Specieslbl.TabIndex = 8
+        Me.enemySlot1Specieslbl.Text = "species"
+        '
+        'enemySlot1Armorlbl
+        '
+        Me.enemySlot1Armorlbl.AutoSize = True
+        Me.enemySlot1Armorlbl.Location = New System.Drawing.Point(16, 140)
+        Me.enemySlot1Armorlbl.Name = "enemySlot1Armorlbl"
+        Me.enemySlot1Armorlbl.Size = New System.Drawing.Size(33, 13)
+        Me.enemySlot1Armorlbl.TabIndex = 20
+        Me.enemySlot1Armorlbl.Text = "armor"
+        '
+        'enemySlot1Speciestxt
+        '
+        Me.enemySlot1Speciestxt.Location = New System.Drawing.Point(55, 59)
+        Me.enemySlot1Speciestxt.Name = "enemySlot1Speciestxt"
+        Me.enemySlot1Speciestxt.ReadOnly = True
+        Me.enemySlot1Speciestxt.Size = New System.Drawing.Size(100, 20)
+        Me.enemySlot1Speciestxt.TabIndex = 9
+        '
+        'enemySlot1Strengthtxt
+        '
+        Me.enemySlot1Strengthtxt.Location = New System.Drawing.Point(55, 111)
+        Me.enemySlot1Strengthtxt.Name = "enemySlot1Strengthtxt"
+        Me.enemySlot1Strengthtxt.ReadOnly = True
+        Me.enemySlot1Strengthtxt.Size = New System.Drawing.Size(100, 20)
+        Me.enemySlot1Strengthtxt.TabIndex = 17
+        '
+        'enemySlot1Healthlbl
+        '
+        Me.enemySlot1Healthlbl.AutoSize = True
+        Me.enemySlot1Healthlbl.Location = New System.Drawing.Point(13, 88)
+        Me.enemySlot1Healthlbl.Name = "enemySlot1Healthlbl"
+        Me.enemySlot1Healthlbl.Size = New System.Drawing.Size(36, 13)
+        Me.enemySlot1Healthlbl.TabIndex = 12
+        Me.enemySlot1Healthlbl.Text = "health"
+        '
+        'enemySlot1Strengthlbl
+        '
+        Me.enemySlot1Strengthlbl.AutoSize = True
+        Me.enemySlot1Strengthlbl.Location = New System.Drawing.Point(4, 114)
+        Me.enemySlot1Strengthlbl.Name = "enemySlot1Strengthlbl"
+        Me.enemySlot1Strengthlbl.Size = New System.Drawing.Size(45, 13)
+        Me.enemySlot1Strengthlbl.TabIndex = 16
+        Me.enemySlot1Strengthlbl.Text = "strength"
+        '
+        'enemySlot1Healthtxt
+        '
+        Me.enemySlot1Healthtxt.Location = New System.Drawing.Point(55, 85)
+        Me.enemySlot1Healthtxt.Name = "enemySlot1Healthtxt"
+        Me.enemySlot1Healthtxt.ReadOnly = True
+        Me.enemySlot1Healthtxt.Size = New System.Drawing.Size(100, 20)
+        Me.enemySlot1Healthtxt.TabIndex = 13
+        '
+        'enemyTeamlbl
+        '
+        Me.enemyTeamlbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.enemyTeamlbl.Location = New System.Drawing.Point(3, 4)
+        Me.enemyTeamlbl.Name = "enemyTeamlbl"
+        Me.enemyTeamlbl.Size = New System.Drawing.Size(342, 23)
+        Me.enemyTeamlbl.TabIndex = 1
+        Me.enemyTeamlbl.Text = "Enemy Team"
+        Me.enemyTeamlbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'MenuStrip1
         '
@@ -1114,7 +1180,7 @@ Partial Class AdventureWindow
         Me.playerItemslst.CausesValidation = False
         Me.playerItemslst.Location = New System.Drawing.Point(3, 26)
         Me.playerItemslst.Name = "playerItemslst"
-        Me.playerItemslst.Size = New System.Drawing.Size(174, 160)
+        Me.playerItemslst.Size = New System.Drawing.Size(174, 147)
         Me.playerItemslst.TabIndex = 2
         '
         'playerInventorylbl
@@ -1140,12 +1206,12 @@ Partial Class AdventureWindow
         Me.hireListlst.CausesValidation = False
         Me.hireListlst.Location = New System.Drawing.Point(3, 26)
         Me.hireListlst.Name = "hireListlst"
-        Me.hireListlst.Size = New System.Drawing.Size(174, 160)
+        Me.hireListlst.Size = New System.Drawing.Size(174, 147)
         Me.hireListlst.TabIndex = 4
         '
         'tavernbtn
         '
-        Me.tavernbtn.Location = New System.Drawing.Point(894, 359)
+        Me.tavernbtn.Location = New System.Drawing.Point(894, 502)
         Me.tavernbtn.Name = "tavernbtn"
         Me.tavernbtn.Size = New System.Drawing.Size(75, 23)
         Me.tavernbtn.TabIndex = 6
@@ -1154,7 +1220,7 @@ Partial Class AdventureWindow
         '
         'shopbtn
         '
-        Me.shopbtn.Location = New System.Drawing.Point(894, 388)
+        Me.shopbtn.Location = New System.Drawing.Point(894, 531)
         Me.shopbtn.Name = "shopbtn"
         Me.shopbtn.Size = New System.Drawing.Size(75, 23)
         Me.shopbtn.TabIndex = 7
@@ -1163,7 +1229,7 @@ Partial Class AdventureWindow
         '
         'mainMenubtn
         '
-        Me.mainMenubtn.Location = New System.Drawing.Point(894, 417)
+        Me.mainMenubtn.Location = New System.Drawing.Point(894, 560)
         Me.mainMenubtn.Name = "mainMenubtn"
         Me.mainMenubtn.Size = New System.Drawing.Size(75, 23)
         Me.mainMenubtn.TabIndex = 8
@@ -1173,7 +1239,7 @@ Partial Class AdventureWindow
         'tavernlbl
         '
         Me.tavernlbl.AutoSize = True
-        Me.tavernlbl.Location = New System.Drawing.Point(788, 364)
+        Me.tavernlbl.Location = New System.Drawing.Point(788, 507)
         Me.tavernlbl.Name = "tavernlbl"
         Me.tavernlbl.Size = New System.Drawing.Size(100, 13)
         Me.tavernlbl.TabIndex = 9
@@ -1230,49 +1296,274 @@ Partial Class AdventureWindow
         '
         Me.ItemsTableAdapter.ClearBeforeFill = True
         '
-        'combatlst
-        '
-        Me.combatlst.CausesValidation = False
-        Me.combatlst.Location = New System.Drawing.Point(3, 30)
-        Me.combatlst.Name = "combatlst"
-        Me.combatlst.SelectionMode = System.Windows.Forms.SelectionMode.None
-        Me.combatlst.Size = New System.Drawing.Size(233, 277)
-        Me.combatlst.TabIndex = 10
-        '
-        'combatListpnl
-        '
-        Me.combatListpnl.Controls.Add(Me.combatlst)
-        Me.combatListpnl.Location = New System.Drawing.Point(357, 3)
-        Me.combatListpnl.Name = "combatListpnl"
-        Me.combatListpnl.Size = New System.Drawing.Size(239, 319)
-        Me.combatListpnl.TabIndex = 11
-        '
         'inventorypnl
         '
         Me.inventorypnl.Controls.Add(Me.playerItemslst)
         Me.inventorypnl.Controls.Add(Me.playerInventorylbl)
-        Me.inventorypnl.Location = New System.Drawing.Point(16, 359)
+        Me.inventorypnl.Location = New System.Drawing.Point(3, 3)
         Me.inventorypnl.Name = "inventorypnl"
-        Me.inventorypnl.Size = New System.Drawing.Size(180, 189)
+        Me.inventorypnl.Size = New System.Drawing.Size(180, 183)
         Me.inventorypnl.TabIndex = 10
         '
-        'Panel1
+        'hiredCreaturesListpnl
         '
-        Me.Panel1.Controls.Add(Me.hireListlst)
-        Me.Panel1.Controls.Add(Me.hireListlbl)
-        Me.Panel1.Location = New System.Drawing.Point(202, 359)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(180, 189)
-        Me.Panel1.TabIndex = 11
+        Me.hiredCreaturesListpnl.Controls.Add(Me.Panel2)
+        Me.hiredCreaturesListpnl.Controls.Add(Me.hireListlst)
+        Me.hiredCreaturesListpnl.Controls.Add(Me.hireListlbl)
+        Me.hiredCreaturesListpnl.Location = New System.Drawing.Point(189, 3)
+        Me.hiredCreaturesListpnl.Name = "hiredCreaturesListpnl"
+        Me.hiredCreaturesListpnl.Size = New System.Drawing.Size(180, 183)
+        Me.hiredCreaturesListpnl.TabIndex = 11
         '
-        'AdventureWindow
+        'Panel2
+        '
+        Me.Panel2.Location = New System.Drawing.Point(292, 29)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(306, 100)
+        Me.Panel2.TabIndex = 12
+        '
+        'playerInfopnl
+        '
+        Me.playerInfopnl.Controls.Add(Me.playerExperiencebar)
+        Me.playerInfopnl.Controls.Add(Me.playerExperiencelbl)
+        Me.playerInfopnl.Controls.Add(Me.playerLevellbl)
+        Me.playerInfopnl.Controls.Add(Me.playerLeveltxt)
+        Me.playerInfopnl.Controls.Add(Me.playerGoldlbl)
+        Me.playerInfopnl.Controls.Add(Me.playerGoldtxt)
+        Me.playerInfopnl.Controls.Add(Me.inventorypnl)
+        Me.playerInfopnl.Controls.Add(Me.hiredCreaturesListpnl)
+        Me.playerInfopnl.Location = New System.Drawing.Point(16, 494)
+        Me.playerInfopnl.Name = "playerInfopnl"
+        Me.playerInfopnl.Size = New System.Drawing.Size(766, 189)
+        Me.playerInfopnl.TabIndex = 12
+        '
+        'playerExperiencelbl
+        '
+        Me.playerExperiencelbl.AutoSize = True
+        Me.playerExperiencelbl.Location = New System.Drawing.Point(375, 62)
+        Me.playerExperiencelbl.Name = "playerExperiencelbl"
+        Me.playerExperiencelbl.Size = New System.Drawing.Size(60, 13)
+        Me.playerExperiencelbl.TabIndex = 17
+        Me.playerExperiencelbl.Text = "Experience"
+        '
+        'playerLevellbl
+        '
+        Me.playerLevellbl.AutoSize = True
+        Me.playerLevellbl.Location = New System.Drawing.Point(402, 39)
+        Me.playerLevellbl.Name = "playerLevellbl"
+        Me.playerLevellbl.Size = New System.Drawing.Size(33, 13)
+        Me.playerLevellbl.TabIndex = 15
+        Me.playerLevellbl.Text = "Level"
+        '
+        'playerLeveltxt
+        '
+        Me.playerLeveltxt.Location = New System.Drawing.Point(441, 36)
+        Me.playerLeveltxt.Name = "playerLeveltxt"
+        Me.playerLeveltxt.Size = New System.Drawing.Size(54, 20)
+        Me.playerLeveltxt.TabIndex = 14
+        '
+        'playerGoldlbl
+        '
+        Me.playerGoldlbl.AutoSize = True
+        Me.playerGoldlbl.Location = New System.Drawing.Point(406, 13)
+        Me.playerGoldlbl.Name = "playerGoldlbl"
+        Me.playerGoldlbl.Size = New System.Drawing.Size(29, 13)
+        Me.playerGoldlbl.TabIndex = 13
+        Me.playerGoldlbl.Text = "Gold"
+        '
+        'playerGoldtxt
+        '
+        Me.playerGoldtxt.Location = New System.Drawing.Point(441, 10)
+        Me.playerGoldtxt.Name = "playerGoldtxt"
+        Me.playerGoldtxt.Size = New System.Drawing.Size(54, 20)
+        Me.playerGoldtxt.TabIndex = 12
+        '
+        'playerSlot1Leveltxt
+        '
+        Me.playerSlot1Leveltxt.Location = New System.Drawing.Point(58, 33)
+        Me.playerSlot1Leveltxt.Name = "playerSlot1Leveltxt"
+        Me.playerSlot1Leveltxt.ReadOnly = True
+        Me.playerSlot1Leveltxt.Size = New System.Drawing.Size(100, 20)
+        Me.playerSlot1Leveltxt.TabIndex = 21
+        '
+        'playerSlot1Levellbl
+        '
+        Me.playerSlot1Levellbl.AutoSize = True
+        Me.playerSlot1Levellbl.Location = New System.Drawing.Point(19, 36)
+        Me.playerSlot1Levellbl.Name = "playerSlot1Levellbl"
+        Me.playerSlot1Levellbl.Size = New System.Drawing.Size(29, 13)
+        Me.playerSlot1Levellbl.TabIndex = 20
+        Me.playerSlot1Levellbl.Text = "level"
+        '
+        'playerSlot2Leveltxt
+        '
+        Me.playerSlot2Leveltxt.Location = New System.Drawing.Point(56, 33)
+        Me.playerSlot2Leveltxt.Name = "playerSlot2Leveltxt"
+        Me.playerSlot2Leveltxt.ReadOnly = True
+        Me.playerSlot2Leveltxt.Size = New System.Drawing.Size(100, 20)
+        Me.playerSlot2Leveltxt.TabIndex = 23
+        '
+        'playerSlot2Levellbl
+        '
+        Me.playerSlot2Levellbl.AutoSize = True
+        Me.playerSlot2Levellbl.Location = New System.Drawing.Point(17, 36)
+        Me.playerSlot2Levellbl.Name = "playerSlot2Levellbl"
+        Me.playerSlot2Levellbl.Size = New System.Drawing.Size(29, 13)
+        Me.playerSlot2Levellbl.TabIndex = 22
+        Me.playerSlot2Levellbl.Text = "level"
+        '
+        'enemySlot1Leveltxt
+        '
+        Me.enemySlot1Leveltxt.Location = New System.Drawing.Point(55, 33)
+        Me.enemySlot1Leveltxt.Name = "enemySlot1Leveltxt"
+        Me.enemySlot1Leveltxt.ReadOnly = True
+        Me.enemySlot1Leveltxt.Size = New System.Drawing.Size(100, 20)
+        Me.enemySlot1Leveltxt.TabIndex = 23
+        '
+        'enemySlot1Levellbl
+        '
+        Me.enemySlot1Levellbl.AutoSize = True
+        Me.enemySlot1Levellbl.Location = New System.Drawing.Point(16, 36)
+        Me.enemySlot1Levellbl.Name = "enemySlot1Levellbl"
+        Me.enemySlot1Levellbl.Size = New System.Drawing.Size(29, 13)
+        Me.enemySlot1Levellbl.TabIndex = 22
+        Me.enemySlot1Levellbl.Text = "level"
+        '
+        'enemySlot2Leveltxt
+        '
+        Me.enemySlot2Leveltxt.Location = New System.Drawing.Point(55, 33)
+        Me.enemySlot2Leveltxt.Name = "enemySlot2Leveltxt"
+        Me.enemySlot2Leveltxt.ReadOnly = True
+        Me.enemySlot2Leveltxt.Size = New System.Drawing.Size(100, 20)
+        Me.enemySlot2Leveltxt.TabIndex = 23
+        '
+        'enemySlot2Levellbl
+        '
+        Me.enemySlot2Levellbl.AutoSize = True
+        Me.enemySlot2Levellbl.Location = New System.Drawing.Point(16, 36)
+        Me.enemySlot2Levellbl.Name = "enemySlot2Levellbl"
+        Me.enemySlot2Levellbl.Size = New System.Drawing.Size(29, 13)
+        Me.enemySlot2Levellbl.TabIndex = 22
+        Me.enemySlot2Levellbl.Text = "level"
+        '
+        'playerSlot3Leveltxt
+        '
+        Me.playerSlot3Leveltxt.Location = New System.Drawing.Point(58, 34)
+        Me.playerSlot3Leveltxt.Name = "playerSlot3Leveltxt"
+        Me.playerSlot3Leveltxt.ReadOnly = True
+        Me.playerSlot3Leveltxt.Size = New System.Drawing.Size(100, 20)
+        Me.playerSlot3Leveltxt.TabIndex = 25
+        '
+        'playerSlot3Levellbl
+        '
+        Me.playerSlot3Levellbl.AutoSize = True
+        Me.playerSlot3Levellbl.Location = New System.Drawing.Point(19, 37)
+        Me.playerSlot3Levellbl.Name = "playerSlot3Levellbl"
+        Me.playerSlot3Levellbl.Size = New System.Drawing.Size(29, 13)
+        Me.playerSlot3Levellbl.TabIndex = 24
+        Me.playerSlot3Levellbl.Text = "level"
+        '
+        'playerSlot4Leveltxt
+        '
+        Me.playerSlot4Leveltxt.Location = New System.Drawing.Point(56, 34)
+        Me.playerSlot4Leveltxt.Name = "playerSlot4Leveltxt"
+        Me.playerSlot4Leveltxt.ReadOnly = True
+        Me.playerSlot4Leveltxt.Size = New System.Drawing.Size(100, 20)
+        Me.playerSlot4Leveltxt.TabIndex = 23
+        '
+        'playerSlot4Levellbl
+        '
+        Me.playerSlot4Levellbl.AutoSize = True
+        Me.playerSlot4Levellbl.Location = New System.Drawing.Point(17, 37)
+        Me.playerSlot4Levellbl.Name = "playerSlot4Levellbl"
+        Me.playerSlot4Levellbl.Size = New System.Drawing.Size(29, 13)
+        Me.playerSlot4Levellbl.TabIndex = 22
+        Me.playerSlot4Levellbl.Text = "level"
+        '
+        'enemySlot3Leveltxt
+        '
+        Me.enemySlot3Leveltxt.Location = New System.Drawing.Point(55, 34)
+        Me.enemySlot3Leveltxt.Name = "enemySlot3Leveltxt"
+        Me.enemySlot3Leveltxt.ReadOnly = True
+        Me.enemySlot3Leveltxt.Size = New System.Drawing.Size(100, 20)
+        Me.enemySlot3Leveltxt.TabIndex = 25
+        '
+        'enemySlot3Levellbl
+        '
+        Me.enemySlot3Levellbl.AutoSize = True
+        Me.enemySlot3Levellbl.Location = New System.Drawing.Point(16, 37)
+        Me.enemySlot3Levellbl.Name = "enemySlot3Levellbl"
+        Me.enemySlot3Levellbl.Size = New System.Drawing.Size(29, 13)
+        Me.enemySlot3Levellbl.TabIndex = 24
+        Me.enemySlot3Levellbl.Text = "level"
+        '
+        'enemySlot4Leveltxt
+        '
+        Me.enemySlot4Leveltxt.Location = New System.Drawing.Point(55, 34)
+        Me.enemySlot4Leveltxt.Name = "enemySlot4Leveltxt"
+        Me.enemySlot4Leveltxt.ReadOnly = True
+        Me.enemySlot4Leveltxt.Size = New System.Drawing.Size(100, 20)
+        Me.enemySlot4Leveltxt.TabIndex = 78
+        '
+        'enemySlot4Levellbl
+        '
+        Me.enemySlot4Levellbl.AutoSize = True
+        Me.enemySlot4Levellbl.Location = New System.Drawing.Point(16, 37)
+        Me.enemySlot4Levellbl.Name = "enemySlot4Levellbl"
+        Me.enemySlot4Levellbl.Size = New System.Drawing.Size(29, 13)
+        Me.enemySlot4Levellbl.TabIndex = 77
+        Me.enemySlot4Levellbl.Text = "level"
+        '
+        'playerSlot1Fillbtn
+        '
+        Me.playerSlot1Fillbtn.Location = New System.Drawing.Point(50, 163)
+        Me.playerSlot1Fillbtn.Name = "playerSlot1Fillbtn"
+        Me.playerSlot1Fillbtn.Size = New System.Drawing.Size(75, 23)
+        Me.playerSlot1Fillbtn.TabIndex = 13
+        Me.playerSlot1Fillbtn.Text = "Place"
+        Me.playerSlot1Fillbtn.UseVisualStyleBackColor = True
+        '
+        'playerSlot2Fillbtn
+        '
+        Me.playerSlot2Fillbtn.Location = New System.Drawing.Point(48, 163)
+        Me.playerSlot2Fillbtn.Name = "playerSlot2Fillbtn"
+        Me.playerSlot2Fillbtn.Size = New System.Drawing.Size(75, 23)
+        Me.playerSlot2Fillbtn.TabIndex = 22
+        Me.playerSlot2Fillbtn.Text = "Place"
+        Me.playerSlot2Fillbtn.UseVisualStyleBackColor = True
+        '
+        'playerSlot3Fillbtn
+        '
+        Me.playerSlot3Fillbtn.Location = New System.Drawing.Point(50, 164)
+        Me.playerSlot3Fillbtn.Name = "playerSlot3Fillbtn"
+        Me.playerSlot3Fillbtn.Size = New System.Drawing.Size(75, 23)
+        Me.playerSlot3Fillbtn.TabIndex = 14
+        Me.playerSlot3Fillbtn.Text = "Place"
+        Me.playerSlot3Fillbtn.UseVisualStyleBackColor = True
+        '
+        'playerSlot4Fillbtn
+        '
+        Me.playerSlot4Fillbtn.Location = New System.Drawing.Point(48, 164)
+        Me.playerSlot4Fillbtn.Name = "playerSlot4Fillbtn"
+        Me.playerSlot4Fillbtn.Size = New System.Drawing.Size(75, 23)
+        Me.playerSlot4Fillbtn.TabIndex = 47
+        Me.playerSlot4Fillbtn.Text = "Place"
+        Me.playerSlot4Fillbtn.UseVisualStyleBackColor = True
+        '
+        'playerExperiencebar
+        '
+        Me.playerExperiencebar.Location = New System.Drawing.Point(441, 62)
+        Me.playerExperiencebar.Name = "playerExperiencebar"
+        Me.playerExperiencebar.Size = New System.Drawing.Size(100, 13)
+        Me.playerExperiencebar.TabIndex = 13
+        '
+        'CombatWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(986, 560)
-        Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.inventorypnl)
+        Me.ClientSize = New System.Drawing.Size(986, 705)
+        Me.Controls.Add(Me.playerInfopnl)
         Me.Controls.Add(Me.tavernlbl)
         Me.Controls.Add(Me.mainMenubtn)
         Me.Controls.Add(Me.shopbtn)
@@ -1280,11 +1571,12 @@ Partial Class AdventureWindow
         Me.Controls.Add(Me.Combatpnl)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Name = "AdventureWindow"
+        Me.Name = "CombatWindow"
         Me.ShowIcon = False
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
-        Me.Text = "Adventure"
+        Me.Text = "Combat"
         Me.Combatpnl.ResumeLayout(False)
+        Me.combatListpnl.ResumeLayout(False)
         Me.playersTeampnl.ResumeLayout(False)
         Me.playerSlot4pnl.ResumeLayout(False)
         Me.playerSlot4pnl.PerformLayout()
@@ -1310,11 +1602,12 @@ Partial Class AdventureWindow
         CType(Me.BattlesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AttacksBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ItemsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.combatListpnl.ResumeLayout(False)
         Me.inventorypnl.ResumeLayout(False)
         Me.inventorypnl.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        Me.hiredCreaturesListpnl.ResumeLayout(False)
+        Me.hiredCreaturesListpnl.PerformLayout()
+        Me.playerInfopnl.ResumeLayout(False)
+        Me.playerInfopnl.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1335,7 +1628,7 @@ Partial Class AdventureWindow
     Friend WithEvents enemySlot1Namelbl As Label
     Friend WithEvents playerSlot1Nametxt As TextBox
     Friend WithEvents playerSlot1Namelbl As Label
-    Friend WithEvents creature2 As Label
+    Friend WithEvents enemyTeamlbl As Label
     Friend WithEvents enemySlot1Strengthtxt As TextBox
     Friend WithEvents enemySlot1Strengthlbl As Label
     Friend WithEvents playerSlot1Strengthtxt As TextBox
@@ -1445,5 +1738,33 @@ Partial Class AdventureWindow
     Friend WithEvents combatListpnl As Panel
     Friend WithEvents combatlst As ListBox
     Friend WithEvents inventorypnl As Panel
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents hiredCreaturesListpnl As Panel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents playerInfopnl As Panel
+    Friend WithEvents playerExperiencelbl As Label
+    Friend WithEvents playerLevellbl As Label
+    Friend WithEvents playerLeveltxt As TextBox
+    Friend WithEvents playerGoldlbl As Label
+    Friend WithEvents playerGoldtxt As TextBox
+    Friend WithEvents playerSlot4Fillbtn As Button
+    Friend WithEvents playerSlot4Leveltxt As TextBox
+    Friend WithEvents playerSlot4Levellbl As Label
+    Friend WithEvents playerSlot3Fillbtn As Button
+    Friend WithEvents playerSlot3Leveltxt As TextBox
+    Friend WithEvents playerSlot3Levellbl As Label
+    Friend WithEvents playerSlot2Fillbtn As Button
+    Friend WithEvents playerSlot2Leveltxt As TextBox
+    Friend WithEvents playerSlot2Levellbl As Label
+    Friend WithEvents playerSlot1Fillbtn As Button
+    Friend WithEvents playerSlot1Leveltxt As TextBox
+    Friend WithEvents playerSlot1Levellbl As Label
+    Friend WithEvents enemySlot4Leveltxt As TextBox
+    Friend WithEvents enemySlot4Levellbl As Label
+    Friend WithEvents enemySlot3Leveltxt As TextBox
+    Friend WithEvents enemySlot3Levellbl As Label
+    Friend WithEvents enemySlot2Leveltxt As TextBox
+    Friend WithEvents enemySlot2Levellbl As Label
+    Friend WithEvents enemySlot1Leveltxt As TextBox
+    Friend WithEvents enemySlot1Levellbl As Label
+    Friend WithEvents playerExperiencebar As ProgressBar
 End Class

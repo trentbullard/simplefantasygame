@@ -1,6 +1,6 @@
-﻿Public Class AdventureWindow
+﻿Public Class CombatWindow
 
-    Private Sub AdventureWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub CombatWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.ItemsTableAdapter.Fill(Me.GameDatabaseDataSet.Items)
         Me.CreaturesTableAdapter.Fill(Me.GameDatabaseDataSet.Creatures)
         Me.BattlesTableAdapter.Fill(Me.GameDatabaseDataSet.Battles)

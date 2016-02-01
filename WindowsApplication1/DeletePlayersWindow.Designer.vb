@@ -23,25 +23,16 @@ Partial Class DeletePlayersWindow
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.deletePlayersclst = New System.Windows.Forms.CheckedListBox()
         Me.deletePlayersListlbl = New System.Windows.Forms.Label()
         Me.deletePlayersbtn = New System.Windows.Forms.Button()
         Me.GameDatabaseDataSet = New WindowsApplication1.GameDatabaseDataSet()
         Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
         Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
+        Me.deletePlayerslst = New System.Windows.Forms.ListBox()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'deletePlayersclst
-        '
-        Me.deletePlayersclst.CheckOnClick = True
-        Me.deletePlayersclst.FormattingEnabled = True
-        Me.deletePlayersclst.Location = New System.Drawing.Point(50, 42)
-        Me.deletePlayersclst.Name = "deletePlayersclst"
-        Me.deletePlayersclst.Size = New System.Drawing.Size(171, 124)
-        Me.deletePlayersclst.TabIndex = 0
         '
         'deletePlayersListlbl
         '
@@ -86,14 +77,22 @@ Partial Class DeletePlayersWindow
         Me.TableAdapterManager.PlayersTableAdapter = Me.PlayersTableAdapter
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
+        'deletePlayerslst
+        '
+        Me.deletePlayerslst.FormattingEnabled = True
+        Me.deletePlayerslst.Location = New System.Drawing.Point(56, 42)
+        Me.deletePlayerslst.Name = "deletePlayerslst"
+        Me.deletePlayerslst.Size = New System.Drawing.Size(162, 121)
+        Me.deletePlayerslst.TabIndex = 3
+        '
         'DeletePlayersWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(270, 217)
+        Me.Controls.Add(Me.deletePlayerslst)
         Me.Controls.Add(Me.deletePlayersbtn)
         Me.Controls.Add(Me.deletePlayersListlbl)
-        Me.Controls.Add(Me.deletePlayersclst)
         Me.Name = "DeletePlayersWindow"
         Me.ShowIcon = False
         Me.Text = "Delete Players"
@@ -103,12 +102,11 @@ Partial Class DeletePlayersWindow
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents deletePlayersclst As CheckedListBox
     Friend WithEvents deletePlayersListlbl As Label
     Friend WithEvents deletePlayersbtn As Button
     Friend WithEvents GameDatabaseDataSet As GameDatabaseDataSet
     Friend WithEvents PlayersBindingSource As BindingSource
     Friend WithEvents PlayersTableAdapter As GameDatabaseDataSetTableAdapters.PlayersTableAdapter
     Friend WithEvents TableAdapterManager As GameDatabaseDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents deletePlayerslst As ListBox
 End Class

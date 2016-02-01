@@ -124,11 +124,11 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="dice.vb" />
-    <Compile Include="AdventureWindow.vb">
+    <Compile Include="CombatWindow.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdventureWindow.Designer.vb">
-      <DependentUpon>AdventureWindow.vb</DependentUpon>
+    <Compile Include="CombatWindow.Designer.vb">
+      <DependentUpon>CombatWindow.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormControl.vb" />
@@ -177,8 +177,8 @@
     <Compile Include="team.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AdventureWindow.resx">
-      <DependentUpon>AdventureWindow.vb</DependentUpon>
+    <EmbeddedResource Include="CombatWindow.resx">
+      <DependentUpon>CombatWindow.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DeletePlayersWindow.resx">
       <DependentUpon>DeletePlayersWindow.vb</DependentUpon>

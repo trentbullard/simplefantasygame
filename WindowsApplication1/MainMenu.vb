@@ -38,8 +38,8 @@ Public Class MainMenu
         Dim row As DataRow = GameDatabaseDataSet.Players(playerSelectlstv.SelectedIndices(0))
         If Not playerSelectlstv.SelectedIndices(0) = -1 Then
             currentPlayer = New player(row("id"), row("name"), row("level"), row("experience"), row("gold"))
-            currentAdventureWindow = New AdventureWindow
-            currentAdventureWindow.Show()
+            currentCombatWindow = New CombatWindow
+            currentCombatWindow.Show()
             Me.Close()
         End If
     End Sub

@@ -1,5 +1,5 @@
 ﻿Public Class DeletePlayersWindow
-    Dim playerSelection As ListBox.SelectedObjectCollection
+    Dim playerSelection As New player
 
     Private Sub DeletePlayersWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PlayersTableAdapter.Fill(GameDatabaseDataSet.Players)
@@ -7,12 +7,12 @@
         StartLog()  'From log.vb
 
         For Each row As DataRow In GameDatabaseDataSet.Players
-            deletePlayersclst.Items.Add(New player(row("id"), row("name"), row("level"), row("experience"), row("gold")))
+            deletePlayerslst.Items.Add(New player(row("id"), row("name"), row("level"), row("experience"), row("gold")))
         Next
     End Sub
 
-    Private Sub deletePlayersclst_SelectedIndexChanged(sender As Object, e As EventArgs) Handles deletePlayersclst.SelectedIndexChanged
-        playerSelection = deletePlayersclst.SelectedItems
+    Private Sub deletePlayerslst_SelectedIndexChanged(sender As Object, e As EventArgs) Handles deletePlayerslst.SelectedIndexChanged
+        playerSelection = deletePlayerslst.SelectedItem
     End Sub
 
     Private Sub deletePlayersbtn_Click(sender As Object, e As EventArgs) Handles deletePlayersbtn.Click
@@ -23,7 +23,7 @@
 
         If response = MsgBoxResult.Yes Then
             Try
-                oldPlayersRow = GameDatabaseDataSet.Players.FindByid(playerSelection(0).id)
+                oldPlayersRow = GameDatabaseDataSet.Players.FindByid(playerSelection.id)
                 oldPlayersRow.Delete()
                 Validate()
                 PlayersBindingSource.EndEdit()
@@ -39,4 +39,6 @@
             Me.Close()
         End If
     End Sub
+
+
 End Class
