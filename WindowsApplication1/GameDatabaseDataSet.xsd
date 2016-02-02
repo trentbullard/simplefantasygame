@@ -461,7 +461,7 @@ ORDER BY id DESC</CommandText>
         <xs:element name="Attacks" msprop:Generator_TableClassName="AttacksDataTable" msprop:Generator_TableVarName="tableAttacks" msprop:Generator_RowChangedName="AttacksRowChanged" msprop:Generator_TablePropName="Attacks" msprop:Generator_RowDeletingName="AttacksRowDeleting" msprop:Generator_RowChangingName="AttacksRowChanging" msprop:Generator_RowEvHandlerName="AttacksRowChangeEventHandler" msprop:Generator_RowDeletedName="AttacksRowDeleted" msprop:Generator_RowClassName="AttacksRow" msprop:Generator_UserTableName="Attacks" msprop:Generator_RowEvArgName="AttacksRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
               <xs:element name="battleid" msprop:Generator_ColumnVarNameInTable="columnbattleid" msprop:Generator_ColumnPropNameInRow="battleid" msprop:Generator_ColumnPropNameInTable="battleidColumn" msprop:Generator_UserColumnName="battleid" type="xs:int" minOccurs="0" />
               <xs:element name="aggressorid" msprop:Generator_ColumnVarNameInTable="columnaggressorid" msprop:Generator_ColumnPropNameInRow="aggressorid" msprop:Generator_ColumnPropNameInTable="aggressoridColumn" msprop:Generator_UserColumnName="aggressorid" type="xs:int" minOccurs="0" />
               <xs:element name="victimid" msprop:Generator_ColumnVarNameInTable="columnvictimid" msprop:Generator_ColumnPropNameInRow="victimid" msprop:Generator_ColumnPropNameInTable="victimidColumn" msprop:Generator_UserColumnName="victimid" type="xs:int" minOccurs="0" />
@@ -472,7 +472,7 @@ ORDER BY id DESC</CommandText>
         <xs:element name="Battles" msprop:Generator_TableClassName="BattlesDataTable" msprop:Generator_TableVarName="tableBattles" msprop:Generator_RowChangedName="BattlesRowChanged" msprop:Generator_TablePropName="Battles" msprop:Generator_RowDeletingName="BattlesRowDeleting" msprop:Generator_RowChangingName="BattlesRowChanging" msprop:Generator_RowEvHandlerName="BattlesRowChangeEventHandler" msprop:Generator_RowDeletedName="BattlesRowDeleted" msprop:Generator_RowClassName="BattlesRow" msprop:Generator_UserTableName="Battles" msprop:Generator_RowEvArgName="BattlesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
               <xs:element name="playerid" msprop:Generator_ColumnVarNameInTable="columnplayerid" msprop:Generator_ColumnPropNameInRow="playerid" msprop:Generator_ColumnPropNameInTable="playeridColumn" msprop:Generator_UserColumnName="playerid" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
@@ -480,7 +480,7 @@ ORDER BY id DESC</CommandText>
         <xs:element name="Creatures" msprop:Generator_TableClassName="CreaturesDataTable" msprop:Generator_TableVarName="tableCreatures" msprop:Generator_RowChangedName="CreaturesRowChanged" msprop:Generator_TablePropName="Creatures" msprop:Generator_RowDeletingName="CreaturesRowDeleting" msprop:Generator_RowChangingName="CreaturesRowChanging" msprop:Generator_RowEvHandlerName="CreaturesRowChangeEventHandler" msprop:Generator_RowDeletedName="CreaturesRowDeleted" msprop:Generator_RowClassName="CreaturesRow" msprop:Generator_UserTableName="Creatures" msprop:Generator_RowEvArgName="CreaturesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
               <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -511,7 +511,7 @@ ORDER BY id DESC</CommandText>
         <xs:element name="Items" msprop:Generator_TableClassName="ItemsDataTable" msprop:Generator_TableVarName="tableItems" msprop:Generator_RowChangedName="ItemsRowChanged" msprop:Generator_TablePropName="Items" msprop:Generator_RowDeletingName="ItemsRowDeleting" msprop:Generator_RowChangingName="ItemsRowChanging" msprop:Generator_RowEvHandlerName="ItemsRowChangeEventHandler" msprop:Generator_RowDeletedName="ItemsRowDeleted" msprop:Generator_RowClassName="ItemsRow" msprop:Generator_UserTableName="Items" msprop:Generator_RowEvArgName="ItemsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
               <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -549,7 +549,7 @@ ORDER BY id DESC</CommandText>
         <xs:element name="Players" msprop:Generator_TableClassName="PlayersDataTable" msprop:Generator_TableVarName="tablePlayers" msprop:Generator_RowChangedName="PlayersRowChanged" msprop:Generator_TablePropName="Players" msprop:Generator_RowDeletingName="PlayersRowDeleting" msprop:Generator_RowChangingName="PlayersRowChanging" msprop:Generator_RowEvHandlerName="PlayersRowChangeEventHandler" msprop:Generator_RowDeletedName="PlayersRowDeleted" msprop:Generator_RowClassName="PlayersRow" msprop:Generator_UserTableName="Players" msprop:Generator_RowEvArgName="PlayersRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
               <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -585,34 +585,16 @@ ORDER BY id DESC</CommandText>
       <xs:selector xpath=".//mstns:Players" />
       <xs:field xpath="mstns:id" />
     </xs:unique>
-    <xs:keyref name="FK_Players_Items" refer="Players_Constraint1" msdata:ConstraintOnly="true">
-      <xs:selector xpath=".//mstns:Items" />
-      <xs:field xpath="mstns:ownerid" />
-    </xs:keyref>
-    <xs:keyref name="FK_Players_Creatures" refer="Players_Constraint1" msdata:ConstraintOnly="true">
-      <xs:selector xpath=".//mstns:Creatures" />
-      <xs:field xpath="mstns:playerid" />
-    </xs:keyref>
-    <xs:keyref name="FK_Players_Battles" refer="Players_Constraint1" msdata:ConstraintOnly="true">
-      <xs:selector xpath=".//mstns:Battles" />
-      <xs:field xpath="mstns:playerid" />
-    </xs:keyref>
-    <xs:keyref name="FK_Battles_Attacks" refer="Battles_Constraint1" msdata:ConstraintOnly="true">
-      <xs:selector xpath=".//mstns:Attacks" />
-      <xs:field xpath="mstns:battleid" />
-    </xs:keyref>
-    <xs:keyref name="FK_Creatures_Attacks1" refer="Creatures_Constraint1" msdata:ConstraintOnly="true">
-      <xs:selector xpath=".//mstns:Attacks" />
-      <xs:field xpath="mstns:victimid" />
-    </xs:keyref>
-    <xs:keyref name="FK_Creatures_Attacks" refer="Creatures_Constraint1" msdata:ConstraintOnly="true">
-      <xs:selector xpath=".//mstns:Attacks" />
-      <xs:field xpath="mstns:aggressorid" />
-    </xs:keyref>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
+      <msdata:Relationship name="FK_Players_Creatures" msdata:parent="Players" msdata:child="Creatures" msdata:parentkey="id" msdata:childkey="playerid" msprop:Generator_UserChildTable="Creatures" msprop:Generator_ChildPropName="GetCreaturesRows" msprop:Generator_UserRelationName="FK_Players_Creatures" msprop:Generator_RelationVarName="relationFK_Players_Creatures" msprop:Generator_UserParentTable="Players" msprop:Generator_ParentPropName="PlayersRow" />
       <msdata:Relationship name="Creatures_Items" msdata:parent="Creatures" msdata:child="Items" msdata:parentkey="id" msdata:childkey="wearerid" msprop:Generator_UserChildTable="Items" msprop:Generator_ChildPropName="GetItemsRows" msprop:Generator_UserRelationName="Creatures_Items" msprop:Generator_ParentPropName="CreaturesRow" msprop:Generator_RelationVarName="relationCreatures_Items" msprop:Generator_UserParentTable="Creatures" />
+      <msdata:Relationship name="FK_Players_Items" msdata:parent="Players" msdata:child="Items" msdata:parentkey="id" msdata:childkey="ownerid" msprop:Generator_UserChildTable="Items" msprop:Generator_ChildPropName="GetItemsRows" msprop:Generator_UserRelationName="FK_Players_Items" msprop:Generator_RelationVarName="relationFK_Players_Items" msprop:Generator_UserParentTable="Players" msprop:Generator_ParentPropName="PlayersRow" />
+      <msdata:Relationship name="FK_Creatures_Attacks1" msdata:parent="Creatures" msdata:child="Attacks" msdata:parentkey="id" msdata:childkey="victimid" msprop:Generator_UserChildTable="Attacks" msprop:Generator_ChildPropName="GetAttacksRows" msprop:Generator_UserRelationName="FK_Creatures_Attacks1" msprop:Generator_RelationVarName="relationFK_Creatures_Attacks1" msprop:Generator_UserParentTable="Creatures" msprop:Generator_ParentPropName="CreaturesRow" />
+      <msdata:Relationship name="FK_Creatures_Attacks" msdata:parent="Creatures" msdata:child="Attacks" msdata:parentkey="id" msdata:childkey="aggressorid" msprop:Generator_UserChildTable="Attacks" msprop:Generator_ChildPropName="GetAttacksRowsByFK_Creatures_Attacks" msprop:Generator_UserRelationName="FK_Creatures_Attacks" msprop:Generator_RelationVarName="relationFK_Creatures_Attacks" msprop:Generator_UserParentTable="Creatures" msprop:Generator_ParentPropName="CreaturesRowByFK_Creatures_Attacks" />
+      <msdata:Relationship name="FK_Battles_Attacks" msdata:parent="Battles" msdata:child="Attacks" msdata:parentkey="id" msdata:childkey="battleid" msprop:Generator_UserChildTable="Attacks" msprop:Generator_ChildPropName="GetAttacksRows" msprop:Generator_UserRelationName="FK_Battles_Attacks" msprop:Generator_RelationVarName="relationFK_Battles_Attacks" msprop:Generator_UserParentTable="Battles" msprop:Generator_ParentPropName="BattlesRow" />
+      <msdata:Relationship name="FK_Players_Battles" msdata:parent="Players" msdata:child="Battles" msdata:parentkey="id" msdata:childkey="playerid" msprop:Generator_UserChildTable="Battles" msprop:Generator_ChildPropName="GetBattlesRows" msprop:Generator_UserRelationName="FK_Players_Battles" msprop:Generator_RelationVarName="relationFK_Players_Battles" msprop:Generator_UserParentTable="Players" msprop:Generator_ParentPropName="PlayersRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

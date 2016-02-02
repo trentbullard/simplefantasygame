@@ -97,7 +97,7 @@
         End Set
     End Property
 
-    Public Property strength() As Integer
+    Public Property str() As Integer
         Get
             Return creatureStrength
         End Get
@@ -130,6 +130,42 @@
         End Get
         Set(value As Integer)
             creatureExperience = value
+        End Set
+    End Property
+
+    Public Property ini() As Integer
+        Get
+            Return creatureInitiative
+        End Get
+        Set(value As Integer)
+            creatureInitiative = value
+        End Set
+    End Property
+
+    Public Property int() As Integer
+        Get
+            Return creatureIntelligence
+        End Get
+        Set(value As Integer)
+            creatureIntelligence = value
+        End Set
+    End Property
+
+    Public Property wis() As Integer
+        Get
+            Return creatureWisdom
+        End Get
+        Set(value As Integer)
+            creatureWisdom = value
+        End Set
+    End Property
+
+    Public Property dex() As Integer
+        Get
+            Return creatureDexterity
+        End Get
+        Set(value As Integer)
+            creatureDexterity = value
         End Set
     End Property
 

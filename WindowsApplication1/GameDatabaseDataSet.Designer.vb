@@ -35,7 +35,19 @@ Partial Public Class GameDatabaseDataSet
     
     Private tablePlayers As PlayersDataTable
     
+    Private relationFK_Players_Creatures As Global.System.Data.DataRelation
+    
     Private relationCreatures_Items As Global.System.Data.DataRelation
+    
+    Private relationFK_Players_Items As Global.System.Data.DataRelation
+    
+    Private relationFK_Creatures_Attacks1 As Global.System.Data.DataRelation
+    
+    Private relationFK_Creatures_Attacks As Global.System.Data.DataRelation
+    
+    Private relationFK_Battles_Attacks As Global.System.Data.DataRelation
+    
+    Private relationFK_Players_Battles As Global.System.Data.DataRelation
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -292,7 +304,13 @@ Partial Public Class GameDatabaseDataSet
                 Me.tablePlayers.InitVars
             End If
         End If
+        Me.relationFK_Players_Creatures = Me.Relations("FK_Players_Creatures")
         Me.relationCreatures_Items = Me.Relations("Creatures_Items")
+        Me.relationFK_Players_Items = Me.Relations("FK_Players_Items")
+        Me.relationFK_Creatures_Attacks1 = Me.Relations("FK_Creatures_Attacks1")
+        Me.relationFK_Creatures_Attacks = Me.Relations("FK_Creatures_Attacks")
+        Me.relationFK_Battles_Attacks = Me.Relations("FK_Battles_Attacks")
+        Me.relationFK_Players_Battles = Me.Relations("FK_Players_Battles")
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -313,39 +331,20 @@ Partial Public Class GameDatabaseDataSet
         MyBase.Tables.Add(Me.tableItems)
         Me.tablePlayers = New PlayersDataTable()
         MyBase.Tables.Add(Me.tablePlayers)
-        Dim fkc As Global.System.Data.ForeignKeyConstraint
-        fkc = New Global.System.Data.ForeignKeyConstraint("FK_Battles_Attacks", New Global.System.Data.DataColumn() {Me.tableBattles.idColumn}, New Global.System.Data.DataColumn() {Me.tableAttacks.battleidColumn})
-        Me.tableAttacks.Constraints.Add(fkc)
-        fkc.AcceptRejectRule = Global.System.Data.AcceptRejectRule.None
-        fkc.DeleteRule = Global.System.Data.Rule.Cascade
-        fkc.UpdateRule = Global.System.Data.Rule.Cascade
-        fkc = New Global.System.Data.ForeignKeyConstraint("FK_Creatures_Attacks1", New Global.System.Data.DataColumn() {Me.tableCreatures.idColumn}, New Global.System.Data.DataColumn() {Me.tableAttacks.victimidColumn})
-        Me.tableAttacks.Constraints.Add(fkc)
-        fkc.AcceptRejectRule = Global.System.Data.AcceptRejectRule.None
-        fkc.DeleteRule = Global.System.Data.Rule.Cascade
-        fkc.UpdateRule = Global.System.Data.Rule.Cascade
-        fkc = New Global.System.Data.ForeignKeyConstraint("FK_Creatures_Attacks", New Global.System.Data.DataColumn() {Me.tableCreatures.idColumn}, New Global.System.Data.DataColumn() {Me.tableAttacks.aggressoridColumn})
-        Me.tableAttacks.Constraints.Add(fkc)
-        fkc.AcceptRejectRule = Global.System.Data.AcceptRejectRule.None
-        fkc.DeleteRule = Global.System.Data.Rule.Cascade
-        fkc.UpdateRule = Global.System.Data.Rule.Cascade
-        fkc = New Global.System.Data.ForeignKeyConstraint("FK_Players_Battles", New Global.System.Data.DataColumn() {Me.tablePlayers.idColumn}, New Global.System.Data.DataColumn() {Me.tableBattles.playeridColumn})
-        Me.tableBattles.Constraints.Add(fkc)
-        fkc.AcceptRejectRule = Global.System.Data.AcceptRejectRule.None
-        fkc.DeleteRule = Global.System.Data.Rule.Cascade
-        fkc.UpdateRule = Global.System.Data.Rule.Cascade
-        fkc = New Global.System.Data.ForeignKeyConstraint("FK_Players_Creatures", New Global.System.Data.DataColumn() {Me.tablePlayers.idColumn}, New Global.System.Data.DataColumn() {Me.tableCreatures.playeridColumn})
-        Me.tableCreatures.Constraints.Add(fkc)
-        fkc.AcceptRejectRule = Global.System.Data.AcceptRejectRule.None
-        fkc.DeleteRule = Global.System.Data.Rule.Cascade
-        fkc.UpdateRule = Global.System.Data.Rule.Cascade
-        fkc = New Global.System.Data.ForeignKeyConstraint("FK_Players_Items", New Global.System.Data.DataColumn() {Me.tablePlayers.idColumn}, New Global.System.Data.DataColumn() {Me.tableItems.owneridColumn})
-        Me.tableItems.Constraints.Add(fkc)
-        fkc.AcceptRejectRule = Global.System.Data.AcceptRejectRule.None
-        fkc.DeleteRule = Global.System.Data.Rule.Cascade
-        fkc.UpdateRule = Global.System.Data.Rule.Cascade
+        Me.relationFK_Players_Creatures = New Global.System.Data.DataRelation("FK_Players_Creatures", New Global.System.Data.DataColumn() {Me.tablePlayers.idColumn}, New Global.System.Data.DataColumn() {Me.tableCreatures.playeridColumn}, false)
+        Me.Relations.Add(Me.relationFK_Players_Creatures)
         Me.relationCreatures_Items = New Global.System.Data.DataRelation("Creatures_Items", New Global.System.Data.DataColumn() {Me.tableCreatures.idColumn}, New Global.System.Data.DataColumn() {Me.tableItems.weareridColumn}, false)
         Me.Relations.Add(Me.relationCreatures_Items)
+        Me.relationFK_Players_Items = New Global.System.Data.DataRelation("FK_Players_Items", New Global.System.Data.DataColumn() {Me.tablePlayers.idColumn}, New Global.System.Data.DataColumn() {Me.tableItems.owneridColumn}, false)
+        Me.Relations.Add(Me.relationFK_Players_Items)
+        Me.relationFK_Creatures_Attacks1 = New Global.System.Data.DataRelation("FK_Creatures_Attacks1", New Global.System.Data.DataColumn() {Me.tableCreatures.idColumn}, New Global.System.Data.DataColumn() {Me.tableAttacks.victimidColumn}, false)
+        Me.Relations.Add(Me.relationFK_Creatures_Attacks1)
+        Me.relationFK_Creatures_Attacks = New Global.System.Data.DataRelation("FK_Creatures_Attacks", New Global.System.Data.DataColumn() {Me.tableCreatures.idColumn}, New Global.System.Data.DataColumn() {Me.tableAttacks.aggressoridColumn}, false)
+        Me.Relations.Add(Me.relationFK_Creatures_Attacks)
+        Me.relationFK_Battles_Attacks = New Global.System.Data.DataRelation("FK_Battles_Attacks", New Global.System.Data.DataColumn() {Me.tableBattles.idColumn}, New Global.System.Data.DataColumn() {Me.tableAttacks.battleidColumn}, false)
+        Me.Relations.Add(Me.relationFK_Battles_Attacks)
+        Me.relationFK_Players_Battles = New Global.System.Data.DataRelation("FK_Players_Battles", New Global.System.Data.DataColumn() {Me.tablePlayers.idColumn}, New Global.System.Data.DataColumn() {Me.tableBattles.playeridColumn}, false)
+        Me.Relations.Add(Me.relationFK_Players_Battles)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -581,9 +580,18 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddAttacksRow(ByVal battleid As Integer, ByVal aggressorid As Integer, ByVal victimid As Integer, ByVal damage As Integer) As AttacksRow
+        Public Overloads Function AddAttacksRow(ByVal parentBattlesRowByFK_Battles_Attacks As BattlesRow, ByVal parentCreaturesRowByFK_Creatures_Attacks As CreaturesRow, ByVal parentCreaturesRowByFK_Creatures_Attacks1 As CreaturesRow, ByVal damage As Integer) As AttacksRow
             Dim rowAttacksRow As AttacksRow = CType(Me.NewRow,AttacksRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, battleid, aggressorid, victimid, damage}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, Nothing, Nothing, damage}
+            If (Not (parentBattlesRowByFK_Battles_Attacks) Is Nothing) Then
+                columnValuesArray(1) = parentBattlesRowByFK_Battles_Attacks(0)
+            End If
+            If (Not (parentCreaturesRowByFK_Creatures_Attacks) Is Nothing) Then
+                columnValuesArray(2) = parentCreaturesRowByFK_Creatures_Attacks(0)
+            End If
+            If (Not (parentCreaturesRowByFK_Creatures_Attacks1) Is Nothing) Then
+                columnValuesArray(3) = parentCreaturesRowByFK_Creatures_Attacks1(0)
+            End If
             rowAttacksRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowAttacksRow)
             Return rowAttacksRow
@@ -634,8 +642,7 @@ Partial Public Class GameDatabaseDataSet
             MyBase.Columns.Add(Me.columndamage)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid}, true))
             Me.columnid.AutoIncrement = true
-            Me.columnid.AutoIncrementSeed = -1
-            Me.columnid.AutoIncrementStep = -1
+            Me.columnid.AutoIncrementSeed = 1
             Me.columnid.AllowDBNull = false
             Me.columnid.ReadOnly = true
             Me.columnid.Unique = true
@@ -868,9 +875,12 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddBattlesRow(ByVal playerid As Integer) As BattlesRow
+        Public Overloads Function AddBattlesRow(ByVal parentPlayersRowByFK_Players_Battles As PlayersRow) As BattlesRow
             Dim rowBattlesRow As BattlesRow = CType(Me.NewRow,BattlesRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, playerid}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing}
+            If (Not (parentPlayersRowByFK_Players_Battles) Is Nothing) Then
+                columnValuesArray(1) = parentPlayersRowByFK_Players_Battles(0)
+            End If
             rowBattlesRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowBattlesRow)
             Return rowBattlesRow
@@ -912,8 +922,7 @@ Partial Public Class GameDatabaseDataSet
             MyBase.Columns.Add(Me.columnplayerid)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid}, true))
             Me.columnid.AutoIncrement = true
-            Me.columnid.AutoIncrementSeed = -1
-            Me.columnid.AutoIncrementStep = -1
+            Me.columnid.AutoIncrementSeed = 1
             Me.columnid.AllowDBNull = false
             Me.columnid.ReadOnly = true
             Me.columnid.Unique = true
@@ -1256,9 +1265,12 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddCreaturesRow(ByVal name As String, ByVal species As String, ByVal level As Integer, ByVal experience As Integer, ByVal health As Integer, ByVal strength As Integer, ByVal armor As Integer, ByVal playerid As Integer, ByVal initiative As Integer, ByVal intelligence As Integer, ByVal wisdom As Integer, ByVal dexterity As Integer) As CreaturesRow
+        Public Overloads Function AddCreaturesRow(ByVal name As String, ByVal species As String, ByVal level As Integer, ByVal experience As Integer, ByVal health As Integer, ByVal strength As Integer, ByVal armor As Integer, ByVal parentPlayersRowByFK_Players_Creatures As PlayersRow, ByVal initiative As Integer, ByVal intelligence As Integer, ByVal wisdom As Integer, ByVal dexterity As Integer) As CreaturesRow
             Dim rowCreaturesRow As CreaturesRow = CType(Me.NewRow,CreaturesRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, name, species, level, experience, health, strength, armor, playerid, initiative, intelligence, wisdom, dexterity}
+            Dim columnValuesArray() As Object = New Object() {Nothing, name, species, level, experience, health, strength, armor, Nothing, initiative, intelligence, wisdom, dexterity}
+            If (Not (parentPlayersRowByFK_Players_Creatures) Is Nothing) Then
+                columnValuesArray(8) = parentPlayersRowByFK_Players_Creatures(0)
+            End If
             rowCreaturesRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowCreaturesRow)
             Return rowCreaturesRow
@@ -1333,8 +1345,7 @@ Partial Public Class GameDatabaseDataSet
             MyBase.Columns.Add(Me.columndexterity)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid}, true))
             Me.columnid.AutoIncrement = true
-            Me.columnid.AutoIncrementSeed = -1
-            Me.columnid.AutoIncrementStep = -1
+            Me.columnid.AutoIncrementSeed = 1
             Me.columnid.AllowDBNull = false
             Me.columnid.ReadOnly = true
             Me.columnid.Unique = true
@@ -1629,9 +1640,12 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddItemsRow(ByVal name As String, ByVal ownerid As Integer, ByVal attributes As String, ByVal type As String, ByVal slot As String, ByVal isranged As Boolean, ByVal parentCreaturesRowByCreatures_Items As CreaturesRow) As ItemsRow
+        Public Overloads Function AddItemsRow(ByVal name As String, ByVal parentPlayersRowByFK_Players_Items As PlayersRow, ByVal attributes As String, ByVal type As String, ByVal slot As String, ByVal isranged As Boolean, ByVal parentCreaturesRowByCreatures_Items As CreaturesRow) As ItemsRow
             Dim rowItemsRow As ItemsRow = CType(Me.NewRow,ItemsRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, name, ownerid, attributes, type, slot, isranged, Nothing}
+            Dim columnValuesArray() As Object = New Object() {Nothing, name, Nothing, attributes, type, slot, isranged, Nothing}
+            If (Not (parentPlayersRowByFK_Players_Items) Is Nothing) Then
+                columnValuesArray(2) = parentPlayersRowByFK_Players_Items(0)
+            End If
             If (Not (parentCreaturesRowByCreatures_Items) Is Nothing) Then
                 columnValuesArray(7) = parentCreaturesRowByCreatures_Items(0)
             End If
@@ -1694,8 +1708,7 @@ Partial Public Class GameDatabaseDataSet
             MyBase.Columns.Add(Me.columnwearerid)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid}, true))
             Me.columnid.AutoIncrement = true
-            Me.columnid.AutoIncrementSeed = -1
-            Me.columnid.AutoIncrementStep = -1
+            Me.columnid.AutoIncrementSeed = 1
             Me.columnid.AllowDBNull = false
             Me.columnid.ReadOnly = true
             Me.columnid.Unique = true
@@ -2016,8 +2029,7 @@ Partial Public Class GameDatabaseDataSet
             MyBase.Columns.Add(Me.columngold)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid}, true))
             Me.columnid.AutoIncrement = true
-            Me.columnid.AutoIncrementSeed = -1
-            Me.columnid.AutoIncrementStep = -1
+            Me.columnid.AutoIncrementSeed = 1
             Me.columnid.AllowDBNull = false
             Me.columnid.ReadOnly = true
             Me.columnid.Unique = true
@@ -2239,6 +2251,39 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property CreaturesRow() As CreaturesRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_Creatures_Attacks1")),CreaturesRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("FK_Creatures_Attacks1"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property CreaturesRowByFK_Creatures_Attacks() As CreaturesRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_Creatures_Attacks")),CreaturesRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("FK_Creatures_Attacks"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property BattlesRow() As BattlesRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_Battles_Attacks")),BattlesRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("FK_Battles_Attacks"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsbattleidNull() As Boolean
             Return Me.IsNull(Me.tableAttacks.battleidColumn)
         End Function
@@ -2329,6 +2374,17 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property PlayersRow() As PlayersRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_Players_Battles")),PlayersRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("FK_Players_Battles"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsplayeridNull() As Boolean
             Return Me.IsNull(Me.tableBattles.playeridColumn)
         End Function
@@ -2338,6 +2394,16 @@ Partial Public Class GameDatabaseDataSet
         Public Sub SetplayeridNull()
             Me(Me.tableBattles.playeridColumn) = Global.System.Convert.DBNull
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function GetAttacksRows() As AttacksRow()
+            If (Me.Table.ChildRelations("FK_Battles_Attacks") Is Nothing) Then
+                Return New AttacksRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK_Battles_Attacks")),AttacksRow())
+            End If
+        End Function
     End Class
     
     '''<summary>
@@ -2548,6 +2614,17 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property PlayersRow() As PlayersRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_Players_Creatures")),PlayersRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("FK_Players_Creatures"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsnameNull() As Boolean
             Return Me.IsNull(Me.tableCreatures.nameColumn)
         End Function
@@ -2699,6 +2776,26 @@ Partial Public Class GameDatabaseDataSet
                 Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("Creatures_Items")),ItemsRow())
             End If
         End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function GetAttacksRows() As AttacksRow()
+            If (Me.Table.ChildRelations("FK_Creatures_Attacks1") Is Nothing) Then
+                Return New AttacksRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK_Creatures_Attacks1")),AttacksRow())
+            End If
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function GetAttacksRowsByFK_Creatures_Attacks() As AttacksRow()
+            If (Me.Table.ChildRelations("FK_Creatures_Attacks") Is Nothing) Then
+                Return New AttacksRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK_Creatures_Attacks")),AttacksRow())
+            End If
+        End Function
     End Class
     
     '''<summary>
@@ -2836,6 +2933,17 @@ Partial Public Class GameDatabaseDataSet
             End Get
             Set
                 Me.SetParentRow(value, Me.Table.ParentRelations("Creatures_Items"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property PlayersRow() As PlayersRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_Players_Items")),PlayersRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("FK_Players_Items"))
             End Set
         End Property
         
@@ -3045,6 +3153,36 @@ Partial Public Class GameDatabaseDataSet
         Public Sub SetgoldNull()
             Me(Me.tablePlayers.goldColumn) = Global.System.Convert.DBNull
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function GetCreaturesRows() As CreaturesRow()
+            If (Me.Table.ChildRelations("FK_Players_Creatures") Is Nothing) Then
+                Return New CreaturesRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK_Players_Creatures")),CreaturesRow())
+            End If
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function GetItemsRows() As ItemsRow()
+            If (Me.Table.ChildRelations("FK_Players_Items") Is Nothing) Then
+                Return New ItemsRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK_Players_Items")),ItemsRow())
+            End If
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function GetBattlesRows() As BattlesRow()
+            If (Me.Table.ChildRelations("FK_Players_Battles") Is Nothing) Then
+                Return New BattlesRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK_Players_Battles")),BattlesRow())
+            End If
+        End Function
     End Class
     
     '''<summary>

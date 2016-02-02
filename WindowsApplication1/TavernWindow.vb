@@ -41,7 +41,7 @@
         newRow("name") = creature.name
         newRow("species") = creature.species
         newRow("health") = creature.health
-        newRow("strength") = creature.strength
+        newRow("strength") = creature.str
         newRow("armor") = creature.armor
         newRow("level") = creature.level
         newRow("experience") = creature.exp
@@ -72,7 +72,7 @@
                 tavernSlot1Leveltxt.Text = creature.level
                 tavernSlot1Speciestxt.Text = creature.species
                 tavernSlot1Healthtxt.Text = creature.health
-                tavernSlot1Strengthtxt.Text = creature.strength
+                tavernSlot1Strengthtxt.Text = creature.str
                 tavernSlot1Armortxt.Text = creature.armor
                 tavernSlot1Initiativetxt.Text = creature.ini
                 tavernSlot1Intelligencetxt.Text = creature.int
@@ -84,7 +84,7 @@
                 tavernSlot2Leveltxt.Text = creature.level
                 tavernSlot2Speciestxt.Text = creature.species
                 tavernSlot2Healthtxt.Text = creature.health
-                tavernSlot2Strengthtxt.Text = creature.strength
+                tavernSlot2Strengthtxt.Text = creature.str
                 tavernSlot2Armortxt.Text = creature.armor
                 tavernSlot2Initiativetxt.Text = creature.ini
                 tavernSlot2Intelligencetxt.Text = creature.int
@@ -96,7 +96,7 @@
                 tavernSlot3Leveltxt.Text = creature.level
                 tavernSlot3Speciestxt.Text = creature.species
                 tavernSlot3Healthtxt.Text = creature.health
-                tavernSlot3Strengthtxt.Text = creature.strength
+                tavernSlot3Strengthtxt.Text = creature.str
                 tavernSlot3Armortxt.Text = creature.armor
                 tavernSlot3Initiativetxt.Text = creature.ini
                 tavernSlot3Intelligencetxt.Text = creature.int
@@ -108,7 +108,7 @@
                 tavernSlot4Leveltxt.Text = creature.level
                 tavernSlot4Speciestxt.Text = creature.species
                 tavernSlot4Healthtxt.Text = creature.health
-                tavernSlot4Strengthtxt.Text = creature.strength
+                tavernSlot4Strengthtxt.Text = creature.str
                 tavernSlot4Armortxt.Text = creature.armor
                 tavernSlot4Initiativetxt.Text = creature.ini
                 tavernSlot4Intelligencetxt.Text = creature.int

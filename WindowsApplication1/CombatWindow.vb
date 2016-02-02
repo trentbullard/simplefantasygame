@@ -25,72 +25,10 @@
         End If
     End Sub
 
-    'Called in the following cases:
-    '1) The user clicks the Create button on the main window under either creature slot
-    '2) A creature is killed by an attack
-    '
-    'First attempts to create a new record in the Creatures DataTable.
-    'If this is successful, it uses that record (specifically the record Id)
-    'to create a new Creature instance using the same attributes.
-    Private Sub NewCreature(name, species, health, strength, armor, level, exp, owner)
-        Dim newRow As DataRow = GameDatabaseDataSet.Tables("Creatures").NewRow()
-
-        newRow("name") = name
-        newRow("species") = species
-        newRow("health") = health
-        newRow("strength") = strength
-        newRow("armor") = armor
-        newRow("level") = level
-        newRow("experience") = exp
-        newRow("playerid") = owner.id
-
-        GameDatabaseDataSet.Tables("Creatures").Rows.Add(newRow)
-
-        'Attempts to update the database with the new row from the dataset.
-        'If successful, a new Creature instance is created with the attributes
-        'from the new database record.
-        Try
-            Validate()
-            CreaturesBindingSource.EndEdit()
-            CreaturesTableAdapter.Update(GameDatabaseDataSet.Creatures)
-        Catch ex As Exception
-            MsgBox("Failed to add creature to database.")
-        End Try
-    End Sub
-
-    'Called in the following cases:
-    ' 1) By NewAttack() from this document at first run of program when 
-    '   the first attack is created if battleActive is false (default until changed
-    '   by this function
-    ' 2) By AttackResult() from this document in the event of a new creature
-    '   replacing a killed creature.
-    ' 3) New creature created by user after first battle
-    '
-    'First attempts to create a new record in the Battles DataTable.
-    'If this is successful, it uses that record (specifically the record Id)
-    'to create a new Battle instance using the same attributes.
-    Private Sub NewBattle(player)
-        Dim newRow As DataRow = GameDatabaseDataSet.Tables("Battles").NewRow()
-
-        newRow("playerid") = currentPlayer.id
-
-        GameDatabaseDataSet.Tables("Battles").Rows.Add(newRow)
-
-        'Attempts to update the database with the new row from the dataset.
-        'If successful, a new instance of Battle is created
-        'using the new record's attributes. Then battleActive is set to True.
-        Try
-            Validate()
-            BattlesBindingSource.EndEdit()
-            BattlesTableAdapter.Update(GameDatabaseDataSet.Battles)
-            newRow = BattlesTableAdapter.GetLastRow().Select().First
-            currentBattle = New battle(newRow("Id"), currentPlayer)
-            battleActive = True
-            LogBattle(newRow, True)  'from log.vb
-        Catch ex As Exception
-            LogBattle(newRow, False)  'from log.vb
-            MsgBox("Failed to add battle to database.")
-        End Try
+    Private Sub hireListlst_SelectedIndexChanged(sender As Object, e As EventArgs) Handles hireListlst.SelectedIndexChanged
+        If Not hireListlst.SelectedIndex = -1 Then
+            currentCreature = hireListlst.SelectedItem
+        End If
     End Sub
 
     Private Sub player1Itemslst_SelectedIndexChanged(sender As Object, e As EventArgs) Handles playerItemslst.SelectedIndexChanged
@@ -122,5 +60,49 @@
 
     Private Sub enemySlot4Targetrad_CheckedChanged(sender As Object, e As EventArgs) Handles enemySlot4Targetrad.CheckedChanged
         playerTarget = enemyCreature4
+    End Sub
+
+    Private Sub playerSlot1Fillbtn_Click(sender As Object, e As EventArgs) Handles playerSlot1Fillbtn.Click
+        If Not hireListlst.SelectedIndex = -1 Then
+            playerSlot1Nametxt.Text = currentCreature.name
+            playerSlot1Leveltxt.Text = currentCreature.level
+            playerSlot1Speciestxt.Text = currentCreature.species
+            playerSlot1Healthtxt.Text = currentCreature.health
+            playerSlot1Armortxt.Text = currentCreature.armor
+            hireListlst.Items.Remove(hireListlst.SelectedItem)
+        End If
+    End Sub
+
+    Private Sub playerSlot2Fillbtn_Click(sender As Object, e As EventArgs) Handles playerSlot2Fillbtn.Click
+        If Not hireListlst.SelectedIndex = -1 Then
+            playerSlot2Nametxt.Text = currentCreature.name
+            playerSlot2Leveltxt.Text = currentCreature.level
+            playerSlot2Speciestxt.Text = currentCreature.species
+            playerSlot2Healthtxt.Text = currentCreature.health
+            playerSlot2Armortxt.Text = currentCreature.armor
+            hireListlst.Items.Remove(hireListlst.SelectedItem)
+        End If
+    End Sub
+
+    Private Sub playerSlot3Fillbtn_Click(sender As Object, e As EventArgs) Handles playerSlot3Fillbtn.Click
+        If Not hireListlst.SelectedIndex = -1 Then
+            playerSlot3Nametxt.Text = currentCreature.name
+            playerSlot3Leveltxt.Text = currentCreature.level
+            playerSlot3Speciestxt.Text = currentCreature.species
+            playerSlot3Healthtxt.Text = currentCreature.health
+            playerSlot3Armortxt.Text = currentCreature.armor
+            hireListlst.Items.Remove(hireListlst.SelectedItem)
+        End If
+    End Sub
+
+    Private Sub playerSlot4Fillbtn_Click(sender As Object, e As EventArgs) Handles playerSlot4Fillbtn.Click
+        If Not hireListlst.SelectedIndex = -1 Then
+            playerSlot4Nametxt.Text = currentCreature.name
+            playerSlot4Leveltxt.Text = currentCreature.level
+            playerSlot4Speciestxt.Text = currentCreature.species
+            playerSlot4Healthtxt.Text = currentCreature.health
+            playerSlot4Armortxt.Text = currentCreature.armor
+            hireListlst.Items.Remove(hireListlst.SelectedItem)
+        End If
     End Sub
 End Class
