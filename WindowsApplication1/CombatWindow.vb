@@ -5,6 +5,8 @@
     Dim enemyCreature4 As New creature
 
     Private Sub CombatWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'GameDatabaseDataSet.Players' table. You can move, or remove it, as needed.
+        Me.PlayersTableAdapter.Fill(Me.GameDatabaseDataSet.Players)
         Me.ItemsTableAdapter.Fill(Me.GameDatabaseDataSet.Items)
         Me.CreaturesTableAdapter.Fill(Me.GameDatabaseDataSet.Creatures)
         Me.BattlesTableAdapter.Fill(Me.GameDatabaseDataSet.Battles)
@@ -16,6 +18,9 @@
 
         playerLeveltxt.Text = currentPlayer.level
         playerGoldtxt.Text = currentPlayer.gold
+        playerExperiencebar.Minimum = currentPlayer.level ^ 5
+        playerExperiencebar.Maximum = (currentPlayer.level + 1) ^ 5
+        playerExperiencebar.Value = currentPlayer.exp
 
         If CreaturesTableAdapter.GetRowsByPlayer(currentPlayer.id).Any Then
             tavernlbl.Hide()
@@ -23,6 +28,8 @@
                 hireListlst.Items.Add(New creature(row))
             Next
         End If
+
+
     End Sub
 
     Private Sub hireListlst_SelectedIndexChanged(sender As Object, e As EventArgs) Handles hireListlst.SelectedIndexChanged
@@ -104,5 +111,22 @@
             playerSlot4Armortxt.Text = currentCreature.armor
             hireListlst.Items.Remove(hireListlst.SelectedItem)
         End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        currentPlayer.GainExp(10)
+        playerExperiencebar.Minimum = currentPlayer.level ^ 5
+        playerExperiencebar.Maximum = (currentPlayer.level + 1) ^ 5
+        playerExperiencebar.Value = currentPlayer.exp
+        playerLeveltxt.Text = currentPlayer.level
+        updateDatabase()
+    End Sub
+
+    Private Sub updateDatabase()
+        GameDatabaseDataSet.Players(currentPlayer.id - 1).level = currentPlayer.level
+        GameDatabaseDataSet.Players(currentPlayer.id - 1).experience = currentPlayer.exp
+        GameDatabaseDataSet.Players(currentPlayer.id - 1).gold = currentPlayer.gold
+        PlayersBindingSource.EndEdit()
+        PlayersTableAdapter.Update(GameDatabaseDataSet.Players)
     End Sub
 End Class

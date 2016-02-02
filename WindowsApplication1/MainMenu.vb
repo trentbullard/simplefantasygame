@@ -25,7 +25,7 @@ Public Class MainMenu
         'Converts any string into a proper-cased trimmed string
         nameString = ProperCase(nameString)
 
-        Dim player As player = NewPlayer(nameString, 1, 0, -0)
+        Dim player As player = NewPlayer(nameString, 1, 1, 0)
         Try
             playerSelectlstv.Items.Add(player.level)
             playerSelectlstv.Items(playerSelectlstv.Items.Count - 1).SubItems.Add(player.name)

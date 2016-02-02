@@ -61,13 +61,10 @@
         creatureOwner = currentPlayer
     End Sub
 
-    Public Property id() As Integer
+    Public ReadOnly Property id() As Integer
         Get
             Return creatureid
         End Get
-        Set(value As Integer)
-            creatureid = value
-        End Set
     End Property
 
     Public Property name() As String
@@ -79,103 +76,70 @@
         End Set
     End Property
 
-    Public Property species() As String
+    Public ReadOnly Property species() As String
         Get
             Return creatureSpecies
         End Get
-        Set(value As String)
-            creatureName = value
-        End Set
     End Property
 
-    Public Property health() As Integer
+    Public ReadOnly Property health() As Integer
         Get
             Return creatureHealth
         End Get
-        Set(value As Integer)
-            creatureHealth = value
-        End Set
     End Property
 
-    Public Property str() As Integer
+    Public ReadOnly Property str() As Integer
         Get
             Return creatureStrength
         End Get
-        Set(value As Integer)
-            creatureStrength = value
-        End Set
     End Property
 
-    Public Property armor() As Integer
+    Public ReadOnly Property armor() As Integer
         Get
             Return creatureArmor
         End Get
-        Set(value As Integer)
-            creatureArmor = value
-        End Set
     End Property
 
-    Public Property level() As Integer
+    Public ReadOnly Property level() As Integer
         Get
             Return creatureLevel
         End Get
-        Set(value As Integer)
-            creatureLevel = value
-        End Set
     End Property
 
-    Public Property exp() As Integer
+    Public ReadOnly Property exp() As Integer
         Get
             Return creatureExperience
         End Get
-        Set(value As Integer)
-            creatureExperience = value
-        End Set
     End Property
 
-    Public Property ini() As Integer
+    Public ReadOnly Property ini() As Integer
         Get
             Return creatureInitiative
         End Get
-        Set(value As Integer)
-            creatureInitiative = value
-        End Set
     End Property
 
-    Public Property int() As Integer
+    Public ReadOnly Property int() As Integer
         Get
             Return creatureIntelligence
         End Get
-        Set(value As Integer)
-            creatureIntelligence = value
-        End Set
     End Property
 
-    Public Property wis() As Integer
+    Public ReadOnly Property wis() As Integer
         Get
             Return creatureWisdom
         End Get
-        Set(value As Integer)
-            creatureWisdom = value
-        End Set
     End Property
 
-    Public Property dex() As Integer
+    Public ReadOnly Property dex() As Integer
         Get
             Return creatureDexterity
         End Get
-        Set(value As Integer)
-            creatureDexterity = value
-        End Set
     End Property
 
-    Public Property owner() As player
+    Public ReadOnly Property owner() As player
         Get
             Return creatureOwner
         End Get
-        Set(value As player)
-            creatureOwner = value
-        End Set
     End Property
 
     Public Overloads Overrides Function Equals(creature) As Boolean
@@ -192,7 +156,7 @@
             creatureHealth = creatureHealth - damage
         Else
             creatureHealth = 0
-            MsgBox(creatureName & " has died.")
+            MsgBox(Me.ToString & " has died.")
             LogCreatureDeath(Me)
         End If
     End Sub
@@ -201,9 +165,9 @@
         Return Me.name & " the level " & Me.creatureLevel & Space(1) & Me.species
     End Function
 
-    Public Sub gainExp(amount)
+    Public Sub GainExp(amount)
         creatureExperience += amount
-        If creatureExperience > creatureLevel ^ 5 Then
+        If creatureExperience >= (creatureLevel + 1) ^ 5 Then
             creatureLevel += 1
         End If
     End Sub

@@ -9,7 +9,7 @@
         playerid = -1
         playerName = "name"
         playerLevel = 1
-        playerExperience = 0
+        playerExperience = 1
         playerGold = 0
     End Sub
 
@@ -21,13 +21,18 @@
         playerGold = gold
     End Sub
 
-    Public Property id()
+    Public Sub New(row As GameDatabaseDataSet.PlayersRow)
+        playerid = row("id")
+        playerName = row("name")
+        playerLevel = row("level")
+        playerExperience = row("experience")
+        playerGold = row("gold")
+    End Sub
+
+    Public ReadOnly Property id()
         Get
             Return playerid
         End Get
-        Set(value)
-            playerid = value
-        End Set
     End Property
 
     Public Property name()
@@ -39,41 +44,37 @@
         End Set
     End Property
 
-    Public Property level()
+    Public ReadOnly Property level()
         Get
             Return playerLevel
         End Get
-        Set(value)
-            playerLevel = value
-        End Set
     End Property
 
-    Public Property exp()
+    Public ReadOnly Property exp()
         Get
             Return playerExperience
         End Get
-        Set(value)
-            playerExperience = value
-        End Set
     End Property
 
-    Public Property gold()
+    Public ReadOnly Property gold()
         Get
             Return playerGold
         End Get
-        Set(value)
-            playerGold = value
-        End Set
     End Property
 
     Public Overrides Function ToString() As String
         Return "(" & playerLevel & ") " & playerName
     End Function
 
-    Public Sub gainExp(amount)
+    Public Sub GainExp(amount)
         playerExperience += amount
-        If playerExperience > playerLevel ^ 5 Then
+        If playerExperience >= (playerLevel + 1) ^ 5 Then
             playerLevel += 1
+            MsgBox("DING! gratz, you leveled up!")
         End If
+    End Sub
+
+    Public Sub GainGold(amount)
+        playerGold += amount
     End Sub
 End Class
