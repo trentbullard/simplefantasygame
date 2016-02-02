@@ -585,5 +585,34 @@ ORDER BY id DESC</CommandText>
       <xs:selector xpath=".//mstns:Players" />
       <xs:field xpath="mstns:id" />
     </xs:unique>
+    <xs:keyref name="FK_Players_Items" refer="Players_Constraint1" msdata:ConstraintOnly="true">
+      <xs:selector xpath=".//mstns:Items" />
+      <xs:field xpath="mstns:ownerid" />
+    </xs:keyref>
+    <xs:keyref name="FK_Players_Creatures" refer="Players_Constraint1" msdata:ConstraintOnly="true">
+      <xs:selector xpath=".//mstns:Creatures" />
+      <xs:field xpath="mstns:playerid" />
+    </xs:keyref>
+    <xs:keyref name="FK_Players_Battles" refer="Players_Constraint1" msdata:ConstraintOnly="true">
+      <xs:selector xpath=".//mstns:Battles" />
+      <xs:field xpath="mstns:playerid" />
+    </xs:keyref>
+    <xs:keyref name="FK_Battles_Attacks" refer="Battles_Constraint1" msdata:ConstraintOnly="true">
+      <xs:selector xpath=".//mstns:Attacks" />
+      <xs:field xpath="mstns:battleid" />
+    </xs:keyref>
+    <xs:keyref name="FK_Creatures_Attacks1" refer="Creatures_Constraint1" msdata:ConstraintOnly="true">
+      <xs:selector xpath=".//mstns:Attacks" />
+      <xs:field xpath="mstns:victimid" />
+    </xs:keyref>
+    <xs:keyref name="FK_Creatures_Attacks" refer="Creatures_Constraint1" msdata:ConstraintOnly="true">
+      <xs:selector xpath=".//mstns:Attacks" />
+      <xs:field xpath="mstns:aggressorid" />
+    </xs:keyref>
   </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="Creatures_Items" msdata:parent="Creatures" msdata:child="Items" msdata:parentkey="id" msdata:childkey="wearerid" msprop:Generator_UserChildTable="Items" msprop:Generator_ChildPropName="GetItemsRows" msprop:Generator_UserRelationName="Creatures_Items" msprop:Generator_ParentPropName="CreaturesRow" msprop:Generator_RelationVarName="relationCreatures_Items" msprop:Generator_UserParentTable="Creatures" />
+    </xs:appinfo>
+  </xs:annotation>
 </xs:schema>

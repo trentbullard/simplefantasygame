@@ -24,6 +24,60 @@ Partial Class CombatWindow
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Combatpnl = New System.Windows.Forms.Panel()
+        Me.enemyTeampnl = New System.Windows.Forms.Panel()
+        Me.enemySlot4Targetlbl = New System.Windows.Forms.Label()
+        Me.enemySlot2pnl = New System.Windows.Forms.Panel()
+        Me.enemySlot2Leveltxt = New System.Windows.Forms.TextBox()
+        Me.enemySlot2Levellbl = New System.Windows.Forms.Label()
+        Me.enemySlot2Namelbl = New System.Windows.Forms.Label()
+        Me.enemySlot2Armortxt = New System.Windows.Forms.TextBox()
+        Me.enemySlot2Nametxt = New System.Windows.Forms.TextBox()
+        Me.enemySlot2Armorlbl = New System.Windows.Forms.Label()
+        Me.enemySlot2Specieslbl = New System.Windows.Forms.Label()
+        Me.enemySlot2Speciestxt = New System.Windows.Forms.TextBox()
+        Me.enemySlot2Healthlbl = New System.Windows.Forms.Label()
+        Me.enemySlot2Healthtxt = New System.Windows.Forms.TextBox()
+        Me.enemySlot4Targetrad = New System.Windows.Forms.RadioButton()
+        Me.enemySlot2Targetlbl = New System.Windows.Forms.Label()
+        Me.enemySlot3Targetrad = New System.Windows.Forms.RadioButton()
+        Me.enemySlot3Targetlbl = New System.Windows.Forms.Label()
+        Me.enemySlot1pnl = New System.Windows.Forms.Panel()
+        Me.enemySlot1Leveltxt = New System.Windows.Forms.TextBox()
+        Me.enemySlot1Levellbl = New System.Windows.Forms.Label()
+        Me.enemySlot1Namelbl = New System.Windows.Forms.Label()
+        Me.enemySlot1Nametxt = New System.Windows.Forms.TextBox()
+        Me.enemySlot1Armortxt = New System.Windows.Forms.TextBox()
+        Me.enemySlot1Specieslbl = New System.Windows.Forms.Label()
+        Me.enemySlot1Armorlbl = New System.Windows.Forms.Label()
+        Me.enemySlot1Speciestxt = New System.Windows.Forms.TextBox()
+        Me.enemySlot1Healthlbl = New System.Windows.Forms.Label()
+        Me.enemySlot1Healthtxt = New System.Windows.Forms.TextBox()
+        Me.enemySlot4pnl = New System.Windows.Forms.Panel()
+        Me.enemySlot4Leveltxt = New System.Windows.Forms.TextBox()
+        Me.enemySlot4Levellbl = New System.Windows.Forms.Label()
+        Me.enemySlot4Nametxt = New System.Windows.Forms.TextBox()
+        Me.enemySlot4Armortxt = New System.Windows.Forms.TextBox()
+        Me.enemySlot4Namelbl = New System.Windows.Forms.Label()
+        Me.enemySlot4Armorlbl = New System.Windows.Forms.Label()
+        Me.enemySlot4Specieslbl = New System.Windows.Forms.Label()
+        Me.enemySlot4Speciestxt = New System.Windows.Forms.TextBox()
+        Me.enemySlot4Healthlbl = New System.Windows.Forms.Label()
+        Me.enemySlot4Healthtxt = New System.Windows.Forms.TextBox()
+        Me.enemySlot2Targetrad = New System.Windows.Forms.RadioButton()
+        Me.enemySlot3pnl = New System.Windows.Forms.Panel()
+        Me.enemySlot3Leveltxt = New System.Windows.Forms.TextBox()
+        Me.enemySlot3Levellbl = New System.Windows.Forms.Label()
+        Me.enemySlot3Nametxt = New System.Windows.Forms.TextBox()
+        Me.enemySlot3Namelbl = New System.Windows.Forms.Label()
+        Me.enemySlot3Specieslbl = New System.Windows.Forms.Label()
+        Me.enemySlot3Speciestxt = New System.Windows.Forms.TextBox()
+        Me.enemySlot3Healthlbl = New System.Windows.Forms.Label()
+        Me.enemySlot3Healthtxt = New System.Windows.Forms.TextBox()
+        Me.enemySlot3Armorlbl = New System.Windows.Forms.Label()
+        Me.enemySlot3Armortxt = New System.Windows.Forms.TextBox()
+        Me.enemyTeamlbl = New System.Windows.Forms.Label()
+        Me.enemySlot1Targetrad = New System.Windows.Forms.RadioButton()
+        Me.enemySlot1Targetlbl = New System.Windows.Forms.Label()
         Me.playersTeampnl = New System.Windows.Forms.Panel()
         Me.playerSlot4pnl = New System.Windows.Forms.Panel()
         Me.playerSlot4Experiencebar = New System.Windows.Forms.ProgressBar()
@@ -78,60 +132,6 @@ Partial Class CombatWindow
         Me.playerSlot1Healthtxt = New System.Windows.Forms.TextBox()
         Me.playerSlot1Armorlbl = New System.Windows.Forms.Label()
         Me.playerSlot1Armortxt = New System.Windows.Forms.TextBox()
-        Me.enemyTeampnl = New System.Windows.Forms.Panel()
-        Me.enemySlot4pnl = New System.Windows.Forms.Panel()
-        Me.enemySlot4Targetrad = New System.Windows.Forms.RadioButton()
-        Me.enemySlot4Targetlbl = New System.Windows.Forms.Label()
-        Me.enemySlot4Leveltxt = New System.Windows.Forms.TextBox()
-        Me.enemySlot4Levellbl = New System.Windows.Forms.Label()
-        Me.enemySlot4Nametxt = New System.Windows.Forms.TextBox()
-        Me.enemySlot4Armortxt = New System.Windows.Forms.TextBox()
-        Me.enemySlot4Namelbl = New System.Windows.Forms.Label()
-        Me.enemySlot4Armorlbl = New System.Windows.Forms.Label()
-        Me.enemySlot4Specieslbl = New System.Windows.Forms.Label()
-        Me.enemySlot4Speciestxt = New System.Windows.Forms.TextBox()
-        Me.enemySlot4Healthlbl = New System.Windows.Forms.Label()
-        Me.enemySlot4Healthtxt = New System.Windows.Forms.TextBox()
-        Me.enemySlot3pnl = New System.Windows.Forms.Panel()
-        Me.enemySlot3Targetlbl = New System.Windows.Forms.Label()
-        Me.enemySlot3Targetrad = New System.Windows.Forms.RadioButton()
-        Me.enemySlot3Leveltxt = New System.Windows.Forms.TextBox()
-        Me.enemySlot3Levellbl = New System.Windows.Forms.Label()
-        Me.enemySlot3Nametxt = New System.Windows.Forms.TextBox()
-        Me.enemySlot3Namelbl = New System.Windows.Forms.Label()
-        Me.enemySlot3Specieslbl = New System.Windows.Forms.Label()
-        Me.enemySlot3Speciestxt = New System.Windows.Forms.TextBox()
-        Me.enemySlot3Healthlbl = New System.Windows.Forms.Label()
-        Me.enemySlot3Healthtxt = New System.Windows.Forms.TextBox()
-        Me.enemySlot3Armorlbl = New System.Windows.Forms.Label()
-        Me.enemySlot3Armortxt = New System.Windows.Forms.TextBox()
-        Me.enemySlot2pnl = New System.Windows.Forms.Panel()
-        Me.enemySlot2Targetlbl = New System.Windows.Forms.Label()
-        Me.enemySlot2Targetrad = New System.Windows.Forms.RadioButton()
-        Me.enemySlot2Leveltxt = New System.Windows.Forms.TextBox()
-        Me.enemySlot2Levellbl = New System.Windows.Forms.Label()
-        Me.enemySlot2Namelbl = New System.Windows.Forms.Label()
-        Me.enemySlot2Armortxt = New System.Windows.Forms.TextBox()
-        Me.enemySlot2Nametxt = New System.Windows.Forms.TextBox()
-        Me.enemySlot2Armorlbl = New System.Windows.Forms.Label()
-        Me.enemySlot2Specieslbl = New System.Windows.Forms.Label()
-        Me.enemySlot2Speciestxt = New System.Windows.Forms.TextBox()
-        Me.enemySlot2Healthlbl = New System.Windows.Forms.Label()
-        Me.enemySlot2Healthtxt = New System.Windows.Forms.TextBox()
-        Me.enemySlot1pnl = New System.Windows.Forms.Panel()
-        Me.enemySlot1Targetlbl = New System.Windows.Forms.Label()
-        Me.enemySlot1Leveltxt = New System.Windows.Forms.TextBox()
-        Me.enemySlot1Levellbl = New System.Windows.Forms.Label()
-        Me.enemySlot1Namelbl = New System.Windows.Forms.Label()
-        Me.enemySlot1Nametxt = New System.Windows.Forms.TextBox()
-        Me.enemySlot1Armortxt = New System.Windows.Forms.TextBox()
-        Me.enemySlot1Specieslbl = New System.Windows.Forms.Label()
-        Me.enemySlot1Armorlbl = New System.Windows.Forms.Label()
-        Me.enemySlot1Speciestxt = New System.Windows.Forms.TextBox()
-        Me.enemySlot1Healthlbl = New System.Windows.Forms.Label()
-        Me.enemySlot1Healthtxt = New System.Windows.Forms.TextBox()
-        Me.enemyTeamlbl = New System.Windows.Forms.Label()
-        Me.enemySlot1Targetrad = New System.Windows.Forms.RadioButton()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -150,6 +150,15 @@ Partial Class CombatWindow
         Me.shopbtn = New System.Windows.Forms.Button()
         Me.mainMenubtn = New System.Windows.Forms.Button()
         Me.tavernlbl = New System.Windows.Forms.Label()
+        Me.inventorypnl = New System.Windows.Forms.Panel()
+        Me.hiredCreaturesListpnl = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.playerInfopnl = New System.Windows.Forms.Panel()
+        Me.playerExperiencebar = New System.Windows.Forms.ProgressBar()
+        Me.playerLevellbl = New System.Windows.Forms.Label()
+        Me.playerLeveltxt = New System.Windows.Forms.TextBox()
+        Me.playerGoldlbl = New System.Windows.Forms.Label()
+        Me.playerGoldtxt = New System.Windows.Forms.TextBox()
         Me.GameDatabaseDataSet = New WindowsApplication1.GameDatabaseDataSet()
         Me.CreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.CreaturesTableAdapter()
@@ -160,35 +169,26 @@ Partial Class CombatWindow
         Me.AttacksTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.AttacksTableAdapter()
         Me.ItemsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ItemsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.ItemsTableAdapter()
-        Me.inventorypnl = New System.Windows.Forms.Panel()
-        Me.hiredCreaturesListpnl = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.playerInfopnl = New System.Windows.Forms.Panel()
-        Me.playerExperiencebar = New System.Windows.Forms.ProgressBar()
-        Me.playerLevellbl = New System.Windows.Forms.Label()
-        Me.playerLeveltxt = New System.Windows.Forms.TextBox()
-        Me.playerGoldlbl = New System.Windows.Forms.Label()
-        Me.playerGoldtxt = New System.Windows.Forms.TextBox()
         Me.Combatpnl.SuspendLayout()
+        Me.enemyTeampnl.SuspendLayout()
+        Me.enemySlot2pnl.SuspendLayout()
+        Me.enemySlot1pnl.SuspendLayout()
+        Me.enemySlot4pnl.SuspendLayout()
+        Me.enemySlot3pnl.SuspendLayout()
         Me.playersTeampnl.SuspendLayout()
         Me.playerSlot4pnl.SuspendLayout()
         Me.playerSlot3pnl.SuspendLayout()
         Me.playerSlot2pnl.SuspendLayout()
         Me.playerSlot1pnl.SuspendLayout()
-        Me.enemyTeampnl.SuspendLayout()
-        Me.enemySlot4pnl.SuspendLayout()
-        Me.enemySlot3pnl.SuspendLayout()
-        Me.enemySlot2pnl.SuspendLayout()
-        Me.enemySlot1pnl.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
+        Me.inventorypnl.SuspendLayout()
+        Me.hiredCreaturesListpnl.SuspendLayout()
+        Me.playerInfopnl.SuspendLayout()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BattlesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AttacksBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ItemsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.inventorypnl.SuspendLayout()
-        Me.hiredCreaturesListpnl.SuspendLayout()
-        Me.playerInfopnl.SuspendLayout()
         Me.SuspendLayout()
         '
         'Combatpnl
@@ -199,6 +199,537 @@ Partial Class CombatWindow
         Me.Combatpnl.Name = "Combatpnl"
         Me.Combatpnl.Size = New System.Drawing.Size(953, 389)
         Me.Combatpnl.TabIndex = 0
+        '
+        'enemyTeampnl
+        '
+        Me.enemyTeampnl.BackColor = System.Drawing.Color.Transparent
+        Me.enemyTeampnl.Controls.Add(Me.enemySlot4Targetlbl)
+        Me.enemyTeampnl.Controls.Add(Me.enemySlot2pnl)
+        Me.enemyTeampnl.Controls.Add(Me.enemySlot4Targetrad)
+        Me.enemyTeampnl.Controls.Add(Me.enemySlot2Targetlbl)
+        Me.enemyTeampnl.Controls.Add(Me.enemySlot3Targetrad)
+        Me.enemyTeampnl.Controls.Add(Me.enemySlot3Targetlbl)
+        Me.enemyTeampnl.Controls.Add(Me.enemySlot1pnl)
+        Me.enemyTeampnl.Controls.Add(Me.enemySlot4pnl)
+        Me.enemyTeampnl.Controls.Add(Me.enemySlot2Targetrad)
+        Me.enemyTeampnl.Controls.Add(Me.enemySlot3pnl)
+        Me.enemyTeampnl.Controls.Add(Me.enemyTeamlbl)
+        Me.enemyTeampnl.Controls.Add(Me.enemySlot1Targetrad)
+        Me.enemyTeampnl.Controls.Add(Me.enemySlot1Targetlbl)
+        Me.enemyTeampnl.Location = New System.Drawing.Point(617, 3)
+        Me.enemyTeampnl.Name = "enemyTeampnl"
+        Me.enemyTeampnl.Size = New System.Drawing.Size(333, 384)
+        Me.enemyTeampnl.TabIndex = 10
+        '
+        'enemySlot4Targetlbl
+        '
+        Me.enemySlot4Targetlbl.AutoSize = True
+        Me.enemySlot4Targetlbl.Location = New System.Drawing.Point(191, 341)
+        Me.enemySlot4Targetlbl.Name = "enemySlot4Targetlbl"
+        Me.enemySlot4Targetlbl.Size = New System.Drawing.Size(34, 13)
+        Me.enemySlot4Targetlbl.TabIndex = 77
+        Me.enemySlot4Targetlbl.Text = "target"
+        '
+        'enemySlot2pnl
+        '
+        Me.enemySlot2pnl.BackColor = System.Drawing.Color.Transparent
+        Me.enemySlot2pnl.Controls.Add(Me.enemySlot2Leveltxt)
+        Me.enemySlot2pnl.Controls.Add(Me.enemySlot2Levellbl)
+        Me.enemySlot2pnl.Controls.Add(Me.enemySlot2Namelbl)
+        Me.enemySlot2pnl.Controls.Add(Me.enemySlot2Armortxt)
+        Me.enemySlot2pnl.Controls.Add(Me.enemySlot2Nametxt)
+        Me.enemySlot2pnl.Controls.Add(Me.enemySlot2Armorlbl)
+        Me.enemySlot2pnl.Controls.Add(Me.enemySlot2Specieslbl)
+        Me.enemySlot2pnl.Controls.Add(Me.enemySlot2Speciestxt)
+        Me.enemySlot2pnl.Controls.Add(Me.enemySlot2Healthlbl)
+        Me.enemySlot2pnl.Controls.Add(Me.enemySlot2Healthtxt)
+        Me.enemySlot2pnl.Location = New System.Drawing.Point(177, 30)
+        Me.enemySlot2pnl.Name = "enemySlot2pnl"
+        Me.enemySlot2pnl.Size = New System.Drawing.Size(154, 126)
+        Me.enemySlot2pnl.TabIndex = 1
+        '
+        'enemySlot2Leveltxt
+        '
+        Me.enemySlot2Leveltxt.Location = New System.Drawing.Point(54, 28)
+        Me.enemySlot2Leveltxt.Name = "enemySlot2Leveltxt"
+        Me.enemySlot2Leveltxt.ReadOnly = True
+        Me.enemySlot2Leveltxt.Size = New System.Drawing.Size(100, 20)
+        Me.enemySlot2Leveltxt.TabIndex = 23
+        '
+        'enemySlot2Levellbl
+        '
+        Me.enemySlot2Levellbl.AutoSize = True
+        Me.enemySlot2Levellbl.Location = New System.Drawing.Point(19, 31)
+        Me.enemySlot2Levellbl.Name = "enemySlot2Levellbl"
+        Me.enemySlot2Levellbl.Size = New System.Drawing.Size(29, 13)
+        Me.enemySlot2Levellbl.TabIndex = 22
+        Me.enemySlot2Levellbl.Text = "level"
+        '
+        'enemySlot2Namelbl
+        '
+        Me.enemySlot2Namelbl.AutoSize = True
+        Me.enemySlot2Namelbl.Location = New System.Drawing.Point(15, 5)
+        Me.enemySlot2Namelbl.Name = "enemySlot2Namelbl"
+        Me.enemySlot2Namelbl.Size = New System.Drawing.Size(33, 13)
+        Me.enemySlot2Namelbl.TabIndex = 57
+        Me.enemySlot2Namelbl.Text = "name"
+        '
+        'enemySlot2Armortxt
+        '
+        Me.enemySlot2Armortxt.Location = New System.Drawing.Point(54, 106)
+        Me.enemySlot2Armortxt.Name = "enemySlot2Armortxt"
+        Me.enemySlot2Armortxt.ReadOnly = True
+        Me.enemySlot2Armortxt.Size = New System.Drawing.Size(100, 20)
+        Me.enemySlot2Armortxt.TabIndex = 66
+        '
+        'enemySlot2Nametxt
+        '
+        Me.enemySlot2Nametxt.Location = New System.Drawing.Point(54, 2)
+        Me.enemySlot2Nametxt.Name = "enemySlot2Nametxt"
+        Me.enemySlot2Nametxt.ReadOnly = True
+        Me.enemySlot2Nametxt.Size = New System.Drawing.Size(100, 20)
+        Me.enemySlot2Nametxt.TabIndex = 58
+        '
+        'enemySlot2Armorlbl
+        '
+        Me.enemySlot2Armorlbl.AutoSize = True
+        Me.enemySlot2Armorlbl.Location = New System.Drawing.Point(15, 109)
+        Me.enemySlot2Armorlbl.Name = "enemySlot2Armorlbl"
+        Me.enemySlot2Armorlbl.Size = New System.Drawing.Size(33, 13)
+        Me.enemySlot2Armorlbl.TabIndex = 65
+        Me.enemySlot2Armorlbl.Text = "armor"
+        '
+        'enemySlot2Specieslbl
+        '
+        Me.enemySlot2Specieslbl.AutoSize = True
+        Me.enemySlot2Specieslbl.Location = New System.Drawing.Point(5, 57)
+        Me.enemySlot2Specieslbl.Name = "enemySlot2Specieslbl"
+        Me.enemySlot2Specieslbl.Size = New System.Drawing.Size(43, 13)
+        Me.enemySlot2Specieslbl.TabIndex = 59
+        Me.enemySlot2Specieslbl.Text = "species"
+        '
+        'enemySlot2Speciestxt
+        '
+        Me.enemySlot2Speciestxt.Location = New System.Drawing.Point(54, 54)
+        Me.enemySlot2Speciestxt.Name = "enemySlot2Speciestxt"
+        Me.enemySlot2Speciestxt.ReadOnly = True
+        Me.enemySlot2Speciestxt.Size = New System.Drawing.Size(100, 20)
+        Me.enemySlot2Speciestxt.TabIndex = 60
+        '
+        'enemySlot2Healthlbl
+        '
+        Me.enemySlot2Healthlbl.AutoSize = True
+        Me.enemySlot2Healthlbl.Location = New System.Drawing.Point(12, 83)
+        Me.enemySlot2Healthlbl.Name = "enemySlot2Healthlbl"
+        Me.enemySlot2Healthlbl.Size = New System.Drawing.Size(36, 13)
+        Me.enemySlot2Healthlbl.TabIndex = 61
+        Me.enemySlot2Healthlbl.Text = "health"
+        '
+        'enemySlot2Healthtxt
+        '
+        Me.enemySlot2Healthtxt.Location = New System.Drawing.Point(54, 80)
+        Me.enemySlot2Healthtxt.Name = "enemySlot2Healthtxt"
+        Me.enemySlot2Healthtxt.ReadOnly = True
+        Me.enemySlot2Healthtxt.Size = New System.Drawing.Size(100, 20)
+        Me.enemySlot2Healthtxt.TabIndex = 62
+        '
+        'enemySlot4Targetrad
+        '
+        Me.enemySlot4Targetrad.AutoSize = True
+        Me.enemySlot4Targetrad.Location = New System.Drawing.Point(231, 341)
+        Me.enemySlot4Targetrad.Name = "enemySlot4Targetrad"
+        Me.enemySlot4Targetrad.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.enemySlot4Targetrad.Size = New System.Drawing.Size(14, 13)
+        Me.enemySlot4Targetrad.TabIndex = 77
+        Me.enemySlot4Targetrad.TabStop = True
+        Me.enemySlot4Targetrad.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.enemySlot4Targetrad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.enemySlot4Targetrad.UseVisualStyleBackColor = True
+        '
+        'enemySlot2Targetlbl
+        '
+        Me.enemySlot2Targetlbl.AutoSize = True
+        Me.enemySlot2Targetlbl.Location = New System.Drawing.Point(191, 162)
+        Me.enemySlot2Targetlbl.Name = "enemySlot2Targetlbl"
+        Me.enemySlot2Targetlbl.Size = New System.Drawing.Size(34, 13)
+        Me.enemySlot2Targetlbl.TabIndex = 25
+        Me.enemySlot2Targetlbl.Text = "target"
+        '
+        'enemySlot3Targetrad
+        '
+        Me.enemySlot3Targetrad.AutoSize = True
+        Me.enemySlot3Targetrad.Location = New System.Drawing.Point(57, 341)
+        Me.enemySlot3Targetrad.Name = "enemySlot3Targetrad"
+        Me.enemySlot3Targetrad.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.enemySlot3Targetrad.Size = New System.Drawing.Size(14, 13)
+        Me.enemySlot3Targetrad.TabIndex = 24
+        Me.enemySlot3Targetrad.TabStop = True
+        Me.enemySlot3Targetrad.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.enemySlot3Targetrad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.enemySlot3Targetrad.UseVisualStyleBackColor = True
+        '
+        'enemySlot3Targetlbl
+        '
+        Me.enemySlot3Targetlbl.AutoSize = True
+        Me.enemySlot3Targetlbl.Location = New System.Drawing.Point(17, 341)
+        Me.enemySlot3Targetlbl.Name = "enemySlot3Targetlbl"
+        Me.enemySlot3Targetlbl.Size = New System.Drawing.Size(34, 13)
+        Me.enemySlot3Targetlbl.TabIndex = 67
+        Me.enemySlot3Targetlbl.Text = "target"
+        '
+        'enemySlot1pnl
+        '
+        Me.enemySlot1pnl.BackColor = System.Drawing.Color.Transparent
+        Me.enemySlot1pnl.Controls.Add(Me.enemySlot1Leveltxt)
+        Me.enemySlot1pnl.Controls.Add(Me.enemySlot1Levellbl)
+        Me.enemySlot1pnl.Controls.Add(Me.enemySlot1Namelbl)
+        Me.enemySlot1pnl.Controls.Add(Me.enemySlot1Nametxt)
+        Me.enemySlot1pnl.Controls.Add(Me.enemySlot1Armortxt)
+        Me.enemySlot1pnl.Controls.Add(Me.enemySlot1Specieslbl)
+        Me.enemySlot1pnl.Controls.Add(Me.enemySlot1Armorlbl)
+        Me.enemySlot1pnl.Controls.Add(Me.enemySlot1Speciestxt)
+        Me.enemySlot1pnl.Controls.Add(Me.enemySlot1Healthlbl)
+        Me.enemySlot1pnl.Controls.Add(Me.enemySlot1Healthtxt)
+        Me.enemySlot1pnl.Location = New System.Drawing.Point(3, 30)
+        Me.enemySlot1pnl.Name = "enemySlot1pnl"
+        Me.enemySlot1pnl.Size = New System.Drawing.Size(154, 126)
+        Me.enemySlot1pnl.TabIndex = 0
+        '
+        'enemySlot1Leveltxt
+        '
+        Me.enemySlot1Leveltxt.Location = New System.Drawing.Point(54, 28)
+        Me.enemySlot1Leveltxt.Name = "enemySlot1Leveltxt"
+        Me.enemySlot1Leveltxt.ReadOnly = True
+        Me.enemySlot1Leveltxt.Size = New System.Drawing.Size(100, 20)
+        Me.enemySlot1Leveltxt.TabIndex = 23
+        '
+        'enemySlot1Levellbl
+        '
+        Me.enemySlot1Levellbl.AutoSize = True
+        Me.enemySlot1Levellbl.Location = New System.Drawing.Point(19, 31)
+        Me.enemySlot1Levellbl.Name = "enemySlot1Levellbl"
+        Me.enemySlot1Levellbl.Size = New System.Drawing.Size(29, 13)
+        Me.enemySlot1Levellbl.TabIndex = 22
+        Me.enemySlot1Levellbl.Text = "level"
+        '
+        'enemySlot1Namelbl
+        '
+        Me.enemySlot1Namelbl.AutoSize = True
+        Me.enemySlot1Namelbl.Location = New System.Drawing.Point(15, 5)
+        Me.enemySlot1Namelbl.Name = "enemySlot1Namelbl"
+        Me.enemySlot1Namelbl.Size = New System.Drawing.Size(33, 13)
+        Me.enemySlot1Namelbl.TabIndex = 4
+        Me.enemySlot1Namelbl.Text = "name"
+        '
+        'enemySlot1Nametxt
+        '
+        Me.enemySlot1Nametxt.Location = New System.Drawing.Point(54, 2)
+        Me.enemySlot1Nametxt.Name = "enemySlot1Nametxt"
+        Me.enemySlot1Nametxt.ReadOnly = True
+        Me.enemySlot1Nametxt.Size = New System.Drawing.Size(100, 20)
+        Me.enemySlot1Nametxt.TabIndex = 5
+        '
+        'enemySlot1Armortxt
+        '
+        Me.enemySlot1Armortxt.Location = New System.Drawing.Point(54, 106)
+        Me.enemySlot1Armortxt.Name = "enemySlot1Armortxt"
+        Me.enemySlot1Armortxt.ReadOnly = True
+        Me.enemySlot1Armortxt.Size = New System.Drawing.Size(100, 20)
+        Me.enemySlot1Armortxt.TabIndex = 21
+        '
+        'enemySlot1Specieslbl
+        '
+        Me.enemySlot1Specieslbl.AutoSize = True
+        Me.enemySlot1Specieslbl.Location = New System.Drawing.Point(5, 57)
+        Me.enemySlot1Specieslbl.Name = "enemySlot1Specieslbl"
+        Me.enemySlot1Specieslbl.Size = New System.Drawing.Size(43, 13)
+        Me.enemySlot1Specieslbl.TabIndex = 8
+        Me.enemySlot1Specieslbl.Text = "species"
+        '
+        'enemySlot1Armorlbl
+        '
+        Me.enemySlot1Armorlbl.AutoSize = True
+        Me.enemySlot1Armorlbl.Location = New System.Drawing.Point(15, 109)
+        Me.enemySlot1Armorlbl.Name = "enemySlot1Armorlbl"
+        Me.enemySlot1Armorlbl.Size = New System.Drawing.Size(33, 13)
+        Me.enemySlot1Armorlbl.TabIndex = 20
+        Me.enemySlot1Armorlbl.Text = "armor"
+        '
+        'enemySlot1Speciestxt
+        '
+        Me.enemySlot1Speciestxt.Location = New System.Drawing.Point(54, 54)
+        Me.enemySlot1Speciestxt.Name = "enemySlot1Speciestxt"
+        Me.enemySlot1Speciestxt.ReadOnly = True
+        Me.enemySlot1Speciestxt.Size = New System.Drawing.Size(100, 20)
+        Me.enemySlot1Speciestxt.TabIndex = 9
+        '
+        'enemySlot1Healthlbl
+        '
+        Me.enemySlot1Healthlbl.AutoSize = True
+        Me.enemySlot1Healthlbl.Location = New System.Drawing.Point(12, 83)
+        Me.enemySlot1Healthlbl.Name = "enemySlot1Healthlbl"
+        Me.enemySlot1Healthlbl.Size = New System.Drawing.Size(36, 13)
+        Me.enemySlot1Healthlbl.TabIndex = 12
+        Me.enemySlot1Healthlbl.Text = "health"
+        '
+        'enemySlot1Healthtxt
+        '
+        Me.enemySlot1Healthtxt.Location = New System.Drawing.Point(54, 80)
+        Me.enemySlot1Healthtxt.Name = "enemySlot1Healthtxt"
+        Me.enemySlot1Healthtxt.ReadOnly = True
+        Me.enemySlot1Healthtxt.Size = New System.Drawing.Size(100, 20)
+        Me.enemySlot1Healthtxt.TabIndex = 13
+        '
+        'enemySlot4pnl
+        '
+        Me.enemySlot4pnl.BackColor = System.Drawing.Color.Transparent
+        Me.enemySlot4pnl.Controls.Add(Me.enemySlot4Leveltxt)
+        Me.enemySlot4pnl.Controls.Add(Me.enemySlot4Levellbl)
+        Me.enemySlot4pnl.Controls.Add(Me.enemySlot4Nametxt)
+        Me.enemySlot4pnl.Controls.Add(Me.enemySlot4Armortxt)
+        Me.enemySlot4pnl.Controls.Add(Me.enemySlot4Namelbl)
+        Me.enemySlot4pnl.Controls.Add(Me.enemySlot4Armorlbl)
+        Me.enemySlot4pnl.Controls.Add(Me.enemySlot4Specieslbl)
+        Me.enemySlot4pnl.Controls.Add(Me.enemySlot4Speciestxt)
+        Me.enemySlot4pnl.Controls.Add(Me.enemySlot4Healthlbl)
+        Me.enemySlot4pnl.Controls.Add(Me.enemySlot4Healthtxt)
+        Me.enemySlot4pnl.Location = New System.Drawing.Point(177, 209)
+        Me.enemySlot4pnl.Name = "enemySlot4pnl"
+        Me.enemySlot4pnl.Size = New System.Drawing.Size(154, 126)
+        Me.enemySlot4pnl.TabIndex = 9
+        '
+        'enemySlot4Leveltxt
+        '
+        Me.enemySlot4Leveltxt.Location = New System.Drawing.Point(54, 28)
+        Me.enemySlot4Leveltxt.Name = "enemySlot4Leveltxt"
+        Me.enemySlot4Leveltxt.ReadOnly = True
+        Me.enemySlot4Leveltxt.Size = New System.Drawing.Size(100, 20)
+        Me.enemySlot4Leveltxt.TabIndex = 78
+        '
+        'enemySlot4Levellbl
+        '
+        Me.enemySlot4Levellbl.AutoSize = True
+        Me.enemySlot4Levellbl.Location = New System.Drawing.Point(19, 31)
+        Me.enemySlot4Levellbl.Name = "enemySlot4Levellbl"
+        Me.enemySlot4Levellbl.Size = New System.Drawing.Size(29, 13)
+        Me.enemySlot4Levellbl.TabIndex = 77
+        Me.enemySlot4Levellbl.Text = "level"
+        '
+        'enemySlot4Nametxt
+        '
+        Me.enemySlot4Nametxt.Location = New System.Drawing.Point(54, 2)
+        Me.enemySlot4Nametxt.Name = "enemySlot4Nametxt"
+        Me.enemySlot4Nametxt.ReadOnly = True
+        Me.enemySlot4Nametxt.Size = New System.Drawing.Size(100, 20)
+        Me.enemySlot4Nametxt.TabIndex = 78
+        '
+        'enemySlot4Armortxt
+        '
+        Me.enemySlot4Armortxt.Location = New System.Drawing.Point(54, 106)
+        Me.enemySlot4Armortxt.Name = "enemySlot4Armortxt"
+        Me.enemySlot4Armortxt.ReadOnly = True
+        Me.enemySlot4Armortxt.Size = New System.Drawing.Size(100, 20)
+        Me.enemySlot4Armortxt.TabIndex = 86
+        '
+        'enemySlot4Namelbl
+        '
+        Me.enemySlot4Namelbl.AutoSize = True
+        Me.enemySlot4Namelbl.Location = New System.Drawing.Point(15, 5)
+        Me.enemySlot4Namelbl.Name = "enemySlot4Namelbl"
+        Me.enemySlot4Namelbl.Size = New System.Drawing.Size(33, 13)
+        Me.enemySlot4Namelbl.TabIndex = 77
+        Me.enemySlot4Namelbl.Text = "name"
+        '
+        'enemySlot4Armorlbl
+        '
+        Me.enemySlot4Armorlbl.AutoSize = True
+        Me.enemySlot4Armorlbl.Location = New System.Drawing.Point(15, 109)
+        Me.enemySlot4Armorlbl.Name = "enemySlot4Armorlbl"
+        Me.enemySlot4Armorlbl.Size = New System.Drawing.Size(33, 13)
+        Me.enemySlot4Armorlbl.TabIndex = 85
+        Me.enemySlot4Armorlbl.Text = "armor"
+        '
+        'enemySlot4Specieslbl
+        '
+        Me.enemySlot4Specieslbl.AutoSize = True
+        Me.enemySlot4Specieslbl.Location = New System.Drawing.Point(5, 57)
+        Me.enemySlot4Specieslbl.Name = "enemySlot4Specieslbl"
+        Me.enemySlot4Specieslbl.Size = New System.Drawing.Size(43, 13)
+        Me.enemySlot4Specieslbl.TabIndex = 79
+        Me.enemySlot4Specieslbl.Text = "species"
+        '
+        'enemySlot4Speciestxt
+        '
+        Me.enemySlot4Speciestxt.Location = New System.Drawing.Point(54, 54)
+        Me.enemySlot4Speciestxt.Name = "enemySlot4Speciestxt"
+        Me.enemySlot4Speciestxt.ReadOnly = True
+        Me.enemySlot4Speciestxt.Size = New System.Drawing.Size(100, 20)
+        Me.enemySlot4Speciestxt.TabIndex = 80
+        '
+        'enemySlot4Healthlbl
+        '
+        Me.enemySlot4Healthlbl.AutoSize = True
+        Me.enemySlot4Healthlbl.Location = New System.Drawing.Point(12, 83)
+        Me.enemySlot4Healthlbl.Name = "enemySlot4Healthlbl"
+        Me.enemySlot4Healthlbl.Size = New System.Drawing.Size(36, 13)
+        Me.enemySlot4Healthlbl.TabIndex = 81
+        Me.enemySlot4Healthlbl.Text = "health"
+        '
+        'enemySlot4Healthtxt
+        '
+        Me.enemySlot4Healthtxt.Location = New System.Drawing.Point(54, 80)
+        Me.enemySlot4Healthtxt.Name = "enemySlot4Healthtxt"
+        Me.enemySlot4Healthtxt.ReadOnly = True
+        Me.enemySlot4Healthtxt.Size = New System.Drawing.Size(100, 20)
+        Me.enemySlot4Healthtxt.TabIndex = 82
+        '
+        'enemySlot2Targetrad
+        '
+        Me.enemySlot2Targetrad.AutoSize = True
+        Me.enemySlot2Targetrad.Location = New System.Drawing.Point(231, 162)
+        Me.enemySlot2Targetrad.Name = "enemySlot2Targetrad"
+        Me.enemySlot2Targetrad.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.enemySlot2Targetrad.Size = New System.Drawing.Size(14, 13)
+        Me.enemySlot2Targetrad.TabIndex = 24
+        Me.enemySlot2Targetrad.TabStop = True
+        Me.enemySlot2Targetrad.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.enemySlot2Targetrad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.enemySlot2Targetrad.UseVisualStyleBackColor = True
+        '
+        'enemySlot3pnl
+        '
+        Me.enemySlot3pnl.BackColor = System.Drawing.Color.Transparent
+        Me.enemySlot3pnl.Controls.Add(Me.enemySlot3Leveltxt)
+        Me.enemySlot3pnl.Controls.Add(Me.enemySlot3Levellbl)
+        Me.enemySlot3pnl.Controls.Add(Me.enemySlot3Nametxt)
+        Me.enemySlot3pnl.Controls.Add(Me.enemySlot3Namelbl)
+        Me.enemySlot3pnl.Controls.Add(Me.enemySlot3Specieslbl)
+        Me.enemySlot3pnl.Controls.Add(Me.enemySlot3Speciestxt)
+        Me.enemySlot3pnl.Controls.Add(Me.enemySlot3Healthlbl)
+        Me.enemySlot3pnl.Controls.Add(Me.enemySlot3Healthtxt)
+        Me.enemySlot3pnl.Controls.Add(Me.enemySlot3Armorlbl)
+        Me.enemySlot3pnl.Controls.Add(Me.enemySlot3Armortxt)
+        Me.enemySlot3pnl.Location = New System.Drawing.Point(3, 209)
+        Me.enemySlot3pnl.Name = "enemySlot3pnl"
+        Me.enemySlot3pnl.Size = New System.Drawing.Size(154, 126)
+        Me.enemySlot3pnl.TabIndex = 9
+        '
+        'enemySlot3Leveltxt
+        '
+        Me.enemySlot3Leveltxt.Location = New System.Drawing.Point(54, 28)
+        Me.enemySlot3Leveltxt.Name = "enemySlot3Leveltxt"
+        Me.enemySlot3Leveltxt.ReadOnly = True
+        Me.enemySlot3Leveltxt.Size = New System.Drawing.Size(100, 20)
+        Me.enemySlot3Leveltxt.TabIndex = 25
+        '
+        'enemySlot3Levellbl
+        '
+        Me.enemySlot3Levellbl.AutoSize = True
+        Me.enemySlot3Levellbl.Location = New System.Drawing.Point(19, 31)
+        Me.enemySlot3Levellbl.Name = "enemySlot3Levellbl"
+        Me.enemySlot3Levellbl.Size = New System.Drawing.Size(29, 13)
+        Me.enemySlot3Levellbl.TabIndex = 24
+        Me.enemySlot3Levellbl.Text = "level"
+        '
+        'enemySlot3Nametxt
+        '
+        Me.enemySlot3Nametxt.Location = New System.Drawing.Point(54, 2)
+        Me.enemySlot3Nametxt.Name = "enemySlot3Nametxt"
+        Me.enemySlot3Nametxt.ReadOnly = True
+        Me.enemySlot3Nametxt.Size = New System.Drawing.Size(100, 20)
+        Me.enemySlot3Nametxt.TabIndex = 68
+        '
+        'enemySlot3Namelbl
+        '
+        Me.enemySlot3Namelbl.AutoSize = True
+        Me.enemySlot3Namelbl.Location = New System.Drawing.Point(15, 5)
+        Me.enemySlot3Namelbl.Name = "enemySlot3Namelbl"
+        Me.enemySlot3Namelbl.Size = New System.Drawing.Size(33, 13)
+        Me.enemySlot3Namelbl.TabIndex = 67
+        Me.enemySlot3Namelbl.Text = "name"
+        '
+        'enemySlot3Specieslbl
+        '
+        Me.enemySlot3Specieslbl.AutoSize = True
+        Me.enemySlot3Specieslbl.Location = New System.Drawing.Point(5, 57)
+        Me.enemySlot3Specieslbl.Name = "enemySlot3Specieslbl"
+        Me.enemySlot3Specieslbl.Size = New System.Drawing.Size(43, 13)
+        Me.enemySlot3Specieslbl.TabIndex = 69
+        Me.enemySlot3Specieslbl.Text = "species"
+        '
+        'enemySlot3Speciestxt
+        '
+        Me.enemySlot3Speciestxt.Location = New System.Drawing.Point(54, 54)
+        Me.enemySlot3Speciestxt.Name = "enemySlot3Speciestxt"
+        Me.enemySlot3Speciestxt.ReadOnly = True
+        Me.enemySlot3Speciestxt.Size = New System.Drawing.Size(100, 20)
+        Me.enemySlot3Speciestxt.TabIndex = 70
+        '
+        'enemySlot3Healthlbl
+        '
+        Me.enemySlot3Healthlbl.AutoSize = True
+        Me.enemySlot3Healthlbl.Location = New System.Drawing.Point(12, 83)
+        Me.enemySlot3Healthlbl.Name = "enemySlot3Healthlbl"
+        Me.enemySlot3Healthlbl.Size = New System.Drawing.Size(36, 13)
+        Me.enemySlot3Healthlbl.TabIndex = 71
+        Me.enemySlot3Healthlbl.Text = "health"
+        '
+        'enemySlot3Healthtxt
+        '
+        Me.enemySlot3Healthtxt.Location = New System.Drawing.Point(54, 80)
+        Me.enemySlot3Healthtxt.Name = "enemySlot3Healthtxt"
+        Me.enemySlot3Healthtxt.ReadOnly = True
+        Me.enemySlot3Healthtxt.Size = New System.Drawing.Size(100, 20)
+        Me.enemySlot3Healthtxt.TabIndex = 72
+        '
+        'enemySlot3Armorlbl
+        '
+        Me.enemySlot3Armorlbl.AutoSize = True
+        Me.enemySlot3Armorlbl.Location = New System.Drawing.Point(15, 109)
+        Me.enemySlot3Armorlbl.Name = "enemySlot3Armorlbl"
+        Me.enemySlot3Armorlbl.Size = New System.Drawing.Size(33, 13)
+        Me.enemySlot3Armorlbl.TabIndex = 75
+        Me.enemySlot3Armorlbl.Text = "armor"
+        '
+        'enemySlot3Armortxt
+        '
+        Me.enemySlot3Armortxt.Location = New System.Drawing.Point(54, 106)
+        Me.enemySlot3Armortxt.Name = "enemySlot3Armortxt"
+        Me.enemySlot3Armortxt.ReadOnly = True
+        Me.enemySlot3Armortxt.Size = New System.Drawing.Size(100, 20)
+        Me.enemySlot3Armortxt.TabIndex = 76
+        '
+        'enemyTeamlbl
+        '
+        Me.enemyTeamlbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.enemyTeamlbl.Location = New System.Drawing.Point(3, 4)
+        Me.enemyTeamlbl.Name = "enemyTeamlbl"
+        Me.enemyTeamlbl.Size = New System.Drawing.Size(328, 23)
+        Me.enemyTeamlbl.TabIndex = 1
+        Me.enemyTeamlbl.Text = "Enemy Team"
+        Me.enemyTeamlbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'enemySlot1Targetrad
+        '
+        Me.enemySlot1Targetrad.AutoSize = True
+        Me.enemySlot1Targetrad.Location = New System.Drawing.Point(57, 162)
+        Me.enemySlot1Targetrad.Name = "enemySlot1Targetrad"
+        Me.enemySlot1Targetrad.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.enemySlot1Targetrad.Size = New System.Drawing.Size(14, 13)
+        Me.enemySlot1Targetrad.TabIndex = 11
+        Me.enemySlot1Targetrad.TabStop = True
+        Me.enemySlot1Targetrad.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.enemySlot1Targetrad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.enemySlot1Targetrad.UseVisualStyleBackColor = True
+        '
+        'enemySlot1Targetlbl
+        '
+        Me.enemySlot1Targetlbl.AutoSize = True
+        Me.enemySlot1Targetlbl.Location = New System.Drawing.Point(17, 162)
+        Me.enemySlot1Targetlbl.Name = "enemySlot1Targetlbl"
+        Me.enemySlot1Targetlbl.Size = New System.Drawing.Size(34, 13)
+        Me.enemySlot1Targetlbl.TabIndex = 24
+        Me.enemySlot1Targetlbl.Text = "target"
         '
         'playersTeampnl
         '
@@ -702,537 +1233,6 @@ Partial Class CombatWindow
         Me.playerSlot1Armortxt.Size = New System.Drawing.Size(100, 20)
         Me.playerSlot1Armortxt.TabIndex = 19
         '
-        'enemyTeampnl
-        '
-        Me.enemyTeampnl.BackColor = System.Drawing.Color.Transparent
-        Me.enemyTeampnl.Controls.Add(Me.enemySlot4Targetlbl)
-        Me.enemyTeampnl.Controls.Add(Me.enemySlot2pnl)
-        Me.enemyTeampnl.Controls.Add(Me.enemySlot4Targetrad)
-        Me.enemyTeampnl.Controls.Add(Me.enemySlot2Targetlbl)
-        Me.enemyTeampnl.Controls.Add(Me.enemySlot3Targetrad)
-        Me.enemyTeampnl.Controls.Add(Me.enemySlot3Targetlbl)
-        Me.enemyTeampnl.Controls.Add(Me.enemySlot1pnl)
-        Me.enemyTeampnl.Controls.Add(Me.enemySlot4pnl)
-        Me.enemyTeampnl.Controls.Add(Me.enemySlot2Targetrad)
-        Me.enemyTeampnl.Controls.Add(Me.enemySlot3pnl)
-        Me.enemyTeampnl.Controls.Add(Me.enemyTeamlbl)
-        Me.enemyTeampnl.Controls.Add(Me.enemySlot1Targetrad)
-        Me.enemyTeampnl.Controls.Add(Me.enemySlot1Targetlbl)
-        Me.enemyTeampnl.Location = New System.Drawing.Point(617, 3)
-        Me.enemyTeampnl.Name = "enemyTeampnl"
-        Me.enemyTeampnl.Size = New System.Drawing.Size(333, 384)
-        Me.enemyTeampnl.TabIndex = 10
-        '
-        'enemySlot4pnl
-        '
-        Me.enemySlot4pnl.BackColor = System.Drawing.Color.Transparent
-        Me.enemySlot4pnl.Controls.Add(Me.enemySlot4Leveltxt)
-        Me.enemySlot4pnl.Controls.Add(Me.enemySlot4Levellbl)
-        Me.enemySlot4pnl.Controls.Add(Me.enemySlot4Nametxt)
-        Me.enemySlot4pnl.Controls.Add(Me.enemySlot4Armortxt)
-        Me.enemySlot4pnl.Controls.Add(Me.enemySlot4Namelbl)
-        Me.enemySlot4pnl.Controls.Add(Me.enemySlot4Armorlbl)
-        Me.enemySlot4pnl.Controls.Add(Me.enemySlot4Specieslbl)
-        Me.enemySlot4pnl.Controls.Add(Me.enemySlot4Speciestxt)
-        Me.enemySlot4pnl.Controls.Add(Me.enemySlot4Healthlbl)
-        Me.enemySlot4pnl.Controls.Add(Me.enemySlot4Healthtxt)
-        Me.enemySlot4pnl.Location = New System.Drawing.Point(177, 209)
-        Me.enemySlot4pnl.Name = "enemySlot4pnl"
-        Me.enemySlot4pnl.Size = New System.Drawing.Size(154, 126)
-        Me.enemySlot4pnl.TabIndex = 9
-        '
-        'enemySlot4Targetrad
-        '
-        Me.enemySlot4Targetrad.AutoSize = True
-        Me.enemySlot4Targetrad.Location = New System.Drawing.Point(231, 341)
-        Me.enemySlot4Targetrad.Name = "enemySlot4Targetrad"
-        Me.enemySlot4Targetrad.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.enemySlot4Targetrad.Size = New System.Drawing.Size(14, 13)
-        Me.enemySlot4Targetrad.TabIndex = 77
-        Me.enemySlot4Targetrad.TabStop = True
-        Me.enemySlot4Targetrad.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.enemySlot4Targetrad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.enemySlot4Targetrad.UseVisualStyleBackColor = True
-        '
-        'enemySlot4Targetlbl
-        '
-        Me.enemySlot4Targetlbl.AutoSize = True
-        Me.enemySlot4Targetlbl.Location = New System.Drawing.Point(191, 341)
-        Me.enemySlot4Targetlbl.Name = "enemySlot4Targetlbl"
-        Me.enemySlot4Targetlbl.Size = New System.Drawing.Size(34, 13)
-        Me.enemySlot4Targetlbl.TabIndex = 77
-        Me.enemySlot4Targetlbl.Text = "target"
-        '
-        'enemySlot4Leveltxt
-        '
-        Me.enemySlot4Leveltxt.Location = New System.Drawing.Point(54, 28)
-        Me.enemySlot4Leveltxt.Name = "enemySlot4Leveltxt"
-        Me.enemySlot4Leveltxt.ReadOnly = True
-        Me.enemySlot4Leveltxt.Size = New System.Drawing.Size(100, 20)
-        Me.enemySlot4Leveltxt.TabIndex = 78
-        '
-        'enemySlot4Levellbl
-        '
-        Me.enemySlot4Levellbl.AutoSize = True
-        Me.enemySlot4Levellbl.Location = New System.Drawing.Point(19, 31)
-        Me.enemySlot4Levellbl.Name = "enemySlot4Levellbl"
-        Me.enemySlot4Levellbl.Size = New System.Drawing.Size(29, 13)
-        Me.enemySlot4Levellbl.TabIndex = 77
-        Me.enemySlot4Levellbl.Text = "level"
-        '
-        'enemySlot4Nametxt
-        '
-        Me.enemySlot4Nametxt.Location = New System.Drawing.Point(54, 2)
-        Me.enemySlot4Nametxt.Name = "enemySlot4Nametxt"
-        Me.enemySlot4Nametxt.ReadOnly = True
-        Me.enemySlot4Nametxt.Size = New System.Drawing.Size(100, 20)
-        Me.enemySlot4Nametxt.TabIndex = 78
-        '
-        'enemySlot4Armortxt
-        '
-        Me.enemySlot4Armortxt.Location = New System.Drawing.Point(54, 106)
-        Me.enemySlot4Armortxt.Name = "enemySlot4Armortxt"
-        Me.enemySlot4Armortxt.ReadOnly = True
-        Me.enemySlot4Armortxt.Size = New System.Drawing.Size(100, 20)
-        Me.enemySlot4Armortxt.TabIndex = 86
-        '
-        'enemySlot4Namelbl
-        '
-        Me.enemySlot4Namelbl.AutoSize = True
-        Me.enemySlot4Namelbl.Location = New System.Drawing.Point(15, 5)
-        Me.enemySlot4Namelbl.Name = "enemySlot4Namelbl"
-        Me.enemySlot4Namelbl.Size = New System.Drawing.Size(33, 13)
-        Me.enemySlot4Namelbl.TabIndex = 77
-        Me.enemySlot4Namelbl.Text = "name"
-        '
-        'enemySlot4Armorlbl
-        '
-        Me.enemySlot4Armorlbl.AutoSize = True
-        Me.enemySlot4Armorlbl.Location = New System.Drawing.Point(15, 109)
-        Me.enemySlot4Armorlbl.Name = "enemySlot4Armorlbl"
-        Me.enemySlot4Armorlbl.Size = New System.Drawing.Size(33, 13)
-        Me.enemySlot4Armorlbl.TabIndex = 85
-        Me.enemySlot4Armorlbl.Text = "armor"
-        '
-        'enemySlot4Specieslbl
-        '
-        Me.enemySlot4Specieslbl.AutoSize = True
-        Me.enemySlot4Specieslbl.Location = New System.Drawing.Point(5, 57)
-        Me.enemySlot4Specieslbl.Name = "enemySlot4Specieslbl"
-        Me.enemySlot4Specieslbl.Size = New System.Drawing.Size(43, 13)
-        Me.enemySlot4Specieslbl.TabIndex = 79
-        Me.enemySlot4Specieslbl.Text = "species"
-        '
-        'enemySlot4Speciestxt
-        '
-        Me.enemySlot4Speciestxt.Location = New System.Drawing.Point(54, 54)
-        Me.enemySlot4Speciestxt.Name = "enemySlot4Speciestxt"
-        Me.enemySlot4Speciestxt.ReadOnly = True
-        Me.enemySlot4Speciestxt.Size = New System.Drawing.Size(100, 20)
-        Me.enemySlot4Speciestxt.TabIndex = 80
-        '
-        'enemySlot4Healthlbl
-        '
-        Me.enemySlot4Healthlbl.AutoSize = True
-        Me.enemySlot4Healthlbl.Location = New System.Drawing.Point(12, 83)
-        Me.enemySlot4Healthlbl.Name = "enemySlot4Healthlbl"
-        Me.enemySlot4Healthlbl.Size = New System.Drawing.Size(36, 13)
-        Me.enemySlot4Healthlbl.TabIndex = 81
-        Me.enemySlot4Healthlbl.Text = "health"
-        '
-        'enemySlot4Healthtxt
-        '
-        Me.enemySlot4Healthtxt.Location = New System.Drawing.Point(54, 80)
-        Me.enemySlot4Healthtxt.Name = "enemySlot4Healthtxt"
-        Me.enemySlot4Healthtxt.ReadOnly = True
-        Me.enemySlot4Healthtxt.Size = New System.Drawing.Size(100, 20)
-        Me.enemySlot4Healthtxt.TabIndex = 82
-        '
-        'enemySlot3pnl
-        '
-        Me.enemySlot3pnl.BackColor = System.Drawing.Color.Transparent
-        Me.enemySlot3pnl.Controls.Add(Me.enemySlot3Leveltxt)
-        Me.enemySlot3pnl.Controls.Add(Me.enemySlot3Levellbl)
-        Me.enemySlot3pnl.Controls.Add(Me.enemySlot3Nametxt)
-        Me.enemySlot3pnl.Controls.Add(Me.enemySlot3Namelbl)
-        Me.enemySlot3pnl.Controls.Add(Me.enemySlot3Specieslbl)
-        Me.enemySlot3pnl.Controls.Add(Me.enemySlot3Speciestxt)
-        Me.enemySlot3pnl.Controls.Add(Me.enemySlot3Healthlbl)
-        Me.enemySlot3pnl.Controls.Add(Me.enemySlot3Healthtxt)
-        Me.enemySlot3pnl.Controls.Add(Me.enemySlot3Armorlbl)
-        Me.enemySlot3pnl.Controls.Add(Me.enemySlot3Armortxt)
-        Me.enemySlot3pnl.Location = New System.Drawing.Point(3, 209)
-        Me.enemySlot3pnl.Name = "enemySlot3pnl"
-        Me.enemySlot3pnl.Size = New System.Drawing.Size(154, 126)
-        Me.enemySlot3pnl.TabIndex = 9
-        '
-        'enemySlot3Targetlbl
-        '
-        Me.enemySlot3Targetlbl.AutoSize = True
-        Me.enemySlot3Targetlbl.Location = New System.Drawing.Point(17, 341)
-        Me.enemySlot3Targetlbl.Name = "enemySlot3Targetlbl"
-        Me.enemySlot3Targetlbl.Size = New System.Drawing.Size(34, 13)
-        Me.enemySlot3Targetlbl.TabIndex = 67
-        Me.enemySlot3Targetlbl.Text = "target"
-        '
-        'enemySlot3Targetrad
-        '
-        Me.enemySlot3Targetrad.AutoSize = True
-        Me.enemySlot3Targetrad.Location = New System.Drawing.Point(57, 341)
-        Me.enemySlot3Targetrad.Name = "enemySlot3Targetrad"
-        Me.enemySlot3Targetrad.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.enemySlot3Targetrad.Size = New System.Drawing.Size(14, 13)
-        Me.enemySlot3Targetrad.TabIndex = 24
-        Me.enemySlot3Targetrad.TabStop = True
-        Me.enemySlot3Targetrad.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.enemySlot3Targetrad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.enemySlot3Targetrad.UseVisualStyleBackColor = True
-        '
-        'enemySlot3Leveltxt
-        '
-        Me.enemySlot3Leveltxt.Location = New System.Drawing.Point(54, 28)
-        Me.enemySlot3Leveltxt.Name = "enemySlot3Leveltxt"
-        Me.enemySlot3Leveltxt.ReadOnly = True
-        Me.enemySlot3Leveltxt.Size = New System.Drawing.Size(100, 20)
-        Me.enemySlot3Leveltxt.TabIndex = 25
-        '
-        'enemySlot3Levellbl
-        '
-        Me.enemySlot3Levellbl.AutoSize = True
-        Me.enemySlot3Levellbl.Location = New System.Drawing.Point(19, 31)
-        Me.enemySlot3Levellbl.Name = "enemySlot3Levellbl"
-        Me.enemySlot3Levellbl.Size = New System.Drawing.Size(29, 13)
-        Me.enemySlot3Levellbl.TabIndex = 24
-        Me.enemySlot3Levellbl.Text = "level"
-        '
-        'enemySlot3Nametxt
-        '
-        Me.enemySlot3Nametxt.Location = New System.Drawing.Point(54, 2)
-        Me.enemySlot3Nametxt.Name = "enemySlot3Nametxt"
-        Me.enemySlot3Nametxt.ReadOnly = True
-        Me.enemySlot3Nametxt.Size = New System.Drawing.Size(100, 20)
-        Me.enemySlot3Nametxt.TabIndex = 68
-        '
-        'enemySlot3Namelbl
-        '
-        Me.enemySlot3Namelbl.AutoSize = True
-        Me.enemySlot3Namelbl.Location = New System.Drawing.Point(15, 5)
-        Me.enemySlot3Namelbl.Name = "enemySlot3Namelbl"
-        Me.enemySlot3Namelbl.Size = New System.Drawing.Size(33, 13)
-        Me.enemySlot3Namelbl.TabIndex = 67
-        Me.enemySlot3Namelbl.Text = "name"
-        '
-        'enemySlot3Specieslbl
-        '
-        Me.enemySlot3Specieslbl.AutoSize = True
-        Me.enemySlot3Specieslbl.Location = New System.Drawing.Point(5, 57)
-        Me.enemySlot3Specieslbl.Name = "enemySlot3Specieslbl"
-        Me.enemySlot3Specieslbl.Size = New System.Drawing.Size(43, 13)
-        Me.enemySlot3Specieslbl.TabIndex = 69
-        Me.enemySlot3Specieslbl.Text = "species"
-        '
-        'enemySlot3Speciestxt
-        '
-        Me.enemySlot3Speciestxt.Location = New System.Drawing.Point(54, 54)
-        Me.enemySlot3Speciestxt.Name = "enemySlot3Speciestxt"
-        Me.enemySlot3Speciestxt.ReadOnly = True
-        Me.enemySlot3Speciestxt.Size = New System.Drawing.Size(100, 20)
-        Me.enemySlot3Speciestxt.TabIndex = 70
-        '
-        'enemySlot3Healthlbl
-        '
-        Me.enemySlot3Healthlbl.AutoSize = True
-        Me.enemySlot3Healthlbl.Location = New System.Drawing.Point(12, 83)
-        Me.enemySlot3Healthlbl.Name = "enemySlot3Healthlbl"
-        Me.enemySlot3Healthlbl.Size = New System.Drawing.Size(36, 13)
-        Me.enemySlot3Healthlbl.TabIndex = 71
-        Me.enemySlot3Healthlbl.Text = "health"
-        '
-        'enemySlot3Healthtxt
-        '
-        Me.enemySlot3Healthtxt.Location = New System.Drawing.Point(54, 80)
-        Me.enemySlot3Healthtxt.Name = "enemySlot3Healthtxt"
-        Me.enemySlot3Healthtxt.ReadOnly = True
-        Me.enemySlot3Healthtxt.Size = New System.Drawing.Size(100, 20)
-        Me.enemySlot3Healthtxt.TabIndex = 72
-        '
-        'enemySlot3Armorlbl
-        '
-        Me.enemySlot3Armorlbl.AutoSize = True
-        Me.enemySlot3Armorlbl.Location = New System.Drawing.Point(15, 109)
-        Me.enemySlot3Armorlbl.Name = "enemySlot3Armorlbl"
-        Me.enemySlot3Armorlbl.Size = New System.Drawing.Size(33, 13)
-        Me.enemySlot3Armorlbl.TabIndex = 75
-        Me.enemySlot3Armorlbl.Text = "armor"
-        '
-        'enemySlot3Armortxt
-        '
-        Me.enemySlot3Armortxt.Location = New System.Drawing.Point(54, 106)
-        Me.enemySlot3Armortxt.Name = "enemySlot3Armortxt"
-        Me.enemySlot3Armortxt.ReadOnly = True
-        Me.enemySlot3Armortxt.Size = New System.Drawing.Size(100, 20)
-        Me.enemySlot3Armortxt.TabIndex = 76
-        '
-        'enemySlot2pnl
-        '
-        Me.enemySlot2pnl.BackColor = System.Drawing.Color.Transparent
-        Me.enemySlot2pnl.Controls.Add(Me.enemySlot2Leveltxt)
-        Me.enemySlot2pnl.Controls.Add(Me.enemySlot2Levellbl)
-        Me.enemySlot2pnl.Controls.Add(Me.enemySlot2Namelbl)
-        Me.enemySlot2pnl.Controls.Add(Me.enemySlot2Armortxt)
-        Me.enemySlot2pnl.Controls.Add(Me.enemySlot2Nametxt)
-        Me.enemySlot2pnl.Controls.Add(Me.enemySlot2Armorlbl)
-        Me.enemySlot2pnl.Controls.Add(Me.enemySlot2Specieslbl)
-        Me.enemySlot2pnl.Controls.Add(Me.enemySlot2Speciestxt)
-        Me.enemySlot2pnl.Controls.Add(Me.enemySlot2Healthlbl)
-        Me.enemySlot2pnl.Controls.Add(Me.enemySlot2Healthtxt)
-        Me.enemySlot2pnl.Location = New System.Drawing.Point(177, 30)
-        Me.enemySlot2pnl.Name = "enemySlot2pnl"
-        Me.enemySlot2pnl.Size = New System.Drawing.Size(154, 126)
-        Me.enemySlot2pnl.TabIndex = 1
-        '
-        'enemySlot2Targetlbl
-        '
-        Me.enemySlot2Targetlbl.AutoSize = True
-        Me.enemySlot2Targetlbl.Location = New System.Drawing.Point(191, 162)
-        Me.enemySlot2Targetlbl.Name = "enemySlot2Targetlbl"
-        Me.enemySlot2Targetlbl.Size = New System.Drawing.Size(34, 13)
-        Me.enemySlot2Targetlbl.TabIndex = 25
-        Me.enemySlot2Targetlbl.Text = "target"
-        '
-        'enemySlot2Targetrad
-        '
-        Me.enemySlot2Targetrad.AutoSize = True
-        Me.enemySlot2Targetrad.Location = New System.Drawing.Point(231, 162)
-        Me.enemySlot2Targetrad.Name = "enemySlot2Targetrad"
-        Me.enemySlot2Targetrad.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.enemySlot2Targetrad.Size = New System.Drawing.Size(14, 13)
-        Me.enemySlot2Targetrad.TabIndex = 24
-        Me.enemySlot2Targetrad.TabStop = True
-        Me.enemySlot2Targetrad.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.enemySlot2Targetrad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.enemySlot2Targetrad.UseVisualStyleBackColor = True
-        '
-        'enemySlot2Leveltxt
-        '
-        Me.enemySlot2Leveltxt.Location = New System.Drawing.Point(54, 28)
-        Me.enemySlot2Leveltxt.Name = "enemySlot2Leveltxt"
-        Me.enemySlot2Leveltxt.ReadOnly = True
-        Me.enemySlot2Leveltxt.Size = New System.Drawing.Size(100, 20)
-        Me.enemySlot2Leveltxt.TabIndex = 23
-        '
-        'enemySlot2Levellbl
-        '
-        Me.enemySlot2Levellbl.AutoSize = True
-        Me.enemySlot2Levellbl.Location = New System.Drawing.Point(19, 31)
-        Me.enemySlot2Levellbl.Name = "enemySlot2Levellbl"
-        Me.enemySlot2Levellbl.Size = New System.Drawing.Size(29, 13)
-        Me.enemySlot2Levellbl.TabIndex = 22
-        Me.enemySlot2Levellbl.Text = "level"
-        '
-        'enemySlot2Namelbl
-        '
-        Me.enemySlot2Namelbl.AutoSize = True
-        Me.enemySlot2Namelbl.Location = New System.Drawing.Point(15, 5)
-        Me.enemySlot2Namelbl.Name = "enemySlot2Namelbl"
-        Me.enemySlot2Namelbl.Size = New System.Drawing.Size(33, 13)
-        Me.enemySlot2Namelbl.TabIndex = 57
-        Me.enemySlot2Namelbl.Text = "name"
-        '
-        'enemySlot2Armortxt
-        '
-        Me.enemySlot2Armortxt.Location = New System.Drawing.Point(54, 106)
-        Me.enemySlot2Armortxt.Name = "enemySlot2Armortxt"
-        Me.enemySlot2Armortxt.ReadOnly = True
-        Me.enemySlot2Armortxt.Size = New System.Drawing.Size(100, 20)
-        Me.enemySlot2Armortxt.TabIndex = 66
-        '
-        'enemySlot2Nametxt
-        '
-        Me.enemySlot2Nametxt.Location = New System.Drawing.Point(54, 2)
-        Me.enemySlot2Nametxt.Name = "enemySlot2Nametxt"
-        Me.enemySlot2Nametxt.ReadOnly = True
-        Me.enemySlot2Nametxt.Size = New System.Drawing.Size(100, 20)
-        Me.enemySlot2Nametxt.TabIndex = 58
-        '
-        'enemySlot2Armorlbl
-        '
-        Me.enemySlot2Armorlbl.AutoSize = True
-        Me.enemySlot2Armorlbl.Location = New System.Drawing.Point(15, 109)
-        Me.enemySlot2Armorlbl.Name = "enemySlot2Armorlbl"
-        Me.enemySlot2Armorlbl.Size = New System.Drawing.Size(33, 13)
-        Me.enemySlot2Armorlbl.TabIndex = 65
-        Me.enemySlot2Armorlbl.Text = "armor"
-        '
-        'enemySlot2Specieslbl
-        '
-        Me.enemySlot2Specieslbl.AutoSize = True
-        Me.enemySlot2Specieslbl.Location = New System.Drawing.Point(5, 57)
-        Me.enemySlot2Specieslbl.Name = "enemySlot2Specieslbl"
-        Me.enemySlot2Specieslbl.Size = New System.Drawing.Size(43, 13)
-        Me.enemySlot2Specieslbl.TabIndex = 59
-        Me.enemySlot2Specieslbl.Text = "species"
-        '
-        'enemySlot2Speciestxt
-        '
-        Me.enemySlot2Speciestxt.Location = New System.Drawing.Point(54, 54)
-        Me.enemySlot2Speciestxt.Name = "enemySlot2Speciestxt"
-        Me.enemySlot2Speciestxt.ReadOnly = True
-        Me.enemySlot2Speciestxt.Size = New System.Drawing.Size(100, 20)
-        Me.enemySlot2Speciestxt.TabIndex = 60
-        '
-        'enemySlot2Healthlbl
-        '
-        Me.enemySlot2Healthlbl.AutoSize = True
-        Me.enemySlot2Healthlbl.Location = New System.Drawing.Point(12, 83)
-        Me.enemySlot2Healthlbl.Name = "enemySlot2Healthlbl"
-        Me.enemySlot2Healthlbl.Size = New System.Drawing.Size(36, 13)
-        Me.enemySlot2Healthlbl.TabIndex = 61
-        Me.enemySlot2Healthlbl.Text = "health"
-        '
-        'enemySlot2Healthtxt
-        '
-        Me.enemySlot2Healthtxt.Location = New System.Drawing.Point(54, 80)
-        Me.enemySlot2Healthtxt.Name = "enemySlot2Healthtxt"
-        Me.enemySlot2Healthtxt.ReadOnly = True
-        Me.enemySlot2Healthtxt.Size = New System.Drawing.Size(100, 20)
-        Me.enemySlot2Healthtxt.TabIndex = 62
-        '
-        'enemySlot1pnl
-        '
-        Me.enemySlot1pnl.BackColor = System.Drawing.Color.Transparent
-        Me.enemySlot1pnl.Controls.Add(Me.enemySlot1Leveltxt)
-        Me.enemySlot1pnl.Controls.Add(Me.enemySlot1Levellbl)
-        Me.enemySlot1pnl.Controls.Add(Me.enemySlot1Namelbl)
-        Me.enemySlot1pnl.Controls.Add(Me.enemySlot1Nametxt)
-        Me.enemySlot1pnl.Controls.Add(Me.enemySlot1Armortxt)
-        Me.enemySlot1pnl.Controls.Add(Me.enemySlot1Specieslbl)
-        Me.enemySlot1pnl.Controls.Add(Me.enemySlot1Armorlbl)
-        Me.enemySlot1pnl.Controls.Add(Me.enemySlot1Speciestxt)
-        Me.enemySlot1pnl.Controls.Add(Me.enemySlot1Healthlbl)
-        Me.enemySlot1pnl.Controls.Add(Me.enemySlot1Healthtxt)
-        Me.enemySlot1pnl.Location = New System.Drawing.Point(3, 30)
-        Me.enemySlot1pnl.Name = "enemySlot1pnl"
-        Me.enemySlot1pnl.Size = New System.Drawing.Size(154, 126)
-        Me.enemySlot1pnl.TabIndex = 0
-        '
-        'enemySlot1Targetlbl
-        '
-        Me.enemySlot1Targetlbl.AutoSize = True
-        Me.enemySlot1Targetlbl.Location = New System.Drawing.Point(17, 162)
-        Me.enemySlot1Targetlbl.Name = "enemySlot1Targetlbl"
-        Me.enemySlot1Targetlbl.Size = New System.Drawing.Size(34, 13)
-        Me.enemySlot1Targetlbl.TabIndex = 24
-        Me.enemySlot1Targetlbl.Text = "target"
-        '
-        'enemySlot1Leveltxt
-        '
-        Me.enemySlot1Leveltxt.Location = New System.Drawing.Point(54, 28)
-        Me.enemySlot1Leveltxt.Name = "enemySlot1Leveltxt"
-        Me.enemySlot1Leveltxt.ReadOnly = True
-        Me.enemySlot1Leveltxt.Size = New System.Drawing.Size(100, 20)
-        Me.enemySlot1Leveltxt.TabIndex = 23
-        '
-        'enemySlot1Levellbl
-        '
-        Me.enemySlot1Levellbl.AutoSize = True
-        Me.enemySlot1Levellbl.Location = New System.Drawing.Point(19, 31)
-        Me.enemySlot1Levellbl.Name = "enemySlot1Levellbl"
-        Me.enemySlot1Levellbl.Size = New System.Drawing.Size(29, 13)
-        Me.enemySlot1Levellbl.TabIndex = 22
-        Me.enemySlot1Levellbl.Text = "level"
-        '
-        'enemySlot1Namelbl
-        '
-        Me.enemySlot1Namelbl.AutoSize = True
-        Me.enemySlot1Namelbl.Location = New System.Drawing.Point(15, 5)
-        Me.enemySlot1Namelbl.Name = "enemySlot1Namelbl"
-        Me.enemySlot1Namelbl.Size = New System.Drawing.Size(33, 13)
-        Me.enemySlot1Namelbl.TabIndex = 4
-        Me.enemySlot1Namelbl.Text = "name"
-        '
-        'enemySlot1Nametxt
-        '
-        Me.enemySlot1Nametxt.Location = New System.Drawing.Point(54, 2)
-        Me.enemySlot1Nametxt.Name = "enemySlot1Nametxt"
-        Me.enemySlot1Nametxt.ReadOnly = True
-        Me.enemySlot1Nametxt.Size = New System.Drawing.Size(100, 20)
-        Me.enemySlot1Nametxt.TabIndex = 5
-        '
-        'enemySlot1Armortxt
-        '
-        Me.enemySlot1Armortxt.Location = New System.Drawing.Point(54, 106)
-        Me.enemySlot1Armortxt.Name = "enemySlot1Armortxt"
-        Me.enemySlot1Armortxt.ReadOnly = True
-        Me.enemySlot1Armortxt.Size = New System.Drawing.Size(100, 20)
-        Me.enemySlot1Armortxt.TabIndex = 21
-        '
-        'enemySlot1Specieslbl
-        '
-        Me.enemySlot1Specieslbl.AutoSize = True
-        Me.enemySlot1Specieslbl.Location = New System.Drawing.Point(5, 57)
-        Me.enemySlot1Specieslbl.Name = "enemySlot1Specieslbl"
-        Me.enemySlot1Specieslbl.Size = New System.Drawing.Size(43, 13)
-        Me.enemySlot1Specieslbl.TabIndex = 8
-        Me.enemySlot1Specieslbl.Text = "species"
-        '
-        'enemySlot1Armorlbl
-        '
-        Me.enemySlot1Armorlbl.AutoSize = True
-        Me.enemySlot1Armorlbl.Location = New System.Drawing.Point(15, 109)
-        Me.enemySlot1Armorlbl.Name = "enemySlot1Armorlbl"
-        Me.enemySlot1Armorlbl.Size = New System.Drawing.Size(33, 13)
-        Me.enemySlot1Armorlbl.TabIndex = 20
-        Me.enemySlot1Armorlbl.Text = "armor"
-        '
-        'enemySlot1Speciestxt
-        '
-        Me.enemySlot1Speciestxt.Location = New System.Drawing.Point(54, 54)
-        Me.enemySlot1Speciestxt.Name = "enemySlot1Speciestxt"
-        Me.enemySlot1Speciestxt.ReadOnly = True
-        Me.enemySlot1Speciestxt.Size = New System.Drawing.Size(100, 20)
-        Me.enemySlot1Speciestxt.TabIndex = 9
-        '
-        'enemySlot1Healthlbl
-        '
-        Me.enemySlot1Healthlbl.AutoSize = True
-        Me.enemySlot1Healthlbl.Location = New System.Drawing.Point(12, 83)
-        Me.enemySlot1Healthlbl.Name = "enemySlot1Healthlbl"
-        Me.enemySlot1Healthlbl.Size = New System.Drawing.Size(36, 13)
-        Me.enemySlot1Healthlbl.TabIndex = 12
-        Me.enemySlot1Healthlbl.Text = "health"
-        '
-        'enemySlot1Healthtxt
-        '
-        Me.enemySlot1Healthtxt.Location = New System.Drawing.Point(54, 80)
-        Me.enemySlot1Healthtxt.Name = "enemySlot1Healthtxt"
-        Me.enemySlot1Healthtxt.ReadOnly = True
-        Me.enemySlot1Healthtxt.Size = New System.Drawing.Size(100, 20)
-        Me.enemySlot1Healthtxt.TabIndex = 13
-        '
-        'enemyTeamlbl
-        '
-        Me.enemyTeamlbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.enemyTeamlbl.Location = New System.Drawing.Point(3, 4)
-        Me.enemyTeamlbl.Name = "enemyTeamlbl"
-        Me.enemyTeamlbl.Size = New System.Drawing.Size(328, 23)
-        Me.enemyTeamlbl.TabIndex = 1
-        Me.enemyTeamlbl.Text = "Enemy Team"
-        Me.enemyTeamlbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'enemySlot1Targetrad
-        '
-        Me.enemySlot1Targetrad.AutoSize = True
-        Me.enemySlot1Targetrad.Location = New System.Drawing.Point(57, 162)
-        Me.enemySlot1Targetrad.Name = "enemySlot1Targetrad"
-        Me.enemySlot1Targetrad.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.enemySlot1Targetrad.Size = New System.Drawing.Size(14, 13)
-        Me.enemySlot1Targetrad.TabIndex = 11
-        Me.enemySlot1Targetrad.TabStop = True
-        Me.enemySlot1Targetrad.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.enemySlot1Targetrad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.enemySlot1Targetrad.UseVisualStyleBackColor = True
-        '
         'MenuStrip1
         '
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EditToolStripMenuItem, Me.ViewToolStripMenuItem, Me.HelpToolStripMenuItem})
@@ -1372,57 +1372,6 @@ Partial Class CombatWindow
         Me.tavernlbl.TabIndex = 9
         Me.tavernlbl.Text = "Hire creatures here!"
         '
-        'GameDatabaseDataSet
-        '
-        Me.GameDatabaseDataSet.DataSetName = "GameDatabaseDataSet"
-        Me.GameDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'CreaturesBindingSource
-        '
-        Me.CreaturesBindingSource.DataMember = "Creatures"
-        Me.CreaturesBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'CreaturesTableAdapter
-        '
-        Me.CreaturesTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.AttacksTableAdapter = Nothing
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.BattlesTableAdapter = Nothing
-        Me.TableAdapterManager.CreaturesTableAdapter = Me.CreaturesTableAdapter
-        Me.TableAdapterManager.ItemsTableAdapter = Nothing
-        Me.TableAdapterManager.PlayersTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'BattlesBindingSource
-        '
-        Me.BattlesBindingSource.DataMember = "Battles"
-        Me.BattlesBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'BattlesTableAdapter
-        '
-        Me.BattlesTableAdapter.ClearBeforeFill = True
-        '
-        'AttacksBindingSource
-        '
-        Me.AttacksBindingSource.DataMember = "Attacks"
-        Me.AttacksBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'AttacksTableAdapter
-        '
-        Me.AttacksTableAdapter.ClearBeforeFill = True
-        '
-        'ItemsBindingSource
-        '
-        Me.ItemsBindingSource.DataMember = "Items"
-        Me.ItemsBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'ItemsTableAdapter
-        '
-        Me.ItemsTableAdapter.ClearBeforeFill = True
-        '
         'inventorypnl
         '
         Me.inventorypnl.Controls.Add(Me.playerItemslst)
@@ -1483,6 +1432,7 @@ Partial Class CombatWindow
         '
         Me.playerLeveltxt.Location = New System.Drawing.Point(414, 55)
         Me.playerLeveltxt.Name = "playerLeveltxt"
+        Me.playerLeveltxt.ReadOnly = True
         Me.playerLeveltxt.Size = New System.Drawing.Size(54, 20)
         Me.playerLeveltxt.TabIndex = 14
         '
@@ -1499,8 +1449,60 @@ Partial Class CombatWindow
         '
         Me.playerGoldtxt.Location = New System.Drawing.Point(414, 29)
         Me.playerGoldtxt.Name = "playerGoldtxt"
+        Me.playerGoldtxt.ReadOnly = True
         Me.playerGoldtxt.Size = New System.Drawing.Size(54, 20)
         Me.playerGoldtxt.TabIndex = 12
+        '
+        'GameDatabaseDataSet
+        '
+        Me.GameDatabaseDataSet.DataSetName = "GameDatabaseDataSet"
+        Me.GameDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'CreaturesBindingSource
+        '
+        Me.CreaturesBindingSource.DataMember = "Creatures"
+        Me.CreaturesBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'CreaturesTableAdapter
+        '
+        Me.CreaturesTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.AttacksTableAdapter = Nothing
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.BattlesTableAdapter = Nothing
+        Me.TableAdapterManager.CreaturesTableAdapter = Me.CreaturesTableAdapter
+        Me.TableAdapterManager.ItemsTableAdapter = Nothing
+        Me.TableAdapterManager.PlayersTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'BattlesBindingSource
+        '
+        Me.BattlesBindingSource.DataMember = "Battles"
+        Me.BattlesBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'BattlesTableAdapter
+        '
+        Me.BattlesTableAdapter.ClearBeforeFill = True
+        '
+        'AttacksBindingSource
+        '
+        Me.AttacksBindingSource.DataMember = "Attacks"
+        Me.AttacksBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'AttacksTableAdapter
+        '
+        Me.AttacksTableAdapter.ClearBeforeFill = True
+        '
+        'ItemsBindingSource
+        '
+        Me.ItemsBindingSource.DataMember = "Items"
+        Me.ItemsBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'ItemsTableAdapter
+        '
+        Me.ItemsTableAdapter.ClearBeforeFill = True
         '
         'CombatWindow
         '
@@ -1521,6 +1523,16 @@ Partial Class CombatWindow
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.Text = "Combat"
         Me.Combatpnl.ResumeLayout(False)
+        Me.enemyTeampnl.ResumeLayout(False)
+        Me.enemyTeampnl.PerformLayout()
+        Me.enemySlot2pnl.ResumeLayout(False)
+        Me.enemySlot2pnl.PerformLayout()
+        Me.enemySlot1pnl.ResumeLayout(False)
+        Me.enemySlot1pnl.PerformLayout()
+        Me.enemySlot4pnl.ResumeLayout(False)
+        Me.enemySlot4pnl.PerformLayout()
+        Me.enemySlot3pnl.ResumeLayout(False)
+        Me.enemySlot3pnl.PerformLayout()
         Me.playersTeampnl.ResumeLayout(False)
         Me.playerSlot4pnl.ResumeLayout(False)
         Me.playerSlot4pnl.PerformLayout()
@@ -1530,29 +1542,19 @@ Partial Class CombatWindow
         Me.playerSlot2pnl.PerformLayout()
         Me.playerSlot1pnl.ResumeLayout(False)
         Me.playerSlot1pnl.PerformLayout()
-        Me.enemyTeampnl.ResumeLayout(False)
-        Me.enemyTeampnl.PerformLayout()
-        Me.enemySlot4pnl.ResumeLayout(False)
-        Me.enemySlot4pnl.PerformLayout()
-        Me.enemySlot3pnl.ResumeLayout(False)
-        Me.enemySlot3pnl.PerformLayout()
-        Me.enemySlot2pnl.ResumeLayout(False)
-        Me.enemySlot2pnl.PerformLayout()
-        Me.enemySlot1pnl.ResumeLayout(False)
-        Me.enemySlot1pnl.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BattlesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AttacksBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ItemsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.inventorypnl.ResumeLayout(False)
         Me.inventorypnl.PerformLayout()
         Me.hiredCreaturesListpnl.ResumeLayout(False)
         Me.hiredCreaturesListpnl.PerformLayout()
         Me.playerInfopnl.ResumeLayout(False)
         Me.playerInfopnl.PerformLayout()
+        CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BattlesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AttacksBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ItemsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
