@@ -69,11 +69,4 @@
     Public Overrides Function ToString() As String
         Return "(" & playerLevel & ") " & playerName
     End Function
-
-    Public Sub gainExp(amount)
-        playerExperience += amount
-        If playerExperience > playerLevel ^ 5 Then
-            playerLevel += 1
-        End If
-    End Sub
 End Class

@@ -14,9 +14,6 @@
         Me.Text = "Simple Fantasy Game - Level " & currentPlayer.level & " " & currentPlayer.name
         playerTeamlbl.Text = currentPlayer.name & "'s Team"
 
-        playerLeveltxt.Text = currentPlayer.level
-        playerGoldtxt.Text = currentPlayer.gold
-
         If CreaturesTableAdapter.GetRowsByPlayer(currentPlayer.id).Any Then
             tavernlbl.Hide()
             For Each row In CreaturesTableAdapter.GetRowsByPlayer(currentPlayer.id)
