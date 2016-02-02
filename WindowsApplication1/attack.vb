@@ -6,19 +6,11 @@
     Private attackBattle As battle
 
     Public Sub New()
-        If Roll(100) < 50 + strdiff() Then
-            attackAggressor = currentCreature(1)
-            attackVictim = currentCreature(2)
-        Else
-            attackAggressor = currentCreature(2)
-            attackVictim = currentCreature(1)
-        End If
-
-        If attackAggressor.strength > attackVictim.armor Then
-            attackDamage = Roll(15)
-        Else
-            attackDamage = Roll(10)
-        End If
+        attackid = -1
+        attackAggressor = New creature
+        attackVictim = New creature
+        attackDamage = 0
+        attackBattle = New battle
     End Sub
 
     Public Sub New(id, aggressor, victim, damage, battle)

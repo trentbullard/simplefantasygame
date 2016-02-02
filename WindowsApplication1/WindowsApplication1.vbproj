@@ -138,9 +138,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GameDatabaseDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="GameDatabaseDataSet.vb">
-      <DependentUpon>GameDatabaseDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="inventory.vb" />
     <Compile Include="item.vb" />
     <Compile Include="list.vb" />
@@ -203,6 +200,7 @@
     </None>
     <None Include="GameDatabaseDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GameDatabaseDataSet.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="GameDatabaseDataSet.xss">

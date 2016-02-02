@@ -69,11 +69,10 @@
     'First attempts to create a new record in the Battles DataTable.
     'If this is successful, it uses that record (specifically the record Id)
     'to create a new Battle instance using the same attributes.
-    Private Sub NewBattle(creature1, creature2)
+    Private Sub NewBattle(player)
         Dim newRow As DataRow = GameDatabaseDataSet.Tables("Battles").NewRow()
 
-        newRow("creature1") = creature1.id
-        newRow("creature2") = creature2.id
+        newRow("playerid") = currentPlayer.id
 
         GameDatabaseDataSet.Tables("Battles").Rows.Add(newRow)
 
@@ -85,48 +84,12 @@
             BattlesBindingSource.EndEdit()
             BattlesTableAdapter.Update(GameDatabaseDataSet.Battles)
             newRow = BattlesTableAdapter.GetLastRow().Select().First
-            currentBattle = New battle(newRow("Id"), creature1, creature2)
+            currentBattle = New battle(newRow("Id"), currentPlayer)
             battleActive = True
             LogBattle(newRow, True)  'from log.vb
         Catch ex As Exception
             LogBattle(newRow, False)  'from log.vb
             MsgBox("Failed to add battle to database.")
-        End Try
-    End Sub
-
-    'Called in the following cases:
-    ' 1) User clicking Attack button on main window
-    '
-    'First attempts to create a new record in the Attacks DataTable.
-    'If this is successful, it uses that record (specifically the record Id)
-    'to create a new Attack instance using the same attributes.
-    Private Sub NewAttack(attack)
-        Dim newRow As DataRow = GameDatabaseDataSet.Tables("Attacks").NewRow()
-
-        If Not battleActive Then
-            NewBattle(currentCreature(1), currentCreature(2))
-        End If
-
-        newRow("aggressor") = attack.aggressor.id
-        newRow("victim") = attack.victim.id
-        newRow("damage") = attack.damage
-        newRow("battle") = currentBattle.id
-
-        GameDatabaseDataSet.Tables("Attacks").Rows.Add(newRow)
-
-        'Attempts to update the database with the new row from the dataset.
-        'If successful, a new instance of Battle is created using 
-        'the new record's attributes. Then the attack is sent to the
-        'AttackResult() function in this document.
-        Try
-            Validate()
-            AttacksBindingSource.EndEdit()
-            AttacksTableAdapter.Update(GameDatabaseDataSet.Attacks)
-            newRow = AttacksTableAdapter.GetLastRow().Select().First
-            LogAttack(newRow, True)  'from log.vb
-        Catch ex As Exception
-            LogAttack(newRow, False)  'from log.vb
-            MsgBox("Failed to add attack to database.")
         End Try
     End Sub
 

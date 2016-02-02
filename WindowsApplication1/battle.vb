@@ -1,47 +1,32 @@
 ﻿Public Class battle
     Private battleId As Integer
-    Private battleCreatures As Collection
+    Private battlePlayer As player
 
     Public Sub New()
         battleId = -1
-        battleCreatures = New Collection
-        battleCreatures.Add(New creature())
-        battleCreatures.Add(New creature())
+        battlePlayer = currentPlayer
     End Sub
 
-    Public Sub New(id, creature1, creature2)
+    Public Sub New(id, player)
         battleId = id
-        battleCreatures = New Collection
-        battleCreatures.Add(creature1)
-        battleCreatures.Add(creature2)
+        battlePlayer = player
     End Sub
 
-    Public Property id()
+    Public Property id() As Integer
         Get
             Return battleId
         End Get
-        Set(value)
+        Set(value As Integer)
             battleId = value
         End Set
     End Property
 
-    Public Property creature1()
+    Public Property player() As player
         Get
-            Return battleCreatures(1)
+            Return battlePlayer
         End Get
-        Set(value)
-            battleCreatures.Remove(1)
-            battleCreatures.Add(value, 1, 1)
-        End Set
-    End Property
-
-    Public Property creature2()
-        Get
-            Return battleCreatures(2)
-        End Get
-        Set(value)
-            battleCreatures.Remove(2)
-            battleCreatures.Add(value, 2)
+        Set(value As player)
+            battlePlayer = value
         End Set
     End Property
 End Class
