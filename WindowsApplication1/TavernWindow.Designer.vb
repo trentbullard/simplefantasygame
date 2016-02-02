@@ -770,38 +770,38 @@ Partial Class TavernWindow
         '
         'tavernSlot1Hirebtn
         '
-        Me.tavernSlot1Hirebtn.Location = New System.Drawing.Point(50, 268)
+        Me.tavernSlot1Hirebtn.Location = New System.Drawing.Point(9, 268)
         Me.tavernSlot1Hirebtn.Name = "tavernSlot1Hirebtn"
-        Me.tavernSlot1Hirebtn.Size = New System.Drawing.Size(75, 23)
+        Me.tavernSlot1Hirebtn.Size = New System.Drawing.Size(163, 23)
         Me.tavernSlot1Hirebtn.TabIndex = 21
-        Me.tavernSlot1Hirebtn.Text = "Hire"
+        Me.tavernSlot1Hirebtn.Text = "hire for # gold"
         Me.tavernSlot1Hirebtn.UseVisualStyleBackColor = True
         '
         'tavernSlot2Hirebtn
         '
-        Me.tavernSlot2Hirebtn.Location = New System.Drawing.Point(50, 268)
+        Me.tavernSlot2Hirebtn.Location = New System.Drawing.Point(9, 268)
         Me.tavernSlot2Hirebtn.Name = "tavernSlot2Hirebtn"
-        Me.tavernSlot2Hirebtn.Size = New System.Drawing.Size(75, 23)
+        Me.tavernSlot2Hirebtn.Size = New System.Drawing.Size(163, 23)
         Me.tavernSlot2Hirebtn.TabIndex = 22
-        Me.tavernSlot2Hirebtn.Text = "Hire"
+        Me.tavernSlot2Hirebtn.Text = "hire for # gold"
         Me.tavernSlot2Hirebtn.UseVisualStyleBackColor = True
         '
         'tavernSlot3Hirebtn
         '
-        Me.tavernSlot3Hirebtn.Location = New System.Drawing.Point(50, 268)
+        Me.tavernSlot3Hirebtn.Location = New System.Drawing.Point(9, 268)
         Me.tavernSlot3Hirebtn.Name = "tavernSlot3Hirebtn"
-        Me.tavernSlot3Hirebtn.Size = New System.Drawing.Size(75, 23)
+        Me.tavernSlot3Hirebtn.Size = New System.Drawing.Size(163, 23)
         Me.tavernSlot3Hirebtn.TabIndex = 23
-        Me.tavernSlot3Hirebtn.Text = "Hire"
+        Me.tavernSlot3Hirebtn.Text = "hire for # gold"
         Me.tavernSlot3Hirebtn.UseVisualStyleBackColor = True
         '
         'tavernSlot4Hirebtn
         '
-        Me.tavernSlot4Hirebtn.Location = New System.Drawing.Point(50, 268)
+        Me.tavernSlot4Hirebtn.Location = New System.Drawing.Point(9, 268)
         Me.tavernSlot4Hirebtn.Name = "tavernSlot4Hirebtn"
-        Me.tavernSlot4Hirebtn.Size = New System.Drawing.Size(75, 23)
+        Me.tavernSlot4Hirebtn.Size = New System.Drawing.Size(163, 23)
         Me.tavernSlot4Hirebtn.TabIndex = 24
-        Me.tavernSlot4Hirebtn.Text = "Hire"
+        Me.tavernSlot4Hirebtn.Text = "hire for # gold"
         Me.tavernSlot4Hirebtn.UseVisualStyleBackColor = True
         '
         'Panel1
@@ -1037,6 +1037,7 @@ Partial Class TavernWindow
         Me.ClientSize = New System.Drawing.Size(392, 629)
         Me.Controls.Add(Me.tavernpnl)
         Me.Name = "TavernWindow"
+        Me.ShowIcon = False
         Me.Text = "TavernWindow"
         Me.tavernSlot1pnl.ResumeLayout(False)
         Me.tavernSlot1pnl.PerformLayout()
