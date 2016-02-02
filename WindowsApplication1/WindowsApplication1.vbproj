@@ -131,6 +131,7 @@
       <DependentUpon>CombatWindow.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Experience.vb" />
     <Compile Include="FormControl.vb" />
     <Compile Include="GameDatabaseDataSet.Designer.vb">
       <AutoGen>True</AutoGen>

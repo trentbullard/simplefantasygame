@@ -164,4 +164,11 @@
     Public Overrides Function ToString() As String
         Return Me.name & " the level " & Me.creatureLevel & Space(1) & Me.species
     End Function
+
+    Public Sub gainExp(amount)
+        creatureExperience += amount
+        If creatureExperience > creatureLevel ^ 5 Then
+            creatureLevel += 1
+        End If
+    End Sub
 End Class
