@@ -13,7 +13,7 @@
         playerGold = 0
     End Sub
 
-    Public Sub New(id, name, level, exp, gold)
+    Public Sub New(id As Integer, name As String, level As Integer, exp As Integer, gold As Integer)
         playerid = id
         playerName = name
         playerLevel = level
@@ -35,13 +35,10 @@
         End Get
     End Property
 
-    Public Property name()
+    Public ReadOnly Property name()
         Get
             Return playerName
         End Get
-        Set(value)
-            playerName = value
-        End Set
     End Property
 
     Public ReadOnly Property level()
@@ -76,5 +73,9 @@
 
     Public Sub GainGold(amount)
         playerGold += amount
+    End Sub
+
+    Public Sub ReName(newName)
+        playerName = newName
     End Sub
 End Class

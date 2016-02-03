@@ -165,6 +165,12 @@
     </Compile>
     <Compile Include="Names.vb" />
     <Compile Include="player.vb" />
+    <Compile Include="ShopWindow.Designer.vb">
+      <DependentUpon>ShopWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ShopWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Targets.vb" />
     <Compile Include="TavernWindow.Designer.vb">
       <DependentUpon>TavernWindow.vb</DependentUpon>
@@ -189,6 +195,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShopWindow.resx">
+      <DependentUpon>ShopWindow.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TavernWindow.resx">
       <DependentUpon>TavernWindow.vb</DependentUpon>

@@ -1,6 +1,14 @@
-﻿create npc class
+﻿create mob class
 	inherit from creature class
-create mob class
-	inherit from creature class
-create automation button
-	implement to automate battles
+home screen
+combat
+encounters
+teams
+skills
+	player
+	creature
+items
+	stats
+		multiples?
+		string/collection/array?
+	armor/weapons imbuing - runes/gems/baubles/charms?

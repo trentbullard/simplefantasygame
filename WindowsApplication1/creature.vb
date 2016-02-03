@@ -21,7 +21,11 @@
         creatureStrength = 1
         creatureArmor = 1
         creatureLevel = 1
-        creatureExperience = 0
+        creatureExperience = 1
+        creatureInitiative = 1
+        creatureIntelligence = 1
+        creatureWisdom = 1
+        creatureDexterity = 1
         creatureOwner = currentPlayer
     End Sub
 
@@ -33,11 +37,27 @@
         creatureStrength = 1
         creatureArmor = 1
         creatureLevel = 1
-        creatureExperience = 0
+        creatureExperience = 1
+        creatureInitiative = 1
+        creatureIntelligence = 1
+        creatureWisdom = 1
+        creatureDexterity = 1
         creatureOwner = currentPlayer
     End Sub
 
-    Public Sub New(id As Integer, name As String, species As String, health As Integer, strength As Integer, armor As Integer, level As Integer, exp As Integer, owner As player)
+    Public Sub New(id As Integer,
+                   name As String,
+                   species As String,
+                   health As Integer,
+                   strength As Integer,
+                   armor As Integer,
+                   level As Integer,
+                   exp As Integer,
+                   ini As Integer,
+                   int As Integer,
+                   wis As Integer,
+                   dex As Integer,
+                   owner As player)
         creatureid = id
         creatureName = name
         creatureSpecies = species
@@ -46,6 +66,10 @@
         creatureArmor = armor
         creatureLevel = level
         creatureExperience = exp
+        creatureInitiative = ini
+        creatureIntelligence = int
+        creatureWisdom = wis
+        creatureDexterity = dex
         creatureOwner = owner
     End Sub
 
@@ -58,6 +82,10 @@
         creatureArmor = row("armor")
         creatureLevel = row("level")
         creatureExperience = row("experience")
+        creatureInitiative = row("initiative")
+        creatureIntelligence = row("intelligence")
+        creatureWisdom = row("wisdom")
+        creatureDexterity = row("dexterity")
         creatureOwner = currentPlayer
     End Sub
 
@@ -170,5 +198,10 @@
         If creatureExperience >= (creatureLevel + 1) ^ 5 Then
             creatureLevel += 1
         End If
+    End Sub
+
+    Public Sub Equip(equipment)
+        'add code that reflects this simplification:
+        'creatureAttribute =+ equipment.attribute
     End Sub
 End Class

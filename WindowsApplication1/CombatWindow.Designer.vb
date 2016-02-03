@@ -159,7 +159,6 @@ Partial Class CombatWindow
         Me.hiredCreaturesListpnl = New System.Windows.Forms.Panel()
         Me.playerInfopnl = New System.Windows.Forms.Panel()
         Me.playerStatspnl = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.playerExperiencelbl = New System.Windows.Forms.Label()
         Me.playerExperiencebar = New System.Windows.Forms.ProgressBar()
         Me.GameDatabaseDataSet = New WindowsApplication1.GameDatabaseDataSet()
@@ -1452,7 +1451,6 @@ Partial Class CombatWindow
         '
         'playerStatspnl
         '
-        Me.playerStatspnl.Controls.Add(Me.Button1)
         Me.playerStatspnl.Controls.Add(Me.playerSkillTreebtn)
         Me.playerStatspnl.Controls.Add(Me.playerExperiencelbl)
         Me.playerStatspnl.Controls.Add(Me.playerGoldlbl)
@@ -1464,15 +1462,6 @@ Partial Class CombatWindow
         Me.playerStatspnl.Name = "playerStatspnl"
         Me.playerStatspnl.Size = New System.Drawing.Size(388, 183)
         Me.playerStatspnl.TabIndex = 4
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(265, 138)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 16
-        Me.Button1.Text = "exp step"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'playerExperiencelbl
         '
@@ -1758,7 +1747,6 @@ Partial Class CombatWindow
     Friend WithEvents playerSkillTreebtn As Button
     Friend WithEvents playerStatspnl As Panel
     Friend WithEvents playerExperiencelbl As Label
-    Friend WithEvents Button1 As Button
     Friend WithEvents PlayersBindingSource As BindingSource
     Friend WithEvents PlayersTableAdapter As GameDatabaseDataSetTableAdapters.PlayersTableAdapter
 End Class

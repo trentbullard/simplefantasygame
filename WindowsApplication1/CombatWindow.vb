@@ -5,13 +5,11 @@
     Dim enemyCreature4 As New creature
 
     Private Sub CombatWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'GameDatabaseDataSet.Players' table. You can move, or remove it, as needed.
         Me.PlayersTableAdapter.Fill(Me.GameDatabaseDataSet.Players)
         Me.ItemsTableAdapter.Fill(Me.GameDatabaseDataSet.Items)
         Me.CreaturesTableAdapter.Fill(Me.GameDatabaseDataSet.Creatures)
         Me.BattlesTableAdapter.Fill(Me.GameDatabaseDataSet.Battles)
         Me.AttacksTableAdapter.Fill(Me.GameDatabaseDataSet.Attacks)
-        Me.ItemsTableAdapter.Fill(Me.GameDatabaseDataSet.Items)
 
         Me.Text = "Simple Fantasy Game - Level " & currentPlayer.level & " " & currentPlayer.name
         playerTeamlbl.Text = currentPlayer.name & "'s Team"
@@ -43,14 +41,20 @@
     End Sub
 
     Private Sub mainMenubtn_Click(sender As Object, e As EventArgs) Handles mainMenubtn.Click
-        Dim oForm As New MainMenu
-        oForm.Show()
+        updateDatabase()
+        currentMainMenu = New MainMenu
+        currentMainMenu.Show()
         Me.Close()
     End Sub
 
     Private Sub tavernbtn_Click(sender As Object, e As EventArgs) Handles tavernbtn.Click
         currentTavernWindow = New TavernWindow
         currentTavernWindow.Show()
+    End Sub
+
+    Private Sub shopbtn_Click(sender As Object, e As EventArgs) Handles shopbtn.Click
+        currentShopWindow = New ShopWindow
+        currentShopWindow.Show()
     End Sub
 
     Private Sub enemySlot1Targetrad_CheckedChanged(sender As Object, e As EventArgs) Handles enemySlot1Targetrad.CheckedChanged
@@ -111,15 +115,6 @@
             playerSlot4Armortxt.Text = currentCreature.armor
             hireListlst.Items.Remove(hireListlst.SelectedItem)
         End If
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        currentPlayer.GainExp(10)
-        playerExperiencebar.Minimum = currentPlayer.level ^ 5
-        playerExperiencebar.Maximum = (currentPlayer.level + 1) ^ 5
-        playerExperiencebar.Value = currentPlayer.exp
-        playerLeveltxt.Text = currentPlayer.level
-        updateDatabase()
     End Sub
 
     Private Sub updateDatabase()
