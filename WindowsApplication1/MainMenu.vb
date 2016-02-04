@@ -4,7 +4,7 @@ Imports System.Text
 
 Public Class MainMenu
     Private Sub MainMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        PlayersTableAdapter.Fill(GameDatabaseDataSet.Players)
+        Me.PlayersTableAdapter.Fill(Me.GameDatabaseDataSet.Players)
 
         StartLog()  'From log.vb
 
@@ -75,5 +75,19 @@ Public Class MainMenu
         currentDeletePlayersWindow = New DeletePlayersWindow
         currentDeletePlayersWindow.Show()
         Me.Close()
+    End Sub
+
+    Private Sub PlayersBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
+        Me.Validate()
+        Me.PlayersBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.GameDatabaseDataSet)
+
+    End Sub
+
+    Private Sub PlayersBindingNavigatorSaveItem_Click_1(sender As Object, e As EventArgs)
+        Me.Validate()
+        Me.PlayersBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.GameDatabaseDataSet)
+
     End Sub
 End Class

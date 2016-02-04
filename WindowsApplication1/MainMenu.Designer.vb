@@ -22,6 +22,7 @@ Partial Class MainMenu
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.titlelbl = New System.Windows.Forms.Label()
         Me.playerSelectionlbl = New System.Windows.Forms.Label()
         Me.playerNewbtn = New System.Windows.Forms.Button()
@@ -29,6 +30,12 @@ Partial Class MainMenu
         Me.playerLevel = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.playerName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.playerDeletebtn = New System.Windows.Forms.Button()
+        Me.GameDatabaseDataSet = New WindowsApplication1.GameDatabaseDataSet()
+        Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
+        Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
+        CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'titlelbl
@@ -93,6 +100,43 @@ Partial Class MainMenu
         Me.playerDeletebtn.Text = "Delete"
         Me.playerDeletebtn.UseVisualStyleBackColor = True
         '
+        'GameDatabaseDataSet
+        '
+        Me.GameDatabaseDataSet.DataSetName = "GameDatabaseDataSet"
+        Me.GameDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'PlayersBindingSource
+        '
+        Me.PlayersBindingSource.DataMember = "Players"
+        Me.PlayersBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'PlayersTableAdapter
+        '
+        Me.PlayersTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.ArmorAugmentTableAdapter = Nothing
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.BattlesTableAdapter = Nothing
+        Me.TableAdapterManager.PartiesTableAdapter = Nothing
+        Me.TableAdapterManager.PlayerArmorTableAdapter = Nothing
+        Me.TableAdapterManager.PlayerConsumableTableAdapter = Nothing
+        Me.TableAdapterManager.PlayerCreatureTableAdapter = Nothing
+        Me.TableAdapterManager.PlayerSkillTableAdapter = Nothing
+        Me.TableAdapterManager.PlayersTableAdapter = Me.PlayersTableAdapter
+        Me.TableAdapterManager.PlayerWeaponTableAdapter = Nothing
+        Me.TableAdapterManager.StaticArmorTableAdapter = Nothing
+        Me.TableAdapterManager.StaticAugmentsTableAdapter = Nothing
+        Me.TableAdapterManager.StaticConsumablesTableAdapter = Nothing
+        Me.TableAdapterManager.StaticCreaturesTableAdapter = Nothing
+        Me.TableAdapterManager.StaticMobsTableAdapter = Nothing
+        Me.TableAdapterManager.StaticSkillsTableAdapter = Nothing
+        Me.TableAdapterManager.StaticWeaponsTableAdapter = Nothing
+        Me.TableAdapterManager.TurnsTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.WeaponAugmentTableAdapter = Nothing
+        '
         'MainMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -107,6 +151,8 @@ Partial Class MainMenu
         Me.Name = "MainMenu"
         Me.ShowIcon = False
         Me.Text = "Main Menu"
+        CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -115,10 +161,12 @@ Partial Class MainMenu
     Friend WithEvents titlelbl As Label
     Friend WithEvents playerSelectionlbl As Label
     Friend WithEvents playerNewbtn As Button
-    Friend WithEvents TeamidDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents InventoryidDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents playerSelectlstv As ListView
     Friend WithEvents playerLevel As ColumnHeader
     Friend WithEvents playerName As ColumnHeader
     Friend WithEvents playerDeletebtn As Button
+    Friend WithEvents GameDatabaseDataSet As GameDatabaseDataSet
+    Friend WithEvents PlayersBindingSource As BindingSource
+    Friend WithEvents PlayersTableAdapter As GameDatabaseDataSetTableAdapters.PlayersTableAdapter
+    Friend WithEvents TableAdapterManager As GameDatabaseDataSetTableAdapters.TableAdapterManager
 End Class

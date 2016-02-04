@@ -73,7 +73,7 @@
         creatureOwner = owner
     End Sub
 
-    Public Sub New(row As GameDatabaseDataSet.CreaturesRow)
+    Public Sub New(row As GameDatabaseDataSet.StaticCreaturesRow)
         creatureid = row("id")
         creatureName = row("name")
         creatureSpecies = row("species")

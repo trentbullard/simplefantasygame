@@ -22,9 +22,16 @@ Partial Class DeletePlayersWindow
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.deletePlayersListlbl = New System.Windows.Forms.Label()
         Me.deletePlayersbtn = New System.Windows.Forms.Button()
         Me.deletePlayerslst = New System.Windows.Forms.ListBox()
+        Me.GameDatabaseDataSet = New WindowsApplication1.GameDatabaseDataSet()
+        Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
+        Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
+        CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'deletePlayersListlbl
@@ -54,6 +61,42 @@ Partial Class DeletePlayersWindow
         Me.deletePlayerslst.Size = New System.Drawing.Size(162, 121)
         Me.deletePlayerslst.TabIndex = 3
         '
+        'GameDatabaseDataSet
+        '
+        Me.GameDatabaseDataSet.DataSetName = "GameDatabaseDataSet"
+        Me.GameDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'PlayersBindingSource
+        '
+        Me.PlayersBindingSource.DataMember = "Players"
+        Me.PlayersBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'PlayersTableAdapter
+        '
+        Me.PlayersTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.ArmorAugmentTableAdapter = Nothing
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.BattlesTableAdapter = Nothing
+        Me.TableAdapterManager.PartiesTableAdapter = Nothing
+        Me.TableAdapterManager.PlayerArmorTableAdapter = Nothing
+        Me.TableAdapterManager.PlayerConsumableTableAdapter = Nothing
+        Me.TableAdapterManager.PlayerCreatureTableAdapter = Nothing
+        Me.TableAdapterManager.PlayerSkillTableAdapter = Nothing
+        Me.TableAdapterManager.PlayersTableAdapter = Me.PlayersTableAdapter
+        Me.TableAdapterManager.PlayerWeaponTableAdapter = Nothing
+        Me.TableAdapterManager.StaticArmorTableAdapter = Nothing
+        Me.TableAdapterManager.StaticAugmentsTableAdapter = Nothing
+        Me.TableAdapterManager.StaticConsumablesTableAdapter = Nothing
+        Me.TableAdapterManager.StaticCreaturesTableAdapter = Nothing
+        Me.TableAdapterManager.StaticSkillsTableAdapter = Nothing
+        Me.TableAdapterManager.StaticWeaponsTableAdapter = Nothing
+        Me.TableAdapterManager.TurnsTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.WeaponAugmentTableAdapter = Nothing
+        '
         'DeletePlayersWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -65,6 +108,8 @@ Partial Class DeletePlayersWindow
         Me.Name = "DeletePlayersWindow"
         Me.ShowIcon = False
         Me.Text = "Delete Players"
+        CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -72,4 +117,12 @@ Partial Class DeletePlayersWindow
     Friend WithEvents deletePlayersListlbl As Label
     Friend WithEvents deletePlayersbtn As Button
     Friend WithEvents deletePlayerslst As ListBox
+    Friend WithEvents GameDatabaseDataSet As GameDatabaseDataSet
+    Friend WithEvents PlayersBindingSource As BindingSource
+    Friend WithEvents PlayersTableAdapter As GameDatabaseDataSetTableAdapters.PlayersTableAdapter
+    Friend WithEvents TableAdapterManager As GameDatabaseDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents GameDatabaseDataSet1 As GameDatabaseDataSet
+    Friend WithEvents PlayersBindingSource1 As BindingSource
+    Friend WithEvents PlayersTableAdapter1 As GameDatabaseDataSetTableAdapters.PlayersTableAdapter
+    Friend WithEvents TableAdapterManager1 As GameDatabaseDataSetTableAdapters.TableAdapterManager
 End Class

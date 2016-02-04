@@ -4,4 +4,5 @@
     Public currentTavernWindow As TavernWindow
     Public currentDeletePlayersWindow As DeletePlayersWindow
     Public currentShopWindow As ShopWindow
+    Public currentTownWindow As TownWindow
 End Module

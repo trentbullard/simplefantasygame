@@ -2,6 +2,7 @@
     Dim playerSelection As New player
 
     Private Sub DeletePlayersWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.PlayersTableAdapter.Fill(Me.GameDatabaseDataSet.Players)
         PlayersTableAdapter.Fill(GameDatabaseDataSet.Players)
 
         StartLog()  'From log.vb
@@ -40,5 +41,9 @@
         End If
     End Sub
 
-
+    Private Sub PlayersBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
+        Me.Validate()
+        Me.PlayersBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.GameDatabaseDataSet)
+    End Sub
 End Class
