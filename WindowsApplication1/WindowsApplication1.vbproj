@@ -237,6 +237,8 @@
       <DependentUpon>GameDatabase.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="planning\gameplay flow chart.png" />
+    <Content Include="planning\database diagram.png" />
     <Content Include="todo.txt" />
   </ItemGroup>
   <ItemGroup>

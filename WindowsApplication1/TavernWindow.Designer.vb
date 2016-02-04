@@ -22,8 +22,9 @@ Partial Class TavernWindow
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.tavernSlot1pnl = New System.Windows.Forms.Panel()
+        Me.tavernSlot1Dexteritylbl = New System.Windows.Forms.Label()
+        Me.tavernSlot1Dexteritytxt = New System.Windows.Forms.TextBox()
         Me.tavernSlot1Wisdomlbl = New System.Windows.Forms.Label()
         Me.tavernSlot1Wisdomtxt = New System.Windows.Forms.TextBox()
         Me.tavernSlot1Intelligencelbl = New System.Windows.Forms.Label()
@@ -43,7 +44,11 @@ Partial Class TavernWindow
         Me.tavernSlot1Armorlbl = New System.Windows.Forms.Label()
         Me.tavernSlot1Armortxt = New System.Windows.Forms.TextBox()
         Me.tavernSlot2pnl = New System.Windows.Forms.Panel()
+        Me.tavernSlot2Dexteritylbl = New System.Windows.Forms.Label()
+        Me.tavernSlot2Wisdomlbl = New System.Windows.Forms.Label()
         Me.tavernSlot2Intelligencelbl = New System.Windows.Forms.Label()
+        Me.tavernSlot2Dexteritytxt = New System.Windows.Forms.TextBox()
+        Me.tavernSlot2Wisdomtxt = New System.Windows.Forms.TextBox()
         Me.tavernSlot2Initiativelbl = New System.Windows.Forms.Label()
         Me.tavernSlot2Intelligencetxt = New System.Windows.Forms.TextBox()
         Me.tavernSlot2Levellbl = New System.Windows.Forms.Label()
@@ -60,7 +65,13 @@ Partial Class TavernWindow
         Me.tavernSlot2Armorlbl = New System.Windows.Forms.Label()
         Me.tavernSlot2Armortxt = New System.Windows.Forms.TextBox()
         Me.tavernSlot3pnl = New System.Windows.Forms.Panel()
+        Me.tavernSlot3Dexteritylbl = New System.Windows.Forms.Label()
+        Me.tavernSlot3Intelligencelbl = New System.Windows.Forms.Label()
+        Me.tavernSlot3Dexteritytxt = New System.Windows.Forms.TextBox()
+        Me.tavernSlot3Intelligencetxt = New System.Windows.Forms.TextBox()
+        Me.tavernSlot3Wisdomlbl = New System.Windows.Forms.Label()
         Me.tavernSlot3Initiativelbl = New System.Windows.Forms.Label()
+        Me.tavernSlot3Wisdomtxt = New System.Windows.Forms.TextBox()
         Me.tavernSlot3Levellbl = New System.Windows.Forms.Label()
         Me.tavernSlot3Initiativetxt = New System.Windows.Forms.TextBox()
         Me.tavernSlot3Nametxt = New System.Windows.Forms.TextBox()
@@ -75,7 +86,13 @@ Partial Class TavernWindow
         Me.tavernSlot3Armorlbl = New System.Windows.Forms.Label()
         Me.tavernSlot3Armortxt = New System.Windows.Forms.TextBox()
         Me.tavernSlot4pnl = New System.Windows.Forms.Panel()
+        Me.tavernSlot4Dexteritylbl = New System.Windows.Forms.Label()
+        Me.tavernSlot4Intelligencelbl = New System.Windows.Forms.Label()
+        Me.tavernSlot4Dexteritytxt = New System.Windows.Forms.TextBox()
+        Me.tavernSlot4Intelligencetxt = New System.Windows.Forms.TextBox()
+        Me.tavernSlot4Wisdomlbl = New System.Windows.Forms.Label()
         Me.tavernSlot4Initiativelbl = New System.Windows.Forms.Label()
+        Me.tavernSlot4Wisdomtxt = New System.Windows.Forms.TextBox()
         Me.tavernSlot4Levellbl = New System.Windows.Forms.Label()
         Me.tavernSlot4Initiativetxt = New System.Windows.Forms.TextBox()
         Me.tavernSlot4Leveltxt = New System.Windows.Forms.TextBox()
@@ -98,28 +115,6 @@ Partial Class TavernWindow
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.tavernpnl = New System.Windows.Forms.Panel()
-        Me.GameDatabaseDataSet = New WindowsApplication1.GameDatabaseDataSet()
-        Me.CreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.CreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.CreaturesTableAdapter()
-        Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
-        Me.tavernSlot2Wisdomlbl = New System.Windows.Forms.Label()
-        Me.tavernSlot2Wisdomtxt = New System.Windows.Forms.TextBox()
-        Me.tavernSlot3Intelligencelbl = New System.Windows.Forms.Label()
-        Me.tavernSlot3Intelligencetxt = New System.Windows.Forms.TextBox()
-        Me.tavernSlot4Intelligencelbl = New System.Windows.Forms.Label()
-        Me.tavernSlot4Intelligencetxt = New System.Windows.Forms.TextBox()
-        Me.tavernSlot1Dexteritylbl = New System.Windows.Forms.Label()
-        Me.tavernSlot1Dexteritytxt = New System.Windows.Forms.TextBox()
-        Me.tavernSlot2Dexteritylbl = New System.Windows.Forms.Label()
-        Me.tavernSlot2Dexteritytxt = New System.Windows.Forms.TextBox()
-        Me.tavernSlot3Dexteritylbl = New System.Windows.Forms.Label()
-        Me.tavernSlot3Dexteritytxt = New System.Windows.Forms.TextBox()
-        Me.tavernSlot3Wisdomlbl = New System.Windows.Forms.Label()
-        Me.tavernSlot3Wisdomtxt = New System.Windows.Forms.TextBox()
-        Me.tavernSlot4Dexteritylbl = New System.Windows.Forms.Label()
-        Me.tavernSlot4Dexteritytxt = New System.Windows.Forms.TextBox()
-        Me.tavernSlot4Wisdomlbl = New System.Windows.Forms.Label()
-        Me.tavernSlot4Wisdomtxt = New System.Windows.Forms.TextBox()
         Me.tavernSlot1pnl.SuspendLayout()
         Me.tavernSlot2pnl.SuspendLayout()
         Me.tavernSlot3pnl.SuspendLayout()
@@ -129,8 +124,6 @@ Partial Class TavernWindow
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.tavernpnl.SuspendLayout()
-        CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tavernSlot1pnl
@@ -159,6 +152,23 @@ Partial Class TavernWindow
         Me.tavernSlot1pnl.Name = "tavernSlot1pnl"
         Me.tavernSlot1pnl.Size = New System.Drawing.Size(171, 259)
         Me.tavernSlot1pnl.TabIndex = 1
+        '
+        'tavernSlot1Dexteritylbl
+        '
+        Me.tavernSlot1Dexteritylbl.AutoSize = True
+        Me.tavernSlot1Dexteritylbl.Location = New System.Drawing.Point(17, 240)
+        Me.tavernSlot1Dexteritylbl.Name = "tavernSlot1Dexteritylbl"
+        Me.tavernSlot1Dexteritylbl.Size = New System.Drawing.Size(46, 13)
+        Me.tavernSlot1Dexteritylbl.TabIndex = 28
+        Me.tavernSlot1Dexteritylbl.Text = "dexterity"
+        '
+        'tavernSlot1Dexteritytxt
+        '
+        Me.tavernSlot1Dexteritytxt.Location = New System.Drawing.Point(69, 237)
+        Me.tavernSlot1Dexteritytxt.Name = "tavernSlot1Dexteritytxt"
+        Me.tavernSlot1Dexteritytxt.ReadOnly = True
+        Me.tavernSlot1Dexteritytxt.Size = New System.Drawing.Size(100, 20)
+        Me.tavernSlot1Dexteritytxt.TabIndex = 29
         '
         'tavernSlot1Wisdomlbl
         '
@@ -340,6 +350,24 @@ Partial Class TavernWindow
         Me.tavernSlot2pnl.Size = New System.Drawing.Size(171, 259)
         Me.tavernSlot2pnl.TabIndex = 20
         '
+        'tavernSlot2Dexteritylbl
+        '
+        Me.tavernSlot2Dexteritylbl.AutoSize = True
+        Me.tavernSlot2Dexteritylbl.Location = New System.Drawing.Point(17, 240)
+        Me.tavernSlot2Dexteritylbl.Name = "tavernSlot2Dexteritylbl"
+        Me.tavernSlot2Dexteritylbl.Size = New System.Drawing.Size(46, 13)
+        Me.tavernSlot2Dexteritylbl.TabIndex = 30
+        Me.tavernSlot2Dexteritylbl.Text = "dexterity"
+        '
+        'tavernSlot2Wisdomlbl
+        '
+        Me.tavernSlot2Wisdomlbl.AutoSize = True
+        Me.tavernSlot2Wisdomlbl.Location = New System.Drawing.Point(21, 214)
+        Me.tavernSlot2Wisdomlbl.Name = "tavernSlot2Wisdomlbl"
+        Me.tavernSlot2Wisdomlbl.Size = New System.Drawing.Size(42, 13)
+        Me.tavernSlot2Wisdomlbl.TabIndex = 28
+        Me.tavernSlot2Wisdomlbl.Text = "wisdom"
+        '
         'tavernSlot2Intelligencelbl
         '
         Me.tavernSlot2Intelligencelbl.AutoSize = True
@@ -348,6 +376,22 @@ Partial Class TavernWindow
         Me.tavernSlot2Intelligencelbl.Size = New System.Drawing.Size(60, 13)
         Me.tavernSlot2Intelligencelbl.TabIndex = 26
         Me.tavernSlot2Intelligencelbl.Text = "intelligence"
+        '
+        'tavernSlot2Dexteritytxt
+        '
+        Me.tavernSlot2Dexteritytxt.Location = New System.Drawing.Point(69, 237)
+        Me.tavernSlot2Dexteritytxt.Name = "tavernSlot2Dexteritytxt"
+        Me.tavernSlot2Dexteritytxt.ReadOnly = True
+        Me.tavernSlot2Dexteritytxt.Size = New System.Drawing.Size(100, 20)
+        Me.tavernSlot2Dexteritytxt.TabIndex = 31
+        '
+        'tavernSlot2Wisdomtxt
+        '
+        Me.tavernSlot2Wisdomtxt.Location = New System.Drawing.Point(69, 211)
+        Me.tavernSlot2Wisdomtxt.Name = "tavernSlot2Wisdomtxt"
+        Me.tavernSlot2Wisdomtxt.ReadOnly = True
+        Me.tavernSlot2Wisdomtxt.Size = New System.Drawing.Size(100, 20)
+        Me.tavernSlot2Wisdomtxt.TabIndex = 29
         '
         'tavernSlot2Initiativelbl
         '
@@ -503,6 +547,49 @@ Partial Class TavernWindow
         Me.tavernSlot3pnl.Size = New System.Drawing.Size(171, 259)
         Me.tavernSlot3pnl.TabIndex = 20
         '
+        'tavernSlot3Dexteritylbl
+        '
+        Me.tavernSlot3Dexteritylbl.AutoSize = True
+        Me.tavernSlot3Dexteritylbl.Location = New System.Drawing.Point(17, 240)
+        Me.tavernSlot3Dexteritylbl.Name = "tavernSlot3Dexteritylbl"
+        Me.tavernSlot3Dexteritylbl.Size = New System.Drawing.Size(46, 13)
+        Me.tavernSlot3Dexteritylbl.TabIndex = 32
+        Me.tavernSlot3Dexteritylbl.Text = "dexterity"
+        '
+        'tavernSlot3Intelligencelbl
+        '
+        Me.tavernSlot3Intelligencelbl.AutoSize = True
+        Me.tavernSlot3Intelligencelbl.Location = New System.Drawing.Point(3, 188)
+        Me.tavernSlot3Intelligencelbl.Name = "tavernSlot3Intelligencelbl"
+        Me.tavernSlot3Intelligencelbl.Size = New System.Drawing.Size(60, 13)
+        Me.tavernSlot3Intelligencelbl.TabIndex = 28
+        Me.tavernSlot3Intelligencelbl.Text = "intelligence"
+        '
+        'tavernSlot3Dexteritytxt
+        '
+        Me.tavernSlot3Dexteritytxt.Location = New System.Drawing.Point(69, 237)
+        Me.tavernSlot3Dexteritytxt.Name = "tavernSlot3Dexteritytxt"
+        Me.tavernSlot3Dexteritytxt.ReadOnly = True
+        Me.tavernSlot3Dexteritytxt.Size = New System.Drawing.Size(100, 20)
+        Me.tavernSlot3Dexteritytxt.TabIndex = 33
+        '
+        'tavernSlot3Intelligencetxt
+        '
+        Me.tavernSlot3Intelligencetxt.Location = New System.Drawing.Point(69, 185)
+        Me.tavernSlot3Intelligencetxt.Name = "tavernSlot3Intelligencetxt"
+        Me.tavernSlot3Intelligencetxt.ReadOnly = True
+        Me.tavernSlot3Intelligencetxt.Size = New System.Drawing.Size(100, 20)
+        Me.tavernSlot3Intelligencetxt.TabIndex = 29
+        '
+        'tavernSlot3Wisdomlbl
+        '
+        Me.tavernSlot3Wisdomlbl.AutoSize = True
+        Me.tavernSlot3Wisdomlbl.Location = New System.Drawing.Point(21, 214)
+        Me.tavernSlot3Wisdomlbl.Name = "tavernSlot3Wisdomlbl"
+        Me.tavernSlot3Wisdomlbl.Size = New System.Drawing.Size(42, 13)
+        Me.tavernSlot3Wisdomlbl.TabIndex = 30
+        Me.tavernSlot3Wisdomlbl.Text = "wisdom"
+        '
         'tavernSlot3Initiativelbl
         '
         Me.tavernSlot3Initiativelbl.AutoSize = True
@@ -511,6 +598,14 @@ Partial Class TavernWindow
         Me.tavernSlot3Initiativelbl.Size = New System.Drawing.Size(45, 13)
         Me.tavernSlot3Initiativelbl.TabIndex = 24
         Me.tavernSlot3Initiativelbl.Text = "initiative"
+        '
+        'tavernSlot3Wisdomtxt
+        '
+        Me.tavernSlot3Wisdomtxt.Location = New System.Drawing.Point(69, 211)
+        Me.tavernSlot3Wisdomtxt.Name = "tavernSlot3Wisdomtxt"
+        Me.tavernSlot3Wisdomtxt.ReadOnly = True
+        Me.tavernSlot3Wisdomtxt.Size = New System.Drawing.Size(100, 20)
+        Me.tavernSlot3Wisdomtxt.TabIndex = 31
         '
         'tavernSlot3Levellbl
         '
@@ -649,6 +744,49 @@ Partial Class TavernWindow
         Me.tavernSlot4pnl.Size = New System.Drawing.Size(171, 259)
         Me.tavernSlot4pnl.TabIndex = 20
         '
+        'tavernSlot4Dexteritylbl
+        '
+        Me.tavernSlot4Dexteritylbl.AutoSize = True
+        Me.tavernSlot4Dexteritylbl.Location = New System.Drawing.Point(17, 240)
+        Me.tavernSlot4Dexteritylbl.Name = "tavernSlot4Dexteritylbl"
+        Me.tavernSlot4Dexteritylbl.Size = New System.Drawing.Size(46, 13)
+        Me.tavernSlot4Dexteritylbl.TabIndex = 36
+        Me.tavernSlot4Dexteritylbl.Text = "dexterity"
+        '
+        'tavernSlot4Intelligencelbl
+        '
+        Me.tavernSlot4Intelligencelbl.AutoSize = True
+        Me.tavernSlot4Intelligencelbl.Location = New System.Drawing.Point(3, 188)
+        Me.tavernSlot4Intelligencelbl.Name = "tavernSlot4Intelligencelbl"
+        Me.tavernSlot4Intelligencelbl.Size = New System.Drawing.Size(60, 13)
+        Me.tavernSlot4Intelligencelbl.TabIndex = 28
+        Me.tavernSlot4Intelligencelbl.Text = "intelligence"
+        '
+        'tavernSlot4Dexteritytxt
+        '
+        Me.tavernSlot4Dexteritytxt.Location = New System.Drawing.Point(69, 237)
+        Me.tavernSlot4Dexteritytxt.Name = "tavernSlot4Dexteritytxt"
+        Me.tavernSlot4Dexteritytxt.ReadOnly = True
+        Me.tavernSlot4Dexteritytxt.Size = New System.Drawing.Size(100, 20)
+        Me.tavernSlot4Dexteritytxt.TabIndex = 37
+        '
+        'tavernSlot4Intelligencetxt
+        '
+        Me.tavernSlot4Intelligencetxt.Location = New System.Drawing.Point(69, 185)
+        Me.tavernSlot4Intelligencetxt.Name = "tavernSlot4Intelligencetxt"
+        Me.tavernSlot4Intelligencetxt.ReadOnly = True
+        Me.tavernSlot4Intelligencetxt.Size = New System.Drawing.Size(100, 20)
+        Me.tavernSlot4Intelligencetxt.TabIndex = 29
+        '
+        'tavernSlot4Wisdomlbl
+        '
+        Me.tavernSlot4Wisdomlbl.AutoSize = True
+        Me.tavernSlot4Wisdomlbl.Location = New System.Drawing.Point(21, 214)
+        Me.tavernSlot4Wisdomlbl.Name = "tavernSlot4Wisdomlbl"
+        Me.tavernSlot4Wisdomlbl.Size = New System.Drawing.Size(42, 13)
+        Me.tavernSlot4Wisdomlbl.TabIndex = 34
+        Me.tavernSlot4Wisdomlbl.Text = "wisdom"
+        '
         'tavernSlot4Initiativelbl
         '
         Me.tavernSlot4Initiativelbl.AutoSize = True
@@ -657,6 +795,14 @@ Partial Class TavernWindow
         Me.tavernSlot4Initiativelbl.Size = New System.Drawing.Size(45, 13)
         Me.tavernSlot4Initiativelbl.TabIndex = 26
         Me.tavernSlot4Initiativelbl.Text = "initiative"
+        '
+        'tavernSlot4Wisdomtxt
+        '
+        Me.tavernSlot4Wisdomtxt.Location = New System.Drawing.Point(69, 211)
+        Me.tavernSlot4Wisdomtxt.Name = "tavernSlot4Wisdomtxt"
+        Me.tavernSlot4Wisdomtxt.ReadOnly = True
+        Me.tavernSlot4Wisdomtxt.Size = New System.Drawing.Size(100, 20)
+        Me.tavernSlot4Wisdomtxt.TabIndex = 35
         '
         'tavernSlot4Levellbl
         '
@@ -852,183 +998,6 @@ Partial Class TavernWindow
         Me.tavernpnl.Size = New System.Drawing.Size(363, 605)
         Me.tavernpnl.TabIndex = 27
         '
-        'GameDatabaseDataSet
-        '
-        Me.GameDatabaseDataSet.DataSetName = "GameDatabaseDataSet"
-        Me.GameDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'CreaturesBindingSource
-        '
-        Me.CreaturesBindingSource.DataMember = "Creatures"
-        Me.CreaturesBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'CreaturesTableAdapter
-        '
-        Me.CreaturesTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.AttacksTableAdapter = Nothing
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.BattlesTableAdapter = Nothing
-        Me.TableAdapterManager.CreaturesTableAdapter = Me.CreaturesTableAdapter
-        Me.TableAdapterManager.ItemsTableAdapter = Nothing
-        Me.TableAdapterManager.PlayersTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'tavernSlot2Wisdomlbl
-        '
-        Me.tavernSlot2Wisdomlbl.AutoSize = True
-        Me.tavernSlot2Wisdomlbl.Location = New System.Drawing.Point(21, 214)
-        Me.tavernSlot2Wisdomlbl.Name = "tavernSlot2Wisdomlbl"
-        Me.tavernSlot2Wisdomlbl.Size = New System.Drawing.Size(42, 13)
-        Me.tavernSlot2Wisdomlbl.TabIndex = 28
-        Me.tavernSlot2Wisdomlbl.Text = "wisdom"
-        '
-        'tavernSlot2Wisdomtxt
-        '
-        Me.tavernSlot2Wisdomtxt.Location = New System.Drawing.Point(69, 211)
-        Me.tavernSlot2Wisdomtxt.Name = "tavernSlot2Wisdomtxt"
-        Me.tavernSlot2Wisdomtxt.ReadOnly = True
-        Me.tavernSlot2Wisdomtxt.Size = New System.Drawing.Size(100, 20)
-        Me.tavernSlot2Wisdomtxt.TabIndex = 29
-        '
-        'tavernSlot3Intelligencelbl
-        '
-        Me.tavernSlot3Intelligencelbl.AutoSize = True
-        Me.tavernSlot3Intelligencelbl.Location = New System.Drawing.Point(3, 188)
-        Me.tavernSlot3Intelligencelbl.Name = "tavernSlot3Intelligencelbl"
-        Me.tavernSlot3Intelligencelbl.Size = New System.Drawing.Size(60, 13)
-        Me.tavernSlot3Intelligencelbl.TabIndex = 28
-        Me.tavernSlot3Intelligencelbl.Text = "intelligence"
-        '
-        'tavernSlot3Intelligencetxt
-        '
-        Me.tavernSlot3Intelligencetxt.Location = New System.Drawing.Point(69, 185)
-        Me.tavernSlot3Intelligencetxt.Name = "tavernSlot3Intelligencetxt"
-        Me.tavernSlot3Intelligencetxt.ReadOnly = True
-        Me.tavernSlot3Intelligencetxt.Size = New System.Drawing.Size(100, 20)
-        Me.tavernSlot3Intelligencetxt.TabIndex = 29
-        '
-        'tavernSlot4Intelligencelbl
-        '
-        Me.tavernSlot4Intelligencelbl.AutoSize = True
-        Me.tavernSlot4Intelligencelbl.Location = New System.Drawing.Point(3, 188)
-        Me.tavernSlot4Intelligencelbl.Name = "tavernSlot4Intelligencelbl"
-        Me.tavernSlot4Intelligencelbl.Size = New System.Drawing.Size(60, 13)
-        Me.tavernSlot4Intelligencelbl.TabIndex = 28
-        Me.tavernSlot4Intelligencelbl.Text = "intelligence"
-        '
-        'tavernSlot4Intelligencetxt
-        '
-        Me.tavernSlot4Intelligencetxt.Location = New System.Drawing.Point(69, 185)
-        Me.tavernSlot4Intelligencetxt.Name = "tavernSlot4Intelligencetxt"
-        Me.tavernSlot4Intelligencetxt.ReadOnly = True
-        Me.tavernSlot4Intelligencetxt.Size = New System.Drawing.Size(100, 20)
-        Me.tavernSlot4Intelligencetxt.TabIndex = 29
-        '
-        'tavernSlot1Dexteritylbl
-        '
-        Me.tavernSlot1Dexteritylbl.AutoSize = True
-        Me.tavernSlot1Dexteritylbl.Location = New System.Drawing.Point(17, 240)
-        Me.tavernSlot1Dexteritylbl.Name = "tavernSlot1Dexteritylbl"
-        Me.tavernSlot1Dexteritylbl.Size = New System.Drawing.Size(46, 13)
-        Me.tavernSlot1Dexteritylbl.TabIndex = 28
-        Me.tavernSlot1Dexteritylbl.Text = "dexterity"
-        '
-        'tavernSlot1Dexteritytxt
-        '
-        Me.tavernSlot1Dexteritytxt.Location = New System.Drawing.Point(69, 237)
-        Me.tavernSlot1Dexteritytxt.Name = "tavernSlot1Dexteritytxt"
-        Me.tavernSlot1Dexteritytxt.ReadOnly = True
-        Me.tavernSlot1Dexteritytxt.Size = New System.Drawing.Size(100, 20)
-        Me.tavernSlot1Dexteritytxt.TabIndex = 29
-        '
-        'tavernSlot2Dexteritylbl
-        '
-        Me.tavernSlot2Dexteritylbl.AutoSize = True
-        Me.tavernSlot2Dexteritylbl.Location = New System.Drawing.Point(17, 240)
-        Me.tavernSlot2Dexteritylbl.Name = "tavernSlot2Dexteritylbl"
-        Me.tavernSlot2Dexteritylbl.Size = New System.Drawing.Size(46, 13)
-        Me.tavernSlot2Dexteritylbl.TabIndex = 30
-        Me.tavernSlot2Dexteritylbl.Text = "dexterity"
-        '
-        'tavernSlot2Dexteritytxt
-        '
-        Me.tavernSlot2Dexteritytxt.Location = New System.Drawing.Point(69, 237)
-        Me.tavernSlot2Dexteritytxt.Name = "tavernSlot2Dexteritytxt"
-        Me.tavernSlot2Dexteritytxt.ReadOnly = True
-        Me.tavernSlot2Dexteritytxt.Size = New System.Drawing.Size(100, 20)
-        Me.tavernSlot2Dexteritytxt.TabIndex = 31
-        '
-        'tavernSlot3Dexteritylbl
-        '
-        Me.tavernSlot3Dexteritylbl.AutoSize = True
-        Me.tavernSlot3Dexteritylbl.Location = New System.Drawing.Point(17, 240)
-        Me.tavernSlot3Dexteritylbl.Name = "tavernSlot3Dexteritylbl"
-        Me.tavernSlot3Dexteritylbl.Size = New System.Drawing.Size(46, 13)
-        Me.tavernSlot3Dexteritylbl.TabIndex = 32
-        Me.tavernSlot3Dexteritylbl.Text = "dexterity"
-        '
-        'tavernSlot3Dexteritytxt
-        '
-        Me.tavernSlot3Dexteritytxt.Location = New System.Drawing.Point(69, 237)
-        Me.tavernSlot3Dexteritytxt.Name = "tavernSlot3Dexteritytxt"
-        Me.tavernSlot3Dexteritytxt.ReadOnly = True
-        Me.tavernSlot3Dexteritytxt.Size = New System.Drawing.Size(100, 20)
-        Me.tavernSlot3Dexteritytxt.TabIndex = 33
-        '
-        'tavernSlot3Wisdomlbl
-        '
-        Me.tavernSlot3Wisdomlbl.AutoSize = True
-        Me.tavernSlot3Wisdomlbl.Location = New System.Drawing.Point(21, 214)
-        Me.tavernSlot3Wisdomlbl.Name = "tavernSlot3Wisdomlbl"
-        Me.tavernSlot3Wisdomlbl.Size = New System.Drawing.Size(42, 13)
-        Me.tavernSlot3Wisdomlbl.TabIndex = 30
-        Me.tavernSlot3Wisdomlbl.Text = "wisdom"
-        '
-        'tavernSlot3Wisdomtxt
-        '
-        Me.tavernSlot3Wisdomtxt.Location = New System.Drawing.Point(69, 211)
-        Me.tavernSlot3Wisdomtxt.Name = "tavernSlot3Wisdomtxt"
-        Me.tavernSlot3Wisdomtxt.ReadOnly = True
-        Me.tavernSlot3Wisdomtxt.Size = New System.Drawing.Size(100, 20)
-        Me.tavernSlot3Wisdomtxt.TabIndex = 31
-        '
-        'tavernSlot4Dexteritylbl
-        '
-        Me.tavernSlot4Dexteritylbl.AutoSize = True
-        Me.tavernSlot4Dexteritylbl.Location = New System.Drawing.Point(17, 240)
-        Me.tavernSlot4Dexteritylbl.Name = "tavernSlot4Dexteritylbl"
-        Me.tavernSlot4Dexteritylbl.Size = New System.Drawing.Size(46, 13)
-        Me.tavernSlot4Dexteritylbl.TabIndex = 36
-        Me.tavernSlot4Dexteritylbl.Text = "dexterity"
-        '
-        'tavernSlot4Dexteritytxt
-        '
-        Me.tavernSlot4Dexteritytxt.Location = New System.Drawing.Point(69, 237)
-        Me.tavernSlot4Dexteritytxt.Name = "tavernSlot4Dexteritytxt"
-        Me.tavernSlot4Dexteritytxt.ReadOnly = True
-        Me.tavernSlot4Dexteritytxt.Size = New System.Drawing.Size(100, 20)
-        Me.tavernSlot4Dexteritytxt.TabIndex = 37
-        '
-        'tavernSlot4Wisdomlbl
-        '
-        Me.tavernSlot4Wisdomlbl.AutoSize = True
-        Me.tavernSlot4Wisdomlbl.Location = New System.Drawing.Point(21, 214)
-        Me.tavernSlot4Wisdomlbl.Name = "tavernSlot4Wisdomlbl"
-        Me.tavernSlot4Wisdomlbl.Size = New System.Drawing.Size(42, 13)
-        Me.tavernSlot4Wisdomlbl.TabIndex = 34
-        Me.tavernSlot4Wisdomlbl.Text = "wisdom"
-        '
-        'tavernSlot4Wisdomtxt
-        '
-        Me.tavernSlot4Wisdomtxt.Location = New System.Drawing.Point(69, 211)
-        Me.tavernSlot4Wisdomtxt.Name = "tavernSlot4Wisdomtxt"
-        Me.tavernSlot4Wisdomtxt.ReadOnly = True
-        Me.tavernSlot4Wisdomtxt.Size = New System.Drawing.Size(100, 20)
-        Me.tavernSlot4Wisdomtxt.TabIndex = 35
-        '
         'TavernWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1052,8 +1021,6 @@ Partial Class TavernWindow
         Me.Panel3.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         Me.tavernpnl.ResumeLayout(False)
-        CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1111,10 +1078,6 @@ Partial Class TavernWindow
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel4 As Panel
     Friend WithEvents tavernpnl As Panel
-    Friend WithEvents GameDatabaseDataSet As GameDatabaseDataSet
-    Friend WithEvents CreaturesBindingSource As BindingSource
-    Friend WithEvents CreaturesTableAdapter As GameDatabaseDataSetTableAdapters.CreaturesTableAdapter
-    Friend WithEvents TableAdapterManager As GameDatabaseDataSetTableAdapters.TableAdapterManager
     Friend WithEvents tavernSlot1Wisdomlbl As Label
     Friend WithEvents tavernSlot1Wisdomtxt As TextBox
     Friend WithEvents tavernSlot1Intelligencelbl As Label

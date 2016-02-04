@@ -22,16 +22,9 @@ Partial Class DeletePlayersWindow
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.deletePlayersListlbl = New System.Windows.Forms.Label()
         Me.deletePlayersbtn = New System.Windows.Forms.Button()
-        Me.GameDatabaseDataSet = New WindowsApplication1.GameDatabaseDataSet()
-        Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
-        Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
         Me.deletePlayerslst = New System.Windows.Forms.ListBox()
-        CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'deletePlayersListlbl
@@ -53,30 +46,6 @@ Partial Class DeletePlayersWindow
         Me.deletePlayersbtn.Text = "Delete"
         Me.deletePlayersbtn.UseVisualStyleBackColor = True
         '
-        'GameDatabaseDataSet
-        '
-        Me.GameDatabaseDataSet.DataSetName = "GameDatabaseDataSet"
-        Me.GameDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'PlayersBindingSource
-        '
-        Me.PlayersBindingSource.DataMember = "Players"
-        Me.PlayersBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'PlayersTableAdapter
-        '
-        Me.PlayersTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.AttacksTableAdapter = Nothing
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.BattlesTableAdapter = Nothing
-        Me.TableAdapterManager.CreaturesTableAdapter = Nothing
-        Me.TableAdapterManager.ItemsTableAdapter = Nothing
-        Me.TableAdapterManager.PlayersTableAdapter = Me.PlayersTableAdapter
-        Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
         'deletePlayerslst
         '
         Me.deletePlayerslst.FormattingEnabled = True
@@ -96,17 +65,11 @@ Partial Class DeletePlayersWindow
         Me.Name = "DeletePlayersWindow"
         Me.ShowIcon = False
         Me.Text = "Delete Players"
-        CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents deletePlayersListlbl As Label
     Friend WithEvents deletePlayersbtn As Button
-    Friend WithEvents GameDatabaseDataSet As GameDatabaseDataSet
-    Friend WithEvents PlayersBindingSource As BindingSource
-    Friend WithEvents PlayersTableAdapter As GameDatabaseDataSetTableAdapters.PlayersTableAdapter
-    Friend WithEvents TableAdapterManager As GameDatabaseDataSetTableAdapters.TableAdapterManager
     Friend WithEvents deletePlayerslst As ListBox
 End Class

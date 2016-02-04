@@ -161,18 +161,8 @@ Partial Class CombatWindow
         Me.playerStatspnl = New System.Windows.Forms.Panel()
         Me.playerExperiencelbl = New System.Windows.Forms.Label()
         Me.playerExperiencebar = New System.Windows.Forms.ProgressBar()
-        Me.GameDatabaseDataSet = New WindowsApplication1.GameDatabaseDataSet()
-        Me.CreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.CreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.CreaturesTableAdapter()
-        Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
-        Me.BattlesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BattlesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.BattlesTableAdapter()
         Me.AttacksBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.AttacksTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.AttacksTableAdapter()
-        Me.ItemsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ItemsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.ItemsTableAdapter()
-        Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
         Me.Combatpnl.SuspendLayout()
         Me.enemyTeampnl.SuspendLayout()
         Me.enemySlot2pnl.SuspendLayout()
@@ -189,12 +179,7 @@ Partial Class CombatWindow
         Me.hiredCreaturesListpnl.SuspendLayout()
         Me.playerInfopnl.SuspendLayout()
         Me.playerStatspnl.SuspendLayout()
-        CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BattlesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AttacksBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ItemsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Combatpnl
@@ -1480,65 +1465,9 @@ Partial Class CombatWindow
         Me.playerExperiencebar.Step = 1
         Me.playerExperiencebar.TabIndex = 13
         '
-        'GameDatabaseDataSet
-        '
-        Me.GameDatabaseDataSet.DataSetName = "GameDatabaseDataSet"
-        Me.GameDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'CreaturesBindingSource
-        '
-        Me.CreaturesBindingSource.DataMember = "Creatures"
-        Me.CreaturesBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'CreaturesTableAdapter
-        '
-        Me.CreaturesTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.AttacksTableAdapter = Nothing
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.BattlesTableAdapter = Nothing
-        Me.TableAdapterManager.CreaturesTableAdapter = Me.CreaturesTableAdapter
-        Me.TableAdapterManager.ItemsTableAdapter = Nothing
-        Me.TableAdapterManager.PlayersTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'BattlesBindingSource
-        '
-        Me.BattlesBindingSource.DataMember = "Battles"
-        Me.BattlesBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'BattlesTableAdapter
-        '
-        Me.BattlesTableAdapter.ClearBeforeFill = True
-        '
-        'AttacksBindingSource
-        '
-        Me.AttacksBindingSource.DataMember = "Attacks"
-        Me.AttacksBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
         'AttacksTableAdapter
         '
         Me.AttacksTableAdapter.ClearBeforeFill = True
-        '
-        'ItemsBindingSource
-        '
-        Me.ItemsBindingSource.DataMember = "Items"
-        Me.ItemsBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'ItemsTableAdapter
-        '
-        Me.ItemsTableAdapter.ClearBeforeFill = True
-        '
-        'PlayersBindingSource
-        '
-        Me.PlayersBindingSource.DataMember = "Players"
-        Me.PlayersBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'PlayersTableAdapter
-        '
-        Me.PlayersTableAdapter.ClearBeforeFill = True
         '
         'CombatWindow
         '
@@ -1587,12 +1516,7 @@ Partial Class CombatWindow
         Me.playerInfopnl.ResumeLayout(False)
         Me.playerStatspnl.ResumeLayout(False)
         Me.playerStatspnl.PerformLayout()
-        CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BattlesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AttacksBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ItemsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1626,13 +1550,7 @@ Partial Class CombatWindow
     Friend WithEvents enemySlot1Armorlbl As Label
     Friend WithEvents playerSlot1Armortxt As TextBox
     Friend WithEvents playerSlot1Armorlbl As Label
-    Friend WithEvents GameDatabaseDataSet As GameDatabaseDataSet
-    Friend WithEvents CreaturesBindingSource As BindingSource
-    Friend WithEvents CreaturesTableAdapter As GameDatabaseDataSetTableAdapters.CreaturesTableAdapter
-    Friend WithEvents TableAdapterManager As GameDatabaseDataSetTableAdapters.TableAdapterManager
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents BattlesBindingSource As BindingSource
-    Friend WithEvents BattlesTableAdapter As GameDatabaseDataSetTableAdapters.BattlesTableAdapter
     Friend WithEvents AttacksBindingSource As BindingSource
     Friend WithEvents AttacksTableAdapter As GameDatabaseDataSetTableAdapters.AttacksTableAdapter
     Friend WithEvents playerItemslst As ListBox
@@ -1689,8 +1607,6 @@ Partial Class CombatWindow
     Friend WithEvents playerSlot2Specieslbl As Label
     Friend WithEvents playerSlot2Nametxt As TextBox
     Friend WithEvents playerSlot2Namelbl As Label
-    Friend WithEvents ItemsBindingSource As BindingSource
-    Friend WithEvents ItemsTableAdapter As GameDatabaseDataSetTableAdapters.ItemsTableAdapter
     Friend WithEvents playerTeamlbl As Label
     Friend WithEvents playersTeampnl As Panel
     Friend WithEvents playerSlot4pnl As Panel
@@ -1747,6 +1663,4 @@ Partial Class CombatWindow
     Friend WithEvents playerSkillTreebtn As Button
     Friend WithEvents playerStatspnl As Panel
     Friend WithEvents playerExperiencelbl As Label
-    Friend WithEvents PlayersBindingSource As BindingSource
-    Friend WithEvents PlayersTableAdapter As GameDatabaseDataSetTableAdapters.PlayersTableAdapter
 End Class

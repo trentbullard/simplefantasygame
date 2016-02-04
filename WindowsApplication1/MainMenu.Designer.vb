@@ -22,20 +22,13 @@ Partial Class MainMenu
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.titlelbl = New System.Windows.Forms.Label()
         Me.playerSelectionlbl = New System.Windows.Forms.Label()
         Me.playerNewbtn = New System.Windows.Forms.Button()
-        Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.GameDatabaseDataSet = New WindowsApplication1.GameDatabaseDataSet()
-        Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
-        Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
         Me.playerSelectlstv = New System.Windows.Forms.ListView()
         Me.playerLevel = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.playerName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.playerDeletebtn = New System.Windows.Forms.Button()
-        CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'titlelbl
@@ -65,30 +58,6 @@ Partial Class MainMenu
         Me.playerNewbtn.TabIndex = 3
         Me.playerNewbtn.Text = "New"
         Me.playerNewbtn.UseVisualStyleBackColor = True
-        '
-        'PlayersBindingSource
-        '
-        Me.PlayersBindingSource.DataMember = "Players"
-        Me.PlayersBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'GameDatabaseDataSet
-        '
-        Me.GameDatabaseDataSet.DataSetName = "GameDatabaseDataSet"
-        Me.GameDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'PlayersTableAdapter
-        '
-        Me.PlayersTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.AttacksTableAdapter = Nothing
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.BattlesTableAdapter = Nothing
-        Me.TableAdapterManager.CreaturesTableAdapter = Nothing
-        Me.TableAdapterManager.ItemsTableAdapter = Nothing
-        Me.TableAdapterManager.PlayersTableAdapter = Me.PlayersTableAdapter
-        Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'playerSelectlstv
         '
@@ -138,8 +107,6 @@ Partial Class MainMenu
         Me.Name = "MainMenu"
         Me.ShowIcon = False
         Me.Text = "Main Menu"
-        CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -148,10 +115,6 @@ Partial Class MainMenu
     Friend WithEvents titlelbl As Label
     Friend WithEvents playerSelectionlbl As Label
     Friend WithEvents playerNewbtn As Button
-    Friend WithEvents GameDatabaseDataSet As GameDatabaseDataSet
-    Friend WithEvents PlayersBindingSource As BindingSource
-    Friend WithEvents PlayersTableAdapter As GameDatabaseDataSetTableAdapters.PlayersTableAdapter
-    Friend WithEvents TableAdapterManager As GameDatabaseDataSetTableAdapters.TableAdapterManager
     Friend WithEvents TeamidDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents InventoryidDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents playerSelectlstv As ListView
