@@ -4,6 +4,7 @@
     Private Sub TavernWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         StaticCreaturesTableAdapter.Fill(GameDatabaseDataSet.StaticCreatures)
         PlayersTableAdapter.Fill(GameDatabaseDataSet.Players)
+        PlayerCreaturesTableAdapter.Fill(GameDatabaseDataSet.PlayerCreatures)
 
         For ctr = 1 To 4
             tavernCreatures(ctr) = New creature(GameDatabaseDataSet.StaticCreatures(ctr - 1))
@@ -54,7 +55,10 @@
             ClearCreatureSlot(slot)
         Catch ex As Exception
             MsgBox("Failed to add creature to database.")
+            Exit Sub
         End Try
+
+        currentTownWindow.RefreshControls()
     End Sub
 
     Private Sub FillCreatureSlot(creature, slot)
@@ -174,5 +178,21 @@
 
     Private Sub townbtn_Click(sender As Object, e As EventArgs) Handles townbtn.Click
         Me.Close()
+    End Sub
+
+    Private Sub tavernSlot1Nametxt_TextChanged(sender As Object, e As EventArgs) Handles tavernSlot1Nametxt.TextChanged
+        tavernCreatures(1).name = tavernSlot1Nametxt.Text
+    End Sub
+
+    Private Sub tavernSlot2Nametxt_TextChanged(sender As Object, e As EventArgs) Handles tavernSlot2Nametxt.TextChanged
+        tavernCreatures(2).name = tavernSlot2Nametxt.Text
+    End Sub
+
+    Private Sub tavernSlot3Nametxt_TextChanged(sender As Object, e As EventArgs) Handles tavernSlot3Nametxt.TextChanged
+        tavernCreatures(3).name = tavernSlot3Nametxt.Text
+    End Sub
+
+    Private Sub tavernSlot4Nametxt_TextChanged(sender As Object, e As EventArgs) Handles tavernSlot4Nametxt.TextChanged
+        tavernCreatures(4).name = tavernSlot4Nametxt.Text
     End Sub
 End Class

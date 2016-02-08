@@ -35,7 +35,7 @@
             necromancerlbl.Text = "go to the tavern to hire a team first"
             roadlbl.Text = "go to the tavern to hire a team first"
         Else
-            marketlbl.Hide()
+            tavernlbl.Hide()
         End If
 
     End Sub
@@ -73,5 +73,40 @@
     Private Sub playerbtn_Click(sender As Object, e As EventArgs) Handles playerbtn.Click
         currentPlayerWindow = New PlayerWindow
         currentPlayerWindow.Show()
+    End Sub
+
+    Public Sub RefreshControls()
+        If currentPlayer.exp > 1 Then
+            innlbl.Hide()
+            innbtn.Enabled = True
+            tavernlbl.Hide()
+            tavernbtn.Enabled = True
+            marketlbl.Hide()
+            marketbtn.Enabled = True
+            necromancerlbl.Hide()
+            necromancerbtn.Enabled = True
+            roadlbl.Hide()
+            roadbtn.Enabled = True
+        ElseIf Not PlayerCreaturesTableAdapter.GetDataByPlayerid(currentPlayer.id).Any Then
+            innbtn.Enabled = False
+            marketbtn.Enabled = False
+            necromancerbtn.Enabled = False
+            roadbtn.Enabled = False
+            innlbl.Text = "go to the tavern to hire a team first"
+            marketlbl.Text = "go to the tavern to hire a team first"
+            necromancerlbl.Text = "go to the tavern to hire a team first"
+            roadlbl.Text = "go to the tavern to hire a team first"
+        Else
+            tavernlbl.Hide()
+            innbtn.Enabled = True
+            tavernbtn.Enabled = True
+            marketbtn.Enabled = True
+            necromancerbtn.Enabled = True
+            roadbtn.Enabled = True
+            innlbl.Text = "click here to rest your team!"
+            marketlbl.Text = "click here to buy items!"
+            necromancerlbl.Text = "click here to resurrect dead team members!"
+            roadlbl.Text = "click here to travel!"
+        End If
     End Sub
 End Class

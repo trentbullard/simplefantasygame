@@ -125,7 +125,7 @@ Partial Class TownWindow
         Me.playerbtn.Name = "playerbtn"
         Me.playerbtn.Size = New System.Drawing.Size(75, 23)
         Me.playerbtn.TabIndex = 11
-        Me.playerbtn.Text = "Player Info"
+        Me.playerbtn.Text = "player info"
         Me.playerbtn.UseVisualStyleBackColor = True
         '
         'roadlbl
@@ -136,9 +136,9 @@ Partial Class TownWindow
         Me.roadlbl.ForeColor = System.Drawing.Color.Lime
         Me.roadlbl.Location = New System.Drawing.Point(834, 87)
         Me.roadlbl.Name = "roadlbl"
-        Me.roadlbl.Size = New System.Drawing.Size(98, 13)
+        Me.roadlbl.Size = New System.Drawing.Size(97, 13)
         Me.roadlbl.TabIndex = 10
-        Me.roadlbl.Text = "Click here to travel!"
+        Me.roadlbl.Text = "click here to travel!"
         '
         'marketlbl
         '
@@ -148,9 +148,9 @@ Partial Class TownWindow
         Me.marketlbl.ForeColor = System.Drawing.Color.Lime
         Me.marketlbl.Location = New System.Drawing.Point(521, 142)
         Me.marketlbl.Name = "marketlbl"
-        Me.marketlbl.Size = New System.Drawing.Size(116, 13)
+        Me.marketlbl.Size = New System.Drawing.Size(115, 13)
         Me.marketlbl.TabIndex = 9
-        Me.marketlbl.Text = "Click here to buy items!"
+        Me.marketlbl.Text = "click here to buy items!"
         '
         'tavernlbl
         '
@@ -160,9 +160,9 @@ Partial Class TownWindow
         Me.tavernlbl.ForeColor = System.Drawing.Color.Lime
         Me.tavernlbl.Location = New System.Drawing.Point(315, 322)
         Me.tavernlbl.Name = "tavernlbl"
-        Me.tavernlbl.Size = New System.Drawing.Size(160, 13)
+        Me.tavernlbl.Size = New System.Drawing.Size(159, 13)
         Me.tavernlbl.TabIndex = 8
-        Me.tavernlbl.Text = "Click here to hire team members!"
+        Me.tavernlbl.Text = "click here to hire team members!"
         '
         'innlbl
         '
@@ -172,9 +172,9 @@ Partial Class TownWindow
         Me.innlbl.ForeColor = System.Drawing.Color.Lime
         Me.innlbl.Location = New System.Drawing.Point(58, 351)
         Me.innlbl.Name = "innlbl"
-        Me.innlbl.Size = New System.Drawing.Size(138, 13)
+        Me.innlbl.Size = New System.Drawing.Size(137, 13)
         Me.innlbl.TabIndex = 7
-        Me.innlbl.Text = "Click here to rest your team!"
+        Me.innlbl.Text = "click here to rest your team!"
         '
         'necromancerlbl
         '
@@ -184,9 +184,9 @@ Partial Class TownWindow
         Me.necromancerlbl.ForeColor = System.Drawing.Color.Lime
         Me.necromancerlbl.Location = New System.Drawing.Point(595, 204)
         Me.necromancerlbl.Name = "necromancerlbl"
-        Me.necromancerlbl.Size = New System.Drawing.Size(200, 13)
+        Me.necromancerlbl.Size = New System.Drawing.Size(199, 13)
         Me.necromancerlbl.TabIndex = 6
-        Me.necromancerlbl.Text = "Click here to revive fallen team members!"
+        Me.necromancerlbl.Text = "click here to revive fallen team members!"
         '
         'mainMenubtn
         '
@@ -195,7 +195,7 @@ Partial Class TownWindow
         Me.mainMenubtn.Name = "mainMenubtn"
         Me.mainMenubtn.Size = New System.Drawing.Size(75, 23)
         Me.mainMenubtn.TabIndex = 0
-        Me.mainMenubtn.Text = "Main Menu"
+        Me.mainMenubtn.Text = "main menu"
         Me.mainMenubtn.UseVisualStyleBackColor = True
         '
         'roadbtn
@@ -205,7 +205,7 @@ Partial Class TownWindow
         Me.roadbtn.Name = "roadbtn"
         Me.roadbtn.Size = New System.Drawing.Size(81, 23)
         Me.roadbtn.TabIndex = 5
-        Me.roadbtn.Text = "Road"
+        Me.roadbtn.Text = "road"
         Me.roadbtn.UseVisualStyleBackColor = True
         '
         'necromancerbtn
@@ -215,7 +215,7 @@ Partial Class TownWindow
         Me.necromancerbtn.Name = "necromancerbtn"
         Me.necromancerbtn.Size = New System.Drawing.Size(81, 23)
         Me.necromancerbtn.TabIndex = 4
-        Me.necromancerbtn.Text = "Necromancer"
+        Me.necromancerbtn.Text = "necromancer"
         Me.necromancerbtn.UseVisualStyleBackColor = True
         '
         'marketbtn
@@ -225,7 +225,7 @@ Partial Class TownWindow
         Me.marketbtn.Name = "marketbtn"
         Me.marketbtn.Size = New System.Drawing.Size(75, 23)
         Me.marketbtn.TabIndex = 3
-        Me.marketbtn.Text = "Market"
+        Me.marketbtn.Text = "market"
         Me.marketbtn.UseVisualStyleBackColor = True
         '
         'tavernbtn
@@ -235,7 +235,7 @@ Partial Class TownWindow
         Me.tavernbtn.Name = "tavernbtn"
         Me.tavernbtn.Size = New System.Drawing.Size(75, 23)
         Me.tavernbtn.TabIndex = 2
-        Me.tavernbtn.Text = "Tavern"
+        Me.tavernbtn.Text = "tavern"
         Me.tavernbtn.UseVisualStyleBackColor = True
         '
         'innbtn
@@ -245,7 +245,7 @@ Partial Class TownWindow
         Me.innbtn.Name = "innbtn"
         Me.innbtn.Size = New System.Drawing.Size(75, 23)
         Me.innbtn.TabIndex = 1
-        Me.innbtn.Text = "Inn"
+        Me.innbtn.Text = "inn"
         Me.innbtn.UseVisualStyleBackColor = True
         '
         'GameDatabaseDataSet

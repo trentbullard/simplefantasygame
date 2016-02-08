@@ -9,6 +9,7 @@
     Public currentRoadWindow As New RoadWindow
     Public currentTavernWindow As New TavernWindow
     Public currentTownWindow As New TownWindow
+    Public currentCreatureWindow As New CreatureWindow
 
     Public Sub OpenMainMenu()
         currentMainMenu = New MainMenu
@@ -31,5 +32,7 @@
         currentTavernWindow = New TavernWindow
         currentTownWindow.Close()
         currentTownWindow = New TownWindow
+        currentCreatureWindow.Close()
+        currentCreatureWindow = New CreatureWindow
     End Sub
 End Module

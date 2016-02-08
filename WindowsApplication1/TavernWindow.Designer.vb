@@ -116,13 +116,13 @@ Partial Class TavernWindow
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.tavernpnl = New System.Windows.Forms.Panel()
+        Me.playerbtn = New System.Windows.Forms.Button()
+        Me.mainMenubtn = New System.Windows.Forms.Button()
+        Me.townbtn = New System.Windows.Forms.Button()
         Me.GameDatabaseDataSet = New WindowsApplication1.GameDatabaseDataSet()
         Me.StaticCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.StaticCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticCreaturesTableAdapter()
         Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
-        Me.playerbtn = New System.Windows.Forms.Button()
-        Me.mainMenubtn = New System.Windows.Forms.Button()
-        Me.townbtn = New System.Windows.Forms.Button()
         Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
         Me.PlayerCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -258,7 +258,6 @@ Partial Class TavernWindow
         '
         Me.tavernSlot1Nametxt.Location = New System.Drawing.Point(69, 3)
         Me.tavernSlot1Nametxt.Name = "tavernSlot1Nametxt"
-        Me.tavernSlot1Nametxt.ReadOnly = True
         Me.tavernSlot1Nametxt.Size = New System.Drawing.Size(100, 20)
         Me.tavernSlot1Nametxt.TabIndex = 3
         '
@@ -447,7 +446,6 @@ Partial Class TavernWindow
         '
         Me.tavernSlot2Nametxt.Location = New System.Drawing.Point(69, 3)
         Me.tavernSlot2Nametxt.Name = "tavernSlot2Nametxt"
-        Me.tavernSlot2Nametxt.ReadOnly = True
         Me.tavernSlot2Nametxt.Size = New System.Drawing.Size(100, 20)
         Me.tavernSlot2Nametxt.TabIndex = 3
         '
@@ -644,7 +642,6 @@ Partial Class TavernWindow
         '
         Me.tavernSlot3Nametxt.Location = New System.Drawing.Point(69, 3)
         Me.tavernSlot3Nametxt.Name = "tavernSlot3Nametxt"
-        Me.tavernSlot3Nametxt.ReadOnly = True
         Me.tavernSlot3Nametxt.Size = New System.Drawing.Size(100, 20)
         Me.tavernSlot3Nametxt.TabIndex = 3
         '
@@ -849,7 +846,6 @@ Partial Class TavernWindow
         '
         Me.tavernSlot4Nametxt.Location = New System.Drawing.Point(69, 3)
         Me.tavernSlot4Nametxt.Name = "tavernSlot4Nametxt"
-        Me.tavernSlot4Nametxt.ReadOnly = True
         Me.tavernSlot4Nametxt.Size = New System.Drawing.Size(100, 20)
         Me.tavernSlot4Nametxt.TabIndex = 3
         '
@@ -1013,6 +1009,36 @@ Partial Class TavernWindow
         Me.tavernpnl.Size = New System.Drawing.Size(363, 605)
         Me.tavernpnl.TabIndex = 27
         '
+        'playerbtn
+        '
+        Me.playerbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.playerbtn.Location = New System.Drawing.Point(220, 632)
+        Me.playerbtn.Name = "playerbtn"
+        Me.playerbtn.Size = New System.Drawing.Size(75, 23)
+        Me.playerbtn.TabIndex = 29
+        Me.playerbtn.Text = "player info"
+        Me.playerbtn.UseVisualStyleBackColor = True
+        '
+        'mainMenubtn
+        '
+        Me.mainMenubtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.mainMenubtn.Location = New System.Drawing.Point(301, 632)
+        Me.mainMenubtn.Name = "mainMenubtn"
+        Me.mainMenubtn.Size = New System.Drawing.Size(75, 23)
+        Me.mainMenubtn.TabIndex = 28
+        Me.mainMenubtn.Text = "main menu"
+        Me.mainMenubtn.UseVisualStyleBackColor = True
+        '
+        'townbtn
+        '
+        Me.townbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.townbtn.Location = New System.Drawing.Point(139, 632)
+        Me.townbtn.Name = "townbtn"
+        Me.townbtn.Size = New System.Drawing.Size(75, 23)
+        Me.townbtn.TabIndex = 30
+        Me.townbtn.Text = "door"
+        Me.townbtn.UseVisualStyleBackColor = True
+        '
         'GameDatabaseDataSet
         '
         Me.GameDatabaseDataSet.DataSetName = "GameDatabaseDataSet"
@@ -1050,36 +1076,6 @@ Partial Class TavernWindow
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.WeaponAugmentsTableAdapter = Nothing
         '
-        'playerbtn
-        '
-        Me.playerbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.playerbtn.Location = New System.Drawing.Point(220, 646)
-        Me.playerbtn.Name = "playerbtn"
-        Me.playerbtn.Size = New System.Drawing.Size(75, 23)
-        Me.playerbtn.TabIndex = 29
-        Me.playerbtn.Text = "player info"
-        Me.playerbtn.UseVisualStyleBackColor = True
-        '
-        'mainMenubtn
-        '
-        Me.mainMenubtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.mainMenubtn.Location = New System.Drawing.Point(301, 646)
-        Me.mainMenubtn.Name = "mainMenubtn"
-        Me.mainMenubtn.Size = New System.Drawing.Size(75, 23)
-        Me.mainMenubtn.TabIndex = 28
-        Me.mainMenubtn.Text = "main menu"
-        Me.mainMenubtn.UseVisualStyleBackColor = True
-        '
-        'townbtn
-        '
-        Me.townbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.townbtn.Location = New System.Drawing.Point(139, 646)
-        Me.townbtn.Name = "townbtn"
-        Me.townbtn.Size = New System.Drawing.Size(75, 23)
-        Me.townbtn.TabIndex = 30
-        Me.townbtn.Text = "door"
-        Me.townbtn.UseVisualStyleBackColor = True
-        '
         'PlayersBindingSource
         '
         Me.PlayersBindingSource.DataMember = "Players"
@@ -1103,7 +1099,7 @@ Partial Class TavernWindow
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(388, 681)
+        Me.ClientSize = New System.Drawing.Size(388, 667)
         Me.Controls.Add(Me.townbtn)
         Me.Controls.Add(Me.playerbtn)
         Me.Controls.Add(Me.mainMenubtn)
