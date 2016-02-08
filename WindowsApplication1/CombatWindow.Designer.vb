@@ -149,14 +149,11 @@ Partial Class CombatWindow
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.playerItemslst = New System.Windows.Forms.ListBox()
         Me.playerInventorylbl = New System.Windows.Forms.Label()
-        Me.hireListlbl = New System.Windows.Forms.Label()
-        Me.hireListlst = New System.Windows.Forms.ListBox()
         Me.tavernbtn = New System.Windows.Forms.Button()
         Me.shopbtn = New System.Windows.Forms.Button()
         Me.mainMenubtn = New System.Windows.Forms.Button()
         Me.tavernlbl = New System.Windows.Forms.Label()
         Me.inventorypnl = New System.Windows.Forms.Panel()
-        Me.hiredCreaturesListpnl = New System.Windows.Forms.Panel()
         Me.playerInfopnl = New System.Windows.Forms.Panel()
         Me.playerStatspnl = New System.Windows.Forms.Panel()
         Me.playerExperiencelbl = New System.Windows.Forms.Label()
@@ -165,6 +162,7 @@ Partial Class CombatWindow
         Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
         Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
+        Me.playerInfoPanellbl = New System.Windows.Forms.Label()
         Me.Combatpnl.SuspendLayout()
         Me.enemyTeampnl.SuspendLayout()
         Me.enemySlot2pnl.SuspendLayout()
@@ -178,7 +176,6 @@ Partial Class CombatWindow
         Me.playerSlot1pnl.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.inventorypnl.SuspendLayout()
-        Me.hiredCreaturesListpnl.SuspendLayout()
         Me.playerInfopnl.SuspendLayout()
         Me.playerStatspnl.SuspendLayout()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1239,6 +1236,7 @@ Partial Class CombatWindow
         'playerLevellbl
         '
         Me.playerLevellbl.AutoSize = True
+        Me.playerLevellbl.ForeColor = System.Drawing.Color.White
         Me.playerLevellbl.Location = New System.Drawing.Point(3, 55)
         Me.playerLevellbl.Name = "playerLevellbl"
         Me.playerLevellbl.Size = New System.Drawing.Size(29, 13)
@@ -1264,6 +1262,7 @@ Partial Class CombatWindow
         'playerGoldlbl
         '
         Me.playerGoldlbl.AutoSize = True
+        Me.playerGoldlbl.ForeColor = System.Drawing.Color.White
         Me.playerGoldlbl.Location = New System.Drawing.Point(5, 29)
         Me.playerGoldlbl.Name = "playerGoldlbl"
         Me.playerGoldlbl.Size = New System.Drawing.Size(27, 13)
@@ -1356,23 +1355,6 @@ Partial Class CombatWindow
         Me.playerInventorylbl.TabIndex = 3
         Me.playerInventorylbl.Text = "player inventory"
         '
-        'hireListlbl
-        '
-        Me.hireListlbl.AutoSize = True
-        Me.hireListlbl.Location = New System.Drawing.Point(52, 10)
-        Me.hireListlbl.Name = "hireListlbl"
-        Me.hireListlbl.Size = New System.Drawing.Size(77, 13)
-        Me.hireListlbl.TabIndex = 5
-        Me.hireListlbl.Text = "hired creatures"
-        '
-        'hireListlst
-        '
-        Me.hireListlst.CausesValidation = False
-        Me.hireListlst.Location = New System.Drawing.Point(3, 26)
-        Me.hireListlst.Name = "hireListlst"
-        Me.hireListlst.Size = New System.Drawing.Size(174, 147)
-        Me.hireListlst.TabIndex = 4
-        '
         'tavernbtn
         '
         Me.tavernbtn.Location = New System.Drawing.Point(894, 430)
@@ -1418,20 +1400,10 @@ Partial Class CombatWindow
         Me.inventorypnl.Size = New System.Drawing.Size(180, 183)
         Me.inventorypnl.TabIndex = 10
         '
-        'hiredCreaturesListpnl
-        '
-        Me.hiredCreaturesListpnl.Controls.Add(Me.hireListlbl)
-        Me.hiredCreaturesListpnl.Controls.Add(Me.hireListlst)
-        Me.hiredCreaturesListpnl.Location = New System.Drawing.Point(189, 3)
-        Me.hiredCreaturesListpnl.Name = "hiredCreaturesListpnl"
-        Me.hiredCreaturesListpnl.Size = New System.Drawing.Size(180, 183)
-        Me.hiredCreaturesListpnl.TabIndex = 11
-        '
         'playerInfopnl
         '
         Me.playerInfopnl.Controls.Add(Me.playerStatspnl)
         Me.playerInfopnl.Controls.Add(Me.inventorypnl)
-        Me.playerInfopnl.Controls.Add(Me.hiredCreaturesListpnl)
         Me.playerInfopnl.Location = New System.Drawing.Point(16, 422)
         Me.playerInfopnl.Name = "playerInfopnl"
         Me.playerInfopnl.Size = New System.Drawing.Size(766, 189)
@@ -1439,6 +1411,8 @@ Partial Class CombatWindow
         '
         'playerStatspnl
         '
+        Me.playerStatspnl.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.playerStatspnl.Controls.Add(Me.playerInfoPanellbl)
         Me.playerStatspnl.Controls.Add(Me.playerSkillTreebtn)
         Me.playerStatspnl.Controls.Add(Me.playerExperiencelbl)
         Me.playerStatspnl.Controls.Add(Me.playerGoldlbl)
@@ -1446,15 +1420,16 @@ Partial Class CombatWindow
         Me.playerStatspnl.Controls.Add(Me.playerLevellbl)
         Me.playerStatspnl.Controls.Add(Me.playerGoldtxt)
         Me.playerStatspnl.Controls.Add(Me.playerLeveltxt)
-        Me.playerStatspnl.Location = New System.Drawing.Point(375, 3)
+        Me.playerStatspnl.Location = New System.Drawing.Point(189, 3)
         Me.playerStatspnl.Name = "playerStatspnl"
-        Me.playerStatspnl.Size = New System.Drawing.Size(388, 183)
+        Me.playerStatspnl.Size = New System.Drawing.Size(574, 183)
         Me.playerStatspnl.TabIndex = 4
         '
         'playerExperiencelbl
         '
         Me.playerExperiencelbl.AutoSize = True
-        Me.playerExperiencelbl.Location = New System.Drawing.Point(165, 151)
+        Me.playerExperiencelbl.ForeColor = System.Drawing.Color.White
+        Me.playerExperiencelbl.Location = New System.Drawing.Point(258, 151)
         Me.playerExperiencelbl.Name = "playerExperiencelbl"
         Me.playerExperiencelbl.Size = New System.Drawing.Size(59, 13)
         Me.playerExperiencelbl.TabIndex = 14
@@ -1464,7 +1439,7 @@ Partial Class CombatWindow
         '
         Me.playerExperiencebar.Location = New System.Drawing.Point(3, 167)
         Me.playerExperiencebar.Name = "playerExperiencebar"
-        Me.playerExperiencebar.Size = New System.Drawing.Size(382, 13)
+        Me.playerExperiencebar.Size = New System.Drawing.Size(568, 13)
         Me.playerExperiencebar.Step = 1
         Me.playerExperiencebar.TabIndex = 13
         '
@@ -1484,16 +1459,16 @@ Partial Class CombatWindow
         '
         'TableAdapterManager
         '
-        Me.TableAdapterManager.ArmorAugmentTableAdapter = Nothing
+        Me.TableAdapterManager.ArmorAugmentsTableAdapter = Nothing
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.BattlesTableAdapter = Nothing
         Me.TableAdapterManager.PartiesTableAdapter = Nothing
         Me.TableAdapterManager.PlayerArmorTableAdapter = Nothing
-        Me.TableAdapterManager.PlayerConsumableTableAdapter = Nothing
-        Me.TableAdapterManager.PlayerCreatureTableAdapter = Nothing
-        Me.TableAdapterManager.PlayerSkillTableAdapter = Nothing
+        Me.TableAdapterManager.PlayerConsumablesTableAdapter = Nothing
+        Me.TableAdapterManager.PlayerCreaturesTableAdapter = Nothing
+        Me.TableAdapterManager.PlayerSkillsTableAdapter = Nothing
         Me.TableAdapterManager.PlayersTableAdapter = Me.PlayersTableAdapter
-        Me.TableAdapterManager.PlayerWeaponTableAdapter = Nothing
+        Me.TableAdapterManager.PlayerWeaponsTableAdapter = Nothing
         Me.TableAdapterManager.StaticArmorTableAdapter = Nothing
         Me.TableAdapterManager.StaticAugmentsTableAdapter = Nothing
         Me.TableAdapterManager.StaticConsumablesTableAdapter = Nothing
@@ -1503,7 +1478,17 @@ Partial Class CombatWindow
         Me.TableAdapterManager.StaticWeaponsTableAdapter = Nothing
         Me.TableAdapterManager.TurnsTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager.WeaponAugmentTableAdapter = Nothing
+        Me.TableAdapterManager.WeaponAugmentsTableAdapter = Nothing
+        '
+        'playerInfoPanellbl
+        '
+        Me.playerInfoPanellbl.AutoSize = True
+        Me.playerInfoPanellbl.ForeColor = System.Drawing.Color.White
+        Me.playerInfoPanellbl.Location = New System.Drawing.Point(260, 5)
+        Me.playerInfoPanellbl.Name = "playerInfoPanellbl"
+        Me.playerInfoPanellbl.Size = New System.Drawing.Size(55, 13)
+        Me.playerInfoPanellbl.TabIndex = 16
+        Me.playerInfoPanellbl.Text = "player info"
         '
         'CombatWindow
         '
@@ -1547,8 +1532,6 @@ Partial Class CombatWindow
         Me.MenuStrip1.PerformLayout()
         Me.inventorypnl.ResumeLayout(False)
         Me.inventorypnl.PerformLayout()
-        Me.hiredCreaturesListpnl.ResumeLayout(False)
-        Me.hiredCreaturesListpnl.PerformLayout()
         Me.playerInfopnl.ResumeLayout(False)
         Me.playerStatspnl.ResumeLayout(False)
         Me.playerStatspnl.PerformLayout()
@@ -1590,7 +1573,6 @@ Partial Class CombatWindow
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents playerItemslst As ListBox
     Friend WithEvents playerInventorylbl As Label
-    Friend WithEvents hireListlbl As Label
     Friend WithEvents tavernbtn As Button
     Friend WithEvents shopbtn As Button
     Friend WithEvents mainMenubtn As Button
@@ -1654,9 +1636,7 @@ Partial Class CombatWindow
     Friend WithEvents enemySlot2pnl As Panel
     Friend WithEvents enemySlot1pnl As Panel
     Friend WithEvents tavernlbl As Label
-    Friend WithEvents hireListlst As ListBox
     Friend WithEvents inventorypnl As Panel
-    Friend WithEvents hiredCreaturesListpnl As Panel
     Friend WithEvents playerInfopnl As Panel
     Friend WithEvents playerLevellbl As Label
     Friend WithEvents playerLeveltxt As TextBox
@@ -1702,4 +1682,5 @@ Partial Class CombatWindow
     Friend WithEvents PlayersBindingSource As BindingSource
     Friend WithEvents PlayersTableAdapter As GameDatabaseDataSetTableAdapters.PlayersTableAdapter
     Friend WithEvents TableAdapterManager As GameDatabaseDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents playerInfoPanellbl As Label
 End Class

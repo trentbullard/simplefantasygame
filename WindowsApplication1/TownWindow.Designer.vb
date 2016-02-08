@@ -25,55 +25,56 @@ Partial Class TownWindow
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TownWindow))
         Me.townpnl = New System.Windows.Forms.Panel()
-        Me.mainMenubtn = New System.Windows.Forms.Button()
-        Me.innbtn = New System.Windows.Forms.Button()
-        Me.tavernbtn = New System.Windows.Forms.Button()
-        Me.marketbtn = New System.Windows.Forms.Button()
-        Me.necromancerbtn = New System.Windows.Forms.Button()
-        Me.roadbtn = New System.Windows.Forms.Button()
-        Me.necromancerlbl = New System.Windows.Forms.Label()
-        Me.innlbl = New System.Windows.Forms.Label()
+        Me.roadlbl = New System.Windows.Forms.Label()
+        Me.marketlbl = New System.Windows.Forms.Label()
         Me.tavernlbl = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.innlbl = New System.Windows.Forms.Label()
+        Me.necromancerlbl = New System.Windows.Forms.Label()
+        Me.mainMenubtn = New System.Windows.Forms.Button()
+        Me.roadbtn = New System.Windows.Forms.Button()
+        Me.necromancerbtn = New System.Windows.Forms.Button()
+        Me.marketbtn = New System.Windows.Forms.Button()
+        Me.tavernbtn = New System.Windows.Forms.Button()
+        Me.innbtn = New System.Windows.Forms.Button()
         Me.GameDatabaseDataSet = New WindowsApplication1.GameDatabaseDataSet()
         Me.ArmorAugmentsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ArmorAugmentsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.ArmorAugmentsTableAdapter()
         Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
-        Me.BattlesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BattlesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.BattlesTableAdapter()
-        Me.PartiesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PartiesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PartiesTableAdapter()
-        Me.PlayerArmorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayerArmorTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerArmorTableAdapter()
-        Me.PlayerConsumablesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayerConsumablesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerConsumablesTableAdapter()
-        Me.PlayerCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayerCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerCreaturesTableAdapter()
-        Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
-        Me.PlayerSkillsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayerSkillsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerSkillsTableAdapter()
-        Me.PlayerWeaponsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
         Me.PlayerWeaponsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerWeaponsTableAdapter()
-        Me.StaticArmorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.StaticArmorTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticArmorTableAdapter()
-        Me.StaticAugmentsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.StaticAugmentsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticAugmentsTableAdapter()
-        Me.StaticConsumablesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.StaticConsumablesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticConsumablesTableAdapter()
-        Me.StaticCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.StaticCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticCreaturesTableAdapter()
-        Me.StaticMobsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.StaticMobsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticMobsTableAdapter()
-        Me.StaticSkillsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.StaticSkillsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticSkillsTableAdapter()
-        Me.StaticWeaponsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.StaticWeaponsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticWeaponsTableAdapter()
-        Me.TurnsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TurnsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TurnsTableAdapter()
-        Me.WeaponAugmentsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.WeaponAugmentsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.WeaponAugmentsTableAdapter()
+        Me.BattlesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PartiesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayerArmorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayerConsumablesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayerCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayerSkillsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayerWeaponsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticArmorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticAugmentsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticConsumablesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticMobsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticSkillsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticWeaponsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TurnsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.WeaponAugmentsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.playerbtn = New System.Windows.Forms.Button()
         Me.townpnl.SuspendLayout()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ArmorAugmentsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -100,8 +101,9 @@ Partial Class TownWindow
         '
         Me.townpnl.BackgroundImage = CType(resources.GetObject("townpnl.BackgroundImage"), System.Drawing.Image)
         Me.townpnl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.townpnl.Controls.Add(Me.Label2)
-        Me.townpnl.Controls.Add(Me.Label1)
+        Me.townpnl.Controls.Add(Me.playerbtn)
+        Me.townpnl.Controls.Add(Me.roadlbl)
+        Me.townpnl.Controls.Add(Me.marketlbl)
         Me.townpnl.Controls.Add(Me.tavernlbl)
         Me.townpnl.Controls.Add(Me.innlbl)
         Me.townpnl.Controls.Add(Me.necromancerlbl)
@@ -117,89 +119,29 @@ Partial Class TownWindow
         Me.townpnl.Size = New System.Drawing.Size(1000, 600)
         Me.townpnl.TabIndex = 0
         '
-        'mainMenubtn
+        'roadlbl
         '
-        Me.mainMenubtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.mainMenubtn.Location = New System.Drawing.Point(913, 565)
-        Me.mainMenubtn.Name = "mainMenubtn"
-        Me.mainMenubtn.Size = New System.Drawing.Size(75, 23)
-        Me.mainMenubtn.TabIndex = 0
-        Me.mainMenubtn.Text = "Main Menu"
-        Me.mainMenubtn.UseVisualStyleBackColor = True
+        Me.roadlbl.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.roadlbl.AutoSize = True
+        Me.roadlbl.BackColor = System.Drawing.Color.Transparent
+        Me.roadlbl.ForeColor = System.Drawing.Color.Lime
+        Me.roadlbl.Location = New System.Drawing.Point(834, 87)
+        Me.roadlbl.Name = "roadlbl"
+        Me.roadlbl.Size = New System.Drawing.Size(98, 13)
+        Me.roadlbl.TabIndex = 10
+        Me.roadlbl.Text = "Click here to travel!"
         '
-        'innbtn
+        'marketlbl
         '
-        Me.innbtn.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.innbtn.Location = New System.Drawing.Point(90, 325)
-        Me.innbtn.Name = "innbtn"
-        Me.innbtn.Size = New System.Drawing.Size(75, 23)
-        Me.innbtn.TabIndex = 1
-        Me.innbtn.Text = "Inn"
-        Me.innbtn.UseVisualStyleBackColor = True
-        '
-        'tavernbtn
-        '
-        Me.tavernbtn.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.tavernbtn.Location = New System.Drawing.Point(358, 296)
-        Me.tavernbtn.Name = "tavernbtn"
-        Me.tavernbtn.Size = New System.Drawing.Size(75, 23)
-        Me.tavernbtn.TabIndex = 2
-        Me.tavernbtn.Text = "Tavern"
-        Me.tavernbtn.UseVisualStyleBackColor = True
-        '
-        'marketbtn
-        '
-        Me.marketbtn.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.marketbtn.Location = New System.Drawing.Point(542, 158)
-        Me.marketbtn.Name = "marketbtn"
-        Me.marketbtn.Size = New System.Drawing.Size(75, 23)
-        Me.marketbtn.TabIndex = 3
-        Me.marketbtn.Text = "Market"
-        Me.marketbtn.UseVisualStyleBackColor = True
-        '
-        'necromancerbtn
-        '
-        Me.necromancerbtn.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.necromancerbtn.Location = New System.Drawing.Point(655, 220)
-        Me.necromancerbtn.Name = "necromancerbtn"
-        Me.necromancerbtn.Size = New System.Drawing.Size(81, 23)
-        Me.necromancerbtn.TabIndex = 4
-        Me.necromancerbtn.Text = "Necromancer"
-        Me.necromancerbtn.UseVisualStyleBackColor = True
-        '
-        'roadbtn
-        '
-        Me.roadbtn.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.roadbtn.Location = New System.Drawing.Point(843, 103)
-        Me.roadbtn.Name = "roadbtn"
-        Me.roadbtn.Size = New System.Drawing.Size(81, 23)
-        Me.roadbtn.TabIndex = 5
-        Me.roadbtn.Text = "Road"
-        Me.roadbtn.UseVisualStyleBackColor = True
-        '
-        'necromancerlbl
-        '
-        Me.necromancerlbl.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.necromancerlbl.AutoSize = True
-        Me.necromancerlbl.BackColor = System.Drawing.Color.Transparent
-        Me.necromancerlbl.ForeColor = System.Drawing.Color.Lime
-        Me.necromancerlbl.Location = New System.Drawing.Point(595, 204)
-        Me.necromancerlbl.Name = "necromancerlbl"
-        Me.necromancerlbl.Size = New System.Drawing.Size(200, 13)
-        Me.necromancerlbl.TabIndex = 6
-        Me.necromancerlbl.Text = "Click here to revive fallen team members!"
-        '
-        'innlbl
-        '
-        Me.innlbl.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.innlbl.AutoSize = True
-        Me.innlbl.BackColor = System.Drawing.Color.Transparent
-        Me.innlbl.ForeColor = System.Drawing.Color.Lime
-        Me.innlbl.Location = New System.Drawing.Point(58, 351)
-        Me.innlbl.Name = "innlbl"
-        Me.innlbl.Size = New System.Drawing.Size(138, 13)
-        Me.innlbl.TabIndex = 7
-        Me.innlbl.Text = "Click here to rest your team!"
+        Me.marketlbl.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.marketlbl.AutoSize = True
+        Me.marketlbl.BackColor = System.Drawing.Color.Transparent
+        Me.marketlbl.ForeColor = System.Drawing.Color.Lime
+        Me.marketlbl.Location = New System.Drawing.Point(521, 142)
+        Me.marketlbl.Name = "marketlbl"
+        Me.marketlbl.Size = New System.Drawing.Size(116, 13)
+        Me.marketlbl.TabIndex = 9
+        Me.marketlbl.Text = "Click here to buy items!"
         '
         'tavernlbl
         '
@@ -213,29 +155,89 @@ Partial Class TownWindow
         Me.tavernlbl.TabIndex = 8
         Me.tavernlbl.Text = "Click here to hire team members!"
         '
-        'Label1
+        'innlbl
         '
-        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.ForeColor = System.Drawing.Color.Lime
-        Me.Label1.Location = New System.Drawing.Point(521, 142)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(116, 13)
-        Me.Label1.TabIndex = 9
-        Me.Label1.Text = "Click here to buy items!"
+        Me.innlbl.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.innlbl.AutoSize = True
+        Me.innlbl.BackColor = System.Drawing.Color.Transparent
+        Me.innlbl.ForeColor = System.Drawing.Color.Lime
+        Me.innlbl.Location = New System.Drawing.Point(58, 351)
+        Me.innlbl.Name = "innlbl"
+        Me.innlbl.Size = New System.Drawing.Size(138, 13)
+        Me.innlbl.TabIndex = 7
+        Me.innlbl.Text = "Click here to rest your team!"
         '
-        'Label2
+        'necromancerlbl
         '
-        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.ForeColor = System.Drawing.Color.Lime
-        Me.Label2.Location = New System.Drawing.Point(834, 87)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(98, 13)
-        Me.Label2.TabIndex = 10
-        Me.Label2.Text = "Click here to travel!"
+        Me.necromancerlbl.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.necromancerlbl.AutoSize = True
+        Me.necromancerlbl.BackColor = System.Drawing.Color.Transparent
+        Me.necromancerlbl.ForeColor = System.Drawing.Color.Lime
+        Me.necromancerlbl.Location = New System.Drawing.Point(595, 204)
+        Me.necromancerlbl.Name = "necromancerlbl"
+        Me.necromancerlbl.Size = New System.Drawing.Size(200, 13)
+        Me.necromancerlbl.TabIndex = 6
+        Me.necromancerlbl.Text = "Click here to revive fallen team members!"
+        '
+        'mainMenubtn
+        '
+        Me.mainMenubtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.mainMenubtn.Location = New System.Drawing.Point(913, 565)
+        Me.mainMenubtn.Name = "mainMenubtn"
+        Me.mainMenubtn.Size = New System.Drawing.Size(75, 23)
+        Me.mainMenubtn.TabIndex = 0
+        Me.mainMenubtn.Text = "Main Menu"
+        Me.mainMenubtn.UseVisualStyleBackColor = True
+        '
+        'roadbtn
+        '
+        Me.roadbtn.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.roadbtn.Location = New System.Drawing.Point(843, 103)
+        Me.roadbtn.Name = "roadbtn"
+        Me.roadbtn.Size = New System.Drawing.Size(81, 23)
+        Me.roadbtn.TabIndex = 5
+        Me.roadbtn.Text = "Road"
+        Me.roadbtn.UseVisualStyleBackColor = True
+        '
+        'necromancerbtn
+        '
+        Me.necromancerbtn.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.necromancerbtn.Location = New System.Drawing.Point(655, 220)
+        Me.necromancerbtn.Name = "necromancerbtn"
+        Me.necromancerbtn.Size = New System.Drawing.Size(81, 23)
+        Me.necromancerbtn.TabIndex = 4
+        Me.necromancerbtn.Text = "Necromancer"
+        Me.necromancerbtn.UseVisualStyleBackColor = True
+        '
+        'marketbtn
+        '
+        Me.marketbtn.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.marketbtn.Location = New System.Drawing.Point(542, 158)
+        Me.marketbtn.Name = "marketbtn"
+        Me.marketbtn.Size = New System.Drawing.Size(75, 23)
+        Me.marketbtn.TabIndex = 3
+        Me.marketbtn.Text = "Market"
+        Me.marketbtn.UseVisualStyleBackColor = True
+        '
+        'tavernbtn
+        '
+        Me.tavernbtn.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.tavernbtn.Location = New System.Drawing.Point(358, 296)
+        Me.tavernbtn.Name = "tavernbtn"
+        Me.tavernbtn.Size = New System.Drawing.Size(75, 23)
+        Me.tavernbtn.TabIndex = 2
+        Me.tavernbtn.Text = "Tavern"
+        Me.tavernbtn.UseVisualStyleBackColor = True
+        '
+        'innbtn
+        '
+        Me.innbtn.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.innbtn.Location = New System.Drawing.Point(90, 325)
+        Me.innbtn.Name = "innbtn"
+        Me.innbtn.Size = New System.Drawing.Size(75, 23)
+        Me.innbtn.TabIndex = 1
+        Me.innbtn.Text = "Inn"
+        Me.innbtn.UseVisualStyleBackColor = True
         '
         'GameDatabaseDataSet
         '
@@ -274,158 +276,167 @@ Partial Class TownWindow
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.WeaponAugmentsTableAdapter = Me.WeaponAugmentsTableAdapter
         '
+        'BattlesTableAdapter
+        '
+        Me.BattlesTableAdapter.ClearBeforeFill = True
+        '
+        'PartiesTableAdapter
+        '
+        Me.PartiesTableAdapter.ClearBeforeFill = True
+        '
+        'PlayerArmorTableAdapter
+        '
+        Me.PlayerArmorTableAdapter.ClearBeforeFill = True
+        '
+        'PlayerConsumablesTableAdapter
+        '
+        Me.PlayerConsumablesTableAdapter.ClearBeforeFill = True
+        '
+        'PlayerCreaturesTableAdapter
+        '
+        Me.PlayerCreaturesTableAdapter.ClearBeforeFill = True
+        '
+        'PlayerSkillsTableAdapter
+        '
+        Me.PlayerSkillsTableAdapter.ClearBeforeFill = True
+        '
+        'PlayersTableAdapter
+        '
+        Me.PlayersTableAdapter.ClearBeforeFill = True
+        '
+        'PlayerWeaponsTableAdapter
+        '
+        Me.PlayerWeaponsTableAdapter.ClearBeforeFill = True
+        '
+        'StaticArmorTableAdapter
+        '
+        Me.StaticArmorTableAdapter.ClearBeforeFill = True
+        '
+        'StaticAugmentsTableAdapter
+        '
+        Me.StaticAugmentsTableAdapter.ClearBeforeFill = True
+        '
+        'StaticConsumablesTableAdapter
+        '
+        Me.StaticConsumablesTableAdapter.ClearBeforeFill = True
+        '
+        'StaticCreaturesTableAdapter
+        '
+        Me.StaticCreaturesTableAdapter.ClearBeforeFill = True
+        '
+        'StaticMobsTableAdapter
+        '
+        Me.StaticMobsTableAdapter.ClearBeforeFill = True
+        '
+        'StaticSkillsTableAdapter
+        '
+        Me.StaticSkillsTableAdapter.ClearBeforeFill = True
+        '
+        'StaticWeaponsTableAdapter
+        '
+        Me.StaticWeaponsTableAdapter.ClearBeforeFill = True
+        '
+        'TurnsTableAdapter
+        '
+        Me.TurnsTableAdapter.ClearBeforeFill = True
+        '
+        'WeaponAugmentsTableAdapter
+        '
+        Me.WeaponAugmentsTableAdapter.ClearBeforeFill = True
+        '
         'BattlesBindingSource
         '
         Me.BattlesBindingSource.DataMember = "Battles"
         Me.BattlesBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'BattlesTableAdapter
-        '
-        Me.BattlesTableAdapter.ClearBeforeFill = True
         '
         'PartiesBindingSource
         '
         Me.PartiesBindingSource.DataMember = "Parties"
         Me.PartiesBindingSource.DataSource = Me.GameDatabaseDataSet
         '
-        'PartiesTableAdapter
-        '
-        Me.PartiesTableAdapter.ClearBeforeFill = True
-        '
         'PlayerArmorBindingSource
         '
         Me.PlayerArmorBindingSource.DataMember = "PlayerArmor"
         Me.PlayerArmorBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'PlayerArmorTableAdapter
-        '
-        Me.PlayerArmorTableAdapter.ClearBeforeFill = True
         '
         'PlayerConsumablesBindingSource
         '
         Me.PlayerConsumablesBindingSource.DataMember = "PlayerConsumables"
         Me.PlayerConsumablesBindingSource.DataSource = Me.GameDatabaseDataSet
         '
-        'PlayerConsumablesTableAdapter
-        '
-        Me.PlayerConsumablesTableAdapter.ClearBeforeFill = True
-        '
         'PlayerCreaturesBindingSource
         '
         Me.PlayerCreaturesBindingSource.DataMember = "PlayerCreatures"
         Me.PlayerCreaturesBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'PlayerCreaturesTableAdapter
-        '
-        Me.PlayerCreaturesTableAdapter.ClearBeforeFill = True
         '
         'PlayersBindingSource
         '
         Me.PlayersBindingSource.DataMember = "Players"
         Me.PlayersBindingSource.DataSource = Me.GameDatabaseDataSet
         '
-        'PlayersTableAdapter
-        '
-        Me.PlayersTableAdapter.ClearBeforeFill = True
-        '
         'PlayerSkillsBindingSource
         '
         Me.PlayerSkillsBindingSource.DataMember = "PlayerSkills"
         Me.PlayerSkillsBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'PlayerSkillsTableAdapter
-        '
-        Me.PlayerSkillsTableAdapter.ClearBeforeFill = True
         '
         'PlayerWeaponsBindingSource
         '
         Me.PlayerWeaponsBindingSource.DataMember = "PlayerWeapons"
         Me.PlayerWeaponsBindingSource.DataSource = Me.GameDatabaseDataSet
         '
-        'PlayerWeaponsTableAdapter
-        '
-        Me.PlayerWeaponsTableAdapter.ClearBeforeFill = True
-        '
         'StaticArmorBindingSource
         '
         Me.StaticArmorBindingSource.DataMember = "StaticArmor"
         Me.StaticArmorBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'StaticArmorTableAdapter
-        '
-        Me.StaticArmorTableAdapter.ClearBeforeFill = True
         '
         'StaticAugmentsBindingSource
         '
         Me.StaticAugmentsBindingSource.DataMember = "StaticAugments"
         Me.StaticAugmentsBindingSource.DataSource = Me.GameDatabaseDataSet
         '
-        'StaticAugmentsTableAdapter
-        '
-        Me.StaticAugmentsTableAdapter.ClearBeforeFill = True
-        '
         'StaticConsumablesBindingSource
         '
         Me.StaticConsumablesBindingSource.DataMember = "StaticConsumables"
         Me.StaticConsumablesBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'StaticConsumablesTableAdapter
-        '
-        Me.StaticConsumablesTableAdapter.ClearBeforeFill = True
         '
         'StaticCreaturesBindingSource
         '
         Me.StaticCreaturesBindingSource.DataMember = "StaticCreatures"
         Me.StaticCreaturesBindingSource.DataSource = Me.GameDatabaseDataSet
         '
-        'StaticCreaturesTableAdapter
-        '
-        Me.StaticCreaturesTableAdapter.ClearBeforeFill = True
-        '
         'StaticMobsBindingSource
         '
         Me.StaticMobsBindingSource.DataMember = "StaticMobs"
         Me.StaticMobsBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'StaticMobsTableAdapter
-        '
-        Me.StaticMobsTableAdapter.ClearBeforeFill = True
         '
         'StaticSkillsBindingSource
         '
         Me.StaticSkillsBindingSource.DataMember = "StaticSkills"
         Me.StaticSkillsBindingSource.DataSource = Me.GameDatabaseDataSet
         '
-        'StaticSkillsTableAdapter
-        '
-        Me.StaticSkillsTableAdapter.ClearBeforeFill = True
-        '
         'StaticWeaponsBindingSource
         '
         Me.StaticWeaponsBindingSource.DataMember = "StaticWeapons"
         Me.StaticWeaponsBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'StaticWeaponsTableAdapter
-        '
-        Me.StaticWeaponsTableAdapter.ClearBeforeFill = True
         '
         'TurnsBindingSource
         '
         Me.TurnsBindingSource.DataMember = "Turns"
         Me.TurnsBindingSource.DataSource = Me.GameDatabaseDataSet
         '
-        'TurnsTableAdapter
-        '
-        Me.TurnsTableAdapter.ClearBeforeFill = True
-        '
         'WeaponAugmentsBindingSource
         '
         Me.WeaponAugmentsBindingSource.DataMember = "WeaponAugments"
         Me.WeaponAugmentsBindingSource.DataSource = Me.GameDatabaseDataSet
         '
-        'WeaponAugmentsTableAdapter
+        'playerbtn
         '
-        Me.WeaponAugmentsTableAdapter.ClearBeforeFill = True
+        Me.playerbtn.Location = New System.Drawing.Point(832, 565)
+        Me.playerbtn.Name = "playerbtn"
+        Me.playerbtn.Size = New System.Drawing.Size(75, 23)
+        Me.playerbtn.TabIndex = 11
+        Me.playerbtn.Text = "Player Info"
+        Me.playerbtn.UseVisualStyleBackColor = True
         '
         'TownWindow
         '
@@ -470,8 +481,8 @@ Partial Class TownWindow
     Friend WithEvents marketbtn As Button
     Friend WithEvents tavernbtn As Button
     Friend WithEvents innbtn As Button
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label1 As Label
+    Friend WithEvents roadlbl As Label
+    Friend WithEvents marketlbl As Label
     Friend WithEvents tavernlbl As Label
     Friend WithEvents innlbl As Label
     Friend WithEvents GameDatabaseDataSet As GameDatabaseDataSet
@@ -512,4 +523,5 @@ Partial Class TownWindow
     Friend WithEvents TurnsBindingSource As BindingSource
     Friend WithEvents WeaponAugmentsTableAdapter As GameDatabaseDataSetTableAdapters.WeaponAugmentsTableAdapter
     Friend WithEvents WeaponAugmentsBindingSource As BindingSource
+    Friend WithEvents playerbtn As Button
 End Class

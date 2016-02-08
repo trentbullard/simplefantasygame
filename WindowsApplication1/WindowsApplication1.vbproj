@@ -138,6 +138,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GameDatabaseDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="InnWindow.Designer.vb">
+      <DependentUpon>InnWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InnWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="inventory.vb" />
     <Compile Include="item.vb" />
     <Compile Include="list.vb" />
@@ -146,6 +152,12 @@
       <DependentUpon>MainMenu.vb</DependentUpon>
     </Compile>
     <Compile Include="MainMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MarketWindow.Designer.vb">
+      <DependentUpon>MarketWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MarketWindow.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -164,11 +176,23 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Names.vb" />
-    <Compile Include="player.vb" />
-    <Compile Include="ShopWindow.Designer.vb">
-      <DependentUpon>ShopWindow.vb</DependentUpon>
+    <Compile Include="NecromancerWindow.Designer.vb">
+      <DependentUpon>NecromancerWindow.vb</DependentUpon>
     </Compile>
-    <Compile Include="ShopWindow.vb">
+    <Compile Include="NecromancerWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="player.vb" />
+    <Compile Include="PlayerWindow.Designer.vb">
+      <DependentUpon>PlayerWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlayerWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoadWindow.Designer.vb">
+      <DependentUpon>RoadWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RoadWindow.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Targets.vb" />
@@ -193,8 +217,14 @@
     <EmbeddedResource Include="DeletePlayersWindow.resx">
       <DependentUpon>DeletePlayersWindow.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InnWindow.resx">
+      <DependentUpon>InnWindow.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarketWindow.resx">
+      <DependentUpon>MarketWindow.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -202,8 +232,14 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ShopWindow.resx">
-      <DependentUpon>ShopWindow.vb</DependentUpon>
+    <EmbeddedResource Include="NecromancerWindow.resx">
+      <DependentUpon>NecromancerWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayerWindow.resx">
+      <DependentUpon>PlayerWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoadWindow.resx">
+      <DependentUpon>RoadWindow.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TavernWindow.resx">
       <DependentUpon>TavernWindow.vb</DependentUpon>

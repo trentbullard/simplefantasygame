@@ -5,7 +5,6 @@
     Dim enemyCreature4 As New creature
 
     Private Sub CombatWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'GameDatabaseDataSet.Players' table. You can move, or remove it, as needed.
         Me.PlayersTableAdapter.Fill(Me.GameDatabaseDataSet.Players)
 
         Me.Text = "Simple Fantasy Game - Level " & currentPlayer.level & " " & currentPlayer.name
@@ -18,7 +17,7 @@
         playerExperiencebar.Value = currentPlayer.exp
     End Sub
 
-    Private Sub hireListlst_SelectedIndexChanged(sender As Object, e As EventArgs) Handles hireListlst.SelectedIndexChanged
+    Private Sub hireListlst_SelectedIndexChanged(sender As Object, e As EventArgs) 
         If Not hireListlst.SelectedIndex = -1 Then
             currentCreature = hireListlst.SelectedItem
         End If
@@ -33,16 +32,6 @@
         currentMainMenu = New MainMenu
         currentMainMenu.Show()
         Me.Close()
-    End Sub
-
-    Private Sub tavernbtn_Click(sender As Object, e As EventArgs) Handles tavernbtn.Click
-        currentTavernWindow = New TavernWindow
-        currentTavernWindow.Show()
-    End Sub
-
-    Private Sub shopbtn_Click(sender As Object, e As EventArgs) Handles shopbtn.Click
-        currentShopWindow = New ShopWindow
-        currentShopWindow.Show()
     End Sub
 
     Private Sub enemySlot1Targetrad_CheckedChanged(sender As Object, e As EventArgs) Handles enemySlot1Targetrad.CheckedChanged

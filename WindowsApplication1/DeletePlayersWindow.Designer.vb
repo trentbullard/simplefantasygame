@@ -77,16 +77,16 @@ Partial Class DeletePlayersWindow
         '
         'TableAdapterManager
         '
-        Me.TableAdapterManager.ArmorAugmentTableAdapter = Nothing
+        Me.TableAdapterManager.ArmorAugmentsTableAdapter = Nothing
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.BattlesTableAdapter = Nothing
         Me.TableAdapterManager.PartiesTableAdapter = Nothing
         Me.TableAdapterManager.PlayerArmorTableAdapter = Nothing
-        Me.TableAdapterManager.PlayerConsumableTableAdapter = Nothing
-        Me.TableAdapterManager.PlayerCreatureTableAdapter = Nothing
-        Me.TableAdapterManager.PlayerSkillTableAdapter = Nothing
+        Me.TableAdapterManager.PlayerConsumablesTableAdapter = Nothing
+        Me.TableAdapterManager.PlayerCreaturesTableAdapter = Nothing
+        Me.TableAdapterManager.PlayerSkillsTableAdapter = Nothing
         Me.TableAdapterManager.PlayersTableAdapter = Me.PlayersTableAdapter
-        Me.TableAdapterManager.PlayerWeaponTableAdapter = Nothing
+        Me.TableAdapterManager.PlayerWeaponsTableAdapter = Nothing
         Me.TableAdapterManager.StaticArmorTableAdapter = Nothing
         Me.TableAdapterManager.StaticAugmentsTableAdapter = Nothing
         Me.TableAdapterManager.StaticConsumablesTableAdapter = Nothing
@@ -95,7 +95,7 @@ Partial Class DeletePlayersWindow
         Me.TableAdapterManager.StaticWeaponsTableAdapter = Nothing
         Me.TableAdapterManager.TurnsTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager.WeaponAugmentTableAdapter = Nothing
+        Me.TableAdapterManager.WeaponAugmentsTableAdapter = Nothing
         '
         'DeletePlayersWindow
         '
