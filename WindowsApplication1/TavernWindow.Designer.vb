@@ -127,6 +127,7 @@ Partial Class TavernWindow
         Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
         Me.PlayerCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayerCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerCreaturesTableAdapter()
+        Me.questpnl = New System.Windows.Forms.Panel()
         Me.tavernSlot1pnl.SuspendLayout()
         Me.tavernSlot2pnl.SuspendLayout()
         Me.tavernSlot3pnl.SuspendLayout()
@@ -1012,7 +1013,7 @@ Partial Class TavernWindow
         'playerbtn
         '
         Me.playerbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.playerbtn.Location = New System.Drawing.Point(220, 632)
+        Me.playerbtn.Location = New System.Drawing.Point(664, 632)
         Me.playerbtn.Name = "playerbtn"
         Me.playerbtn.Size = New System.Drawing.Size(75, 23)
         Me.playerbtn.TabIndex = 29
@@ -1022,7 +1023,7 @@ Partial Class TavernWindow
         'mainMenubtn
         '
         Me.mainMenubtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.mainMenubtn.Location = New System.Drawing.Point(301, 632)
+        Me.mainMenubtn.Location = New System.Drawing.Point(745, 632)
         Me.mainMenubtn.Name = "mainMenubtn"
         Me.mainMenubtn.Size = New System.Drawing.Size(75, 23)
         Me.mainMenubtn.TabIndex = 28
@@ -1032,7 +1033,7 @@ Partial Class TavernWindow
         'townbtn
         '
         Me.townbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.townbtn.Location = New System.Drawing.Point(139, 632)
+        Me.townbtn.Location = New System.Drawing.Point(583, 632)
         Me.townbtn.Name = "townbtn"
         Me.townbtn.Size = New System.Drawing.Size(75, 23)
         Me.townbtn.TabIndex = 30
@@ -1094,12 +1095,20 @@ Partial Class TavernWindow
         '
         Me.PlayerCreaturesTableAdapter.ClearBeforeFill = True
         '
+        'questpnl
+        '
+        Me.questpnl.Location = New System.Drawing.Point(381, 12)
+        Me.questpnl.Name = "questpnl"
+        Me.questpnl.Size = New System.Drawing.Size(363, 605)
+        Me.questpnl.TabIndex = 31
+        '
         'TavernWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(388, 667)
+        Me.ClientSize = New System.Drawing.Size(832, 667)
+        Me.Controls.Add(Me.questpnl)
         Me.Controls.Add(Me.townbtn)
         Me.Controls.Add(Me.playerbtn)
         Me.Controls.Add(Me.mainMenubtn)
@@ -1232,4 +1241,5 @@ Partial Class TavernWindow
     Friend WithEvents PlayersTableAdapter As GameDatabaseDataSetTableAdapters.PlayersTableAdapter
     Friend WithEvents PlayerCreaturesBindingSource As BindingSource
     Friend WithEvents PlayerCreaturesTableAdapter As GameDatabaseDataSetTableAdapters.PlayerCreaturesTableAdapter
+    Friend WithEvents questpnl As Panel
 End Class
