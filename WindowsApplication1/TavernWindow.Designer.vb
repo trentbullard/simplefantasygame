@@ -120,6 +120,13 @@ Partial Class TavernWindow
         Me.StaticCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.StaticCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticCreaturesTableAdapter()
         Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
+        Me.playerbtn = New System.Windows.Forms.Button()
+        Me.mainMenubtn = New System.Windows.Forms.Button()
+        Me.townbtn = New System.Windows.Forms.Button()
+        Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
+        Me.PlayerCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayerCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerCreaturesTableAdapter()
         Me.tavernSlot1pnl.SuspendLayout()
         Me.tavernSlot2pnl.SuspendLayout()
         Me.tavernSlot3pnl.SuspendLayout()
@@ -131,6 +138,8 @@ Partial Class TavernWindow
         Me.tavernpnl.SuspendLayout()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StaticCreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PlayerCreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tavernSlot1pnl
@@ -995,12 +1004,11 @@ Partial Class TavernWindow
         '
         'tavernpnl
         '
-        Me.tavernpnl.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.tavernpnl.Controls.Add(Me.Panel1)
         Me.tavernpnl.Controls.Add(Me.Panel4)
         Me.tavernpnl.Controls.Add(Me.Panel2)
         Me.tavernpnl.Controls.Add(Me.Panel3)
-        Me.tavernpnl.Location = New System.Drawing.Point(15, 12)
+        Me.tavernpnl.Location = New System.Drawing.Point(12, 12)
         Me.tavernpnl.Name = "tavernpnl"
         Me.tavernpnl.Size = New System.Drawing.Size(363, 605)
         Me.tavernpnl.TabIndex = 27
@@ -1042,16 +1050,67 @@ Partial Class TavernWindow
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.WeaponAugmentsTableAdapter = Nothing
         '
+        'playerbtn
+        '
+        Me.playerbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.playerbtn.Location = New System.Drawing.Point(220, 646)
+        Me.playerbtn.Name = "playerbtn"
+        Me.playerbtn.Size = New System.Drawing.Size(75, 23)
+        Me.playerbtn.TabIndex = 29
+        Me.playerbtn.Text = "player info"
+        Me.playerbtn.UseVisualStyleBackColor = True
+        '
+        'mainMenubtn
+        '
+        Me.mainMenubtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.mainMenubtn.Location = New System.Drawing.Point(301, 646)
+        Me.mainMenubtn.Name = "mainMenubtn"
+        Me.mainMenubtn.Size = New System.Drawing.Size(75, 23)
+        Me.mainMenubtn.TabIndex = 28
+        Me.mainMenubtn.Text = "main menu"
+        Me.mainMenubtn.UseVisualStyleBackColor = True
+        '
+        'townbtn
+        '
+        Me.townbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.townbtn.Location = New System.Drawing.Point(139, 646)
+        Me.townbtn.Name = "townbtn"
+        Me.townbtn.Size = New System.Drawing.Size(75, 23)
+        Me.townbtn.TabIndex = 30
+        Me.townbtn.Text = "door"
+        Me.townbtn.UseVisualStyleBackColor = True
+        '
+        'PlayersBindingSource
+        '
+        Me.PlayersBindingSource.DataMember = "Players"
+        Me.PlayersBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'PlayersTableAdapter
+        '
+        Me.PlayersTableAdapter.ClearBeforeFill = True
+        '
+        'PlayerCreaturesBindingSource
+        '
+        Me.PlayerCreaturesBindingSource.DataMember = "PlayerCreatures"
+        Me.PlayerCreaturesBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'PlayerCreaturesTableAdapter
+        '
+        Me.PlayerCreaturesTableAdapter.ClearBeforeFill = True
+        '
         'TavernWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(392, 629)
+        Me.ClientSize = New System.Drawing.Size(388, 681)
+        Me.Controls.Add(Me.townbtn)
+        Me.Controls.Add(Me.playerbtn)
+        Me.Controls.Add(Me.mainMenubtn)
         Me.Controls.Add(Me.tavernpnl)
         Me.Name = "TavernWindow"
         Me.ShowIcon = False
-        Me.Text = "TavernWindow"
+        Me.Text = "tavern"
         Me.tavernSlot1pnl.ResumeLayout(False)
         Me.tavernSlot1pnl.PerformLayout()
         Me.tavernSlot2pnl.ResumeLayout(False)
@@ -1067,6 +1126,8 @@ Partial Class TavernWindow
         Me.tavernpnl.ResumeLayout(False)
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StaticCreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PlayerCreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1168,4 +1229,11 @@ Partial Class TavernWindow
     Friend WithEvents StaticCreaturesBindingSource As BindingSource
     Friend WithEvents StaticCreaturesTableAdapter As GameDatabaseDataSetTableAdapters.StaticCreaturesTableAdapter
     Friend WithEvents TableAdapterManager As GameDatabaseDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents playerbtn As Button
+    Friend WithEvents mainMenubtn As Button
+    Friend WithEvents townbtn As Button
+    Friend WithEvents PlayersBindingSource As BindingSource
+    Friend WithEvents PlayersTableAdapter As GameDatabaseDataSetTableAdapters.PlayersTableAdapter
+    Friend WithEvents PlayerCreaturesBindingSource As BindingSource
+    Friend WithEvents PlayerCreaturesTableAdapter As GameDatabaseDataSetTableAdapters.PlayerCreaturesTableAdapter
 End Class

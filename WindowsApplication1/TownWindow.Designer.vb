@@ -25,6 +25,7 @@ Partial Class TownWindow
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TownWindow))
         Me.townpnl = New System.Windows.Forms.Panel()
+        Me.playerbtn = New System.Windows.Forms.Button()
         Me.roadlbl = New System.Windows.Forms.Label()
         Me.marketlbl = New System.Windows.Forms.Label()
         Me.tavernlbl = New System.Windows.Forms.Label()
@@ -74,7 +75,6 @@ Partial Class TownWindow
         Me.StaticWeaponsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TurnsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.WeaponAugmentsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.playerbtn = New System.Windows.Forms.Button()
         Me.townpnl.SuspendLayout()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ArmorAugmentsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -118,6 +118,15 @@ Partial Class TownWindow
         Me.townpnl.Name = "townpnl"
         Me.townpnl.Size = New System.Drawing.Size(1000, 600)
         Me.townpnl.TabIndex = 0
+        '
+        'playerbtn
+        '
+        Me.playerbtn.Location = New System.Drawing.Point(832, 565)
+        Me.playerbtn.Name = "playerbtn"
+        Me.playerbtn.Size = New System.Drawing.Size(75, 23)
+        Me.playerbtn.TabIndex = 11
+        Me.playerbtn.Text = "Player Info"
+        Me.playerbtn.UseVisualStyleBackColor = True
         '
         'roadlbl
         '
@@ -428,15 +437,6 @@ Partial Class TownWindow
         '
         Me.WeaponAugmentsBindingSource.DataMember = "WeaponAugments"
         Me.WeaponAugmentsBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'playerbtn
-        '
-        Me.playerbtn.Location = New System.Drawing.Point(832, 565)
-        Me.playerbtn.Name = "playerbtn"
-        Me.playerbtn.Size = New System.Drawing.Size(75, 23)
-        Me.playerbtn.TabIndex = 11
-        Me.playerbtn.Text = "Player Info"
-        Me.playerbtn.UseVisualStyleBackColor = True
         '
         'TownWindow
         '

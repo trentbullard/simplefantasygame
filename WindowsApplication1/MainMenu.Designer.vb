@@ -34,8 +34,11 @@ Partial Class MainMenu
         Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
         Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
+        Me.StaticCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticCreaturesTableAdapter()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.StaticCreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'titlelbl
@@ -137,6 +140,15 @@ Partial Class MainMenu
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.WeaponAugmentsTableAdapter = Nothing
         '
+        'StaticCreaturesBindingSource
+        '
+        Me.StaticCreaturesBindingSource.DataMember = "StaticCreatures"
+        Me.StaticCreaturesBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'StaticCreaturesTableAdapter
+        '
+        Me.StaticCreaturesTableAdapter.ClearBeforeFill = True
+        '
         'MainMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -153,6 +165,7 @@ Partial Class MainMenu
         Me.Text = "Main Menu"
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.StaticCreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -169,4 +182,6 @@ Partial Class MainMenu
     Friend WithEvents PlayersBindingSource As BindingSource
     Friend WithEvents PlayersTableAdapter As GameDatabaseDataSetTableAdapters.PlayersTableAdapter
     Friend WithEvents TableAdapterManager As GameDatabaseDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents StaticCreaturesBindingSource As BindingSource
+    Friend WithEvents StaticCreaturesTableAdapter As GameDatabaseDataSetTableAdapters.StaticCreaturesTableAdapter
 End Class

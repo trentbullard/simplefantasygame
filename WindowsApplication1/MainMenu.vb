@@ -4,9 +4,12 @@ Imports System.Text
 
 Public Class MainMenu
     Private Sub MainMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'GameDatabaseDataSet.Players' table. You can move, or remove it, as needed.
-        Me.PlayersTableAdapter.Fill(Me.GameDatabaseDataSet.Players)
-        Me.PlayersTableAdapter.Fill(Me.GameDatabaseDataSet.Players)
+        StaticCreaturesTableAdapter.Fill(GameDatabaseDataSet.StaticCreatures)
+        PlayersTableAdapter.Fill(GameDatabaseDataSet.Players)
+
+        For ctr = 1 To 4
+            LoadCreatures(New creature("creature " & ctr))
+        Next
 
         StartLog()  'From log.vb
 
@@ -27,7 +30,7 @@ Public Class MainMenu
         'Converts any string into a proper-cased trimmed string
         nameString = ProperCase(nameString)
 
-        Dim player As player = NewPlayer(nameString, 1, 1, 0)
+        Dim player As player = NewPlayer(nameString, 1, 1, 4)
         Try
             playerSelectlstv.Items.Add(player.level)
             playerSelectlstv.Items(playerSelectlstv.Items.Count - 1).SubItems.Add(player.name)
@@ -46,7 +49,7 @@ Public Class MainMenu
         End If
     End Sub
 
-    Private Function NewPlayer(name, level, experience, gold)
+    Private Function NewPlayer(name As String, level As Integer, experience As Integer, gold As Integer)
         Dim newRow As DataRow = GameDatabaseDataSet.Tables("Players").NewRow()
 
         newRow("name") = name
@@ -73,30 +76,38 @@ Public Class MainMenu
         End Try
     End Function
 
+    Private Sub LoadCreatures(creature As creature)
+        Dim newRow As DataRow = GameDatabaseDataSet.Tables("StaticCreatures").NewRow()
+
+        newRow("name") = creature.name
+        newRow("species") = creature.species
+        newRow("class") = creature.job
+        newRow("level") = creature.level
+        newRow("experience") = creature.exp
+        newRow("maxHealth") = creature.maxHP
+        newRow("health") = creature.health
+        newRow("strength") = creature.str
+        newRow("armor") = creature.armor
+        newRow("initiative") = creature.ini
+        newRow("intelligence") = creature.int
+        newRow("wisdom") = creature.wis
+        newRow("dexterity") = creature.dex
+
+        GameDatabaseDataSet.Tables("StaticCreatures").Rows.Add(newRow)
+
+        Try
+            Validate()
+            StaticCreaturesBindingSource.EndEdit()
+            StaticCreaturesTableAdapter.Update(GameDatabaseDataSet.StaticCreatures)
+        Catch ex As Exception
+            LogNewPlayer(newRow, False)  'from log.vb
+            MsgBox("Failed to add player to database.")
+        End Try
+    End Sub
+
     Private Sub playerDeletebtn_Click(sender As Object, e As EventArgs) Handles playerDeletebtn.Click
         currentDeletePlayersWindow = New DeletePlayersWindow
         currentDeletePlayersWindow.Show()
         Me.Close()
-    End Sub
-
-    Private Sub PlayersBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
-        Me.Validate()
-        Me.PlayersBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.GameDatabaseDataSet)
-
-    End Sub
-
-    Private Sub PlayersBindingNavigatorSaveItem_Click_1(sender As Object, e As EventArgs)
-        Me.Validate()
-        Me.PlayersBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.GameDatabaseDataSet)
-
-    End Sub
-
-    Private Sub PlayersBindingNavigatorSaveItem_Click_2(sender As Object, e As EventArgs) 
-        Me.Validate()
-        Me.PlayersBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.GameDatabaseDataSet)
-
     End Sub
 End Class

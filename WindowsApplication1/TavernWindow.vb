@@ -2,68 +2,60 @@
     Private tavernCreatures(4) As creature
 
     Private Sub TavernWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.StaticCreaturesTableAdapter.Fill(Me.GameDatabaseDataSet.StaticCreatures)
-        currentTavernWindow = Me
+        StaticCreaturesTableAdapter.Fill(GameDatabaseDataSet.StaticCreatures)
+        PlayersTableAdapter.Fill(GameDatabaseDataSet.Players)
 
         For ctr = 1 To 4
-            tavernCreatures(ctr) = New creature("creature " & ctr)
+            tavernCreatures(ctr) = New creature(GameDatabaseDataSet.StaticCreatures(ctr - 1))
             FillCreatureSlot(tavernCreatures(ctr), ctr)
         Next
     End Sub
 
     Private Sub tavernSlot1Hirebtn_Click(sender As Object, e As EventArgs) Handles tavernSlot1Hirebtn.Click
-        'NewCreature(tavernCreatures(1))
-        'currentCombatWindow.hireListlst.Items.Add(New creature(CreaturesTableAdapter.GetLastRow().First))
-        'ClearCreatureSlot(1)
+        If currentPlayer.SpendGold(tavernCreatures(1).level) Then
+            HireCreature(tavernCreatures(1), 1)
+        End If
     End Sub
 
     Private Sub tavernSlot2Hirebtn_Click(sender As Object, e As EventArgs) Handles tavernSlot2Hirebtn.Click
-        'NewCreature(tavernCreatures(2))
-        'currentCombatWindow.hireListlst.Items.Add(New creature(CreaturesTableAdapter.GetLastRow().First))
-        'ClearCreatureSlot(2)
+        If currentPlayer.SpendGold(tavernCreatures(2).level) Then
+            HireCreature(tavernCreatures(2), 2)
+        End If
     End Sub
 
     Private Sub tavernSlot3Hirebtn_Click(sender As Object, e As EventArgs) Handles tavernSlot3Hirebtn.Click
-        'NewCreature(tavernCreatures(3))
-        'currentCombatWindow.hireListlst.Items.Add(New creature(CreaturesTableAdapter.GetLastRow().First))
-        'ClearCreatureSlot(3)
+        If currentPlayer.SpendGold(tavernCreatures(3).level) Then
+            HireCreature(tavernCreatures(3), 3)
+        End If
     End Sub
 
     Private Sub tavernSlot4Hirebtn_Click(sender As Object, e As EventArgs) Handles tavernSlot4Hirebtn.Click
-        'NewCreature(tavernCreatures(4))
-        'currentCombatWindow.hireListlst.Items.Add(New creature(CreaturesTableAdapter.GetLastRow().First))
-        'ClearCreatureSlot(4)
+        If currentPlayer.SpendGold(tavernCreatures(4).level) Then
+            HireCreature(tavernCreatures(4), 4)
+        End If
     End Sub
 
-    'Private Sub NewCreature(creature)
-    '    Dim newRow As DataRow = GameDatabaseDataSet.Tables("StaticCreatures").NewRow()
+    Private Sub HireCreature(creature, slot)
+        Dim newRow As DataRow = GameDatabaseDataSet.Tables("PlayerCreatures").NewRow()
 
-    '    newRow("name") = creature.name
-    '    newRow("species") = creature.species
-    '    newRow("health") = creature.health
-    '    newRow("strength") = creature.str
-    '    newRow("armor") = creature.armor
-    '    newRow("level") = creature.level
-    '    newRow("experience") = creature.exp
-    '    newRow("playerid") = creature.owner.id
-    '    newRow("initiative") = creature.ini
-    '    newRow("intelligence") = creature.int
-    '    newRow("wisdom") = creature.wis
-    '    newRow("dexterity") = creature.dex
+        newRow("playerid") = creature.owner.id
+        newRow("creatureid") = creature.id
 
-    '    GameDatabaseDataSet.Tables("Creatures").Rows.Add(newRow)
+        GameDatabaseDataSet.Tables("PlayerCreatures").Rows.Add(newRow)
 
-    '    'Attempts to update the database with the new row from the dataset.
-    '    'If successful, a new Creature instance is created with the attributes
-    '    'from the new database record.
-    '    Try
-    '        Validate()
-    '        CreaturesBindingSource.EndEdit()
-    '        CreaturesTableAdapter.Update(GameDatabaseDataSet.Creatures)
-    '    Catch ex As Exception
-    '        MsgBox("Failed to add creature to database.")
-    '    End Try
-    'End Sub
+        'Attempts to update the database
+        Try
+            Validate()
+            GameDatabaseDataSet.Players(currentPlayer.id - 1).gold = currentPlayer.gold
+            PlayersBindingSource.EndEdit()
+            PlayersTableAdapter.Update(GameDatabaseDataSet.Players)
+            PlayerCreaturesBindingSource.EndEdit()
+            PlayerCreaturesTableAdapter.Update(GameDatabaseDataSet.PlayerCreatures)
+            ClearCreatureSlot(slot)
+        Catch ex As Exception
+            MsgBox("Failed to add creature to database.")
+        End Try
+    End Sub
 
     Private Sub FillCreatureSlot(creature, slot)
         Select Case slot
@@ -171,9 +163,16 @@
         End Select
     End Sub
 
-    Private Sub StaticCreaturesBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
-        Me.Validate()
-        Me.StaticCreaturesBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.GameDatabaseDataSet)
+    Private Sub playerbtn_Click(sender As Object, e As EventArgs) Handles playerbtn.Click
+        currentPlayerWindow = New PlayerWindow
+        currentPlayerWindow.Show()
+    End Sub
+
+    Private Sub mainMenubtn_Click(sender As Object, e As EventArgs) Handles mainMenubtn.Click
+        OpenMainMenu()
+    End Sub
+
+    Private Sub townbtn_Click(sender As Object, e As EventArgs) Handles townbtn.Click
+        Me.Close()
     End Sub
 End Class

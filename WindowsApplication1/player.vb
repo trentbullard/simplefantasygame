@@ -10,7 +10,7 @@
         playerName = "name"
         playerLevel = 1
         playerExperience = 1
-        playerGold = 0
+        playerGold = 4
     End Sub
 
     Public Sub New(id As Integer, name As String, level As Integer, exp As Integer, gold As Integer)
@@ -74,6 +74,18 @@
     Public Sub GainGold(amount)
         playerGold += amount
     End Sub
+
+    Public Function SpendGold(amount) As Boolean
+        Dim priorAmountHeld As Integer = playerGold
+        priorAmountHeld -= amount
+        If priorAmountHeld < 0 Then
+            MsgBox("you dont have enough gold")
+            Return False
+        Else
+            playerGold -= amount
+            Return True
+        End If
+    End Function
 
     Public Sub ReName(newName)
         playerName = newName

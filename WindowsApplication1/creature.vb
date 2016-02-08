@@ -2,11 +2,13 @@
     Private creatureid As Integer
     Private creatureName As String
     Private creatureSpecies As String
+    Private creatureClass As String
+    Private creatureLevel As Integer
+    Private creatureExperience As Integer
+    Private creatureMaxHealth As Integer
     Private creatureHealth As Integer
     Private creatureStrength As Integer
     Private creatureArmor As Integer
-    Private creatureLevel As Integer
-    Private creatureExperience As Integer
     Private creatureInitiative As Integer
     Private creatureIntelligence As Integer
     Private creatureWisdom As Integer
@@ -110,6 +112,21 @@
         End Get
     End Property
 
+    Public Property job As String
+        Get
+            Return creatureClass
+        End Get
+        Set(value As String)
+            creatureClass = value
+        End Set
+    End Property
+
+    Public ReadOnly Property maxHP As Integer
+        Get
+            Return creatureMaxHealth
+        End Get
+    End Property
+
     Public ReadOnly Property health() As Integer
         Get
             Return creatureHealth
@@ -202,6 +219,10 @@
 
     Public Sub Equip(equipment)
         'add code that reflects this simplification:
-        'creatureAttribute =+ equipment.attribute
+        'creatureAttribute += equipment.attribute
+    End Sub
+
+    Public Sub Buff(skill)
+        'add code that applies positive spell effects to creature
     End Sub
 End Class
