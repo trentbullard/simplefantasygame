@@ -77,7 +77,6 @@
 
     Public Sub New(row As GameDatabaseDataSet.StaticCreaturesRow)
         creatureid = row("id")
-        creatureName = row("name")
         creatureSpecies = row("species")
         creatureHealth = row("health")
         creatureStrength = row("strength")

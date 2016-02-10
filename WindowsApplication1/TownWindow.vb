@@ -1,23 +1,6 @@
 ﻿Public Class TownWindow
     Private Sub TownWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'ArmorAugmentsTableAdapter.FillByArmorid(GameDatabaseDataSet.ArmorAugments, currentPlayer.id)
-        'BattlesTableAdapter.FillByPlayerid(GameDatabaseDataSet.Battles, currentPlayer.id)
-        'PartiesTableAdapter.FillByPlayerid(GameDatabaseDataSet.Parties, currentPlayer.id)
-        'PlayerArmorTableAdapter.FillByPlayerid(GameDatabaseDataSet.PlayerArmor, currentPlayer.id)
-        'PlayerConsumablesTableAdapter.FillByPlayerid(GameDatabaseDataSet.PlayerConsumables, currentPlayer.id)
         PlayerCreaturesTableAdapter.FillByPlayerid(GameDatabaseDataSet.PlayerCreatures, currentPlayer.id)
-        'PlayerSkillsTableAdapter.FillByPlayerid(GameDatabaseDataSet.PlayerSkills, currentPlayer.id)
-        'PlayerWeaponsTableAdapter.FillByPlayerid(GameDatabaseDataSet.PlayerWeapons, currentPlayer.id)
-        'PlayersTableAdapter.Fill(GameDatabaseDataSet.Players)
-        'StaticArmorTableAdapter.Fill(GameDatabaseDataSet.StaticArmor)
-        'StaticAugmentsTableAdapter.Fill(GameDatabaseDataSet.StaticAugments)
-        'StaticConsumablesTableAdapter.Fill(GameDatabaseDataSet.StaticConsumables)
-        'StaticCreaturesTableAdapter.Fill(GameDatabaseDataSet.StaticCreatures)
-        'StaticMobsTableAdapter.Fill(GameDatabaseDataSet.StaticMobs)
-        'StaticSkillsTableAdapter.Fill(GameDatabaseDataSet.StaticSkills)
-        'StaticWeaponsTableAdapter.Fill(GameDatabaseDataSet.StaticWeapons)
-        'TurnsTableAdapter.FillByBattleid(GameDatabaseDataSet.Turns, currentPlayer.id)
-        'WeaponAugmentsTableAdapter.FillByWeaponid(GameDatabaseDataSet.WeaponAugments, currentPlayer.id)
 
         If currentPlayer.exp > 1 Then
             innlbl.Hide()
@@ -108,5 +91,16 @@
             necromancerlbl.Text = "click here to resurrect dead team members!"
             roadlbl.Text = "click here to travel!"
         End If
+    End Sub
+
+    Private Sub add1Weekbtn_Click(sender As Object, e As EventArgs) Handles add1Weekbtn.Click
+        currentPlayer.currentDate.AddDays(7)
+    End Sub
+
+    Private Sub PlayerCreaturesBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
+        Me.Validate()
+        Me.PlayerCreaturesBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.GameDatabaseDataSet)
+
     End Sub
 End Class

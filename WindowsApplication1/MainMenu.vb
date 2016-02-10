@@ -7,14 +7,14 @@ Public Class MainMenu
         StaticCreaturesTableAdapter.Fill(GameDatabaseDataSet.StaticCreatures)
         PlayersTableAdapter.Fill(GameDatabaseDataSet.Players)
 
-        For ctr = 1 To 4
+        For ctr = 1 To 50
             LoadCreatures(New creature("creature " & ctr))
         Next
 
         StartLog()  'From log.vb
 
         For Each row As DataRow In GameDatabaseDataSet.Players
-            playerSelectlstv.Items.Add(New player(row("id"), row("name"), row("level"), row("experience"), row("gold")).level)
+            playerSelectlstv.Items.Add(New player(row).level)
             playerSelectlstv.Items(playerSelectlstv.Items.Count - 1).SubItems.Add(row("name").ToString)
         Next
     End Sub
@@ -30,7 +30,8 @@ Public Class MainMenu
         'Converts any string into a proper-cased trimmed string
         nameString = ProperCase(nameString)
 
-        Dim player As player = NewPlayer(nameString, 1, 1, 4)
+        Dim player As New player(nameString)
+        NewPlayer(player)
         Try
             playerSelectlstv.Items.Add(player.level)
             playerSelectlstv.Items(playerSelectlstv.Items.Count - 1).SubItems.Add(player.name)
@@ -42,20 +43,20 @@ Public Class MainMenu
     Private Sub playerSelectlstv_SelectedIndexChanged(sender As Object, e As EventArgs) Handles playerSelectlstv.SelectedIndexChanged
         Dim row As DataRow = GameDatabaseDataSet.Players(playerSelectlstv.SelectedIndices(0))
         If Not playerSelectlstv.SelectedIndices(0) = -1 Then
-            currentPlayer = New player(row("id"), row("name"), row("level"), row("experience"), row("gold"))
+            currentPlayer = New player(row("id"), row("name"), row("level"), row("experience"), row("gold"), testPlayer.currentDate)
             currentTownWindow = New TownWindow
             currentTownWindow.Show()
             Me.Close()
         End If
     End Sub
 
-    Private Function NewPlayer(name As String, level As Integer, experience As Integer, gold As Integer)
+    Private Sub NewPlayer(player As player)
         Dim newRow As DataRow = GameDatabaseDataSet.Tables("Players").NewRow()
 
-        newRow("name") = name
-        newRow("level") = level
-        newRow("experience") = experience
-        newRow("gold") = gold
+        newRow("name") = player.name
+        newRow("level") = player.level
+        newRow("experience") = player.exp
+        newRow("gold") = player.gold
 
         GameDatabaseDataSet.Tables("Players").Rows.Add(newRow)
 
@@ -68,18 +69,15 @@ Public Class MainMenu
             PlayersTableAdapter.Update(GameDatabaseDataSet.Players)
             newRow = PlayersTableAdapter.GetLastRow().Select().First
             LogNewPlayer(newRow, True)  'from log.vb
-            Return New player(newRow("id"), name, level, experience, gold)
         Catch ex As Exception
             LogNewPlayer(newRow, False)  'from log.vb
             MsgBox("Failed to add player to database.")
-            Exit Function
         End Try
-    End Function
+    End Sub
 
     Private Sub LoadCreatures(creature As creature)
         Dim newRow As DataRow = GameDatabaseDataSet.Tables("StaticCreatures").NewRow()
 
-        newRow("name") = creature.name
         newRow("species") = creature.species
         newRow("class") = creature.job
         newRow("level") = creature.level
@@ -109,5 +107,12 @@ Public Class MainMenu
         currentDeletePlayersWindow = New DeletePlayersWindow
         currentDeletePlayersWindow.Show()
         Me.Close()
+    End Sub
+
+    Private Sub PlayersBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
+        Me.Validate()
+        Me.PlayersBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.GameDatabaseDataSet)
+
     End Sub
 End Class

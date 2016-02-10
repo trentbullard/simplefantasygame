@@ -12,7 +12,7 @@
         PlayerCreaturesTableAdapter.FillByPlayerid(GameDatabaseDataSet.PlayerCreatures, currentPlayer.id)
 
         For Each row As DataRow In PlayerCreaturesTableAdapter.GetDataByPlayerid(currentPlayer.id)
-            creaturelst.Items.Add(New creature(StaticCreaturesTableAdapter.GetCreatureByid(row("id"))(0)).ToString)
+            creaturelst.Items.Add(New creature(StaticCreaturesTableAdapter.GetCreatureByid(row("creatureid"))(0)).ToString)
         Next
     End Sub
 
@@ -46,5 +46,12 @@
         Catch ex As Exception
             MsgBox("Failed to add creature to database.")
         End Try
+    End Sub
+
+    Private Sub PlayersBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
+        Me.Validate()
+        Me.PlayersBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.GameDatabaseDataSet)
+
     End Sub
 End Class

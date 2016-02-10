@@ -80,19 +80,34 @@ Partial Class DeletePlayersWindow
         Me.TableAdapterManager.ArmorAugmentsTableAdapter = Nothing
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.BattlesTableAdapter = Nothing
-        Me.TableAdapterManager.PartiesTableAdapter = Nothing
+        Me.TableAdapterManager.BlacksmithStateItemsTableAdapter = Nothing
+        Me.TableAdapterManager.BlacksmithStatesTableAdapter = Nothing
+        Me.TableAdapterManager.ChemistStateItemsTableAdapter = Nothing
+        Me.TableAdapterManager.ChemistStatesTableAdapter = Nothing
+        Me.TableAdapterManager.EnemyPartiesTableAdapter = Nothing
+        Me.TableAdapterManager.FarmerStateItemsTableAdapter = Nothing
+        Me.TableAdapterManager.FarmerStatesTableAdapter = Nothing
         Me.TableAdapterManager.PlayerArmorTableAdapter = Nothing
         Me.TableAdapterManager.PlayerConsumablesTableAdapter = Nothing
         Me.TableAdapterManager.PlayerCreaturesTableAdapter = Nothing
+        Me.TableAdapterManager.PlayerPartiesTableAdapter = Nothing
         Me.TableAdapterManager.PlayerSkillsTableAdapter = Nothing
         Me.TableAdapterManager.PlayersTableAdapter = Me.PlayersTableAdapter
+        Me.TableAdapterManager.PlayerStatesTableAdapter = Nothing
         Me.TableAdapterManager.PlayerWeaponsTableAdapter = Nothing
+        Me.TableAdapterManager.ScholarStateItemsTableAdapter = Nothing
+        Me.TableAdapterManager.ScholarStatesTableAdapter = Nothing
         Me.TableAdapterManager.StaticArmorTableAdapter = Nothing
         Me.TableAdapterManager.StaticAugmentsTableAdapter = Nothing
+        Me.TableAdapterManager.StaticCampTableAdapter = Nothing
+        Me.TableAdapterManager.StaticCampTierTableAdapter = Nothing
         Me.TableAdapterManager.StaticConsumablesTableAdapter = Nothing
         Me.TableAdapterManager.StaticCreaturesTableAdapter = Nothing
+        Me.TableAdapterManager.StaticMobsTableAdapter = Nothing
+        Me.TableAdapterManager.StaticQuestsTableAdapter = Nothing
         Me.TableAdapterManager.StaticSkillsTableAdapter = Nothing
         Me.TableAdapterManager.StaticWeaponsTableAdapter = Nothing
+        Me.TableAdapterManager.TavernStatesTableAdapter = Nothing
         Me.TableAdapterManager.TurnsTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.WeaponAugmentsTableAdapter = Nothing
@@ -117,12 +132,12 @@ Partial Class DeletePlayersWindow
     Friend WithEvents deletePlayersListlbl As Label
     Friend WithEvents deletePlayersbtn As Button
     Friend WithEvents deletePlayerslst As ListBox
-    Friend WithEvents GameDatabaseDataSet As GameDatabaseDataSet
-    Friend WithEvents PlayersBindingSource As BindingSource
-    Friend WithEvents PlayersTableAdapter As GameDatabaseDataSetTableAdapters.PlayersTableAdapter
-    Friend WithEvents TableAdapterManager As GameDatabaseDataSetTableAdapters.TableAdapterManager
     Friend WithEvents GameDatabaseDataSet1 As GameDatabaseDataSet
     Friend WithEvents PlayersBindingSource1 As BindingSource
     Friend WithEvents PlayersTableAdapter1 As GameDatabaseDataSetTableAdapters.PlayersTableAdapter
     Friend WithEvents TableAdapterManager1 As GameDatabaseDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents GameDatabaseDataSet As GameDatabaseDataSet
+    Friend WithEvents PlayersBindingSource As BindingSource
+    Friend WithEvents PlayersTableAdapter As GameDatabaseDataSetTableAdapters.PlayersTableAdapter
+    Friend WithEvents TableAdapterManager As GameDatabaseDataSetTableAdapters.TableAdapterManager
 End Class

@@ -5,6 +5,8 @@
     Dim enemyCreature4 As New creature
 
     Private Sub CombatWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'GameDatabaseDataSet.Players' table. You can move, or remove it, as needed.
+        Me.PlayersTableAdapter.Fill(Me.GameDatabaseDataSet.Players)
         Me.PlayersTableAdapter.Fill(Me.GameDatabaseDataSet.Players)
 
         Me.Text = "Simple Fantasy Game - Level " & currentPlayer.level & " " & currentPlayer.name
@@ -68,5 +70,12 @@
         GameDatabaseDataSet.Players(currentPlayer.id - 1).gold = currentPlayer.gold
         PlayersBindingSource.EndEdit()
         PlayersTableAdapter.Update(GameDatabaseDataSet.Players)
+    End Sub
+
+    Private Sub PlayersBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
+        Me.Validate()
+        Me.PlayersBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.GameDatabaseDataSet)
+
     End Sub
 End Class

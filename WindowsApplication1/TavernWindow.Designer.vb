@@ -111,36 +111,52 @@ Partial Class TavernWindow
         Me.tavernSlot2Hirebtn = New System.Windows.Forms.Button()
         Me.tavernSlot3Hirebtn = New System.Windows.Forms.Button()
         Me.tavernSlot4Hirebtn = New System.Windows.Forms.Button()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.tavernHireSlot1pnl = New System.Windows.Forms.Panel()
+        Me.tavernHireSlot2pnl = New System.Windows.Forms.Panel()
+        Me.tavernHireSlot3pnl = New System.Windows.Forms.Panel()
+        Me.tavernHireSlot4pnl = New System.Windows.Forms.Panel()
         Me.tavernpnl = New System.Windows.Forms.Panel()
+        Me.hirelbl = New System.Windows.Forms.Label()
         Me.playerbtn = New System.Windows.Forms.Button()
         Me.mainMenubtn = New System.Windows.Forms.Button()
         Me.townbtn = New System.Windows.Forms.Button()
+        Me.questpnl = New System.Windows.Forms.Panel()
+        Me.tavernQuestSlot3pnl = New System.Windows.Forms.Panel()
+        Me.questSlot3rtxt = New System.Windows.Forms.RichTextBox()
+        Me.questSlot3btn = New System.Windows.Forms.Button()
+        Me.tavernQuestSlot2pnl = New System.Windows.Forms.Panel()
+        Me.questSlot2rtxt = New System.Windows.Forms.RichTextBox()
+        Me.questSlot2btn = New System.Windows.Forms.Button()
+        Me.tavernQuestSlot1pnl = New System.Windows.Forms.Panel()
+        Me.questSlot1rtxt = New System.Windows.Forms.RichTextBox()
+        Me.questSlot1btn = New System.Windows.Forms.Button()
+        Me.questlbl = New System.Windows.Forms.Label()
+        Me.innbtn = New System.Windows.Forms.Button()
         Me.GameDatabaseDataSet = New WindowsApplication1.GameDatabaseDataSet()
         Me.StaticCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.StaticCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticCreaturesTableAdapter()
         Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
-        Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
         Me.PlayerCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayerCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerCreaturesTableAdapter()
-        Me.questpnl = New System.Windows.Forms.Panel()
+        Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
         Me.tavernSlot1pnl.SuspendLayout()
         Me.tavernSlot2pnl.SuspendLayout()
         Me.tavernSlot3pnl.SuspendLayout()
         Me.tavernSlot4pnl.SuspendLayout()
-        Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
-        Me.Panel3.SuspendLayout()
-        Me.Panel4.SuspendLayout()
+        Me.tavernHireSlot1pnl.SuspendLayout()
+        Me.tavernHireSlot2pnl.SuspendLayout()
+        Me.tavernHireSlot3pnl.SuspendLayout()
+        Me.tavernHireSlot4pnl.SuspendLayout()
         Me.tavernpnl.SuspendLayout()
+        Me.questpnl.SuspendLayout()
+        Me.tavernQuestSlot3pnl.SuspendLayout()
+        Me.tavernQuestSlot2pnl.SuspendLayout()
+        Me.tavernQuestSlot1pnl.SuspendLayout()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StaticCreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayerCreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tavernSlot1pnl
@@ -929,6 +945,7 @@ Partial Class TavernWindow
         '
         'tavernSlot1Hirebtn
         '
+        Me.tavernSlot1Hirebtn.Enabled = False
         Me.tavernSlot1Hirebtn.Location = New System.Drawing.Point(9, 268)
         Me.tavernSlot1Hirebtn.Name = "tavernSlot1Hirebtn"
         Me.tavernSlot1Hirebtn.Size = New System.Drawing.Size(163, 23)
@@ -938,6 +955,7 @@ Partial Class TavernWindow
         '
         'tavernSlot2Hirebtn
         '
+        Me.tavernSlot2Hirebtn.Enabled = False
         Me.tavernSlot2Hirebtn.Location = New System.Drawing.Point(9, 268)
         Me.tavernSlot2Hirebtn.Name = "tavernSlot2Hirebtn"
         Me.tavernSlot2Hirebtn.Size = New System.Drawing.Size(163, 23)
@@ -947,6 +965,7 @@ Partial Class TavernWindow
         '
         'tavernSlot3Hirebtn
         '
+        Me.tavernSlot3Hirebtn.Enabled = False
         Me.tavernSlot3Hirebtn.Location = New System.Drawing.Point(9, 268)
         Me.tavernSlot3Hirebtn.Name = "tavernSlot3Hirebtn"
         Me.tavernSlot3Hirebtn.Size = New System.Drawing.Size(163, 23)
@@ -956,6 +975,7 @@ Partial Class TavernWindow
         '
         'tavernSlot4Hirebtn
         '
+        Me.tavernSlot4Hirebtn.Enabled = False
         Me.tavernSlot4Hirebtn.Location = New System.Drawing.Point(9, 268)
         Me.tavernSlot4Hirebtn.Name = "tavernSlot4Hirebtn"
         Me.tavernSlot4Hirebtn.Size = New System.Drawing.Size(163, 23)
@@ -963,57 +983,74 @@ Partial Class TavernWindow
         Me.tavernSlot4Hirebtn.Text = "hire for # gold"
         Me.tavernSlot4Hirebtn.UseVisualStyleBackColor = True
         '
-        'Panel1
+        'tavernHireSlot1pnl
         '
-        Me.Panel1.Controls.Add(Me.tavernSlot1pnl)
-        Me.Panel1.Controls.Add(Me.tavernSlot1Hirebtn)
-        Me.Panel1.Location = New System.Drawing.Point(3, 3)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(176, 297)
-        Me.Panel1.TabIndex = 25
+        Me.tavernHireSlot1pnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tavernHireSlot1pnl.Controls.Add(Me.tavernSlot1pnl)
+        Me.tavernHireSlot1pnl.Controls.Add(Me.tavernSlot1Hirebtn)
+        Me.tavernHireSlot1pnl.Location = New System.Drawing.Point(3, 27)
+        Me.tavernHireSlot1pnl.Name = "tavernHireSlot1pnl"
+        Me.tavernHireSlot1pnl.Size = New System.Drawing.Size(176, 297)
+        Me.tavernHireSlot1pnl.TabIndex = 25
         '
-        'Panel2
+        'tavernHireSlot2pnl
         '
-        Me.Panel2.Controls.Add(Me.tavernSlot2pnl)
-        Me.Panel2.Controls.Add(Me.tavernSlot2Hirebtn)
-        Me.Panel2.Location = New System.Drawing.Point(185, 3)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(176, 297)
-        Me.Panel2.TabIndex = 22
+        Me.tavernHireSlot2pnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tavernHireSlot2pnl.Controls.Add(Me.tavernSlot2pnl)
+        Me.tavernHireSlot2pnl.Controls.Add(Me.tavernSlot2Hirebtn)
+        Me.tavernHireSlot2pnl.Location = New System.Drawing.Point(185, 27)
+        Me.tavernHireSlot2pnl.Name = "tavernHireSlot2pnl"
+        Me.tavernHireSlot2pnl.Size = New System.Drawing.Size(176, 297)
+        Me.tavernHireSlot2pnl.TabIndex = 22
         '
-        'Panel3
+        'tavernHireSlot3pnl
         '
-        Me.Panel3.Controls.Add(Me.tavernSlot3pnl)
-        Me.Panel3.Controls.Add(Me.tavernSlot3Hirebtn)
-        Me.Panel3.Location = New System.Drawing.Point(3, 306)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(176, 297)
-        Me.Panel3.TabIndex = 26
+        Me.tavernHireSlot3pnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tavernHireSlot3pnl.Controls.Add(Me.tavernSlot3pnl)
+        Me.tavernHireSlot3pnl.Controls.Add(Me.tavernSlot3Hirebtn)
+        Me.tavernHireSlot3pnl.Location = New System.Drawing.Point(3, 330)
+        Me.tavernHireSlot3pnl.Name = "tavernHireSlot3pnl"
+        Me.tavernHireSlot3pnl.Size = New System.Drawing.Size(176, 297)
+        Me.tavernHireSlot3pnl.TabIndex = 26
         '
-        'Panel4
+        'tavernHireSlot4pnl
         '
-        Me.Panel4.Controls.Add(Me.tavernSlot4pnl)
-        Me.Panel4.Controls.Add(Me.tavernSlot4Hirebtn)
-        Me.Panel4.Location = New System.Drawing.Point(185, 306)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(176, 297)
-        Me.Panel4.TabIndex = 24
+        Me.tavernHireSlot4pnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tavernHireSlot4pnl.Controls.Add(Me.tavernSlot4pnl)
+        Me.tavernHireSlot4pnl.Controls.Add(Me.tavernSlot4Hirebtn)
+        Me.tavernHireSlot4pnl.Location = New System.Drawing.Point(185, 330)
+        Me.tavernHireSlot4pnl.Name = "tavernHireSlot4pnl"
+        Me.tavernHireSlot4pnl.Size = New System.Drawing.Size(176, 297)
+        Me.tavernHireSlot4pnl.TabIndex = 24
         '
         'tavernpnl
         '
-        Me.tavernpnl.Controls.Add(Me.Panel1)
-        Me.tavernpnl.Controls.Add(Me.Panel4)
-        Me.tavernpnl.Controls.Add(Me.Panel2)
-        Me.tavernpnl.Controls.Add(Me.Panel3)
+        Me.tavernpnl.Controls.Add(Me.hirelbl)
+        Me.tavernpnl.Controls.Add(Me.tavernHireSlot1pnl)
+        Me.tavernpnl.Controls.Add(Me.tavernHireSlot4pnl)
+        Me.tavernpnl.Controls.Add(Me.tavernHireSlot2pnl)
+        Me.tavernpnl.Controls.Add(Me.tavernHireSlot3pnl)
         Me.tavernpnl.Location = New System.Drawing.Point(12, 12)
         Me.tavernpnl.Name = "tavernpnl"
-        Me.tavernpnl.Size = New System.Drawing.Size(363, 605)
+        Me.tavernpnl.Size = New System.Drawing.Size(363, 629)
         Me.tavernpnl.TabIndex = 27
+        '
+        'hirelbl
+        '
+        Me.hirelbl.AutoSize = True
+        Me.hirelbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.hirelbl.Location = New System.Drawing.Point(95, 0)
+        Me.hirelbl.Margin = New System.Windows.Forms.Padding(0)
+        Me.hirelbl.Name = "hirelbl"
+        Me.hirelbl.Size = New System.Drawing.Size(173, 24)
+        Me.hirelbl.TabIndex = 27
+        Me.hirelbl.Text = "hire team members"
+        Me.hirelbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'playerbtn
         '
         Me.playerbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.playerbtn.Location = New System.Drawing.Point(664, 632)
+        Me.playerbtn.Location = New System.Drawing.Point(588, 655)
         Me.playerbtn.Name = "playerbtn"
         Me.playerbtn.Size = New System.Drawing.Size(75, 23)
         Me.playerbtn.TabIndex = 29
@@ -1023,7 +1060,7 @@ Partial Class TavernWindow
         'mainMenubtn
         '
         Me.mainMenubtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.mainMenubtn.Location = New System.Drawing.Point(745, 632)
+        Me.mainMenubtn.Location = New System.Drawing.Point(669, 654)
         Me.mainMenubtn.Name = "mainMenubtn"
         Me.mainMenubtn.Size = New System.Drawing.Size(75, 23)
         Me.mainMenubtn.TabIndex = 28
@@ -1033,12 +1070,126 @@ Partial Class TavernWindow
         'townbtn
         '
         Me.townbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.townbtn.Location = New System.Drawing.Point(583, 632)
+        Me.townbtn.Location = New System.Drawing.Point(507, 655)
         Me.townbtn.Name = "townbtn"
         Me.townbtn.Size = New System.Drawing.Size(75, 23)
         Me.townbtn.TabIndex = 30
-        Me.townbtn.Text = "door"
+        Me.townbtn.Text = "front door"
         Me.townbtn.UseVisualStyleBackColor = True
+        '
+        'questpnl
+        '
+        Me.questpnl.Controls.Add(Me.tavernQuestSlot3pnl)
+        Me.questpnl.Controls.Add(Me.tavernQuestSlot2pnl)
+        Me.questpnl.Controls.Add(Me.tavernQuestSlot1pnl)
+        Me.questpnl.Controls.Add(Me.questlbl)
+        Me.questpnl.Location = New System.Drawing.Point(381, 12)
+        Me.questpnl.Name = "questpnl"
+        Me.questpnl.Size = New System.Drawing.Size(363, 629)
+        Me.questpnl.TabIndex = 31
+        '
+        'tavernQuestSlot3pnl
+        '
+        Me.tavernQuestSlot3pnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tavernQuestSlot3pnl.Controls.Add(Me.questSlot3rtxt)
+        Me.tavernQuestSlot3pnl.Controls.Add(Me.questSlot3btn)
+        Me.tavernQuestSlot3pnl.Location = New System.Drawing.Point(3, 445)
+        Me.tavernQuestSlot3pnl.Name = "tavernQuestSlot3pnl"
+        Me.tavernQuestSlot3pnl.Size = New System.Drawing.Size(357, 181)
+        Me.tavernQuestSlot3pnl.TabIndex = 35
+        '
+        'questSlot3rtxt
+        '
+        Me.questSlot3rtxt.Location = New System.Drawing.Point(0, -1)
+        Me.questSlot3rtxt.Name = "questSlot3rtxt"
+        Me.questSlot3rtxt.Size = New System.Drawing.Size(356, 148)
+        Me.questSlot3rtxt.TabIndex = 3
+        Me.questSlot3rtxt.Text = "quest name" & Global.Microsoft.VisualBasic.ChrW(10) & "level range: 1 - 3" & Global.Microsoft.VisualBasic.ChrW(10) & "quest description"
+        '
+        'questSlot3btn
+        '
+        Me.questSlot3btn.Location = New System.Drawing.Point(140, 153)
+        Me.questSlot3btn.Name = "questSlot3btn"
+        Me.questSlot3btn.Size = New System.Drawing.Size(75, 23)
+        Me.questSlot3btn.TabIndex = 2
+        Me.questSlot3btn.Text = "accept"
+        Me.questSlot3btn.UseVisualStyleBackColor = True
+        '
+        'tavernQuestSlot2pnl
+        '
+        Me.tavernQuestSlot2pnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tavernQuestSlot2pnl.Controls.Add(Me.questSlot2rtxt)
+        Me.tavernQuestSlot2pnl.Controls.Add(Me.questSlot2btn)
+        Me.tavernQuestSlot2pnl.Location = New System.Drawing.Point(3, 236)
+        Me.tavernQuestSlot2pnl.Name = "tavernQuestSlot2pnl"
+        Me.tavernQuestSlot2pnl.Size = New System.Drawing.Size(357, 181)
+        Me.tavernQuestSlot2pnl.TabIndex = 34
+        '
+        'questSlot2rtxt
+        '
+        Me.questSlot2rtxt.Location = New System.Drawing.Point(0, -1)
+        Me.questSlot2rtxt.Name = "questSlot2rtxt"
+        Me.questSlot2rtxt.Size = New System.Drawing.Size(356, 148)
+        Me.questSlot2rtxt.TabIndex = 2
+        Me.questSlot2rtxt.Text = "quest name" & Global.Microsoft.VisualBasic.ChrW(10) & "level range: 1 - 3" & Global.Microsoft.VisualBasic.ChrW(10) & "quest description"
+        '
+        'questSlot2btn
+        '
+        Me.questSlot2btn.Location = New System.Drawing.Point(140, 153)
+        Me.questSlot2btn.Name = "questSlot2btn"
+        Me.questSlot2btn.Size = New System.Drawing.Size(75, 23)
+        Me.questSlot2btn.TabIndex = 1
+        Me.questSlot2btn.Text = "accept"
+        Me.questSlot2btn.UseVisualStyleBackColor = True
+        '
+        'tavernQuestSlot1pnl
+        '
+        Me.tavernQuestSlot1pnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tavernQuestSlot1pnl.Controls.Add(Me.questSlot1rtxt)
+        Me.tavernQuestSlot1pnl.Controls.Add(Me.questSlot1btn)
+        Me.tavernQuestSlot1pnl.Location = New System.Drawing.Point(3, 27)
+        Me.tavernQuestSlot1pnl.Name = "tavernQuestSlot1pnl"
+        Me.tavernQuestSlot1pnl.Size = New System.Drawing.Size(357, 181)
+        Me.tavernQuestSlot1pnl.TabIndex = 33
+        '
+        'questSlot1rtxt
+        '
+        Me.questSlot1rtxt.Location = New System.Drawing.Point(0, -1)
+        Me.questSlot1rtxt.Name = "questSlot1rtxt"
+        Me.questSlot1rtxt.Size = New System.Drawing.Size(356, 147)
+        Me.questSlot1rtxt.TabIndex = 1
+        Me.questSlot1rtxt.Text = "quest name" & Global.Microsoft.VisualBasic.ChrW(10) & "level range: 1 - 3" & Global.Microsoft.VisualBasic.ChrW(10) & "quest description"
+        '
+        'questSlot1btn
+        '
+        Me.questSlot1btn.Location = New System.Drawing.Point(140, 153)
+        Me.questSlot1btn.Name = "questSlot1btn"
+        Me.questSlot1btn.Size = New System.Drawing.Size(75, 23)
+        Me.questSlot1btn.TabIndex = 0
+        Me.questSlot1btn.Text = "accept"
+        Me.questSlot1btn.UseVisualStyleBackColor = True
+        '
+        'questlbl
+        '
+        Me.questlbl.AutoSize = True
+        Me.questlbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.questlbl.Location = New System.Drawing.Point(110, 0)
+        Me.questlbl.Margin = New System.Windows.Forms.Padding(0)
+        Me.questlbl.Name = "questlbl"
+        Me.questlbl.Size = New System.Drawing.Size(143, 24)
+        Me.questlbl.TabIndex = 28
+        Me.questlbl.Text = "available quests"
+        Me.questlbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'innbtn
+        '
+        Me.innbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.innbtn.Location = New System.Drawing.Point(426, 655)
+        Me.innbtn.Name = "innbtn"
+        Me.innbtn.Size = New System.Drawing.Size(75, 23)
+        Me.innbtn.TabIndex = 32
+        Me.innbtn.Text = "inn door"
+        Me.innbtn.UseVisualStyleBackColor = True
         '
         'GameDatabaseDataSet
         '
@@ -1059,32 +1210,37 @@ Partial Class TavernWindow
         Me.TableAdapterManager.ArmorAugmentsTableAdapter = Nothing
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.BattlesTableAdapter = Nothing
-        Me.TableAdapterManager.PartiesTableAdapter = Nothing
+        Me.TableAdapterManager.BlacksmithStateItemsTableAdapter = Nothing
+        Me.TableAdapterManager.BlacksmithStatesTableAdapter = Nothing
+        Me.TableAdapterManager.ChemistStateItemsTableAdapter = Nothing
+        Me.TableAdapterManager.ChemistStatesTableAdapter = Nothing
+        Me.TableAdapterManager.EnemyPartiesTableAdapter = Nothing
+        Me.TableAdapterManager.FarmerStateItemsTableAdapter = Nothing
+        Me.TableAdapterManager.FarmerStatesTableAdapter = Nothing
         Me.TableAdapterManager.PlayerArmorTableAdapter = Nothing
         Me.TableAdapterManager.PlayerConsumablesTableAdapter = Nothing
-        Me.TableAdapterManager.PlayerCreaturesTableAdapter = Nothing
+        Me.TableAdapterManager.PlayerCreaturesTableAdapter = Me.PlayerCreaturesTableAdapter
+        Me.TableAdapterManager.PlayerPartiesTableAdapter = Nothing
         Me.TableAdapterManager.PlayerSkillsTableAdapter = Nothing
-        Me.TableAdapterManager.PlayersTableAdapter = Nothing
+        Me.TableAdapterManager.PlayersTableAdapter = Me.PlayersTableAdapter
+        Me.TableAdapterManager.PlayerStatesTableAdapter = Nothing
         Me.TableAdapterManager.PlayerWeaponsTableAdapter = Nothing
+        Me.TableAdapterManager.ScholarStateItemsTableAdapter = Nothing
+        Me.TableAdapterManager.ScholarStatesTableAdapter = Nothing
         Me.TableAdapterManager.StaticArmorTableAdapter = Nothing
         Me.TableAdapterManager.StaticAugmentsTableAdapter = Nothing
+        Me.TableAdapterManager.StaticCampTableAdapter = Nothing
+        Me.TableAdapterManager.StaticCampTierTableAdapter = Nothing
         Me.TableAdapterManager.StaticConsumablesTableAdapter = Nothing
         Me.TableAdapterManager.StaticCreaturesTableAdapter = Me.StaticCreaturesTableAdapter
         Me.TableAdapterManager.StaticMobsTableAdapter = Nothing
+        Me.TableAdapterManager.StaticQuestsTableAdapter = Nothing
         Me.TableAdapterManager.StaticSkillsTableAdapter = Nothing
         Me.TableAdapterManager.StaticWeaponsTableAdapter = Nothing
+        Me.TableAdapterManager.TavernStatesTableAdapter = Nothing
         Me.TableAdapterManager.TurnsTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.WeaponAugmentsTableAdapter = Nothing
-        '
-        'PlayersBindingSource
-        '
-        Me.PlayersBindingSource.DataMember = "Players"
-        Me.PlayersBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'PlayersTableAdapter
-        '
-        Me.PlayersTableAdapter.ClearBeforeFill = True
         '
         'PlayerCreaturesBindingSource
         '
@@ -1095,19 +1251,22 @@ Partial Class TavernWindow
         '
         Me.PlayerCreaturesTableAdapter.ClearBeforeFill = True
         '
-        'questpnl
+        'PlayersBindingSource
         '
-        Me.questpnl.Location = New System.Drawing.Point(381, 12)
-        Me.questpnl.Name = "questpnl"
-        Me.questpnl.Size = New System.Drawing.Size(363, 605)
-        Me.questpnl.TabIndex = 31
+        Me.PlayersBindingSource.DataMember = "Players"
+        Me.PlayersBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'PlayersTableAdapter
+        '
+        Me.PlayersTableAdapter.ClearBeforeFill = True
         '
         'TavernWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(832, 667)
+        Me.ClientSize = New System.Drawing.Size(756, 689)
+        Me.Controls.Add(Me.innbtn)
         Me.Controls.Add(Me.questpnl)
         Me.Controls.Add(Me.townbtn)
         Me.Controls.Add(Me.playerbtn)
@@ -1124,15 +1283,21 @@ Partial Class TavernWindow
         Me.tavernSlot3pnl.PerformLayout()
         Me.tavernSlot4pnl.ResumeLayout(False)
         Me.tavernSlot4pnl.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel4.ResumeLayout(False)
+        Me.tavernHireSlot1pnl.ResumeLayout(False)
+        Me.tavernHireSlot2pnl.ResumeLayout(False)
+        Me.tavernHireSlot3pnl.ResumeLayout(False)
+        Me.tavernHireSlot4pnl.ResumeLayout(False)
         Me.tavernpnl.ResumeLayout(False)
+        Me.tavernpnl.PerformLayout()
+        Me.questpnl.ResumeLayout(False)
+        Me.questpnl.PerformLayout()
+        Me.tavernQuestSlot3pnl.ResumeLayout(False)
+        Me.tavernQuestSlot2pnl.ResumeLayout(False)
+        Me.tavernQuestSlot1pnl.ResumeLayout(False)
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StaticCreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayerCreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1185,10 +1350,10 @@ Partial Class TavernWindow
     Friend WithEvents tavernSlot2Hirebtn As Button
     Friend WithEvents tavernSlot3Hirebtn As Button
     Friend WithEvents tavernSlot4Hirebtn As Button
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents Panel4 As Panel
+    Friend WithEvents tavernHireSlot1pnl As Panel
+    Friend WithEvents tavernHireSlot2pnl As Panel
+    Friend WithEvents tavernHireSlot3pnl As Panel
+    Friend WithEvents tavernHireSlot4pnl As Panel
     Friend WithEvents tavernpnl As Panel
     Friend WithEvents tavernSlot1Wisdomlbl As Label
     Friend WithEvents tavernSlot1Wisdomtxt As TextBox
@@ -1230,16 +1395,28 @@ Partial Class TavernWindow
     Friend WithEvents tavernSlot4Dexteritytxt As TextBox
     Friend WithEvents tavernSlot4Wisdomlbl As Label
     Friend WithEvents tavernSlot4Wisdomtxt As TextBox
+    Friend WithEvents playerbtn As Button
+    Friend WithEvents mainMenubtn As Button
+    Friend WithEvents townbtn As Button
+    Friend WithEvents questpnl As Panel
+    Friend WithEvents innbtn As Button
+    Friend WithEvents hirelbl As Label
+    Friend WithEvents tavernQuestSlot1pnl As Panel
+    Friend WithEvents questlbl As Label
+    Friend WithEvents tavernQuestSlot3pnl As Panel
+    Friend WithEvents tavernQuestSlot2pnl As Panel
+    Friend WithEvents questSlot3rtxt As RichTextBox
+    Friend WithEvents questSlot3btn As Button
+    Friend WithEvents questSlot2rtxt As RichTextBox
+    Friend WithEvents questSlot2btn As Button
+    Friend WithEvents questSlot1rtxt As RichTextBox
+    Friend WithEvents questSlot1btn As Button
     Friend WithEvents GameDatabaseDataSet As GameDatabaseDataSet
     Friend WithEvents StaticCreaturesBindingSource As BindingSource
     Friend WithEvents StaticCreaturesTableAdapter As GameDatabaseDataSetTableAdapters.StaticCreaturesTableAdapter
     Friend WithEvents TableAdapterManager As GameDatabaseDataSetTableAdapters.TableAdapterManager
-    Friend WithEvents playerbtn As Button
-    Friend WithEvents mainMenubtn As Button
-    Friend WithEvents townbtn As Button
-    Friend WithEvents PlayersBindingSource As BindingSource
-    Friend WithEvents PlayersTableAdapter As GameDatabaseDataSetTableAdapters.PlayersTableAdapter
-    Friend WithEvents PlayerCreaturesBindingSource As BindingSource
     Friend WithEvents PlayerCreaturesTableAdapter As GameDatabaseDataSetTableAdapters.PlayerCreaturesTableAdapter
-    Friend WithEvents questpnl As Panel
+    Friend WithEvents PlayerCreaturesBindingSource As BindingSource
+    Friend WithEvents PlayersTableAdapter As GameDatabaseDataSetTableAdapters.PlayersTableAdapter
+    Friend WithEvents PlayersBindingSource As BindingSource
 End Class

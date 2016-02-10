@@ -1,38 +1,70 @@
 ﻿Public Class TavernWindow
-    Private tavernCreatures(4) As creature
+    Private Shared tavernCreatures(4) As creature
 
     Private Sub TavernWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         StaticCreaturesTableAdapter.Fill(GameDatabaseDataSet.StaticCreatures)
         PlayersTableAdapter.Fill(GameDatabaseDataSet.Players)
         PlayerCreaturesTableAdapter.Fill(GameDatabaseDataSet.PlayerCreatures)
 
-        For ctr = 1 To 4
-            tavernCreatures(ctr) = New creature(GameDatabaseDataSet.StaticCreatures(ctr - 1))
-            FillCreatureSlot(tavernCreatures(ctr), ctr)
-        Next
+        If Not tavernCreatures.Any Then
+            For ctr = 0 To 3
+                tavernCreatures(ctr) = New creature(GameDatabaseDataSet.StaticCreatures(ctr))
+                FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
+                Select Case ctr
+                    Case 0
+                        tavernSlot1Hirebtn.Enabled = True
+                    Case 1
+                        tavernSlot2Hirebtn.Enabled = True
+                    Case 2
+                        tavernSlot3Hirebtn.Enabled = True
+                    Case 3
+                        tavernSlot4Hirebtn.Enabled = True
+                End Select
+            Next
+        Else
+            For ctr = 0 To 3
+                If currentDate = currentPlayer.currentDate Then
+                    FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
+                Else
+                    tavernCreatures(ctr) = New creature(GameDatabaseDataSet.StaticCreatures(ctr))
+                    FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
+                End If
+                Select Case ctr
+                    Case 0
+                        tavernSlot1Hirebtn.Enabled = True
+                    Case 1
+                        tavernSlot2Hirebtn.Enabled = True
+                    Case 2
+                        tavernSlot3Hirebtn.Enabled = True
+                    Case 3
+                        tavernSlot4Hirebtn.Enabled = True
+                End Select
+            Next
+        End If
+
     End Sub
 
     Private Sub tavernSlot1Hirebtn_Click(sender As Object, e As EventArgs) Handles tavernSlot1Hirebtn.Click
-        If currentPlayer.SpendGold(tavernCreatures(1).level) Then
-            HireCreature(tavernCreatures(1), 1)
+        If currentPlayer.SpendGold(tavernCreatures(0).level) Then
+            HireCreature(tavernCreatures(0), 1)
         End If
     End Sub
 
     Private Sub tavernSlot2Hirebtn_Click(sender As Object, e As EventArgs) Handles tavernSlot2Hirebtn.Click
-        If currentPlayer.SpendGold(tavernCreatures(2).level) Then
-            HireCreature(tavernCreatures(2), 2)
+        If currentPlayer.SpendGold(tavernCreatures(1).level) Then
+            HireCreature(tavernCreatures(1), 2)
         End If
     End Sub
 
     Private Sub tavernSlot3Hirebtn_Click(sender As Object, e As EventArgs) Handles tavernSlot3Hirebtn.Click
-        If currentPlayer.SpendGold(tavernCreatures(3).level) Then
-            HireCreature(tavernCreatures(3), 3)
+        If currentPlayer.SpendGold(tavernCreatures(2).level) Then
+            HireCreature(tavernCreatures(2), 3)
         End If
     End Sub
 
     Private Sub tavernSlot4Hirebtn_Click(sender As Object, e As EventArgs) Handles tavernSlot4Hirebtn.Click
-        If currentPlayer.SpendGold(tavernCreatures(4).level) Then
-            HireCreature(tavernCreatures(4), 4)
+        If currentPlayer.SpendGold(tavernCreatures(3).level) Then
+            HireCreature(tavernCreatures(3), 4)
         End If
     End Sub
 
@@ -52,6 +84,7 @@
             PlayersTableAdapter.Update(GameDatabaseDataSet.Players)
             PlayerCreaturesBindingSource.EndEdit()
             PlayerCreaturesTableAdapter.Update(GameDatabaseDataSet.PlayerCreatures)
+            tavernCreatures(slot).name = ""
             ClearCreatureSlot(slot)
         Catch ex As Exception
             MsgBox("Failed to add creature to database.")
@@ -64,7 +97,7 @@
     Private Sub FillCreatureSlot(creature, slot)
         Select Case slot
             Case 1
-                tavernSlot1Nametxt.Text = creature.name
+                'tavernSlot1Nametxt.Text = creature.name
                 tavernSlot1Leveltxt.Text = creature.level
                 tavernSlot1Speciestxt.Text = creature.species
                 tavernSlot1Healthtxt.Text = creature.health
@@ -76,7 +109,7 @@
                 tavernSlot1Dexteritytxt.Text = creature.dex
                 tavernSlot1Hirebtn.Text = "hire for " & creature.level & " gold"
             Case 2
-                tavernSlot2Nametxt.Text = creature.name
+                'tavernSlot2Nametxt.Text = creature.name
                 tavernSlot2Leveltxt.Text = creature.level
                 tavernSlot2Speciestxt.Text = creature.species
                 tavernSlot2Healthtxt.Text = creature.health
@@ -88,7 +121,7 @@
                 tavernSlot2Dexteritytxt.Text = creature.dex
                 tavernSlot2Hirebtn.Text = "hire for " & creature.level & " gold"
             Case 3
-                tavernSlot3Nametxt.Text = creature.name
+                'tavernSlot3Nametxt.Text = creature.name
                 tavernSlot3Leveltxt.Text = creature.level
                 tavernSlot3Speciestxt.Text = creature.species
                 tavernSlot3Healthtxt.Text = creature.health
@@ -100,7 +133,7 @@
                 tavernSlot3Dexteritytxt.Text = creature.dex
                 tavernSlot3Hirebtn.Text = "hire for " & creature.level & " gold"
             Case 4
-                tavernSlot4Nametxt.Text = creature.name
+                'tavernSlot4Nametxt.Text = creature.name
                 tavernSlot4Leveltxt.Text = creature.level
                 tavernSlot4Speciestxt.Text = creature.species
                 tavernSlot4Healthtxt.Text = creature.health
@@ -128,6 +161,7 @@
                 tavernSlot1Wisdomtxt.Clear()
                 tavernSlot1Dexteritytxt.Clear()
                 tavernSlot1Hirebtn.Text = ""
+                tavernSlot1Hirebtn.Enabled = False
             Case 2
                 tavernSlot2Nametxt.Clear()
                 tavernSlot2Leveltxt.Clear()
@@ -140,6 +174,7 @@
                 tavernSlot2Wisdomtxt.Clear()
                 tavernSlot2Dexteritytxt.Clear()
                 tavernSlot2Hirebtn.Text = ""
+                tavernSlot2Hirebtn.Enabled = False
             Case 3
                 tavernSlot3Nametxt.Clear()
                 tavernSlot3Leveltxt.Clear()
@@ -152,6 +187,7 @@
                 tavernSlot3Wisdomtxt.Clear()
                 tavernSlot3Dexteritytxt.Clear()
                 tavernSlot3Hirebtn.Text = ""
+                tavernSlot3Hirebtn.Enabled = False
             Case 4
                 tavernSlot4Nametxt.Clear()
                 tavernSlot4Leveltxt.Clear()
@@ -164,6 +200,7 @@
                 tavernSlot4Wisdomtxt.Clear()
                 tavernSlot4Dexteritytxt.Clear()
                 tavernSlot4Hirebtn.Text = ""
+                tavernSlot4Hirebtn.Enabled = False
         End Select
     End Sub
 
@@ -181,18 +218,31 @@
     End Sub
 
     Private Sub tavernSlot1Nametxt_TextChanged(sender As Object, e As EventArgs) Handles tavernSlot1Nametxt.TextChanged
-        tavernCreatures(1).name = tavernSlot1Nametxt.Text
+        tavernCreatures(0).name = tavernSlot1Nametxt.Text
     End Sub
 
     Private Sub tavernSlot2Nametxt_TextChanged(sender As Object, e As EventArgs) Handles tavernSlot2Nametxt.TextChanged
-        tavernCreatures(2).name = tavernSlot2Nametxt.Text
+        tavernCreatures(1).name = tavernSlot2Nametxt.Text
     End Sub
 
     Private Sub tavernSlot3Nametxt_TextChanged(sender As Object, e As EventArgs) Handles tavernSlot3Nametxt.TextChanged
-        tavernCreatures(3).name = tavernSlot3Nametxt.Text
+        tavernCreatures(2).name = tavernSlot3Nametxt.Text
     End Sub
 
     Private Sub tavernSlot4Nametxt_TextChanged(sender As Object, e As EventArgs) Handles tavernSlot4Nametxt.TextChanged
-        tavernCreatures(4).name = tavernSlot4Nametxt.Text
+        tavernCreatures(3).name = tavernSlot4Nametxt.Text
+    End Sub
+
+    Private Sub innbtn_Click(sender As Object, e As EventArgs) Handles innbtn.Click
+        currentInnWindow = New InnWindow
+        currentInnWindow.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub StaticCreaturesBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
+        Me.Validate()
+        Me.StaticCreaturesBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.GameDatabaseDataSet)
+
     End Sub
 End Class

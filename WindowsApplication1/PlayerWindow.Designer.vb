@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class PlayerWindow
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class PlayerWindow
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.playerStatspnl = New System.Windows.Forms.Panel()
@@ -33,27 +33,27 @@ Partial Class PlayerWindow
         Me.playerLevellbl = New System.Windows.Forms.Label()
         Me.playerGoldtxt = New System.Windows.Forms.TextBox()
         Me.playerLeveltxt = New System.Windows.Forms.TextBox()
-        Me.PlayerCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.playerMenuStrip = New System.Windows.Forms.MenuStrip()
+        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ImportPlayerDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GameDatabaseDataSet = New WindowsApplication1.GameDatabaseDataSet()
-        Me.PlayerCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerCreaturesTableAdapter()
+        Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
         Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
         Me.StaticCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.StaticCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticCreaturesTableAdapter()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ImportPlayerDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ExportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
+        Me.PlayerCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayerCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerCreaturesTableAdapter()
         Me.playerStatspnl.SuspendLayout()
-        CType(Me.PlayerCreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.playerMenuStrip.SuspendLayout()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.StaticCreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.MenuStrip1.SuspendLayout()
         CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.StaticCreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PlayerCreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'playerStatspnl
@@ -82,7 +82,7 @@ Partial Class PlayerWindow
         Me.creaturelst.FormattingEnabled = True
         Me.creaturelst.Location = New System.Drawing.Point(12, 107)
         Me.creaturelst.Name = "creaturelst"
-        Me.creaturelst.Size = New System.Drawing.Size(300, 186)
+        Me.creaturelst.Size = New System.Drawing.Size(300, 160)
         Me.creaturelst.TabIndex = 17
         '
         'playerInfoPanellbl
@@ -164,39 +164,102 @@ Partial Class PlayerWindow
         Me.playerLeveltxt.Size = New System.Drawing.Size(54, 20)
         Me.playerLeveltxt.TabIndex = 14
         '
-        'PlayerCreaturesBindingSource
+        'playerMenuStrip
         '
-        Me.PlayerCreaturesBindingSource.DataMember = "PlayerCreatures"
-        Me.PlayerCreaturesBindingSource.DataSource = Me.GameDatabaseDataSet
+        Me.playerMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EditToolStripMenuItem, Me.HelpToolStripMenuItem})
+        Me.playerMenuStrip.Location = New System.Drawing.Point(0, 0)
+        Me.playerMenuStrip.Name = "playerMenuStrip"
+        Me.playerMenuStrip.Size = New System.Drawing.Size(324, 24)
+        Me.playerMenuStrip.TabIndex = 6
+        Me.playerMenuStrip.Text = "MenuStrip1"
+        '
+        'FileToolStripMenuItem
+        '
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ImportPlayerDataToolStripMenuItem, Me.ExportToolStripMenuItem})
+        Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(35, 20)
+        Me.FileToolStripMenuItem.Text = "file"
+        '
+        'ImportPlayerDataToolStripMenuItem
+        '
+        Me.ImportPlayerDataToolStripMenuItem.Enabled = False
+        Me.ImportPlayerDataToolStripMenuItem.Name = "ImportPlayerDataToolStripMenuItem"
+        Me.ImportPlayerDataToolStripMenuItem.Size = New System.Drawing.Size(110, 22)
+        Me.ImportPlayerDataToolStripMenuItem.Text = "import"
+        '
+        'ExportToolStripMenuItem
+        '
+        Me.ExportToolStripMenuItem.Enabled = False
+        Me.ExportToolStripMenuItem.Name = "ExportToolStripMenuItem"
+        Me.ExportToolStripMenuItem.Size = New System.Drawing.Size(110, 22)
+        Me.ExportToolStripMenuItem.Text = "export"
+        '
+        'EditToolStripMenuItem
+        '
+        Me.EditToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NameToolStripMenuItem})
+        Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(39, 20)
+        Me.EditToolStripMenuItem.Text = "edit"
+        '
+        'NameToolStripMenuItem
+        '
+        Me.NameToolStripMenuItem.Name = "NameToolStripMenuItem"
+        Me.NameToolStripMenuItem.Size = New System.Drawing.Size(104, 22)
+        Me.NameToolStripMenuItem.Text = "name"
+        '
+        'HelpToolStripMenuItem
+        '
+        Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
+        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(42, 20)
+        Me.HelpToolStripMenuItem.Text = "help"
         '
         'GameDatabaseDataSet
         '
         Me.GameDatabaseDataSet.DataSetName = "GameDatabaseDataSet"
         Me.GameDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'PlayerCreaturesTableAdapter
+        'PlayersBindingSource
         '
-        Me.PlayerCreaturesTableAdapter.ClearBeforeFill = True
+        Me.PlayersBindingSource.DataMember = "Players"
+        Me.PlayersBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'PlayersTableAdapter
+        '
+        Me.PlayersTableAdapter.ClearBeforeFill = True
         '
         'TableAdapterManager
         '
         Me.TableAdapterManager.ArmorAugmentsTableAdapter = Nothing
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.BattlesTableAdapter = Nothing
-        Me.TableAdapterManager.PartiesTableAdapter = Nothing
+        Me.TableAdapterManager.BlacksmithStateItemsTableAdapter = Nothing
+        Me.TableAdapterManager.BlacksmithStatesTableAdapter = Nothing
+        Me.TableAdapterManager.ChemistStateItemsTableAdapter = Nothing
+        Me.TableAdapterManager.ChemistStatesTableAdapter = Nothing
+        Me.TableAdapterManager.EnemyPartiesTableAdapter = Nothing
+        Me.TableAdapterManager.FarmerStateItemsTableAdapter = Nothing
+        Me.TableAdapterManager.FarmerStatesTableAdapter = Nothing
         Me.TableAdapterManager.PlayerArmorTableAdapter = Nothing
         Me.TableAdapterManager.PlayerConsumablesTableAdapter = Nothing
         Me.TableAdapterManager.PlayerCreaturesTableAdapter = Me.PlayerCreaturesTableAdapter
+        Me.TableAdapterManager.PlayerPartiesTableAdapter = Nothing
         Me.TableAdapterManager.PlayerSkillsTableAdapter = Nothing
-        Me.TableAdapterManager.PlayersTableAdapter = Nothing
+        Me.TableAdapterManager.PlayersTableAdapter = Me.PlayersTableAdapter
+        Me.TableAdapterManager.PlayerStatesTableAdapter = Nothing
         Me.TableAdapterManager.PlayerWeaponsTableAdapter = Nothing
+        Me.TableAdapterManager.ScholarStateItemsTableAdapter = Nothing
+        Me.TableAdapterManager.ScholarStatesTableAdapter = Nothing
         Me.TableAdapterManager.StaticArmorTableAdapter = Nothing
         Me.TableAdapterManager.StaticAugmentsTableAdapter = Nothing
+        Me.TableAdapterManager.StaticCampTableAdapter = Nothing
+        Me.TableAdapterManager.StaticCampTierTableAdapter = Nothing
         Me.TableAdapterManager.StaticConsumablesTableAdapter = Nothing
-        Me.TableAdapterManager.StaticCreaturesTableAdapter = Nothing
+        Me.TableAdapterManager.StaticCreaturesTableAdapter = Me.StaticCreaturesTableAdapter
         Me.TableAdapterManager.StaticMobsTableAdapter = Nothing
+        Me.TableAdapterManager.StaticQuestsTableAdapter = Nothing
         Me.TableAdapterManager.StaticSkillsTableAdapter = Nothing
         Me.TableAdapterManager.StaticWeaponsTableAdapter = Nothing
+        Me.TableAdapterManager.TavernStatesTableAdapter = Nothing
         Me.TableAdapterManager.TurnsTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.WeaponAugmentsTableAdapter = Nothing
@@ -210,63 +273,14 @@ Partial Class PlayerWindow
         '
         Me.StaticCreaturesTableAdapter.ClearBeforeFill = True
         '
-        'MenuStrip1
+        'PlayerCreaturesBindingSource
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EditToolStripMenuItem, Me.HelpToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(324, 24)
-        Me.MenuStrip1.TabIndex = 6
-        Me.MenuStrip1.Text = "MenuStrip1"
+        Me.PlayerCreaturesBindingSource.DataMember = "PlayerCreatures"
+        Me.PlayerCreaturesBindingSource.DataSource = Me.GameDatabaseDataSet
         '
-        'FileToolStripMenuItem
+        'PlayerCreaturesTableAdapter
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ImportPlayerDataToolStripMenuItem, Me.ExportToolStripMenuItem})
-        Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(35, 20)
-        Me.FileToolStripMenuItem.Text = "file"
-        '
-        'EditToolStripMenuItem
-        '
-        Me.EditToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NameToolStripMenuItem})
-        Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(39, 20)
-        Me.EditToolStripMenuItem.Text = "edit"
-        '
-        'ImportPlayerDataToolStripMenuItem
-        '
-        Me.ImportPlayerDataToolStripMenuItem.Enabled = False
-        Me.ImportPlayerDataToolStripMenuItem.Name = "ImportPlayerDataToolStripMenuItem"
-        Me.ImportPlayerDataToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.ImportPlayerDataToolStripMenuItem.Text = "import"
-        '
-        'ExportToolStripMenuItem
-        '
-        Me.ExportToolStripMenuItem.Enabled = False
-        Me.ExportToolStripMenuItem.Name = "ExportToolStripMenuItem"
-        Me.ExportToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.ExportToolStripMenuItem.Text = "export"
-        '
-        'NameToolStripMenuItem
-        '
-        Me.NameToolStripMenuItem.Name = "NameToolStripMenuItem"
-        Me.NameToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.NameToolStripMenuItem.Text = "name"
-        '
-        'HelpToolStripMenuItem
-        '
-        Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
-        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(42, 20)
-        Me.HelpToolStripMenuItem.Text = "help"
-        '
-        'PlayersBindingSource
-        '
-        Me.PlayersBindingSource.DataMember = "Players"
-        Me.PlayersBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'PlayersTableAdapter
-        '
-        Me.PlayersTableAdapter.ClearBeforeFill = True
+        Me.PlayerCreaturesTableAdapter.ClearBeforeFill = True
         '
         'PlayerWindow
         '
@@ -274,19 +288,19 @@ Partial Class PlayerWindow
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(324, 374)
         Me.Controls.Add(Me.playerStatspnl)
-        Me.Controls.Add(Me.MenuStrip1)
-        Me.MainMenuStrip = Me.MenuStrip1
+        Me.Controls.Add(Me.playerMenuStrip)
+        Me.MainMenuStrip = Me.playerMenuStrip
         Me.Name = "PlayerWindow"
         Me.ShowIcon = False
         Me.Text = "PlayerWindow"
         Me.playerStatspnl.ResumeLayout(False)
         Me.playerStatspnl.PerformLayout()
-        CType(Me.PlayerCreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.playerMenuStrip.ResumeLayout(False)
+        Me.playerMenuStrip.PerformLayout()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.StaticCreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
         CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.StaticCreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PlayerCreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -301,20 +315,20 @@ Partial Class PlayerWindow
     Friend WithEvents playerLevellbl As Label
     Friend WithEvents playerGoldtxt As TextBox
     Friend WithEvents playerLeveltxt As TextBox
-    Friend WithEvents GameDatabaseDataSet As GameDatabaseDataSet
-    Friend WithEvents PlayerCreaturesBindingSource As BindingSource
-    Friend WithEvents PlayerCreaturesTableAdapter As GameDatabaseDataSetTableAdapters.PlayerCreaturesTableAdapter
-    Friend WithEvents TableAdapterManager As GameDatabaseDataSetTableAdapters.TableAdapterManager
     Friend WithEvents creaturelst As ListBox
-    Friend WithEvents StaticCreaturesBindingSource As BindingSource
-    Friend WithEvents StaticCreaturesTableAdapter As GameDatabaseDataSetTableAdapters.StaticCreaturesTableAdapter
-    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents playerMenuStrip As MenuStrip
     Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ImportPlayerDataToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ExportToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EditToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents NameToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GameDatabaseDataSet As GameDatabaseDataSet
     Friend WithEvents PlayersBindingSource As BindingSource
     Friend WithEvents PlayersTableAdapter As GameDatabaseDataSetTableAdapters.PlayersTableAdapter
+    Friend WithEvents TableAdapterManager As GameDatabaseDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents StaticCreaturesTableAdapter As GameDatabaseDataSetTableAdapters.StaticCreaturesTableAdapter
+    Friend WithEvents StaticCreaturesBindingSource As BindingSource
+    Friend WithEvents PlayerCreaturesTableAdapter As GameDatabaseDataSetTableAdapters.PlayerCreaturesTableAdapter
+    Friend WithEvents PlayerCreaturesBindingSource As BindingSource
 End Class

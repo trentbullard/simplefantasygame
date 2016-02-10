@@ -2,13 +2,12 @@
     Dim playerSelection As New player
 
     Private Sub DeletePlayersWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.PlayersTableAdapter.Fill(Me.GameDatabaseDataSet.Players)
         PlayersTableAdapter.Fill(GameDatabaseDataSet.Players)
 
         StartLog()  'From log.vb
 
         For Each row As DataRow In GameDatabaseDataSet.Players
-            deletePlayerslst.Items.Add(New player(row("id"), row("name"), row("level"), row("experience"), row("gold")))
+            deletePlayerslst.Items.Add(New player(row))
         Next
     End Sub
 
@@ -45,5 +44,12 @@
         Me.Validate()
         Me.PlayersBindingSource.EndEdit()
         Me.TableAdapterManager.UpdateAll(Me.GameDatabaseDataSet)
+    End Sub
+
+    Private Sub PlayersBindingNavigatorSaveItem_Click_1(sender As Object, e As EventArgs)
+        Me.Validate()
+        Me.PlayersBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.GameDatabaseDataSet)
+
     End Sub
 End Class
