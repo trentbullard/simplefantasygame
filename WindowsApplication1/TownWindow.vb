@@ -1,6 +1,7 @@
 ﻿Public Class TownWindow
     Private Sub TownWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PlayerCreaturesTableAdapter.FillByPlayerid(GameDatabaseDataSet.PlayerCreatures, currentPlayer.id)
+        datelbl.Text = currentPlayer.currentDate.ToString
 
         If currentPlayer.exp > 1 Then
             innlbl.Hide()
@@ -95,12 +96,6 @@
 
     Private Sub add1Weekbtn_Click(sender As Object, e As EventArgs) Handles add1Weekbtn.Click
         currentPlayer.currentDate.AddDays(7)
-    End Sub
-
-    Private Sub PlayerCreaturesBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
-        Me.Validate()
-        Me.PlayerCreaturesBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.GameDatabaseDataSet)
-
+        datelbl.Text = currentPlayer.currentDate.ToString
     End Sub
 End Class

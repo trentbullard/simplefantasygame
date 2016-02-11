@@ -1,4 +1,4 @@
-﻿replace name on StaticCreatures
+﻿fix datetime functionality
 create mob class
 	inherit from creature class
 home screen

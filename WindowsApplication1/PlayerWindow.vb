@@ -12,7 +12,9 @@
         PlayerCreaturesTableAdapter.FillByPlayerid(GameDatabaseDataSet.PlayerCreatures, currentPlayer.id)
 
         For Each row As DataRow In PlayerCreaturesTableAdapter.GetDataByPlayerid(currentPlayer.id)
-            creaturelst.Items.Add(New creature(StaticCreaturesTableAdapter.GetCreatureByid(row("creatureid"))(0)).ToString)
+            Dim creation As New creature(StaticCreaturesTableAdapter.GetCreatureByid(row("creatureid"))(0))
+            creation.name = ProperCase(row("name"))
+            creaturelst.Items.Add(creation.ToString)
         Next
     End Sub
 

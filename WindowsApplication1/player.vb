@@ -112,4 +112,8 @@
     Public Sub ReName(newName)
         playerName = newName
     End Sub
+
+    Public Sub changeDate(amount)
+        'playerDateTime.Add()
+    End Sub
 End Class

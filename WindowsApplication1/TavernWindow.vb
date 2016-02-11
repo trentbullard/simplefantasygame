@@ -6,7 +6,7 @@
         PlayersTableAdapter.Fill(GameDatabaseDataSet.Players)
         PlayerCreaturesTableAdapter.Fill(GameDatabaseDataSet.PlayerCreatures)
 
-        If Not tavernCreatures.Any Then
+        If Not PlayerCreaturesTableAdapter.GetDataByPlayerid(currentPlayer.id).Any Then
             For ctr = 0 To 3
                 tavernCreatures(ctr) = New creature(GameDatabaseDataSet.StaticCreatures(ctr))
                 FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
@@ -23,22 +23,43 @@
             Next
         Else
             For ctr = 0 To 3
-                If currentDate = currentPlayer.currentDate Then
+                If Not tavernCreatures(ctr).name = "" And currentDate = currentPlayer.currentDate Then
                     FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
-                Else
+                    Select Case ctr
+                        Case 0
+                            tavernSlot1Hirebtn.Enabled = True
+                        Case 1
+                            tavernSlot2Hirebtn.Enabled = True
+                        Case 2
+                            tavernSlot3Hirebtn.Enabled = True
+                        Case 3
+                            tavernSlot4Hirebtn.Enabled = True
+                    End Select
+                ElseIf Not tavernCreatures(ctr).name = "" Then
                     tavernCreatures(ctr) = New creature(GameDatabaseDataSet.StaticCreatures(ctr))
                     FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
+                    Select Case ctr
+                        Case 0
+                            tavernSlot1Hirebtn.Enabled = True
+                        Case 1
+                            tavernSlot2Hirebtn.Enabled = True
+                        Case 2
+                            tavernSlot3Hirebtn.Enabled = True
+                        Case 3
+                            tavernSlot4Hirebtn.Enabled = True
+                    End Select
+                Else
+                    Select Case ctr
+                        Case 0
+                            tavernSlot1Nametxt.Enabled = False
+                        Case 1
+                            tavernSlot2Nametxt.Enabled = False
+                        Case 2
+                            tavernSlot3Nametxt.Enabled = False
+                        Case 3
+                            tavernSlot4Nametxt.Enabled = False
+                    End Select
                 End If
-                Select Case ctr
-                    Case 0
-                        tavernSlot1Hirebtn.Enabled = True
-                    Case 1
-                        tavernSlot2Hirebtn.Enabled = True
-                    Case 2
-                        tavernSlot3Hirebtn.Enabled = True
-                    Case 3
-                        tavernSlot4Hirebtn.Enabled = True
-                End Select
             Next
         End If
 
@@ -73,6 +94,7 @@
 
         newRow("playerid") = creature.owner.id
         newRow("creatureid") = creature.id
+        newRow("name") = creature.name
 
         GameDatabaseDataSet.Tables("PlayerCreatures").Rows.Add(newRow)
 
@@ -84,7 +106,6 @@
             PlayersTableAdapter.Update(GameDatabaseDataSet.Players)
             PlayerCreaturesBindingSource.EndEdit()
             PlayerCreaturesTableAdapter.Update(GameDatabaseDataSet.PlayerCreatures)
-            tavernCreatures(slot).name = ""
             ClearCreatureSlot(slot)
         Catch ex As Exception
             MsgBox("Failed to add creature to database.")
@@ -148,6 +169,7 @@
     End Sub
 
     Private Sub ClearCreatureSlot(slot)
+        tavernCreatures(slot - 1).name = ""
         Select Case slot
             Case 1
                 tavernSlot1Nametxt.Clear()
@@ -237,12 +259,5 @@
         currentInnWindow = New InnWindow
         currentInnWindow.Show()
         Me.Close()
-    End Sub
-
-    Private Sub StaticCreaturesBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
-        Me.Validate()
-        Me.StaticCreaturesBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.GameDatabaseDataSet)
-
     End Sub
 End Class
