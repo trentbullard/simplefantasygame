@@ -1,5 +1,4 @@
-﻿replace name on StaticCreatures
-create mob class
+﻿create mob class
 	inherit from creature class
 home screen
 combat
