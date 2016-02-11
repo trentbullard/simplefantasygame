@@ -4,6 +4,8 @@
     Private Shared tavernVisited As Boolean = False
 
     Private Sub TavernWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'GameDatabaseDataSet.TavernStates' table. You can move, or remove it, as needed.
+        Me.TavernStatesTableAdapter.Fill(Me.GameDatabaseDataSet.TavernStates)
         StaticCreaturesTableAdapter.Fill(GameDatabaseDataSet.StaticCreatures)
         PlayersTableAdapter.Fill(GameDatabaseDataSet.Players)
         PlayerCreaturesTableAdapter.Fill(GameDatabaseDataSet.PlayerCreatures)
@@ -244,6 +246,16 @@
         newRow("questSlot1id") = tavernQuests(0).id
         newRow("questSlot2id") = tavernQuests(1).id
         newRow("questSlot3id") = tavernQuests(2).id
+
+        GameDatabaseDataSet.Tables("TavernStates").Rows.Add(newRow)
+
+        Try
+            Validate()
+            TavernStatesBindingSource.EndEdit()
+            TavernStatesTableAdapter.Update(GameDatabaseDataSet.TavernStates)
+        Catch ex As Exception
+            MsgBox("Failed to add tavern state to database.")
+        End Try
 
     End Sub
 End Class

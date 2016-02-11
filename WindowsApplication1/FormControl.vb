@@ -1,16 +1,5 @@
 ﻿Module FormControl
-    Public currentCombatWindow As New CombatWindow
-    Public currentDeletePlayersWindow As New DeletePlayersWindow
-    Public currentInnWindow As New InnWindow
-    Public currentMainMenu As New MainMenu
-    Public currentMarketWindow As New MarketWindow
-    Public currentNecromancerWindow As New NecromancerWindow
-    Public currentPlayerWindow As New PlayerWindow
-    Public currentRoadWindow As New RoadWindow
-    Public currentTavernWindow As New TavernWindow
-    Public currentTownWindow As New TownWindow
-    Public currentCreatureWindow As New CreatureWindow
-    Public currentDate As DateTime = "01/01/1000"
+    Public currentState As New PlayerState
 
     Public Sub OpenMainMenu()
         currentMainMenu = New MainMenu

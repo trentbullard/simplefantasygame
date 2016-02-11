@@ -140,6 +140,8 @@ Partial Class TavernWindow
         Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
         Me.PlayerCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TavernStatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TavernStatesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TavernStatesTableAdapter()
         Me.tavernSlot1pnl.SuspendLayout()
         Me.tavernSlot2pnl.SuspendLayout()
         Me.tavernSlot3pnl.SuspendLayout()
@@ -157,6 +159,7 @@ Partial Class TavernWindow
         CType(Me.StaticCreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayerCreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TavernStatesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tavernSlot1pnl
@@ -1260,6 +1263,15 @@ Partial Class TavernWindow
         Me.PlayersBindingSource.DataMember = "Players"
         Me.PlayersBindingSource.DataSource = Me.GameDatabaseDataSet
         '
+        'TavernStatesBindingSource
+        '
+        Me.TavernStatesBindingSource.DataMember = "TavernStates"
+        Me.TavernStatesBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'TavernStatesTableAdapter
+        '
+        Me.TavernStatesTableAdapter.ClearBeforeFill = True
+        '
         'TavernWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1298,6 +1310,7 @@ Partial Class TavernWindow
         CType(Me.StaticCreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayerCreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TavernStatesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1419,4 +1432,6 @@ Partial Class TavernWindow
     Friend WithEvents PlayerCreaturesBindingSource As BindingSource
     Friend WithEvents PlayersTableAdapter As GameDatabaseDataSetTableAdapters.PlayersTableAdapter
     Friend WithEvents PlayersBindingSource As BindingSource
+    Friend WithEvents TavernStatesBindingSource As BindingSource
+    Friend WithEvents TavernStatesTableAdapter As GameDatabaseDataSetTableAdapters.TavernStatesTableAdapter
 End Class

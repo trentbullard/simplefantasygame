@@ -188,13 +188,16 @@
     <Compile Include="NecromancerWindow.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Party.vb" />
     <Compile Include="player.vb" />
+    <Compile Include="PlayerState.vb" />
     <Compile Include="PlayerWindow.Designer.vb">
       <DependentUpon>PlayerWindow.vb</DependentUpon>
     </Compile>
     <Compile Include="PlayerWindow.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Quest.vb" />
     <Compile Include="RoadWindow.Designer.vb">
       <DependentUpon>RoadWindow.vb</DependentUpon>
     </Compile>
@@ -209,6 +212,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="team.vb" />
+    <Compile Include="Tier.vb" />
     <Compile Include="TownWindow.Designer.vb">
       <DependentUpon>TownWindow.vb</DependentUpon>
     </Compile>
