@@ -1,4 +1,5 @@
-﻿create mob class
+﻿fix datetime functionality
+create mob class
 	inherit from creature class
 home screen
 combat

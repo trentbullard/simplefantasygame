@@ -44,16 +44,20 @@ Partial Class TownWindow
         Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
         Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
+        Me.datelbl = New System.Windows.Forms.Label()
+        Me.datepnl = New System.Windows.Forms.Panel()
         Me.townpnl.SuspendLayout()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayerCreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.datepnl.SuspendLayout()
         Me.SuspendLayout()
         '
         'townpnl
         '
         Me.townpnl.BackgroundImage = CType(resources.GetObject("townpnl.BackgroundImage"), System.Drawing.Image)
         Me.townpnl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.townpnl.Controls.Add(Me.datepnl)
         Me.townpnl.Controls.Add(Me.add1Weekbtn)
         Me.townpnl.Controls.Add(Me.playerbtn)
         Me.townpnl.Controls.Add(Me.roadlbl)
@@ -273,6 +277,27 @@ Partial Class TownWindow
         '
         Me.PlayersTableAdapter.ClearBeforeFill = True
         '
+        'datelbl
+        '
+        Me.datelbl.AutoSize = True
+        Me.datelbl.BackColor = System.Drawing.Color.White
+        Me.datelbl.Dock = System.Windows.Forms.DockStyle.Right
+        Me.datelbl.Location = New System.Drawing.Point(158, 0)
+        Me.datelbl.Name = "datelbl"
+        Me.datelbl.Size = New System.Drawing.Size(63, 13)
+        Me.datelbl.TabIndex = 1
+        Me.datelbl.Text = "currentDate"
+        Me.datelbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'datepnl
+        '
+        Me.datepnl.BackColor = System.Drawing.Color.Transparent
+        Me.datepnl.Controls.Add(Me.datelbl)
+        Me.datepnl.Location = New System.Drawing.Point(524, 570)
+        Me.datepnl.Name = "datepnl"
+        Me.datepnl.Size = New System.Drawing.Size(221, 12)
+        Me.datepnl.TabIndex = 12
+        '
         'TownWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -289,6 +314,8 @@ Partial Class TownWindow
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayerCreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.datepnl.ResumeLayout(False)
+        Me.datepnl.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -312,4 +339,6 @@ Partial Class TownWindow
     Friend WithEvents TableAdapterManager As GameDatabaseDataSetTableAdapters.TableAdapterManager
     Friend WithEvents PlayersBindingSource As BindingSource
     Friend WithEvents PlayersTableAdapter As GameDatabaseDataSetTableAdapters.PlayersTableAdapter
+    Friend WithEvents datelbl As Label
+    Friend WithEvents datepnl As Panel
 End Class
