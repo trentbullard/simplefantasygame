@@ -3,4 +3,7 @@
 	combat
 	skills
 	items
-tavern population code
+update database
+	all states except player
+	add name to playerparties
+	correct slot4id on enemyparties

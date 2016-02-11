@@ -278,6 +278,7 @@ Partial Class TavernWindow
         '
         Me.tavernSlot1Nametxt.Location = New System.Drawing.Point(69, 3)
         Me.tavernSlot1Nametxt.Name = "tavernSlot1Nametxt"
+        Me.tavernSlot1Nametxt.ReadOnly = True
         Me.tavernSlot1Nametxt.Size = New System.Drawing.Size(100, 20)
         Me.tavernSlot1Nametxt.TabIndex = 3
         '
@@ -466,6 +467,7 @@ Partial Class TavernWindow
         '
         Me.tavernSlot2Nametxt.Location = New System.Drawing.Point(69, 3)
         Me.tavernSlot2Nametxt.Name = "tavernSlot2Nametxt"
+        Me.tavernSlot2Nametxt.ReadOnly = True
         Me.tavernSlot2Nametxt.Size = New System.Drawing.Size(100, 20)
         Me.tavernSlot2Nametxt.TabIndex = 3
         '
@@ -662,6 +664,7 @@ Partial Class TavernWindow
         '
         Me.tavernSlot3Nametxt.Location = New System.Drawing.Point(69, 3)
         Me.tavernSlot3Nametxt.Name = "tavernSlot3Nametxt"
+        Me.tavernSlot3Nametxt.ReadOnly = True
         Me.tavernSlot3Nametxt.Size = New System.Drawing.Size(100, 20)
         Me.tavernSlot3Nametxt.TabIndex = 3
         '
@@ -866,6 +869,7 @@ Partial Class TavernWindow
         '
         Me.tavernSlot4Nametxt.Location = New System.Drawing.Point(69, 3)
         Me.tavernSlot4Nametxt.Name = "tavernSlot4Nametxt"
+        Me.tavernSlot4Nametxt.ReadOnly = True
         Me.tavernSlot4Nametxt.Size = New System.Drawing.Size(100, 20)
         Me.tavernSlot4Nametxt.TabIndex = 3
         '

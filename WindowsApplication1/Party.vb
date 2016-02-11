@@ -11,6 +11,13 @@
         partyMembers = New Collection
     End Sub
 
+    Public Sub New(id As Integer)
+        partyid = id
+        partyOwner = currentPlayer
+        partyName = "name"
+        partyMembers = New Collection
+    End Sub
+
     Public Sub New(id As Integer, owner As Player, name As String, members As Collection)
         partyid = id
         partyOwner = owner

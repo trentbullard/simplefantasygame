@@ -1,6 +1,4 @@
-﻿Imports WindowsApplication1
-
-Public Class Quest
+﻿Public Class Quest
     Private questid As Integer
     Private questName As String
     Private questTier As Tier
@@ -14,7 +12,19 @@ Public Class Quest
     Public Sub New()
         questid = -1
         questName = "quest"
-        questTier = currentState.tier
+        questTier = New Tier
+        questMinLevel = 1
+        questMaxLevel = 50
+        questRewardItem = New Item
+        questRewardExp = 1
+        questRewardGold = 1
+        questIsComplete = False
+    End Sub
+
+    Public Sub New(id As Integer)
+        questid = id
+        questName = "quest"
+        questTier = New Tier
         questMinLevel = 1
         questMaxLevel = 50
         questRewardItem = New Item

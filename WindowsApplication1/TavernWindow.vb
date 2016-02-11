@@ -1,7 +1,7 @@
 ﻿Public Class TavernWindow
     Private Shared tavernCreatures(4) As Creature
     Private Shared tavernQuests(3) As Quest
-    Private Shared tavernVisited As Boolean = False
+    Private Shared dateVisited As DateTime = Nothing
 
     Private Sub TavernWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TavernStatesTableAdapter.Fill(GameDatabaseDataSet.TavernStates)
@@ -9,33 +9,41 @@
         PlayersTableAdapter.Fill(GameDatabaseDataSet.Players)
         PlayerCreaturesTableAdapter.Fill(GameDatabaseDataSet.PlayerCreatures)
 
-        'For ctr = 0 To 3
-        '    If Not PlayerCreaturesTableAdapter.GetDataByPlayerid(currentPlayer.id).Any And Not tavernVisited Then
-        '        tavernCreatures(ctr) = New Creature(GameDatabaseDataSet.StaticCreatures(ctr))
-        '        FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
-        '    ElseIf Not PlayerCreaturesTableAdapter.GetDataByPlayerid(currentPlayer.id).Any And tavernVisited Then
-        '        FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
-        '    ElseIf currentState.dateInGame < currentPlayer.currentDate Then
-        '        tavernCreatures(ctr) = New Creature(GameDatabaseDataSet.StaticCreatures(ctr))
-        '        FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
-        '    ElseIf Not tavernCreatures(ctr).name = "" And currentDate = currentPlayer.currentDate Then
-        '        FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
-        '    Else
-        '        ClearCreatureSlot(ctr + 1)
-        '        Continue For
-        '    End If
-        '    Select Case ctr
-        '        Case 0
-        '            tavernSlot1Hirebtn.Enabled = True
-        '        Case 1
-        '            tavernSlot2Hirebtn.Enabled = True
-        '        Case 2
-        '            tavernSlot3Hirebtn.Enabled = True
-        '        Case 3
-        '            tavernSlot4Hirebtn.Enabled = True
-        '    End Select
-        'Next
-        'tavernVisited = True
+        For ctr = 0 To 3
+            If Not PlayerCreaturesTableAdapter.GetDataByPlayerid(currentPlayer.id).Any And dateVisited = Nothing Then
+                tavernCreatures(ctr) = New Creature(GameDatabaseDataSet.StaticCreatures(ctr))
+                FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
+            ElseIf Not PlayerCreaturesTableAdapter.GetDataByPlayerid(currentPlayer.id).Any And dateVisited = currentState.dateInGame Then
+                FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
+            ElseIf dateVisited < currentState.dateInGame Then
+                tavernCreatures(ctr) = New Creature(GameDatabaseDataSet.StaticCreatures(ctr))
+                FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
+            ElseIf Not tavernCreatures(ctr).name = "" And dateVisited = currentState.dateInGame Then
+                FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
+            Else
+                ClearCreatureSlot(ctr + 1)
+                Continue For
+            End If
+            Select Case ctr
+                Case 0
+                    tavernSlot1Hirebtn.Enabled = True
+                    tavernSlot1Nametxt.ReadOnly = False
+                    tavernSlot1Nametxt.Text = getName()
+                Case 1
+                    tavernSlot2Hirebtn.Enabled = True
+                    tavernSlot2Nametxt.ReadOnly = False
+                    tavernSlot2Nametxt.Text = getName()
+                Case 2
+                    tavernSlot3Hirebtn.Enabled = True
+                    tavernSlot3Nametxt.ReadOnly = False
+                    tavernSlot3Nametxt.Text = getName()
+                Case 3
+                    tavernSlot4Hirebtn.Enabled = True
+                    tavernSlot4Nametxt.ReadOnly = False
+                    tavernSlot4Nametxt.Text = getName()
+            End Select
+        Next
+        dateVisited = currentState.dateInGame
     End Sub
 
     Private Sub tavernSlot1Hirebtn_Click(sender As Object, e As EventArgs) Handles tavernSlot1Hirebtn.Click
@@ -146,6 +154,7 @@
         Select Case slot
             Case 1
                 tavernSlot1Nametxt.Clear()
+                tavernSlot1Nametxt.ReadOnly = True
                 tavernSlot1Leveltxt.Clear()
                 tavernSlot1Speciestxt.Clear()
                 tavernSlot1Healthtxt.Clear()
@@ -155,10 +164,11 @@
                 tavernSlot1Intelligencetxt.Clear()
                 tavernSlot1Wisdomtxt.Clear()
                 tavernSlot1Dexteritytxt.Clear()
-                tavernSlot1Hirebtn.Text = ""
+                tavernSlot1Hirebtn.Text = "return later"
                 tavernSlot1Hirebtn.Enabled = False
             Case 2
                 tavernSlot2Nametxt.Clear()
+                tavernSlot2Nametxt.ReadOnly = True
                 tavernSlot2Leveltxt.Clear()
                 tavernSlot2Speciestxt.Clear()
                 tavernSlot2Healthtxt.Clear()
@@ -168,10 +178,11 @@
                 tavernSlot2Intelligencetxt.Clear()
                 tavernSlot2Wisdomtxt.Clear()
                 tavernSlot2Dexteritytxt.Clear()
-                tavernSlot2Hirebtn.Text = ""
+                tavernSlot2Hirebtn.Text = "return later"
                 tavernSlot2Hirebtn.Enabled = False
             Case 3
                 tavernSlot3Nametxt.Clear()
+                tavernSlot3Nametxt.ReadOnly = True
                 tavernSlot3Leveltxt.Clear()
                 tavernSlot3Speciestxt.Clear()
                 tavernSlot3Healthtxt.Clear()
@@ -181,10 +192,11 @@
                 tavernSlot3Intelligencetxt.Clear()
                 tavernSlot3Wisdomtxt.Clear()
                 tavernSlot3Dexteritytxt.Clear()
-                tavernSlot3Hirebtn.Text = ""
+                tavernSlot3Hirebtn.Text = "return later"
                 tavernSlot3Hirebtn.Enabled = False
             Case 4
                 tavernSlot4Nametxt.Clear()
+                tavernSlot4Nametxt.ReadOnly = True
                 tavernSlot4Leveltxt.Clear()
                 tavernSlot4Speciestxt.Clear()
                 tavernSlot4Healthtxt.Clear()
@@ -194,7 +206,7 @@
                 tavernSlot4Intelligencetxt.Clear()
                 tavernSlot4Wisdomtxt.Clear()
                 tavernSlot4Dexteritytxt.Clear()
-                tavernSlot4Hirebtn.Text = ""
+                tavernSlot4Hirebtn.Text = "return later"
                 tavernSlot4Hirebtn.Enabled = False
         End Select
     End Sub

@@ -1,7 +1,8 @@
 ﻿Public Class TownWindow
     Private Sub TownWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        PlayerStatesTableAdapter.Fill(GameDatabaseDataSet.PlayerStates)
         PlayerCreaturesTableAdapter.FillByPlayerid(GameDatabaseDataSet.PlayerCreatures, currentPlayer.id)
-        datelbl.Text = currentPlayer.currentDate.ToString
+        datelbl.Text = currentState.dateInGame.ToString
 
         If currentPlayer.exp > 1 Then
             innlbl.Hide()
@@ -29,34 +30,34 @@
     End Sub
 
     Private Sub innbtn_Click(sender As Object, e As EventArgs) Handles innbtn.Click
-        currentInnWindow = New InnWindow
-        currentInnWindow.Show()
+        currentState.innwindow = New InnWindow
+        currentState.innwindow.Show()
     End Sub
 
     Private Sub tavernbtn_Click(sender As Object, e As EventArgs) Handles tavernbtn.Click
-        currentTavernWindow = New TavernWindow
-        currentTavernWindow.Show()
+        currentState.tavernwindow = New TavernWindow
+        currentState.tavernwindow.Show()
     End Sub
 
     Private Sub marketbtn_Click(sender As Object, e As EventArgs) Handles marketbtn.Click
-        currentMarketWindow = New MarketWindow
-        currentMarketWindow.Show()
+        currentState.marketwindow = New MarketWindow
+        currentState.marketwindow.Show()
     End Sub
 
     Private Sub necromancerbtn_Click(sender As Object, e As EventArgs) Handles necromancerbtn.Click
-        currentNecromancerWindow = New NecromancerWindow
-        currentNecromancerWindow.Show()
+        currentState.necrowindow = New NecromancerWindow
+        currentState.necrowindow.Show()
     End Sub
 
     Private Sub roadbtn_Click(sender As Object, e As EventArgs) Handles roadbtn.Click
-        currentRoadWindow = New RoadWindow
-        currentRoadWindow.Show()
+        currentState.roadwindow = New RoadWindow
+        currentState.roadwindow.Show()
         Me.Close()
     End Sub
 
     Private Sub playerbtn_Click(sender As Object, e As EventArgs) Handles playerbtn.Click
-        currentPlayerWindow = New PlayerWindow
-        currentPlayerWindow.Show()
+        currentState.playerwindow = New PlayerWindow
+        currentState.playerwindow.Show()
     End Sub
 
     Public Sub RefreshControls()
@@ -95,8 +96,20 @@
     End Sub
 
     Private Sub add1Weekbtn_Click(sender As Object, e As EventArgs) Handles add1Weekbtn.Click
-        currentPlayer.changeDate(TimeSpan.FromDays(7))
-        datelbl.Text = currentPlayer.currentDate.ToString
-        Console.WriteLine(currentPlayer.currentDate.ToString)
+        currentState.changeDate(TimeSpan.FromDays(7))
+        datelbl.Text = currentState.dateInGame.ToString
+        'Try
+        '    Validate()
+        '    GameDatabaseDataSet.PlayerStates(currentState.id - 1).gameDate = currentState.dateInGame
+        '    PlayerStatesBindingSource.EndEdit()
+        '    PlayerStatesTableAdapter.Update(GameDatabaseDataSet.PlayerStates)
+        'Catch ex As Exception
+        '    MsgBox("unable to update playerstate in database.")
+        'End Try
+
+        Validate()
+        GameDatabaseDataSet.PlayerStates(currentState.id - 1).gameDate = currentState.dateInGame
+        PlayerStatesBindingSource.EndEdit()
+        PlayerStatesTableAdapter.Update(GameDatabaseDataSet.PlayerStates)
     End Sub
 End Class

@@ -25,7 +25,28 @@
         stateParty = New Party
         stateTier = New Tier
         stateQuest = New Quest
-        stateGameDate = "01/01/1000"
+        stateGameDate = "01/01/1800"
+        stateCombatWindow = New CombatWindow
+        stateDeletePlayersWindow = New DeletePlayersWindow
+        stateInnWindow = New InnWindow
+        stateMainMenu = New MainMenu
+        stateMarketWindow = New MarketWindow
+        stateNecromancerWindow = New NecromancerWindow
+        statePlayerWindow = New PlayerWindow
+        stateRoadWindow = New RoadWindow
+        stateTavernWindow = New TavernWindow
+        stateTownWindow = New TownWindow
+        stateCreatureWindow = New CreatureWindow
+    End Sub
+
+    Public Sub New(id As Integer)
+        stateid = id
+        statePlayer = currentPlayer
+        stateDateSaved = DateTime.Now
+        stateParty = New Party
+        stateTier = New Tier
+        stateQuest = New Quest
+        stateGameDate = "01/01/1800"
         stateCombatWindow = New CombatWindow
         stateDeletePlayersWindow = New DeletePlayersWindow
         stateInnWindow = New InnWindow
@@ -46,7 +67,7 @@
         stateParty = New Party
         stateTier = New Tier
         stateQuest = New Quest
-        stateGameDate = "01/01/1000"
+        stateGameDate = "01/01/1800"
         stateCombatWindow = New CombatWindow
         stateDeletePlayersWindow = New DeletePlayersWindow
         stateInnWindow = New InnWindow
@@ -67,11 +88,10 @@
         Else
             statePlayer = New Player()
         End If
-        statePlayer = row("playerid")
         stateDateSaved = row("dateSaved")
-        stateParty = row("currentPartyid")
-        stateTier = row("currentTierid")
-        stateQuest = row("currentQuestid")
+        stateParty = New Party(row("currentPartyid"))
+        stateTier = New Tier(row("currentTierid"))
+        stateQuest = New Quest(row("currentQuestid"))
         stateGameDate = row("gameDate")
         stateCombatWindow = New CombatWindow
         stateDeletePlayersWindow = New DeletePlayersWindow
@@ -226,4 +246,12 @@
             stateCreatureWindow = value
         End Set
     End Property
+
+    Public Sub changeDate(amount As TimeSpan)
+        If amount < TimeSpan.Zero Then
+            stateGameDate = stateGameDate.Subtract(amount)
+        Else
+            stateGameDate = stateGameDate.Add(amount)
+        End If
+    End Sub
 End Class

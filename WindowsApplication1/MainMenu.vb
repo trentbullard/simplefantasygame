@@ -38,20 +38,24 @@ Public Class MainMenu
             playerSelectlstv.Items(playerSelectlstv.Items.Count - 1).SubItems.Add(player.name)
         Catch ex As Exception
             MsgBox("Unable to create new player.")
+            Exit Sub
         End Try
+        PlayersTableAdapter.Fill(GameDatabaseDataSet.Players)
     End Sub
 
     Private Sub playerSelectlstv_SelectedIndexChanged(sender As Object, e As EventArgs) Handles playerSelectlstv.SelectedIndexChanged
         If Not playerSelectlstv.SelectedIndices(0) = -1 Then
-            Dim playerRow As DataRow = PlayersTableAdapter.GetPlayerByid(playerSelectlstv.SelectedIndices(0)).First
-            Dim playerStateRow As DataRow = PlayerStatesTableAdapter.GetLastPlayerStateByPlayerid(playerRow("id")).First
+            Dim playerRow As DataRow = PlayersTableAdapter.GetPlayerByid(playerSelectlstv.SelectedIndices(0) + 1).First
             currentPlayer = New Player(playerRow)
+
             If PlayerStatesTableAdapter.GetLastPlayerStateByPlayerid(currentPlayer.id).Any Then
+                Dim playerStateRow As DataRow = PlayerStatesTableAdapter.GetLastPlayerStateByPlayerid(currentPlayer.id).First
                 currentState = New PlayerState(playerStateRow)
             Else
                 currentState = New PlayerState(currentPlayer)
             End If
-            NewPlayerState(currentState)
+
+            currentState = New PlayerState(NewPlayerState(currentState))
             currentState.townwindow = New TownWindow
             currentState.townwindow.Show()
             Me.Close()
@@ -83,14 +87,14 @@ Public Class MainMenu
         End Try
     End Sub
 
-    Private Sub NewPlayerState(currentState As PlayerState)
+    Private Function NewPlayerState(currentState As PlayerState) As GameDatabaseDataSet.PlayerStatesRow
         Dim newRow As DataRow = GameDatabaseDataSet.Tables("PlayerStates").NewRow
 
         newRow("playerid") = currentState.player.id
         newRow("dateSaved") = currentState.dateSaved
-        newRow("currentPartyid") = currentState.party
-        newRow("currentTierid") = currentState.tier
-        newRow("currentQuestid") = currentState.quest
+        newRow("currentPartyid") = currentState.party.id
+        newRow("currentTierid") = currentState.tier.id
+        newRow("currentQuestid") = currentState.quest.id
         newRow("gameDate") = currentState.dateInGame
 
         GameDatabaseDataSet.Tables("PlayerStates").Rows.Add(newRow)
@@ -99,10 +103,13 @@ Public Class MainMenu
             Validate()
             PlayerStatesBindingSource.EndEdit()
             PlayerStatesTableAdapter.Update(GameDatabaseDataSet.PlayerStates)
+            newRow = PlayerStatesTableAdapter.GetLastPlayerStateByPlayerid(currentPlayer.id).First
+            Return newRow
         Catch ex As Exception
             MsgBox("failed to add playerstate to database")
+            Exit Function
         End Try
-    End Sub
+    End Function
 
     Private Sub LoadCreatures(creature As Creature)
         Dim newRow As DataRow = GameDatabaseDataSet.Tables("StaticCreatures").NewRow()
