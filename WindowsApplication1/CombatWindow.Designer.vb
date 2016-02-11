@@ -188,7 +188,7 @@ Partial Class CombatWindow
         Me.Combatpnl.Controls.Add(Me.playersTeampnl)
         Me.Combatpnl.Location = New System.Drawing.Point(16, 27)
         Me.Combatpnl.Name = "Combatpnl"
-        Me.Combatpnl.Size = New System.Drawing.Size(970, 407)
+        Me.Combatpnl.Size = New System.Drawing.Size(953, 389)
         Me.Combatpnl.TabIndex = 0
         '
         'enemyTeampnl

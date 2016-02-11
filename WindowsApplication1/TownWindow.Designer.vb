@@ -25,6 +25,8 @@ Partial Class TownWindow
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TownWindow))
         Me.townpnl = New System.Windows.Forms.Panel()
+        Me.datepnl = New System.Windows.Forms.Panel()
+        Me.datelbl = New System.Windows.Forms.Label()
         Me.add1Weekbtn = New System.Windows.Forms.Button()
         Me.playerbtn = New System.Windows.Forms.Button()
         Me.roadlbl = New System.Windows.Forms.Label()
@@ -44,13 +46,11 @@ Partial Class TownWindow
         Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
         Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
-        Me.datelbl = New System.Windows.Forms.Label()
-        Me.datepnl = New System.Windows.Forms.Panel()
         Me.townpnl.SuspendLayout()
+        Me.datepnl.SuspendLayout()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayerCreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.datepnl.SuspendLayout()
         Me.SuspendLayout()
         '
         'townpnl
@@ -76,6 +76,27 @@ Partial Class TownWindow
         Me.townpnl.Name = "townpnl"
         Me.townpnl.Size = New System.Drawing.Size(1000, 600)
         Me.townpnl.TabIndex = 0
+        '
+        'datepnl
+        '
+        Me.datepnl.BackColor = System.Drawing.Color.Transparent
+        Me.datepnl.Controls.Add(Me.datelbl)
+        Me.datepnl.Location = New System.Drawing.Point(524, 570)
+        Me.datepnl.Name = "datepnl"
+        Me.datepnl.Size = New System.Drawing.Size(221, 12)
+        Me.datepnl.TabIndex = 12
+        '
+        'datelbl
+        '
+        Me.datelbl.AutoSize = True
+        Me.datelbl.BackColor = System.Drawing.Color.White
+        Me.datelbl.Dock = System.Windows.Forms.DockStyle.Right
+        Me.datelbl.Location = New System.Drawing.Point(158, 0)
+        Me.datelbl.Name = "datelbl"
+        Me.datelbl.Size = New System.Drawing.Size(63, 13)
+        Me.datelbl.TabIndex = 1
+        Me.datelbl.Text = "currentDate"
+        Me.datelbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'add1Weekbtn
         '
@@ -277,27 +298,6 @@ Partial Class TownWindow
         '
         Me.PlayersTableAdapter.ClearBeforeFill = True
         '
-        'datelbl
-        '
-        Me.datelbl.AutoSize = True
-        Me.datelbl.BackColor = System.Drawing.Color.White
-        Me.datelbl.Dock = System.Windows.Forms.DockStyle.Right
-        Me.datelbl.Location = New System.Drawing.Point(158, 0)
-        Me.datelbl.Name = "datelbl"
-        Me.datelbl.Size = New System.Drawing.Size(63, 13)
-        Me.datelbl.TabIndex = 1
-        Me.datelbl.Text = "currentDate"
-        Me.datelbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'datepnl
-        '
-        Me.datepnl.BackColor = System.Drawing.Color.Transparent
-        Me.datepnl.Controls.Add(Me.datelbl)
-        Me.datepnl.Location = New System.Drawing.Point(524, 570)
-        Me.datepnl.Name = "datepnl"
-        Me.datepnl.Size = New System.Drawing.Size(221, 12)
-        Me.datepnl.TabIndex = 12
-        '
         'TownWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -311,11 +311,11 @@ Partial Class TownWindow
         Me.Text = "TownWindow"
         Me.townpnl.ResumeLayout(False)
         Me.townpnl.PerformLayout()
+        Me.datepnl.ResumeLayout(False)
+        Me.datepnl.PerformLayout()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayerCreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.datepnl.ResumeLayout(False)
-        Me.datepnl.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

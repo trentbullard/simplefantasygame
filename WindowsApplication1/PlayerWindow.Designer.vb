@@ -44,10 +44,10 @@ Partial Class PlayerWindow
         Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
         Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
-        Me.StaticCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.StaticCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticCreaturesTableAdapter()
-        Me.PlayerCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayerCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerCreaturesTableAdapter()
+        Me.StaticCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticCreaturesTableAdapter()
+        Me.StaticCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayerCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.playerStatspnl.SuspendLayout()
         Me.playerMenuStrip.SuspendLayout()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -264,23 +264,23 @@ Partial Class PlayerWindow
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.WeaponAugmentsTableAdapter = Nothing
         '
-        'StaticCreaturesBindingSource
+        'PlayerCreaturesTableAdapter
         '
-        Me.StaticCreaturesBindingSource.DataMember = "StaticCreatures"
-        Me.StaticCreaturesBindingSource.DataSource = Me.GameDatabaseDataSet
+        Me.PlayerCreaturesTableAdapter.ClearBeforeFill = True
         '
         'StaticCreaturesTableAdapter
         '
         Me.StaticCreaturesTableAdapter.ClearBeforeFill = True
         '
+        'StaticCreaturesBindingSource
+        '
+        Me.StaticCreaturesBindingSource.DataMember = "StaticCreatures"
+        Me.StaticCreaturesBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
         'PlayerCreaturesBindingSource
         '
         Me.PlayerCreaturesBindingSource.DataMember = "PlayerCreatures"
         Me.PlayerCreaturesBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'PlayerCreaturesTableAdapter
-        '
-        Me.PlayerCreaturesTableAdapter.ClearBeforeFill = True
         '
         'PlayerWindow
         '

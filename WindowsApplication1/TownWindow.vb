@@ -95,7 +95,8 @@
     End Sub
 
     Private Sub add1Weekbtn_Click(sender As Object, e As EventArgs) Handles add1Weekbtn.Click
-        currentPlayer.currentDate.AddDays(7)
+        currentPlayer.changeDate(TimeSpan.FromDays(7))
         datelbl.Text = currentPlayer.currentDate.ToString
+        Console.WriteLine(currentPlayer.currentDate.ToString)
     End Sub
 End Class

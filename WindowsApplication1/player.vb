@@ -113,7 +113,11 @@
         playerName = newName
     End Sub
 
-    Public Sub changeDate(amount)
-        'playerDateTime.Add()
+    Public Sub changeDate(amount As TimeSpan)
+        If amount < TimeSpan.Zero Then
+            playerDateTime = playerDateTime.Subtract(amount)
+        Else
+            playerDateTime = playerDateTime.Add(amount)
+        End If
     End Sub
 End Class
