@@ -4,39 +4,38 @@
     Private Shared tavernVisited As Boolean = False
 
     Private Sub TavernWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'GameDatabaseDataSet.TavernStates' table. You can move, or remove it, as needed.
-        Me.TavernStatesTableAdapter.Fill(Me.GameDatabaseDataSet.TavernStates)
+        TavernStatesTableAdapter.Fill(GameDatabaseDataSet.TavernStates)
         StaticCreaturesTableAdapter.Fill(GameDatabaseDataSet.StaticCreatures)
         PlayersTableAdapter.Fill(GameDatabaseDataSet.Players)
         PlayerCreaturesTableAdapter.Fill(GameDatabaseDataSet.PlayerCreatures)
 
-        For ctr = 0 To 3
-            If Not PlayerCreaturesTableAdapter.GetDataByPlayerid(currentPlayer.id).Any And Not tavernVisited Then
-                tavernCreatures(ctr) = New Creature(GameDatabaseDataSet.StaticCreatures(ctr))
-                FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
-            ElseIf Not PlayerCreaturesTableAdapter.GetDataByPlayerid(currentPlayer.id).Any And tavernVisited Then
-                FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
-            ElseIf currentDate < currentPlayer.currentDate Then
-                tavernCreatures(ctr) = New Creature(GameDatabaseDataSet.StaticCreatures(ctr))
-                FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
-            ElseIf Not tavernCreatures(ctr).name = "" And currentDate = currentPlayer.currentDate Then
-                FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
-            Else
-                ClearCreatureSlot(ctr + 1)
-                Continue For
-            End If
-            Select Case ctr
-                Case 0
-                    tavernSlot1Hirebtn.Enabled = True
-                Case 1
-                    tavernSlot2Hirebtn.Enabled = True
-                Case 2
-                    tavernSlot3Hirebtn.Enabled = True
-                Case 3
-                    tavernSlot4Hirebtn.Enabled = True
-            End Select
-        Next
-        tavernVisited = True
+        'For ctr = 0 To 3
+        '    If Not PlayerCreaturesTableAdapter.GetDataByPlayerid(currentPlayer.id).Any And Not tavernVisited Then
+        '        tavernCreatures(ctr) = New Creature(GameDatabaseDataSet.StaticCreatures(ctr))
+        '        FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
+        '    ElseIf Not PlayerCreaturesTableAdapter.GetDataByPlayerid(currentPlayer.id).Any And tavernVisited Then
+        '        FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
+        '    ElseIf currentState.dateInGame < currentPlayer.currentDate Then
+        '        tavernCreatures(ctr) = New Creature(GameDatabaseDataSet.StaticCreatures(ctr))
+        '        FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
+        '    ElseIf Not tavernCreatures(ctr).name = "" And currentDate = currentPlayer.currentDate Then
+        '        FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
+        '    Else
+        '        ClearCreatureSlot(ctr + 1)
+        '        Continue For
+        '    End If
+        '    Select Case ctr
+        '        Case 0
+        '            tavernSlot1Hirebtn.Enabled = True
+        '        Case 1
+        '            tavernSlot2Hirebtn.Enabled = True
+        '        Case 2
+        '            tavernSlot3Hirebtn.Enabled = True
+        '        Case 3
+        '            tavernSlot4Hirebtn.Enabled = True
+        '    End Select
+        'Next
+        'tavernVisited = True
     End Sub
 
     Private Sub tavernSlot1Hirebtn_Click(sender As Object, e As EventArgs) Handles tavernSlot1Hirebtn.Click
@@ -86,7 +85,7 @@
             Exit Sub
         End Try
 
-        currentTownWindow.RefreshControls()
+        currentState.townwindow.RefreshControls()
     End Sub
 
     Private Sub FillCreatureSlot(creature, slot)
@@ -201,8 +200,8 @@
     End Sub
 
     Private Sub playerbtn_Click(sender As Object, e As EventArgs) Handles playerbtn.Click
-        currentPlayerWindow = New PlayerWindow
-        currentPlayerWindow.Show()
+        currentState.playerwindow = New PlayerWindow
+        currentState.playerwindow.Show()
     End Sub
 
     Private Sub mainMenubtn_Click(sender As Object, e As EventArgs) Handles mainMenubtn.Click
@@ -230,8 +229,8 @@
     End Sub
 
     Private Sub innbtn_Click(sender As Object, e As EventArgs) Handles innbtn.Click
-        currentInnWindow = New InnWindow
-        currentInnWindow.Show()
+        currentState.innwindow = New InnWindow
+        currentState.innwindow.Show()
         Me.Close()
     End Sub
 

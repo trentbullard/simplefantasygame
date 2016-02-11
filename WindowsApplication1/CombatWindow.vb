@@ -27,8 +27,8 @@
 
     Private Sub mainMenubtn_Click(sender As Object, e As EventArgs) Handles mainMenubtn.Click
         UpdateDatabase()
-        currentMainMenu = New MainMenu
-        currentMainMenu.Show()
+        currentState.mainmenu = New MainMenu
+        currentState.mainmenu.Show()
         Me.Close()
     End Sub
 

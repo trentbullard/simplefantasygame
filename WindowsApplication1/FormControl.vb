@@ -15,5 +15,4 @@
         currentState.creaturewindow.Close()
         currentState.deletewindow.Close()
     End Sub
-
 End Module

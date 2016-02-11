@@ -98,7 +98,7 @@
         End Get
     End Property
 
-    Public ReadOnly Property savedate() As String
+    Public ReadOnly Property dateSaved() As String
         Get
             Return stateDateSaved.ToString
         End Get
@@ -122,7 +122,7 @@
         End Get
     End Property
 
-    Public ReadOnly Property gamedate() As String
+    Public ReadOnly Property dateInGame() As String
         Get
             Return stateGameDate
         End Get

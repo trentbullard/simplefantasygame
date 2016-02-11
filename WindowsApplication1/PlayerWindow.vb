@@ -20,8 +20,8 @@
 
     Private Sub creaturelst_SelectedIndexChanged(sender As Object, e As EventArgs) Handles creaturelst.SelectedIndexChanged
         If Not creaturelst.SelectedIndices(0) = -1 Then
-            currentCreatureWindow = New CreatureWindow
-            currentCreatureWindow.Show()
+            currentState.creaturewindow = New CreatureWindow
+            currentState.creaturewindow.Show()
         End If
     End Sub
 

@@ -1,15 +1,6 @@
-﻿fix datetime functionality
-create mob class
-	inherit from creature class
-home screen
-combat
-encounters
-teams
-skills
-	player
-	creature
-items
-	stats
-		multiples?
-		string/collection/array?
-	armor/weapons imbuing - runes/gems/baubles/charms?
+﻿classes
+	create mob class
+	combat
+	skills
+	items
+tavern population code

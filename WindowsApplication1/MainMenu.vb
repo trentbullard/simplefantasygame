@@ -51,6 +51,9 @@ Public Class MainMenu
             Else
                 currentState = New PlayerState(currentPlayer)
             End If
+            NewPlayerState(currentState)
+            currentState.townwindow = New TownWindow
+            currentState.townwindow.Show()
             Me.Close()
         End If
     End Sub
@@ -80,6 +83,27 @@ Public Class MainMenu
         End Try
     End Sub
 
+    Private Sub NewPlayerState(currentState As PlayerState)
+        Dim newRow As DataRow = GameDatabaseDataSet.Tables("PlayerStates").NewRow
+
+        newRow("playerid") = currentState.player.id
+        newRow("dateSaved") = currentState.dateSaved
+        newRow("currentPartyid") = currentState.party
+        newRow("currentTierid") = currentState.tier
+        newRow("currentQuestid") = currentState.quest
+        newRow("gameDate") = currentState.dateInGame
+
+        GameDatabaseDataSet.Tables("PlayerStates").Rows.Add(newRow)
+
+        Try
+            Validate()
+            PlayerStatesBindingSource.EndEdit()
+            PlayerStatesTableAdapter.Update(GameDatabaseDataSet.PlayerStates)
+        Catch ex As Exception
+            MsgBox("failed to add playerstate to database")
+        End Try
+    End Sub
+
     Private Sub LoadCreatures(creature As Creature)
         Dim newRow As DataRow = GameDatabaseDataSet.Tables("StaticCreatures").NewRow()
 
@@ -104,13 +128,13 @@ Public Class MainMenu
             StaticCreaturesTableAdapter.Update(GameDatabaseDataSet.StaticCreatures)
         Catch ex As Exception
             LogNewPlayer(newRow, False)  'from log.vb
-            MsgBox("Failed to add player to database.")
+            MsgBox("failed to add static creature to database.")
         End Try
     End Sub
 
     Private Sub playerDeletebtn_Click(sender As Object, e As EventArgs) Handles playerDeletebtn.Click
-        currentDeletePlayersWindow = New DeletePlayersWindow
-        currentDeletePlayersWindow.Show()
+        currentState.deletewindow = New DeletePlayersWindow
+        currentState.deletewindow.Show()
         Me.Close()
     End Sub
 End Class
