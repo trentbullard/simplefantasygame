@@ -1,4 +1,4 @@
 ﻿Module currentBattles
-    Public currentBattle As New battle()
+    Public currentBattle As New Battle()
     Public battleActive As Boolean = False
 End Module

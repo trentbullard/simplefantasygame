@@ -1,10 +1,10 @@
 ﻿Public Class PlayerState
     Private stateid As Integer
-    Private statePlayer As player
+    Private statePlayer As Player
     Private stateDateSaved As DateTime
-    Private stateParty As party
-    Private stateTier As tier
-    Private stateQuest As quest
+    Private stateParty As Party
+    Private stateTier As Tier
+    Private stateQuest As Quest
     Private stateGameDate As DateTime
     Private stateCombatWindow As CombatWindow
     Private stateDeletePlayersWindow As DeletePlayersWindow
@@ -20,11 +20,32 @@
 
     Public Sub New()
         stateid = -1
-        statePlayer = currentPlayer.id
+        statePlayer = currentPlayer
         stateDateSaved = DateTime.Now
-        stateParty = -1
-        stateTier = -1
-        stateQuest = -1
+        stateParty = New Party
+        stateTier = New Tier
+        stateQuest = New Quest
+        stateGameDate = "01/01/1000"
+        stateCombatWindow = New CombatWindow
+        stateDeletePlayersWindow = New DeletePlayersWindow
+        stateInnWindow = New InnWindow
+        stateMainMenu = New MainMenu
+        stateMarketWindow = New MarketWindow
+        stateNecromancerWindow = New NecromancerWindow
+        statePlayerWindow = New PlayerWindow
+        stateRoadWindow = New RoadWindow
+        stateTavernWindow = New TavernWindow
+        stateTownWindow = New TownWindow
+        stateCreatureWindow = New CreatureWindow
+    End Sub
+
+    Public Sub New(player As Player)
+        stateid = -1
+        statePlayer = player
+        stateDateSaved = DateTime.Now
+        stateParty = New Party
+        stateTier = New Tier
+        stateQuest = New Quest
         stateGameDate = "01/01/1000"
         stateCombatWindow = New CombatWindow
         stateDeletePlayersWindow = New DeletePlayersWindow
@@ -41,6 +62,11 @@
 
     Public Sub New(row As GameDatabaseDataSet.PlayerStatesRow)
         stateid = row("id")
+        If currentPlayer.id = row("id") Then
+            statePlayer = currentPlayer
+        Else
+            statePlayer = New Player()
+        End If
         statePlayer = row("playerid")
         stateDateSaved = row("dateSaved")
         stateParty = row("currentPartyid")
@@ -66,7 +92,7 @@
         End Get
     End Property
 
-    Public ReadOnly Property player() As player
+    Public ReadOnly Property player() As Player
         Get
             Return statePlayer
         End Get
@@ -78,19 +104,19 @@
         End Get
     End Property
 
-    Public ReadOnly Property party() As party
+    Public ReadOnly Property party() As Party
         Get
             Return stateParty
         End Get
     End Property
 
-    Public ReadOnly Property tier() As tier
+    Public ReadOnly Property tier() As Tier
         Get
             Return stateTier
         End Get
     End Property
 
-    Public ReadOnly Property quest() As quest
+    Public ReadOnly Property quest() As Quest
         Get
             Return stateQuest
         End Get
@@ -102,69 +128,102 @@
         End Get
     End Property
 
-    Public ReadOnly Property combatwindow() As CombatWindow
+    Public Property combatwindow() As CombatWindow
         Get
             Return stateCombatWindow
         End Get
+        Set(value As CombatWindow)
+            stateCombatWindow = value
+        End Set
     End Property
 
-    Public ReadOnly Property deletewindow() As DeletePlayersWindow
+    Public Property deletewindow() As DeletePlayersWindow
         Get
             Return stateDeletePlayersWindow
         End Get
+        Set(value As DeletePlayersWindow)
+            stateDeletePlayersWindow = value
+        End Set
     End Property
 
-    Public ReadOnly Property innwindow() As InnWindow
+    Public Property innwindow() As InnWindow
         Get
             Return stateInnWindow
         End Get
+        Set(value As InnWindow)
+            stateInnWindow = value
+        End Set
     End Property
 
-    Public ReadOnly Property mainmenu() As MainMenu
+    Public Property mainmenu() As MainMenu
         Get
             Return stateMainMenu
         End Get
+        Set(value As MainMenu)
+            stateMainMenu = value
+        End Set
     End Property
 
-    Public ReadOnly Property marketwindow() As MarketWindow
+    Public Property marketwindow() As MarketWindow
         Get
             Return stateMarketWindow
         End Get
+        Set(value As MarketWindow)
+            stateMarketWindow = value
+        End Set
     End Property
 
-    Public ReadOnly Property necrowindow() As NecromancerWindow
+    Public Property necrowindow() As NecromancerWindow
         Get
             Return stateNecromancerWindow
         End Get
+        Set(value As NecromancerWindow)
+            stateNecromancerWindow = value
+        End Set
     End Property
 
-    Public ReadOnly Property playerwindow() As PlayerWindow
+    Public Property playerwindow() As PlayerWindow
         Get
             Return statePlayerWindow
         End Get
+        Set(value As PlayerWindow)
+            statePlayerWindow = value
+        End Set
     End Property
 
-    Public ReadOnly Property roadwindow() As RoadWindow
+    Public Property roadwindow() As RoadWindow
         Get
             Return stateRoadWindow
         End Get
+        Set(value As RoadWindow)
+            stateRoadWindow = value
+        End Set
     End Property
 
-    Public ReadOnly Property tavernwindow() As TavernWindow
+    Public Property tavernwindow() As TavernWindow
         Get
             Return stateTavernWindow
         End Get
+        Set(value As TavernWindow)
+            stateTavernWindow = value
+        End Set
     End Property
 
-    Public ReadOnly Property townwindow() As TownWindow
+    Public Property townwindow() As TownWindow
         Get
             Return stateTownWindow
         End Get
+        Set(value As TownWindow)
+            stateTownWindow = value
+        End Set
     End Property
 
-    Public ReadOnly Property creaturewindow() As CreatureWindow
+    Public Property creaturewindow() As CreatureWindow
         Get
             Return stateCreatureWindow
         End Get
+        Set(value As CreatureWindow)
+            stateCreatureWindow = value
+        End Set
     End Property
 End Class

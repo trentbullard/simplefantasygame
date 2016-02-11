@@ -109,10 +109,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="attack.vb" />
-    <Compile Include="battle.vb" />
-    <Compile Include="consumable.vb" />
-    <Compile Include="creature.vb" />
+    <Compile Include="Battle.vb" />
+    <Compile Include="Consumable.vb" />
+    <Compile Include="Creature.vb" />
     <Compile Include="CreatureWindow.Designer.vb">
       <DependentUpon>CreatureWindow.vb</DependentUpon>
     </Compile>
@@ -129,7 +128,7 @@
     <Compile Include="DeletePlayersWindow.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="dice.vb" />
+    <Compile Include="Dice.vb" />
     <Compile Include="CombatWindow.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -150,10 +149,10 @@
     <Compile Include="InnWindow.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="inventory.vb" />
-    <Compile Include="item.vb" />
-    <Compile Include="list.vb" />
-    <Compile Include="log.vb" />
+    <Compile Include="Inventory.vb" />
+    <Compile Include="Item.vb" />
+    <Compile Include="Lists.vb" />
+    <Compile Include="Logs.vb" />
     <Compile Include="MainMenu.Designer.vb">
       <DependentUpon>MainMenu.vb</DependentUpon>
     </Compile>
@@ -189,7 +188,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Party.vb" />
-    <Compile Include="player.vb" />
+    <Compile Include="Player.vb" />
     <Compile Include="PlayerState.vb" />
     <Compile Include="PlayerWindow.Designer.vb">
       <DependentUpon>PlayerWindow.vb</DependentUpon>
@@ -211,7 +210,6 @@
     <Compile Include="TavernWindow.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="team.vb" />
     <Compile Include="Tier.vb" />
     <Compile Include="TownWindow.Designer.vb">
       <DependentUpon>TownWindow.vb</DependentUpon>

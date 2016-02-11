@@ -36,9 +36,12 @@ Partial Class MainMenu
         Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
         Me.StaticCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticCreaturesTableAdapter()
         Me.StaticCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayerStatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayerStatesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StaticCreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PlayerStatesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'titlelbl
@@ -163,6 +166,15 @@ Partial Class MainMenu
         Me.StaticCreaturesBindingSource.DataMember = "StaticCreatures"
         Me.StaticCreaturesBindingSource.DataSource = Me.GameDatabaseDataSet
         '
+        'PlayerStatesBindingSource
+        '
+        Me.PlayerStatesBindingSource.DataMember = "PlayerStates"
+        Me.PlayerStatesBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'PlayerStatesTableAdapter
+        '
+        Me.PlayerStatesTableAdapter.ClearBeforeFill = True
+        '
         'MainMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -180,6 +192,7 @@ Partial Class MainMenu
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StaticCreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PlayerStatesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -198,4 +211,6 @@ Partial Class MainMenu
     Friend WithEvents TableAdapterManager As GameDatabaseDataSetTableAdapters.TableAdapterManager
     Friend WithEvents StaticCreaturesTableAdapter As GameDatabaseDataSetTableAdapters.StaticCreaturesTableAdapter
     Friend WithEvents StaticCreaturesBindingSource As BindingSource
+    Friend WithEvents PlayerStatesBindingSource As BindingSource
+    Friend WithEvents PlayerStatesTableAdapter As GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter
 End Class

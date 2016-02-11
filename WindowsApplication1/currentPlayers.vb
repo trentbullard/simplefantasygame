@@ -1,4 +1,4 @@
 ﻿Module currentPlayers
-    Public currentPlayer As player
-    Public testPlayer As New player
+    Public currentPlayer As Player
+    Public testPlayer As New Player
 End Module

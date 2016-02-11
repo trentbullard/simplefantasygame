@@ -1,6 +1,6 @@
-﻿Public Class battle
+﻿Public Class Battle
     Private battleId As Integer
-    Private battlePlayer As player
+    Private battlePlayer As Player
 
     Public Sub New()
         battleId = -1
@@ -21,11 +21,11 @@
         End Set
     End Property
 
-    Public Property player() As player
+    Public Property player() As Player
         Get
             Return battlePlayer
         End Get
-        Set(value As player)
+        Set(value As Player)
             battlePlayer = value
         End Set
     End Property

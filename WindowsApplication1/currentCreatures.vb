@@ -1,5 +1,5 @@
 ﻿Module currentCreatures
-    Public currentCreature As New creature
+    Public currentCreature As New Creature
 
     Public Function strdiff()
         Return currentCreature.str - playerTarget.str

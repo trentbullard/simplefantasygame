@@ -1,4 +1,4 @@
-﻿Public Class creature
+﻿Public Class Creature
     Private creatureid As Integer
     Private creatureName As String
     Private creatureSpecies As String
@@ -13,7 +13,7 @@
     Private creatureIntelligence As Integer
     Private creatureWisdom As Integer
     Private creatureDexterity As Integer
-    Private creatureOwner As player
+    Private creatureOwner As Player
 
     Public Sub New()
         creatureid = -1
@@ -59,7 +59,7 @@
                    int As Integer,
                    wis As Integer,
                    dex As Integer,
-                   owner As player)
+                   owner As Player)
         creatureid = id
         creatureName = name
         creatureSpecies = species
@@ -180,7 +180,7 @@
         End Get
     End Property
 
-    Public ReadOnly Property owner() As player
+    Public ReadOnly Property owner() As Player
         Get
             Return creatureOwner
         End Get

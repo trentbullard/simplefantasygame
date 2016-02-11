@@ -1,8 +1,8 @@
 ﻿Public Class CombatWindow
-    Dim enemyCreature1 As New creature
-    Dim enemyCreature2 As New creature
-    Dim enemyCreature3 As New creature
-    Dim enemyCreature4 As New creature
+    Dim enemyCreature1 As New Creature
+    Dim enemyCreature2 As New Creature
+    Dim enemyCreature3 As New Creature
+    Dim enemyCreature4 As New Creature
 
     Private Sub CombatWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'GameDatabaseDataSet.Players' table. You can move, or remove it, as needed.

@@ -1,4 +1,4 @@
-﻿Module dice
+﻿Module Dice
     Dim die = New Random()
 
     Public Function Roll(number)

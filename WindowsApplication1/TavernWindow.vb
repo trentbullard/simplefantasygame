@@ -1,6 +1,6 @@
 ﻿Public Class TavernWindow
-    Private Shared tavernCreatures(4) As creature
-    Private Shared tavernQuests(3) As quest
+    Private Shared tavernCreatures(4) As Creature
+    Private Shared tavernQuests(3) As Quest
     Private Shared tavernVisited As Boolean = False
 
     Private Sub TavernWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -12,12 +12,12 @@
 
         For ctr = 0 To 3
             If Not PlayerCreaturesTableAdapter.GetDataByPlayerid(currentPlayer.id).Any And Not tavernVisited Then
-                tavernCreatures(ctr) = New creature(GameDatabaseDataSet.StaticCreatures(ctr))
+                tavernCreatures(ctr) = New Creature(GameDatabaseDataSet.StaticCreatures(ctr))
                 FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
             ElseIf Not PlayerCreaturesTableAdapter.GetDataByPlayerid(currentPlayer.id).Any And tavernVisited Then
                 FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
             ElseIf currentDate < currentPlayer.currentDate Then
-                tavernCreatures(ctr) = New creature(GameDatabaseDataSet.StaticCreatures(ctr))
+                tavernCreatures(ctr) = New Creature(GameDatabaseDataSet.StaticCreatures(ctr))
                 FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
             ElseIf Not tavernCreatures(ctr).name = "" And currentDate = currentPlayer.currentDate Then
                 FillCreatureSlot(tavernCreatures(ctr), ctr + 1)

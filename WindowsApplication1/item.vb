@@ -1,4 +1,4 @@
-﻿Public Class item
+﻿Public Class Item
     Private itemid As Integer
     Private itemOwner As player
     Private itemName As String

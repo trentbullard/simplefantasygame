@@ -1,4 +1,4 @@
-﻿Module log
+﻿Module Logs
     Private path As String
     Private logFilePath As String
     Private logGameText As String

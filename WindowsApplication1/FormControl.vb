@@ -2,28 +2,18 @@
     Public currentState As New PlayerState
 
     Public Sub OpenMainMenu()
-        currentMainMenu = New MainMenu
-        currentMainMenu.Show()
-        currentCombatWindow.Close()
-        currentCombatWindow = New CombatWindow
-        currentDeletePlayersWindow.Close()
-        currentDeletePlayersWindow = New DeletePlayersWindow
-        currentInnWindow.Close()
-        currentInnWindow = New InnWindow
-        currentMarketWindow.Close()
-        currentMarketWindow = New MarketWindow
-        currentNecromancerWindow.Close()
-        currentNecromancerWindow = New NecromancerWindow
-        currentPlayerWindow.Close()
-        currentPlayerWindow = New PlayerWindow
-        currentRoadWindow.Close()
-        currentRoadWindow = New RoadWindow
-        currentTavernWindow.Close()
-        currentTavernWindow = New TavernWindow
-        currentTownWindow.Close()
-        currentTownWindow = New TownWindow
-        currentCreatureWindow.Close()
-        currentCreatureWindow = New CreatureWindow
+        currentState = New PlayerState
+        currentState.mainmenu.Show()
+        currentState.combatwindow.Close()
+        currentState.innwindow.Close()
+        currentState.marketwindow.Close()
+        currentState.necrowindow.Close()
+        currentState.playerwindow.Close()
+        currentState.roadwindow.Close()
+        currentState.tavernwindow.Close()
+        currentState.townwindow.Close()
+        currentState.creaturewindow.Close()
+        currentState.deletewindow.Close()
     End Sub
 
 End Module

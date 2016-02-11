@@ -1,4 +1,4 @@
 ﻿Module Targets
-    Public playerTarget As New creature
-    Public enemyTarget As New creature
+    Public playerTarget As New Creature
+    Public enemyTarget As New Creature
 End Module

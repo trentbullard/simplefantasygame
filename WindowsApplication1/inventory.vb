@@ -1,12 +1,12 @@
-﻿Public Class inventory
+﻿Public Class Inventory
     Private inventoryid As Integer
-    Private inventoryOwner As player
+    Private inventoryOwner As Player
     Private inventoryName As String
     Private inventoryItems As Collection
 
     Public Sub New()
         inventoryid = -1
-        inventoryOwner = New player()
+        inventoryOwner = New Player()
         inventoryName = "name"
         inventoryItems = New Collection()
     End Sub

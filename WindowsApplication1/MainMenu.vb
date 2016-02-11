@@ -4,17 +4,18 @@ Imports System.Text
 
 Public Class MainMenu
     Private Sub MainMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        StaticCreaturesTableAdapter.Fill(GameDatabaseDataSet.StaticCreatures)
         PlayersTableAdapter.Fill(GameDatabaseDataSet.Players)
+        PlayerStatesTableAdapter.Fill(GameDatabaseDataSet.PlayerStates)
+        StaticCreaturesTableAdapter.Fill(GameDatabaseDataSet.StaticCreatures)
 
         For ctr = 1 To 50
-            LoadCreatures(New creature("creature " & ctr))
+            LoadCreatures(New Creature("creature " & ctr))
         Next
 
         StartLog()  'From log.vb
 
         For Each row As DataRow In GameDatabaseDataSet.Players
-            playerSelectlstv.Items.Add(New player(row).level)
+            playerSelectlstv.Items.Add(New Player(row).level)
             playerSelectlstv.Items(playerSelectlstv.Items.Count - 1).SubItems.Add(row("name").ToString)
         Next
     End Sub
@@ -30,7 +31,7 @@ Public Class MainMenu
         'Converts any string into a proper-cased trimmed string
         nameString = ProperCase(nameString)
 
-        Dim player As New player(nameString)
+        Dim player As New Player(nameString)
         NewPlayer(player)
         Try
             playerSelectlstv.Items.Add(player.level)
@@ -41,16 +42,20 @@ Public Class MainMenu
     End Sub
 
     Private Sub playerSelectlstv_SelectedIndexChanged(sender As Object, e As EventArgs) Handles playerSelectlstv.SelectedIndexChanged
-        Dim row As DataRow = GameDatabaseDataSet.Players(playerSelectlstv.SelectedIndices(0))
         If Not playerSelectlstv.SelectedIndices(0) = -1 Then
-            currentPlayer = New player(row("id"), row("name"), row("level"), row("experience"), row("gold"), testPlayer.currentDate)
-            currentTownWindow = New TownWindow
-            currentTownWindow.Show()
+            Dim playerRow As DataRow = PlayersTableAdapter.GetPlayerByid(playerSelectlstv.SelectedIndices(0)).First
+            Dim playerStateRow As DataRow = PlayerStatesTableAdapter.GetLastPlayerStateByPlayerid(playerRow("id")).First
+            currentPlayer = New Player(playerRow)
+            If PlayerStatesTableAdapter.GetLastPlayerStateByPlayerid(currentPlayer.id).Any Then
+                currentState = New PlayerState(playerStateRow)
+            Else
+                currentState = New PlayerState(currentPlayer)
+            End If
             Me.Close()
         End If
     End Sub
 
-    Private Sub NewPlayer(player As player)
+    Private Sub NewPlayer(player As Player)
         Dim newRow As DataRow = GameDatabaseDataSet.Tables("Players").NewRow()
 
         newRow("name") = player.name
@@ -75,7 +80,7 @@ Public Class MainMenu
         End Try
     End Sub
 
-    Private Sub LoadCreatures(creature As creature)
+    Private Sub LoadCreatures(creature As Creature)
         Dim newRow As DataRow = GameDatabaseDataSet.Tables("StaticCreatures").NewRow()
 
         newRow("species") = creature.species
@@ -107,12 +112,5 @@ Public Class MainMenu
         currentDeletePlayersWindow = New DeletePlayersWindow
         currentDeletePlayersWindow.Show()
         Me.Close()
-    End Sub
-
-    Private Sub PlayersBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
-        Me.Validate()
-        Me.PlayersBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.GameDatabaseDataSet)
-
     End Sub
 End Class

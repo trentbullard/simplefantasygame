@@ -1,5 +1,5 @@
 ﻿Public Class DeletePlayersWindow
-    Dim playerSelection As New player
+    Dim playerSelection As New Player
 
     Private Sub DeletePlayersWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PlayersTableAdapter.Fill(GameDatabaseDataSet.Players)
@@ -7,7 +7,7 @@
         StartLog()  'From log.vb
 
         For Each row As DataRow In GameDatabaseDataSet.Players
-            deletePlayerslst.Items.Add(New player(row))
+            deletePlayerslst.Items.Add(New Player(row))
         Next
     End Sub
 

@@ -1,4 +1,4 @@
-﻿Public Class consumable : Inherits item
+﻿Public Class Consumable : Inherits Item
     Private consumableAttributes As New Collection
 
     Public Sub New()

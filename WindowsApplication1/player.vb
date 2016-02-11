@@ -1,10 +1,9 @@
-﻿Public Class player
+﻿Public Class Player
     Private playerid As Integer
     Private playerName As String
     Private playerLevel As Integer
     Private playerExperience As Integer
     Private playerGold As Integer
-    Private playerDateTime As DateTime
 
     Public Sub New()
         playerid = -1
@@ -12,7 +11,6 @@
         playerLevel = 1
         playerExperience = 1
         playerGold = 4
-        playerDateTime = "01/01/1000"
     End Sub
 
     Public Sub New(name As String)
@@ -21,16 +19,14 @@
         playerLevel = 1
         playerExperience = 1
         playerGold = 4
-        playerDateTime = "01/01/1000"
     End Sub
 
-    Public Sub New(id As Integer, name As String, level As Integer, exp As Integer, gold As Integer, playerDate As DateTime)
+    Public Sub New(id As Integer, name As String, level As Integer, exp As Integer, gold As Integer)
         playerid = id
         playerName = name
         playerLevel = level
         playerExperience = exp
         playerGold = gold
-        playerDateTime = playerDate
     End Sub
 
     Public Sub New(row As GameDatabaseDataSet.PlayersRow)
@@ -39,7 +35,6 @@
         playerLevel = row("level")
         playerExperience = row("experience")
         playerGold = row("gold")
-        playerDateTime = currentPlayer.currentDate
     End Sub
 
     Public ReadOnly Property id() As Integer
@@ -72,15 +67,6 @@
         End Get
     End Property
 
-    Public Property currentDate() As DateTime
-        Get
-            Return playerDateTime
-        End Get
-        Set(value As DateTime)
-            playerDateTime = value
-        End Set
-    End Property
-
     Public Overrides Function ToString() As String
         Return "(" & playerLevel & ") " & playerName
     End Function
@@ -111,13 +97,5 @@
 
     Public Sub ReName(newName)
         playerName = newName
-    End Sub
-
-    Public Sub changeDate(amount As TimeSpan)
-        If amount < TimeSpan.Zero Then
-            playerDateTime = playerDateTime.Subtract(amount)
-        Else
-            playerDateTime = playerDateTime.Add(amount)
-        End If
     End Sub
 End Class

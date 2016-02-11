@@ -1,4 +1,4 @@
-﻿Module list
+﻿Module Lists
     Dim namesList = New String() {"trent", "john", "matthew", "mark", "luke", "george", "ronald", "paul", "isaac", "abraham", "jacob"}
     Dim speciesList = New String() {"human", "elf", "orc", "dwarf", "halfling", "ogre", "troll", "goblin"}
 
