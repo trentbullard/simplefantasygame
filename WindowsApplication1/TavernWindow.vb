@@ -9,41 +9,52 @@
         PlayersTableAdapter.Fill(GameDatabaseDataSet.Players)
         PlayerCreaturesTableAdapter.Fill(GameDatabaseDataSet.PlayerCreatures)
 
-        For ctr = 0 To 3
-            If Not PlayerCreaturesTableAdapter.GetDataByPlayerid(currentPlayer.id).Any And dateVisited = Nothing Then
+        If TavernStatesTableAdapter.GetLastTavernStateByPlayerStateid(currentState.id).Any Then
+            Dim tavernStateid As Integer = TavernStatesTableAdapter.GetLastTavernStateByPlayerStateid(currentState.id)(0)("id")
+            For ctr = 0 To 3
+                tavernCreatures(ctr) = New Creature(StaticCreaturesTableAdapter.GetCreaturesByTavernStateid(tavernStateid)(ctr))
+            Next
+            For ctr = 0 To 3
+                If dateVisited = currentState.dateInGame Then
+                    If Not tavernCreatures(ctr).name = "" Then
+                        FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
+                    End If
+                End If
+            Next
+        Else
+            For ctr = 0 To 3
                 tavernCreatures(ctr) = New Creature(GameDatabaseDataSet.StaticCreatures(ctr))
                 FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
-            ElseIf Not PlayerCreaturesTableAdapter.GetDataByPlayerid(currentPlayer.id).Any And dateVisited = currentState.dateInGame Then
+            Next
+        End If
+
+
+
+
+
+
+
+
+
+
+
+        For ctr = 0 To 3
+            If dateVisited = currentState.dateInGame Then
                 FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
             ElseIf dateVisited < currentState.dateInGame Then
                 tavernCreatures(ctr) = New Creature(GameDatabaseDataSet.StaticCreatures(ctr))
                 FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
             ElseIf Not tavernCreatures(ctr).name = "" And dateVisited = currentState.dateInGame Then
                 FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
+
+
             Else
                 ClearCreatureSlot(ctr + 1)
                 Continue For
             End If
-            Select Case ctr
-                Case 0
-                    tavernSlot1Hirebtn.Enabled = True
-                    tavernSlot1Nametxt.ReadOnly = False
-                    tavernSlot1Nametxt.Text = getName()
-                Case 1
-                    tavernSlot2Hirebtn.Enabled = True
-                    tavernSlot2Nametxt.ReadOnly = False
-                    tavernSlot2Nametxt.Text = getName()
-                Case 2
-                    tavernSlot3Hirebtn.Enabled = True
-                    tavernSlot3Nametxt.ReadOnly = False
-                    tavernSlot3Nametxt.Text = getName()
-                Case 3
-                    tavernSlot4Hirebtn.Enabled = True
-                    tavernSlot4Nametxt.ReadOnly = False
-                    tavernSlot4Nametxt.Text = getName()
-            End Select
         Next
         dateVisited = currentState.dateInGame
+        NewTavernState()
     End Sub
 
     Private Sub tavernSlot1Hirebtn_Click(sender As Object, e As EventArgs) Handles tavernSlot1Hirebtn.Click
@@ -99,7 +110,7 @@
     Private Sub FillCreatureSlot(creature, slot)
         Select Case slot
             Case 1
-                tavernSlot1Nametxt.Text = creature.name
+                tavernSlot1Nametxt.Text = getName()
                 tavernSlot1Leveltxt.Text = creature.level
                 tavernSlot1Speciestxt.Text = creature.species
                 tavernSlot1Healthtxt.Text = creature.health
@@ -110,8 +121,10 @@
                 tavernSlot1Wisdomtxt.Text = creature.wis
                 tavernSlot1Dexteritytxt.Text = creature.dex
                 tavernSlot1Hirebtn.Text = "hire for " & creature.level & " gold"
+                tavernSlot1Hirebtn.Enabled = True
+                tavernSlot1Nametxt.ReadOnly = False
             Case 2
-                tavernSlot2Nametxt.Text = creature.name
+                tavernSlot2Nametxt.Text = getName()
                 tavernSlot2Leveltxt.Text = creature.level
                 tavernSlot2Speciestxt.Text = creature.species
                 tavernSlot2Healthtxt.Text = creature.health
@@ -122,8 +135,10 @@
                 tavernSlot2Wisdomtxt.Text = creature.wis
                 tavernSlot2Dexteritytxt.Text = creature.dex
                 tavernSlot2Hirebtn.Text = "hire for " & creature.level & " gold"
+                tavernSlot2Hirebtn.Enabled = True
+                tavernSlot2Nametxt.ReadOnly = False
             Case 3
-                tavernSlot3Nametxt.Text = creature.name
+                tavernSlot3Nametxt.Text = getName()
                 tavernSlot3Leveltxt.Text = creature.level
                 tavernSlot3Speciestxt.Text = creature.species
                 tavernSlot3Healthtxt.Text = creature.health
@@ -134,8 +149,10 @@
                 tavernSlot3Wisdomtxt.Text = creature.wis
                 tavernSlot3Dexteritytxt.Text = creature.dex
                 tavernSlot3Hirebtn.Text = "hire for " & creature.level & " gold"
+                tavernSlot3Hirebtn.Enabled = True
+                tavernSlot3Nametxt.ReadOnly = False
             Case 4
-                tavernSlot4Nametxt.Text = creature.name
+                tavernSlot4Nametxt.Text = getName()
                 tavernSlot4Leveltxt.Text = creature.level
                 tavernSlot4Speciestxt.Text = creature.species
                 tavernSlot4Healthtxt.Text = creature.health
@@ -146,6 +163,8 @@
                 tavernSlot4Wisdomtxt.Text = creature.wis
                 tavernSlot4Dexteritytxt.Text = creature.dex
                 tavernSlot4Hirebtn.Text = "hire for " & creature.level & " gold"
+                tavernSlot4Hirebtn.Enabled = True
+                tavernSlot4Nametxt.ReadOnly = False
         End Select
     End Sub
 
