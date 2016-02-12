@@ -38,11 +38,11 @@ Partial Class DeletePlayersWindow
         '
         Me.deletePlayersListlbl.AutoSize = True
         Me.deletePlayersListlbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.deletePlayersListlbl.Location = New System.Drawing.Point(53, 22)
+        Me.deletePlayersListlbl.Location = New System.Drawing.Point(56, 22)
         Me.deletePlayersListlbl.Name = "deletePlayersListlbl"
-        Me.deletePlayersListlbl.Size = New System.Drawing.Size(165, 17)
+        Me.deletePlayersListlbl.Size = New System.Drawing.Size(159, 17)
         Me.deletePlayersListlbl.TabIndex = 1
-        Me.deletePlayersListlbl.Text = "Select 1 player to delete."
+        Me.deletePlayersListlbl.Text = "select a player to delete"
         '
         'deletePlayersbtn
         '
@@ -50,7 +50,7 @@ Partial Class DeletePlayersWindow
         Me.deletePlayersbtn.Name = "deletePlayersbtn"
         Me.deletePlayersbtn.Size = New System.Drawing.Size(75, 23)
         Me.deletePlayersbtn.TabIndex = 2
-        Me.deletePlayersbtn.Text = "Delete"
+        Me.deletePlayersbtn.Text = "delete"
         Me.deletePlayersbtn.UseVisualStyleBackColor = True
         '
         'deletePlayerslst
@@ -122,7 +122,7 @@ Partial Class DeletePlayersWindow
         Me.Controls.Add(Me.deletePlayersListlbl)
         Me.Name = "DeletePlayersWindow"
         Me.ShowIcon = False
-        Me.Text = "Delete Players"
+        Me.Text = "delete player"
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

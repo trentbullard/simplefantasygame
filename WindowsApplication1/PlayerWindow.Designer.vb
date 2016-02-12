@@ -44,10 +44,10 @@ Partial Class PlayerWindow
         Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
         Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
-        Me.PlayerCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerCreaturesTableAdapter()
-        Me.StaticCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticCreaturesTableAdapter()
         Me.StaticCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticCreaturesTableAdapter()
         Me.PlayerCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayerCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerCreaturesTableAdapter()
         Me.playerStatspnl.SuspendLayout()
         Me.playerMenuStrip.SuspendLayout()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -82,7 +82,7 @@ Partial Class PlayerWindow
         Me.creaturelst.FormattingEnabled = True
         Me.creaturelst.Location = New System.Drawing.Point(12, 107)
         Me.creaturelst.Name = "creaturelst"
-        Me.creaturelst.Size = New System.Drawing.Size(300, 160)
+        Me.creaturelst.Size = New System.Drawing.Size(300, 134)
         Me.creaturelst.TabIndex = 17
         '
         'playerInfoPanellbl
@@ -264,23 +264,23 @@ Partial Class PlayerWindow
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.WeaponAugmentsTableAdapter = Nothing
         '
-        'PlayerCreaturesTableAdapter
-        '
-        Me.PlayerCreaturesTableAdapter.ClearBeforeFill = True
-        '
-        'StaticCreaturesTableAdapter
-        '
-        Me.StaticCreaturesTableAdapter.ClearBeforeFill = True
-        '
         'StaticCreaturesBindingSource
         '
         Me.StaticCreaturesBindingSource.DataMember = "StaticCreatures"
         Me.StaticCreaturesBindingSource.DataSource = Me.GameDatabaseDataSet
         '
+        'StaticCreaturesTableAdapter
+        '
+        Me.StaticCreaturesTableAdapter.ClearBeforeFill = True
+        '
         'PlayerCreaturesBindingSource
         '
         Me.PlayerCreaturesBindingSource.DataMember = "PlayerCreatures"
         Me.PlayerCreaturesBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'PlayerCreaturesTableAdapter
+        '
+        Me.PlayerCreaturesTableAdapter.ClearBeforeFill = True
         '
         'PlayerWindow
         '

@@ -11,7 +11,7 @@
         StaticCreaturesTableAdapter.Fill(GameDatabaseDataSet.StaticCreatures)
         PlayerCreaturesTableAdapter.FillByPlayerid(GameDatabaseDataSet.PlayerCreatures, currentPlayer.id)
 
-        For Each row As DataRow In PlayerCreaturesTableAdapter.GetDataByPlayerid(currentPlayer.id)
+        For Each row As DataRow In PlayerCreaturesTableAdapter.GetCreaturesByPlayerid(currentPlayer.id)
             Dim creation As New Creature(StaticCreaturesTableAdapter.GetCreatureByid(row("creatureid"))(0))
             creation.name = ProperCase(row("name"))
             creaturelst.Items.Add(creation.ToString)
@@ -51,6 +51,13 @@
     End Sub
 
     Private Sub PlayersBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
+        Me.Validate()
+        Me.PlayersBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.GameDatabaseDataSet)
+
+    End Sub
+
+    Private Sub PlayersBindingNavigatorSaveItem_Click_1(sender As Object, e As EventArgs)
         Me.Validate()
         Me.PlayersBindingSource.EndEdit()
         Me.TableAdapterManager.UpdateAll(Me.GameDatabaseDataSet)

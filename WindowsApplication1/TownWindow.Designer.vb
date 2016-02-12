@@ -42,18 +42,15 @@ Partial Class TownWindow
         Me.tavernbtn = New System.Windows.Forms.Button()
         Me.innbtn = New System.Windows.Forms.Button()
         Me.GameDatabaseDataSet = New WindowsApplication1.GameDatabaseDataSet()
+        Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
         Me.PlayerCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayerCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerCreaturesTableAdapter()
-        Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
-        Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
         Me.PlayerStatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayerStatesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter()
         Me.townpnl.SuspendLayout()
         Me.datepnl.SuspendLayout()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayerCreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayerStatesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -260,15 +257,6 @@ Partial Class TownWindow
         Me.GameDatabaseDataSet.DataSetName = "GameDatabaseDataSet"
         Me.GameDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'PlayerCreaturesBindingSource
-        '
-        Me.PlayerCreaturesBindingSource.DataMember = "PlayerCreatures"
-        Me.PlayerCreaturesBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'PlayerCreaturesTableAdapter
-        '
-        Me.PlayerCreaturesTableAdapter.ClearBeforeFill = True
-        '
         'TableAdapterManager
         '
         Me.TableAdapterManager.ArmorAugmentsTableAdapter = Nothing
@@ -287,7 +275,7 @@ Partial Class TownWindow
         Me.TableAdapterManager.PlayerPartiesTableAdapter = Nothing
         Me.TableAdapterManager.PlayerSkillsTableAdapter = Nothing
         Me.TableAdapterManager.PlayersTableAdapter = Nothing
-        Me.TableAdapterManager.PlayerStatesTableAdapter = Nothing
+        Me.TableAdapterManager.PlayerStatesTableAdapter = Me.PlayerStatesTableAdapter
         Me.TableAdapterManager.PlayerWeaponsTableAdapter = Nothing
         Me.TableAdapterManager.ScholarStateItemsTableAdapter = Nothing
         Me.TableAdapterManager.ScholarStatesTableAdapter = Nothing
@@ -306,14 +294,14 @@ Partial Class TownWindow
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.WeaponAugmentsTableAdapter = Nothing
         '
-        'PlayersBindingSource
+        'PlayerCreaturesBindingSource
         '
-        Me.PlayersBindingSource.DataMember = "Players"
-        Me.PlayersBindingSource.DataSource = Me.GameDatabaseDataSet
+        Me.PlayerCreaturesBindingSource.DataMember = "PlayerCreatures"
+        Me.PlayerCreaturesBindingSource.DataSource = Me.GameDatabaseDataSet
         '
-        'PlayersTableAdapter
+        'PlayerCreaturesTableAdapter
         '
-        Me.PlayersTableAdapter.ClearBeforeFill = True
+        Me.PlayerCreaturesTableAdapter.ClearBeforeFill = True
         '
         'PlayerStatesBindingSource
         '
@@ -334,14 +322,13 @@ Partial Class TownWindow
         Me.Name = "TownWindow"
         Me.ShowIcon = False
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
-        Me.Text = "TownWindow"
+        Me.Text = "town"
         Me.townpnl.ResumeLayout(False)
         Me.townpnl.PerformLayout()
         Me.datepnl.ResumeLayout(False)
         Me.datepnl.PerformLayout()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayerCreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayerStatesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -360,15 +347,13 @@ Partial Class TownWindow
     Friend WithEvents innlbl As Label
     Friend WithEvents playerbtn As Button
     Friend WithEvents add1Weekbtn As Button
-    Friend WithEvents GameDatabaseDataSet As GameDatabaseDataSet
-    Friend WithEvents PlayerCreaturesBindingSource As BindingSource
-    Friend WithEvents PlayerCreaturesTableAdapter As GameDatabaseDataSetTableAdapters.PlayerCreaturesTableAdapter
-    Friend WithEvents TableAdapterManager As GameDatabaseDataSetTableAdapters.TableAdapterManager
-    Friend WithEvents PlayersBindingSource As BindingSource
-    Friend WithEvents PlayersTableAdapter As GameDatabaseDataSetTableAdapters.PlayersTableAdapter
     Friend WithEvents datelbl As Label
     Friend WithEvents datepnl As Panel
-    Friend WithEvents PlayerStatesBindingSource As BindingSource
-    Friend WithEvents PlayerStatesTableAdapter As GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter
     Friend WithEvents dateLabellbl As Label
+    Friend WithEvents GameDatabaseDataSet As GameDatabaseDataSet
+    Friend WithEvents TableAdapterManager As GameDatabaseDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents PlayerCreaturesTableAdapter As GameDatabaseDataSetTableAdapters.PlayerCreaturesTableAdapter
+    Friend WithEvents PlayerCreaturesBindingSource As BindingSource
+    Friend WithEvents PlayerStatesTableAdapter As GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter
+    Friend WithEvents PlayerStatesBindingSource As BindingSource
 End Class

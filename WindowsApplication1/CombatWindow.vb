@@ -5,10 +5,6 @@
     Dim enemyCreature4 As New Creature
 
     Private Sub CombatWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'GameDatabaseDataSet.Players' table. You can move, or remove it, as needed.
-        Me.PlayersTableAdapter.Fill(Me.GameDatabaseDataSet.Players)
-        Me.PlayersTableAdapter.Fill(Me.GameDatabaseDataSet.Players)
-
         Me.Text = "Simple Fantasy Game - Level " & currentPlayer.level & " " & currentPlayer.name
         playerTeamlbl.Text = currentPlayer.name & "'s Team"
 
@@ -26,7 +22,7 @@
     End Sub
 
     Private Sub mainMenubtn_Click(sender As Object, e As EventArgs) Handles mainMenubtn.Click
-        UpdateDatabase()
+        'UpdateDatabase()
         currentState.mainmenu = New MainMenu
         currentState.mainmenu.Show()
         Me.Close()
@@ -64,18 +60,18 @@
 
     End Sub
 
-    Private Sub UpdateDatabase()
-        GameDatabaseDataSet.Players(currentPlayer.id - 1).level = currentPlayer.level
-        GameDatabaseDataSet.Players(currentPlayer.id - 1).experience = currentPlayer.exp
-        GameDatabaseDataSet.Players(currentPlayer.id - 1).gold = currentPlayer.gold
-        PlayersBindingSource.EndEdit()
-        PlayersTableAdapter.Update(GameDatabaseDataSet.Players)
-    End Sub
+    'Private Sub UpdateDatabase()
+    '    GameDatabaseDataSet.Players(currentPlayer.id - 1).level = currentPlayer.level
+    '    GameDatabaseDataSet.Players(currentPlayer.id - 1).experience = currentPlayer.exp
+    '    GameDatabaseDataSet.Players(currentPlayer.id - 1).gold = currentPlayer.gold
+    '    PlayersBindingSource.EndEdit()
+    '    PlayersTableAdapter.Update(GameDatabaseDataSet.Players)
+    'End Sub
 
-    Private Sub PlayersBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
-        Me.Validate()
-        Me.PlayersBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.GameDatabaseDataSet)
+    'Private Sub PlayersBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
+    '    Me.Validate()
+    '    Me.PlayersBindingSource.EndEdit()
+    '    Me.TableAdapterManager.UpdateAll(Me.GameDatabaseDataSet)
 
-    End Sub
+    'End Sub
 End Class

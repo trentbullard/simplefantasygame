@@ -279,6 +279,7 @@
         newRow("questSlot1id") = tavernQuests(0).id
         newRow("questSlot2id") = tavernQuests(1).id
         newRow("questSlot3id") = tavernQuests(2).id
+        newRow("dateVisited") = currentState.dateInGame
 
         GameDatabaseDataSet.Tables("TavernStates").Rows.Add(newRow)
 
@@ -289,6 +290,13 @@
         Catch ex As Exception
             MsgBox("Failed to add tavern state to database.")
         End Try
+
+    End Sub
+
+    Private Sub TavernStatesBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
+        Me.Validate()
+        Me.TavernStatesBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.GameDatabaseDataSet)
 
     End Sub
 End Class

@@ -52,4 +52,11 @@
         Me.TableAdapterManager.UpdateAll(Me.GameDatabaseDataSet)
 
     End Sub
+
+    Private Sub PlayersBindingNavigatorSaveItem_Click_2(sender As Object, e As EventArgs)
+        Me.Validate()
+        Me.PlayersBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.GameDatabaseDataSet)
+
+    End Sub
 End Class

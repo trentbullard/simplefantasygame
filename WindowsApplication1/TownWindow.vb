@@ -10,7 +10,7 @@
             marketlbl.Hide()
             necromancerlbl.Hide()
             roadlbl.Hide()
-        ElseIf Not PlayerCreaturesTableAdapter.GetDataByPlayerid(currentPlayer.id).Any Then
+        ElseIf Not PlayerCreaturesTableAdapter.GetCreaturesByPlayerid(currentPlayer.id).Any Then
             innbtn.Enabled = False
             marketbtn.Enabled = False
             necromancerbtn.Enabled = False
@@ -72,7 +72,7 @@
             necromancerbtn.Enabled = True
             roadlbl.Hide()
             roadbtn.Enabled = True
-        ElseIf Not PlayerCreaturesTableAdapter.GetDataByPlayerid(currentPlayer.id).Any Then
+        ElseIf Not PlayerCreaturesTableAdapter.GetCreaturesByPlayerid(currentPlayer.id).Any Then
             innbtn.Enabled = False
             marketbtn.Enabled = False
             necromancerbtn.Enabled = False
@@ -98,18 +98,13 @@
     Private Sub add1Weekbtn_Click(sender As Object, e As EventArgs) Handles add1Weekbtn.Click
         currentState.changeDate(TimeSpan.FromDays(7))
         datelbl.Text = currentState.dateInGame.ToString
-        'Try
-        '    Validate()
-        '    GameDatabaseDataSet.PlayerStates(currentState.id - 1).gameDate = currentState.dateInGame
-        '    PlayerStatesBindingSource.EndEdit()
-        '    PlayerStatesTableAdapter.Update(GameDatabaseDataSet.PlayerStates)
-        'Catch ex As Exception
-        '    MsgBox("unable to update playerstate in database.")
-        'End Try
-
-        Validate()
-        GameDatabaseDataSet.PlayerStates(currentState.id - 1).gameDate = currentState.dateInGame
-        PlayerStatesBindingSource.EndEdit()
-        PlayerStatesTableAdapter.Update(GameDatabaseDataSet.PlayerStates)
+        Try
+            Validate()
+            GameDatabaseDataSet.PlayerStates(currentState.id - 1).gameDate = currentState.dateInGame
+            PlayerStatesBindingSource.EndEdit()
+            PlayerStatesTableAdapter.Update(GameDatabaseDataSet.PlayerStates)
+        Catch ex As Exception
+            MsgBox("unable to update playerstate in database.")
+        End Try
     End Sub
 End Class

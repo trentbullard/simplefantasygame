@@ -22,7 +22,6 @@ Partial Class CombatWindow
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.Combatpnl = New System.Windows.Forms.Panel()
         Me.enemyTeampnl = New System.Windows.Forms.Panel()
         Me.enemySlot4Targetlbl = New System.Windows.Forms.Label()
@@ -159,10 +158,6 @@ Partial Class CombatWindow
         Me.playerInfoPanellbl = New System.Windows.Forms.Label()
         Me.playerExperiencelbl = New System.Windows.Forms.Label()
         Me.playerExperiencebar = New System.Windows.Forms.ProgressBar()
-        Me.GameDatabaseDataSet = New WindowsApplication1.GameDatabaseDataSet()
-        Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
-        Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
         Me.Combatpnl.SuspendLayout()
         Me.enemyTeampnl.SuspendLayout()
         Me.enemySlot2pnl.SuspendLayout()
@@ -178,8 +173,6 @@ Partial Class CombatWindow
         Me.inventorypnl.SuspendLayout()
         Me.playerInfopnl.SuspendLayout()
         Me.playerStatspnl.SuspendLayout()
-        CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Combatpnl
@@ -1453,57 +1446,6 @@ Partial Class CombatWindow
         Me.playerExperiencebar.Step = 1
         Me.playerExperiencebar.TabIndex = 13
         '
-        'GameDatabaseDataSet
-        '
-        Me.GameDatabaseDataSet.DataSetName = "GameDatabaseDataSet"
-        Me.GameDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'PlayersBindingSource
-        '
-        Me.PlayersBindingSource.DataMember = "Players"
-        Me.PlayersBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'PlayersTableAdapter
-        '
-        Me.PlayersTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.ArmorAugmentsTableAdapter = Nothing
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.BattlesTableAdapter = Nothing
-        Me.TableAdapterManager.BlacksmithStateItemsTableAdapter = Nothing
-        Me.TableAdapterManager.BlacksmithStatesTableAdapter = Nothing
-        Me.TableAdapterManager.ChemistStateItemsTableAdapter = Nothing
-        Me.TableAdapterManager.ChemistStatesTableAdapter = Nothing
-        Me.TableAdapterManager.EnemyPartiesTableAdapter = Nothing
-        Me.TableAdapterManager.FarmerStateItemsTableAdapter = Nothing
-        Me.TableAdapterManager.FarmerStatesTableAdapter = Nothing
-        Me.TableAdapterManager.PlayerArmorTableAdapter = Nothing
-        Me.TableAdapterManager.PlayerConsumablesTableAdapter = Nothing
-        Me.TableAdapterManager.PlayerCreaturesTableAdapter = Nothing
-        Me.TableAdapterManager.PlayerPartiesTableAdapter = Nothing
-        Me.TableAdapterManager.PlayerSkillsTableAdapter = Nothing
-        Me.TableAdapterManager.PlayersTableAdapter = Me.PlayersTableAdapter
-        Me.TableAdapterManager.PlayerStatesTableAdapter = Nothing
-        Me.TableAdapterManager.PlayerWeaponsTableAdapter = Nothing
-        Me.TableAdapterManager.ScholarStateItemsTableAdapter = Nothing
-        Me.TableAdapterManager.ScholarStatesTableAdapter = Nothing
-        Me.TableAdapterManager.StaticArmorTableAdapter = Nothing
-        Me.TableAdapterManager.StaticAugmentsTableAdapter = Nothing
-        Me.TableAdapterManager.StaticCampTableAdapter = Nothing
-        Me.TableAdapterManager.StaticCampTierTableAdapter = Nothing
-        Me.TableAdapterManager.StaticConsumablesTableAdapter = Nothing
-        Me.TableAdapterManager.StaticCreaturesTableAdapter = Nothing
-        Me.TableAdapterManager.StaticMobsTableAdapter = Nothing
-        Me.TableAdapterManager.StaticQuestsTableAdapter = Nothing
-        Me.TableAdapterManager.StaticSkillsTableAdapter = Nothing
-        Me.TableAdapterManager.StaticWeaponsTableAdapter = Nothing
-        Me.TableAdapterManager.TavernStatesTableAdapter = Nothing
-        Me.TableAdapterManager.TurnsTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager.WeaponAugmentsTableAdapter = Nothing
-        '
         'CombatWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1549,8 +1491,6 @@ Partial Class CombatWindow
         Me.playerInfopnl.ResumeLayout(False)
         Me.playerStatspnl.ResumeLayout(False)
         Me.playerStatspnl.PerformLayout()
-        CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1693,8 +1633,4 @@ Partial Class CombatWindow
     Friend WithEvents playerStatspnl As Panel
     Friend WithEvents playerExperiencelbl As Label
     Friend WithEvents playerInfoPanellbl As Label
-    Friend WithEvents GameDatabaseDataSet As GameDatabaseDataSet
-    Friend WithEvents PlayersBindingSource As BindingSource
-    Friend WithEvents PlayersTableAdapter As GameDatabaseDataSetTableAdapters.PlayersTableAdapter
-    Friend WithEvents TableAdapterManager As GameDatabaseDataSetTableAdapters.TableAdapterManager
 End Class

@@ -34,34 +34,34 @@ Partial Class MainMenu
         Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
         Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
-        Me.StaticCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticCreaturesTableAdapter()
-        Me.StaticCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayerStatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayerStatesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter()
+        Me.StaticCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticCreaturesTableAdapter()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.StaticCreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayerStatesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.StaticCreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'titlelbl
         '
         Me.titlelbl.AutoSize = True
         Me.titlelbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.titlelbl.Location = New System.Drawing.Point(13, 18)
+        Me.titlelbl.Location = New System.Drawing.Point(22, 18)
         Me.titlelbl.Name = "titlelbl"
-        Me.titlelbl.Size = New System.Drawing.Size(205, 24)
+        Me.titlelbl.Size = New System.Drawing.Size(186, 24)
         Me.titlelbl.TabIndex = 0
-        Me.titlelbl.Text = "Fantasy Game by Trent"
+        Me.titlelbl.Text = "fantasy game by trent"
         '
         'playerSelectionlbl
         '
         Me.playerSelectionlbl.AutoSize = True
-        Me.playerSelectionlbl.Location = New System.Drawing.Point(65, 53)
+        Me.playerSelectionlbl.Location = New System.Drawing.Point(67, 53)
         Me.playerSelectionlbl.Name = "playerSelectionlbl"
-        Me.playerSelectionlbl.Size = New System.Drawing.Size(97, 13)
+        Me.playerSelectionlbl.Size = New System.Drawing.Size(96, 13)
         Me.playerSelectionlbl.TabIndex = 2
-        Me.playerSelectionlbl.Text = "Choose your player"
+        Me.playerSelectionlbl.Text = "choose your player"
         '
         'playerNewbtn
         '
@@ -69,7 +69,7 @@ Partial Class MainMenu
         Me.playerNewbtn.Name = "playerNewbtn"
         Me.playerNewbtn.Size = New System.Drawing.Size(75, 23)
         Me.playerNewbtn.TabIndex = 3
-        Me.playerNewbtn.Text = "New"
+        Me.playerNewbtn.Text = "new"
         Me.playerNewbtn.UseVisualStyleBackColor = True
         '
         'playerSelectlstv
@@ -103,7 +103,7 @@ Partial Class MainMenu
         Me.playerDeletebtn.Name = "playerDeletebtn"
         Me.playerDeletebtn.Size = New System.Drawing.Size(75, 23)
         Me.playerDeletebtn.TabIndex = 5
-        Me.playerDeletebtn.Text = "Delete"
+        Me.playerDeletebtn.Text = "delete"
         Me.playerDeletebtn.UseVisualStyleBackColor = True
         '
         'GameDatabaseDataSet
@@ -138,7 +138,7 @@ Partial Class MainMenu
         Me.TableAdapterManager.PlayerPartiesTableAdapter = Nothing
         Me.TableAdapterManager.PlayerSkillsTableAdapter = Nothing
         Me.TableAdapterManager.PlayersTableAdapter = Me.PlayersTableAdapter
-        Me.TableAdapterManager.PlayerStatesTableAdapter = Nothing
+        Me.TableAdapterManager.PlayerStatesTableAdapter = Me.PlayerStatesTableAdapter
         Me.TableAdapterManager.PlayerWeaponsTableAdapter = Nothing
         Me.TableAdapterManager.ScholarStateItemsTableAdapter = Nothing
         Me.TableAdapterManager.ScholarStatesTableAdapter = Nothing
@@ -157,15 +157,6 @@ Partial Class MainMenu
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.WeaponAugmentsTableAdapter = Nothing
         '
-        'StaticCreaturesTableAdapter
-        '
-        Me.StaticCreaturesTableAdapter.ClearBeforeFill = True
-        '
-        'StaticCreaturesBindingSource
-        '
-        Me.StaticCreaturesBindingSource.DataMember = "StaticCreatures"
-        Me.StaticCreaturesBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
         'PlayerStatesBindingSource
         '
         Me.PlayerStatesBindingSource.DataMember = "PlayerStates"
@@ -174,6 +165,15 @@ Partial Class MainMenu
         'PlayerStatesTableAdapter
         '
         Me.PlayerStatesTableAdapter.ClearBeforeFill = True
+        '
+        'StaticCreaturesBindingSource
+        '
+        Me.StaticCreaturesBindingSource.DataMember = "StaticCreatures"
+        Me.StaticCreaturesBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'StaticCreaturesTableAdapter
+        '
+        Me.StaticCreaturesTableAdapter.ClearBeforeFill = True
         '
         'MainMenu
         '
@@ -188,11 +188,11 @@ Partial Class MainMenu
         Me.Controls.Add(Me.titlelbl)
         Me.Name = "MainMenu"
         Me.ShowIcon = False
-        Me.Text = "Main Menu"
+        Me.Text = "main menu"
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.StaticCreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayerStatesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.StaticCreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -209,8 +209,8 @@ Partial Class MainMenu
     Friend WithEvents PlayersBindingSource As BindingSource
     Friend WithEvents PlayersTableAdapter As GameDatabaseDataSetTableAdapters.PlayersTableAdapter
     Friend WithEvents TableAdapterManager As GameDatabaseDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents PlayerStatesTableAdapter As GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter
+    Friend WithEvents PlayerStatesBindingSource As BindingSource
     Friend WithEvents StaticCreaturesTableAdapter As GameDatabaseDataSetTableAdapters.StaticCreaturesTableAdapter
     Friend WithEvents StaticCreaturesBindingSource As BindingSource
-    Friend WithEvents PlayerStatesBindingSource As BindingSource
-    Friend WithEvents PlayerStatesTableAdapter As GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter
 End Class

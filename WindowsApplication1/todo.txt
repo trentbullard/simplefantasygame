@@ -3,7 +3,13 @@
 	combat
 	skills
 	items
-update database
-	all states except player
-	add name to playerparties
-	correct slot4id on enemyparties
+		armor
+		weapons
+		augments
+windows
+	farmer
+	chemist
+	blacksmith
+	scholar
+	camp
+	tier
