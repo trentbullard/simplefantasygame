@@ -13,11 +13,24 @@
             Dim tavernStateid As Integer = TavernStatesTableAdapter.GetLastTavernStateByPlayerStateid(currentState.id)(0)("id")
             For ctr = 0 To 3
                 tavernCreatures(ctr) = New Creature(StaticCreaturesTableAdapter.GetCreaturesByTavernStateid(tavernStateid)(ctr))
+                If ctr < 3 Then
+                    tavernQuests(ctr) = New Quest()
+                End If
             Next
             For ctr = 0 To 3
                 If dateVisited = currentState.dateInGame Then
                     If Not tavernCreatures(ctr).name = "" Then
                         FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
+                        FillQuestSlot(tavernQuests(ctr), ctr + 1)
+                    Else
+                        ClearCreatureSlot(ctr + 1)
+                    End If
+                Else
+                    tavernCreatures(ctr) = New Creature(GameDatabaseDataSet.StaticCreatures(ctr))
+                    FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
+                    If ctr < 3 Then
+                        tavernQuests(ctr) = New Quest()
+                        FillQuestSlot(tavernQuests(ctr), ctr + 1)
                     End If
                 End If
             Next
@@ -25,36 +38,14 @@
             For ctr = 0 To 3
                 tavernCreatures(ctr) = New Creature(GameDatabaseDataSet.StaticCreatures(ctr))
                 FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
+                If ctr < 3 Then
+                    tavernQuests(ctr) = New Quest()
+                    FillQuestSlot(tavernQuests(ctr), ctr + 1)
+                End If
             Next
         End If
-
-
-
-
-
-
-
-
-
-
-
-        For ctr = 0 To 3
-            If dateVisited = currentState.dateInGame Then
-                FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
-            ElseIf dateVisited < currentState.dateInGame Then
-                tavernCreatures(ctr) = New Creature(GameDatabaseDataSet.StaticCreatures(ctr))
-                FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
-            ElseIf Not tavernCreatures(ctr).name = "" And dateVisited = currentState.dateInGame Then
-                FillCreatureSlot(tavernCreatures(ctr), ctr + 1)
-
-
-            Else
-                ClearCreatureSlot(ctr + 1)
-                Continue For
-            End If
-        Next
-        dateVisited = currentState.dateInGame
         NewTavernState()
+        dateVisited = currentState.dateInGame
     End Sub
 
     Private Sub tavernSlot1Hirebtn_Click(sender As Object, e As EventArgs) Handles tavernSlot1Hirebtn.Click
@@ -81,7 +72,7 @@
         End If
     End Sub
 
-    Private Sub HireCreature(creature, slot)
+    Private Sub HireCreature(creature As Creature, slot As Integer)
         Dim newRow As DataRow = GameDatabaseDataSet.Tables("PlayerCreatures").NewRow()
 
         newRow("playerid") = creature.owner.id
@@ -107,7 +98,11 @@
         currentState.townwindow.RefreshControls()
     End Sub
 
-    Private Sub FillCreatureSlot(creature, slot)
+    Private Sub AcceptQuest(quest As Quest, slot As Integer)
+
+    End Sub
+
+    Private Sub FillCreatureSlot(creature As Creature, slot As Integer)
         Select Case slot
             Case 1
                 tavernSlot1Nametxt.Text = getName()
@@ -168,7 +163,11 @@
         End Select
     End Sub
 
-    Private Sub ClearCreatureSlot(slot)
+    Private Sub FillQuestSlot(quest As Quest, slot As Integer)
+
+    End Sub
+
+    Private Sub ClearCreatureSlot(slot As Integer)
         tavernCreatures(slot - 1).name = ""
         Select Case slot
             Case 1
@@ -228,6 +227,10 @@
                 tavernSlot4Hirebtn.Text = "return later"
                 tavernSlot4Hirebtn.Enabled = False
         End Select
+    End Sub
+
+    Private Sub ClearQuestSlot(slot As Integer)
+
     End Sub
 
     Private Sub playerbtn_Click(sender As Object, e As EventArgs) Handles playerbtn.Click
