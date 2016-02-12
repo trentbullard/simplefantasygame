@@ -33,6 +33,28 @@
         questIsComplete = False
     End Sub
 
+    Public Sub New(row As GameDatabaseDataSet.StaticQuestsRow)
+        questid = row("id")
+        questName = row("name")
+        questTier = New Tier(row("tierid"))
+        questMinLevel = row("minLevel")
+        questMaxLevel = row("maxLevel")
+        If Not IsDBNull(row("rewardWeaponid")) Then
+            questRewardItem = New Weapon(CInt(row("rewardWeaponid")))
+        ElseIf Not IsDBNull(row("rewardArmorid")) Then
+            questRewardItem = New Armor(CInt(row("rewardArmorid")))
+        ElseIf Not IsDBNull(row("rewardAugmentid")) Then
+            questRewardItem = New Augment(CInt(row("rewardAugmentid")))
+        ElseIf Not IsDBNull(row("rewardConsumableid")) Then
+            questRewardItem = New Consumable(CInt(row("rewardConsumableid")))
+        Else
+            questRewardItem = Nothing
+        End If
+        questRewardExp = row("rewardExperience")
+        questRewardGold = row("rewardGold")
+        questIsComplete = row("isComplete")
+    End Sub
+
     Public Sub New(row As GameDatabaseDataSet.StaticQuestsRow, tier As Tier, item As Item)
         questid = row("id")
         questName = row("name")
@@ -45,13 +67,10 @@
         questIsComplete = row("isComplete")
     End Sub
 
-    Public Property id() As Integer
+    Public ReadOnly Property id() As Integer
         Get
             Return questid
         End Get
-        Set(value As Integer)
-            questid = value
-        End Set
     End Property
 
     Public Property name As String
@@ -63,31 +82,22 @@
         End Set
     End Property
 
-    Public Property tier As Tier
+    Public ReadOnly Property tier As Tier
         Get
             Return questTier
         End Get
-        Set(value As Tier)
-            questTier = value
-        End Set
     End Property
 
-    Public Property minLevel As Integer
+    Public ReadOnly Property minLevel As Integer
         Get
             Return questMinLevel
         End Get
-        Set(value As Integer)
-            questMinLevel = value
-        End Set
     End Property
 
-    Public Property maxlevel1 As Integer
+    Public ReadOnly Property maxLevel As Integer
         Get
             Return questMaxLevel
         End Get
-        Set(value As Integer)
-            questMaxLevel = value
-        End Set
     End Property
 
     Public Property rewardItem As Item
@@ -99,30 +109,25 @@
         End Set
     End Property
 
-    Public Property rewardExp As Integer
+    Public ReadOnly Property rewardExp As Integer
         Get
             Return questRewardExp
         End Get
-        Set(value As Integer)
-            questRewardExp = value
-        End Set
     End Property
 
-    Public Property rewardGold As Integer
+    Public ReadOnly Property rewardGold As Integer
         Get
             Return questRewardGold
         End Get
-        Set(value As Integer)
-            questRewardGold = value
-        End Set
     End Property
 
-    Public Property isComplete As Boolean
+    Public ReadOnly Property isComplete As Boolean
         Get
             Return questIsComplete
         End Get
-        Set(value As Boolean)
-            questIsComplete = value
-        End Set
     End Property
+
+    Public Sub complete()
+        questIsComplete = True
+    End Sub
 End Class

@@ -89,9 +89,9 @@
             statePlayer = New Player()
         End If
         stateDateSaved = row("dateSaved")
-        stateParty = New Party(row("currentPartyid"))
-        stateTier = New Tier(row("currentTierid"))
-        stateQuest = New Quest(row("currentQuestid"))
+        stateParty = New Party(CInt(row("currentPartyid")))
+        stateTier = New Tier(CInt(row("currentTierid")))
+        stateQuest = New Quest(CInt(row("currentQuestid")))
         stateGameDate = row("gameDate")
         stateCombatWindow = New CombatWindow
         stateDeletePlayersWindow = New DeletePlayersWindow

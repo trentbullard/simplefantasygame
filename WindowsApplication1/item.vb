@@ -1,51 +1,46 @@
 ﻿Public Class Item
     Private itemid As Integer
-    Private itemOwner As player
+    Private itemOwner As Player
     Private itemName As String
-    Private itemInventory As inventory
 
     Public Sub New()
         itemid = -1
-        itemOwner = New player()
+        itemOwner = currentPlayer
         itemName = "name"
-        itemInventory = New inventory()
     End Sub
 
-    Public Sub New(id, owner, name, inventory)
+    Public Sub New(id As Integer)
+        itemid = id
+        itemOwner = currentPlayer
+        itemName = "name"
+    End Sub
+
+    Public Sub New(id As Integer, owner As Player, name As String)
         itemid = id
         itemOwner = owner
         itemName = name
     End Sub
 
-    Public Overridable Property id()
+    Public Overridable ReadOnly Property id() As Integer
         Get
             Return itemid
         End Get
-        Set(value)
-            itemid = value
-        End Set
     End Property
 
-    Public Overridable Property owner()
+    Public Overridable ReadOnly Property owner() As Player
         Get
             Return itemOwner
         End Get
-        Set(value)
-            itemOwner = value
-        End Set
     End Property
 
-    Public Overridable Property name()
+    Public Overridable Property name() As String
         Get
             Return itemName
         End Get
-        Set(value)
+        Set(value As String)
             itemName = value
         End Set
     End Property
-
-    Public Overridable Sub use(creature)
-    End Sub
 
     Public Overrides Function ToString() As String
         Return "(" & Me.id & ") " & Me.name

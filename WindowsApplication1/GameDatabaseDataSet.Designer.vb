@@ -28168,13 +28168,25 @@ Namespace GameDatabaseDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT id, name, tierid, minLevel, maxLevel, rewardWeaponid, rewardArmorid, rewar"& _ 
                 "dAugmentid, rewardConsumableid, rewardExperience, rewardGold, isComplete FROM db"& _ 
                 "o.StaticQuests"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT        StaticQuests.id, StaticQuests.name, StaticQuests.tierid, StaticQues"& _ 
+                "ts.minLevel, StaticQuests.maxLevel, StaticQuests.rewardWeaponid, StaticQuests.re"& _ 
+                "wardArmorid, StaticQuests.rewardAugmentid, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         StaticQues"& _ 
+                "ts.rewardConsumableid, StaticQuests.rewardExperience, StaticQuests.rewardGold, S"& _ 
+                "taticQuests.isComplete"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            StaticQuests INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"               "& _ 
+                "          TavernStates ON StaticQuests.id = TavernStates.questSlot1id AND Static"& _ 
+                "Quests.id = TavernStates.questSlot2id AND StaticQuests.id = TavernStates.questSl"& _ 
+                "ot3id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (TavernStates.id = @tavernStateid)"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tavernStateid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -28196,6 +28208,18 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
         Public Overloads Overridable Function GetData() As GameDatabaseDataSet.StaticQuestsDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As GameDatabaseDataSet.StaticQuestsDataTable = New GameDatabaseDataSet.StaticQuestsDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetQuestsByTavernStateid(ByVal tavernStateid As Integer) As GameDatabaseDataSet.StaticQuestsDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(tavernStateid,Integer)
             Dim dataTable As GameDatabaseDataSet.StaticQuestsDataTable = New GameDatabaseDataSet.StaticQuestsDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
