@@ -89,6 +89,20 @@ Partial Public Class GameDatabaseDataSet
     
     Private tableWeaponAugments As WeaponAugmentsDataTable
     
+    Private relationStaticCreatures_TavernStates As Global.System.Data.DataRelation
+    
+    Private relationStaticCreatures_TavernStates1 As Global.System.Data.DataRelation
+    
+    Private relationStaticCreatures_TavernStates2 As Global.System.Data.DataRelation
+    
+    Private relationStaticCreatures_TavernStates3 As Global.System.Data.DataRelation
+    
+    Private relationStaticQuests_TavernStates As Global.System.Data.DataRelation
+    
+    Private relationStaticQuests_TavernStates1 As Global.System.Data.DataRelation
+    
+    Private relationStaticQuests_TavernStates2 As Global.System.Data.DataRelation
+    
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -938,6 +952,13 @@ Partial Public Class GameDatabaseDataSet
                 Me.tableWeaponAugments.InitVars
             End If
         End If
+        Me.relationStaticCreatures_TavernStates = Me.Relations("StaticCreatures_TavernStates")
+        Me.relationStaticCreatures_TavernStates1 = Me.Relations("StaticCreatures_TavernStates1")
+        Me.relationStaticCreatures_TavernStates2 = Me.Relations("StaticCreatures_TavernStates2")
+        Me.relationStaticCreatures_TavernStates3 = Me.Relations("StaticCreatures_TavernStates3")
+        Me.relationStaticQuests_TavernStates = Me.Relations("StaticQuests_TavernStates")
+        Me.relationStaticQuests_TavernStates1 = Me.Relations("StaticQuests_TavernStates1")
+        Me.relationStaticQuests_TavernStates2 = Me.Relations("StaticQuests_TavernStates2")
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1012,6 +1033,20 @@ Partial Public Class GameDatabaseDataSet
         MyBase.Tables.Add(Me.tableTurns)
         Me.tableWeaponAugments = New WeaponAugmentsDataTable()
         MyBase.Tables.Add(Me.tableWeaponAugments)
+        Me.relationStaticCreatures_TavernStates = New Global.System.Data.DataRelation("StaticCreatures_TavernStates", New Global.System.Data.DataColumn() {Me.tableStaticCreatures.idColumn}, New Global.System.Data.DataColumn() {Me.tableTavernStates.hireSlot1idColumn}, false)
+        Me.Relations.Add(Me.relationStaticCreatures_TavernStates)
+        Me.relationStaticCreatures_TavernStates1 = New Global.System.Data.DataRelation("StaticCreatures_TavernStates1", New Global.System.Data.DataColumn() {Me.tableStaticCreatures.idColumn}, New Global.System.Data.DataColumn() {Me.tableTavernStates.hireSlot2idColumn}, false)
+        Me.Relations.Add(Me.relationStaticCreatures_TavernStates1)
+        Me.relationStaticCreatures_TavernStates2 = New Global.System.Data.DataRelation("StaticCreatures_TavernStates2", New Global.System.Data.DataColumn() {Me.tableStaticCreatures.idColumn}, New Global.System.Data.DataColumn() {Me.tableTavernStates.hireSlot3idColumn}, false)
+        Me.Relations.Add(Me.relationStaticCreatures_TavernStates2)
+        Me.relationStaticCreatures_TavernStates3 = New Global.System.Data.DataRelation("StaticCreatures_TavernStates3", New Global.System.Data.DataColumn() {Me.tableStaticCreatures.idColumn}, New Global.System.Data.DataColumn() {Me.tableTavernStates.hireSlot4idColumn}, false)
+        Me.Relations.Add(Me.relationStaticCreatures_TavernStates3)
+        Me.relationStaticQuests_TavernStates = New Global.System.Data.DataRelation("StaticQuests_TavernStates", New Global.System.Data.DataColumn() {Me.tableStaticQuests.idColumn}, New Global.System.Data.DataColumn() {Me.tableTavernStates.questSlot1idColumn}, false)
+        Me.Relations.Add(Me.relationStaticQuests_TavernStates)
+        Me.relationStaticQuests_TavernStates1 = New Global.System.Data.DataRelation("StaticQuests_TavernStates1", New Global.System.Data.DataColumn() {Me.tableStaticQuests.idColumn}, New Global.System.Data.DataColumn() {Me.tableTavernStates.questSlot2idColumn}, false)
+        Me.Relations.Add(Me.relationStaticQuests_TavernStates1)
+        Me.relationStaticQuests_TavernStates2 = New Global.System.Data.DataRelation("StaticQuests_TavernStates2", New Global.System.Data.DataColumn() {Me.tableStaticQuests.idColumn}, New Global.System.Data.DataColumn() {Me.tableTavernStates.questSlot3idColumn}, false)
+        Me.Relations.Add(Me.relationStaticQuests_TavernStates2)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -10839,9 +10874,30 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddTavernStatesRow(ByVal playerStateid As Integer, ByVal hireSlot1id As Integer, ByVal hireSlot2id As Integer, ByVal hireSlot3id As Integer, ByVal hireSlot4id As Integer, ByVal questSlot1id As Integer, ByVal questSlot2id As Integer, ByVal questSlot3id As Integer, ByVal dateVisited As Date) As TavernStatesRow
+        Public Overloads Function AddTavernStatesRow(ByVal playerStateid As Integer, ByVal parentStaticCreaturesRowByStaticCreatures_TavernStates As StaticCreaturesRow, ByVal parentStaticCreaturesRowByStaticCreatures_TavernStates1 As StaticCreaturesRow, ByVal parentStaticCreaturesRowByStaticCreatures_TavernStates2 As StaticCreaturesRow, ByVal parentStaticCreaturesRowByStaticCreatures_TavernStates3 As StaticCreaturesRow, ByVal parentStaticQuestsRowByStaticQuests_TavernStates As StaticQuestsRow, ByVal parentStaticQuestsRowByStaticQuests_TavernStates1 As StaticQuestsRow, ByVal parentStaticQuestsRowByStaticQuests_TavernStates2 As StaticQuestsRow, ByVal dateVisited As Date) As TavernStatesRow
             Dim rowTavernStatesRow As TavernStatesRow = CType(Me.NewRow,TavernStatesRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, playerStateid, hireSlot1id, hireSlot2id, hireSlot3id, hireSlot4id, questSlot1id, questSlot2id, questSlot3id, dateVisited}
+            Dim columnValuesArray() As Object = New Object() {Nothing, playerStateid, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, dateVisited}
+            If (Not (parentStaticCreaturesRowByStaticCreatures_TavernStates) Is Nothing) Then
+                columnValuesArray(2) = parentStaticCreaturesRowByStaticCreatures_TavernStates(0)
+            End If
+            If (Not (parentStaticCreaturesRowByStaticCreatures_TavernStates1) Is Nothing) Then
+                columnValuesArray(3) = parentStaticCreaturesRowByStaticCreatures_TavernStates1(0)
+            End If
+            If (Not (parentStaticCreaturesRowByStaticCreatures_TavernStates2) Is Nothing) Then
+                columnValuesArray(4) = parentStaticCreaturesRowByStaticCreatures_TavernStates2(0)
+            End If
+            If (Not (parentStaticCreaturesRowByStaticCreatures_TavernStates3) Is Nothing) Then
+                columnValuesArray(5) = parentStaticCreaturesRowByStaticCreatures_TavernStates3(0)
+            End If
+            If (Not (parentStaticQuestsRowByStaticQuests_TavernStates) Is Nothing) Then
+                columnValuesArray(6) = parentStaticQuestsRowByStaticQuests_TavernStates(0)
+            End If
+            If (Not (parentStaticQuestsRowByStaticQuests_TavernStates1) Is Nothing) Then
+                columnValuesArray(7) = parentStaticQuestsRowByStaticQuests_TavernStates1(0)
+            End If
+            If (Not (parentStaticQuestsRowByStaticQuests_TavernStates2) Is Nothing) Then
+                columnValuesArray(8) = parentStaticQuestsRowByStaticQuests_TavernStates2(0)
+            End If
             rowTavernStatesRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowTavernStatesRow)
             Return rowTavernStatesRow
@@ -14804,6 +14860,46 @@ Partial Public Class GameDatabaseDataSet
         Public Sub SetnameNull()
             Me(Me.tableStaticCreatures.nameColumn) = Global.System.Convert.DBNull
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function GetTavernStatesRows() As TavernStatesRow()
+            If (Me.Table.ChildRelations("StaticCreatures_TavernStates") Is Nothing) Then
+                Return New TavernStatesRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("StaticCreatures_TavernStates")),TavernStatesRow())
+            End If
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function GetTavernStatesRowsByStaticCreatures_TavernStates1() As TavernStatesRow()
+            If (Me.Table.ChildRelations("StaticCreatures_TavernStates1") Is Nothing) Then
+                Return New TavernStatesRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("StaticCreatures_TavernStates1")),TavernStatesRow())
+            End If
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function GetTavernStatesRowsByStaticCreatures_TavernStates2() As TavernStatesRow()
+            If (Me.Table.ChildRelations("StaticCreatures_TavernStates2") Is Nothing) Then
+                Return New TavernStatesRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("StaticCreatures_TavernStates2")),TavernStatesRow())
+            End If
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function GetTavernStatesRowsByStaticCreatures_TavernStates3() As TavernStatesRow()
+            If (Me.Table.ChildRelations("StaticCreatures_TavernStates3") Is Nothing) Then
+                Return New TavernStatesRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("StaticCreatures_TavernStates3")),TavernStatesRow())
+            End If
+        End Function
     End Class
     
     '''<summary>
@@ -15263,6 +15359,36 @@ Partial Public Class GameDatabaseDataSet
         Public Sub SetisCompleteNull()
             Me(Me.tableStaticQuests.isCompleteColumn) = Global.System.Convert.DBNull
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function GetTavernStatesRows() As TavernStatesRow()
+            If (Me.Table.ChildRelations("StaticQuests_TavernStates") Is Nothing) Then
+                Return New TavernStatesRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("StaticQuests_TavernStates")),TavernStatesRow())
+            End If
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function GetTavernStatesRowsByStaticQuests_TavernStates1() As TavernStatesRow()
+            If (Me.Table.ChildRelations("StaticQuests_TavernStates1") Is Nothing) Then
+                Return New TavernStatesRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("StaticQuests_TavernStates1")),TavernStatesRow())
+            End If
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function GetTavernStatesRowsByStaticQuests_TavernStates2() As TavernStatesRow()
+            If (Me.Table.ChildRelations("StaticQuests_TavernStates2") Is Nothing) Then
+                Return New TavernStatesRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("StaticQuests_TavernStates2")),TavernStatesRow())
+            End If
+        End Function
     End Class
     
     '''<summary>
@@ -15807,6 +15933,83 @@ Partial Public Class GameDatabaseDataSet
             End Get
             Set
                 Me(Me.tableTavernStates.dateVisitedColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property StaticCreaturesRow() As StaticCreaturesRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("StaticCreatures_TavernStates")),StaticCreaturesRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("StaticCreatures_TavernStates"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property StaticCreaturesRowByStaticCreatures_TavernStates1() As StaticCreaturesRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("StaticCreatures_TavernStates1")),StaticCreaturesRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("StaticCreatures_TavernStates1"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property StaticCreaturesRowByStaticCreatures_TavernStates2() As StaticCreaturesRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("StaticCreatures_TavernStates2")),StaticCreaturesRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("StaticCreatures_TavernStates2"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property StaticCreaturesRowByStaticCreatures_TavernStates3() As StaticCreaturesRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("StaticCreatures_TavernStates3")),StaticCreaturesRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("StaticCreatures_TavernStates3"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property StaticQuestsRow() As StaticQuestsRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("StaticQuests_TavernStates")),StaticQuestsRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("StaticQuests_TavernStates"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property StaticQuestsRowByStaticQuests_TavernStates1() As StaticQuestsRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("StaticQuests_TavernStates1")),StaticQuestsRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("StaticQuests_TavernStates1"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property StaticQuestsRowByStaticQuests_TavernStates2() As StaticQuestsRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("StaticQuests_TavernStates2")),StaticQuestsRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("StaticQuests_TavernStates2"))
             End Set
         End Property
         
@@ -23482,7 +23685,7 @@ Namespace GameDatabaseDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(2) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT id, playerid, dateSaved, currentPartyid, currentTierid, currentQuestid, ga"& _ 
@@ -23495,6 +23698,11 @@ Namespace GameDatabaseDataSetTableAdapters
                 "layerid)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY id DESC"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(2).Connection = Me.Connection
+            Me._commandCollection(2).CommandText = "SELECT        TOP (1) id, playerid, dateSaved, currentPartyid, currentTierid, cur"& _ 
+                "rentQuestid, gameDate"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            PlayerStates"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY id DESC"
+            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -23532,6 +23740,17 @@ Namespace GameDatabaseDataSetTableAdapters
             Else
                 Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
             End If
+            Dim dataTable As GameDatabaseDataSet.PlayerStatesDataTable = New GameDatabaseDataSet.PlayerStatesDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetLastRow() As GameDatabaseDataSet.PlayerStatesDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
             Dim dataTable As GameDatabaseDataSet.PlayerStatesDataTable = New GameDatabaseDataSet.PlayerStatesDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -27033,16 +27252,11 @@ Namespace GameDatabaseDataSetTableAdapters
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@creatureid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT        StaticCreatures.id, StaticCreatures.species, StaticCreatures.class,"& _ 
-                " StaticCreatures.level, StaticCreatures.experience, StaticCreatures.maxHealth, S"& _ 
-                "taticCreatures.health, StaticCreatures.strength, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Stat"& _ 
-                "icCreatures.armor, StaticCreatures.initiative, StaticCreatures.intelligence, Sta"& _ 
-                "ticCreatures.wisdom, StaticCreatures.dexterity, StaticCreatures.name"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM      "& _ 
-                "      StaticCreatures INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TavernStates ON Stati"& _ 
-                "cCreatures.id = TavernStates.hireSlot1id AND StaticCreatures.id = TavernStates.h"& _ 
-                "ireSlot2id AND StaticCreatures.id = TavernStates.hireSlot3id AND "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"             "& _ 
-                "            StaticCreatures.id = TavernStates.hireSlot4id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (TavernS"& _ 
-                "tates.id = @tavernStateid)"
+            Me._commandCollection(2).CommandText = "SELECT        StaticCreatures.*"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            StaticCreatures INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"    "& _ 
+                "                     TavernStates ON StaticCreatures.id = TavernStates.hireSlot1"& _ 
+                "id OR StaticCreatures.id = TavernStates.hireSlot2id OR StaticCreatures.id = Tave"& _ 
+                "rnStates.hireSlot3id OR "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         StaticCreatures.id = TavernSt"& _ 
+                "ates.hireSlot4id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (TavernStates.id = @tavernStateid)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tavernStateid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
@@ -28168,7 +28382,7 @@ Namespace GameDatabaseDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(2) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT id, name, tierid, minLevel, maxLevel, rewardWeaponid, rewardArmorid, rewar"& _ 
@@ -28177,16 +28391,18 @@ Namespace GameDatabaseDataSetTableAdapters
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT        StaticQuests.id, StaticQuests.name, StaticQuests.tierid, StaticQues"& _ 
-                "ts.minLevel, StaticQuests.maxLevel, StaticQuests.rewardWeaponid, StaticQuests.re"& _ 
-                "wardArmorid, StaticQuests.rewardAugmentid, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         StaticQues"& _ 
-                "ts.rewardConsumableid, StaticQuests.rewardExperience, StaticQuests.rewardGold, S"& _ 
-                "taticQuests.isComplete"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            StaticQuests INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"               "& _ 
-                "          TavernStates ON StaticQuests.id = TavernStates.questSlot1id AND Static"& _ 
-                "Quests.id = TavernStates.questSlot2id AND StaticQuests.id = TavernStates.questSl"& _ 
-                "ot3id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (TavernStates.id = @tavernStateid)"
+            Me._commandCollection(1).CommandText = "SELECT        id, name, tierid, minLevel, maxLevel, rewardWeaponid, rewardArmorid"& _ 
+                ", rewardAugmentid, rewardConsumableid, rewardExperience, rewardGold, isComplete"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            StaticQuests"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (id = @questid)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tavernStateid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@questid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(2).Connection = Me.Connection
+            Me._commandCollection(2).CommandText = "SELECT        StaticQuests.*"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            StaticQuests INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"          "& _ 
+                "               TavernStates ON StaticQuests.id = TavernStates.questSlot1id OR St"& _ 
+                "aticQuests.id = TavernStates.questSlot2id OR StaticQuests.id = TavernStates.ques"& _ 
+                "tSlot3id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (TavernStates.id = @tavernStateid)"
+            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tavernStateid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -28217,8 +28433,20 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetQuestsByTavernStateid(ByVal tavernStateid As Integer) As GameDatabaseDataSet.StaticQuestsDataTable
+        Public Overloads Overridable Function GetQuestByid(ByVal questid As Integer) As GameDatabaseDataSet.StaticQuestsDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(questid,Integer)
+            Dim dataTable As GameDatabaseDataSet.StaticQuestsDataTable = New GameDatabaseDataSet.StaticQuestsDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetQuestsByTavernStateid(ByVal tavernStateid As Integer) As GameDatabaseDataSet.StaticQuestsDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
             Me.Adapter.SelectCommand.Parameters(0).Value = CType(tavernStateid,Integer)
             Dim dataTable As GameDatabaseDataSet.StaticQuestsDataTable = New GameDatabaseDataSet.StaticQuestsDataTable()
             Me.Adapter.Fill(dataTable)
@@ -31694,6 +31922,24 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Function UpdateUpdatedRows(ByVal dataSet As GameDatabaseDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
+            If (Not (Me._staticQuestsTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.StaticQuests.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._staticQuestsTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._staticCreaturesTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.StaticCreatures.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._staticCreaturesTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
             If (Not (Me._armorAugmentsTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.ArmorAugments.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
@@ -31730,30 +31976,12 @@ Namespace GameDatabaseDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._staticQuestsTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.StaticQuests.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._staticQuestsTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
             If (Not (Me._staticMobsTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.StaticMobs.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
                     result = (result + Me._staticMobsTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._staticCreaturesTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.StaticCreatures.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._staticCreaturesTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -31992,6 +32220,22 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Function UpdateInsertedRows(ByVal dataSet As GameDatabaseDataSet, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
+            If (Not (Me._staticQuestsTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.StaticQuests.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._staticQuestsTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._staticCreaturesTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.StaticCreatures.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._staticCreaturesTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
             If (Not (Me._armorAugmentsTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.ArmorAugments.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
@@ -32024,27 +32268,11 @@ Namespace GameDatabaseDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._staticQuestsTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.StaticQuests.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._staticQuestsTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
             If (Not (Me._staticMobsTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.StaticMobs.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
                     result = (result + Me._staticMobsTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._staticCreaturesTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.StaticCreatures.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._staticCreaturesTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -32458,27 +32686,11 @@ Namespace GameDatabaseDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._staticCreaturesTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.StaticCreatures.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._staticCreaturesTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
             If (Not (Me._staticMobsTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.StaticMobs.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._staticMobsTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._staticQuestsTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.StaticQuests.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._staticQuestsTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -32511,6 +32723,22 @@ Namespace GameDatabaseDataSetTableAdapters
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._armorAugmentsTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._staticCreaturesTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.StaticCreatures.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._staticCreaturesTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._staticQuestsTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.StaticQuests.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._staticQuestsTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If

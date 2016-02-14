@@ -3,68 +3,23 @@
     Private tavernStatePlayerState As PlayerState
     Private tavernStateHires(4) As Creature
     Private tavernStateQuests(3) As Quest
-    Private tavernStateDateVisited As Date
+    Private tavernStateDateVisited As Date = "1/1/1000"
 
     Public Sub New()
         tavernStateid = -1
-        tavernStatePlayerState = New PlayerState
-        For ctr = 0 To 3
-            Select Case ctr
-                Case 0
-                    tavernStateHires(ctr) = New Creature
-                    tavernStateQuests(ctr) = New Quest
-                Case 1
-                    tavernStateHires(ctr) = New Creature
-                    tavernStateQuests(ctr) = New Quest
-                Case 2
-                    tavernStateHires(ctr) = New Creature
-                    tavernStateQuests(ctr) = New Quest
-                Case 3
-                    tavernStateHires(ctr) = New Creature
-            End Select
-        Next
+        tavernStatePlayerState = currentState
         tavernStateDateVisited = currentState.dateInGame
     End Sub
 
     Public Sub New(id As Integer)
         tavernStateid = id
-        tavernStatePlayerState = New PlayerState
-        For ctr = 0 To 3
-            Select Case ctr
-                Case 0
-                    tavernStateHires(ctr) = New Creature
-                    tavernStateQuests(ctr) = New Quest
-                Case 1
-                    tavernStateHires(ctr) = New Creature
-                    tavernStateQuests(ctr) = New Quest
-                Case 2
-                    tavernStateHires(ctr) = New Creature
-                    tavernStateQuests(ctr) = New Quest
-                Case 3
-                    tavernStateHires(ctr) = New Creature
-            End Select
-        Next
+        tavernStatePlayerState = currentState
         tavernStateDateVisited = currentState.dateInGame
     End Sub
 
     Public Sub New(state As PlayerState)
         tavernStateid = -1
         tavernStatePlayerState = state
-        For ctr = 0 To 3
-            Select Case ctr
-                Case 0
-                    tavernStateHires(ctr) = New Creature
-                    tavernStateQuests(ctr) = New Quest
-                Case 1
-                    tavernStateHires(ctr) = New Creature
-                    tavernStateQuests(ctr) = New Quest
-                Case 2
-                    tavernStateHires(ctr) = New Creature
-                    tavernStateQuests(ctr) = New Quest
-                Case 3
-                    tavernStateHires(ctr) = New Creature
-            End Select
-        Next
         tavernStateDateVisited = state.dateInGame
     End Sub
 
@@ -133,6 +88,7 @@
         For ctr = 0 To 3
             row = creaturesTable(ctr)
             tavernStateHires(ctr) = New Creature(row)
+            Console.WriteLine("hire id: " & tavernStateHires(ctr).id)
         Next
     End Sub
 
@@ -141,6 +97,7 @@
         For ctr = 0 To 2
             row = questsTable(ctr)
             tavernStateQuests(ctr) = New Quest(row)
+            Console.WriteLine("tavern quest id: " & tavernStateQuests(ctr).id)
         Next
     End Sub
 

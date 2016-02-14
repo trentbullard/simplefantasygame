@@ -2,6 +2,7 @@
     Public currentState As New PlayerState
 
     Public Sub OpenMainMenu()
+        currentState.mainmenu = New MainMenu
         currentState.mainmenu.Show()
         currentState.combatwindow.Close()
         currentState.innwindow.Close()

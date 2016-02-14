@@ -33,6 +33,18 @@
         questIsComplete = False
     End Sub
 
+    Public Sub New(name As String)
+        questid = -1
+        questName = name
+        questTier = New Tier
+        questMinLevel = 1
+        questMaxLevel = 50
+        questRewardItem = New Item
+        questRewardExp = 1
+        questRewardGold = 1
+        questIsComplete = False
+    End Sub
+
     Public Sub New(row As GameDatabaseDataSet.StaticQuestsRow)
         questid = row("id")
         questName = row("name")
@@ -50,18 +62,6 @@
         Else
             questRewardItem = Nothing
         End If
-        questRewardExp = row("rewardExperience")
-        questRewardGold = row("rewardGold")
-        questIsComplete = row("isComplete")
-    End Sub
-
-    Public Sub New(row As GameDatabaseDataSet.StaticQuestsRow, tier As Tier, item As Item)
-        questid = row("id")
-        questName = row("name")
-        questTier = tier
-        questMinLevel = row("minLevel")
-        questMaxLevel = row("maxLevel")
-        questRewardItem = item
         questRewardExp = row("rewardExperience")
         questRewardGold = row("rewardGold")
         questIsComplete = row("isComplete")

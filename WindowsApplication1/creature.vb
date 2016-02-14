@@ -87,6 +87,7 @@
         creatureIntelligence = row("intelligence")
         creatureWisdom = row("wisdom")
         creatureDexterity = row("dexterity")
+        creatureName = row("name")
         creatureOwner = currentPlayer
     End Sub
 

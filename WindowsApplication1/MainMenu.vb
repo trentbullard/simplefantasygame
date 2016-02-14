@@ -4,12 +4,17 @@ Imports System.Text
 
 Public Class MainMenu
     Private Sub MainMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        StaticQuestsTableAdapter.Fill(GameDatabaseDataSet.StaticQuests)
         PlayersTableAdapter.Fill(GameDatabaseDataSet.Players)
         PlayerStatesTableAdapter.Fill(GameDatabaseDataSet.PlayerStates)
         StaticCreaturesTableAdapter.Fill(GameDatabaseDataSet.StaticCreatures)
 
-        For ctr = 1 To 50
+        For ctr = 1 To 20
             LoadCreatures(New Creature("creature " & ctr))
+        Next
+
+        For ctr = 1 To 20
+            LoadQuests(New Quest("quest " & ctr))
         Next
 
         StartLog()  'From log.vb
@@ -40,22 +45,18 @@ Public Class MainMenu
             MsgBox("Unable to create new player.")
             Exit Sub
         End Try
-        PlayersTableAdapter.Fill(GameDatabaseDataSet.Players)
     End Sub
 
     Private Sub playerSelectlstv_SelectedIndexChanged(sender As Object, e As EventArgs) Handles playerSelectlstv.SelectedIndexChanged
         If Not playerSelectlstv.SelectedIndices(0) = -1 Then
             Dim playerRow As DataRow = PlayersTableAdapter.GetPlayerByid(playerSelectlstv.SelectedIndices(0) + 1).First
             currentPlayer = New Player(playerRow)
-
             If PlayerStatesTableAdapter.GetLastPlayerStateByPlayerid(currentPlayer.id).Any Then
                 Dim playerStateRow As DataRow = PlayerStatesTableAdapter.GetLastPlayerStateByPlayerid(currentPlayer.id).First
                 currentState = New PlayerState(playerStateRow)
             Else
-                currentState = New PlayerState(currentPlayer)
+                currentState = New PlayerState(NewPlayerState(currentPlayer))
             End If
-
-            currentState = New PlayerState(NewPlayerState(currentState))
             currentState.townwindow = New TownWindow
             currentState.townwindow.Show()
             Me.Close()
@@ -87,15 +88,15 @@ Public Class MainMenu
         End Try
     End Sub
 
-    Private Function NewPlayerState(currentState As PlayerState) As GameDatabaseDataSet.PlayerStatesRow
+    Private Function NewPlayerState(currentPlayer As Player) As GameDatabaseDataSet.PlayerStatesRow
         Dim newRow As DataRow = GameDatabaseDataSet.Tables("PlayerStates").NewRow
 
-        newRow("playerid") = currentState.player.id
-        newRow("dateSaved") = currentState.dateSaved
-        newRow("currentPartyid") = currentState.party.id
-        newRow("currentTierid") = currentState.tier.id
-        newRow("currentQuestid") = currentState.quest.id
-        newRow("gameDate") = currentState.dateInGame
+        newRow("playerid") = currentPlayer.id
+        newRow("dateSaved") = Date.Now
+        newRow("currentPartyid") = -1
+        newRow("currentTierid") = -1
+        newRow("currentQuestid") = -1
+        newRow("gameDate") = "1/1/1000"
 
         GameDatabaseDataSet.Tables("PlayerStates").Rows.Add(newRow)
 
@@ -103,8 +104,7 @@ Public Class MainMenu
             Validate()
             PlayerStatesBindingSource.EndEdit()
             PlayerStatesTableAdapter.Update(GameDatabaseDataSet.PlayerStates)
-            newRow = PlayerStatesTableAdapter.GetLastPlayerStateByPlayerid(currentPlayer.id).First
-            Return newRow
+            Return PlayerStatesTableAdapter.GetLastRow().First
         Catch ex As Exception
             MsgBox("failed to add playerstate to database")
             Exit Function
@@ -126,6 +126,7 @@ Public Class MainMenu
         newRow("intelligence") = creature.int
         newRow("wisdom") = creature.wis
         newRow("dexterity") = creature.dex
+        newRow("name") = creature.name
 
         GameDatabaseDataSet.Tables("StaticCreatures").Rows.Add(newRow)
 
@@ -136,6 +137,40 @@ Public Class MainMenu
         Catch ex As Exception
             LogNewPlayer(newRow, False)  'from log.vb
             MsgBox("failed to add static creature to database.")
+        End Try
+    End Sub
+
+    Private Sub LoadQuests(quest As Quest)
+        Dim newRow As DataRow = GameDatabaseDataSet.Tables("StaticQuests").NewRow()
+        Dim item As Integer = Roll(4)
+
+        newRow("name") = quest.name
+        newRow("tierid") = quest.tier.id
+        newRow("minLevel") = quest.minLevel
+        newRow("maxLevel") = quest.maxLevel
+        Select Case item
+            Case 1
+                newRow("rewardWeaponid") = Roll(20)
+            Case 2
+                newRow("rewardArmorid") = Roll(20)
+            Case 3
+                newRow("rewardAugmentid") = Roll(20)
+            Case 4
+                newRow("rewardConsumableid") = Roll(20)
+        End Select
+        newRow("rewardExperience") = quest.rewardExp
+        newRow("rewardGold") = quest.rewardGold
+        newRow("isComplete") = quest.isComplete
+
+        GameDatabaseDataSet.Tables("StaticQuests").Rows.Add(newRow)
+
+        Try
+            Validate()
+            StaticQuestsBindingSource.EndEdit()
+            StaticQuestsTableAdapter.Update(GameDatabaseDataSet.StaticQuests)
+        Catch ex As Exception
+            LogNewPlayer(newRow, False)  'from log.vb
+            MsgBox("failed to add static quest to database.")
         End Try
     End Sub
 

@@ -22,10 +22,7 @@
         stateid = -1
         statePlayer = currentPlayer
         stateDateSaved = DateTime.Now
-        stateParty = New Party
-        stateTier = New Tier
-        stateQuest = New Quest
-        stateGameDate = "01/01/1800"
+        stateGameDate = "01/01/1000"
         stateCombatWindow = New CombatWindow
         stateDeletePlayersWindow = New DeletePlayersWindow
         stateInnWindow = New InnWindow
@@ -43,10 +40,7 @@
         stateid = id
         statePlayer = currentPlayer
         stateDateSaved = DateTime.Now
-        stateParty = New Party
-        stateTier = New Tier
-        stateQuest = New Quest
-        stateGameDate = "01/01/1800"
+        stateGameDate = "01/01/1000"
         stateCombatWindow = New CombatWindow
         stateDeletePlayersWindow = New DeletePlayersWindow
         stateInnWindow = New InnWindow
@@ -64,10 +58,7 @@
         stateid = -1
         statePlayer = player
         stateDateSaved = DateTime.Now
-        stateParty = New Party
-        stateTier = New Tier
-        stateQuest = New Quest
-        stateGameDate = "01/01/1800"
+        stateGameDate = "01/01/1000"
         stateCombatWindow = New CombatWindow
         stateDeletePlayersWindow = New DeletePlayersWindow
         stateInnWindow = New InnWindow
@@ -83,11 +74,7 @@
 
     Public Sub New(row As GameDatabaseDataSet.PlayerStatesRow)
         stateid = row("id")
-        If currentPlayer.id = row("id") Then
-            statePlayer = currentPlayer
-        Else
-            statePlayer = New Player()
-        End If
+        statePlayer = currentPlayer
         stateDateSaved = row("dateSaved")
         stateParty = New Party(CInt(row("currentPartyid")))
         stateTier = New Tier(CInt(row("currentTierid")))

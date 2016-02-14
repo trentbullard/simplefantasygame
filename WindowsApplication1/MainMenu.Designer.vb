@@ -34,14 +34,17 @@ Partial Class MainMenu
         Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
         Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
-        Me.PlayerStatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayerStatesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter()
-        Me.StaticCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.StaticCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticCreaturesTableAdapter()
+        Me.PlayerStatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticQuestsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticQuestsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticQuestsTableAdapter()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayerStatesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StaticCreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.StaticQuestsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'titlelbl
@@ -79,6 +82,7 @@ Partial Class MainMenu
         Me.playerSelectlstv.FullRowSelect = True
         Me.playerSelectlstv.GridLines = True
         Me.playerSelectlstv.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
+        Me.playerSelectlstv.HideSelection = False
         Me.playerSelectlstv.Location = New System.Drawing.Point(54, 69)
         Me.playerSelectlstv.MultiSelect = False
         Me.playerSelectlstv.Name = "playerSelectlstv"
@@ -157,23 +161,32 @@ Partial Class MainMenu
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.WeaponAugmentsTableAdapter = Nothing
         '
+        'PlayerStatesTableAdapter
+        '
+        Me.PlayerStatesTableAdapter.ClearBeforeFill = True
+        '
+        'StaticCreaturesTableAdapter
+        '
+        Me.StaticCreaturesTableAdapter.ClearBeforeFill = True
+        '
         'PlayerStatesBindingSource
         '
         Me.PlayerStatesBindingSource.DataMember = "PlayerStates"
         Me.PlayerStatesBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'PlayerStatesTableAdapter
-        '
-        Me.PlayerStatesTableAdapter.ClearBeforeFill = True
         '
         'StaticCreaturesBindingSource
         '
         Me.StaticCreaturesBindingSource.DataMember = "StaticCreatures"
         Me.StaticCreaturesBindingSource.DataSource = Me.GameDatabaseDataSet
         '
-        'StaticCreaturesTableAdapter
+        'StaticQuestsBindingSource
         '
-        Me.StaticCreaturesTableAdapter.ClearBeforeFill = True
+        Me.StaticQuestsBindingSource.DataMember = "StaticQuests"
+        Me.StaticQuestsBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'StaticQuestsTableAdapter
+        '
+        Me.StaticQuestsTableAdapter.ClearBeforeFill = True
         '
         'MainMenu
         '
@@ -193,6 +206,7 @@ Partial Class MainMenu
         CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayerStatesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StaticCreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.StaticQuestsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -213,4 +227,6 @@ Partial Class MainMenu
     Friend WithEvents PlayerStatesBindingSource As BindingSource
     Friend WithEvents StaticCreaturesTableAdapter As GameDatabaseDataSetTableAdapters.StaticCreaturesTableAdapter
     Friend WithEvents StaticCreaturesBindingSource As BindingSource
+    Friend WithEvents StaticQuestsBindingSource As BindingSource
+    Friend WithEvents StaticQuestsTableAdapter As GameDatabaseDataSetTableAdapters.StaticQuestsTableAdapter
 End Class
