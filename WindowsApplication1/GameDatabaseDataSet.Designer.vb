@@ -4888,7 +4888,7 @@ Partial Public Class GameDatabaseDataSet
             Me.columnid.AllowDBNull = false
             Me.columnid.ReadOnly = true
             Me.columnid.Unique = true
-            Me.columnname.MaxLength = 10
+            Me.columnname.MaxLength = 2147483647
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _

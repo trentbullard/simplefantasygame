@@ -1,11 +1,7 @@
-﻿classes
-	create mob class
-	combat
+﻿combat
+classes
+	mob
 	skills
-	items
-		armor
-		weapons
-		augments
 windows
 	farmer
 	chemist

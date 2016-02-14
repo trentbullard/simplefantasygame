@@ -29,16 +29,29 @@
         For ctr = 0 To 3
             Select Case ctr
                 Case 0
-                    tavernStateHires(ctr) = New Creature(CInt(row("hireSlot1id")))
-                    tavernStateQuests(ctr) = New Quest(CInt(row("questSlot1id")))
+                    If row("hireSlot1id") IsNot DBNull.Value Then
+                        tavernStateHires(ctr) = New Creature(CInt(row("hireSlot1id")))
+                    Else
+                        tavernStateHires(ctr) = Nothing
+                    End If
                 Case 1
-                    tavernStateHires(ctr) = New Creature(CInt(row("hireSlot2id")))
-                    tavernStateQuests(ctr) = New Quest(CInt(row("questSlot2id")))
+                    If row("hireSlot2id") IsNot DBNull.Value Then
+                        tavernStateHires(ctr) = New Creature(CInt(row("hireSlot2id")))
+                    Else
+                        tavernStateHires(ctr) = Nothing
+                    End If
                 Case 2
-                    tavernStateHires(ctr) = New Creature(CInt(row("hireSlot3id")))
-                    tavernStateQuests(ctr) = New Quest(CInt(row("questSlot3id")))
+                    If row("hireSlot3id") IsNot DBNull.Value Then
+                        tavernStateHires(ctr) = New Creature(CInt(row("hireSlot3id")))
+                    Else
+                        tavernStateHires(ctr) = Nothing
+                    End If
                 Case 3
-                    tavernStateHires(ctr) = New Creature(CInt(row("hireSlot4id")))
+                    If row("hireSlot4id") IsNot DBNull.Value Then
+                        tavernStateHires(ctr) = New Creature(CInt(row("hireSlot4id")))
+                    Else
+                        tavernStateHires(ctr) = Nothing
+                    End If
             End Select
         Next
         tavernStateDateVisited = row("dateVisited")
@@ -84,20 +97,18 @@
     End Property
 
     Public Sub FillHires(creaturesTable As GameDatabaseDataSet.StaticCreaturesDataTable)
-        Dim row As DataRow
-        For ctr = 0 To 3
-            row = creaturesTable(ctr)
+        Dim ctr As Integer = 0
+        For Each row In creaturesTable
             tavernStateHires(ctr) = New Creature(row)
-            Console.WriteLine("hire id: " & tavernStateHires(ctr).id)
+            ctr += 1
         Next
     End Sub
 
     Public Sub FillQuests(questsTable As GameDatabaseDataSet.StaticQuestsDataTable)
-        Dim row As DataRow
-        For ctr = 0 To 2
-            row = questsTable(ctr)
+        Dim ctr As Integer = 0
+        For Each row In questsTable
             tavernStateQuests(ctr) = New Quest(row)
-            Console.WriteLine("tavern quest id: " & tavernStateQuests(ctr).id)
+            ctr += 1
         Next
     End Sub
 

@@ -96,7 +96,7 @@
     End Sub
 
     Private Sub add1Weekbtn_Click(sender As Object, e As EventArgs) Handles add1Weekbtn.Click
-        currentState.changeDate(TimeSpan.FromDays(7))
+        currentState.ChangeDate(TimeSpan.FromDays(7))
         datelbl.Text = currentState.dateInGame.ToString
         Try
             Validate()

@@ -234,11 +234,15 @@
         End Set
     End Property
 
-    Public Sub changeDate(amount As TimeSpan)
+    Public Sub ChangeDate(amount As TimeSpan)
         If amount < TimeSpan.Zero Then
             stateGameDate = stateGameDate.Subtract(amount)
         Else
             stateGameDate = stateGameDate.Add(amount)
         End If
+    End Sub
+
+    Public Sub AcceptQuest(quest As Quest)
+        stateQuest = quest
     End Sub
 End Class

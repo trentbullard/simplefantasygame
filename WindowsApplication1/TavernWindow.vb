@@ -3,6 +3,8 @@
     Private tavernRandomInts(4) As Integer
 
     Private Sub TavernWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'GameDatabaseDataSet.PlayerStates' table. You can move, or remove it, as needed.
+        Me.PlayerStatesTableAdapter.Fill(Me.GameDatabaseDataSet.PlayerStates)
         TavernStatesTableAdapter.Fill(GameDatabaseDataSet.TavernStates)
         PlayersTableAdapter.Fill(GameDatabaseDataSet.Players)
         PlayerCreaturesTableAdapter.Fill(GameDatabaseDataSet.PlayerCreatures)
@@ -16,23 +18,34 @@
             currentTavernState.FillQuests(StaticQuestsTableAdapter.GetQuestsByTavernStateid(currentTavernState.id))
             For ctr = 0 To 3
                 If currentTavernState.dateVisited < currentState.dateInGame Then
-                    RefreshTavernSlot(ctr + 1)
-                ElseIf currentTavernState.hires(ctr) IsNot Nothing Then
-                    FillCreatureSlot(currentTavernState.hires(ctr), ctr + 1)
+                    RefreshTavernHireSlot(ctr + 1)
                     If ctr < 3 Then
+                        RefreshTavernQuestSlot(ctr + 1)
+                    End If
+                ElseIf currentTavernState.hires(ctr) IsNot Nothing Then
+                    If Not currentTavernState.hires(ctr).id = -1 Then
+                        FillCreatureSlot(currentTavernState.hires(ctr), ctr + 1)
+                    End If
+                Else
+                    ClearCreatureSlot(ctr + 1)
+                End If
+            Next
+            For ctr = 0 To 2
+                If currentTavernState.quests(ctr) IsNot Nothing Then
+                    If Not currentTavernState.quests(ctr).id = -1 Then
                         FillQuestSlot(currentTavernState.quests(ctr), ctr + 1)
                     End If
                 Else
-                    ClearCreatureSlot(ctr)
-                    If ctr < 3 Then
-                        ClearQuestSlot(ctr)
-                    End If
+                    ClearQuestSlot(ctr + 1)
                 End If
             Next
         Else
             currentTavernState = New TavernState(currentState)
             For ctr = 0 To 3
-                RefreshTavernSlot(ctr + 1)
+                RefreshTavernHireSlot(ctr + 1)
+                If ctr < 3 Then
+                    RefreshTavernQuestSlot(ctr + 1)
+                End If
             Next
         End If
         NewTavernState()
@@ -62,6 +75,18 @@
         End If
     End Sub
 
+    Private Sub questSlot1btn_Click(sender As Object, e As EventArgs) Handles questSlot1btn.Click
+        AcceptQuest(currentTavernState.quests(0), 1)
+    End Sub
+
+    Private Sub questSlot2btn_Click(sender As Object, e As EventArgs) Handles questSlot2btn.Click
+        AcceptQuest(currentTavernState.quests(1), 2)
+    End Sub
+
+    Private Sub questSlot3btn_Click(sender As Object, e As EventArgs) Handles questSlot3btn.Click
+        AcceptQuest(currentTavernState.quests(2), 3)
+    End Sub
+
     Private Sub HireCreature(creature As Creature, slot As Integer)
         Dim newRow As DataRow = GameDatabaseDataSet.Tables("PlayerCreatures").NewRow()
 
@@ -81,15 +106,27 @@
             PlayerCreaturesTableAdapter.Update(GameDatabaseDataSet.PlayerCreatures)
             ClearCreatureSlot(slot)
         Catch ex As Exception
-            MsgBox("Failed to add creature to database.")
+            MsgBox("Failed to add player creature to database.")
             Exit Sub
         End Try
+        NewTavernState()
 
         currentState.townwindow.RefreshControls()
     End Sub
 
     Private Sub AcceptQuest(quest As Quest, slot As Integer)
+        currentState.AcceptQuest(quest)
+        ClearQuestSlot(slot)
+        NewTavernState()
 
+        Try
+            Validate()
+            GameDatabaseDataSet.PlayerStates(currentState.id - 1).currentQuestid = currentState.quest.id
+            PlayerStatesBindingSource.EndEdit()
+            PlayerStatesTableAdapter.Update(GameDatabaseDataSet.PlayerStates)
+        Catch ex As Exception
+            MsgBox("failed to add playerstate to database")
+        End Try
     End Sub
 
     Private Sub FillCreatureSlot(creature As Creature, slot As Integer)
@@ -220,7 +257,17 @@
     End Sub
 
     Private Sub ClearQuestSlot(slot As Integer)
-
+        Select Case slot
+            Case 1
+                questSlot1rtxt.Text = Nothing
+                questSlot1rtxt.Enabled = False
+            Case 2
+                questSlot2rtxt.Text = Nothing
+                questSlot2rtxt.Enabled = False
+            Case 3
+                questSlot3rtxt.Text = Nothing
+                questSlot3rtxt.Enabled = False
+        End Select
     End Sub
 
     Private Sub playerbtn_Click(sender As Object, e As EventArgs) Handles playerbtn.Click
@@ -271,13 +318,41 @@
         Dim newRow As DataRow = GameDatabaseDataSet.Tables("TavernStates").NewRow()
 
         newRow("playerStateid") = currentState.id
-        newRow("hireSlot1id") = currentTavernState.hires(0).id
-        newRow("hireSlot2id") = currentTavernState.hires(1).id
-        newRow("hireSlot3id") = currentTavernState.hires(2).id
-        newRow("hireSlot4id") = currentTavernState.hires(3).id
-        newRow("questSlot1id") = currentTavernState.quests(0).id
-        newRow("questSlot2id") = currentTavernState.quests(1).id
-        newRow("questSlot3id") = currentTavernState.quests(2).id
+        If currentTavernState.hires(0) IsNot Nothing Then
+            newRow("hireSlot1id") = currentTavernState.hires(0).id
+        Else
+            newRow("hireSlot1id") = DBNull.Value
+        End If
+        If currentTavernState.hires(1) IsNot Nothing Then
+            newRow("hireSlot2id") = currentTavernState.hires(1).id
+        Else
+            newRow("hireSlot2id") = DBNull.Value
+        End If
+        If currentTavernState.hires(2) IsNot Nothing Then
+            newRow("hireSlot3id") = currentTavernState.hires(2).id
+        Else
+            newRow("hireSlot3id") = DBNull.Value
+        End If
+        If currentTavernState.hires(3) IsNot Nothing Then
+            newRow("hireSlot4id") = currentTavernState.hires(3).id
+        Else
+            newRow("hireSlot4id") = DBNull.Value
+        End If
+        If currentTavernState.quests(0) IsNot Nothing Then
+            newRow("questSlot1id") = currentTavernState.quests(0).id
+        Else
+            newRow("questSlot1id") = DBNull.Value
+        End If
+        If currentTavernState.quests(1) IsNot Nothing Then
+            newRow("questSlot2id") = currentTavernState.quests(1).id
+        Else
+            newRow("questSlot2id") = DBNull.Value
+        End If
+        If currentTavernState.quests(2) IsNot Nothing Then
+            newRow("questSlot3id") = currentTavernState.quests(2).id
+        Else
+            newRow("questSlot3id") = DBNull.Value
+        End If
         newRow("dateVisited") = currentTavernState.dateVisited
 
         GameDatabaseDataSet.Tables("TavernStates").Rows.Add(newRow)
@@ -289,16 +364,16 @@
         Catch ex As Exception
             MsgBox("Failed to add tavern state to database.")
         End Try
-
     End Sub
 
-    Private Sub RefreshTavernSlot(slot As Integer)
+    Private Sub RefreshTavernHireSlot(slot As Integer)
         currentTavernState.hires(slot - 1) = New Creature(StaticCreaturesTableAdapter.GetCreatureByid(tavernRandomInts(slot - 1)).First)
         FillCreatureSlot(currentTavernState.hires(slot - 1), slot)
-        If slot < 4 Then
-            currentTavernState.quests(slot - 1) = New Quest(StaticQuestsTableAdapter.GetQuestByid(tavernRandomInts(slot - 1)).First)
-            FillQuestSlot(currentTavernState.quests(slot - 1), slot)
-        End If
+    End Sub
+
+    Public Sub RefreshTavernQuestSlot(slot As Integer)
+        currentTavernState.quests(slot - 1) = New Quest(StaticQuestsTableAdapter.GetQuestByid(tavernRandomInts(slot - 1)).First)
+        FillQuestSlot(currentTavernState.quests(slot - 1), slot)
     End Sub
 
     Private Sub tavernRandoms()
@@ -324,4 +399,5 @@
             End Select
         Next
     End Sub
+
 End Class
