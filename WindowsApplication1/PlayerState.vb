@@ -2,9 +2,9 @@
     Private stateid As Integer
     Private statePlayer As Player
     Private stateDateSaved As DateTime
-    Private stateParty As Party
-    Private stateTier As Tier
-    Private stateQuest As Quest
+    Private stateParty As Party = Nothing
+    Private stateTier As Tier = Nothing
+    Private stateQuest As Quest = Nothing
     Private stateGameDate As DateTime
     Private stateCombatWindow As CombatWindow
     Private stateDeletePlayersWindow As DeletePlayersWindow
@@ -244,5 +244,9 @@
 
     Public Sub AcceptQuest(quest As Quest)
         stateQuest = quest
+    End Sub
+
+    Public Sub AbandonQuest()
+        stateQuest = Nothing
     End Sub
 End Class

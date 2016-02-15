@@ -3,8 +3,7 @@
     Private tavernRandomInts(4) As Integer
 
     Private Sub TavernWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'GameDatabaseDataSet.PlayerStates' table. You can move, or remove it, as needed.
-        Me.PlayerStatesTableAdapter.Fill(Me.GameDatabaseDataSet.PlayerStates)
+        PlayerStatesTableAdapter.Fill(GameDatabaseDataSet.PlayerStates)
         TavernStatesTableAdapter.Fill(GameDatabaseDataSet.TavernStates)
         PlayersTableAdapter.Fill(GameDatabaseDataSet.Players)
         PlayerCreaturesTableAdapter.Fill(GameDatabaseDataSet.PlayerCreatures)
@@ -31,12 +30,14 @@
                 End If
             Next
             For ctr = 0 To 2
-                If currentTavernState.quests(ctr) IsNot Nothing Then
+                If currentState.quest IsNot Nothing Then
+                    ClearQuestSlots()
+                ElseIf currentTavernState.quests(ctr) IsNot Nothing Then
                     If Not currentTavernState.quests(ctr).id = -1 Then
                         FillQuestSlot(currentTavernState.quests(ctr), ctr + 1)
                     End If
                 Else
-                    ClearQuestSlot(ctr + 1)
+                    ClearQuestSlots()
                 End If
             Next
         Else
@@ -116,7 +117,7 @@
 
     Private Sub AcceptQuest(quest As Quest, slot As Integer)
         currentState.AcceptQuest(quest)
-        ClearQuestSlot(slot)
+        ClearQuestSlots()
         NewTavernState()
 
         Try
@@ -191,7 +192,14 @@
     End Sub
 
     Private Sub FillQuestSlot(quest As Quest, slot As Integer)
-
+        Select Case slot
+            Case 1
+                questSlot1rtxt.Text = quest.ToString
+            Case 2
+                questSlot2rtxt.Text = quest.ToString
+            Case 3
+                questSlot3rtxt.Text = quest.ToString
+        End Select
     End Sub
 
     Private Sub ClearCreatureSlot(slot As Integer)
@@ -256,18 +264,13 @@
         End Select
     End Sub
 
-    Private Sub ClearQuestSlot(slot As Integer)
-        Select Case slot
-            Case 1
-                questSlot1rtxt.Text = Nothing
-                questSlot1rtxt.Enabled = False
-            Case 2
-                questSlot2rtxt.Text = Nothing
-                questSlot2rtxt.Enabled = False
-            Case 3
-                questSlot3rtxt.Text = Nothing
-                questSlot3rtxt.Enabled = False
-        End Select
+    Private Sub ClearQuestSlots()
+        questSlot1rtxt.Text = "complete or abandon current quest"
+        questSlot1rtxt.Enabled = False
+        questSlot2rtxt.Text = "complete or abandon current quest"
+        questSlot2rtxt.Enabled = False
+        questSlot3rtxt.Text = "complete or abandon current quest"
+        questSlot3rtxt.Enabled = False
     End Sub
 
     Private Sub playerbtn_Click(sender As Object, e As EventArgs) Handles playerbtn.Click

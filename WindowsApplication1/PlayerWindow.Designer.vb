@@ -24,6 +24,10 @@ Partial Class PlayerWindow
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.playerStatspnl = New System.Windows.Forms.Panel()
+        Me.noActiveQuestlbl = New System.Windows.Forms.Label()
+        Me.currentQuestlbl = New System.Windows.Forms.LinkLabel()
+        Me.currentQuestrtxt = New System.Windows.Forms.RichTextBox()
+        Me.creatureListlbl = New System.Windows.Forms.Label()
         Me.creaturelst = New System.Windows.Forms.ListBox()
         Me.playerInfoPanellbl = New System.Windows.Forms.Label()
         Me.playerSkillTreebtn = New System.Windows.Forms.Button()
@@ -40,25 +44,36 @@ Partial Class PlayerWindow
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QuestsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GameDatabaseDataSet = New WindowsApplication1.GameDatabaseDataSet()
         Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
         Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
-        Me.StaticCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.StaticCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticCreaturesTableAdapter()
-        Me.PlayerCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayerCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerCreaturesTableAdapter()
+        Me.StaticCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticCreaturesTableAdapter()
+        Me.StaticCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayerCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticQuestsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticQuestsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticQuestsTableAdapter()
+        Me.PlayerStatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayerStatesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter()
         Me.playerStatspnl.SuspendLayout()
         Me.playerMenuStrip.SuspendLayout()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StaticCreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayerCreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.StaticQuestsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PlayerStatesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'playerStatspnl
         '
         Me.playerStatspnl.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.playerStatspnl.Controls.Add(Me.noActiveQuestlbl)
+        Me.playerStatspnl.Controls.Add(Me.currentQuestlbl)
+        Me.playerStatspnl.Controls.Add(Me.currentQuestrtxt)
+        Me.playerStatspnl.Controls.Add(Me.creatureListlbl)
         Me.playerStatspnl.Controls.Add(Me.creaturelst)
         Me.playerStatspnl.Controls.Add(Me.playerInfoPanellbl)
         Me.playerStatspnl.Controls.Add(Me.playerSkillTreebtn)
@@ -71,8 +86,59 @@ Partial Class PlayerWindow
         Me.playerStatspnl.Dock = System.Windows.Forms.DockStyle.Fill
         Me.playerStatspnl.Location = New System.Drawing.Point(0, 24)
         Me.playerStatspnl.Name = "playerStatspnl"
-        Me.playerStatspnl.Size = New System.Drawing.Size(324, 350)
+        Me.playerStatspnl.Size = New System.Drawing.Size(324, 438)
         Me.playerStatspnl.TabIndex = 5
+        '
+        'noActiveQuestlbl
+        '
+        Me.noActiveQuestlbl.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.noActiveQuestlbl.AutoSize = True
+        Me.noActiveQuestlbl.BackColor = System.Drawing.Color.Transparent
+        Me.noActiveQuestlbl.ForeColor = System.Drawing.Color.White
+        Me.noActiveQuestlbl.Location = New System.Drawing.Point(243, 261)
+        Me.noActiveQuestlbl.Name = "noActiveQuestlbl"
+        Me.noActiveQuestlbl.Size = New System.Drawing.Size(69, 13)
+        Me.noActiveQuestlbl.TabIndex = 23
+        Me.noActiveQuestlbl.Text = "current quest"
+        '
+        'currentQuestlbl
+        '
+        Me.currentQuestlbl.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.currentQuestlbl.AutoSize = True
+        Me.currentQuestlbl.Enabled = False
+        Me.currentQuestlbl.LinkColor = System.Drawing.Color.White
+        Me.currentQuestlbl.Location = New System.Drawing.Point(243, 261)
+        Me.currentQuestlbl.Name = "currentQuestlbl"
+        Me.currentQuestlbl.Size = New System.Drawing.Size(69, 13)
+        Me.currentQuestlbl.TabIndex = 22
+        Me.currentQuestlbl.TabStop = True
+        Me.currentQuestlbl.Text = "current quest"
+        Me.currentQuestlbl.Visible = False
+        '
+        'currentQuestrtxt
+        '
+        Me.currentQuestrtxt.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.currentQuestrtxt.Location = New System.Drawing.Point(12, 277)
+        Me.currentQuestrtxt.Name = "currentQuestrtxt"
+        Me.currentQuestrtxt.ReadOnly = True
+        Me.currentQuestrtxt.Size = New System.Drawing.Size(300, 96)
+        Me.currentQuestrtxt.TabIndex = 21
+        Me.currentQuestrtxt.Text = ""
+        '
+        'creatureListlbl
+        '
+        Me.creatureListlbl.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.creatureListlbl.AutoSize = True
+        Me.creatureListlbl.ForeColor = System.Drawing.Color.White
+        Me.creatureListlbl.Location = New System.Drawing.Point(226, 91)
+        Me.creatureListlbl.Name = "creatureListlbl"
+        Me.creatureListlbl.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.creatureListlbl.Size = New System.Drawing.Size(86, 13)
+        Me.creatureListlbl.TabIndex = 18
+        Me.creatureListlbl.Text = "creatures owned"
+        Me.creatureListlbl.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'creaturelst
         '
@@ -82,7 +148,7 @@ Partial Class PlayerWindow
         Me.creaturelst.FormattingEnabled = True
         Me.creaturelst.Location = New System.Drawing.Point(12, 107)
         Me.creaturelst.Name = "creaturelst"
-        Me.creaturelst.Size = New System.Drawing.Size(300, 134)
+        Me.creaturelst.Size = New System.Drawing.Size(300, 121)
         Me.creaturelst.TabIndex = 17
         '
         'playerInfoPanellbl
@@ -112,7 +178,7 @@ Partial Class PlayerWindow
         Me.playerExperiencelbl.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.playerExperiencelbl.AutoSize = True
         Me.playerExperiencelbl.ForeColor = System.Drawing.Color.White
-        Me.playerExperiencelbl.Location = New System.Drawing.Point(255, 309)
+        Me.playerExperiencelbl.Location = New System.Drawing.Point(253, 397)
         Me.playerExperiencelbl.Name = "playerExperiencelbl"
         Me.playerExperiencelbl.Size = New System.Drawing.Size(59, 13)
         Me.playerExperiencelbl.TabIndex = 14
@@ -132,7 +198,7 @@ Partial Class PlayerWindow
         '
         Me.playerExperiencebar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.playerExperiencebar.Location = New System.Drawing.Point(12, 325)
+        Me.playerExperiencebar.Location = New System.Drawing.Point(12, 413)
         Me.playerExperiencebar.Name = "playerExperiencebar"
         Me.playerExperiencebar.Size = New System.Drawing.Size(300, 13)
         Me.playerExperiencebar.Step = 1
@@ -209,9 +275,16 @@ Partial Class PlayerWindow
         '
         'HelpToolStripMenuItem
         '
+        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.QuestsToolStripMenuItem})
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
         Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(42, 20)
         Me.HelpToolStripMenuItem.Text = "help"
+        '
+        'QuestsToolStripMenuItem
+        '
+        Me.QuestsToolStripMenuItem.Name = "QuestsToolStripMenuItem"
+        Me.QuestsToolStripMenuItem.Size = New System.Drawing.Size(108, 22)
+        Me.QuestsToolStripMenuItem.Text = "quests"
         '
         'GameDatabaseDataSet
         '
@@ -264,35 +337,53 @@ Partial Class PlayerWindow
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.WeaponAugmentsTableAdapter = Nothing
         '
-        'StaticCreaturesBindingSource
+        'PlayerCreaturesTableAdapter
         '
-        Me.StaticCreaturesBindingSource.DataMember = "StaticCreatures"
-        Me.StaticCreaturesBindingSource.DataSource = Me.GameDatabaseDataSet
+        Me.PlayerCreaturesTableAdapter.ClearBeforeFill = True
         '
         'StaticCreaturesTableAdapter
         '
         Me.StaticCreaturesTableAdapter.ClearBeforeFill = True
+        '
+        'StaticCreaturesBindingSource
+        '
+        Me.StaticCreaturesBindingSource.DataMember = "StaticCreatures"
+        Me.StaticCreaturesBindingSource.DataSource = Me.GameDatabaseDataSet
         '
         'PlayerCreaturesBindingSource
         '
         Me.PlayerCreaturesBindingSource.DataMember = "PlayerCreatures"
         Me.PlayerCreaturesBindingSource.DataSource = Me.GameDatabaseDataSet
         '
-        'PlayerCreaturesTableAdapter
+        'StaticQuestsBindingSource
         '
-        Me.PlayerCreaturesTableAdapter.ClearBeforeFill = True
+        Me.StaticQuestsBindingSource.DataMember = "StaticQuests"
+        Me.StaticQuestsBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'StaticQuestsTableAdapter
+        '
+        Me.StaticQuestsTableAdapter.ClearBeforeFill = True
+        '
+        'PlayerStatesBindingSource
+        '
+        Me.PlayerStatesBindingSource.DataMember = "PlayerStates"
+        Me.PlayerStatesBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'PlayerStatesTableAdapter
+        '
+        Me.PlayerStatesTableAdapter.ClearBeforeFill = True
         '
         'PlayerWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(324, 374)
+        Me.ClientSize = New System.Drawing.Size(324, 462)
         Me.Controls.Add(Me.playerStatspnl)
         Me.Controls.Add(Me.playerMenuStrip)
         Me.MainMenuStrip = Me.playerMenuStrip
         Me.Name = "PlayerWindow"
         Me.ShowIcon = False
-        Me.Text = "PlayerWindow"
+        Me.Text = "player"
         Me.playerStatspnl.ResumeLayout(False)
         Me.playerStatspnl.PerformLayout()
         Me.playerMenuStrip.ResumeLayout(False)
@@ -301,6 +392,8 @@ Partial Class PlayerWindow
         CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StaticCreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayerCreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.StaticQuestsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PlayerStatesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -331,4 +424,13 @@ Partial Class PlayerWindow
     Friend WithEvents StaticCreaturesBindingSource As BindingSource
     Friend WithEvents PlayerCreaturesTableAdapter As GameDatabaseDataSetTableAdapters.PlayerCreaturesTableAdapter
     Friend WithEvents PlayerCreaturesBindingSource As BindingSource
+    Friend WithEvents currentQuestrtxt As RichTextBox
+    Friend WithEvents creatureListlbl As Label
+    Friend WithEvents StaticQuestsBindingSource As BindingSource
+    Friend WithEvents StaticQuestsTableAdapter As GameDatabaseDataSetTableAdapters.StaticQuestsTableAdapter
+    Friend WithEvents PlayerStatesBindingSource As BindingSource
+    Friend WithEvents PlayerStatesTableAdapter As GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter
+    Friend WithEvents currentQuestlbl As LinkLabel
+    Friend WithEvents noActiveQuestlbl As Label
+    Friend WithEvents QuestsToolStripMenuItem As ToolStripMenuItem
 End Class

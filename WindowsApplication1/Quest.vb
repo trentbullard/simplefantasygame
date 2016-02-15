@@ -8,6 +8,7 @@
     Private questRewardExp As Integer
     Private questRewardGold As Integer
     Private questIsComplete As Boolean
+    Private questDescription As String
 
     Public Sub New()
         questid = -1
@@ -19,6 +20,7 @@
         questRewardExp = 1
         questRewardGold = 1
         questIsComplete = False
+        questDescription = "quest description"
     End Sub
 
     Public Sub New(id As Integer)
@@ -31,6 +33,7 @@
         questRewardExp = 1
         questRewardGold = 1
         questIsComplete = False
+        questDescription = "quest description"
     End Sub
 
     Public Sub New(name As String)
@@ -43,6 +46,7 @@
         questRewardExp = 1
         questRewardGold = 1
         questIsComplete = False
+        questDescription = "quest description"
     End Sub
 
     Public Sub New(row As GameDatabaseDataSet.StaticQuestsRow)
@@ -65,6 +69,7 @@
         questRewardExp = row("rewardExperience")
         questRewardGold = row("rewardGold")
         questIsComplete = row("isComplete")
+        questDescription = "quest description"
     End Sub
 
     Public ReadOnly Property id() As Integer
@@ -127,7 +132,17 @@
         End Get
     End Property
 
+    Public ReadOnly Property description() As String
+        Get
+            Return questDescription
+        End Get
+    End Property
+
     Public Sub complete()
         questIsComplete = True
     End Sub
+
+    Public Overrides Function ToString() As String
+        Return questName & vbCrLf & "level range: " & questMinLevel & " - " & questMaxLevel & vbCrLf & questDescription
+    End Function
 End Class

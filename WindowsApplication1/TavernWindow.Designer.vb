@@ -144,9 +144,6 @@ Partial Class TavernWindow
         Me.PlayerCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.StaticQuestsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.StaticQuestsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticQuestsTableAdapter()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.PlayerStatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayerStatesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter()
         Me.tavernSlot1pnl.SuspendLayout()
@@ -168,8 +165,6 @@ Partial Class TavernWindow
         CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayerCreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StaticQuestsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayerStatesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -1296,35 +1291,6 @@ Partial Class TavernWindow
         '
         Me.StaticQuestsTableAdapter.ClearBeforeFill = True
         '
-        'ListBox1
-        '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(763, 12)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(305, 147)
-        Me.ListBox1.TabIndex = 33
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(763, 179)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.RowHeadersWidth = 25
-        Me.DataGridView1.Size = New System.Drawing.Size(305, 174)
-        Me.DataGridView1.TabIndex = 34
-        '
-        'DataGridView2
-        '
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Location = New System.Drawing.Point(763, 397)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(305, 150)
-        Me.DataGridView2.TabIndex = 35
-        '
         'PlayerStatesBindingSource
         '
         Me.PlayerStatesBindingSource.DataMember = "PlayerStates"
@@ -1340,9 +1306,6 @@ Partial Class TavernWindow
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(756, 689)
-        Me.Controls.Add(Me.DataGridView2)
-        Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.innbtn)
         Me.Controls.Add(Me.questpnl)
         Me.Controls.Add(Me.townbtn)
@@ -1377,8 +1340,6 @@ Partial Class TavernWindow
         CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayerCreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StaticQuestsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayerStatesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -1505,9 +1466,6 @@ Partial Class TavernWindow
     Friend WithEvents PlayerCreaturesBindingSource As BindingSource
     Friend WithEvents StaticQuestsBindingSource As BindingSource
     Friend WithEvents StaticQuestsTableAdapter As GameDatabaseDataSetTableAdapters.StaticQuestsTableAdapter
-    Friend WithEvents ListBox1 As ListBox
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents DataGridView2 As DataGridView
     Friend WithEvents PlayerStatesBindingSource As BindingSource
     Friend WithEvents PlayerStatesTableAdapter As GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter
 End Class
