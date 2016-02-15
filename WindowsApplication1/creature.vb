@@ -17,7 +17,7 @@
 
     Public Sub New()
         creatureid = -1
-        creatureName = "name"
+        creatureName = getName()
         creatureSpecies = "species"
         creatureHealth = 1
         creatureStrength = 1
@@ -224,5 +224,31 @@
 
     Public Sub Buff(skill)
         'add code that applies positive spell effects to creature
+    End Sub
+
+    Public Sub Save(ds As GameDatabaseDataSet,
+                    bs As BindingSource,
+                    ta As GameDatabaseDataSetTableAdapters.StaticCreaturesTableAdapter)
+        Dim newRow As DataRow = ds.Tables("StaticCreatures").NewRow()
+        newRow("species") = creatureSpecies
+        newRow("class") = creatureClass
+        newRow("level") = creatureLevel
+        newRow("experience") = creatureExperience
+        newRow("maxHealth") = creatureMaxHealth
+        newRow("health") = creatureHealth
+        newRow("strength") = creatureStrength
+        newRow("armor") = creatureArmor
+        newRow("initiative") = creatureInitiative
+        newRow("intelligence") = creatureIntelligence
+        newRow("wisdom") = creatureWisdom
+        newRow("dexterity") = creatureDexterity
+        newRow("name") = creatureName
+        ds.Tables("StaticCreatures").Rows.Add(newRow)
+        Try
+            bs.EndEdit()
+            ta.Update(ds.StaticCreatures)
+        Catch ex As Exception
+            MsgBox("failed to add static creature to database.")
+        End Try
     End Sub
 End Class

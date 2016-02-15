@@ -76,9 +76,9 @@
         stateid = row("id")
         statePlayer = currentPlayer
         stateDateSaved = row("dateSaved")
-        stateParty = New Party(CInt(row("currentPartyid")))
-        stateTier = New Tier(CInt(row("currentTierid")))
-        stateQuest = New Quest(CInt(row("currentQuestid")))
+        stateParty = If(row("currentPartyid") IsNot DBNull.Value, New Party(CInt(row("currentPartyid"))), Nothing)
+        stateTier = If(row("currentTierid") IsNot DBNull.Value, New Tier(CInt(row("currentTierid"))), Nothing)
+        stateQuest = If(row("currentQuestid") IsNot DBNull.Value, New Quest(CInt(row("currentQuestid"))), Nothing)
         stateGameDate = row("gameDate")
         stateCombatWindow = New CombatWindow
         stateDeletePlayersWindow = New DeletePlayersWindow
@@ -111,16 +111,22 @@
         End Get
     End Property
 
-    Public ReadOnly Property party() As Party
+    Public Property party() As Party
         Get
             Return stateParty
         End Get
+        Set(value As Party)
+            stateParty = value
+        End Set
     End Property
 
-    Public ReadOnly Property tier() As Tier
+    Public Property tier() As Tier
         Get
             Return stateTier
         End Get
+        Set(value As Tier)
+            stateTier = value
+        End Set
     End Property
 
     Public ReadOnly Property quest() As Quest
@@ -248,5 +254,34 @@
 
     Public Sub AbandonQuest()
         stateQuest = Nothing
+    End Sub
+
+    Public Sub Save(ByRef dataSet As GameDatabaseDataSet,
+                    ByRef bindingSource As BindingSource,
+                    ByRef tableAdapter As GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter)
+        If Not tableAdapter.GetLastPlayerStateByPlayerid(statePlayer.id).Any Then
+            Dim newRow As DataRow = dataSet.Tables("PlayerStates").NewRow()
+            newRow("playerid") = statePlayer.id
+            newRow("dateSaved") = Date.Now
+            newRow("currentPartyid") = If(stateParty IsNot Nothing, stateParty.id, DBNull.Value)
+            newRow("currentTierid") = If(stateTier IsNot Nothing, stateTier.id, DBNull.Value)
+            newRow("currentQuestid") = If(stateQuest IsNot Nothing, stateQuest.id, DBNull.Value)
+            newRow("gameDate") = stateGameDate
+            dataSet.Tables("PlayerStates").Rows.Add(newRow)
+        Else
+            dataSet.Tables("PlayerStates").Rows.Find(stateid)("playerid") = statePlayer.id
+            dataSet.Tables("PlayerStates").Rows.Find(stateid)("dateSaved") = Date.Now
+            dataSet.Tables("PlayerStates").Rows.Find(stateid)("currentPartyid") = If(stateParty IsNot Nothing, stateParty.id, DBNull.Value)
+            dataSet.Tables("PlayerStates").Rows.Find(stateid)("currentTierid") = If(stateTier IsNot Nothing, stateTier.id, DBNull.Value)
+            dataSet.Tables("PlayerStates").Rows.Find(stateid)("currentQuestid") = If(stateQuest IsNot Nothing, stateQuest.id, DBNull.Value)
+            dataSet.Tables("PlayerStates").Rows.Find(stateid)("gameDate") = stateGameDate
+        End If
+        Try
+            bindingSource.EndEdit()
+            tableAdapter.Update(dataSet.PlayerStates)
+            stateid = tableAdapter.GetLastPlayerStateByPlayerid(statePlayer.id)(0)("id")
+        Catch ex As Exception
+            MsgBox("failed to update database record for " & Me.ToString)
+        End Try
     End Sub
 End Class

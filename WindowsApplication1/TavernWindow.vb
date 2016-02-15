@@ -100,9 +100,10 @@
         'Attempts to update the database
         Try
             Validate()
-            GameDatabaseDataSet.Players(currentPlayer.id - 1).gold = currentPlayer.gold
-            PlayersBindingSource.EndEdit()
-            PlayersTableAdapter.Update(GameDatabaseDataSet.Players)
+            currentPlayer.Save(GameDatabaseDataSet, PlayersBindingSource, PlayersTableAdapter)
+            'GameDatabaseDataSet.Players(currentPlayer.id - 1).gold = currentPlayer.gold
+            'PlayersBindingSource.EndEdit()
+            'PlayersTableAdapter.Update(GameDatabaseDataSet.Players)
             PlayerCreaturesBindingSource.EndEdit()
             PlayerCreaturesTableAdapter.Update(GameDatabaseDataSet.PlayerCreatures)
             ClearCreatureSlot(slot)

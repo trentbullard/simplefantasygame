@@ -1,10 +1,10 @@
 ﻿Public Class Quest
     Private questid As Integer
     Private questName As String
-    Private questTier As Tier
+    Private questTier As Tier = Nothing
     Private questMinLevel As Integer
     Private questMaxLevel As Integer
-    Private questRewardItem As Item
+    Private questRewardItem As Item = Nothing
     Private questRewardExp As Integer
     Private questRewardGold As Integer
     Private questIsComplete As Boolean
@@ -143,6 +143,40 @@
     End Sub
 
     Public Overrides Function ToString() As String
-        Return questName & vbCrLf & "level range: " & questMinLevel & " - " & questMaxLevel & vbCrLf & questDescription
+        Return questName & vbCrLf &
+            "level range: " & questMinLevel & " - " & questMaxLevel & vbCrLf &
+            "rewards: " & questRewardExp & " experience, " & questRewardGold & " gold, and an " & questRewardItem.ToString & vbCrLf &
+            questDescription
     End Function
+
+    Public Sub Save(ds As GameDatabaseDataSet,
+                    bs As BindingSource,
+                    ta As GameDatabaseDataSetTableAdapters.StaticQuestsTableAdapter)
+        Dim newRow As DataRow = ds.Tables("StaticQuests").NewRow()
+        Dim item As Integer = Roll(4)
+        newRow("name") = questName
+        newRow("tierid") = questTier.id
+        newRow("minLevel") = questMinLevel
+        newRow("maxLevel") = questMaxLevel
+        Select Case item
+            Case 1
+                newRow("rewardWeaponid") = Roll(20)
+            Case 2
+                newRow("rewardArmorid") = Roll(20)
+            Case 3
+                newRow("rewardAugmentid") = Roll(20)
+            Case 4
+                newRow("rewardConsumableid") = Roll(20)
+        End Select
+        newRow("rewardExperience") = questRewardExp
+        newRow("rewardGold") = questRewardGold
+        newRow("isComplete") = questIsComplete
+        ds.Tables("StaticQuests").Rows.Add(newRow)
+        Try
+            bs.EndEdit()
+            ta.Update(ds.StaticQuests)
+        Catch ex As Exception
+            MsgBox("failed to add static quest to database.")
+        End Try
+    End Sub
 End Class

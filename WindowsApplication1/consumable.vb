@@ -9,7 +9,7 @@
     End Sub
 
     Public Sub New(id As Integer)
-        MyBase.New(id, currentPlayer, "name")
+        MyBase.New(id)
         consumableAttributes = New Collection
         consumableTurns = 1
     End Sub

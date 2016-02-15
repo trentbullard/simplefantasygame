@@ -98,4 +98,28 @@
     Public Sub ReName(newName)
         playerName = newName
     End Sub
+
+    Public Sub Save(ByRef dataSet As GameDatabaseDataSet,
+                    ByRef bindingSource As BindingSource,
+                    ByRef tableAdapter As GameDatabaseDataSetTableAdapters.PlayersTableAdapter)
+        If Not tableAdapter.GetPlayerByid(playerid).Any Then
+            Dim newRow As DataRow = dataSet.Tables("Players").NewRow()
+            newRow("name") = playerName
+            newRow("level") = playerLevel
+            newRow("experience") = playerExperience
+            newRow("gold") = playerGold
+            dataSet.Tables("Players").Rows.Add(newRow)
+        Else
+            dataSet.Players(playerid - 1).name = playerName
+            dataSet.Players(playerid - 1).level = playerLevel
+            dataSet.Players(playerid - 1).experience = playerExperience
+            dataSet.Players(playerid - 1).gold = playerGold
+        End If
+        Try
+            bindingSource.EndEdit()
+            tableAdapter.Update(dataSet.Players)
+        Catch ex As Exception
+            MsgBox("failed to update database record for " & Me.ToString)
+        End Try
+    End Sub
 End Class

@@ -1304,7 +1304,7 @@ Partial Class TavernWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.AutoSize = True
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(756, 689)
         Me.Controls.Add(Me.innbtn)
         Me.Controls.Add(Me.questpnl)
@@ -1314,6 +1314,7 @@ Partial Class TavernWindow
         Me.Controls.Add(Me.tavernpnl)
         Me.Name = "TavernWindow"
         Me.ShowIcon = False
+        Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.Text = "tavern"
         Me.tavernSlot1pnl.ResumeLayout(False)
         Me.tavernSlot1pnl.PerformLayout()

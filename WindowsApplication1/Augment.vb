@@ -1,11 +1,10 @@
-﻿Public Class Augment : Inherits Item
-    Private augmentid As Integer
+﻿Public Class Augment : Inherits Item 'TODO
 
     Public Sub New()
-        augmentid = -1
+        MyBase.New()
     End Sub
 
     Public Sub New(id As Integer)
-        augmentid = id
+        MyBase.New(id)
     End Sub
 End Class

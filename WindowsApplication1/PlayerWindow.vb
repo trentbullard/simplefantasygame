@@ -40,19 +40,11 @@
         'Called from Names.vb
         'Converts any string into a proper-cased trimmed string
         nameString = ProperCase(nameString)
+
         currentPlayer.ReName(nameString)
-
-        GameDatabaseDataSet.Players(currentPlayer.id - 1).name = currentPlayer.name
-
-        Try
-            Validate()
-            GameDatabaseDataSet.Players(currentPlayer.id - 1).gold = currentPlayer.gold
-            PlayersBindingSource.EndEdit()
-            PlayersTableAdapter.Update(GameDatabaseDataSet.Players)
-            playerInfoPanellbl.Text = currentPlayer.ToString
-        Catch ex As Exception
-            MsgBox("Failed to add creature to database.")
-        End Try
+        Me.Text = currentPlayer.ToString
+        playerInfoPanellbl.Text = currentPlayer.ToString
+        currentPlayer.Save(GameDatabaseDataSet, PlayersBindingSource, PlayersTableAdapter)
     End Sub
 
     Private Sub PlayersBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
@@ -74,18 +66,10 @@
         Dim response = MsgBox("are you sure you want to abandon this quest?", style, "Confirm Deletion")
 
         If response = MsgBoxResult.Yes Then
-            Try
-                currentState.AbandonQuest()
-                GameDatabaseDataSet.PlayerStates(currentState.id - 1).currentQuestid = -1
-                Validate()
-                PlayerStatesBindingSource.EndEdit()
-                PlayerStatesTableAdapter.Update(GameDatabaseDataSet.PlayerStates)
-            Catch ex As Exception
-                MsgBox("failed to update player state and remove current quest.")
-            End Try
-        Else
+            currentState.AbandonQuest()
+            currentState.Save(GameDatabaseDataSet, PlayerStatesBindingSource, PlayerStatesTableAdapter)
+            RefreshQuest()
         End If
-        RefreshQuest()
     End Sub
 
     Private Sub RefreshQuest()

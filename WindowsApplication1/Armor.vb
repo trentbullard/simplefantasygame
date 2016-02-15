@@ -1,11 +1,10 @@
-﻿Public Class Armor : Inherits Item
-    Private armorid As Integer
+﻿Public Class Armor : Inherits Item 'TODO
 
     Public Sub New()
-        armorid = -1
+        MyBase.New()
     End Sub
 
     Public Sub New(id As Integer)
-        armorid = id
+        MyBase.New(id)
     End Sub
 End Class
