@@ -43,21 +43,18 @@
         End Set
     End Property
 
-    Public Property attributes() As Collection
+    Public ReadOnly Property attributes() As Collection
         Get
             Return consumableAttributes
         End Get
-        Set(value As Collection)
-            consumableAttributes = value
-        End Set
     End Property
 
     Public Overrides Function ToString() As String
         Dim attributeString As String = ""
-        For Each attribute As String In Me.consumableAttributes
+        For Each attribute As String In consumableAttributes
             attributeString = attributeString & " " & attribute
         Next
-        Return MyBase.ToString() & attributeString
+        Return "consumable " & MyBase.ToString() & attributeString
     End Function
 
     Public Sub use(creature)

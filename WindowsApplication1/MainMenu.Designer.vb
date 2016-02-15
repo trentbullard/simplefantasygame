@@ -42,12 +42,18 @@ Partial Class MainMenu
         Me.StaticQuestsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticQuestsTableAdapter()
         Me.PlayerPartiesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayerPartiesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerPartiesTableAdapter()
+        Me.StaticCampBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticCampTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticCampTableAdapter()
+        Me.StaticCampTierBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticCampTierTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticCampTierTableAdapter()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayerStatesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StaticCreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StaticQuestsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayerPartiesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.StaticCampBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.StaticCampTierBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'titlelbl
@@ -200,6 +206,24 @@ Partial Class MainMenu
         '
         Me.PlayerPartiesTableAdapter.ClearBeforeFill = True
         '
+        'StaticCampBindingSource
+        '
+        Me.StaticCampBindingSource.DataMember = "StaticCamp"
+        Me.StaticCampBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'StaticCampTableAdapter
+        '
+        Me.StaticCampTableAdapter.ClearBeforeFill = True
+        '
+        'StaticCampTierBindingSource
+        '
+        Me.StaticCampTierBindingSource.DataMember = "StaticCampTier"
+        Me.StaticCampTierBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'StaticCampTierTableAdapter
+        '
+        Me.StaticCampTierTableAdapter.ClearBeforeFill = True
+        '
         'MainMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -220,6 +244,8 @@ Partial Class MainMenu
         CType(Me.StaticCreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StaticQuestsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayerPartiesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.StaticCampBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.StaticCampTierBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -244,4 +270,8 @@ Partial Class MainMenu
     Friend WithEvents StaticQuestsTableAdapter As GameDatabaseDataSetTableAdapters.StaticQuestsTableAdapter
     Friend WithEvents PlayerPartiesBindingSource As BindingSource
     Friend WithEvents PlayerPartiesTableAdapter As GameDatabaseDataSetTableAdapters.PlayerPartiesTableAdapter
+    Friend WithEvents StaticCampBindingSource As BindingSource
+    Friend WithEvents StaticCampTableAdapter As GameDatabaseDataSetTableAdapters.StaticCampTableAdapter
+    Friend WithEvents StaticCampTierBindingSource As BindingSource
+    Friend WithEvents StaticCampTierTableAdapter As GameDatabaseDataSetTableAdapters.StaticCampTierTableAdapter
 End Class

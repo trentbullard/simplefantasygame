@@ -100,12 +100,9 @@
         'Attempts to update the database
         Try
             Validate()
-            currentPlayer.Save(GameDatabaseDataSet, PlayersBindingSource, PlayersTableAdapter)
-            'GameDatabaseDataSet.Players(currentPlayer.id - 1).gold = currentPlayer.gold
-            'PlayersBindingSource.EndEdit()
-            'PlayersTableAdapter.Update(GameDatabaseDataSet.Players)
             PlayerCreaturesBindingSource.EndEdit()
             PlayerCreaturesTableAdapter.Update(GameDatabaseDataSet.PlayerCreatures)
+            currentPlayer.Save(GameDatabaseDataSet, PlayersBindingSource, PlayersTableAdapter)
             ClearCreatureSlot(slot)
         Catch ex As Exception
             MsgBox("Failed to add player creature to database.")
@@ -375,7 +372,7 @@
         FillCreatureSlot(currentTavernState.hires(slot - 1), slot)
     End Sub
 
-    Public Sub RefreshTavernQuestSlot(slot As Integer)
+    Private Sub RefreshTavernQuestSlot(slot As Integer)
         currentTavernState.quests(slot - 1) = New Quest(StaticQuestsTableAdapter.GetQuestByid(tavernRandomInts(slot - 1)).First)
         FillQuestSlot(currentTavernState.quests(slot - 1), slot)
     End Sub

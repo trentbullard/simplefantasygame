@@ -155,7 +155,7 @@
         Dim newRow As DataRow = ds.Tables("StaticQuests").NewRow()
         Dim item As Integer = Roll(4)
         newRow("name") = questName
-        newRow("tierid") = questTier.id
+        newRow("tierid") = Roll(25)
         newRow("minLevel") = questMinLevel
         newRow("maxLevel") = questMaxLevel
         Select Case item

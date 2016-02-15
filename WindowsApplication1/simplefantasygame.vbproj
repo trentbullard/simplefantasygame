@@ -112,6 +112,12 @@
     <Compile Include="Armor.vb" />
     <Compile Include="Augment.vb" />
     <Compile Include="Battle.vb" />
+    <Compile Include="BlacksmithWindow.Designer.vb">
+      <DependentUpon>BlacksmithWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BlacksmithWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Camp.vb" />
     <Compile Include="Consumable.vb" />
     <Compile Include="Creature.vb" />
@@ -228,6 +234,9 @@
     <Compile Include="Weapon.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="BlacksmithWindow.resx">
+      <DependentUpon>BlacksmithWindow.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CombatWindow.resx">
       <DependentUpon>CombatWindow.vb</DependentUpon>
     </EmbeddedResource>

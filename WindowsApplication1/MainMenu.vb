@@ -4,6 +4,8 @@ Imports System.Text
 
 Public Class MainMenu
     Private Sub MainMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        StaticCampTierTableAdapter.Fill(GameDatabaseDataSet.StaticCampTier)
+        StaticCampTableAdapter.Fill(GameDatabaseDataSet.StaticCamp)
         PlayerPartiesTableAdapter.Fill(GameDatabaseDataSet.PlayerParties)
         StaticQuestsTableAdapter.Fill(GameDatabaseDataSet.StaticQuests)
         PlayersTableAdapter.Fill(GameDatabaseDataSet.Players)
@@ -22,7 +24,18 @@ Public Class MainMenu
             quest.Save(GameDatabaseDataSet, StaticCreaturesBindingSource, StaticQuestsTableAdapter)
         Next
 
-        StartLog()  'From log.vb
+        For ctr = 1 To 5
+            Dim camp As Camp
+            camp = New Camp()
+            camp.save(GameDatabaseDataSet, StaticCampBindingSource, StaticCampTableAdapter)
+            For ctr2 = 1 To 5
+                Dim tier As Tier
+                tier = New Tier(camp)
+                tier.save(GameDatabaseDataSet, StaticCampTierBindingSource, StaticCampTierTableAdapter)
+            Next
+        Next
+
+        StartLog()  'From Logs.vb
 
         For Each row As DataRow In GameDatabaseDataSet.Players
             playerSelectlstv.Items.Add(row("level").ToString)

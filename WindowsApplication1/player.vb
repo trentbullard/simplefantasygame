@@ -10,7 +10,7 @@
         playerName = "name"
         playerLevel = 1
         playerExperience = 1
-        playerGold = 4
+        playerGold = 0
     End Sub
 
     Public Sub New(name As String)
@@ -18,7 +18,7 @@
         playerName = name
         playerLevel = 1
         playerExperience = 1
-        playerGold = 4
+        playerGold = 100
     End Sub
 
     Public Sub New(id As Integer, name As String, level As Integer, exp As Integer, gold As Integer)

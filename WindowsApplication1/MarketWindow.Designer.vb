@@ -29,11 +29,12 @@ Partial Class MarketWindow
         Me.mainMenubtn = New System.Windows.Forms.Button()
         Me.playerInfobtn = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.blacksmithlbl = New System.Windows.Forms.Label()
-        Me.farmerlbl = New System.Windows.Forms.Label()
-        Me.scholarlbl = New System.Windows.Forms.Label()
-        Me.chemistlbl = New System.Windows.Forms.Label()
         Me.townbtn = New System.Windows.Forms.Button()
+        Me.chemistlbl = New System.Windows.Forms.Label()
+        Me.scholarlbl = New System.Windows.Forms.Label()
+        Me.farmerlbl = New System.Windows.Forms.Label()
+        Me.blacksmithlbl = New System.Windows.Forms.Label()
+        Me.backToTownbtn = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -95,6 +96,7 @@ Partial Class MarketWindow
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.backToTownbtn)
         Me.Panel1.Controls.Add(Me.townbtn)
         Me.Panel1.Controls.Add(Me.chemistlbl)
         Me.Panel1.Controls.Add(Me.scholarlbl)
@@ -112,32 +114,14 @@ Partial Class MarketWindow
         Me.Panel1.Size = New System.Drawing.Size(353, 223)
         Me.Panel1.TabIndex = 6
         '
-        'blacksmithlbl
+        'townbtn
         '
-        Me.blacksmithlbl.AutoSize = True
-        Me.blacksmithlbl.Location = New System.Drawing.Point(30, 17)
-        Me.blacksmithlbl.Name = "blacksmithlbl"
-        Me.blacksmithlbl.Size = New System.Drawing.Size(212, 13)
-        Me.blacksmithlbl.TabIndex = 6
-        Me.blacksmithlbl.Text = "click here to buy weapons and metal armor!"
-        '
-        'farmerlbl
-        '
-        Me.farmerlbl.AutoSize = True
-        Me.farmerlbl.Location = New System.Drawing.Point(38, 59)
-        Me.farmerlbl.Name = "farmerlbl"
-        Me.farmerlbl.Size = New System.Drawing.Size(197, 13)
-        Me.farmerlbl.TabIndex = 7
-        Me.farmerlbl.Text = "click here to buy food and leather armor!"
-        '
-        'scholarlbl
-        '
-        Me.scholarlbl.AutoSize = True
-        Me.scholarlbl.Location = New System.Drawing.Point(12, 101)
-        Me.scholarlbl.Name = "scholarlbl"
-        Me.scholarlbl.Size = New System.Drawing.Size(248, 13)
-        Me.scholarlbl.TabIndex = 8
-        Me.scholarlbl.Text = "click here to buy augments for weapons and armor!"
+        Me.townbtn.Location = New System.Drawing.Point(89, 290)
+        Me.townbtn.Name = "townbtn"
+        Me.townbtn.Size = New System.Drawing.Size(90, 23)
+        Me.townbtn.TabIndex = 7
+        Me.townbtn.Text = "back to town"
+        Me.townbtn.UseVisualStyleBackColor = True
         '
         'chemistlbl
         '
@@ -148,14 +132,42 @@ Partial Class MarketWindow
         Me.chemistlbl.TabIndex = 9
         Me.chemistlbl.Text = "click here to buy potions!"
         '
-        'townbtn
+        'scholarlbl
         '
-        Me.townbtn.Location = New System.Drawing.Point(89, 290)
-        Me.townbtn.Name = "townbtn"
-        Me.townbtn.Size = New System.Drawing.Size(90, 23)
-        Me.townbtn.TabIndex = 7
-        Me.townbtn.Text = "back to town"
-        Me.townbtn.UseVisualStyleBackColor = True
+        Me.scholarlbl.AutoSize = True
+        Me.scholarlbl.Location = New System.Drawing.Point(12, 101)
+        Me.scholarlbl.Name = "scholarlbl"
+        Me.scholarlbl.Size = New System.Drawing.Size(248, 13)
+        Me.scholarlbl.TabIndex = 8
+        Me.scholarlbl.Text = "click here to buy augments for weapons and armor!"
+        '
+        'farmerlbl
+        '
+        Me.farmerlbl.AutoSize = True
+        Me.farmerlbl.Location = New System.Drawing.Point(38, 59)
+        Me.farmerlbl.Name = "farmerlbl"
+        Me.farmerlbl.Size = New System.Drawing.Size(197, 13)
+        Me.farmerlbl.TabIndex = 7
+        Me.farmerlbl.Text = "click here to buy food and leather armor!"
+        '
+        'blacksmithlbl
+        '
+        Me.blacksmithlbl.AutoSize = True
+        Me.blacksmithlbl.Location = New System.Drawing.Point(30, 17)
+        Me.blacksmithlbl.Name = "blacksmithlbl"
+        Me.blacksmithlbl.Size = New System.Drawing.Size(212, 13)
+        Me.blacksmithlbl.TabIndex = 6
+        Me.blacksmithlbl.Text = "click here to buy weapons and metal armor!"
+        '
+        'backToTownbtn
+        '
+        Me.backToTownbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.backToTownbtn.Location = New System.Drawing.Point(104, 188)
+        Me.backToTownbtn.Name = "backToTownbtn"
+        Me.backToTownbtn.Size = New System.Drawing.Size(75, 23)
+        Me.backToTownbtn.TabIndex = 7
+        Me.backToTownbtn.Text = "town square"
+        Me.backToTownbtn.UseVisualStyleBackColor = True
         '
         'MarketWindow
         '
@@ -186,4 +198,5 @@ Partial Class MarketWindow
     Friend WithEvents farmerlbl As Label
     Friend WithEvents blacksmithlbl As Label
     Friend WithEvents townbtn As Button
+    Friend WithEvents backToTownbtn As Button
 End Class
