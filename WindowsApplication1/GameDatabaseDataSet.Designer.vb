@@ -27810,15 +27810,11 @@ Namespace GameDatabaseDataSetTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[StaticCamps] WHERE (([id] = @Original_id) AND ((@IsNull_specie"& _ 
-                "s = 1 AND [species] IS NULL) OR ([species] = @Original_species)) AND ((@IsNull_m"& _ 
-                "inLevel = 1 AND [minLevel] IS NULL) OR ([minLevel] = @Original_minLevel)) AND (("& _ 
-                "@IsNull_maxLevel = 1 AND [maxLevel] IS NULL) OR ([maxLevel] = @Original_maxLevel"& _ 
-                ")))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[StaticCamps] WHERE (([id] = @Original_id) AND ((@IsNull_minLev"& _ 
+                "el = 1 AND [minLevel] IS NULL) OR ([minLevel] = @Original_minLevel)) AND ((@IsNu"& _ 
+                "ll_maxLevel = 1 AND [maxLevel] IS NULL) OR ([maxLevel] = @Original_maxLevel)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_species", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "species", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_species", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "species", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_minLevel", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "minLevel", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_minLevel", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "minLevel", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_maxLevel", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "maxLevel", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -27829,27 +27825,24 @@ Namespace GameDatabaseDataSetTableAdapters
                 "S (@species, @minLevel, @maxLevel, @name);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, species, minLevel, maxLev"& _ 
                 "el, name FROM StaticCamps WHERE (id = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@species", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "species", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@species", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "species", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@minLevel", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "minLevel", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@maxLevel", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "maxLevel", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@name", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[StaticCamps] SET [species] = @species, [minLevel] = @minLevel, [max"& _ 
-                "Level] = @maxLevel, [name] = @name WHERE (([id] = @Original_id) AND ((@IsNull_sp"& _ 
-                "ecies = 1 AND [species] IS NULL) OR ([species] = @Original_species)) AND ((@IsNu"& _ 
-                "ll_minLevel = 1 AND [minLevel] IS NULL) OR ([minLevel] = @Original_minLevel)) AN"& _ 
-                "D ((@IsNull_maxLevel = 1 AND [maxLevel] IS NULL) OR ([maxLevel] = @Original_maxL"& _ 
-                "evel)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, species, minLevel, maxLevel, name FROM StaticCamps WHERE (i"& _ 
-                "d = @id)"
+                "Level] = @maxLevel, [name] = @name WHERE (([id] = @Original_id) AND ((@IsNull_mi"& _ 
+                "nLevel = 1 AND [minLevel] IS NULL) OR ([minLevel] = @Original_minLevel)) AND ((@"& _ 
+                "IsNull_maxLevel = 1 AND [maxLevel] IS NULL) OR ([maxLevel] = @Original_maxLevel)"& _ 
+                "));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, species, minLevel, maxLevel, name FROM StaticCamps WHERE (id = @"& _ 
+                "id)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@species", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "species", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@species", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "species", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@minLevel", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "minLevel", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@maxLevel", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "maxLevel", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@name", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_species", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "species", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_species", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "species", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_minLevel", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "minLevel", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_minLevel", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "minLevel", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_maxLevel", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "maxLevel", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -27930,28 +27923,21 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_id As Integer, ByVal Original_species As Global.System.Nullable(Of Integer), ByVal Original_minLevel As Global.System.Nullable(Of Integer), ByVal Original_maxLevel As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_id As Integer, ByVal Original_minLevel As Global.System.Nullable(Of Integer), ByVal Original_maxLevel As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_id,Integer)
-            If (Original_species.HasValue = true) Then
+            If (Original_minLevel.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_species.Value,Integer)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_minLevel.Value,Integer)
             Else
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
             End If
-            If (Original_minLevel.HasValue = true) Then
+            If (Original_maxLevel.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_minLevel.Value,Integer)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_maxLevel.Value,Integer)
             Else
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
-            End If
-            If (Original_maxLevel.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_maxLevel.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -27972,11 +27958,11 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal species As Global.System.Nullable(Of Integer), ByVal minLevel As Global.System.Nullable(Of Integer), ByVal maxLevel As Global.System.Nullable(Of Integer), ByVal name As String) As Integer
-            If (species.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(species.Value,Integer)
-            Else
+        Public Overloads Overridable Function Insert(ByVal species As String, ByVal minLevel As Global.System.Nullable(Of Integer), ByVal maxLevel As Global.System.Nullable(Of Integer), ByVal name As String) As Integer
+            If (species Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(species,String)
             End If
             If (minLevel.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(1).Value = CType(minLevel.Value,Integer)
@@ -28012,11 +27998,11 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal species As Global.System.Nullable(Of Integer), ByVal minLevel As Global.System.Nullable(Of Integer), ByVal maxLevel As Global.System.Nullable(Of Integer), ByVal name As String, ByVal Original_id As Integer, ByVal Original_species As Global.System.Nullable(Of Integer), ByVal Original_minLevel As Global.System.Nullable(Of Integer), ByVal Original_maxLevel As Global.System.Nullable(Of Integer), ByVal id As Integer) As Integer
-            If (species.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(species.Value,Integer)
-            Else
+        Public Overloads Overridable Function Update(ByVal species As String, ByVal minLevel As Global.System.Nullable(Of Integer), ByVal maxLevel As Global.System.Nullable(Of Integer), ByVal name As String, ByVal Original_id As Integer, ByVal Original_minLevel As Global.System.Nullable(Of Integer), ByVal Original_maxLevel As Global.System.Nullable(Of Integer), ByVal id As Integer) As Integer
+            If (species Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(species,String)
             End If
             If (minLevel.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(1).Value = CType(minLevel.Value,Integer)
@@ -28034,28 +28020,21 @@ Namespace GameDatabaseDataSetTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(3).Value = CType(name,String)
             End If
             Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_id,Integer)
-            If (Original_species.HasValue = true) Then
+            If (Original_minLevel.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_species.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_minLevel.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(5).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
             End If
-            If (Original_minLevel.HasValue = true) Then
+            If (Original_maxLevel.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_minLevel.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_maxLevel.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
             End If
-            If (Original_maxLevel.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_maxLevel.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
-            End If
-            Me.Adapter.UpdateCommand.Parameters(11).Value = CType(id,Integer)
+            Me.Adapter.UpdateCommand.Parameters(9).Value = CType(id,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -28075,8 +28054,8 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal species As Global.System.Nullable(Of Integer), ByVal minLevel As Global.System.Nullable(Of Integer), ByVal maxLevel As Global.System.Nullable(Of Integer), ByVal name As String, ByVal Original_id As Integer, ByVal Original_species As Global.System.Nullable(Of Integer), ByVal Original_minLevel As Global.System.Nullable(Of Integer), ByVal Original_maxLevel As Global.System.Nullable(Of Integer)) As Integer
-            Return Me.Update(species, minLevel, maxLevel, name, Original_id, Original_species, Original_minLevel, Original_maxLevel, Original_id)
+        Public Overloads Overridable Function Update(ByVal species As String, ByVal minLevel As Global.System.Nullable(Of Integer), ByVal maxLevel As Global.System.Nullable(Of Integer), ByVal name As String, ByVal Original_id As Integer, ByVal Original_minLevel As Global.System.Nullable(Of Integer), ByVal Original_maxLevel As Global.System.Nullable(Of Integer)) As Integer
+            Return Me.Update(species, minLevel, maxLevel, name, Original_id, Original_minLevel, Original_maxLevel, Original_id)
         End Function
     End Class
     
@@ -29077,10 +29056,10 @@ Namespace GameDatabaseDataSetTableAdapters
                 "icCreatures.armor, StaticCreatures.initiative, StaticCreatures.intelligence, Sta"& _ 
                 "ticCreatures.wisdom, StaticCreatures.dexterity, StaticCreatures.name"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM      "& _ 
                 "      StaticCreatures INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TavernStates ON Stati"& _ 
-                "cCreatures.id = TavernStates.hireSlot1id OR StaticCreatures.id = TavernStates.hi"& _ 
-                "reSlot2id OR StaticCreatures.id = TavernStates.hireSlot3id OR "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                "& _ 
-                "         StaticCreatures.id = TavernStates.hireSlot4id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (TavernStat"& _ 
-                "es.id = @tavernStateid)"
+                "cCreatures.id = TavernStates.hireSlot1id AND StaticCreatures.id = TavernStates.h"& _ 
+                "ireSlot2id AND StaticCreatures.id = TavernStates.hireSlot3id AND "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"             "& _ 
+                "            StaticCreatures.id = TavernStates.hireSlot4id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (TavernS"& _ 
+                "tates.id = @tavernStateid)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tavernStateid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
@@ -30226,9 +30205,9 @@ Namespace GameDatabaseDataSetTableAdapters
                 "wardArmorid, StaticQuests.rewardAugmentid, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         StaticQues"& _ 
                 "ts.rewardConsumableid, StaticQuests.rewardExperience, StaticQuests.rewardGold, S"& _ 
                 "taticQuests.isComplete"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            StaticQuests INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"               "& _ 
-                "          TavernStates ON StaticQuests.id = TavernStates.questSlot1id OR StaticQ"& _ 
-                "uests.id = TavernStates.questSlot2id OR StaticQuests.id = TavernStates.questSlot"& _ 
-                "3id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (TavernStates.id = @tavernStateid)"
+                "          TavernStates ON StaticQuests.id = TavernStates.questSlot1id AND Static"& _ 
+                "Quests.id = TavernStates.questSlot2id AND StaticQuests.id = TavernStates.questSl"& _ 
+                "ot3id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (TavernStates.id = @tavernStateid)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tavernStateid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub

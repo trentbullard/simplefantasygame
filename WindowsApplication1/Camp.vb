@@ -71,14 +71,11 @@
         newRow("maxLevel") = campMaxLevel
         newRow("name") = campName
         ds.Tables("StaticCamps").Rows.Add(newRow)
-        'Try
-        '    bs.EndEdit()
-        '    ta.Update(ds.StaticCamps)
-        'Catch ex As Exception
-        '    MsgBox("failed to add camp to database.")
-        'End Try
-
-        bs.EndEdit()
-        ta.Update(ds.StaticCamps)
+        Try
+            bs.EndEdit()
+            ta.Update(ds.StaticCamps)
+        Catch ex As Exception
+            MsgBox("failed to add camp to database.")
+        End Try
     End Sub
 End Class
