@@ -42,16 +42,16 @@ Partial Class TownWindow
         Me.tavernbtn = New System.Windows.Forms.Button()
         Me.innbtn = New System.Windows.Forms.Button()
         Me.GameDatabaseDataSet = New WindowsApplication1.GameDatabaseDataSet()
+        Me.PlayerStatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayerStatesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter()
         Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
         Me.PlayerCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayerCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerCreaturesTableAdapter()
-        Me.PlayerStatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PlayerStatesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter()
         Me.townpnl.SuspendLayout()
         Me.datepnl.SuspendLayout()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PlayerCreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayerStatesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PlayerCreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'townpnl
@@ -75,7 +75,7 @@ Partial Class TownWindow
         Me.townpnl.Dock = System.Windows.Forms.DockStyle.Fill
         Me.townpnl.Location = New System.Drawing.Point(0, 0)
         Me.townpnl.Name = "townpnl"
-        Me.townpnl.Size = New System.Drawing.Size(1000, 600)
+        Me.townpnl.Size = New System.Drawing.Size(1008, 665)
         Me.townpnl.TabIndex = 0
         '
         'datepnl
@@ -84,7 +84,7 @@ Partial Class TownWindow
         Me.datepnl.BackColor = System.Drawing.Color.Transparent
         Me.datepnl.Controls.Add(Me.dateLabellbl)
         Me.datepnl.Controls.Add(Me.datelbl)
-        Me.datepnl.Location = New System.Drawing.Point(748, 538)
+        Me.datepnl.Location = New System.Drawing.Point(756, 603)
         Me.datepnl.Name = "datepnl"
         Me.datepnl.Size = New System.Drawing.Size(240, 21)
         Me.datepnl.TabIndex = 12
@@ -115,7 +115,7 @@ Partial Class TownWindow
         'add1Weekbtn
         '
         Me.add1Weekbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.add1Weekbtn.Location = New System.Drawing.Point(751, 565)
+        Me.add1Weekbtn.Location = New System.Drawing.Point(759, 630)
         Me.add1Weekbtn.Name = "add1Weekbtn"
         Me.add1Weekbtn.Size = New System.Drawing.Size(75, 23)
         Me.add1Weekbtn.TabIndex = 1
@@ -125,7 +125,7 @@ Partial Class TownWindow
         'playerbtn
         '
         Me.playerbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.playerbtn.Location = New System.Drawing.Point(832, 565)
+        Me.playerbtn.Location = New System.Drawing.Point(840, 630)
         Me.playerbtn.Name = "playerbtn"
         Me.playerbtn.Size = New System.Drawing.Size(75, 23)
         Me.playerbtn.TabIndex = 11
@@ -138,7 +138,7 @@ Partial Class TownWindow
         Me.roadlbl.AutoSize = True
         Me.roadlbl.BackColor = System.Drawing.Color.Transparent
         Me.roadlbl.ForeColor = System.Drawing.Color.Lime
-        Me.roadlbl.Location = New System.Drawing.Point(834, 87)
+        Me.roadlbl.Location = New System.Drawing.Point(838, 119)
         Me.roadlbl.Name = "roadlbl"
         Me.roadlbl.Size = New System.Drawing.Size(97, 13)
         Me.roadlbl.TabIndex = 10
@@ -150,7 +150,7 @@ Partial Class TownWindow
         Me.marketlbl.AutoSize = True
         Me.marketlbl.BackColor = System.Drawing.Color.Transparent
         Me.marketlbl.ForeColor = System.Drawing.Color.Lime
-        Me.marketlbl.Location = New System.Drawing.Point(521, 142)
+        Me.marketlbl.Location = New System.Drawing.Point(525, 174)
         Me.marketlbl.Name = "marketlbl"
         Me.marketlbl.Size = New System.Drawing.Size(115, 13)
         Me.marketlbl.TabIndex = 9
@@ -162,7 +162,7 @@ Partial Class TownWindow
         Me.tavernlbl.AutoSize = True
         Me.tavernlbl.BackColor = System.Drawing.Color.Transparent
         Me.tavernlbl.ForeColor = System.Drawing.Color.Lime
-        Me.tavernlbl.Location = New System.Drawing.Point(315, 322)
+        Me.tavernlbl.Location = New System.Drawing.Point(319, 354)
         Me.tavernlbl.Name = "tavernlbl"
         Me.tavernlbl.Size = New System.Drawing.Size(159, 13)
         Me.tavernlbl.TabIndex = 8
@@ -174,7 +174,7 @@ Partial Class TownWindow
         Me.innlbl.AutoSize = True
         Me.innlbl.BackColor = System.Drawing.Color.Transparent
         Me.innlbl.ForeColor = System.Drawing.Color.Lime
-        Me.innlbl.Location = New System.Drawing.Point(58, 351)
+        Me.innlbl.Location = New System.Drawing.Point(62, 383)
         Me.innlbl.Name = "innlbl"
         Me.innlbl.Size = New System.Drawing.Size(137, 13)
         Me.innlbl.TabIndex = 7
@@ -186,7 +186,7 @@ Partial Class TownWindow
         Me.necromancerlbl.AutoSize = True
         Me.necromancerlbl.BackColor = System.Drawing.Color.Transparent
         Me.necromancerlbl.ForeColor = System.Drawing.Color.Lime
-        Me.necromancerlbl.Location = New System.Drawing.Point(595, 204)
+        Me.necromancerlbl.Location = New System.Drawing.Point(599, 236)
         Me.necromancerlbl.Name = "necromancerlbl"
         Me.necromancerlbl.Size = New System.Drawing.Size(199, 13)
         Me.necromancerlbl.TabIndex = 6
@@ -195,7 +195,7 @@ Partial Class TownWindow
         'mainMenubtn
         '
         Me.mainMenubtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.mainMenubtn.Location = New System.Drawing.Point(913, 565)
+        Me.mainMenubtn.Location = New System.Drawing.Point(921, 630)
         Me.mainMenubtn.Name = "mainMenubtn"
         Me.mainMenubtn.Size = New System.Drawing.Size(75, 23)
         Me.mainMenubtn.TabIndex = 0
@@ -205,7 +205,7 @@ Partial Class TownWindow
         'roadbtn
         '
         Me.roadbtn.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.roadbtn.Location = New System.Drawing.Point(843, 103)
+        Me.roadbtn.Location = New System.Drawing.Point(847, 135)
         Me.roadbtn.Name = "roadbtn"
         Me.roadbtn.Size = New System.Drawing.Size(81, 23)
         Me.roadbtn.TabIndex = 5
@@ -215,7 +215,7 @@ Partial Class TownWindow
         'necromancerbtn
         '
         Me.necromancerbtn.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.necromancerbtn.Location = New System.Drawing.Point(655, 220)
+        Me.necromancerbtn.Location = New System.Drawing.Point(659, 252)
         Me.necromancerbtn.Name = "necromancerbtn"
         Me.necromancerbtn.Size = New System.Drawing.Size(81, 23)
         Me.necromancerbtn.TabIndex = 4
@@ -225,7 +225,7 @@ Partial Class TownWindow
         'marketbtn
         '
         Me.marketbtn.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.marketbtn.Location = New System.Drawing.Point(542, 158)
+        Me.marketbtn.Location = New System.Drawing.Point(546, 190)
         Me.marketbtn.Name = "marketbtn"
         Me.marketbtn.Size = New System.Drawing.Size(75, 23)
         Me.marketbtn.TabIndex = 3
@@ -235,7 +235,7 @@ Partial Class TownWindow
         'tavernbtn
         '
         Me.tavernbtn.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.tavernbtn.Location = New System.Drawing.Point(358, 296)
+        Me.tavernbtn.Location = New System.Drawing.Point(362, 328)
         Me.tavernbtn.Name = "tavernbtn"
         Me.tavernbtn.Size = New System.Drawing.Size(75, 23)
         Me.tavernbtn.TabIndex = 2
@@ -245,7 +245,7 @@ Partial Class TownWindow
         'innbtn
         '
         Me.innbtn.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.innbtn.Location = New System.Drawing.Point(90, 325)
+        Me.innbtn.Location = New System.Drawing.Point(94, 357)
         Me.innbtn.Name = "innbtn"
         Me.innbtn.Size = New System.Drawing.Size(75, 23)
         Me.innbtn.TabIndex = 1
@@ -256,6 +256,15 @@ Partial Class TownWindow
         '
         Me.GameDatabaseDataSet.DataSetName = "GameDatabaseDataSet"
         Me.GameDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'PlayerStatesBindingSource
+        '
+        Me.PlayerStatesBindingSource.DataMember = "PlayerStates"
+        Me.PlayerStatesBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'PlayerStatesTableAdapter
+        '
+        Me.PlayerStatesTableAdapter.ClearBeforeFill = True
         '
         'TableAdapterManager
         '
@@ -277,12 +286,13 @@ Partial Class TownWindow
         Me.TableAdapterManager.PlayersTableAdapter = Nothing
         Me.TableAdapterManager.PlayerStatesTableAdapter = Me.PlayerStatesTableAdapter
         Me.TableAdapterManager.PlayerWeaponsTableAdapter = Nothing
+        Me.TableAdapterManager.RoadStatesTableAdapter = Nothing
         Me.TableAdapterManager.ScholarStateItemsTableAdapter = Nothing
         Me.TableAdapterManager.ScholarStatesTableAdapter = Nothing
         Me.TableAdapterManager.StaticArmorTableAdapter = Nothing
         Me.TableAdapterManager.StaticAugmentsTableAdapter = Nothing
-        Me.TableAdapterManager.StaticCampTableAdapter = Nothing
-        Me.TableAdapterManager.StaticCampTierTableAdapter = Nothing
+        Me.TableAdapterManager.StaticCampsTableAdapter = Nothing
+        Me.TableAdapterManager.StaticCampTiersTableAdapter = Nothing
         Me.TableAdapterManager.StaticConsumablesTableAdapter = Nothing
         Me.TableAdapterManager.StaticCreaturesTableAdapter = Nothing
         Me.TableAdapterManager.StaticMobsTableAdapter = Nothing
@@ -303,20 +313,11 @@ Partial Class TownWindow
         '
         Me.PlayerCreaturesTableAdapter.ClearBeforeFill = True
         '
-        'PlayerStatesBindingSource
-        '
-        Me.PlayerStatesBindingSource.DataMember = "PlayerStates"
-        Me.PlayerStatesBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'PlayerStatesTableAdapter
-        '
-        Me.PlayerStatesTableAdapter.ClearBeforeFill = True
-        '
         'TownWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1000, 600)
+        Me.ClientSize = New System.Drawing.Size(1008, 665)
         Me.Controls.Add(Me.townpnl)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "TownWindow"
@@ -328,8 +329,8 @@ Partial Class TownWindow
         Me.datepnl.ResumeLayout(False)
         Me.datepnl.PerformLayout()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PlayerCreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayerStatesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PlayerCreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -351,9 +352,9 @@ Partial Class TownWindow
     Friend WithEvents datepnl As Panel
     Friend WithEvents dateLabellbl As Label
     Friend WithEvents GameDatabaseDataSet As GameDatabaseDataSet
+    Friend WithEvents PlayerStatesBindingSource As BindingSource
+    Friend WithEvents PlayerStatesTableAdapter As GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter
     Friend WithEvents TableAdapterManager As GameDatabaseDataSetTableAdapters.TableAdapterManager
     Friend WithEvents PlayerCreaturesTableAdapter As GameDatabaseDataSetTableAdapters.PlayerCreaturesTableAdapter
     Friend WithEvents PlayerCreaturesBindingSource As BindingSource
-    Friend WithEvents PlayerStatesTableAdapter As GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter
-    Friend WithEvents PlayerStatesBindingSource As BindingSource
 End Class

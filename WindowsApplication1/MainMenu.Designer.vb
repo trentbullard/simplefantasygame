@@ -30,37 +30,37 @@ Partial Class MainMenu
         Me.playerLevel = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.playerName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.playerDeletebtn = New System.Windows.Forms.Button()
-        Me.GameDatabaseDataSet = New WindowsApplication1.GameDatabaseDataSet()
         Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
         Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
+        Me.PlayerPartiesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerPartiesTableAdapter()
         Me.PlayerStatesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter()
+        Me.StaticCampTiersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticCampTiersTableAdapter()
         Me.StaticCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticCreaturesTableAdapter()
+        Me.StaticQuestsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticQuestsTableAdapter()
         Me.PlayerStatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayerPartiesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.StaticCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.StaticQuestsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.StaticQuestsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticQuestsTableAdapter()
-        Me.PlayerPartiesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PlayerPartiesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerPartiesTableAdapter()
-        Me.StaticCampBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.StaticCampTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticCampTableAdapter()
-        Me.StaticCampTierBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.StaticCampTierTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticCampTierTableAdapter()
-        CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.StaticCampTiersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GameDatabaseDataSet = New WindowsApplication1.GameDatabaseDataSet()
+        Me.StaticCampsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticCampsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticCampsTableAdapter()
         CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayerStatesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PlayerPartiesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StaticCreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StaticQuestsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PlayerPartiesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.StaticCampBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.StaticCampTierBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.StaticCampTiersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.StaticCampsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'titlelbl
         '
         Me.titlelbl.AutoSize = True
         Me.titlelbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.titlelbl.Location = New System.Drawing.Point(22, 18)
+        Me.titlelbl.Location = New System.Drawing.Point(24, 18)
         Me.titlelbl.Name = "titlelbl"
         Me.titlelbl.Size = New System.Drawing.Size(186, 24)
         Me.titlelbl.TabIndex = 0
@@ -69,7 +69,7 @@ Partial Class MainMenu
         'playerSelectionlbl
         '
         Me.playerSelectionlbl.AutoSize = True
-        Me.playerSelectionlbl.Location = New System.Drawing.Point(67, 53)
+        Me.playerSelectionlbl.Location = New System.Drawing.Point(69, 53)
         Me.playerSelectionlbl.Name = "playerSelectionlbl"
         Me.playerSelectionlbl.Size = New System.Drawing.Size(96, 13)
         Me.playerSelectionlbl.TabIndex = 2
@@ -77,7 +77,7 @@ Partial Class MainMenu
         '
         'playerNewbtn
         '
-        Me.playerNewbtn.Location = New System.Drawing.Point(37, 172)
+        Me.playerNewbtn.Location = New System.Drawing.Point(39, 172)
         Me.playerNewbtn.Name = "playerNewbtn"
         Me.playerNewbtn.Size = New System.Drawing.Size(75, 23)
         Me.playerNewbtn.TabIndex = 3
@@ -92,7 +92,7 @@ Partial Class MainMenu
         Me.playerSelectlstv.GridLines = True
         Me.playerSelectlstv.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.playerSelectlstv.HideSelection = False
-        Me.playerSelectlstv.Location = New System.Drawing.Point(54, 69)
+        Me.playerSelectlstv.Location = New System.Drawing.Point(56, 69)
         Me.playerSelectlstv.MultiSelect = False
         Me.playerSelectlstv.Name = "playerSelectlstv"
         Me.playerSelectlstv.Size = New System.Drawing.Size(125, 97)
@@ -112,22 +112,12 @@ Partial Class MainMenu
         '
         'playerDeletebtn
         '
-        Me.playerDeletebtn.Location = New System.Drawing.Point(118, 172)
+        Me.playerDeletebtn.Location = New System.Drawing.Point(120, 172)
         Me.playerDeletebtn.Name = "playerDeletebtn"
         Me.playerDeletebtn.Size = New System.Drawing.Size(75, 23)
         Me.playerDeletebtn.TabIndex = 5
         Me.playerDeletebtn.Text = "delete"
         Me.playerDeletebtn.UseVisualStyleBackColor = True
-        '
-        'GameDatabaseDataSet
-        '
-        Me.GameDatabaseDataSet.DataSetName = "GameDatabaseDataSet"
-        Me.GameDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'PlayersBindingSource
-        '
-        Me.PlayersBindingSource.DataMember = "Players"
-        Me.PlayersBindingSource.DataSource = Me.GameDatabaseDataSet
         '
         'PlayersTableAdapter
         '
@@ -148,21 +138,22 @@ Partial Class MainMenu
         Me.TableAdapterManager.PlayerArmorTableAdapter = Nothing
         Me.TableAdapterManager.PlayerConsumablesTableAdapter = Nothing
         Me.TableAdapterManager.PlayerCreaturesTableAdapter = Nothing
-        Me.TableAdapterManager.PlayerPartiesTableAdapter = Nothing
+        Me.TableAdapterManager.PlayerPartiesTableAdapter = Me.PlayerPartiesTableAdapter
         Me.TableAdapterManager.PlayerSkillsTableAdapter = Nothing
         Me.TableAdapterManager.PlayersTableAdapter = Me.PlayersTableAdapter
         Me.TableAdapterManager.PlayerStatesTableAdapter = Me.PlayerStatesTableAdapter
         Me.TableAdapterManager.PlayerWeaponsTableAdapter = Nothing
+        Me.TableAdapterManager.RoadStatesTableAdapter = Nothing
         Me.TableAdapterManager.ScholarStateItemsTableAdapter = Nothing
         Me.TableAdapterManager.ScholarStatesTableAdapter = Nothing
         Me.TableAdapterManager.StaticArmorTableAdapter = Nothing
         Me.TableAdapterManager.StaticAugmentsTableAdapter = Nothing
-        Me.TableAdapterManager.StaticCampTableAdapter = Nothing
-        Me.TableAdapterManager.StaticCampTierTableAdapter = Nothing
+        Me.TableAdapterManager.StaticCampsTableAdapter = Nothing
+        Me.TableAdapterManager.StaticCampTiersTableAdapter = Me.StaticCampTiersTableAdapter
         Me.TableAdapterManager.StaticConsumablesTableAdapter = Nothing
         Me.TableAdapterManager.StaticCreaturesTableAdapter = Me.StaticCreaturesTableAdapter
         Me.TableAdapterManager.StaticMobsTableAdapter = Nothing
-        Me.TableAdapterManager.StaticQuestsTableAdapter = Nothing
+        Me.TableAdapterManager.StaticQuestsTableAdapter = Me.StaticQuestsTableAdapter
         Me.TableAdapterManager.StaticSkillsTableAdapter = Nothing
         Me.TableAdapterManager.StaticWeaponsTableAdapter = Nothing
         Me.TableAdapterManager.TavernStatesTableAdapter = Nothing
@@ -170,59 +161,39 @@ Partial Class MainMenu
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.WeaponAugmentsTableAdapter = Nothing
         '
+        'PlayerPartiesTableAdapter
+        '
+        Me.PlayerPartiesTableAdapter.ClearBeforeFill = True
+        '
         'PlayerStatesTableAdapter
         '
         Me.PlayerStatesTableAdapter.ClearBeforeFill = True
+        '
+        'StaticCampTiersTableAdapter
+        '
+        Me.StaticCampTiersTableAdapter.ClearBeforeFill = True
         '
         'StaticCreaturesTableAdapter
         '
         Me.StaticCreaturesTableAdapter.ClearBeforeFill = True
         '
-        'PlayerStatesBindingSource
-        '
-        Me.PlayerStatesBindingSource.DataMember = "PlayerStates"
-        Me.PlayerStatesBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'StaticCreaturesBindingSource
-        '
-        Me.StaticCreaturesBindingSource.DataMember = "StaticCreatures"
-        Me.StaticCreaturesBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'StaticQuestsBindingSource
-        '
-        Me.StaticQuestsBindingSource.DataMember = "StaticQuests"
-        Me.StaticQuestsBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
         'StaticQuestsTableAdapter
         '
         Me.StaticQuestsTableAdapter.ClearBeforeFill = True
         '
-        'PlayerPartiesBindingSource
+        'GameDatabaseDataSet
         '
-        Me.PlayerPartiesBindingSource.DataMember = "PlayerParties"
-        Me.PlayerPartiesBindingSource.DataSource = Me.GameDatabaseDataSet
+        Me.GameDatabaseDataSet.DataSetName = "GameDatabaseDataSet"
+        Me.GameDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'PlayerPartiesTableAdapter
+        'StaticCampsBindingSource
         '
-        Me.PlayerPartiesTableAdapter.ClearBeforeFill = True
+        Me.StaticCampsBindingSource.DataMember = "StaticCamps"
+        Me.StaticCampsBindingSource.DataSource = Me.GameDatabaseDataSet
         '
-        'StaticCampBindingSource
+        'StaticCampsTableAdapter
         '
-        Me.StaticCampBindingSource.DataMember = "StaticCamp"
-        Me.StaticCampBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'StaticCampTableAdapter
-        '
-        Me.StaticCampTableAdapter.ClearBeforeFill = True
-        '
-        'StaticCampTierBindingSource
-        '
-        Me.StaticCampTierBindingSource.DataMember = "StaticCampTier"
-        Me.StaticCampTierBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'StaticCampTierTableAdapter
-        '
-        Me.StaticCampTierTableAdapter.ClearBeforeFill = True
+        Me.StaticCampsTableAdapter.ClearBeforeFill = True
         '
         'MainMenu
         '
@@ -238,14 +209,14 @@ Partial Class MainMenu
         Me.Name = "MainMenu"
         Me.ShowIcon = False
         Me.Text = "main menu"
-        CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayerStatesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PlayerPartiesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StaticCreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StaticQuestsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PlayerPartiesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.StaticCampBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.StaticCampTierBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.StaticCampTiersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.StaticCampsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -258,20 +229,20 @@ Partial Class MainMenu
     Friend WithEvents playerLevel As ColumnHeader
     Friend WithEvents playerName As ColumnHeader
     Friend WithEvents playerDeletebtn As Button
-    Friend WithEvents GameDatabaseDataSet As GameDatabaseDataSet
     Friend WithEvents PlayersBindingSource As BindingSource
     Friend WithEvents PlayersTableAdapter As GameDatabaseDataSetTableAdapters.PlayersTableAdapter
     Friend WithEvents TableAdapterManager As GameDatabaseDataSetTableAdapters.TableAdapterManager
     Friend WithEvents PlayerStatesTableAdapter As GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter
     Friend WithEvents PlayerStatesBindingSource As BindingSource
+    Friend WithEvents PlayerPartiesTableAdapter As GameDatabaseDataSetTableAdapters.PlayerPartiesTableAdapter
+    Friend WithEvents PlayerPartiesBindingSource As BindingSource
     Friend WithEvents StaticCreaturesTableAdapter As GameDatabaseDataSetTableAdapters.StaticCreaturesTableAdapter
     Friend WithEvents StaticCreaturesBindingSource As BindingSource
-    Friend WithEvents StaticQuestsBindingSource As BindingSource
     Friend WithEvents StaticQuestsTableAdapter As GameDatabaseDataSetTableAdapters.StaticQuestsTableAdapter
-    Friend WithEvents PlayerPartiesBindingSource As BindingSource
-    Friend WithEvents PlayerPartiesTableAdapter As GameDatabaseDataSetTableAdapters.PlayerPartiesTableAdapter
-    Friend WithEvents StaticCampBindingSource As BindingSource
-    Friend WithEvents StaticCampTableAdapter As GameDatabaseDataSetTableAdapters.StaticCampTableAdapter
-    Friend WithEvents StaticCampTierBindingSource As BindingSource
-    Friend WithEvents StaticCampTierTableAdapter As GameDatabaseDataSetTableAdapters.StaticCampTierTableAdapter
+    Friend WithEvents StaticQuestsBindingSource As BindingSource
+    Friend WithEvents StaticCampTiersTableAdapter As GameDatabaseDataSetTableAdapters.StaticCampTiersTableAdapter
+    Friend WithEvents StaticCampTiersBindingSource As BindingSource
+    Friend WithEvents GameDatabaseDataSet As GameDatabaseDataSet
+    Friend WithEvents StaticCampsBindingSource As BindingSource
+    Friend WithEvents StaticCampsTableAdapter As GameDatabaseDataSetTableAdapters.StaticCampsTableAdapter
 End Class

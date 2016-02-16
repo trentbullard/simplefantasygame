@@ -4,13 +4,13 @@ Imports System.Text
 
 Public Class MainMenu
     Private Sub MainMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        StaticCampTierTableAdapter.Fill(GameDatabaseDataSet.StaticCampTier)
-        StaticCampTableAdapter.Fill(GameDatabaseDataSet.StaticCamp)
         PlayerPartiesTableAdapter.Fill(GameDatabaseDataSet.PlayerParties)
         StaticQuestsTableAdapter.Fill(GameDatabaseDataSet.StaticQuests)
         PlayersTableAdapter.Fill(GameDatabaseDataSet.Players)
         PlayerStatesTableAdapter.Fill(GameDatabaseDataSet.PlayerStates)
         StaticCreaturesTableAdapter.Fill(GameDatabaseDataSet.StaticCreatures)
+        StaticCampsTableAdapter.Fill(GameDatabaseDataSet.StaticCamps)
+        StaticCampTiersTableAdapter.Fill(GameDatabaseDataSet.StaticCampTiers)
 
         For ctr = 1 To 20
             Dim creature As Creature
@@ -27,11 +27,11 @@ Public Class MainMenu
         For ctr = 1 To 5
             Dim camp As Camp
             camp = New Camp()
-            camp.save(GameDatabaseDataSet, StaticCampBindingSource, StaticCampTableAdapter)
+            camp.save(GameDatabaseDataSet, StaticCampsBindingSource, StaticCampsTableAdapter)
             For ctr2 = 1 To 5
                 Dim tier As Tier
                 tier = New Tier(camp)
-                tier.save(GameDatabaseDataSet, StaticCampTierBindingSource, StaticCampTierTableAdapter)
+                tier.save(GameDatabaseDataSet, StaticCampTiersBindingSource, StaticCampTiersTableAdapter)
             Next
         Next
 
@@ -74,7 +74,7 @@ Public Class MainMenu
                     currentState.AcceptQuest(New Quest(StaticQuestsTableAdapter.GetQuestByid(currentState.quest.id).First))
                 End If
                 If currentState.party IsNot Nothing Then
-                    currentState.party = New Party(PlayerPartiesTableAdapter.GetPartyByid(currentState.party.id).First)
+                    currentState.party = New Party(PlayerPartiesTableAdapter.GetLastPartyByPlayerid(currentPlayer.id).First)
                 End If
                 If Not currentState.tier IsNot Nothing Then
                     currentState.tier = New Tier() 'TODO (StaticCampTierTableAdapter.GetTierByid(currentState.tier.id).First)
@@ -93,4 +93,5 @@ Public Class MainMenu
         currentState.deletewindow.Show()
         Me.Close()
     End Sub
+
 End Class

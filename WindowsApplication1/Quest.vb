@@ -52,7 +52,7 @@
     Public Sub New(row As GameDatabaseDataSet.StaticQuestsRow)
         questid = row("id")
         questName = row("name")
-        questTier = New Tier(row("tierid"))
+        questTier = New Tier(CInt(row("tierid")))
         questMinLevel = row("minLevel")
         questMaxLevel = row("maxLevel")
         If Not IsDBNull(row("rewardWeaponid")) Then

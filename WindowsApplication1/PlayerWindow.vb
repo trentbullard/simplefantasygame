@@ -1,18 +1,28 @@
 ﻿Public Class PlayerWindow
     Private Sub PlayerWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Text = currentPlayer.ToString
-        playerInfoPanellbl.Text = currentPlayer.ToString
         playerLeveltxt.Text = currentPlayer.level
         playerGoldtxt.Text = currentPlayer.gold
         playerExperiencebar.Minimum = currentPlayer.level ^ 5
         playerExperiencebar.Maximum = (currentPlayer.level + 1) ^ 5
         playerExperiencebar.Value = currentPlayer.exp
 
-        PlayersTableAdapter.Fill(GameDatabaseDataSet.Players)
-        PlayerStatesTableAdapter.Fill(GameDatabaseDataSet.PlayerStates)
+        PlayersTableAdapter.FillByPlayerid(GameDatabaseDataSet.Players, currentPlayer.id)
+        PlayerStatesTableAdapter.FillByPlayerid(GameDatabaseDataSet.PlayerStates, currentPlayer.id)
+        PlayerCreaturesTableAdapter.FillByPlayerid(GameDatabaseDataSet.PlayerCreatures, currentPlayer.id)
+        PlayerPartiesTableAdapter.FillByPlayerid(GameDatabaseDataSet.PlayerParties, currentPlayer.id)
+        PlayerConsumablesTableAdapter.FillByPlayerid(GameDatabaseDataSet.PlayerConsumables, currentPlayer.id)
+        PlayerWeaponsTableAdapter.FillByPlayerid(GameDatabaseDataSet.PlayerWeapons, currentPlayer.id)
+        PlayerArmorTableAdapter.FillByPlayerid(GameDatabaseDataSet.PlayerArmor, currentPlayer.id)
+        ArmorAugmentsTableAdapter.FillByPlayerid(GameDatabaseDataSet.ArmorAugments, currentPlayer.id)
+        WeaponAugmentsTableAdapter.FillByPlayerid(GameDatabaseDataSet.WeaponAugments, currentPlayer.id)
+
         StaticCreaturesTableAdapter.Fill(GameDatabaseDataSet.StaticCreatures)
         StaticQuestsTableAdapter.Fill(GameDatabaseDataSet.StaticQuests)
-        PlayerCreaturesTableAdapter.FillByPlayerid(GameDatabaseDataSet.PlayerCreatures, currentPlayer.id)
+        StaticWeaponsTableAdapter.Fill(GameDatabaseDataSet.StaticWeapons)
+        StaticConsumablesTableAdapter.Fill(GameDatabaseDataSet.StaticConsumables)
+        StaticAugmentsTableAdapter.Fill(GameDatabaseDataSet.StaticAugments)
+        StaticArmorTableAdapter.Fill(GameDatabaseDataSet.StaticArmor)
 
         RefreshQuest()
 
@@ -43,7 +53,6 @@
 
         currentPlayer.ReName(nameString)
         Me.Text = currentPlayer.ToString
-        playerInfoPanellbl.Text = currentPlayer.ToString
         currentPlayer.Save(GameDatabaseDataSet, PlayersBindingSource, PlayersTableAdapter)
     End Sub
 

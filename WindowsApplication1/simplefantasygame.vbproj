@@ -150,11 +150,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GameDatabaseDataSet.xsd</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="GameDatabaseDataSet.vb">
-      <DependentUpon>GameDatabaseDataSet.xsd</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="InnWindow.Designer.vb">
       <DependentUpon>InnWindow.vb</DependentUpon>
@@ -280,17 +275,14 @@
   <ItemGroup>
     <None Include="GameDatabaseDataSet.xsc">
       <DependentUpon>GameDatabaseDataSet.xsd</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="GameDatabaseDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>GameDatabaseDataSet.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="GameDatabaseDataSet.xss">
       <DependentUpon>GameDatabaseDataSet.xsd</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">

@@ -133,19 +133,19 @@ Partial Class TavernWindow
         Me.questlbl = New System.Windows.Forms.Label()
         Me.innbtn = New System.Windows.Forms.Button()
         Me.GameDatabaseDataSet = New WindowsApplication1.GameDatabaseDataSet()
-        Me.TavernStatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.TavernStatesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TavernStatesTableAdapter()
+        Me.PlayerStatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayerStatesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter()
         Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
         Me.PlayerCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerCreaturesTableAdapter()
         Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
         Me.StaticCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticCreaturesTableAdapter()
-        Me.StaticCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticQuestsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticQuestsTableAdapter()
+        Me.TavernStatesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TavernStatesTableAdapter()
+        Me.TavernStatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayerCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.StaticQuestsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.StaticQuestsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticQuestsTableAdapter()
-        Me.PlayerStatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PlayerStatesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter()
         Me.tavernSlot1pnl.SuspendLayout()
         Me.tavernSlot2pnl.SuspendLayout()
         Me.tavernSlot3pnl.SuspendLayout()
@@ -160,12 +160,12 @@ Partial Class TavernWindow
         Me.tavernQuestSlot2pnl.SuspendLayout()
         Me.tavernQuestSlot1pnl.SuspendLayout()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PlayerStatesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TavernStatesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.StaticCreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayerCreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.StaticCreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StaticQuestsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PlayerStatesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tavernSlot1pnl
@@ -1209,14 +1209,14 @@ Partial Class TavernWindow
         Me.GameDatabaseDataSet.DataSetName = "GameDatabaseDataSet"
         Me.GameDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'TavernStatesBindingSource
+        'PlayerStatesBindingSource
         '
-        Me.TavernStatesBindingSource.DataMember = "TavernStates"
-        Me.TavernStatesBindingSource.DataSource = Me.GameDatabaseDataSet
+        Me.PlayerStatesBindingSource.DataMember = "PlayerStates"
+        Me.PlayerStatesBindingSource.DataSource = Me.GameDatabaseDataSet
         '
-        'TavernStatesTableAdapter
+        'PlayerStatesTableAdapter
         '
-        Me.TavernStatesTableAdapter.ClearBeforeFill = True
+        Me.PlayerStatesTableAdapter.ClearBeforeFill = True
         '
         'TableAdapterManager
         '
@@ -1236,18 +1236,19 @@ Partial Class TavernWindow
         Me.TableAdapterManager.PlayerPartiesTableAdapter = Nothing
         Me.TableAdapterManager.PlayerSkillsTableAdapter = Nothing
         Me.TableAdapterManager.PlayersTableAdapter = Me.PlayersTableAdapter
-        Me.TableAdapterManager.PlayerStatesTableAdapter = Nothing
+        Me.TableAdapterManager.PlayerStatesTableAdapter = Me.PlayerStatesTableAdapter
         Me.TableAdapterManager.PlayerWeaponsTableAdapter = Nothing
+        Me.TableAdapterManager.RoadStatesTableAdapter = Nothing
         Me.TableAdapterManager.ScholarStateItemsTableAdapter = Nothing
         Me.TableAdapterManager.ScholarStatesTableAdapter = Nothing
         Me.TableAdapterManager.StaticArmorTableAdapter = Nothing
         Me.TableAdapterManager.StaticAugmentsTableAdapter = Nothing
-        Me.TableAdapterManager.StaticCampTableAdapter = Nothing
-        Me.TableAdapterManager.StaticCampTierTableAdapter = Nothing
+        Me.TableAdapterManager.StaticCampsTableAdapter = Nothing
+        Me.TableAdapterManager.StaticCampTiersTableAdapter = Nothing
         Me.TableAdapterManager.StaticConsumablesTableAdapter = Nothing
         Me.TableAdapterManager.StaticCreaturesTableAdapter = Me.StaticCreaturesTableAdapter
         Me.TableAdapterManager.StaticMobsTableAdapter = Nothing
-        Me.TableAdapterManager.StaticQuestsTableAdapter = Nothing
+        Me.TableAdapterManager.StaticQuestsTableAdapter = Me.StaticQuestsTableAdapter
         Me.TableAdapterManager.StaticSkillsTableAdapter = Nothing
         Me.TableAdapterManager.StaticWeaponsTableAdapter = Nothing
         Me.TableAdapterManager.TavernStatesTableAdapter = Me.TavernStatesTableAdapter
@@ -1267,10 +1268,18 @@ Partial Class TavernWindow
         '
         Me.StaticCreaturesTableAdapter.ClearBeforeFill = True
         '
-        'StaticCreaturesBindingSource
+        'StaticQuestsTableAdapter
         '
-        Me.StaticCreaturesBindingSource.DataMember = "StaticCreatures"
-        Me.StaticCreaturesBindingSource.DataSource = Me.GameDatabaseDataSet
+        Me.StaticQuestsTableAdapter.ClearBeforeFill = True
+        '
+        'TavernStatesTableAdapter
+        '
+        Me.TavernStatesTableAdapter.ClearBeforeFill = True
+        '
+        'TavernStatesBindingSource
+        '
+        Me.TavernStatesBindingSource.DataMember = "TavernStates"
+        Me.TavernStatesBindingSource.DataSource = Me.GameDatabaseDataSet
         '
         'PlayersBindingSource
         '
@@ -1282,23 +1291,15 @@ Partial Class TavernWindow
         Me.PlayerCreaturesBindingSource.DataMember = "PlayerCreatures"
         Me.PlayerCreaturesBindingSource.DataSource = Me.GameDatabaseDataSet
         '
+        'StaticCreaturesBindingSource
+        '
+        Me.StaticCreaturesBindingSource.DataMember = "StaticCreatures"
+        Me.StaticCreaturesBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
         'StaticQuestsBindingSource
         '
         Me.StaticQuestsBindingSource.DataMember = "StaticQuests"
         Me.StaticQuestsBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'StaticQuestsTableAdapter
-        '
-        Me.StaticQuestsTableAdapter.ClearBeforeFill = True
-        '
-        'PlayerStatesBindingSource
-        '
-        Me.PlayerStatesBindingSource.DataMember = "PlayerStates"
-        Me.PlayerStatesBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'PlayerStatesTableAdapter
-        '
-        Me.PlayerStatesTableAdapter.ClearBeforeFill = True
         '
         'TavernWindow
         '
@@ -1336,12 +1337,12 @@ Partial Class TavernWindow
         Me.tavernQuestSlot2pnl.ResumeLayout(False)
         Me.tavernQuestSlot1pnl.ResumeLayout(False)
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PlayerStatesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TavernStatesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.StaticCreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayerCreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.StaticCreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StaticQuestsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PlayerStatesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1456,17 +1457,17 @@ Partial Class TavernWindow
     Friend WithEvents questSlot1rtxt As RichTextBox
     Friend WithEvents questSlot1btn As Button
     Friend WithEvents GameDatabaseDataSet As GameDatabaseDataSet
-    Friend WithEvents TavernStatesBindingSource As BindingSource
-    Friend WithEvents TavernStatesTableAdapter As GameDatabaseDataSetTableAdapters.TavernStatesTableAdapter
+    Friend WithEvents PlayerStatesBindingSource As BindingSource
+    Friend WithEvents PlayerStatesTableAdapter As GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter
     Friend WithEvents TableAdapterManager As GameDatabaseDataSetTableAdapters.TableAdapterManager
-    Friend WithEvents StaticCreaturesTableAdapter As GameDatabaseDataSetTableAdapters.StaticCreaturesTableAdapter
-    Friend WithEvents StaticCreaturesBindingSource As BindingSource
+    Friend WithEvents TavernStatesTableAdapter As GameDatabaseDataSetTableAdapters.TavernStatesTableAdapter
+    Friend WithEvents TavernStatesBindingSource As BindingSource
     Friend WithEvents PlayersTableAdapter As GameDatabaseDataSetTableAdapters.PlayersTableAdapter
     Friend WithEvents PlayersBindingSource As BindingSource
     Friend WithEvents PlayerCreaturesTableAdapter As GameDatabaseDataSetTableAdapters.PlayerCreaturesTableAdapter
     Friend WithEvents PlayerCreaturesBindingSource As BindingSource
-    Friend WithEvents StaticQuestsBindingSource As BindingSource
+    Friend WithEvents StaticCreaturesTableAdapter As GameDatabaseDataSetTableAdapters.StaticCreaturesTableAdapter
+    Friend WithEvents StaticCreaturesBindingSource As BindingSource
     Friend WithEvents StaticQuestsTableAdapter As GameDatabaseDataSetTableAdapters.StaticQuestsTableAdapter
-    Friend WithEvents PlayerStatesBindingSource As BindingSource
-    Friend WithEvents PlayerStatesTableAdapter As GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter
+    Friend WithEvents StaticQuestsBindingSource As BindingSource
 End Class

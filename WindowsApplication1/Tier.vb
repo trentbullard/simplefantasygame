@@ -21,7 +21,7 @@
         tierBoss = New Creature
     End Sub
 
-    Public Sub New(row As GameDatabaseDataSet.StaticCampTierRow)
+    Public Sub New(row As GameDatabaseDataSet.StaticCampTiersRow)
         tierid = row("id")
         tierCamp = New Camp(CInt(row("campid")))
         tierBoss = New Creature(CInt(row("bossid")))
@@ -50,16 +50,16 @@
 
     Public Sub save(ds As GameDatabaseDataSet,
                     bs As BindingSource,
-                    ta As GameDatabaseDataSetTableAdapters.StaticCampTierTableAdapter)
-        Dim newRow As DataRow = ds.Tables("StaticCampTier").NewRow()
+                    ta As GameDatabaseDataSetTableAdapters.StaticCampTiersTableAdapter)
+        Dim newRow As DataRow = ds.Tables("StaticCampTiers").NewRow()
         newRow("campid") = tierCamp.id
         newRow("bossid") = Roll(20)
-        ds.Tables("StaticCampTier").Rows.Add(newRow)
+        ds.Tables("StaticCampTiers").Rows.Add(newRow)
         Try
             bs.EndEdit()
-            ta.Update(ds.StaticCampTier)
+            ta.Update(ds.StaticCampTiers)
         Catch ex As Exception
-            MsgBox("failed to add static creature to database.")
+            MsgBox("failed to add tier to database.")
         End Try
     End Sub
 End Class

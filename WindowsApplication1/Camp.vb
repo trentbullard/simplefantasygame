@@ -1,12 +1,14 @@
 ﻿Public Class Camp
     Private campid As Integer
     Private campSpecies As String
+    Private campName As String
     Private campMinLevel As Integer
     Private campMaxLevel As Integer
 
     Public Sub New()
         campid = -1
         campSpecies = getSpecies()
+        campName = campSpecies & " camp " & campid
         campMinLevel = 1
         campMaxLevel = 50
     End Sub
@@ -14,13 +16,15 @@
     Public Sub New(id As Integer)
         campid = id
         campSpecies = getSpecies()
+        campName = campSpecies & " camp " & campid
         campMinLevel = 1
         campMaxLevel = 50
     End Sub
 
-    Public Sub New(row As GameDatabaseDataSet.StaticCampRow)
+    Public Sub New(row As GameDatabaseDataSet.StaticCampsRow)
         campid = row("id")
         campSpecies = row("species")
+        campName = row("name")
         campMinLevel = row("minLevel")
         campMaxLevel = row("maxLevel")
     End Sub
@@ -37,6 +41,15 @@
         End Get
     End Property
 
+    Public Property name As String
+        Get
+            Return campName
+        End Get
+        Set(value As String)
+            campName = value
+        End Set
+    End Property
+
     Public ReadOnly Property minLevel As Integer
         Get
             Return campMinLevel
@@ -51,17 +64,21 @@
 
     Public Sub save(ds As GameDatabaseDataSet,
                     bs As BindingSource,
-                    ta As GameDatabaseDataSetTableAdapters.StaticCampTableAdapter)
-        Dim newRow As DataRow = ds.Tables("StaticCamp").NewRow()
+                    ta As GameDatabaseDataSetTableAdapters.StaticCampsTableAdapter)
+        Dim newRow As DataRow = ds.Tables("StaticCamps").NewRow()
         newRow("species") = campSpecies
         newRow("minLevel") = campMinLevel
         newRow("maxLevel") = campMaxLevel
-        ds.Tables("StaticCamp").Rows.Add(newRow)
-        Try
-            bs.EndEdit()
-            ta.Update(ds.StaticCamp)
-        Catch ex As Exception
-            MsgBox("failed to add static creature to database.")
-        End Try
+        newRow("name") = campName
+        ds.Tables("StaticCamps").Rows.Add(newRow)
+        'Try
+        '    bs.EndEdit()
+        '    ta.Update(ds.StaticCamps)
+        'Catch ex As Exception
+        '    MsgBox("failed to add camp to database.")
+        'End Try
+
+        bs.EndEdit()
+        ta.Update(ds.StaticCamps)
     End Sub
 End Class
