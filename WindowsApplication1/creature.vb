@@ -18,16 +18,18 @@
     Public Sub New()
         creatureid = -1
         creatureName = getName()
-        creatureSpecies = "species"
-        creatureHealth = 1
-        creatureStrength = 1
-        creatureArmor = 1
+        creatureSpecies = getSpecies()
+        creatureClass = "class"
         creatureLevel = 1
         creatureExperience = 1
-        creatureInitiative = 1
-        creatureIntelligence = 1
-        creatureWisdom = 1
-        creatureDexterity = 1
+        creatureArmor = 0
+        creatureMaxHealth = 70 + Roll(50)
+        creatureHealth = creatureMaxHealth
+        creatureStrength = 70 + Roll(50)
+        creatureInitiative = 70 + Roll(50)
+        creatureIntelligence = 70 + Roll(50)
+        creatureWisdom = 70 + Roll(50)
+        creatureDexterity = 70 + Roll(50)
         creatureOwner = currentPlayer
     End Sub
 

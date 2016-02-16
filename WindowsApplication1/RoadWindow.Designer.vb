@@ -23,7 +23,6 @@ Partial Class RoadWindow
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RoadWindow))
         Me.camp1lbl = New System.Windows.Forms.Label()
         Me.camp1btn = New System.Windows.Forms.Button()
         Me.camp2btn = New System.Windows.Forms.Button()
@@ -34,38 +33,34 @@ Partial Class RoadWindow
         Me.camp4lbl = New System.Windows.Forms.Label()
         Me.camp5btn = New System.Windows.Forms.Button()
         Me.camp5lbl = New System.Windows.Forms.Label()
-        Me.campSelectionlbl = New System.Windows.Forms.Label()
         Me.campSelectionpnl = New System.Windows.Forms.Panel()
         Me.roadpnl = New System.Windows.Forms.Panel()
+        Me.camp5Chanceslbl = New System.Windows.Forms.Label()
+        Me.camp4Chanceslbl = New System.Windows.Forms.Label()
+        Me.camp3Chanceslbl = New System.Windows.Forms.Label()
+        Me.camp2Chanceslbl = New System.Windows.Forms.Label()
+        Me.camp1Chanceslbl = New System.Windows.Forms.Label()
         Me.GameDatabaseDataSet = New WindowsApplication1.GameDatabaseDataSet()
         Me.PlayerStatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayerStatesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter()
         Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
-        Me.PlayerStatesBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
-        Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
-        Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
-        Me.PlayerStatesBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
+        Me.RoadStatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.RoadStatesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.RoadStatesTableAdapter()
+        Me.townbtn = New System.Windows.Forms.Button()
+        Me.playerbtn = New System.Windows.Forms.Button()
+        Me.mainMenubtn = New System.Windows.Forms.Button()
         Me.campSelectionpnl.SuspendLayout()
         Me.roadpnl.SuspendLayout()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayerStatesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PlayerStatesBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PlayerStatesBindingNavigator.SuspendLayout()
+        CType(Me.RoadStatesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'camp1lbl
         '
+        Me.camp1lbl.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.camp1lbl.AutoSize = True
-        Me.camp1lbl.Location = New System.Drawing.Point(3, 23)
+        Me.camp1lbl.Location = New System.Drawing.Point(13, 17)
         Me.camp1lbl.Name = "camp1lbl"
         Me.camp1lbl.Size = New System.Drawing.Size(42, 13)
         Me.camp1lbl.TabIndex = 0
@@ -73,7 +68,8 @@ Partial Class RoadWindow
         '
         'camp1btn
         '
-        Me.camp1btn.Location = New System.Drawing.Point(51, 18)
+        Me.camp1btn.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.camp1btn.Location = New System.Drawing.Point(61, 12)
         Me.camp1btn.Name = "camp1btn"
         Me.camp1btn.Size = New System.Drawing.Size(75, 23)
         Me.camp1btn.TabIndex = 1
@@ -82,7 +78,8 @@ Partial Class RoadWindow
         '
         'camp2btn
         '
-        Me.camp2btn.Location = New System.Drawing.Point(51, 47)
+        Me.camp2btn.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.camp2btn.Location = New System.Drawing.Point(61, 41)
         Me.camp2btn.Name = "camp2btn"
         Me.camp2btn.Size = New System.Drawing.Size(75, 23)
         Me.camp2btn.TabIndex = 3
@@ -91,8 +88,9 @@ Partial Class RoadWindow
         '
         'camp2lbl
         '
+        Me.camp2lbl.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.camp2lbl.AutoSize = True
-        Me.camp2lbl.Location = New System.Drawing.Point(3, 52)
+        Me.camp2lbl.Location = New System.Drawing.Point(13, 46)
         Me.camp2lbl.Name = "camp2lbl"
         Me.camp2lbl.Size = New System.Drawing.Size(42, 13)
         Me.camp2lbl.TabIndex = 2
@@ -100,7 +98,8 @@ Partial Class RoadWindow
         '
         'camp3btn
         '
-        Me.camp3btn.Location = New System.Drawing.Point(51, 76)
+        Me.camp3btn.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.camp3btn.Location = New System.Drawing.Point(61, 70)
         Me.camp3btn.Name = "camp3btn"
         Me.camp3btn.Size = New System.Drawing.Size(75, 23)
         Me.camp3btn.TabIndex = 5
@@ -109,8 +108,9 @@ Partial Class RoadWindow
         '
         'camp3lbl
         '
+        Me.camp3lbl.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.camp3lbl.AutoSize = True
-        Me.camp3lbl.Location = New System.Drawing.Point(3, 81)
+        Me.camp3lbl.Location = New System.Drawing.Point(13, 75)
         Me.camp3lbl.Name = "camp3lbl"
         Me.camp3lbl.Size = New System.Drawing.Size(42, 13)
         Me.camp3lbl.TabIndex = 4
@@ -118,7 +118,8 @@ Partial Class RoadWindow
         '
         'camp4btn
         '
-        Me.camp4btn.Location = New System.Drawing.Point(51, 105)
+        Me.camp4btn.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.camp4btn.Location = New System.Drawing.Point(61, 99)
         Me.camp4btn.Name = "camp4btn"
         Me.camp4btn.Size = New System.Drawing.Size(75, 23)
         Me.camp4btn.TabIndex = 7
@@ -127,8 +128,9 @@ Partial Class RoadWindow
         '
         'camp4lbl
         '
+        Me.camp4lbl.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.camp4lbl.AutoSize = True
-        Me.camp4lbl.Location = New System.Drawing.Point(3, 110)
+        Me.camp4lbl.Location = New System.Drawing.Point(13, 104)
         Me.camp4lbl.Name = "camp4lbl"
         Me.camp4lbl.Size = New System.Drawing.Size(42, 13)
         Me.camp4lbl.TabIndex = 6
@@ -136,7 +138,8 @@ Partial Class RoadWindow
         '
         'camp5btn
         '
-        Me.camp5btn.Location = New System.Drawing.Point(51, 134)
+        Me.camp5btn.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.camp5btn.Location = New System.Drawing.Point(61, 128)
         Me.camp5btn.Name = "camp5btn"
         Me.camp5btn.Size = New System.Drawing.Size(75, 23)
         Me.camp5btn.TabIndex = 9
@@ -145,28 +148,30 @@ Partial Class RoadWindow
         '
         'camp5lbl
         '
+        Me.camp5lbl.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.camp5lbl.AutoSize = True
-        Me.camp5lbl.Location = New System.Drawing.Point(3, 139)
+        Me.camp5lbl.Location = New System.Drawing.Point(13, 133)
         Me.camp5lbl.Name = "camp5lbl"
         Me.camp5lbl.Size = New System.Drawing.Size(42, 13)
         Me.camp5lbl.TabIndex = 8
         Me.camp5lbl.Text = "camp 5"
         '
-        'campSelectionlbl
-        '
-        Me.campSelectionlbl.AutoSize = True
-        Me.campSelectionlbl.Location = New System.Drawing.Point(24, 2)
-        Me.campSelectionlbl.Name = "campSelectionlbl"
-        Me.campSelectionlbl.Size = New System.Drawing.Size(83, 13)
-        Me.campSelectionlbl.TabIndex = 10
-        Me.campSelectionlbl.Text = "travel to a camp"
-        '
         'campSelectionpnl
         '
-        Me.campSelectionpnl.Controls.Add(Me.campSelectionlbl)
+        Me.campSelectionpnl.AutoScroll = True
+        Me.campSelectionpnl.AutoSize = True
+        Me.campSelectionpnl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.campSelectionpnl.Controls.Add(Me.townbtn)
+        Me.campSelectionpnl.Controls.Add(Me.playerbtn)
+        Me.campSelectionpnl.Controls.Add(Me.mainMenubtn)
+        Me.campSelectionpnl.Controls.Add(Me.camp5Chanceslbl)
+        Me.campSelectionpnl.Controls.Add(Me.camp4Chanceslbl)
         Me.campSelectionpnl.Controls.Add(Me.camp1lbl)
+        Me.campSelectionpnl.Controls.Add(Me.camp3Chanceslbl)
         Me.campSelectionpnl.Controls.Add(Me.camp5btn)
+        Me.campSelectionpnl.Controls.Add(Me.camp2Chanceslbl)
         Me.campSelectionpnl.Controls.Add(Me.camp1btn)
+        Me.campSelectionpnl.Controls.Add(Me.camp1Chanceslbl)
         Me.campSelectionpnl.Controls.Add(Me.camp5lbl)
         Me.campSelectionpnl.Controls.Add(Me.camp2lbl)
         Me.campSelectionpnl.Controls.Add(Me.camp4btn)
@@ -174,9 +179,10 @@ Partial Class RoadWindow
         Me.campSelectionpnl.Controls.Add(Me.camp4lbl)
         Me.campSelectionpnl.Controls.Add(Me.camp3lbl)
         Me.campSelectionpnl.Controls.Add(Me.camp3btn)
-        Me.campSelectionpnl.Location = New System.Drawing.Point(12, 12)
+        Me.campSelectionpnl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.campSelectionpnl.Location = New System.Drawing.Point(0, 0)
         Me.campSelectionpnl.Name = "campSelectionpnl"
-        Me.campSelectionpnl.Size = New System.Drawing.Size(131, 161)
+        Me.campSelectionpnl.Size = New System.Drawing.Size(274, 196)
         Me.campSelectionpnl.TabIndex = 11
         '
         'roadpnl
@@ -185,8 +191,58 @@ Partial Class RoadWindow
         Me.roadpnl.Dock = System.Windows.Forms.DockStyle.Fill
         Me.roadpnl.Location = New System.Drawing.Point(0, 0)
         Me.roadpnl.Name = "roadpnl"
-        Me.roadpnl.Size = New System.Drawing.Size(155, 187)
+        Me.roadpnl.Size = New System.Drawing.Size(274, 196)
         Me.roadpnl.TabIndex = 17
+        '
+        'camp5Chanceslbl
+        '
+        Me.camp5Chanceslbl.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.camp5Chanceslbl.AutoSize = True
+        Me.camp5Chanceslbl.Location = New System.Drawing.Point(142, 133)
+        Me.camp5Chanceslbl.Name = "camp5Chanceslbl"
+        Me.camp5Chanceslbl.Size = New System.Drawing.Size(121, 13)
+        Me.camp5Chanceslbl.TabIndex = 22
+        Me.camp5Chanceslbl.Text = "10% chance for ambush"
+        '
+        'camp4Chanceslbl
+        '
+        Me.camp4Chanceslbl.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.camp4Chanceslbl.AutoSize = True
+        Me.camp4Chanceslbl.Location = New System.Drawing.Point(142, 104)
+        Me.camp4Chanceslbl.Name = "camp4Chanceslbl"
+        Me.camp4Chanceslbl.Size = New System.Drawing.Size(121, 13)
+        Me.camp4Chanceslbl.TabIndex = 21
+        Me.camp4Chanceslbl.Text = "10% chance for ambush"
+        '
+        'camp3Chanceslbl
+        '
+        Me.camp3Chanceslbl.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.camp3Chanceslbl.AutoSize = True
+        Me.camp3Chanceslbl.Location = New System.Drawing.Point(142, 75)
+        Me.camp3Chanceslbl.Name = "camp3Chanceslbl"
+        Me.camp3Chanceslbl.Size = New System.Drawing.Size(121, 13)
+        Me.camp3Chanceslbl.TabIndex = 20
+        Me.camp3Chanceslbl.Text = "10% chance for ambush"
+        '
+        'camp2Chanceslbl
+        '
+        Me.camp2Chanceslbl.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.camp2Chanceslbl.AutoSize = True
+        Me.camp2Chanceslbl.Location = New System.Drawing.Point(142, 46)
+        Me.camp2Chanceslbl.Name = "camp2Chanceslbl"
+        Me.camp2Chanceslbl.Size = New System.Drawing.Size(121, 13)
+        Me.camp2Chanceslbl.TabIndex = 19
+        Me.camp2Chanceslbl.Text = "10% chance for ambush"
+        '
+        'camp1Chanceslbl
+        '
+        Me.camp1Chanceslbl.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.camp1Chanceslbl.AutoSize = True
+        Me.camp1Chanceslbl.Location = New System.Drawing.Point(142, 17)
+        Me.camp1Chanceslbl.Name = "camp1Chanceslbl"
+        Me.camp1Chanceslbl.Size = New System.Drawing.Size(121, 13)
+        Me.camp1Chanceslbl.TabIndex = 18
+        Me.camp1Chanceslbl.Text = "10% chance for ambush"
         '
         'GameDatabaseDataSet
         '
@@ -240,124 +296,55 @@ Partial Class RoadWindow
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.WeaponAugmentsTableAdapter = Nothing
         '
-        'PlayerStatesBindingNavigator
+        'RoadStatesBindingSource
         '
-        Me.PlayerStatesBindingNavigator.AddNewItem = Me.BindingNavigatorAddNewItem
-        Me.PlayerStatesBindingNavigator.BindingSource = Me.PlayerStatesBindingSource
-        Me.PlayerStatesBindingNavigator.CountItem = Me.BindingNavigatorCountItem
-        Me.PlayerStatesBindingNavigator.DeleteItem = Me.BindingNavigatorDeleteItem
-        Me.PlayerStatesBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.PlayerStatesBindingNavigatorSaveItem})
-        Me.PlayerStatesBindingNavigator.Location = New System.Drawing.Point(0, 0)
-        Me.PlayerStatesBindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
-        Me.PlayerStatesBindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
-        Me.PlayerStatesBindingNavigator.MoveNextItem = Me.BindingNavigatorMoveNextItem
-        Me.PlayerStatesBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
-        Me.PlayerStatesBindingNavigator.Name = "PlayerStatesBindingNavigator"
-        Me.PlayerStatesBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.PlayerStatesBindingNavigator.Size = New System.Drawing.Size(111, 25)
-        Me.PlayerStatesBindingNavigator.TabIndex = 18
-        Me.PlayerStatesBindingNavigator.Text = "BindingNavigator1"
+        Me.RoadStatesBindingSource.DataMember = "RoadStates"
+        Me.RoadStatesBindingSource.DataSource = Me.GameDatabaseDataSet
         '
-        'BindingNavigatorMoveFirstItem
+        'RoadStatesTableAdapter
         '
-        Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
-        Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMoveFirstItem.Text = "Move first"
+        Me.RoadStatesTableAdapter.ClearBeforeFill = True
         '
-        'BindingNavigatorMovePreviousItem
+        'townbtn
         '
-        Me.BindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
-        Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMovePreviousItem.Text = "Move previous"
+        Me.townbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.townbtn.Location = New System.Drawing.Point(23, 162)
+        Me.townbtn.Name = "townbtn"
+        Me.townbtn.Size = New System.Drawing.Size(77, 23)
+        Me.townbtn.TabIndex = 33
+        Me.townbtn.Text = "back to town"
+        Me.townbtn.UseVisualStyleBackColor = True
         '
-        'BindingNavigatorSeparator
+        'playerbtn
         '
-        Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 25)
+        Me.playerbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.playerbtn.Location = New System.Drawing.Point(106, 162)
+        Me.playerbtn.Name = "playerbtn"
+        Me.playerbtn.Size = New System.Drawing.Size(75, 23)
+        Me.playerbtn.TabIndex = 32
+        Me.playerbtn.Text = "player info"
+        Me.playerbtn.UseVisualStyleBackColor = True
         '
-        'BindingNavigatorPositionItem
+        'mainMenubtn
         '
-        Me.BindingNavigatorPositionItem.AccessibleName = "Position"
-        Me.BindingNavigatorPositionItem.AutoSize = False
-        Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
-        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 23)
-        Me.BindingNavigatorPositionItem.Text = "0"
-        Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
-        '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(35, 15)
-        Me.BindingNavigatorCountItem.Text = "of {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
-        '
-        'BindingNavigatorSeparator1
-        '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 6)
-        '
-        'BindingNavigatorMoveNextItem
-        '
-        Me.BindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
-        Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(23, 20)
-        Me.BindingNavigatorMoveNextItem.Text = "Move next"
-        '
-        'BindingNavigatorMoveLastItem
-        '
-        Me.BindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
-        Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(23, 20)
-        Me.BindingNavigatorMoveLastItem.Text = "Move last"
-        '
-        'BindingNavigatorSeparator2
-        '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 6)
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 20)
-        Me.BindingNavigatorAddNewItem.Text = "Add new"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 20)
-        Me.BindingNavigatorDeleteItem.Text = "Delete"
-        '
-        'PlayerStatesBindingNavigatorSaveItem
-        '
-        Me.PlayerStatesBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.PlayerStatesBindingNavigatorSaveItem.Image = CType(resources.GetObject("PlayerStatesBindingNavigatorSaveItem.Image"), System.Drawing.Image)
-        Me.PlayerStatesBindingNavigatorSaveItem.Name = "PlayerStatesBindingNavigatorSaveItem"
-        Me.PlayerStatesBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 23)
-        Me.PlayerStatesBindingNavigatorSaveItem.Text = "Save Data"
+        Me.mainMenubtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.mainMenubtn.Location = New System.Drawing.Point(187, 161)
+        Me.mainMenubtn.Name = "mainMenubtn"
+        Me.mainMenubtn.Size = New System.Drawing.Size(75, 23)
+        Me.mainMenubtn.TabIndex = 31
+        Me.mainMenubtn.Text = "main menu"
+        Me.mainMenubtn.UseVisualStyleBackColor = True
         '
         'RoadWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(155, 187)
-        Me.Controls.Add(Me.PlayerStatesBindingNavigator)
+        Me.AutoSize = True
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.ClientSize = New System.Drawing.Size(274, 196)
         Me.Controls.Add(Me.roadpnl)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.MinimumSize = New System.Drawing.Size(290, 235)
         Me.Name = "RoadWindow"
         Me.ShowIcon = False
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
@@ -365,13 +352,11 @@ Partial Class RoadWindow
         Me.campSelectionpnl.ResumeLayout(False)
         Me.campSelectionpnl.PerformLayout()
         Me.roadpnl.ResumeLayout(False)
+        Me.roadpnl.PerformLayout()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayerStatesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PlayerStatesBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PlayerStatesBindingNavigator.ResumeLayout(False)
-        Me.PlayerStatesBindingNavigator.PerformLayout()
+        CType(Me.RoadStatesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -385,24 +370,20 @@ Partial Class RoadWindow
     Friend WithEvents camp4lbl As Label
     Friend WithEvents camp5btn As Button
     Friend WithEvents camp5lbl As Label
-    Friend WithEvents campSelectionlbl As Label
     Friend WithEvents campSelectionpnl As Panel
     Friend WithEvents roadpnl As Panel
     Friend WithEvents GameDatabaseDataSet As GameDatabaseDataSet
     Friend WithEvents PlayerStatesBindingSource As BindingSource
     Friend WithEvents PlayerStatesTableAdapter As GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter
     Friend WithEvents TableAdapterManager As GameDatabaseDataSetTableAdapters.TableAdapterManager
-    Friend WithEvents PlayerStatesBindingNavigator As BindingNavigator
-    Friend WithEvents BindingNavigatorAddNewItem As ToolStripButton
-    Friend WithEvents BindingNavigatorCountItem As ToolStripLabel
-    Friend WithEvents BindingNavigatorDeleteItem As ToolStripButton
-    Friend WithEvents BindingNavigatorMoveFirstItem As ToolStripButton
-    Friend WithEvents BindingNavigatorMovePreviousItem As ToolStripButton
-    Friend WithEvents BindingNavigatorSeparator As ToolStripSeparator
-    Friend WithEvents BindingNavigatorPositionItem As ToolStripTextBox
-    Friend WithEvents BindingNavigatorSeparator1 As ToolStripSeparator
-    Friend WithEvents BindingNavigatorMoveNextItem As ToolStripButton
-    Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
-    Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
-    Friend WithEvents PlayerStatesBindingNavigatorSaveItem As ToolStripButton
+    Friend WithEvents camp5Chanceslbl As Label
+    Friend WithEvents camp4Chanceslbl As Label
+    Friend WithEvents camp3Chanceslbl As Label
+    Friend WithEvents camp2Chanceslbl As Label
+    Friend WithEvents camp1Chanceslbl As Label
+    Friend WithEvents RoadStatesBindingSource As BindingSource
+    Friend WithEvents RoadStatesTableAdapter As GameDatabaseDataSetTableAdapters.RoadStatesTableAdapter
+    Friend WithEvents townbtn As Button
+    Friend WithEvents playerbtn As Button
+    Friend WithEvents mainMenubtn As Button
 End Class

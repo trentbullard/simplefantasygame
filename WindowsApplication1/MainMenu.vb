@@ -5,12 +5,14 @@ Imports System.Text
 Public Class MainMenu
     Private Sub MainMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PlayerPartiesTableAdapter.Fill(GameDatabaseDataSet.PlayerParties)
-        StaticQuestsTableAdapter.Fill(GameDatabaseDataSet.StaticQuests)
         PlayersTableAdapter.Fill(GameDatabaseDataSet.Players)
         PlayerStatesTableAdapter.Fill(GameDatabaseDataSet.PlayerStates)
-        StaticCreaturesTableAdapter.Fill(GameDatabaseDataSet.StaticCreatures)
-        StaticCampsTableAdapter.Fill(GameDatabaseDataSet.StaticCamps)
-        StaticCampTiersTableAdapter.Fill(GameDatabaseDataSet.StaticCampTiers)
+        'StaticCreaturesTableAdapter.Fill(GameDatabaseDataSet.StaticCreatures)
+        'StaticCampsTableAdapter.Fill(GameDatabaseDataSet.StaticCamps)
+        'StaticCampTiersTableAdapter.Fill(GameDatabaseDataSet.StaticCampTiers)
+        'StaticQuestsTableAdapter.Fill(GameDatabaseDataSet.StaticQuests)
+        'StaticArmorTableAdapter.Fill(GameDatabaseDataSet.StaticArmor)
+        'StaticWeaponsTableAdapter.Fill(GameDatabaseDataSet.StaticWeapons)
 
         For ctr = 1 To 20
             Dim creature As Creature
@@ -33,6 +35,12 @@ Public Class MainMenu
                 tier = New Tier(camp)
                 tier.save(GameDatabaseDataSet, StaticCampTiersBindingSource, StaticCampTiersTableAdapter)
             Next
+        Next
+
+        For ctr = 1 To 10
+            Dim weapon As Weapon
+            weapon = New Weapon()
+            weapon.Save(GameDatabaseDataSet, StaticWeaponsBindingSource, StaticWeaponsTableAdapter)
         Next
 
         StartLog()  'From Logs.vb

@@ -46,6 +46,10 @@ Partial Class MainMenu
         Me.GameDatabaseDataSet = New WindowsApplication1.GameDatabaseDataSet()
         Me.StaticCampsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.StaticCampsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticCampsTableAdapter()
+        Me.StaticWeaponsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticWeaponsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticWeaponsTableAdapter()
+        Me.StaticArmorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticArmorTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticArmorTableAdapter()
         CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayerStatesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayerPartiesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -54,6 +58,8 @@ Partial Class MainMenu
         CType(Me.StaticCampTiersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StaticCampsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.StaticWeaponsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.StaticArmorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'titlelbl
@@ -195,6 +201,24 @@ Partial Class MainMenu
         '
         Me.StaticCampsTableAdapter.ClearBeforeFill = True
         '
+        'StaticWeaponsBindingSource
+        '
+        Me.StaticWeaponsBindingSource.DataMember = "StaticWeapons"
+        Me.StaticWeaponsBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'StaticWeaponsTableAdapter
+        '
+        Me.StaticWeaponsTableAdapter.ClearBeforeFill = True
+        '
+        'StaticArmorBindingSource
+        '
+        Me.StaticArmorBindingSource.DataMember = "StaticArmor"
+        Me.StaticArmorBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'StaticArmorTableAdapter
+        '
+        Me.StaticArmorTableAdapter.ClearBeforeFill = True
+        '
         'MainMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -206,6 +230,7 @@ Partial Class MainMenu
         Me.Controls.Add(Me.playerNewbtn)
         Me.Controls.Add(Me.playerSelectionlbl)
         Me.Controls.Add(Me.titlelbl)
+        Me.MinimumSize = New System.Drawing.Size(247, 251)
         Me.Name = "MainMenu"
         Me.ShowIcon = False
         Me.Text = "main menu"
@@ -217,6 +242,8 @@ Partial Class MainMenu
         CType(Me.StaticCampTiersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StaticCampsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.StaticWeaponsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.StaticArmorBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -245,4 +272,8 @@ Partial Class MainMenu
     Friend WithEvents GameDatabaseDataSet As GameDatabaseDataSet
     Friend WithEvents StaticCampsBindingSource As BindingSource
     Friend WithEvents StaticCampsTableAdapter As GameDatabaseDataSetTableAdapters.StaticCampsTableAdapter
+    Friend WithEvents StaticWeaponsBindingSource As BindingSource
+    Friend WithEvents StaticWeaponsTableAdapter As GameDatabaseDataSetTableAdapters.StaticWeaponsTableAdapter
+    Friend WithEvents StaticArmorBindingSource As BindingSource
+    Friend WithEvents StaticArmorTableAdapter As GameDatabaseDataSetTableAdapters.StaticArmorTableAdapter
 End Class

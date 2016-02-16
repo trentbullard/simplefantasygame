@@ -52,7 +52,6 @@
     Private Sub roadbtn_Click(sender As Object, e As EventArgs) Handles roadbtn.Click
         currentState.roadwindow = New RoadWindow
         currentState.roadwindow.Show()
-        Me.Close()
     End Sub
 
     Private Sub playerbtn_Click(sender As Object, e As EventArgs) Handles playerbtn.Click

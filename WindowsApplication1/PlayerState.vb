@@ -6,6 +6,7 @@
     Private stateTier As Tier = Nothing
     Private stateQuest As Quest = Nothing
     Private stateGameDate As DateTime
+    Private stateIsAmbushed As Boolean
     Private stateCombatWindow As CombatWindow
     Private stateDeletePlayersWindow As DeletePlayersWindow
     Private stateInnWindow As InnWindow
@@ -23,6 +24,7 @@
         statePlayer = currentPlayer
         stateDateSaved = DateTime.Now
         stateGameDate = "01/01/1000"
+        stateIsAmbushed = False
         stateCombatWindow = New CombatWindow
         stateDeletePlayersWindow = New DeletePlayersWindow
         stateInnWindow = New InnWindow
@@ -41,6 +43,7 @@
         statePlayer = currentPlayer
         stateDateSaved = DateTime.Now
         stateGameDate = "01/01/1000"
+        stateIsAmbushed = False
         stateCombatWindow = New CombatWindow
         stateDeletePlayersWindow = New DeletePlayersWindow
         stateInnWindow = New InnWindow
@@ -59,6 +62,7 @@
         statePlayer = player
         stateDateSaved = DateTime.Now
         stateGameDate = "01/01/1000"
+        stateIsAmbushed = False
         stateCombatWindow = New CombatWindow
         stateDeletePlayersWindow = New DeletePlayersWindow
         stateInnWindow = New InnWindow
@@ -80,6 +84,7 @@
         stateTier = If(row("currentTierid") IsNot DBNull.Value, New Tier(CInt(row("currentTierid"))), Nothing)
         stateQuest = If(row("currentQuestid") IsNot DBNull.Value, New Quest(CInt(row("currentQuestid"))), Nothing)
         stateGameDate = row("gameDate")
+        stateIsAmbushed = row("isAmbushed")
         stateCombatWindow = New CombatWindow
         stateDeletePlayersWindow = New DeletePlayersWindow
         stateInnWindow = New InnWindow
@@ -135,10 +140,22 @@
         End Get
     End Property
 
-    Public ReadOnly Property dateInGame() As String
+    Public Property dateInGame() As String
         Get
             Return stateGameDate
         End Get
+        Set(value As String)
+            stateGameDate = value
+        End Set
+    End Property
+
+    Public Property isAmbushed As Boolean
+        Get
+            Return stateIsAmbushed
+        End Get
+        Set(value As Boolean)
+            stateIsAmbushed = value
+        End Set
     End Property
 
     Public Property combatwindow() As CombatWindow

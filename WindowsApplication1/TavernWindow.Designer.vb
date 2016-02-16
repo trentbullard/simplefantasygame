@@ -115,7 +115,7 @@ Partial Class TavernWindow
         Me.tavernHireSlot2pnl = New System.Windows.Forms.Panel()
         Me.tavernHireSlot3pnl = New System.Windows.Forms.Panel()
         Me.tavernHireSlot4pnl = New System.Windows.Forms.Panel()
-        Me.tavernpnl = New System.Windows.Forms.Panel()
+        Me.hirepnl = New System.Windows.Forms.Panel()
         Me.hirelbl = New System.Windows.Forms.Label()
         Me.playerbtn = New System.Windows.Forms.Button()
         Me.mainMenubtn = New System.Windows.Forms.Button()
@@ -154,7 +154,7 @@ Partial Class TavernWindow
         Me.tavernHireSlot2pnl.SuspendLayout()
         Me.tavernHireSlot3pnl.SuspendLayout()
         Me.tavernHireSlot4pnl.SuspendLayout()
-        Me.tavernpnl.SuspendLayout()
+        Me.hirepnl.SuspendLayout()
         Me.questpnl.SuspendLayout()
         Me.tavernQuestSlot3pnl.SuspendLayout()
         Me.tavernQuestSlot2pnl.SuspendLayout()
@@ -1036,17 +1036,17 @@ Partial Class TavernWindow
         Me.tavernHireSlot4pnl.Size = New System.Drawing.Size(176, 297)
         Me.tavernHireSlot4pnl.TabIndex = 24
         '
-        'tavernpnl
+        'hirepnl
         '
-        Me.tavernpnl.Controls.Add(Me.hirelbl)
-        Me.tavernpnl.Controls.Add(Me.tavernHireSlot1pnl)
-        Me.tavernpnl.Controls.Add(Me.tavernHireSlot4pnl)
-        Me.tavernpnl.Controls.Add(Me.tavernHireSlot2pnl)
-        Me.tavernpnl.Controls.Add(Me.tavernHireSlot3pnl)
-        Me.tavernpnl.Location = New System.Drawing.Point(12, 12)
-        Me.tavernpnl.Name = "tavernpnl"
-        Me.tavernpnl.Size = New System.Drawing.Size(363, 629)
-        Me.tavernpnl.TabIndex = 27
+        Me.hirepnl.Controls.Add(Me.hirelbl)
+        Me.hirepnl.Controls.Add(Me.tavernHireSlot1pnl)
+        Me.hirepnl.Controls.Add(Me.tavernHireSlot4pnl)
+        Me.hirepnl.Controls.Add(Me.tavernHireSlot2pnl)
+        Me.hirepnl.Controls.Add(Me.tavernHireSlot3pnl)
+        Me.hirepnl.Location = New System.Drawing.Point(12, 12)
+        Me.hirepnl.Name = "hirepnl"
+        Me.hirepnl.Size = New System.Drawing.Size(363, 629)
+        Me.hirepnl.TabIndex = 27
         '
         'hirelbl
         '
@@ -1312,7 +1312,7 @@ Partial Class TavernWindow
         Me.Controls.Add(Me.townbtn)
         Me.Controls.Add(Me.playerbtn)
         Me.Controls.Add(Me.mainMenubtn)
-        Me.Controls.Add(Me.tavernpnl)
+        Me.Controls.Add(Me.hirepnl)
         Me.Name = "TavernWindow"
         Me.ShowIcon = False
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
@@ -1329,8 +1329,8 @@ Partial Class TavernWindow
         Me.tavernHireSlot2pnl.ResumeLayout(False)
         Me.tavernHireSlot3pnl.ResumeLayout(False)
         Me.tavernHireSlot4pnl.ResumeLayout(False)
-        Me.tavernpnl.ResumeLayout(False)
-        Me.tavernpnl.PerformLayout()
+        Me.hirepnl.ResumeLayout(False)
+        Me.hirepnl.PerformLayout()
         Me.questpnl.ResumeLayout(False)
         Me.questpnl.PerformLayout()
         Me.tavernQuestSlot3pnl.ResumeLayout(False)
@@ -1399,7 +1399,7 @@ Partial Class TavernWindow
     Friend WithEvents tavernHireSlot2pnl As Panel
     Friend WithEvents tavernHireSlot3pnl As Panel
     Friend WithEvents tavernHireSlot4pnl As Panel
-    Friend WithEvents tavernpnl As Panel
+    Friend WithEvents hirepnl As Panel
     Friend WithEvents tavernSlot1Wisdomlbl As Label
     Friend WithEvents tavernSlot1Wisdomtxt As TextBox
     Friend WithEvents tavernSlot1Intelligencelbl As Label
