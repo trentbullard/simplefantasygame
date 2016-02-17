@@ -12,11 +12,23 @@
         PlayerWeaponsTableAdapter.FillByPlayerid(GameDatabaseDataSet.PlayerWeapons, currentPlayer.id)
         PlayerArmorTableAdapter.FillByPlayerid(GameDatabaseDataSet.PlayerArmor, currentPlayer.id)
 
+        playerGoldlbl.Text = currentPlayer.name & "'s gold"
+        playerGoldtxt.Text = currentPlayer.gold
+
         If BlacksmithStatesTableAdapter.GetLastBlacksmithStateByPlayerStateid(currentState.id).Any Then
+            For Each row As DataRow In BlacksmithStateItemsTableAdapter.GetBlacksmithItemsByBlacksmithStateid(BlacksmithStatesTableAdapter.GetLastBlacksmithStateByPlayerStateid(currentState.id).First("id"))
 
+            Next
         Else
-            For Each row As DataRow In StaticWeaponsTableAdapter.GetBlacksmithWeapons()
-
+                Dim weapon As Weapon = New Weapon()
+            Dim armor As Armor = New Armor()
+            For ctr = 1 To 20
+                weapon = New Weapon()
+                weaponslst.Items.Add(weapon.ToString)
+                weapon.Save(GameDatabaseDataSet, StaticWeaponsBindingSource, StaticWeaponsTableAdapter)
+                armor = New Armor()
+                armorlst.Items.Add(armor.ToString)
+                armor.Save(GameDatabaseDataSet, StaticArmorBindingSource, StaticArmorTableAdapter)
             Next
         End If
     End Sub

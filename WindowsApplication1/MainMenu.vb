@@ -37,12 +37,6 @@ Public Class MainMenu
             Next
         Next
 
-        For ctr = 1 To 10
-            Dim weapon As Weapon
-            weapon = New Weapon()
-            weapon.Save(GameDatabaseDataSet, StaticWeaponsBindingSource, StaticWeaponsTableAdapter)
-        Next
-
         StartLog()  'From Logs.vb
 
         For Each row As DataRow In GameDatabaseDataSet.Players

@@ -2,7 +2,7 @@
     Private itemid As Integer
     Private itemOwner As Player
     Private itemName As String
-    Private itemAttributes As Collection
+    Private itemAttributes As New Collection
 
     Public Sub New()
         itemid = -1
@@ -43,7 +43,7 @@
         End Set
     End Property
 
-    Public Property stats As Collection
+    Public Overridable Property stats() As Collection
         Get
             Return itemAttributes
         End Get
@@ -53,7 +53,7 @@
     End Property
 
     Public Overrides Function ToString() As String
-        Return "(" & Me.id & ") " & Me.name
+        Return Me.name
     End Function
 
 End Class

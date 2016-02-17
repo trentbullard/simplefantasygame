@@ -17,7 +17,7 @@
 
     Public Sub New()
         creatureid = -1
-        creatureName = getName()
+        creatureName = getCreatureName()
         creatureSpecies = getSpecies()
         creatureClass = "class"
         creatureLevel = 1
