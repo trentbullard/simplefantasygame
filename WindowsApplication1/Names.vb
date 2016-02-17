@@ -2,7 +2,7 @@
     Public Function ProperCase(name As String) As String
         name = name.Trim
         Dim properName As String = ""
-        Dim words() As String = name.Split(" ")
+        Dim words() As String = name.Split(" "c)
         For Each word In words
             If String.IsNullOrWhiteSpace(word) Then
             ElseIf word.Count = 1 Then

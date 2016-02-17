@@ -4,6 +4,9 @@
     End Sub
 
     Private Sub blacksmithbtn_Click(sender As Object, e As EventArgs) Handles blacksmithbtn.Click
+        currentState.blacksmithwindow = New BlacksmithWindow
+        currentState.blacksmithwindow.Show()
+        Me.Close()
     End Sub
 
     Private Sub farmerbtn_Click(sender As Object, e As EventArgs) Handles farmerbtn.Click

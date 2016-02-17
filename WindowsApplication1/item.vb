@@ -3,6 +3,7 @@
     Private itemOwner As Player
     Private itemName As String
     Private itemAttributes As New Collection
+    Private itemCost As Integer
 
     Public Sub New()
         itemid = -1
@@ -49,6 +50,15 @@
         End Get
         Set(value As Collection)
             itemAttributes = value
+        End Set
+    End Property
+
+    Public Overridable Property cost As Integer
+        Get
+            Return itemCost
+        End Get
+        Set(value As Integer)
+            itemCost = value
         End Set
     End Property
 

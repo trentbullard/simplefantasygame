@@ -4,7 +4,7 @@
     Dim speciesList = New String() {"human", "elf", "orc", "dwarf", "halfling", "ogre", "troll", "goblin"}
     Dim statList = New String() {"maxHealth", "dexterity", "armor", "strength", "initiative", "intelligence", "wisdom", "health"}
     Dim weaponNames = New String() {"sword", "shield", "hammer", "staff", "wand", "scepter", "tome", "crossbow", "bow", "spear"}
-    Dim armorNames = New String() {"helmet", "shoulderpads", "sleaves", "gloves", "cape", "shirt", "belt", "pants", "greaves", "shoes"}
+    Dim armorNames = New String() {"helmet", "cap", "shoulderpads", "spaulders", "sleaves", "gloves", "gauntlets", "cape", "tunic", "breastplate", "belt", "pants", "shinguards", "greaves", "shoes", "boots"}
     Dim resistanceNames = New String() {"fire", "ice", "mental", "death", "lightning", "nature", "divine"}
 
     Public Function getCreatureName() As String
@@ -28,7 +28,7 @@
     End Function
 
     Public Function getArmorName() As String
-        Return armorNames(Roll(10) - 1)
+        Return armorNames(Roll(16) - 1)
     End Function
 
     Public Function getResistanceName() As String

@@ -59,6 +59,31 @@
         MyBase.New(id)
     End Sub
 
+    Public Sub New(row As GameDatabaseDataSet.StaticWeaponsRow)
+        MyBase.New(row.id, currentPlayer, row.name)
+        weaponIsRanged = row.isRanged
+        weaponIsMagic = row.isMagic
+        weaponIsUnique = row.isUnique
+        weaponSlotsPossible = row.slotsPossible
+        weaponWearableBy = row.wearableBy
+
+        Dim statsArray() As String = row.attributes.Split(" "c)
+        Dim stats As New Collection
+        For Each stat In statsArray
+            Dim statArray() As String = stat.Split(":"c)
+            stats.Add(CInt(statArray(1)), statArray(0))
+        Next
+        MyBase.stats = stats
+
+        statsArray = row.minStats.Split(" "c)
+        stats.Clear()
+        For Each stat In statsArray
+            Dim statArray() As String = stat.Split(":"c)
+            stats.Add(CInt(statArray(1)), statArray(0))
+        Next
+        weaponMinStats = stats
+    End Sub
+
     Public Overrides ReadOnly Property id() As Integer
         Get
             Return MyBase.id
@@ -122,16 +147,39 @@
         End Set
     End Property
 
+    Public Overrides Property cost As Integer
+        Get
+            Return MyBase.cost
+        End Get
+        Set(value As Integer)
+            MyBase.cost = value
+        End Set
+    End Property
+
     Public Overrides Function ToString() As String
         Dim statString As String = Nothing
-        statString = statString & If(MyBase.stats.Item("maxHealth"), "maxHealth:" & MyBase.stats.Item("maxHealth"), Nothing) & Space(1)
-        statString = statString & If(MyBase.stats.Item("armor"), "armor:" & MyBase.stats.Item("armor"), Nothing) & Space(1)
-        statString = statString & If(MyBase.stats.Item("strength"), "strength:" & MyBase.stats.Item("strength"), Nothing) & Space(1)
-        statString = statString & If(MyBase.stats.Item("initiative"), "initiative:" & MyBase.stats.Item("initiative"), Nothing) & Space(1)
-        statString = statString & If(MyBase.stats.Item("intelligence"), "intelligence:" & MyBase.stats.Item("intelligence"), Nothing) & Space(1)
-        statString = statString & If(MyBase.stats.Item("wisdom"), "wisdom:" & MyBase.stats.Item("wisdom"), Nothing) & Space(1)
-        statString = statString & If(MyBase.stats.Item("dexterity"), "dexterity:" & MyBase.stats.Item("dexterity"), Nothing) & Space(1)
+        statString = statString & If(MyBase.stats.Contains("maxHealth"), "maxHealth:" & MyBase.stats.Item("maxHealth"), Nothing) & Space(1)
+        statString = statString & If(MyBase.stats.Contains("armor"), "armor:" & MyBase.stats.Item("armor"), Nothing) & Space(1)
+        statString = statString & If(MyBase.stats.Contains("strength"), "strength:" & MyBase.stats.Item("strength"), Nothing) & Space(1)
+        statString = statString & If(MyBase.stats.Contains("initiative"), "initiative:" & MyBase.stats.Item("initiative"), Nothing) & Space(1)
+        statString = statString & If(MyBase.stats.Contains("intelligence"), "intelligence:" & MyBase.stats.Item("intelligence"), Nothing) & Space(1)
+        statString = statString & If(MyBase.stats.Contains("wisdom"), "wisdom:" & MyBase.stats.Item("wisdom"), Nothing) & Space(1)
+        statString = statString & If(MyBase.stats.Contains("dexterity"), "dexterity:" & MyBase.stats.Item("dexterity"), Nothing) & Space(1)
         Return MyBase.ToString() & " (" & statString.Trim & ")"
+    End Function
+
+    Public Function Details() As Collection
+        Dim detailCol As New Collection
+        detailCol.Add(MyBase.id, "id")
+        detailCol.Add(MyBase.name, "name")
+        detailCol.Add(MyBase.stats, "stats")
+        detailCol.Add(weaponSlotsPossible, "slots")
+        detailCol.Add(weaponWearableBy, "wearableBy")
+        detailCol.Add(weaponIsUnique, "isUnique")
+        detailCol.Add(weaponMinStats, "minStats")
+        detailCol.Add(weaponIsRanged, "isRanged")
+        detailCol.Add(weaponIsMagic, "isMagic")
+        Return detailCol
     End Function
 
     Public Sub Save(ds As GameDatabaseDataSet,

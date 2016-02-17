@@ -7,12 +7,6 @@ Public Class MainMenu
         PlayerPartiesTableAdapter.Fill(GameDatabaseDataSet.PlayerParties)
         PlayersTableAdapter.Fill(GameDatabaseDataSet.Players)
         PlayerStatesTableAdapter.Fill(GameDatabaseDataSet.PlayerStates)
-        'StaticCreaturesTableAdapter.Fill(GameDatabaseDataSet.StaticCreatures)
-        'StaticCampsTableAdapter.Fill(GameDatabaseDataSet.StaticCamps)
-        'StaticCampTiersTableAdapter.Fill(GameDatabaseDataSet.StaticCampTiers)
-        'StaticQuestsTableAdapter.Fill(GameDatabaseDataSet.StaticQuests)
-        'StaticArmorTableAdapter.Fill(GameDatabaseDataSet.StaticArmor)
-        'StaticWeaponsTableAdapter.Fill(GameDatabaseDataSet.StaticWeapons)
 
         For ctr = 1 To 20
             Dim creature As Creature
