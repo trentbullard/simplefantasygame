@@ -14,12 +14,14 @@
 
         playerGoldlbl.Text = currentPlayer.name & "'s gold"
         playerGoldtxt.Text = currentPlayer.gold
+        weaponslst.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent)
+        armorlst.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent)
 
         Dim allWeapons As New Collection
         Dim allArmor As New Collection
+        Dim weapon As Weapon
+        Dim armor As Armor
         If BlacksmithStatesTableAdapter.GetLastRow.Any Then
-            Dim weapon As Weapon
-            Dim armor As Armor
             For Each row As GameDatabaseDataSet.BlacksmithStateItemsRow In BlacksmithStateItemsTableAdapter.GetBlacksmithItemsByBlacksmithStateid(BlacksmithStatesTableAdapter.GetLastRow.First.id)
                 If IsDBNull(row("armorid")) Then
                     weapon = New Weapon(StaticWeaponsTableAdapter.GetWeaponByid(row.id).First)
@@ -29,26 +31,40 @@
                     armor = New Armor(StaticArmorTableAdapter.GetArmorByid(row.id).First)
                     allArmor.Add(armor, armor.id)
                     armorlst.Items.Add(armor.ToString)
-                    AddBlacksmithItem(armor)
                 End If
             Next
         Else
+            NewBlacksmithState()
             For ctr = 1 To 20
-                Dim weapon As New Weapon
+                weapon = New Weapon
                 weapon.Save(GameDatabaseDataSet, StaticWeaponsBindingSource, StaticWeaponsTableAdapter)
                 weapon = New Weapon(StaticWeaponsTableAdapter.GetLastRow.First)
                 allWeapons.Add(weapon, weapon.id)
                 AddBlacksmithItem(weapon)
-                Dim armor As New Armor
+                weaponslst.Items.Add(weapon.ToString)
+                armor = New Armor
                 armor.Save(GameDatabaseDataSet, StaticArmorBindingSource, StaticArmorTableAdapter)
+                armor = New Armor(StaticArmorTableAdapter.GetLastRow.First)
                 allArmor.Add(armor, armor.id)
                 AddBlacksmithItem(armor)
+                armorlst.Items.Add(armor.ToString)
             Next
         End If
     End Sub
 
-    Private Sub weaponstbl_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
+    Private Sub mainMenubtn_Click(sender As Object, e As EventArgs) Handles mainMenubtn.Click
+        OpenMainMenu()
+    End Sub
 
+    Private Sub playerbtn_Click(sender As Object, e As EventArgs) Handles playerbtn.Click
+        currentState.playerwindow = New PlayerWindow
+        currentState.playerwindow.Show()
+    End Sub
+
+    Private Sub marketbtn_Click(sender As Object, e As EventArgs) Handles marketbtn.Click
+        currentState.marketwindow = New MarketWindow
+        currentState.marketwindow.Show()
+        Me.Close()
     End Sub
 
     Private Sub AddBlacksmithItem(item As Item)
@@ -62,5 +78,25 @@
             newRow("armorid") = DBNull.Value
         End If
         newRow.cost = item.cost
+        GameDatabaseDataSet.BlacksmithStateItems.Rows.Add(newRow)
+        Try
+            BlacksmithStateItemsBindingSource.EndEdit()
+            BlacksmithStateItemsTableAdapter.Update(GameDatabaseDataSet.BlacksmithStateItems)
+        Catch ex As Exception
+            MsgBox("unable to add blacksmith state item to database")
+        End Try
+    End Sub
+
+    Private Sub NewBlacksmithState()
+        Dim newRow As GameDatabaseDataSet.BlacksmithStatesRow = GameDatabaseDataSet.BlacksmithStates.NewRow()
+        newRow.playerStateid = currentState.id
+        newRow.dateVisted = currentState.dateInGame
+        GameDatabaseDataSet.BlacksmithStates.Rows.Add(newRow)
+        Try
+            BlacksmithStatesBindingSource.EndEdit()
+            BlacksmithStatesTableAdapter.Update(GameDatabaseDataSet.BlacksmithStates)
+        Catch ex As Exception
+            MsgBox("unable to add blacksmith state to database")
+        End Try
     End Sub
 End Class

@@ -23,21 +23,17 @@ Partial Class BlacksmithWindow
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim ListViewGroup1 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left)
+        Dim ListViewGroup2 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left)
         Me.blacksmithpnl = New System.Windows.Forms.Panel()
         Me.itemsTablepnl = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.weaponslbl = New System.Windows.Forms.Label()
         Me.weaponslst = New System.Windows.Forms.ListView()
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.armorlst = New System.Windows.Forms.ListView()
-        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.armorlbl = New System.Windows.Forms.Label()
         Me.playerGoldlbl = New System.Windows.Forms.Label()
         Me.playerGoldtxt = New System.Windows.Forms.TextBox()
-        Me.townbtn = New System.Windows.Forms.Button()
+        Me.marketbtn = New System.Windows.Forms.Button()
         Me.playerbtn = New System.Windows.Forms.Button()
         Me.mainMenubtn = New System.Windows.Forms.Button()
         Me.GameDatabaseDataSet = New WindowsApplication1.GameDatabaseDataSet()
@@ -64,6 +60,8 @@ Partial Class BlacksmithWindow
         Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayerStatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayerArmorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.blacksmithpnl.SuspendLayout()
         Me.itemsTablepnl.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -87,13 +85,13 @@ Partial Class BlacksmithWindow
         Me.blacksmithpnl.Controls.Add(Me.itemsTablepnl)
         Me.blacksmithpnl.Controls.Add(Me.playerGoldlbl)
         Me.blacksmithpnl.Controls.Add(Me.playerGoldtxt)
-        Me.blacksmithpnl.Controls.Add(Me.townbtn)
+        Me.blacksmithpnl.Controls.Add(Me.marketbtn)
         Me.blacksmithpnl.Controls.Add(Me.playerbtn)
         Me.blacksmithpnl.Controls.Add(Me.mainMenubtn)
         Me.blacksmithpnl.Dock = System.Windows.Forms.DockStyle.Fill
         Me.blacksmithpnl.Location = New System.Drawing.Point(0, 0)
         Me.blacksmithpnl.Name = "blacksmithpnl"
-        Me.blacksmithpnl.Size = New System.Drawing.Size(496, 313)
+        Me.blacksmithpnl.Size = New System.Drawing.Size(493, 344)
         Me.blacksmithpnl.TabIndex = 0
         '
         'itemsTablepnl
@@ -111,92 +109,71 @@ Partial Class BlacksmithWindow
         Me.itemsTablepnl.Name = "itemsTablepnl"
         Me.itemsTablepnl.RowCount = 1
         Me.itemsTablepnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.itemsTablepnl.Size = New System.Drawing.Size(472, 243)
+        Me.itemsTablepnl.Size = New System.Drawing.Size(469, 274)
         Me.itemsTablepnl.TabIndex = 1
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.weaponslbl)
         Me.Panel1.Controls.Add(Me.weaponslst)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(3, 3)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(220, 237)
+        Me.Panel1.Size = New System.Drawing.Size(218, 268)
         Me.Panel1.TabIndex = 0
-        '
-        'weaponslbl
-        '
-        Me.weaponslbl.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.weaponslbl.AutoSize = True
-        Me.weaponslbl.Location = New System.Drawing.Point(85, 0)
-        Me.weaponslbl.Name = "weaponslbl"
-        Me.weaponslbl.Size = New System.Drawing.Size(50, 13)
-        Me.weaponslbl.TabIndex = 1
-        Me.weaponslbl.Text = "weapons"
         '
         'weaponslst
         '
-        Me.weaponslst.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.weaponslst.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2})
-        Me.weaponslst.Location = New System.Drawing.Point(0, 16)
+        Me.weaponslst.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.weaponslst.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1})
+        Me.weaponslst.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.weaponslst.FullRowSelect = True
+        ListViewGroup1.Header = "ListViewGroup"
+        ListViewGroup1.Name = "ListViewGroup1"
+        Me.weaponslst.Groups.AddRange(New System.Windows.Forms.ListViewGroup() {ListViewGroup1})
+        Me.weaponslst.HideSelection = False
+        Me.weaponslst.Location = New System.Drawing.Point(0, 0)
+        Me.weaponslst.MultiSelect = False
         Me.weaponslst.Name = "weaponslst"
-        Me.weaponslst.Size = New System.Drawing.Size(220, 221)
+        Me.weaponslst.ShowGroups = False
+        Me.weaponslst.ShowItemToolTips = True
+        Me.weaponslst.Size = New System.Drawing.Size(218, 268)
         Me.weaponslst.TabIndex = 2
         Me.weaponslst.UseCompatibleStateImageBehavior = False
-        Me.weaponslst.View = System.Windows.Forms.View.SmallIcon
-        '
-        'ColumnHeader1
-        '
-        Me.ColumnHeader1.Text = "index"
-        '
-        'ColumnHeader2
-        '
-        Me.ColumnHeader2.Text = "weapon"
+        Me.weaponslst.View = System.Windows.Forms.View.Details
         '
         'Panel2
         '
         Me.Panel2.Controls.Add(Me.armorlst)
-        Me.Panel2.Controls.Add(Me.armorlbl)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Location = New System.Drawing.Point(249, 3)
+        Me.Panel2.Location = New System.Drawing.Point(247, 3)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(220, 237)
+        Me.Panel2.Size = New System.Drawing.Size(219, 268)
         Me.Panel2.TabIndex = 1
         '
         'armorlst
         '
-        Me.armorlst.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.armorlst.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader3, Me.ColumnHeader4})
-        Me.armorlst.Location = New System.Drawing.Point(0, 16)
+        Me.armorlst.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.armorlst.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader2})
+        Me.armorlst.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.armorlst.FullRowSelect = True
+        ListViewGroup2.Header = "ListViewGroup"
+        ListViewGroup2.Name = "ListViewGroup1"
+        Me.armorlst.Groups.AddRange(New System.Windows.Forms.ListViewGroup() {ListViewGroup2})
+        Me.armorlst.HideSelection = False
+        Me.armorlst.Location = New System.Drawing.Point(0, 0)
+        Me.armorlst.MultiSelect = False
         Me.armorlst.Name = "armorlst"
-        Me.armorlst.Size = New System.Drawing.Size(220, 221)
+        Me.armorlst.ShowGroups = False
+        Me.armorlst.Size = New System.Drawing.Size(219, 268)
         Me.armorlst.TabIndex = 3
         Me.armorlst.UseCompatibleStateImageBehavior = False
-        Me.armorlst.View = System.Windows.Forms.View.SmallIcon
-        '
-        'ColumnHeader3
-        '
-        Me.ColumnHeader3.Text = ""
-        '
-        'armorlbl
-        '
-        Me.armorlbl.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.armorlbl.AutoSize = True
-        Me.armorlbl.Location = New System.Drawing.Point(94, 0)
-        Me.armorlbl.Name = "armorlbl"
-        Me.armorlbl.Size = New System.Drawing.Size(33, 13)
-        Me.armorlbl.TabIndex = 1
-        Me.armorlbl.Text = "armor"
+        Me.armorlst.View = System.Windows.Forms.View.Details
         '
         'playerGoldlbl
         '
         Me.playerGoldlbl.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.playerGoldlbl.AutoSize = True
-        Me.playerGoldlbl.Location = New System.Drawing.Point(70, 283)
+        Me.playerGoldlbl.Location = New System.Drawing.Point(67, 314)
         Me.playerGoldlbl.Name = "playerGoldlbl"
         Me.playerGoldlbl.Size = New System.Drawing.Size(65, 13)
         Me.playerGoldlbl.TabIndex = 36
@@ -205,27 +182,27 @@ Partial Class BlacksmithWindow
         'playerGoldtxt
         '
         Me.playerGoldtxt.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.playerGoldtxt.Location = New System.Drawing.Point(141, 280)
+        Me.playerGoldtxt.Location = New System.Drawing.Point(138, 311)
         Me.playerGoldtxt.Name = "playerGoldtxt"
         Me.playerGoldtxt.ReadOnly = True
         Me.playerGoldtxt.Size = New System.Drawing.Size(100, 20)
         Me.playerGoldtxt.TabIndex = 35
         Me.playerGoldtxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'townbtn
+        'marketbtn
         '
-        Me.townbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.townbtn.Location = New System.Drawing.Point(247, 278)
-        Me.townbtn.Name = "townbtn"
-        Me.townbtn.Size = New System.Drawing.Size(75, 23)
-        Me.townbtn.TabIndex = 34
-        Me.townbtn.Text = "front door"
-        Me.townbtn.UseVisualStyleBackColor = True
+        Me.marketbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.marketbtn.Location = New System.Drawing.Point(244, 309)
+        Me.marketbtn.Name = "marketbtn"
+        Me.marketbtn.Size = New System.Drawing.Size(75, 23)
+        Me.marketbtn.TabIndex = 34
+        Me.marketbtn.Text = "front door"
+        Me.marketbtn.UseVisualStyleBackColor = True
         '
         'playerbtn
         '
         Me.playerbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.playerbtn.Location = New System.Drawing.Point(328, 278)
+        Me.playerbtn.Location = New System.Drawing.Point(325, 309)
         Me.playerbtn.Name = "playerbtn"
         Me.playerbtn.Size = New System.Drawing.Size(75, 23)
         Me.playerbtn.TabIndex = 33
@@ -235,7 +212,7 @@ Partial Class BlacksmithWindow
         'mainMenubtn
         '
         Me.mainMenubtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.mainMenubtn.Location = New System.Drawing.Point(409, 278)
+        Me.mainMenubtn.Location = New System.Drawing.Point(406, 309)
         Me.mainMenubtn.Name = "mainMenubtn"
         Me.mainMenubtn.Size = New System.Drawing.Size(75, 23)
         Me.mainMenubtn.TabIndex = 1
@@ -384,11 +361,21 @@ Partial Class BlacksmithWindow
         Me.PlayerArmorBindingSource.DataMember = "PlayerArmor"
         Me.PlayerArmorBindingSource.DataSource = Me.GameDatabaseDataSet
         '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "weapons"
+        Me.ColumnHeader1.Width = 213
+        '
+        'ColumnHeader2
+        '
+        Me.ColumnHeader2.Text = "armor"
+        Me.ColumnHeader2.Width = 214
+        '
         'BlacksmithWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(496, 313)
+        Me.ClientSize = New System.Drawing.Size(493, 344)
         Me.Controls.Add(Me.blacksmithpnl)
         Me.MinimumSize = New System.Drawing.Size(452, 221)
         Me.Name = "BlacksmithWindow"
@@ -399,9 +386,7 @@ Partial Class BlacksmithWindow
         Me.blacksmithpnl.PerformLayout()
         Me.itemsTablepnl.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayerWeaponsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BlacksmithStatesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -419,11 +404,7 @@ Partial Class BlacksmithWindow
     End Sub
 
     Friend WithEvents blacksmithpnl As Panel
-    Friend WithEvents weaponslbl As Label
-    Friend WithEvents armorlbl As Label
     Friend WithEvents weaponslst As ListView
-    Friend WithEvents ColumnHeader1 As ColumnHeader
-    Friend WithEvents ColumnHeader2 As ColumnHeader
     Friend WithEvents GameDatabaseDataSet As GameDatabaseDataSet
     Friend WithEvents PlayerWeaponsBindingSource As BindingSource
     Friend WithEvents PlayerWeaponsTableAdapter As GameDatabaseDataSetTableAdapters.PlayerWeaponsTableAdapter
@@ -450,13 +431,13 @@ Partial Class BlacksmithWindow
     Friend WithEvents PlayerArmorBindingSource As BindingSource
     Friend WithEvents mainMenubtn As Button
     Friend WithEvents armorlst As ListView
-    Friend WithEvents ColumnHeader3 As ColumnHeader
-    Friend WithEvents ColumnHeader4 As ColumnHeader
     Friend WithEvents playerGoldlbl As Label
     Friend WithEvents playerGoldtxt As TextBox
-    Friend WithEvents townbtn As Button
+    Friend WithEvents marketbtn As Button
     Friend WithEvents playerbtn As Button
     Friend WithEvents itemsTablepnl As TableLayoutPanel
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents ColumnHeader1 As ColumnHeader
+    Friend WithEvents ColumnHeader2 As ColumnHeader
 End Class

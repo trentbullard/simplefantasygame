@@ -1,6 +1,5 @@
 ﻿Public Class MarketWindow
     Private Sub MarketWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
     End Sub
 
     Private Sub blacksmithbtn_Click(sender As Object, e As EventArgs) Handles blacksmithbtn.Click
@@ -22,5 +21,6 @@
     End Sub
 
     Private Sub mainMenubtn_Click(sender As Object, e As EventArgs) Handles mainMenubtn.Click
+        OpenMainMenu()
     End Sub
 End Class

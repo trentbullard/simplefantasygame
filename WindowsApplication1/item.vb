@@ -2,25 +2,28 @@
     Private itemid As Integer
     Private itemOwner As Player
     Private itemName As String
-    Private itemAttributes As New Collection
+    Private itemAttributes As Collection
     Private itemCost As Integer
 
     Public Sub New()
         itemid = -1
         itemOwner = currentPlayer
         itemName = "item " & itemid
+        itemAttributes = New Collection
     End Sub
 
     Public Sub New(id As Integer)
         itemid = id
         itemOwner = currentPlayer
         itemName = "item " & itemid
+        itemAttributes = New Collection
     End Sub
 
     Public Sub New(id As Integer, owner As Player, name As String)
         itemid = id
         itemOwner = owner
         itemName = name
+        itemAttributes = New Collection
     End Sub
 
     Public Overridable ReadOnly Property id() As Integer

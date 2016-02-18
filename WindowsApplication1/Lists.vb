@@ -2,7 +2,7 @@
     Dim namesList = New String() {"trent", "john", "matthew", "mark", "luke", "george", "ronald", "paul", "isaac", "abraham", "jacob", "will",
                                   "sarah", "courtney", "jennifer", "tina", "kristina", "anna", "constance"}
     Dim speciesList = New String() {"human", "elf", "orc", "dwarf", "halfling", "ogre", "troll", "goblin"}
-    Dim statList = New String() {"maxHealth", "dexterity", "armor", "strength", "initiative", "intelligence", "wisdom", "health"}
+    Dim statList = New String() {"dexterity", "wisdom", "strength", "initiative", "intelligence", "armor", "maxHealth", "health"}
     Dim weaponNames = New String() {"sword", "shield", "hammer", "staff", "wand", "scepter", "tome", "crossbow", "bow", "spear"}
     Dim armorNames = New String() {"helmet", "cap", "shoulderpads", "spaulders", "sleaves", "gloves", "gauntlets", "cape", "tunic", "breastplate", "belt", "pants", "shinguards", "greaves", "shoes", "boots"}
     Dim resistanceNames = New String() {"fire", "ice", "mental", "death", "lightning", "nature", "divine"}
@@ -21,6 +21,10 @@
 
     Public Function getConsumableStatName() As String
         Return statList(Roll(8) - 1)
+    End Function
+
+    Public Function getCoreStatName() As String
+        Return statList(Roll(5) - 1)
     End Function
 
     Public Function getWeaponName() As String
