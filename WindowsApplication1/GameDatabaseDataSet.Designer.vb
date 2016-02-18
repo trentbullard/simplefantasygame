@@ -45,9 +45,13 @@ Partial Public Class GameDatabaseDataSet
     
     Private tablePlayerArmor As PlayerArmorDataTable
     
+    Private tablePlayerAugments As PlayerAugmentsDataTable
+    
     Private tablePlayerConsumables As PlayerConsumablesDataTable
     
     Private tablePlayerCreatures As PlayerCreaturesDataTable
+    
+    Private tablePlayerJewelry As PlayerJewelryDataTable
     
     Private tablePlayerParties As PlayerPartiesDataTable
     
@@ -76,6 +80,8 @@ Partial Public Class GameDatabaseDataSet
     Private tableStaticConsumables As StaticConsumablesDataTable
     
     Private tableStaticCreatures As StaticCreaturesDataTable
+    
+    Private tableStaticJewelry As StaticJewelryDataTable
     
     Private tableStaticMobs As StaticMobsDataTable
     
@@ -150,11 +156,17 @@ Partial Public Class GameDatabaseDataSet
             If (Not (ds.Tables("PlayerArmor")) Is Nothing) Then
                 MyBase.Tables.Add(New PlayerArmorDataTable(ds.Tables("PlayerArmor")))
             End If
+            If (Not (ds.Tables("PlayerAugments")) Is Nothing) Then
+                MyBase.Tables.Add(New PlayerAugmentsDataTable(ds.Tables("PlayerAugments")))
+            End If
             If (Not (ds.Tables("PlayerConsumables")) Is Nothing) Then
                 MyBase.Tables.Add(New PlayerConsumablesDataTable(ds.Tables("PlayerConsumables")))
             End If
             If (Not (ds.Tables("PlayerCreatures")) Is Nothing) Then
                 MyBase.Tables.Add(New PlayerCreaturesDataTable(ds.Tables("PlayerCreatures")))
+            End If
+            If (Not (ds.Tables("PlayerJewelry")) Is Nothing) Then
+                MyBase.Tables.Add(New PlayerJewelryDataTable(ds.Tables("PlayerJewelry")))
             End If
             If (Not (ds.Tables("PlayerParties")) Is Nothing) Then
                 MyBase.Tables.Add(New PlayerPartiesDataTable(ds.Tables("PlayerParties")))
@@ -197,6 +209,9 @@ Partial Public Class GameDatabaseDataSet
             End If
             If (Not (ds.Tables("StaticCreatures")) Is Nothing) Then
                 MyBase.Tables.Add(New StaticCreaturesDataTable(ds.Tables("StaticCreatures")))
+            End If
+            If (Not (ds.Tables("StaticJewelry")) Is Nothing) Then
+                MyBase.Tables.Add(New StaticJewelryDataTable(ds.Tables("StaticJewelry")))
             End If
             If (Not (ds.Tables("StaticMobs")) Is Nothing) Then
                 MyBase.Tables.Add(New StaticMobsDataTable(ds.Tables("StaticMobs")))
@@ -340,6 +355,16 @@ Partial Public Class GameDatabaseDataSet
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property PlayerAugments() As PlayerAugmentsDataTable
+        Get
+            Return Me.tablePlayerAugments
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
     Public ReadOnly Property PlayerConsumables() As PlayerConsumablesDataTable
         Get
             Return Me.tablePlayerConsumables
@@ -353,6 +378,16 @@ Partial Public Class GameDatabaseDataSet
     Public ReadOnly Property PlayerCreatures() As PlayerCreaturesDataTable
         Get
             Return Me.tablePlayerCreatures
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property PlayerJewelry() As PlayerJewelryDataTable
+        Get
+            Return Me.tablePlayerJewelry
         End Get
     End Property
     
@@ -493,6 +528,16 @@ Partial Public Class GameDatabaseDataSet
     Public ReadOnly Property StaticCreatures() As StaticCreaturesDataTable
         Get
             Return Me.tableStaticCreatures
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property StaticJewelry() As StaticJewelryDataTable
+        Get
+            Return Me.tableStaticJewelry
         End Get
     End Property
     
@@ -663,11 +708,17 @@ Partial Public Class GameDatabaseDataSet
             If (Not (ds.Tables("PlayerArmor")) Is Nothing) Then
                 MyBase.Tables.Add(New PlayerArmorDataTable(ds.Tables("PlayerArmor")))
             End If
+            If (Not (ds.Tables("PlayerAugments")) Is Nothing) Then
+                MyBase.Tables.Add(New PlayerAugmentsDataTable(ds.Tables("PlayerAugments")))
+            End If
             If (Not (ds.Tables("PlayerConsumables")) Is Nothing) Then
                 MyBase.Tables.Add(New PlayerConsumablesDataTable(ds.Tables("PlayerConsumables")))
             End If
             If (Not (ds.Tables("PlayerCreatures")) Is Nothing) Then
                 MyBase.Tables.Add(New PlayerCreaturesDataTable(ds.Tables("PlayerCreatures")))
+            End If
+            If (Not (ds.Tables("PlayerJewelry")) Is Nothing) Then
+                MyBase.Tables.Add(New PlayerJewelryDataTable(ds.Tables("PlayerJewelry")))
             End If
             If (Not (ds.Tables("PlayerParties")) Is Nothing) Then
                 MyBase.Tables.Add(New PlayerPartiesDataTable(ds.Tables("PlayerParties")))
@@ -710,6 +761,9 @@ Partial Public Class GameDatabaseDataSet
             End If
             If (Not (ds.Tables("StaticCreatures")) Is Nothing) Then
                 MyBase.Tables.Add(New StaticCreaturesDataTable(ds.Tables("StaticCreatures")))
+            End If
+            If (Not (ds.Tables("StaticJewelry")) Is Nothing) Then
+                MyBase.Tables.Add(New StaticJewelryDataTable(ds.Tables("StaticJewelry")))
             End If
             If (Not (ds.Tables("StaticMobs")) Is Nothing) Then
                 MyBase.Tables.Add(New StaticMobsDataTable(ds.Tables("StaticMobs")))
@@ -824,6 +878,12 @@ Partial Public Class GameDatabaseDataSet
                 Me.tablePlayerArmor.InitVars
             End If
         End If
+        Me.tablePlayerAugments = CType(MyBase.Tables("PlayerAugments"),PlayerAugmentsDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tablePlayerAugments) Is Nothing) Then
+                Me.tablePlayerAugments.InitVars
+            End If
+        End If
         Me.tablePlayerConsumables = CType(MyBase.Tables("PlayerConsumables"),PlayerConsumablesDataTable)
         If (initTable = true) Then
             If (Not (Me.tablePlayerConsumables) Is Nothing) Then
@@ -834,6 +894,12 @@ Partial Public Class GameDatabaseDataSet
         If (initTable = true) Then
             If (Not (Me.tablePlayerCreatures) Is Nothing) Then
                 Me.tablePlayerCreatures.InitVars
+            End If
+        End If
+        Me.tablePlayerJewelry = CType(MyBase.Tables("PlayerJewelry"),PlayerJewelryDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tablePlayerJewelry) Is Nothing) Then
+                Me.tablePlayerJewelry.InitVars
             End If
         End If
         Me.tablePlayerParties = CType(MyBase.Tables("PlayerParties"),PlayerPartiesDataTable)
@@ -920,6 +986,12 @@ Partial Public Class GameDatabaseDataSet
                 Me.tableStaticCreatures.InitVars
             End If
         End If
+        Me.tableStaticJewelry = CType(MyBase.Tables("StaticJewelry"),StaticJewelryDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tableStaticJewelry) Is Nothing) Then
+                Me.tableStaticJewelry.InitVars
+            End If
+        End If
         Me.tableStaticMobs = CType(MyBase.Tables("StaticMobs"),StaticMobsDataTable)
         If (initTable = true) Then
             If (Not (Me.tableStaticMobs) Is Nothing) Then
@@ -992,10 +1064,14 @@ Partial Public Class GameDatabaseDataSet
         MyBase.Tables.Add(Me.tableFarmerStates)
         Me.tablePlayerArmor = New PlayerArmorDataTable()
         MyBase.Tables.Add(Me.tablePlayerArmor)
+        Me.tablePlayerAugments = New PlayerAugmentsDataTable()
+        MyBase.Tables.Add(Me.tablePlayerAugments)
         Me.tablePlayerConsumables = New PlayerConsumablesDataTable()
         MyBase.Tables.Add(Me.tablePlayerConsumables)
         Me.tablePlayerCreatures = New PlayerCreaturesDataTable()
         MyBase.Tables.Add(Me.tablePlayerCreatures)
+        Me.tablePlayerJewelry = New PlayerJewelryDataTable()
+        MyBase.Tables.Add(Me.tablePlayerJewelry)
         Me.tablePlayerParties = New PlayerPartiesDataTable()
         MyBase.Tables.Add(Me.tablePlayerParties)
         Me.tablePlayers = New PlayersDataTable()
@@ -1024,6 +1100,8 @@ Partial Public Class GameDatabaseDataSet
         MyBase.Tables.Add(Me.tableStaticConsumables)
         Me.tableStaticCreatures = New StaticCreaturesDataTable()
         MyBase.Tables.Add(Me.tableStaticCreatures)
+        Me.tableStaticJewelry = New StaticJewelryDataTable()
+        MyBase.Tables.Add(Me.tableStaticJewelry)
         Me.tableStaticMobs = New StaticMobsDataTable()
         MyBase.Tables.Add(Me.tableStaticMobs)
         Me.tableStaticQuests = New StaticQuestsDataTable()
@@ -1102,6 +1180,12 @@ Partial Public Class GameDatabaseDataSet
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Private Function ShouldSerializePlayerAugments() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Private Function ShouldSerializePlayerConsumables() As Boolean
         Return false
     End Function
@@ -1109,6 +1193,12 @@ Partial Public Class GameDatabaseDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Private Function ShouldSerializePlayerCreatures() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Private Function ShouldSerializePlayerJewelry() As Boolean
         Return false
     End Function
     
@@ -1193,6 +1283,12 @@ Partial Public Class GameDatabaseDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Private Function ShouldSerializeStaticCreatures() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Private Function ShouldSerializeStaticJewelry() As Boolean
         Return false
     End Function
     
@@ -1327,10 +1423,16 @@ Partial Public Class GameDatabaseDataSet
     Public Delegate Sub PlayerArmorRowChangeEventHandler(ByVal sender As Object, ByVal e As PlayerArmorRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Delegate Sub PlayerAugmentsRowChangeEventHandler(ByVal sender As Object, ByVal e As PlayerAugmentsRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Delegate Sub PlayerConsumablesRowChangeEventHandler(ByVal sender As Object, ByVal e As PlayerConsumablesRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Delegate Sub PlayerCreaturesRowChangeEventHandler(ByVal sender As Object, ByVal e As PlayerCreaturesRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Delegate Sub PlayerJewelryRowChangeEventHandler(ByVal sender As Object, ByVal e As PlayerJewelryRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Delegate Sub PlayerPartiesRowChangeEventHandler(ByVal sender As Object, ByVal e As PlayerPartiesRowChangeEvent)
@@ -1373,6 +1475,9 @@ Partial Public Class GameDatabaseDataSet
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Delegate Sub StaticCreaturesRowChangeEventHandler(ByVal sender As Object, ByVal e As StaticCreaturesRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Delegate Sub StaticJewelryRowChangeEventHandler(ByVal sender As Object, ByVal e As StaticJewelryRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Delegate Sub StaticMobsRowChangeEventHandler(ByVal sender As Object, ByVal e As StaticMobsRowChangeEvent)
@@ -4141,7 +4246,7 @@ Partial Public Class GameDatabaseDataSet
         
         Private columnid As Global.System.Data.DataColumn
         
-        Private columnplayerid As Global.System.Data.DataColumn
+        Private columnplayerStateid As Global.System.Data.DataColumn
         
         Private columnarmorid As Global.System.Data.DataColumn
         
@@ -4194,9 +4299,9 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property playeridColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property playerStateidColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnplayerid
+                Return Me.columnplayerStateid
             End Get
         End Property
         
@@ -4261,9 +4366,9 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddPlayerArmorRow(ByVal playerid As Integer, ByVal armorid As Integer, ByVal wearerid As Integer, ByVal slotWorn As Integer) As PlayerArmorRow
+        Public Overloads Function AddPlayerArmorRow(ByVal playerStateid As Integer, ByVal armorid As Integer, ByVal wearerid As Integer, ByVal slotWorn As Integer) As PlayerArmorRow
             Dim rowPlayerArmorRow As PlayerArmorRow = CType(Me.NewRow,PlayerArmorRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, playerid, armorid, wearerid, slotWorn}
+            Dim columnValuesArray() As Object = New Object() {Nothing, playerStateid, armorid, wearerid, slotWorn}
             rowPlayerArmorRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowPlayerArmorRow)
             Return rowPlayerArmorRow
@@ -4293,7 +4398,7 @@ Partial Public Class GameDatabaseDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
             Me.columnid = MyBase.Columns("id")
-            Me.columnplayerid = MyBase.Columns("playerid")
+            Me.columnplayerStateid = MyBase.Columns("playerStateid")
             Me.columnarmorid = MyBase.Columns("armorid")
             Me.columnwearerid = MyBase.Columns("wearerid")
             Me.columnslotWorn = MyBase.Columns("slotWorn")
@@ -4304,8 +4409,8 @@ Partial Public Class GameDatabaseDataSet
         Private Sub InitClass()
             Me.columnid = New Global.System.Data.DataColumn("id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnid)
-            Me.columnplayerid = New Global.System.Data.DataColumn("playerid", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnplayerid)
+            Me.columnplayerStateid = New Global.System.Data.DataColumn("playerStateid", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnplayerStateid)
             Me.columnarmorid = New Global.System.Data.DataColumn("armorid", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnarmorid)
             Me.columnwearerid = New Global.System.Data.DataColumn("wearerid", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
@@ -4453,12 +4558,303 @@ Partial Public Class GameDatabaseDataSet
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class PlayerAugmentsDataTable
+        Inherits Global.System.Data.TypedTableBase(Of PlayerAugmentsRow)
+        
+        Private columnid As Global.System.Data.DataColumn
+        
+        Private columnplayerStateid As Global.System.Data.DataColumn
+        
+        Private columnaugmentid As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "PlayerAugments"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property idColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnid
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property playerStateidColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnplayerStateid
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property augmentidColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnaugmentid
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As PlayerAugmentsRow
+            Get
+                Return CType(Me.Rows(index),PlayerAugmentsRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event PlayerAugmentsRowChanging As PlayerAugmentsRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event PlayerAugmentsRowChanged As PlayerAugmentsRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event PlayerAugmentsRowDeleting As PlayerAugmentsRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event PlayerAugmentsRowDeleted As PlayerAugmentsRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Sub AddPlayerAugmentsRow(ByVal row As PlayerAugmentsRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Function AddPlayerAugmentsRow(ByVal playerStateid As Integer, ByVal augmentid As Integer) As PlayerAugmentsRow
+            Dim rowPlayerAugmentsRow As PlayerAugmentsRow = CType(Me.NewRow,PlayerAugmentsRow)
+            Dim columnValuesArray() As Object = New Object() {Nothing, playerStateid, augmentid}
+            rowPlayerAugmentsRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowPlayerAugmentsRow)
+            Return rowPlayerAugmentsRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function FindByid(ByVal id As Integer) As PlayerAugmentsRow
+            Return CType(Me.Rows.Find(New Object() {id}),PlayerAugmentsRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As PlayerAugmentsDataTable = CType(MyBase.Clone,PlayerAugmentsDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New PlayerAugmentsDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnid = MyBase.Columns("id")
+            Me.columnplayerStateid = MyBase.Columns("playerStateid")
+            Me.columnaugmentid = MyBase.Columns("augmentid")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnid = New Global.System.Data.DataColumn("id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnid)
+            Me.columnplayerStateid = New Global.System.Data.DataColumn("playerStateid", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnplayerStateid)
+            Me.columnaugmentid = New Global.System.Data.DataColumn("augmentid", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnaugmentid)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid}, true))
+            Me.columnid.AutoIncrement = true
+            Me.columnid.AutoIncrementSeed = -1
+            Me.columnid.AutoIncrementStep = -1
+            Me.columnid.AllowDBNull = false
+            Me.columnid.ReadOnly = true
+            Me.columnid.Unique = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function NewPlayerAugmentsRow() As PlayerAugmentsRow
+            Return CType(Me.NewRow,PlayerAugmentsRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New PlayerAugmentsRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(PlayerAugmentsRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.PlayerAugmentsRowChangedEvent) Is Nothing) Then
+                RaiseEvent PlayerAugmentsRowChanged(Me, New PlayerAugmentsRowChangeEvent(CType(e.Row,PlayerAugmentsRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.PlayerAugmentsRowChangingEvent) Is Nothing) Then
+                RaiseEvent PlayerAugmentsRowChanging(Me, New PlayerAugmentsRowChangeEvent(CType(e.Row,PlayerAugmentsRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.PlayerAugmentsRowDeletedEvent) Is Nothing) Then
+                RaiseEvent PlayerAugmentsRowDeleted(Me, New PlayerAugmentsRowChangeEvent(CType(e.Row,PlayerAugmentsRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.PlayerAugmentsRowDeletingEvent) Is Nothing) Then
+                RaiseEvent PlayerAugmentsRowDeleting(Me, New PlayerAugmentsRowChangeEvent(CType(e.Row,PlayerAugmentsRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub RemovePlayerAugmentsRow(ByVal row As PlayerAugmentsRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As GameDatabaseDataSet = New GameDatabaseDataSet()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "PlayerAugmentsDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
     Partial Public Class PlayerConsumablesDataTable
         Inherits Global.System.Data.TypedTableBase(Of PlayerConsumablesRow)
         
         Private columnid As Global.System.Data.DataColumn
         
-        Private columnplayerid As Global.System.Data.DataColumn
+        Private columnplayerStateid As Global.System.Data.DataColumn
         
         Private columnconsumableid As Global.System.Data.DataColumn
         
@@ -4509,9 +4905,9 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property playeridColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property playerStateidColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnplayerid
+                Return Me.columnplayerStateid
             End Get
         End Property
         
@@ -4568,9 +4964,9 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddPlayerConsumablesRow(ByVal playerid As Integer, ByVal consumableid As Integer, ByVal isUsed As Boolean) As PlayerConsumablesRow
+        Public Overloads Function AddPlayerConsumablesRow(ByVal playerStateid As Integer, ByVal consumableid As Integer, ByVal isUsed As Boolean) As PlayerConsumablesRow
             Dim rowPlayerConsumablesRow As PlayerConsumablesRow = CType(Me.NewRow,PlayerConsumablesRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, playerid, consumableid, isUsed}
+            Dim columnValuesArray() As Object = New Object() {Nothing, playerStateid, consumableid, isUsed}
             rowPlayerConsumablesRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowPlayerConsumablesRow)
             Return rowPlayerConsumablesRow
@@ -4600,7 +4996,7 @@ Partial Public Class GameDatabaseDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
             Me.columnid = MyBase.Columns("id")
-            Me.columnplayerid = MyBase.Columns("playerid")
+            Me.columnplayerStateid = MyBase.Columns("playerStateid")
             Me.columnconsumableid = MyBase.Columns("consumableid")
             Me.columnisUsed = MyBase.Columns("isUsed")
         End Sub
@@ -4610,8 +5006,8 @@ Partial Public Class GameDatabaseDataSet
         Private Sub InitClass()
             Me.columnid = New Global.System.Data.DataColumn("id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnid)
-            Me.columnplayerid = New Global.System.Data.DataColumn("playerid", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnplayerid)
+            Me.columnplayerStateid = New Global.System.Data.DataColumn("playerStateid", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnplayerStateid)
             Me.columnconsumableid = New Global.System.Data.DataColumn("consumableid", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnconsumableid)
             Me.columnisUsed = New Global.System.Data.DataColumn("isUsed", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
@@ -4762,7 +5158,7 @@ Partial Public Class GameDatabaseDataSet
         
         Private columnid As Global.System.Data.DataColumn
         
-        Private columnplayerid As Global.System.Data.DataColumn
+        Private columnplayerStateid As Global.System.Data.DataColumn
         
         Private columncreatureid As Global.System.Data.DataColumn
         
@@ -4813,9 +5209,9 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property playeridColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property playerStateidColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnplayerid
+                Return Me.columnplayerStateid
             End Get
         End Property
         
@@ -4872,9 +5268,9 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddPlayerCreaturesRow(ByVal playerid As Integer, ByVal creatureid As Integer, ByVal name As String) As PlayerCreaturesRow
+        Public Overloads Function AddPlayerCreaturesRow(ByVal playerStateid As Integer, ByVal creatureid As Integer, ByVal name As String) As PlayerCreaturesRow
             Dim rowPlayerCreaturesRow As PlayerCreaturesRow = CType(Me.NewRow,PlayerCreaturesRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, playerid, creatureid, name}
+            Dim columnValuesArray() As Object = New Object() {Nothing, playerStateid, creatureid, name}
             rowPlayerCreaturesRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowPlayerCreaturesRow)
             Return rowPlayerCreaturesRow
@@ -4904,7 +5300,7 @@ Partial Public Class GameDatabaseDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
             Me.columnid = MyBase.Columns("id")
-            Me.columnplayerid = MyBase.Columns("playerid")
+            Me.columnplayerStateid = MyBase.Columns("playerStateid")
             Me.columncreatureid = MyBase.Columns("creatureid")
             Me.columnname = MyBase.Columns("name")
         End Sub
@@ -4914,8 +5310,8 @@ Partial Public Class GameDatabaseDataSet
         Private Sub InitClass()
             Me.columnid = New Global.System.Data.DataColumn("id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnid)
-            Me.columnplayerid = New Global.System.Data.DataColumn("playerid", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnplayerid)
+            Me.columnplayerStateid = New Global.System.Data.DataColumn("playerStateid", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnplayerStateid)
             Me.columncreatureid = New Global.System.Data.DataColumn("creatureid", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columncreatureid)
             Me.columnname = New Global.System.Data.DataColumn("name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -5014,6 +5410,323 @@ Partial Public Class GameDatabaseDataSet
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
             attribute2.FixedValue = "PlayerCreaturesDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class PlayerJewelryDataTable
+        Inherits Global.System.Data.TypedTableBase(Of PlayerJewelryRow)
+        
+        Private columnid As Global.System.Data.DataColumn
+        
+        Private columnplayerStateid As Global.System.Data.DataColumn
+        
+        Private columnjewelryid As Global.System.Data.DataColumn
+        
+        Private columnwearerid As Global.System.Data.DataColumn
+        
+        Private columnslot As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "PlayerJewelry"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property idColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnid
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property playerStateidColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnplayerStateid
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property jewelryidColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnjewelryid
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property weareridColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnwearerid
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property slotColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnslot
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As PlayerJewelryRow
+            Get
+                Return CType(Me.Rows(index),PlayerJewelryRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event PlayerJewelryRowChanging As PlayerJewelryRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event PlayerJewelryRowChanged As PlayerJewelryRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event PlayerJewelryRowDeleting As PlayerJewelryRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event PlayerJewelryRowDeleted As PlayerJewelryRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Sub AddPlayerJewelryRow(ByVal row As PlayerJewelryRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Function AddPlayerJewelryRow(ByVal playerStateid As Integer, ByVal jewelryid As Integer, ByVal wearerid As Integer, ByVal slot As Integer) As PlayerJewelryRow
+            Dim rowPlayerJewelryRow As PlayerJewelryRow = CType(Me.NewRow,PlayerJewelryRow)
+            Dim columnValuesArray() As Object = New Object() {Nothing, playerStateid, jewelryid, wearerid, slot}
+            rowPlayerJewelryRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowPlayerJewelryRow)
+            Return rowPlayerJewelryRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function FindByid(ByVal id As Integer) As PlayerJewelryRow
+            Return CType(Me.Rows.Find(New Object() {id}),PlayerJewelryRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As PlayerJewelryDataTable = CType(MyBase.Clone,PlayerJewelryDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New PlayerJewelryDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnid = MyBase.Columns("id")
+            Me.columnplayerStateid = MyBase.Columns("playerStateid")
+            Me.columnjewelryid = MyBase.Columns("jewelryid")
+            Me.columnwearerid = MyBase.Columns("wearerid")
+            Me.columnslot = MyBase.Columns("slot")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnid = New Global.System.Data.DataColumn("id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnid)
+            Me.columnplayerStateid = New Global.System.Data.DataColumn("playerStateid", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnplayerStateid)
+            Me.columnjewelryid = New Global.System.Data.DataColumn("jewelryid", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnjewelryid)
+            Me.columnwearerid = New Global.System.Data.DataColumn("wearerid", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnwearerid)
+            Me.columnslot = New Global.System.Data.DataColumn("slot", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnslot)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid}, true))
+            Me.columnid.AutoIncrement = true
+            Me.columnid.AutoIncrementSeed = -1
+            Me.columnid.AutoIncrementStep = -1
+            Me.columnid.AllowDBNull = false
+            Me.columnid.ReadOnly = true
+            Me.columnid.Unique = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function NewPlayerJewelryRow() As PlayerJewelryRow
+            Return CType(Me.NewRow,PlayerJewelryRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New PlayerJewelryRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(PlayerJewelryRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.PlayerJewelryRowChangedEvent) Is Nothing) Then
+                RaiseEvent PlayerJewelryRowChanged(Me, New PlayerJewelryRowChangeEvent(CType(e.Row,PlayerJewelryRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.PlayerJewelryRowChangingEvent) Is Nothing) Then
+                RaiseEvent PlayerJewelryRowChanging(Me, New PlayerJewelryRowChangeEvent(CType(e.Row,PlayerJewelryRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.PlayerJewelryRowDeletedEvent) Is Nothing) Then
+                RaiseEvent PlayerJewelryRowDeleted(Me, New PlayerJewelryRowChangeEvent(CType(e.Row,PlayerJewelryRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.PlayerJewelryRowDeletingEvent) Is Nothing) Then
+                RaiseEvent PlayerJewelryRowDeleting(Me, New PlayerJewelryRowChangeEvent(CType(e.Row,PlayerJewelryRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub RemovePlayerJewelryRow(ByVal row As PlayerJewelryRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As GameDatabaseDataSet = New GameDatabaseDataSet()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "PlayerJewelryDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -5729,7 +6442,7 @@ Partial Public Class GameDatabaseDataSet
         
         Private columnid As Global.System.Data.DataColumn
         
-        Private columnplayerid As Global.System.Data.DataColumn
+        Private columnplayerStateid As Global.System.Data.DataColumn
         
         Private columnskillid As Global.System.Data.DataColumn
         
@@ -5778,9 +6491,9 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property playeridColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property playerStateidColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnplayerid
+                Return Me.columnplayerStateid
             End Get
         End Property
         
@@ -5829,9 +6542,9 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddPlayerSkillsRow(ByVal playerid As Integer, ByVal skillid As Integer) As PlayerSkillsRow
+        Public Overloads Function AddPlayerSkillsRow(ByVal playerStateid As Integer, ByVal skillid As Integer) As PlayerSkillsRow
             Dim rowPlayerSkillsRow As PlayerSkillsRow = CType(Me.NewRow,PlayerSkillsRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, playerid, skillid}
+            Dim columnValuesArray() As Object = New Object() {Nothing, playerStateid, skillid}
             rowPlayerSkillsRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowPlayerSkillsRow)
             Return rowPlayerSkillsRow
@@ -5861,7 +6574,7 @@ Partial Public Class GameDatabaseDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
             Me.columnid = MyBase.Columns("id")
-            Me.columnplayerid = MyBase.Columns("playerid")
+            Me.columnplayerStateid = MyBase.Columns("playerStateid")
             Me.columnskillid = MyBase.Columns("skillid")
         End Sub
         
@@ -5870,8 +6583,8 @@ Partial Public Class GameDatabaseDataSet
         Private Sub InitClass()
             Me.columnid = New Global.System.Data.DataColumn("id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnid)
-            Me.columnplayerid = New Global.System.Data.DataColumn("playerid", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnplayerid)
+            Me.columnplayerStateid = New Global.System.Data.DataColumn("playerStateid", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnplayerStateid)
             Me.columnskillid = New Global.System.Data.DataColumn("skillid", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnskillid)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid}, true))
@@ -6034,6 +6747,12 @@ Partial Public Class GameDatabaseDataSet
         
         Private columnisAmbushed As Global.System.Data.DataColumn
         
+        Private columnplayerGold As Global.System.Data.DataColumn
+        
+        Private columnplayerLevel As Global.System.Data.DataColumn
+        
+        Private columnplayerExperience As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -6134,6 +6853,30 @@ Partial Public Class GameDatabaseDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property playerGoldColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnplayerGold
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property playerLevelColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnplayerLevel
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property playerExperienceColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnplayerExperience
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -6170,9 +6913,9 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddPlayerStatesRow(ByVal playerid As Integer, ByVal dateSaved As Date, ByVal currentPartyid As Integer, ByVal currentTierid As Integer, ByVal currentQuestid As Integer, ByVal gameDate As Date, ByVal isAmbushed As Boolean) As PlayerStatesRow
+        Public Overloads Function AddPlayerStatesRow(ByVal playerid As Integer, ByVal dateSaved As Date, ByVal currentPartyid As Integer, ByVal currentTierid As Integer, ByVal currentQuestid As Integer, ByVal gameDate As Date, ByVal isAmbushed As Boolean, ByVal playerGold As Integer, ByVal playerLevel As Integer, ByVal playerExperience As Integer) As PlayerStatesRow
             Dim rowPlayerStatesRow As PlayerStatesRow = CType(Me.NewRow,PlayerStatesRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, playerid, dateSaved, currentPartyid, currentTierid, currentQuestid, gameDate, isAmbushed}
+            Dim columnValuesArray() As Object = New Object() {Nothing, playerid, dateSaved, currentPartyid, currentTierid, currentQuestid, gameDate, isAmbushed, playerGold, playerLevel, playerExperience}
             rowPlayerStatesRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowPlayerStatesRow)
             Return rowPlayerStatesRow
@@ -6209,6 +6952,9 @@ Partial Public Class GameDatabaseDataSet
             Me.columncurrentQuestid = MyBase.Columns("currentQuestid")
             Me.columngameDate = MyBase.Columns("gameDate")
             Me.columnisAmbushed = MyBase.Columns("isAmbushed")
+            Me.columnplayerGold = MyBase.Columns("playerGold")
+            Me.columnplayerLevel = MyBase.Columns("playerLevel")
+            Me.columnplayerExperience = MyBase.Columns("playerExperience")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6230,6 +6976,12 @@ Partial Public Class GameDatabaseDataSet
             MyBase.Columns.Add(Me.columngameDate)
             Me.columnisAmbushed = New Global.System.Data.DataColumn("isAmbushed", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnisAmbushed)
+            Me.columnplayerGold = New Global.System.Data.DataColumn("playerGold", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnplayerGold)
+            Me.columnplayerLevel = New Global.System.Data.DataColumn("playerLevel", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnplayerLevel)
+            Me.columnplayerExperience = New Global.System.Data.DataColumn("playerExperience", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnplayerExperience)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid}, true))
             Me.columnid.AutoIncrement = true
             Me.columnid.AutoIncrementSeed = -1
@@ -6376,7 +7128,7 @@ Partial Public Class GameDatabaseDataSet
         
         Private columnid As Global.System.Data.DataColumn
         
-        Private columnplayerid As Global.System.Data.DataColumn
+        Private columnplayerStateid As Global.System.Data.DataColumn
         
         Private columnweaponid As Global.System.Data.DataColumn
         
@@ -6429,9 +7181,9 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property playeridColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property playerStateidColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnplayerid
+                Return Me.columnplayerStateid
             End Get
         End Property
         
@@ -6496,9 +7248,9 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddPlayerWeaponsRow(ByVal playerid As Integer, ByVal weaponid As Integer, ByVal wearerid As Integer, ByVal slotWorn As Integer) As PlayerWeaponsRow
+        Public Overloads Function AddPlayerWeaponsRow(ByVal playerStateid As Integer, ByVal weaponid As Integer, ByVal wearerid As Integer, ByVal slotWorn As Integer) As PlayerWeaponsRow
             Dim rowPlayerWeaponsRow As PlayerWeaponsRow = CType(Me.NewRow,PlayerWeaponsRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, playerid, weaponid, wearerid, slotWorn}
+            Dim columnValuesArray() As Object = New Object() {Nothing, playerStateid, weaponid, wearerid, slotWorn}
             rowPlayerWeaponsRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowPlayerWeaponsRow)
             Return rowPlayerWeaponsRow
@@ -6528,7 +7280,7 @@ Partial Public Class GameDatabaseDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
             Me.columnid = MyBase.Columns("id")
-            Me.columnplayerid = MyBase.Columns("playerid")
+            Me.columnplayerStateid = MyBase.Columns("playerStateid")
             Me.columnweaponid = MyBase.Columns("weaponid")
             Me.columnwearerid = MyBase.Columns("wearerid")
             Me.columnslotWorn = MyBase.Columns("slotWorn")
@@ -6539,8 +7291,8 @@ Partial Public Class GameDatabaseDataSet
         Private Sub InitClass()
             Me.columnid = New Global.System.Data.DataColumn("id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnid)
-            Me.columnplayerid = New Global.System.Data.DataColumn("playerid", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnplayerid)
+            Me.columnplayerStateid = New Global.System.Data.DataColumn("playerStateid", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnplayerStateid)
             Me.columnweaponid = New Global.System.Data.DataColumn("weaponid", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnweaponid)
             Me.columnwearerid = New Global.System.Data.DataColumn("wearerid", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
@@ -6707,6 +7459,16 @@ Partial Public Class GameDatabaseDataSet
         
         Private columncamp5Chance As Global.System.Data.DataColumn
         
+        Private columncamp1id As Global.System.Data.DataColumn
+        
+        Private columncamp2id As Global.System.Data.DataColumn
+        
+        Private columncamp3id As Global.System.Data.DataColumn
+        
+        Private columncamp4id As Global.System.Data.DataColumn
+        
+        Private columncamp5id As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -6807,6 +7569,46 @@ Partial Public Class GameDatabaseDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property camp1idColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncamp1id
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property camp2idColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncamp2id
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property camp3idColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncamp3id
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property camp4idColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncamp4id
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property camp5idColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncamp5id
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -6843,9 +7645,9 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddRoadStatesRow(ByVal dateVisited As Date, ByVal playerStateid As Integer, ByVal camp1Chance As Integer, ByVal camp2Chance As Integer, ByVal camp3Chance As Integer, ByVal camp4Chance As Integer, ByVal camp5Chance As Integer) As RoadStatesRow
+        Public Overloads Function AddRoadStatesRow(ByVal dateVisited As Date, ByVal playerStateid As Integer, ByVal camp1Chance As Integer, ByVal camp2Chance As Integer, ByVal camp3Chance As Integer, ByVal camp4Chance As Integer, ByVal camp5Chance As Integer, ByVal camp1id As Integer, ByVal camp2id As Integer, ByVal camp3id As Integer, ByVal camp4id As Integer, ByVal camp5id As Integer) As RoadStatesRow
             Dim rowRoadStatesRow As RoadStatesRow = CType(Me.NewRow,RoadStatesRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, dateVisited, playerStateid, camp1Chance, camp2Chance, camp3Chance, camp4Chance, camp5Chance}
+            Dim columnValuesArray() As Object = New Object() {Nothing, dateVisited, playerStateid, camp1Chance, camp2Chance, camp3Chance, camp4Chance, camp5Chance, camp1id, camp2id, camp3id, camp4id, camp5id}
             rowRoadStatesRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowRoadStatesRow)
             Return rowRoadStatesRow
@@ -6882,6 +7684,11 @@ Partial Public Class GameDatabaseDataSet
             Me.columncamp3Chance = MyBase.Columns("camp3Chance")
             Me.columncamp4Chance = MyBase.Columns("camp4Chance")
             Me.columncamp5Chance = MyBase.Columns("camp5Chance")
+            Me.columncamp1id = MyBase.Columns("camp1id")
+            Me.columncamp2id = MyBase.Columns("camp2id")
+            Me.columncamp3id = MyBase.Columns("camp3id")
+            Me.columncamp4id = MyBase.Columns("camp4id")
+            Me.columncamp5id = MyBase.Columns("camp5id")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6903,6 +7710,16 @@ Partial Public Class GameDatabaseDataSet
             MyBase.Columns.Add(Me.columncamp4Chance)
             Me.columncamp5Chance = New Global.System.Data.DataColumn("camp5Chance", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columncamp5Chance)
+            Me.columncamp1id = New Global.System.Data.DataColumn("camp1id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncamp1id)
+            Me.columncamp2id = New Global.System.Data.DataColumn("camp2id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncamp2id)
+            Me.columncamp3id = New Global.System.Data.DataColumn("camp3id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncamp3id)
+            Me.columncamp4id = New Global.System.Data.DataColumn("camp4id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncamp4id)
+            Me.columncamp5id = New Global.System.Data.DataColumn("camp5id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncamp5id)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid}, true))
             Me.columnid.AutoIncrement = true
             Me.columnid.AutoIncrementSeed = -1
@@ -7656,7 +8473,7 @@ Partial Public Class GameDatabaseDataSet
         
         Private columnminStats As Global.System.Data.DataColumn
         
-        Private columnset As Global.System.Data.DataColumn
+        Private columnsetName As Global.System.Data.DataColumn
         
         Private columnsetBonus As Global.System.Data.DataColumn
         
@@ -7755,9 +8572,9 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property setColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property setNameColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnset
+                Return Me.columnsetName
             End Get
         End Property
         
@@ -7814,9 +8631,9 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddStaticArmorRow(ByVal name As String, ByVal attributes As String, ByVal slotsPossible As String, ByVal wearableBy As String, ByVal isUnique As Boolean, ByVal minStats As String, ByVal _set As String, ByVal setBonus As String, ByVal resistances As String) As StaticArmorRow
+        Public Overloads Function AddStaticArmorRow(ByVal name As String, ByVal attributes As String, ByVal slotsPossible As String, ByVal wearableBy As String, ByVal isUnique As Boolean, ByVal minStats As String, ByVal setName As String, ByVal setBonus As String, ByVal resistances As String) As StaticArmorRow
             Dim rowStaticArmorRow As StaticArmorRow = CType(Me.NewRow,StaticArmorRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, name, attributes, slotsPossible, wearableBy, isUnique, minStats, _set, setBonus, resistances}
+            Dim columnValuesArray() As Object = New Object() {Nothing, name, attributes, slotsPossible, wearableBy, isUnique, minStats, setName, setBonus, resistances}
             rowStaticArmorRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowStaticArmorRow)
             Return rowStaticArmorRow
@@ -7852,7 +8669,7 @@ Partial Public Class GameDatabaseDataSet
             Me.columnwearableBy = MyBase.Columns("wearableBy")
             Me.columnisUnique = MyBase.Columns("isUnique")
             Me.columnminStats = MyBase.Columns("minStats")
-            Me.columnset = MyBase.Columns("set")
+            Me.columnsetName = MyBase.Columns("setName")
             Me.columnsetBonus = MyBase.Columns("setBonus")
             Me.columnresistances = MyBase.Columns("resistances")
         End Sub
@@ -7874,11 +8691,8 @@ Partial Public Class GameDatabaseDataSet
             MyBase.Columns.Add(Me.columnisUnique)
             Me.columnminStats = New Global.System.Data.DataColumn("minStats", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnminStats)
-            Me.columnset = New Global.System.Data.DataColumn("set", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            Me.columnset.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "setColumn")
-            Me.columnset.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnset")
-            Me.columnset.ExtendedProperties.Add("Generator_UserColumnName", "set")
-            MyBase.Columns.Add(Me.columnset)
+            Me.columnsetName = New Global.System.Data.DataColumn("setName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnsetName)
             Me.columnsetBonus = New Global.System.Data.DataColumn("setBonus", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnsetBonus)
             Me.columnresistances = New Global.System.Data.DataColumn("resistances", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -7896,7 +8710,7 @@ Partial Public Class GameDatabaseDataSet
             Me.columnwearableBy.MaxLength = 2147483647
             Me.columnisUnique.AllowDBNull = false
             Me.columnminStats.MaxLength = 2147483647
-            Me.columnset.MaxLength = 2147483647
+            Me.columnsetName.MaxLength = 2147483647
             Me.columnsetBonus.MaxLength = 2147483647
             Me.columnresistances.MaxLength = 2147483647
         End Sub
@@ -9634,6 +10448,396 @@ Partial Public Class GameDatabaseDataSet
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
             attribute2.FixedValue = "StaticCreaturesDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class StaticJewelryDataTable
+        Inherits Global.System.Data.TypedTableBase(Of StaticJewelryRow)
+        
+        Private columnid As Global.System.Data.DataColumn
+        
+        Private columnname As Global.System.Data.DataColumn
+        
+        Private columnattributes As Global.System.Data.DataColumn
+        
+        Private columnslotsPossible As Global.System.Data.DataColumn
+        
+        Private columnwearableBy As Global.System.Data.DataColumn
+        
+        Private columnisUnique As Global.System.Data.DataColumn
+        
+        Private columnminStats As Global.System.Data.DataColumn
+        
+        Private columnsetName As Global.System.Data.DataColumn
+        
+        Private columnsetBonus As Global.System.Data.DataColumn
+        
+        Private columnresistances As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "StaticJewelry"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property idColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnid
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property nameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnname
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property attributesColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnattributes
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property slotsPossibleColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnslotsPossible
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property wearableByColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnwearableBy
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property isUniqueColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnisUnique
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property minStatsColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnminStats
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property setNameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnsetName
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property setBonusColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnsetBonus
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property resistancesColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnresistances
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As StaticJewelryRow
+            Get
+                Return CType(Me.Rows(index),StaticJewelryRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event StaticJewelryRowChanging As StaticJewelryRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event StaticJewelryRowChanged As StaticJewelryRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event StaticJewelryRowDeleting As StaticJewelryRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event StaticJewelryRowDeleted As StaticJewelryRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Sub AddStaticJewelryRow(ByVal row As StaticJewelryRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Function AddStaticJewelryRow(ByVal name As String, ByVal attributes As String, ByVal slotsPossible As String, ByVal wearableBy As String, ByVal isUnique As Boolean, ByVal minStats As String, ByVal setName As String, ByVal setBonus As String, ByVal resistances As String) As StaticJewelryRow
+            Dim rowStaticJewelryRow As StaticJewelryRow = CType(Me.NewRow,StaticJewelryRow)
+            Dim columnValuesArray() As Object = New Object() {Nothing, name, attributes, slotsPossible, wearableBy, isUnique, minStats, setName, setBonus, resistances}
+            rowStaticJewelryRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowStaticJewelryRow)
+            Return rowStaticJewelryRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function FindByid(ByVal id As Integer) As StaticJewelryRow
+            Return CType(Me.Rows.Find(New Object() {id}),StaticJewelryRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As StaticJewelryDataTable = CType(MyBase.Clone,StaticJewelryDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New StaticJewelryDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnid = MyBase.Columns("id")
+            Me.columnname = MyBase.Columns("name")
+            Me.columnattributes = MyBase.Columns("attributes")
+            Me.columnslotsPossible = MyBase.Columns("slotsPossible")
+            Me.columnwearableBy = MyBase.Columns("wearableBy")
+            Me.columnisUnique = MyBase.Columns("isUnique")
+            Me.columnminStats = MyBase.Columns("minStats")
+            Me.columnsetName = MyBase.Columns("setName")
+            Me.columnsetBonus = MyBase.Columns("setBonus")
+            Me.columnresistances = MyBase.Columns("resistances")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnid = New Global.System.Data.DataColumn("id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnid)
+            Me.columnname = New Global.System.Data.DataColumn("name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnname)
+            Me.columnattributes = New Global.System.Data.DataColumn("attributes", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnattributes)
+            Me.columnslotsPossible = New Global.System.Data.DataColumn("slotsPossible", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnslotsPossible)
+            Me.columnwearableBy = New Global.System.Data.DataColumn("wearableBy", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnwearableBy)
+            Me.columnisUnique = New Global.System.Data.DataColumn("isUnique", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnisUnique)
+            Me.columnminStats = New Global.System.Data.DataColumn("minStats", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnminStats)
+            Me.columnsetName = New Global.System.Data.DataColumn("setName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnsetName)
+            Me.columnsetBonus = New Global.System.Data.DataColumn("setBonus", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnsetBonus)
+            Me.columnresistances = New Global.System.Data.DataColumn("resistances", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnresistances)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid}, true))
+            Me.columnid.AutoIncrement = true
+            Me.columnid.AutoIncrementSeed = -1
+            Me.columnid.AutoIncrementStep = -1
+            Me.columnid.AllowDBNull = false
+            Me.columnid.ReadOnly = true
+            Me.columnid.Unique = true
+            Me.columnname.MaxLength = 2147483647
+            Me.columnattributes.MaxLength = 2147483647
+            Me.columnslotsPossible.MaxLength = 2147483647
+            Me.columnwearableBy.MaxLength = 2147483647
+            Me.columnminStats.MaxLength = 2147483647
+            Me.columnsetName.MaxLength = 2147483647
+            Me.columnsetBonus.MaxLength = 2147483647
+            Me.columnresistances.MaxLength = 2147483647
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function NewStaticJewelryRow() As StaticJewelryRow
+            Return CType(Me.NewRow,StaticJewelryRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New StaticJewelryRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(StaticJewelryRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.StaticJewelryRowChangedEvent) Is Nothing) Then
+                RaiseEvent StaticJewelryRowChanged(Me, New StaticJewelryRowChangeEvent(CType(e.Row,StaticJewelryRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.StaticJewelryRowChangingEvent) Is Nothing) Then
+                RaiseEvent StaticJewelryRowChanging(Me, New StaticJewelryRowChangeEvent(CType(e.Row,StaticJewelryRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.StaticJewelryRowDeletedEvent) Is Nothing) Then
+                RaiseEvent StaticJewelryRowDeleted(Me, New StaticJewelryRowChangeEvent(CType(e.Row,StaticJewelryRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.StaticJewelryRowDeletingEvent) Is Nothing) Then
+                RaiseEvent StaticJewelryRowDeleting(Me, New StaticJewelryRowChangeEvent(CType(e.Row,StaticJewelryRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub RemoveStaticJewelryRow(ByVal row As StaticJewelryRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As GameDatabaseDataSet = New GameDatabaseDataSet()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "StaticJewelryDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -13186,16 +14390,16 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property playerid() As Integer
+        Public Property playerStateid() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tablePlayerArmor.playeridColumn),Integer)
+                    Return CType(Me(Me.tablePlayerArmor.playerStateidColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'playerid' in table 'PlayerArmor' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'playerStateid' in table 'PlayerArmor' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablePlayerArmor.playeridColumn) = value
+                Me(Me.tablePlayerArmor.playerStateidColumn) = value
             End Set
         End Property
         
@@ -13246,14 +14450,14 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsplayeridNull() As Boolean
-            Return Me.IsNull(Me.tablePlayerArmor.playeridColumn)
+        Public Function IsplayerStateidNull() As Boolean
+            Return Me.IsNull(Me.tablePlayerArmor.playerStateidColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetplayeridNull()
-            Me(Me.tablePlayerArmor.playeridColumn) = Global.System.Convert.DBNull
+        Public Sub SetplayerStateidNull()
+            Me(Me.tablePlayerArmor.playerStateidColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -13296,6 +14500,87 @@ Partial Public Class GameDatabaseDataSet
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
+    Partial Public Class PlayerAugmentsRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tablePlayerAugments As PlayerAugmentsDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tablePlayerAugments = CType(Me.Table,PlayerAugmentsDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property id() As Integer
+            Get
+                Return CType(Me(Me.tablePlayerAugments.idColumn),Integer)
+            End Get
+            Set
+                Me(Me.tablePlayerAugments.idColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property playerStateid() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tablePlayerAugments.playerStateidColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'playerStateid' in table 'PlayerAugments' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablePlayerAugments.playerStateidColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property augmentid() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tablePlayerAugments.augmentidColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'augmentid' in table 'PlayerAugments' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablePlayerAugments.augmentidColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsplayerStateidNull() As Boolean
+            Return Me.IsNull(Me.tablePlayerAugments.playerStateidColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetplayerStateidNull()
+            Me(Me.tablePlayerAugments.playerStateidColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsaugmentidNull() As Boolean
+            Return Me.IsNull(Me.tablePlayerAugments.augmentidColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetaugmentidNull()
+            Me(Me.tablePlayerAugments.augmentidColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
     Partial Public Class PlayerConsumablesRow
         Inherits Global.System.Data.DataRow
         
@@ -13321,16 +14606,16 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property playerid() As Integer
+        Public Property playerStateid() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tablePlayerConsumables.playeridColumn),Integer)
+                    Return CType(Me(Me.tablePlayerConsumables.playerStateidColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'playerid' in table 'PlayerConsumables' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'playerStateid' in table 'PlayerConsumables' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablePlayerConsumables.playeridColumn) = value
+                Me(Me.tablePlayerConsumables.playerStateidColumn) = value
             End Set
         End Property
         
@@ -13366,14 +14651,14 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsplayeridNull() As Boolean
-            Return Me.IsNull(Me.tablePlayerConsumables.playeridColumn)
+        Public Function IsplayerStateidNull() As Boolean
+            Return Me.IsNull(Me.tablePlayerConsumables.playerStateidColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetplayeridNull()
-            Me(Me.tablePlayerConsumables.playeridColumn) = Global.System.Convert.DBNull
+        Public Sub SetplayerStateidNull()
+            Me(Me.tablePlayerConsumables.playerStateidColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -13429,16 +14714,16 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property playerid() As Integer
+        Public Property playerStateid() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tablePlayerCreatures.playeridColumn),Integer)
+                    Return CType(Me(Me.tablePlayerCreatures.playerStateidColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'playerid' in table 'PlayerCreatures' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'playerStateid' in table 'PlayerCreatures' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablePlayerCreatures.playeridColumn) = value
+                Me(Me.tablePlayerCreatures.playerStateidColumn) = value
             End Set
         End Property
         
@@ -13474,14 +14759,14 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsplayeridNull() As Boolean
-            Return Me.IsNull(Me.tablePlayerCreatures.playeridColumn)
+        Public Function IsplayerStateidNull() As Boolean
+            Return Me.IsNull(Me.tablePlayerCreatures.playerStateidColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetplayeridNull()
-            Me(Me.tablePlayerCreatures.playeridColumn) = Global.System.Convert.DBNull
+        Public Sub SetplayerStateidNull()
+            Me(Me.tablePlayerCreatures.playerStateidColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -13506,6 +14791,141 @@ Partial Public Class GameDatabaseDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetnameNull()
             Me(Me.tablePlayerCreatures.nameColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class PlayerJewelryRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tablePlayerJewelry As PlayerJewelryDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tablePlayerJewelry = CType(Me.Table,PlayerJewelryDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property id() As Integer
+            Get
+                Return CType(Me(Me.tablePlayerJewelry.idColumn),Integer)
+            End Get
+            Set
+                Me(Me.tablePlayerJewelry.idColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property playerStateid() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tablePlayerJewelry.playerStateidColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'playerStateid' in table 'PlayerJewelry' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablePlayerJewelry.playerStateidColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property jewelryid() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tablePlayerJewelry.jewelryidColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'jewelryid' in table 'PlayerJewelry' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablePlayerJewelry.jewelryidColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property wearerid() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tablePlayerJewelry.weareridColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'wearerid' in table 'PlayerJewelry' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablePlayerJewelry.weareridColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property slot() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tablePlayerJewelry.slotColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'slot' in table 'PlayerJewelry' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablePlayerJewelry.slotColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsplayerStateidNull() As Boolean
+            Return Me.IsNull(Me.tablePlayerJewelry.playerStateidColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetplayerStateidNull()
+            Me(Me.tablePlayerJewelry.playerStateidColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsjewelryidNull() As Boolean
+            Return Me.IsNull(Me.tablePlayerJewelry.jewelryidColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetjewelryidNull()
+            Me(Me.tablePlayerJewelry.jewelryidColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsweareridNull() As Boolean
+            Return Me.IsNull(Me.tablePlayerJewelry.weareridColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetweareridNull()
+            Me(Me.tablePlayerJewelry.weareridColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsslotNull() As Boolean
+            Return Me.IsNull(Me.tablePlayerJewelry.slotColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetslotNull()
+            Me(Me.tablePlayerJewelry.slotColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -13861,16 +15281,16 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property playerid() As Integer
+        Public Property playerStateid() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tablePlayerSkills.playeridColumn),Integer)
+                    Return CType(Me(Me.tablePlayerSkills.playerStateidColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'playerid' in table 'PlayerSkills' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'playerStateid' in table 'PlayerSkills' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablePlayerSkills.playeridColumn) = value
+                Me(Me.tablePlayerSkills.playerStateidColumn) = value
             End Set
         End Property
         
@@ -13891,14 +15311,14 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsplayeridNull() As Boolean
-            Return Me.IsNull(Me.tablePlayerSkills.playeridColumn)
+        Public Function IsplayerStateidNull() As Boolean
+            Return Me.IsNull(Me.tablePlayerSkills.playerStateidColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetplayeridNull()
-            Me(Me.tablePlayerSkills.playeridColumn) = Global.System.Convert.DBNull
+        Public Sub SetplayerStateidNull()
+            Me(Me.tablePlayerSkills.playerStateidColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -14047,6 +15467,51 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property playerGold() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tablePlayerStates.playerGoldColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'playerGold' in table 'PlayerStates' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablePlayerStates.playerGoldColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property playerLevel() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tablePlayerStates.playerLevelColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'playerLevel' in table 'PlayerStates' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablePlayerStates.playerLevelColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property playerExperience() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tablePlayerStates.playerExperienceColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'playerExperience' in table 'PlayerStates' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablePlayerStates.playerExperienceColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsplayeridNull() As Boolean
             Return Me.IsNull(Me.tablePlayerStates.playeridColumn)
         End Function
@@ -14128,6 +15593,42 @@ Partial Public Class GameDatabaseDataSet
         Public Sub SetisAmbushedNull()
             Me(Me.tablePlayerStates.isAmbushedColumn) = Global.System.Convert.DBNull
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsplayerGoldNull() As Boolean
+            Return Me.IsNull(Me.tablePlayerStates.playerGoldColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetplayerGoldNull()
+            Me(Me.tablePlayerStates.playerGoldColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsplayerLevelNull() As Boolean
+            Return Me.IsNull(Me.tablePlayerStates.playerLevelColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetplayerLevelNull()
+            Me(Me.tablePlayerStates.playerLevelColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsplayerExperienceNull() As Boolean
+            Return Me.IsNull(Me.tablePlayerStates.playerExperienceColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetplayerExperienceNull()
+            Me(Me.tablePlayerStates.playerExperienceColumn) = Global.System.Convert.DBNull
+        End Sub
     End Class
     
     '''<summary>
@@ -14158,16 +15659,16 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property playerid() As Integer
+        Public Property playerStateid() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tablePlayerWeapons.playeridColumn),Integer)
+                    Return CType(Me(Me.tablePlayerWeapons.playerStateidColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'playerid' in table 'PlayerWeapons' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'playerStateid' in table 'PlayerWeapons' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablePlayerWeapons.playeridColumn) = value
+                Me(Me.tablePlayerWeapons.playerStateidColumn) = value
             End Set
         End Property
         
@@ -14218,14 +15719,14 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsplayeridNull() As Boolean
-            Return Me.IsNull(Me.tablePlayerWeapons.playeridColumn)
+        Public Function IsplayerStateidNull() As Boolean
+            Return Me.IsNull(Me.tablePlayerWeapons.playerStateidColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetplayeridNull()
-            Me(Me.tablePlayerWeapons.playeridColumn) = Global.System.Convert.DBNull
+        Public Sub SetplayerStateidNull()
+            Me(Me.tablePlayerWeapons.playerStateidColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -14398,6 +15899,81 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property camp1id() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableRoadStates.camp1idColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'camp1id' in table 'RoadStates' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableRoadStates.camp1idColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property camp2id() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableRoadStates.camp2idColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'camp2id' in table 'RoadStates' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableRoadStates.camp2idColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property camp3id() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableRoadStates.camp3idColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'camp3id' in table 'RoadStates' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableRoadStates.camp3idColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property camp4id() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableRoadStates.camp4idColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'camp4id' in table 'RoadStates' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableRoadStates.camp4idColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property camp5id() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableRoadStates.camp5idColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'camp5id' in table 'RoadStates' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableRoadStates.camp5idColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsdateVisitedNull() As Boolean
             Return Me.IsNull(Me.tableRoadStates.dateVisitedColumn)
         End Function
@@ -14478,6 +16054,66 @@ Partial Public Class GameDatabaseDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Setcamp5ChanceNull()
             Me(Me.tableRoadStates.camp5ChanceColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Iscamp1idNull() As Boolean
+            Return Me.IsNull(Me.tableRoadStates.camp1idColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setcamp1idNull()
+            Me(Me.tableRoadStates.camp1idColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Iscamp2idNull() As Boolean
+            Return Me.IsNull(Me.tableRoadStates.camp2idColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setcamp2idNull()
+            Me(Me.tableRoadStates.camp2idColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Iscamp3idNull() As Boolean
+            Return Me.IsNull(Me.tableRoadStates.camp3idColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setcamp3idNull()
+            Me(Me.tableRoadStates.camp3idColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Iscamp4idNull() As Boolean
+            Return Me.IsNull(Me.tableRoadStates.camp4idColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setcamp4idNull()
+            Me(Me.tableRoadStates.camp4idColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Iscamp5idNull() As Boolean
+            Return Me.IsNull(Me.tableRoadStates.camp5idColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setcamp5idNull()
+            Me(Me.tableRoadStates.camp5idColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -14784,16 +16420,16 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property _set() As String
+        Public Property setName() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableStaticArmor.setColumn),String)
+                    Return CType(Me(Me.tableStaticArmor.setNameColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'set' in table 'StaticArmor' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'setName' in table 'StaticArmor' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableStaticArmor.setColumn) = value
+                Me(Me.tableStaticArmor.setNameColumn) = value
             End Set
         End Property
         
@@ -14889,14 +16525,14 @@ Partial Public Class GameDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function Is_setNull() As Boolean
-            Return Me.IsNull(Me.tableStaticArmor.setColumn)
+        Public Function IssetNameNull() As Boolean
+            Return Me.IsNull(Me.tableStaticArmor.setNameColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub Set_setNull()
-            Me(Me.tableStaticArmor.setColumn) = Global.System.Convert.DBNull
+        Public Sub SetsetNameNull()
+            Me(Me.tableStaticArmor.setNameColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -15704,6 +17340,276 @@ Partial Public Class GameDatabaseDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetnameNull()
             Me(Me.tableStaticCreatures.nameColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class StaticJewelryRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tableStaticJewelry As StaticJewelryDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableStaticJewelry = CType(Me.Table,StaticJewelryDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property id() As Integer
+            Get
+                Return CType(Me(Me.tableStaticJewelry.idColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableStaticJewelry.idColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property name() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableStaticJewelry.nameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'name' in table 'StaticJewelry' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableStaticJewelry.nameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property attributes() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableStaticJewelry.attributesColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'attributes' in table 'StaticJewelry' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableStaticJewelry.attributesColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property slotsPossible() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableStaticJewelry.slotsPossibleColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'slotsPossible' in table 'StaticJewelry' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableStaticJewelry.slotsPossibleColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property wearableBy() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableStaticJewelry.wearableByColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'wearableBy' in table 'StaticJewelry' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableStaticJewelry.wearableByColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property isUnique() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableStaticJewelry.isUniqueColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'isUnique' in table 'StaticJewelry' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableStaticJewelry.isUniqueColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property minStats() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableStaticJewelry.minStatsColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'minStats' in table 'StaticJewelry' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableStaticJewelry.minStatsColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property setName() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableStaticJewelry.setNameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'setName' in table 'StaticJewelry' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableStaticJewelry.setNameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property setBonus() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableStaticJewelry.setBonusColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'setBonus' in table 'StaticJewelry' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableStaticJewelry.setBonusColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property resistances() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableStaticJewelry.resistancesColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'resistances' in table 'StaticJewelry' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableStaticJewelry.resistancesColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsnameNull() As Boolean
+            Return Me.IsNull(Me.tableStaticJewelry.nameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetnameNull()
+            Me(Me.tableStaticJewelry.nameColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsattributesNull() As Boolean
+            Return Me.IsNull(Me.tableStaticJewelry.attributesColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetattributesNull()
+            Me(Me.tableStaticJewelry.attributesColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsslotsPossibleNull() As Boolean
+            Return Me.IsNull(Me.tableStaticJewelry.slotsPossibleColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetslotsPossibleNull()
+            Me(Me.tableStaticJewelry.slotsPossibleColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IswearableByNull() As Boolean
+            Return Me.IsNull(Me.tableStaticJewelry.wearableByColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetwearableByNull()
+            Me(Me.tableStaticJewelry.wearableByColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsisUniqueNull() As Boolean
+            Return Me.IsNull(Me.tableStaticJewelry.isUniqueColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetisUniqueNull()
+            Me(Me.tableStaticJewelry.isUniqueColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsminStatsNull() As Boolean
+            Return Me.IsNull(Me.tableStaticJewelry.minStatsColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetminStatsNull()
+            Me(Me.tableStaticJewelry.minStatsColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IssetNameNull() As Boolean
+            Return Me.IsNull(Me.tableStaticJewelry.setNameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetsetNameNull()
+            Me(Me.tableStaticJewelry.setNameColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IssetBonusNull() As Boolean
+            Return Me.IsNull(Me.tableStaticJewelry.setBonusColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetsetBonusNull()
+            Me(Me.tableStaticJewelry.setBonusColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsresistancesNull() As Boolean
+            Return Me.IsNull(Me.tableStaticJewelry.resistancesColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetresistancesNull()
+            Me(Me.tableStaticJewelry.resistancesColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -17535,6 +19441,42 @@ Partial Public Class GameDatabaseDataSet
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Class PlayerAugmentsRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As PlayerAugmentsRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New(ByVal row As PlayerAugmentsRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Row() As PlayerAugmentsRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Class PlayerConsumablesRowChangeEvent
         Inherits Global.System.EventArgs
         
@@ -17589,6 +19531,42 @@ Partial Public Class GameDatabaseDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property Row() As PlayerCreaturesRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Class PlayerJewelryRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As PlayerJewelryRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New(ByVal row As PlayerJewelryRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Row() As PlayerJewelryRow
             Get
                 Return Me.eventRow
             End Get
@@ -18111,6 +20089,42 @@ Partial Public Class GameDatabaseDataSet
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Class StaticJewelryRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As StaticJewelryRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New(ByVal row As StaticJewelryRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Row() As StaticJewelryRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Class StaticMobsRowChangeEvent
         Inherits Global.System.EventArgs
         
@@ -18541,19 +20555,11 @@ Namespace GameDatabaseDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT id, armorid, augmentid FROM dbo.ArmorAugments"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT        ArmorAugments.id, ArmorAugments.armorid, ArmorAugments.augmentid"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"F"& _ 
-                "ROM            ArmorAugments INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         PlayerArmor ON"& _ 
-                " ArmorAugments.armorid = PlayerArmor.id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (PlayerArmor.playerid = @p"& _ 
-                "layerid)"
-            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -18575,40 +20581,6 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
         Public Overloads Overridable Function GetData() As GameDatabaseDataSet.ArmorAugmentsDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As GameDatabaseDataSet.ArmorAugmentsDataTable = New GameDatabaseDataSet.ArmorAugmentsDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillByPlayerid(ByVal dataTable As GameDatabaseDataSet.ArmorAugmentsDataTable, ByVal playerid As Global.System.Nullable(Of Integer)) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (playerid.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(playerid.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetArmorAugmentsByPlayerid(ByVal playerid As Global.System.Nullable(Of Integer)) As GameDatabaseDataSet.ArmorAugmentsDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (playerid.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(playerid.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
             Dim dataTable As GameDatabaseDataSet.ArmorAugmentsDataTable = New GameDatabaseDataSet.ArmorAugmentsDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -19354,39 +21326,12 @@ Namespace GameDatabaseDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(3) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT id, blacksmithStateid, armorid, weaponid, cost FROM dbo.BlacksmithStateIte"& _ 
                 "ms"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT        BlacksmithStateItems.id, BlacksmithStateItems.blacksmithStateid, Bl"& _ 
-                "acksmithStateItems.armorid, BlacksmithStateItems.weaponid, BlacksmithStateItems."& _ 
-                "cost"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            BlacksmithStateItems INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         "& _ 
-                "BlacksmithStates ON BlacksmithStateItems.blacksmithStateid = BlacksmithStates.id"& _ 
-                " INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         PlayerStates ON BlacksmithStates.playerSta"& _ 
-                "teid = PlayerStates.id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (PlayerStates.playerid = @playerid)"
-            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT        BlacksmithStateItems.id, BlacksmithStateItems.blacksmithStateid, Bl"& _ 
-                "acksmithStateItems.armorid, BlacksmithStateItems.weaponid, BlacksmithStateItems."& _ 
-                "cost"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            BlacksmithStateItems INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         "& _ 
-                "BlacksmithStates ON BlacksmithStateItems.blacksmithStateid = BlacksmithStates.id"& _ 
-                " INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         PlayerStates ON BlacksmithStates.playerSta"& _ 
-                "teid = PlayerStates.id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (PlayerStates.id = @playerStateid)"
-            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerStateid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "SELECT        TOP (1) id, blacksmithStateid, armorid, weaponid, cost"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM       "& _ 
-                "     BlacksmithStateItems"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (blacksmithStateid = @blacksmithStateid)"& _ 
-                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY id DESC"
-            Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@blacksmithStateid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "blacksmithStateid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -19408,82 +21353,6 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
         Public Overloads Overridable Function GetData() As GameDatabaseDataSet.BlacksmithStateItemsDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As GameDatabaseDataSet.BlacksmithStateItemsDataTable = New GameDatabaseDataSet.BlacksmithStateItemsDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillByPlayerid(ByVal dataTable As GameDatabaseDataSet.BlacksmithStateItemsDataTable, ByVal playerid As Global.System.Nullable(Of Integer)) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (playerid.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(playerid.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetBlacksmithItemsByPlayerid(ByVal playerid As Global.System.Nullable(Of Integer)) As GameDatabaseDataSet.BlacksmithStateItemsDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (playerid.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(playerid.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
-            Dim dataTable As GameDatabaseDataSet.BlacksmithStateItemsDataTable = New GameDatabaseDataSet.BlacksmithStateItemsDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillByPlayerStateid(ByVal dataTable As GameDatabaseDataSet.BlacksmithStateItemsDataTable, ByVal playerStateid As Integer) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(2)
-            Me.Adapter.SelectCommand.Parameters(0).Value = CType(playerStateid,Integer)
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetBlacksmithItemsByPlayerStateid(ByVal playerStateid As Integer) As GameDatabaseDataSet.BlacksmithStateItemsDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(2)
-            Me.Adapter.SelectCommand.Parameters(0).Value = CType(playerStateid,Integer)
-            Dim dataTable As GameDatabaseDataSet.BlacksmithStateItemsDataTable = New GameDatabaseDataSet.BlacksmithStateItemsDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetBlacksmithItemsByBlacksmithStateid(ByVal blacksmithStateid As Global.System.Nullable(Of Integer)) As GameDatabaseDataSet.BlacksmithStateItemsDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(3)
-            If (blacksmithStateid.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(blacksmithStateid.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
             Dim dataTable As GameDatabaseDataSet.BlacksmithStateItemsDataTable = New GameDatabaseDataSet.BlacksmithStateItemsDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -19865,30 +21734,11 @@ Namespace GameDatabaseDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(3) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT id, playerStateid, dateVisted FROM dbo.BlacksmithStates"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT        BlacksmithStates.id, BlacksmithStates.playerStateid, BlacksmithStat"& _ 
-                "es.dateVisted"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            BlacksmithStates INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                    "& _ 
-                "     PlayerStates ON BlacksmithStates.playerStateid = PlayerStates.id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE    "& _ 
-                "    (PlayerStates.playerid = @playerid)"
-            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT        TOP (1) id, playerStateid, dateVisted"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            BlacksmithSt"& _ 
-                "ates"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (playerStateid = @playerStateid)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY id DESC"
-            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerStateid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "SELECT        TOP (1) id, playerStateid, dateVisted"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            BlacksmithSt"& _ 
-                "ates"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY id DESC"
-            Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -19910,67 +21760,6 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
         Public Overloads Overridable Function GetData() As GameDatabaseDataSet.BlacksmithStatesDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As GameDatabaseDataSet.BlacksmithStatesDataTable = New GameDatabaseDataSet.BlacksmithStatesDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillByPlayerid(ByVal dataTable As GameDatabaseDataSet.BlacksmithStatesDataTable, ByVal playerid As Global.System.Nullable(Of Integer)) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (playerid.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(playerid.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetBlacksmithStatesByPlayerid(ByVal playerid As Global.System.Nullable(Of Integer)) As GameDatabaseDataSet.BlacksmithStatesDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (playerid.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(playerid.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
-            Dim dataTable As GameDatabaseDataSet.BlacksmithStatesDataTable = New GameDatabaseDataSet.BlacksmithStatesDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetLastBlacksmithStateByPlayerStateid(ByVal playerStateid As Global.System.Nullable(Of Integer)) As GameDatabaseDataSet.BlacksmithStatesDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(2)
-            If (playerStateid.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(playerStateid.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
-            Dim dataTable As GameDatabaseDataSet.BlacksmithStatesDataTable = New GameDatabaseDataSet.BlacksmithStatesDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetLastRow() As GameDatabaseDataSet.BlacksmithStatesDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(3)
             Dim dataTable As GameDatabaseDataSet.BlacksmithStatesDataTable = New GameDatabaseDataSet.BlacksmithStatesDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -22247,7 +24036,7 @@ Namespace GameDatabaseDataSetTableAdapters
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "PlayerArmor"
             tableMapping.ColumnMappings.Add("id", "id")
-            tableMapping.ColumnMappings.Add("playerid", "playerid")
+            tableMapping.ColumnMappings.Add("playerStateid", "playerStateid")
             tableMapping.ColumnMappings.Add("armorid", "armorid")
             tableMapping.ColumnMappings.Add("wearerid", "wearerid")
             tableMapping.ColumnMappings.Add("slotWorn", "slotWorn")
@@ -22255,15 +24044,15 @@ Namespace GameDatabaseDataSetTableAdapters
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
             Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[PlayerArmor] WHERE (([id] = @Original_id) AND ((@IsNull_player"& _ 
-                "id = 1 AND [playerid] IS NULL) OR ([playerid] = @Original_playerid)) AND ((@IsNu"& _ 
-                "ll_armorid = 1 AND [armorid] IS NULL) OR ([armorid] = @Original_armorid)) AND (("& _ 
-                "@IsNull_wearerid = 1 AND [wearerid] IS NULL) OR ([wearerid] = @Original_wearerid"& _ 
-                ")) AND ((@IsNull_slotWorn = 1 AND [slotWorn] IS NULL) OR ([slotWorn] = @Original"& _ 
-                "_slotWorn)))"
+                "Stateid = 1 AND [playerStateid] IS NULL) OR ([playerStateid] = @Original_playerS"& _ 
+                "tateid)) AND ((@IsNull_armorid = 1 AND [armorid] IS NULL) OR ([armorid] = @Origi"& _ 
+                "nal_armorid)) AND ((@IsNull_wearerid = 1 AND [wearerid] IS NULL) OR ([wearerid] "& _ 
+                "= @Original_wearerid)) AND ((@IsNull_slotWorn = 1 AND [slotWorn] IS NULL) OR ([s"& _ 
+                "lotWorn] = @Original_slotWorn)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_playerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_playerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_armorid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "armorid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_armorid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "armorid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_wearerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "wearerid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -22272,32 +24061,33 @@ Namespace GameDatabaseDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_slotWorn", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "slotWorn", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[PlayerArmor] ([playerid], [armorid], [wearerid], [slotWorn]) V"& _ 
-                "ALUES (@playerid, @armorid, @wearerid, @slotWorn);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, playerid, armorid"& _ 
-                ", wearerid, slotWorn FROM PlayerArmor WHERE (id = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[PlayerArmor] ([playerStateid], [armorid], [wearerid], [slotWor"& _ 
+                "n]) VALUES (@playerStateid, @armorid, @wearerid, @slotWorn);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, playerS"& _ 
+                "tateid, armorid, wearerid, slotWorn FROM PlayerArmor WHERE (id = SCOPE_IDENTITY("& _ 
+                "))"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@armorid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "armorid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@wearerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "wearerid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@slotWorn", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "slotWorn", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[PlayerArmor] SET [playerid] = @playerid, [armorid] = @armorid, [wea"& _ 
-                "rerid] = @wearerid, [slotWorn] = @slotWorn WHERE (([id] = @Original_id) AND ((@I"& _ 
-                "sNull_playerid = 1 AND [playerid] IS NULL) OR ([playerid] = @Original_playerid))"& _ 
-                " AND ((@IsNull_armorid = 1 AND [armorid] IS NULL) OR ([armorid] = @Original_armo"& _ 
-                "rid)) AND ((@IsNull_wearerid = 1 AND [wearerid] IS NULL) OR ([wearerid] = @Origi"& _ 
-                "nal_wearerid)) AND ((@IsNull_slotWorn = 1 AND [slotWorn] IS NULL) OR ([slotWorn]"& _ 
-                " = @Original_slotWorn)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, playerid, armorid, wearerid, slotWorn FROM"& _ 
-                " PlayerArmor WHERE (id = @id)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[PlayerArmor] SET [playerStateid] = @playerStateid, [armorid] = @arm"& _ 
+                "orid, [wearerid] = @wearerid, [slotWorn] = @slotWorn WHERE (([id] = @Original_id"& _ 
+                ") AND ((@IsNull_playerStateid = 1 AND [playerStateid] IS NULL) OR ([playerStatei"& _ 
+                "d] = @Original_playerStateid)) AND ((@IsNull_armorid = 1 AND [armorid] IS NULL) "& _ 
+                "OR ([armorid] = @Original_armorid)) AND ((@IsNull_wearerid = 1 AND [wearerid] IS"& _ 
+                " NULL) OR ([wearerid] = @Original_wearerid)) AND ((@IsNull_slotWorn = 1 AND [slo"& _ 
+                "tWorn] IS NULL) OR ([slotWorn] = @Original_slotWorn)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, playerStatei"& _ 
+                "d, armorid, wearerid, slotWorn FROM PlayerArmor WHERE (id = @id)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@armorid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "armorid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@wearerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "wearerid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@slotWorn", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "slotWorn", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_playerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_playerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_armorid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "armorid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_armorid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "armorid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_wearerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "wearerid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -22317,17 +24107,11 @@ Namespace GameDatabaseDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT id, playerid, armorid, wearerid, slotWorn FROM dbo.PlayerArmor"
+            Me._commandCollection(0).CommandText = "SELECT id, playerStateid, armorid, wearerid, slotWorn FROM dbo.PlayerArmor"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT        id, playerid, armorid, wearerid, slotWorn"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            PlayerAr"& _ 
-                "mor"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (playerid = @playerid)"
-            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -22349,40 +24133,6 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
         Public Overloads Overridable Function GetData() As GameDatabaseDataSet.PlayerArmorDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As GameDatabaseDataSet.PlayerArmorDataTable = New GameDatabaseDataSet.PlayerArmorDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillByPlayerid(ByVal dataTable As GameDatabaseDataSet.PlayerArmorDataTable, ByVal playerid As Global.System.Nullable(Of Integer)) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (playerid.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(playerid.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetArmorByPlayerid(ByVal playerid As Global.System.Nullable(Of Integer)) As GameDatabaseDataSet.PlayerArmorDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (playerid.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(playerid.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
             Dim dataTable As GameDatabaseDataSet.PlayerArmorDataTable = New GameDatabaseDataSet.PlayerArmorDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -22420,11 +24170,11 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_id As Integer, ByVal Original_playerid As Global.System.Nullable(Of Integer), ByVal Original_armorid As Global.System.Nullable(Of Integer), ByVal Original_wearerid As Global.System.Nullable(Of Integer), ByVal Original_slotWorn As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_id As Integer, ByVal Original_playerStateid As Global.System.Nullable(Of Integer), ByVal Original_armorid As Global.System.Nullable(Of Integer), ByVal Original_wearerid As Global.System.Nullable(Of Integer), ByVal Original_slotWorn As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_id,Integer)
-            If (Original_playerid.HasValue = true) Then
+            If (Original_playerStateid.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_playerid.Value,Integer)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_playerStateid.Value,Integer)
             Else
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
@@ -22469,9 +24219,9 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal playerid As Global.System.Nullable(Of Integer), ByVal armorid As Global.System.Nullable(Of Integer), ByVal wearerid As Global.System.Nullable(Of Integer), ByVal slotWorn As Global.System.Nullable(Of Integer)) As Integer
-            If (playerid.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(playerid.Value,Integer)
+        Public Overloads Overridable Function Insert(ByVal playerStateid As Global.System.Nullable(Of Integer), ByVal armorid As Global.System.Nullable(Of Integer), ByVal wearerid As Global.System.Nullable(Of Integer), ByVal slotWorn As Global.System.Nullable(Of Integer)) As Integer
+            If (playerStateid.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(playerStateid.Value,Integer)
             Else
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             End If
@@ -22509,9 +24259,9 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal playerid As Global.System.Nullable(Of Integer), ByVal armorid As Global.System.Nullable(Of Integer), ByVal wearerid As Global.System.Nullable(Of Integer), ByVal slotWorn As Global.System.Nullable(Of Integer), ByVal Original_id As Integer, ByVal Original_playerid As Global.System.Nullable(Of Integer), ByVal Original_armorid As Global.System.Nullable(Of Integer), ByVal Original_wearerid As Global.System.Nullable(Of Integer), ByVal Original_slotWorn As Global.System.Nullable(Of Integer), ByVal id As Integer) As Integer
-            If (playerid.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(playerid.Value,Integer)
+        Public Overloads Overridable Function Update(ByVal playerStateid As Global.System.Nullable(Of Integer), ByVal armorid As Global.System.Nullable(Of Integer), ByVal wearerid As Global.System.Nullable(Of Integer), ByVal slotWorn As Global.System.Nullable(Of Integer), ByVal Original_id As Integer, ByVal Original_playerStateid As Global.System.Nullable(Of Integer), ByVal Original_armorid As Global.System.Nullable(Of Integer), ByVal Original_wearerid As Global.System.Nullable(Of Integer), ByVal Original_slotWorn As Global.System.Nullable(Of Integer), ByVal id As Integer) As Integer
+            If (playerStateid.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(playerStateid.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             End If
@@ -22531,9 +24281,9 @@ Namespace GameDatabaseDataSetTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
             End If
             Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_id,Integer)
-            If (Original_playerid.HasValue = true) Then
+            If (Original_playerStateid.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_playerid.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_playerStateid.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(5).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
@@ -22579,8 +24329,366 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal playerid As Global.System.Nullable(Of Integer), ByVal armorid As Global.System.Nullable(Of Integer), ByVal wearerid As Global.System.Nullable(Of Integer), ByVal slotWorn As Global.System.Nullable(Of Integer), ByVal Original_id As Integer, ByVal Original_playerid As Global.System.Nullable(Of Integer), ByVal Original_armorid As Global.System.Nullable(Of Integer), ByVal Original_wearerid As Global.System.Nullable(Of Integer), ByVal Original_slotWorn As Global.System.Nullable(Of Integer)) As Integer
-            Return Me.Update(playerid, armorid, wearerid, slotWorn, Original_id, Original_playerid, Original_armorid, Original_wearerid, Original_slotWorn, Original_id)
+        Public Overloads Overridable Function Update(ByVal playerStateid As Global.System.Nullable(Of Integer), ByVal armorid As Global.System.Nullable(Of Integer), ByVal wearerid As Global.System.Nullable(Of Integer), ByVal slotWorn As Global.System.Nullable(Of Integer), ByVal Original_id As Integer, ByVal Original_playerStateid As Global.System.Nullable(Of Integer), ByVal Original_armorid As Global.System.Nullable(Of Integer), ByVal Original_wearerid As Global.System.Nullable(Of Integer), ByVal Original_slotWorn As Global.System.Nullable(Of Integer)) As Integer
+            Return Me.Update(playerStateid, armorid, wearerid, slotWorn, Original_id, Original_playerStateid, Original_armorid, Original_wearerid, Original_slotWorn, Original_id)
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class PlayerAugmentsTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "PlayerAugments"
+            tableMapping.ColumnMappings.Add("id", "id")
+            tableMapping.ColumnMappings.Add("playerStateid", "playerStateid")
+            tableMapping.ColumnMappings.Add("augmentid", "augmentid")
+            Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.DeleteCommand.Connection = Me.Connection
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[PlayerAugments] WHERE (([id] = @Original_id) AND ((@IsNull_pla"& _ 
+                "yerStateid = 1 AND [playerStateid] IS NULL) OR ([playerStateid] = @Original_play"& _ 
+                "erStateid)) AND ((@IsNull_augmentid = 1 AND [augmentid] IS NULL) OR ([augmentid]"& _ 
+                " = @Original_augmentid)))"
+            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_augmentid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "augmentid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_augmentid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "augmentid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.InsertCommand.Connection = Me.Connection
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[PlayerAugments] ([playerStateid], [augmentid]) VALUES (@player"& _ 
+                "Stateid, @augmentid);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, playerStateid, augmentid FROM PlayerAugments W"& _ 
+                "HERE (id = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@augmentid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "augmentid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.UpdateCommand.Connection = Me.Connection
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[PlayerAugments] SET [playerStateid] = @playerStateid, [augmentid] ="& _ 
+                " @augmentid WHERE (([id] = @Original_id) AND ((@IsNull_playerStateid = 1 AND [pl"& _ 
+                "ayerStateid] IS NULL) OR ([playerStateid] = @Original_playerStateid)) AND ((@IsN"& _ 
+                "ull_augmentid = 1 AND [augmentid] IS NULL) OR ([augmentid] = @Original_augmentid"& _ 
+                ")));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, playerStateid, augmentid FROM PlayerAugments WHERE (id = @id)"
+            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@augmentid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "augmentid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_augmentid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "augmentid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_augmentid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "augmentid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+            Me._connection.ConnectionString = Global.WindowsApplication1.My.MySettings.Default.GameDatabaseConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT id, playerStateid, augmentid FROM dbo.PlayerAugments"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As GameDatabaseDataSet.PlayerAugmentsDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As GameDatabaseDataSet.PlayerAugmentsDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As GameDatabaseDataSet.PlayerAugmentsDataTable = New GameDatabaseDataSet.PlayerAugmentsDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataTable As GameDatabaseDataSet.PlayerAugmentsDataTable) As Integer
+            Return Me.Adapter.Update(dataTable)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataSet As GameDatabaseDataSet) As Integer
+            Return Me.Adapter.Update(dataSet, "PlayerAugments")
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(dataRows)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
+        Public Overloads Overridable Function Delete(ByVal Original_id As Integer, ByVal Original_playerStateid As Global.System.Nullable(Of Integer), ByVal Original_augmentid As Global.System.Nullable(Of Integer)) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_id,Integer)
+            If (Original_playerStateid.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_playerStateid.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (Original_augmentid.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_augmentid.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
+            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.DeleteCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.DeleteCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
+        Public Overloads Overridable Function Insert(ByVal playerStateid As Global.System.Nullable(Of Integer), ByVal augmentid As Global.System.Nullable(Of Integer)) As Integer
+            If (playerStateid.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(playerStateid.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (augmentid.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(augmentid.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
+            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.InsertCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.InsertCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal playerStateid As Global.System.Nullable(Of Integer), ByVal augmentid As Global.System.Nullable(Of Integer), ByVal Original_id As Integer, ByVal Original_playerStateid As Global.System.Nullable(Of Integer), ByVal Original_augmentid As Global.System.Nullable(Of Integer), ByVal id As Integer) As Integer
+            If (playerStateid.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(playerStateid.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (augmentid.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(augmentid.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Original_id,Integer)
+            If (Original_playerStateid.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_playerStateid.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            If (Original_augmentid.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_augmentid.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(id,Integer)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
+            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.UpdateCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.UpdateCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal playerStateid As Global.System.Nullable(Of Integer), ByVal augmentid As Global.System.Nullable(Of Integer), ByVal Original_id As Integer, ByVal Original_playerStateid As Global.System.Nullable(Of Integer), ByVal Original_augmentid As Global.System.Nullable(Of Integer)) As Integer
+            Return Me.Update(playerStateid, augmentid, Original_id, Original_playerStateid, Original_augmentid, Original_id)
         End Function
     End Class
     
@@ -22712,50 +24820,50 @@ Namespace GameDatabaseDataSetTableAdapters
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "PlayerConsumables"
             tableMapping.ColumnMappings.Add("id", "id")
-            tableMapping.ColumnMappings.Add("playerid", "playerid")
+            tableMapping.ColumnMappings.Add("playerStateid", "playerStateid")
             tableMapping.ColumnMappings.Add("consumableid", "consumableid")
             tableMapping.ColumnMappings.Add("isUsed", "isUsed")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
             Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[PlayerConsumables] WHERE (([id] = @Original_id) AND ((@IsNull_"& _ 
-                "playerid = 1 AND [playerid] IS NULL) OR ([playerid] = @Original_playerid)) AND ("& _ 
-                "(@IsNull_consumableid = 1 AND [consumableid] IS NULL) OR ([consumableid] = @Orig"& _ 
-                "inal_consumableid)) AND ((@IsNull_isUsed = 1 AND [isUsed] IS NULL) OR ([isUsed] "& _ 
-                "= @Original_isUsed)))"
+                "playerStateid = 1 AND [playerStateid] IS NULL) OR ([playerStateid] = @Original_p"& _ 
+                "layerStateid)) AND ((@IsNull_consumableid = 1 AND [consumableid] IS NULL) OR ([c"& _ 
+                "onsumableid] = @Original_consumableid)) AND ((@IsNull_isUsed = 1 AND [isUsed] IS"& _ 
+                " NULL) OR ([isUsed] = @Original_isUsed)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_playerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_playerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_consumableid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "consumableid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_consumableid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "consumableid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_isUsed", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isUsed", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_isUsed", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isUsed", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[PlayerConsumables] ([playerid], [consumableid], [isUsed]) VALU"& _ 
-                "ES (@playerid, @consumableid, @isUsed);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, playerid, consumableid, isUs"& _ 
-                "ed FROM PlayerConsumables WHERE (id = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[PlayerConsumables] ([playerStateid], [consumableid], [isUsed])"& _ 
+                " VALUES (@playerStateid, @consumableid, @isUsed);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, playerStateid, con"& _ 
+                "sumableid, isUsed FROM PlayerConsumables WHERE (id = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@consumableid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "consumableid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@isUsed", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isUsed", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[PlayerConsumables] SET [playerid] = @playerid, [consumableid] = @co"& _ 
-                "nsumableid, [isUsed] = @isUsed WHERE (([id] = @Original_id) AND ((@IsNull_player"& _ 
-                "id = 1 AND [playerid] IS NULL) OR ([playerid] = @Original_playerid)) AND ((@IsNu"& _ 
-                "ll_consumableid = 1 AND [consumableid] IS NULL) OR ([consumableid] = @Original_c"& _ 
-                "onsumableid)) AND ((@IsNull_isUsed = 1 AND [isUsed] IS NULL) OR ([isUsed] = @Ori"& _ 
-                "ginal_isUsed)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, playerid, consumableid, isUsed FROM PlayerConsumabl"& _ 
-                "es WHERE (id = @id)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[PlayerConsumables] SET [playerStateid] = @playerStateid, [consumabl"& _ 
+                "eid] = @consumableid, [isUsed] = @isUsed WHERE (([id] = @Original_id) AND ((@IsN"& _ 
+                "ull_playerStateid = 1 AND [playerStateid] IS NULL) OR ([playerStateid] = @Origin"& _ 
+                "al_playerStateid)) AND ((@IsNull_consumableid = 1 AND [consumableid] IS NULL) OR"& _ 
+                " ([consumableid] = @Original_consumableid)) AND ((@IsNull_isUsed = 1 AND [isUsed"& _ 
+                "] IS NULL) OR ([isUsed] = @Original_isUsed)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, playerStateid, consum"& _ 
+                "ableid, isUsed FROM PlayerConsumables WHERE (id = @id)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@consumableid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "consumableid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@isUsed", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isUsed", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_playerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_playerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_consumableid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "consumableid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_consumableid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "consumableid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_isUsed", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isUsed", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -22773,17 +24881,11 @@ Namespace GameDatabaseDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT id, playerid, consumableid, isUsed FROM dbo.PlayerConsumables"
+            Me._commandCollection(0).CommandText = "SELECT id, playerStateid, consumableid, isUsed FROM dbo.PlayerConsumables"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT        id, playerid, consumableid, isUsed"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            PlayerConsumabl"& _ 
-                "es"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (playerid = @playerid)"
-            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -22805,40 +24907,6 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
         Public Overloads Overridable Function GetData() As GameDatabaseDataSet.PlayerConsumablesDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As GameDatabaseDataSet.PlayerConsumablesDataTable = New GameDatabaseDataSet.PlayerConsumablesDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillByPlayerid(ByVal dataTable As GameDatabaseDataSet.PlayerConsumablesDataTable, ByVal playerid As Global.System.Nullable(Of Integer)) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (playerid.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(playerid.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetConsumablesByPlayerid(ByVal playerid As Global.System.Nullable(Of Integer)) As GameDatabaseDataSet.PlayerConsumablesDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (playerid.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(playerid.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
             Dim dataTable As GameDatabaseDataSet.PlayerConsumablesDataTable = New GameDatabaseDataSet.PlayerConsumablesDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -22876,11 +24944,11 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_id As Integer, ByVal Original_playerid As Global.System.Nullable(Of Integer), ByVal Original_consumableid As Global.System.Nullable(Of Integer), ByVal Original_isUsed As Global.System.Nullable(Of Boolean)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_id As Integer, ByVal Original_playerStateid As Global.System.Nullable(Of Integer), ByVal Original_consumableid As Global.System.Nullable(Of Integer), ByVal Original_isUsed As Global.System.Nullable(Of Boolean)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_id,Integer)
-            If (Original_playerid.HasValue = true) Then
+            If (Original_playerStateid.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_playerid.Value,Integer)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_playerStateid.Value,Integer)
             Else
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
@@ -22918,9 +24986,9 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal playerid As Global.System.Nullable(Of Integer), ByVal consumableid As Global.System.Nullable(Of Integer), ByVal isUsed As Global.System.Nullable(Of Boolean)) As Integer
-            If (playerid.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(playerid.Value,Integer)
+        Public Overloads Overridable Function Insert(ByVal playerStateid As Global.System.Nullable(Of Integer), ByVal consumableid As Global.System.Nullable(Of Integer), ByVal isUsed As Global.System.Nullable(Of Boolean)) As Integer
+            If (playerStateid.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(playerStateid.Value,Integer)
             Else
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             End If
@@ -22953,9 +25021,9 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal playerid As Global.System.Nullable(Of Integer), ByVal consumableid As Global.System.Nullable(Of Integer), ByVal isUsed As Global.System.Nullable(Of Boolean), ByVal Original_id As Integer, ByVal Original_playerid As Global.System.Nullable(Of Integer), ByVal Original_consumableid As Global.System.Nullable(Of Integer), ByVal Original_isUsed As Global.System.Nullable(Of Boolean), ByVal id As Integer) As Integer
-            If (playerid.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(playerid.Value,Integer)
+        Public Overloads Overridable Function Update(ByVal playerStateid As Global.System.Nullable(Of Integer), ByVal consumableid As Global.System.Nullable(Of Integer), ByVal isUsed As Global.System.Nullable(Of Boolean), ByVal Original_id As Integer, ByVal Original_playerStateid As Global.System.Nullable(Of Integer), ByVal Original_consumableid As Global.System.Nullable(Of Integer), ByVal Original_isUsed As Global.System.Nullable(Of Boolean), ByVal id As Integer) As Integer
+            If (playerStateid.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(playerStateid.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             End If
@@ -22970,9 +25038,9 @@ Namespace GameDatabaseDataSetTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
             End If
             Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Original_id,Integer)
-            If (Original_playerid.HasValue = true) Then
+            If (Original_playerStateid.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(4).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_playerid.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_playerStateid.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(4).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
@@ -23011,8 +25079,8 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal playerid As Global.System.Nullable(Of Integer), ByVal consumableid As Global.System.Nullable(Of Integer), ByVal isUsed As Global.System.Nullable(Of Boolean), ByVal Original_id As Integer, ByVal Original_playerid As Global.System.Nullable(Of Integer), ByVal Original_consumableid As Global.System.Nullable(Of Integer), ByVal Original_isUsed As Global.System.Nullable(Of Boolean)) As Integer
-            Return Me.Update(playerid, consumableid, isUsed, Original_id, Original_playerid, Original_consumableid, Original_isUsed, Original_id)
+        Public Overloads Overridable Function Update(ByVal playerStateid As Global.System.Nullable(Of Integer), ByVal consumableid As Global.System.Nullable(Of Integer), ByVal isUsed As Global.System.Nullable(Of Boolean), ByVal Original_id As Integer, ByVal Original_playerStateid As Global.System.Nullable(Of Integer), ByVal Original_consumableid As Global.System.Nullable(Of Integer), ByVal Original_isUsed As Global.System.Nullable(Of Boolean)) As Integer
+            Return Me.Update(playerStateid, consumableid, isUsed, Original_id, Original_playerStateid, Original_consumableid, Original_isUsed, Original_id)
         End Function
     End Class
     
@@ -23144,45 +25212,46 @@ Namespace GameDatabaseDataSetTableAdapters
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "PlayerCreatures"
             tableMapping.ColumnMappings.Add("id", "id")
-            tableMapping.ColumnMappings.Add("playerid", "playerid")
+            tableMapping.ColumnMappings.Add("playerStateid", "playerStateid")
             tableMapping.ColumnMappings.Add("creatureid", "creatureid")
             tableMapping.ColumnMappings.Add("name", "name")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
             Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[PlayerCreatures] WHERE (([id] = @Original_id) AND ((@IsNull_pl"& _ 
-                "ayerid = 1 AND [playerid] IS NULL) OR ([playerid] = @Original_playerid)) AND ((@"& _ 
-                "IsNull_creatureid = 1 AND [creatureid] IS NULL) OR ([creatureid] = @Original_cre"& _ 
-                "atureid)))"
+                "ayerStateid = 1 AND [playerStateid] IS NULL) OR ([playerStateid] = @Original_pla"& _ 
+                "yerStateid)) AND ((@IsNull_creatureid = 1 AND [creatureid] IS NULL) OR ([creatur"& _ 
+                "eid] = @Original_creatureid)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_playerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_playerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_creatureid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "creatureid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_creatureid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "creatureid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[PlayerCreatures] ([playerid], [creatureid], [name]) VALUES (@p"& _ 
-                "layerid, @creatureid, @name);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, playerid, creatureid, name FROM Player"& _ 
-                "Creatures WHERE (id = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[PlayerCreatures] ([playerStateid], [creatureid], [name]) VALUE"& _ 
+                "S (@playerStateid, @creatureid, @name);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, playerStateid, creatureid, n"& _ 
+                "ame FROM PlayerCreatures WHERE (id = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@creatureid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "creatureid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@name", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[PlayerCreatures] SET [playerid] = @playerid, [creatureid] = @creatu"& _ 
-                "reid, [name] = @name WHERE (([id] = @Original_id) AND ((@IsNull_playerid = 1 AND"& _ 
-                " [playerid] IS NULL) OR ([playerid] = @Original_playerid)) AND ((@IsNull_creatur"& _ 
-                "eid = 1 AND [creatureid] IS NULL) OR ([creatureid] = @Original_creatureid)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"S"& _ 
-                "ELECT id, playerid, creatureid, name FROM PlayerCreatures WHERE (id = @id)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[PlayerCreatures] SET [playerStateid] = @playerStateid, [creatureid]"& _ 
+                " = @creatureid, [name] = @name WHERE (([id] = @Original_id) AND ((@IsNull_player"& _ 
+                "Stateid = 1 AND [playerStateid] IS NULL) OR ([playerStateid] = @Original_playerS"& _ 
+                "tateid)) AND ((@IsNull_creatureid = 1 AND [creatureid] IS NULL) OR ([creatureid]"& _ 
+                " = @Original_creatureid)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, playerStateid, creatureid, name FROM Pla"& _ 
+                "yerCreatures WHERE (id = @id)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@creatureid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "creatureid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@name", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_playerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_playerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_creatureid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "creatureid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_creatureid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "creatureid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -23201,14 +25270,14 @@ Namespace GameDatabaseDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT id, playerid, creatureid, name FROM dbo.PlayerCreatures"
+            Me._commandCollection(0).CommandText = "SELECT id, playerStateid, creatureid, name FROM dbo.PlayerCreatures"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT        id, playerid, creatureid, name"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            PlayerCreatures"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WH"& _ 
-                "ERE        (playerid = @playerid)"
+            Me._commandCollection(1).CommandText = "SELECT        id, playerStateid, creatureid, name"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            PlayerCreature"& _ 
+                "s"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (playerStateid = @playerStateid)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerStateid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -23239,10 +25308,10 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillByPlayerid(ByVal dataTable As GameDatabaseDataSet.PlayerCreaturesDataTable, ByVal playerid As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function FillByPlayerStateid(ByVal dataTable As GameDatabaseDataSet.PlayerCreaturesDataTable, ByVal playerStateid As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (playerid.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(playerid.Value,Integer)
+            If (playerStateid.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(playerStateid.Value,Integer)
             Else
                 Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
             End If
@@ -23251,22 +25320,6 @@ Namespace GameDatabaseDataSetTableAdapters
             End If
             Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
             Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetCreaturesByPlayerid(ByVal playerid As Global.System.Nullable(Of Integer)) As GameDatabaseDataSet.PlayerCreaturesDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (playerid.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(playerid.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
-            Dim dataTable As GameDatabaseDataSet.PlayerCreaturesDataTable = New GameDatabaseDataSet.PlayerCreaturesDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -23301,11 +25354,11 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_id As Integer, ByVal Original_playerid As Global.System.Nullable(Of Integer), ByVal Original_creatureid As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_id As Integer, ByVal Original_playerStateid As Global.System.Nullable(Of Integer), ByVal Original_creatureid As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_id,Integer)
-            If (Original_playerid.HasValue = true) Then
+            If (Original_playerStateid.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_playerid.Value,Integer)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_playerStateid.Value,Integer)
             Else
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
@@ -23336,9 +25389,9 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal playerid As Global.System.Nullable(Of Integer), ByVal creatureid As Global.System.Nullable(Of Integer), ByVal name As String) As Integer
-            If (playerid.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(playerid.Value,Integer)
+        Public Overloads Overridable Function Insert(ByVal playerStateid As Global.System.Nullable(Of Integer), ByVal creatureid As Global.System.Nullable(Of Integer), ByVal name As String) As Integer
+            If (playerStateid.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(playerStateid.Value,Integer)
             Else
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             End If
@@ -23371,9 +25424,9 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal playerid As Global.System.Nullable(Of Integer), ByVal creatureid As Global.System.Nullable(Of Integer), ByVal name As String, ByVal Original_id As Integer, ByVal Original_playerid As Global.System.Nullable(Of Integer), ByVal Original_creatureid As Global.System.Nullable(Of Integer), ByVal id As Integer) As Integer
-            If (playerid.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(playerid.Value,Integer)
+        Public Overloads Overridable Function Update(ByVal playerStateid As Global.System.Nullable(Of Integer), ByVal creatureid As Global.System.Nullable(Of Integer), ByVal name As String, ByVal Original_id As Integer, ByVal Original_playerStateid As Global.System.Nullable(Of Integer), ByVal Original_creatureid As Global.System.Nullable(Of Integer), ByVal id As Integer) As Integer
+            If (playerStateid.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(playerStateid.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             End If
@@ -23388,9 +25441,9 @@ Namespace GameDatabaseDataSetTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(2).Value = CType(name,String)
             End If
             Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Original_id,Integer)
-            If (Original_playerid.HasValue = true) Then
+            If (Original_playerStateid.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(4).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_playerid.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_playerStateid.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(4).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
@@ -23422,8 +25475,434 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal playerid As Global.System.Nullable(Of Integer), ByVal creatureid As Global.System.Nullable(Of Integer), ByVal name As String, ByVal Original_id As Integer, ByVal Original_playerid As Global.System.Nullable(Of Integer), ByVal Original_creatureid As Global.System.Nullable(Of Integer)) As Integer
-            Return Me.Update(playerid, creatureid, name, Original_id, Original_playerid, Original_creatureid, Original_id)
+        Public Overloads Overridable Function Update(ByVal playerStateid As Global.System.Nullable(Of Integer), ByVal creatureid As Global.System.Nullable(Of Integer), ByVal name As String, ByVal Original_id As Integer, ByVal Original_playerStateid As Global.System.Nullable(Of Integer), ByVal Original_creatureid As Global.System.Nullable(Of Integer)) As Integer
+            Return Me.Update(playerStateid, creatureid, name, Original_id, Original_playerStateid, Original_creatureid, Original_id)
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class PlayerJewelryTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "PlayerJewelry"
+            tableMapping.ColumnMappings.Add("id", "id")
+            tableMapping.ColumnMappings.Add("playerStateid", "playerStateid")
+            tableMapping.ColumnMappings.Add("jewelryid", "jewelryid")
+            tableMapping.ColumnMappings.Add("wearerid", "wearerid")
+            tableMapping.ColumnMappings.Add("slot", "slot")
+            Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.DeleteCommand.Connection = Me.Connection
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[PlayerJewelry] WHERE (([id] = @Original_id) AND ((@IsNull_play"& _ 
+                "erStateid = 1 AND [playerStateid] IS NULL) OR ([playerStateid] = @Original_playe"& _ 
+                "rStateid)) AND ((@IsNull_jewelryid = 1 AND [jewelryid] IS NULL) OR ([jewelryid] "& _ 
+                "= @Original_jewelryid)) AND ((@IsNull_wearerid = 1 AND [wearerid] IS NULL) OR (["& _ 
+                "wearerid] = @Original_wearerid)) AND ((@IsNull_slot = 1 AND [slot] IS NULL) OR ("& _ 
+                "[slot] = @Original_slot)))"
+            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_jewelryid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "jewelryid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_jewelryid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "jewelryid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_wearerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "wearerid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_wearerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "wearerid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_slot", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "slot", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_slot", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "slot", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.InsertCommand.Connection = Me.Connection
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[PlayerJewelry] ([playerStateid], [jewelryid], [wearerid], [slo"& _ 
+                "t]) VALUES (@playerStateid, @jewelryid, @wearerid, @slot);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, playerSta"& _ 
+                "teid, jewelryid, wearerid, slot FROM PlayerJewelry WHERE (id = SCOPE_IDENTITY())"& _ 
+                ""
+            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@jewelryid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "jewelryid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@wearerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "wearerid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@slot", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "slot", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.UpdateCommand.Connection = Me.Connection
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[PlayerJewelry] SET [playerStateid] = @playerStateid, [jewelryid] = "& _ 
+                "@jewelryid, [wearerid] = @wearerid, [slot] = @slot WHERE (([id] = @Original_id) "& _ 
+                "AND ((@IsNull_playerStateid = 1 AND [playerStateid] IS NULL) OR ([playerStateid]"& _ 
+                " = @Original_playerStateid)) AND ((@IsNull_jewelryid = 1 AND [jewelryid] IS NULL"& _ 
+                ") OR ([jewelryid] = @Original_jewelryid)) AND ((@IsNull_wearerid = 1 AND [wearer"& _ 
+                "id] IS NULL) OR ([wearerid] = @Original_wearerid)) AND ((@IsNull_slot = 1 AND [s"& _ 
+                "lot] IS NULL) OR ([slot] = @Original_slot)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, playerStateid, jewelry"& _ 
+                "id, wearerid, slot FROM PlayerJewelry WHERE (id = @id)"
+            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@jewelryid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "jewelryid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@wearerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "wearerid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@slot", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "slot", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_jewelryid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "jewelryid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_jewelryid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "jewelryid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_wearerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "wearerid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_wearerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "wearerid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_slot", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "slot", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_slot", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "slot", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+            Me._connection.ConnectionString = Global.WindowsApplication1.My.MySettings.Default.GameDatabaseConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT id, playerStateid, jewelryid, wearerid, slot FROM dbo.PlayerJewelry"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As GameDatabaseDataSet.PlayerJewelryDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As GameDatabaseDataSet.PlayerJewelryDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As GameDatabaseDataSet.PlayerJewelryDataTable = New GameDatabaseDataSet.PlayerJewelryDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataTable As GameDatabaseDataSet.PlayerJewelryDataTable) As Integer
+            Return Me.Adapter.Update(dataTable)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataSet As GameDatabaseDataSet) As Integer
+            Return Me.Adapter.Update(dataSet, "PlayerJewelry")
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(dataRows)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
+        Public Overloads Overridable Function Delete(ByVal Original_id As Integer, ByVal Original_playerStateid As Global.System.Nullable(Of Integer), ByVal Original_jewelryid As Global.System.Nullable(Of Integer), ByVal Original_wearerid As Global.System.Nullable(Of Integer), ByVal Original_slot As Global.System.Nullable(Of Integer)) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_id,Integer)
+            If (Original_playerStateid.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_playerStateid.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (Original_jewelryid.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_jewelryid.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            If (Original_wearerid.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_wearerid.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
+            End If
+            If (Original_slot.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_slot.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
+            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.DeleteCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.DeleteCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
+        Public Overloads Overridable Function Insert(ByVal playerStateid As Global.System.Nullable(Of Integer), ByVal jewelryid As Global.System.Nullable(Of Integer), ByVal wearerid As Global.System.Nullable(Of Integer), ByVal slot As Global.System.Nullable(Of Integer)) As Integer
+            If (playerStateid.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(playerStateid.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (jewelryid.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(jewelryid.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (wearerid.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(wearerid.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (slot.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(slot.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
+            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.InsertCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.InsertCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal playerStateid As Global.System.Nullable(Of Integer), ByVal jewelryid As Global.System.Nullable(Of Integer), ByVal wearerid As Global.System.Nullable(Of Integer), ByVal slot As Global.System.Nullable(Of Integer), ByVal Original_id As Integer, ByVal Original_playerStateid As Global.System.Nullable(Of Integer), ByVal Original_jewelryid As Global.System.Nullable(Of Integer), ByVal Original_wearerid As Global.System.Nullable(Of Integer), ByVal Original_slot As Global.System.Nullable(Of Integer), ByVal id As Integer) As Integer
+            If (playerStateid.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(playerStateid.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (jewelryid.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(jewelryid.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (wearerid.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(wearerid.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (slot.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(slot.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_id,Integer)
+            If (Original_playerStateid.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_playerStateid.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+            End If
+            If (Original_jewelryid.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_jewelryid.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+            End If
+            If (Original_wearerid.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_wearerid.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
+            End If
+            If (Original_slot.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_slot.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(13).Value = CType(id,Integer)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
+            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.UpdateCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.UpdateCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal playerStateid As Global.System.Nullable(Of Integer), ByVal jewelryid As Global.System.Nullable(Of Integer), ByVal wearerid As Global.System.Nullable(Of Integer), ByVal slot As Global.System.Nullable(Of Integer), ByVal Original_id As Integer, ByVal Original_playerStateid As Global.System.Nullable(Of Integer), ByVal Original_jewelryid As Global.System.Nullable(Of Integer), ByVal Original_wearerid As Global.System.Nullable(Of Integer), ByVal Original_slot As Global.System.Nullable(Of Integer)) As Integer
+            Return Me.Update(playerStateid, jewelryid, wearerid, slot, Original_id, Original_playerStateid, Original_jewelryid, Original_wearerid, Original_slot, Original_id)
         End Function
     End Class
     
@@ -23638,7 +26117,7 @@ Namespace GameDatabaseDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(2) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT id, playerid, slot1id, slot2id, slot3id, slot4id, name FROM dbo.PlayerPart"& _ 
@@ -23646,17 +26125,11 @@ Namespace GameDatabaseDataSetTableAdapters
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT        id, playerid, slot1id, slot2id, slot3id, slot4id, name"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM       "& _ 
-                "     PlayerParties"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (playerid = @playerid)"
-            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT        TOP (1) id, playerid, slot1id, slot2id, slot3id, slot4id, name"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FRO"& _ 
+            Me._commandCollection(1).CommandText = "SELECT        TOP (1) id, playerid, slot1id, slot2id, slot3id, slot4id, name"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FRO"& _ 
                 "M            PlayerParties"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (playerid = @playerid)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY id DES"& _ 
                 "C"
-            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -23686,43 +26159,9 @@ Namespace GameDatabaseDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillByPlayerid(ByVal dataTable As GameDatabaseDataSet.PlayerPartiesDataTable, ByVal playerid As Global.System.Nullable(Of Integer)) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (playerid.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(playerid.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetPartiesByPlayerid(ByVal playerid As Global.System.Nullable(Of Integer)) As GameDatabaseDataSet.PlayerPartiesDataTable
+        Public Overloads Overridable Function GetLastPlayerPartyByPlayerid(ByVal playerid As Global.System.Nullable(Of Integer)) As GameDatabaseDataSet.PlayerPartiesDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (playerid.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(playerid.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
-            Dim dataTable As GameDatabaseDataSet.PlayerPartiesDataTable = New GameDatabaseDataSet.PlayerPartiesDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetLastPartyByPlayerid(ByVal playerid As Global.System.Nullable(Of Integer)) As GameDatabaseDataSet.PlayerPartiesDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(2)
             If (playerid.HasValue = true) Then
                 Me.Adapter.SelectCommand.Parameters(0).Value = CType(playerid.Value,Integer)
             Else
@@ -24193,20 +26632,6 @@ Namespace GameDatabaseDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillByPlayerid(ByVal dataTable As GameDatabaseDataSet.PlayersDataTable, ByVal playerid As Integer) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            Me.Adapter.SelectCommand.Parameters(0).Value = CType(playerid,Integer)
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
         Public Overloads Overridable Function GetPlayerByid(ByVal playerid As Integer) As GameDatabaseDataSet.PlayersDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
@@ -24526,41 +26951,42 @@ Namespace GameDatabaseDataSetTableAdapters
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "PlayerSkills"
             tableMapping.ColumnMappings.Add("id", "id")
-            tableMapping.ColumnMappings.Add("playerid", "playerid")
+            tableMapping.ColumnMappings.Add("playerStateid", "playerStateid")
             tableMapping.ColumnMappings.Add("skillid", "skillid")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
             Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[PlayerSkills] WHERE (([id] = @Original_id) AND ((@IsNull_playe"& _ 
-                "rid = 1 AND [playerid] IS NULL) OR ([playerid] = @Original_playerid)) AND ((@IsN"& _ 
-                "ull_skillid = 1 AND [skillid] IS NULL) OR ([skillid] = @Original_skillid)))"
+                "rStateid = 1 AND [playerStateid] IS NULL) OR ([playerStateid] = @Original_player"& _ 
+                "Stateid)) AND ((@IsNull_skillid = 1 AND [skillid] IS NULL) OR ([skillid] = @Orig"& _ 
+                "inal_skillid)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_playerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_playerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_skillid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "skillid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_skillid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "skillid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[PlayerSkills] ([playerid], [skillid]) VALUES (@playerid, @skil"& _ 
-                "lid);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, playerid, skillid FROM PlayerSkills WHERE (id = SCOPE_IDENTITY"& _ 
-                "())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[PlayerSkills] ([playerStateid], [skillid]) VALUES (@playerStat"& _ 
+                "eid, @skillid);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, playerStateid, skillid FROM PlayerSkills WHERE (id ="& _ 
+                " SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@skillid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "skillid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[PlayerSkills] SET [playerid] = @playerid, [skillid] = @skillid WHER"& _ 
-                "E (([id] = @Original_id) AND ((@IsNull_playerid = 1 AND [playerid] IS NULL) OR ("& _ 
-                "[playerid] = @Original_playerid)) AND ((@IsNull_skillid = 1 AND [skillid] IS NUL"& _ 
-                "L) OR ([skillid] = @Original_skillid)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, playerid, skillid FROM Play"& _ 
-                "erSkills WHERE (id = @id)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[PlayerSkills] SET [playerStateid] = @playerStateid, [skillid] = @sk"& _ 
+                "illid WHERE (([id] = @Original_id) AND ((@IsNull_playerStateid = 1 AND [playerSt"& _ 
+                "ateid] IS NULL) OR ([playerStateid] = @Original_playerStateid)) AND ((@IsNull_sk"& _ 
+                "illid = 1 AND [skillid] IS NULL) OR ([skillid] = @Original_skillid)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT i"& _ 
+                "d, playerStateid, skillid FROM PlayerSkills WHERE (id = @id)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@skillid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "skillid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_playerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_playerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_skillid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "skillid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_skillid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "skillid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -24579,7 +27005,7 @@ Namespace GameDatabaseDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT id, playerid, skillid FROM dbo.PlayerSkills"
+            Me._commandCollection(0).CommandText = "SELECT id, playerStateid, skillid FROM dbo.PlayerSkills"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -24639,11 +27065,11 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_id As Integer, ByVal Original_playerid As Global.System.Nullable(Of Integer), ByVal Original_skillid As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_id As Integer, ByVal Original_playerStateid As Global.System.Nullable(Of Integer), ByVal Original_skillid As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_id,Integer)
-            If (Original_playerid.HasValue = true) Then
+            If (Original_playerStateid.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_playerid.Value,Integer)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_playerStateid.Value,Integer)
             Else
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
@@ -24674,9 +27100,9 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal playerid As Global.System.Nullable(Of Integer), ByVal skillid As Global.System.Nullable(Of Integer)) As Integer
-            If (playerid.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(playerid.Value,Integer)
+        Public Overloads Overridable Function Insert(ByVal playerStateid As Global.System.Nullable(Of Integer), ByVal skillid As Global.System.Nullable(Of Integer)) As Integer
+            If (playerStateid.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(playerStateid.Value,Integer)
             Else
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             End If
@@ -24704,9 +27130,9 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal playerid As Global.System.Nullable(Of Integer), ByVal skillid As Global.System.Nullable(Of Integer), ByVal Original_id As Integer, ByVal Original_playerid As Global.System.Nullable(Of Integer), ByVal Original_skillid As Global.System.Nullable(Of Integer), ByVal id As Integer) As Integer
-            If (playerid.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(playerid.Value,Integer)
+        Public Overloads Overridable Function Update(ByVal playerStateid As Global.System.Nullable(Of Integer), ByVal skillid As Global.System.Nullable(Of Integer), ByVal Original_id As Integer, ByVal Original_playerStateid As Global.System.Nullable(Of Integer), ByVal Original_skillid As Global.System.Nullable(Of Integer), ByVal id As Integer) As Integer
+            If (playerStateid.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(playerStateid.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             End If
@@ -24716,9 +27142,9 @@ Namespace GameDatabaseDataSetTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
             End If
             Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Original_id,Integer)
-            If (Original_playerid.HasValue = true) Then
+            If (Original_playerStateid.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(3).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_playerid.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_playerStateid.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(3).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
@@ -24750,8 +27176,8 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal playerid As Global.System.Nullable(Of Integer), ByVal skillid As Global.System.Nullable(Of Integer), ByVal Original_id As Integer, ByVal Original_playerid As Global.System.Nullable(Of Integer), ByVal Original_skillid As Global.System.Nullable(Of Integer)) As Integer
-            Return Me.Update(playerid, skillid, Original_id, Original_playerid, Original_skillid, Original_id)
+        Public Overloads Overridable Function Update(ByVal playerStateid As Global.System.Nullable(Of Integer), ByVal skillid As Global.System.Nullable(Of Integer), ByVal Original_id As Integer, ByVal Original_playerStateid As Global.System.Nullable(Of Integer), ByVal Original_skillid As Global.System.Nullable(Of Integer)) As Integer
+            Return Me.Update(playerStateid, skillid, Original_id, Original_playerStateid, Original_skillid, Original_id)
         End Function
     End Class
     
@@ -24890,6 +27316,9 @@ Namespace GameDatabaseDataSetTableAdapters
             tableMapping.ColumnMappings.Add("currentQuestid", "currentQuestid")
             tableMapping.ColumnMappings.Add("gameDate", "gameDate")
             tableMapping.ColumnMappings.Add("isAmbushed", "isAmbushed")
+            tableMapping.ColumnMappings.Add("playerGold", "playerGold")
+            tableMapping.ColumnMappings.Add("playerLevel", "playerLevel")
+            tableMapping.ColumnMappings.Add("playerExperience", "playerExperience")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -24902,7 +27331,11 @@ Namespace GameDatabaseDataSetTableAdapters
                 "urrentQuestid = 1 AND [currentQuestid] IS NULL) OR ([currentQuestid] = @Original"& _ 
                 "_currentQuestid)) AND ((@IsNull_gameDate = 1 AND [gameDate] IS NULL) OR ([gameDa"& _ 
                 "te] = @Original_gameDate)) AND ((@IsNull_isAmbushed = 1 AND [isAmbushed] IS NULL"& _ 
-                ") OR ([isAmbushed] = @Original_isAmbushed)))"
+                ") OR ([isAmbushed] = @Original_isAmbushed)) AND ((@IsNull_playerGold = 1 AND [pl"& _ 
+                "ayerGold] IS NULL) OR ([playerGold] = @Original_playerGold)) AND ((@IsNull_playe"& _ 
+                "rLevel = 1 AND [playerLevel] IS NULL) OR ([playerLevel] = @Original_playerLevel)"& _ 
+                ") AND ((@IsNull_playerExperience = 1 AND [playerExperience] IS NULL) OR ([player"& _ 
+                "Experience] = @Original_playerExperience)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_playerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -24919,13 +27352,21 @@ Namespace GameDatabaseDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_gameDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "gameDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_isAmbushed", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isAmbushed", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_isAmbushed", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isAmbushed", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_playerGold", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerGold", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_playerGold", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerGold", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_playerLevel", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerLevel", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_playerLevel", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerLevel", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_playerExperience", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerExperience", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_playerExperience", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerExperience", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[PlayerStates] ([playerid], [dateSaved], [currentPartyid], [cur"& _ 
-                "rentTierid], [currentQuestid], [gameDate], [isAmbushed]) VALUES (@playerid, @dat"& _ 
-                "eSaved, @currentPartyid, @currentTierid, @currentQuestid, @gameDate, @isAmbushed"& _ 
-                ");"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, playerid, dateSaved, currentPartyid, currentTierid, currentQuesti"& _ 
-                "d, gameDate, isAmbushed FROM PlayerStates WHERE (id = SCOPE_IDENTITY())"
+                "rentTierid], [currentQuestid], [gameDate], [isAmbushed], [playerGold], [playerLe"& _ 
+                "vel], [playerExperience]) VALUES (@playerid, @dateSaved, @currentPartyid, @curre"& _ 
+                "ntTierid, @currentQuestid, @gameDate, @isAmbushed, @playerGold, @playerLevel, @p"& _ 
+                "layerExperience);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, playerid, dateSaved, currentPartyid, currentTierid"& _ 
+                ", currentQuestid, gameDate, isAmbushed, playerGold, playerLevel, playerExperienc"& _ 
+                "e FROM PlayerStates WHERE (id = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@dateSaved", Global.System.Data.SqlDbType.DateTime2, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "dateSaved", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -24934,22 +27375,31 @@ Namespace GameDatabaseDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@currentQuestid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "currentQuestid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@gameDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "gameDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@isAmbushed", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isAmbushed", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerGold", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerGold", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerLevel", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerLevel", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerExperience", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerExperience", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[PlayerStates] SET [playerid] = @playerid, [dateSaved] = @dateSaved,"& _ 
                 " [currentPartyid] = @currentPartyid, [currentTierid] = @currentTierid, [currentQ"& _ 
-                "uestid] = @currentQuestid, [gameDate] = @gameDate, [isAmbushed] = @isAmbushed WH"& _ 
-                "ERE (([id] = @Original_id) AND ((@IsNull_playerid = 1 AND [playerid] IS NULL) OR"& _ 
-                " ([playerid] = @Original_playerid)) AND ((@IsNull_dateSaved = 1 AND [dateSaved] "& _ 
-                "IS NULL) OR ([dateSaved] = @Original_dateSaved)) AND ((@IsNull_currentPartyid = "& _ 
-                "1 AND [currentPartyid] IS NULL) OR ([currentPartyid] = @Original_currentPartyid)"& _ 
-                ") AND ((@IsNull_currentTierid = 1 AND [currentTierid] IS NULL) OR ([currentTieri"& _ 
-                "d] = @Original_currentTierid)) AND ((@IsNull_currentQuestid = 1 AND [currentQues"& _ 
-                "tid] IS NULL) OR ([currentQuestid] = @Original_currentQuestid)) AND ((@IsNull_ga"& _ 
-                "meDate = 1 AND [gameDate] IS NULL) OR ([gameDate] = @Original_gameDate)) AND ((@"& _ 
-                "IsNull_isAmbushed = 1 AND [isAmbushed] IS NULL) OR ([isAmbushed] = @Original_isA"& _ 
-                "mbushed)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, playerid, dateSaved, currentPartyid, currentTierid, curr"& _ 
-                "entQuestid, gameDate, isAmbushed FROM PlayerStates WHERE (id = @id)"
+                "uestid] = @currentQuestid, [gameDate] = @gameDate, [isAmbushed] = @isAmbushed, ["& _ 
+                "playerGold] = @playerGold, [playerLevel] = @playerLevel, [playerExperience] = @p"& _ 
+                "layerExperience WHERE (([id] = @Original_id) AND ((@IsNull_playerid = 1 AND [pla"& _ 
+                "yerid] IS NULL) OR ([playerid] = @Original_playerid)) AND ((@IsNull_dateSaved = "& _ 
+                "1 AND [dateSaved] IS NULL) OR ([dateSaved] = @Original_dateSaved)) AND ((@IsNull"& _ 
+                "_currentPartyid = 1 AND [currentPartyid] IS NULL) OR ([currentPartyid] = @Origin"& _ 
+                "al_currentPartyid)) AND ((@IsNull_currentTierid = 1 AND [currentTierid] IS NULL)"& _ 
+                " OR ([currentTierid] = @Original_currentTierid)) AND ((@IsNull_currentQuestid = "& _ 
+                "1 AND [currentQuestid] IS NULL) OR ([currentQuestid] = @Original_currentQuestid)"& _ 
+                ") AND ((@IsNull_gameDate = 1 AND [gameDate] IS NULL) OR ([gameDate] = @Original_"& _ 
+                "gameDate)) AND ((@IsNull_isAmbushed = 1 AND [isAmbushed] IS NULL) OR ([isAmbushe"& _ 
+                "d] = @Original_isAmbushed)) AND ((@IsNull_playerGold = 1 AND [playerGold] IS NUL"& _ 
+                "L) OR ([playerGold] = @Original_playerGold)) AND ((@IsNull_playerLevel = 1 AND ["& _ 
+                "playerLevel] IS NULL) OR ([playerLevel] = @Original_playerLevel)) AND ((@IsNull_"& _ 
+                "playerExperience = 1 AND [playerExperience] IS NULL) OR ([playerExperience] = @O"& _ 
+                "riginal_playerExperience)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, playerid, dateSaved, currentPartyid, cu"& _ 
+                "rrentTierid, currentQuestid, gameDate, isAmbushed, playerGold, playerLevel, play"& _ 
+                "erExperience FROM PlayerStates WHERE (id = @id)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@dateSaved", Global.System.Data.SqlDbType.DateTime2, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "dateSaved", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -24958,6 +27408,9 @@ Namespace GameDatabaseDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@currentQuestid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "currentQuestid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@gameDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "gameDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@isAmbushed", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isAmbushed", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerGold", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerGold", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerLevel", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerLevel", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerExperience", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerExperience", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_playerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_playerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -24973,6 +27426,12 @@ Namespace GameDatabaseDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_gameDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "gameDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_isAmbushed", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isAmbushed", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_isAmbushed", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isAmbushed", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_playerGold", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerGold", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_playerGold", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerGold", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_playerLevel", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerLevel", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_playerLevel", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerLevel", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_playerExperience", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerExperience", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_playerExperience", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerExperience", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
@@ -24990,20 +27449,22 @@ Namespace GameDatabaseDataSetTableAdapters
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT id, playerid, dateSaved, currentPartyid, currentTierid, currentQuestid, ga"& _ 
-                "meDate, isAmbushed FROM dbo.PlayerStates"
+                "meDate, isAmbushed, playerGold, playerLevel, playerExperience FROM dbo.PlayerSta"& _ 
+                "tes"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
             Me._commandCollection(1).CommandText = "SELECT        id, playerid, dateSaved, currentPartyid, currentTierid, currentQues"& _ 
-                "tid, gameDate, isAmbushed"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            PlayerStates"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (playerid "& _ 
-                "= @playerid)"
+                "tid, gameDate, isAmbushed, playerGold, playerLevel, playerExperience"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM      "& _ 
+                "      PlayerStates"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (playerid = @playerid)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
             Me._commandCollection(2).CommandText = "SELECT        TOP (1) id, playerid, dateSaved, currentPartyid, currentTierid, cur"& _ 
-                "rentQuestid, gameDate, isAmbushed"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            PlayerStates"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (p"& _ 
-                "layerid = @playerid)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY id DESC"
+                "rentQuestid, gameDate, isAmbushed, playerGold, playerLevel, playerExperience"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FR"& _ 
+                "OM            PlayerStates"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (playerid = @playerid)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY id DES"& _ 
+                "C"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
@@ -25054,22 +27515,6 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetPlayerStatesByPlayerid(ByVal playerid As Global.System.Nullable(Of Integer)) As GameDatabaseDataSet.PlayerStatesDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (playerid.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(playerid.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
-            Dim dataTable As GameDatabaseDataSet.PlayerStatesDataTable = New GameDatabaseDataSet.PlayerStatesDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
         Public Overloads Overridable Function GetLastPlayerStateByPlayerid(ByVal playerid As Global.System.Nullable(Of Integer)) As GameDatabaseDataSet.PlayerStatesDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(2)
             If (playerid.HasValue = true) Then
@@ -25114,7 +27559,7 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_id As Integer, ByVal Original_playerid As Global.System.Nullable(Of Integer), ByVal Original_dateSaved As Global.System.Nullable(Of Date), ByVal Original_currentPartyid As Global.System.Nullable(Of Integer), ByVal Original_currentTierid As Global.System.Nullable(Of Integer), ByVal Original_currentQuestid As Global.System.Nullable(Of Integer), ByVal Original_gameDate As Global.System.Nullable(Of Date), ByVal Original_isAmbushed As Global.System.Nullable(Of Boolean)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_id As Integer, ByVal Original_playerid As Global.System.Nullable(Of Integer), ByVal Original_dateSaved As Global.System.Nullable(Of Date), ByVal Original_currentPartyid As Global.System.Nullable(Of Integer), ByVal Original_currentTierid As Global.System.Nullable(Of Integer), ByVal Original_currentQuestid As Global.System.Nullable(Of Integer), ByVal Original_gameDate As Global.System.Nullable(Of Date), ByVal Original_isAmbushed As Global.System.Nullable(Of Boolean), ByVal Original_playerGold As Global.System.Nullable(Of Integer), ByVal Original_playerLevel As Global.System.Nullable(Of Integer), ByVal Original_playerExperience As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_id,Integer)
             If (Original_playerid.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
@@ -25165,6 +27610,27 @@ Namespace GameDatabaseDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
             End If
+            If (Original_playerGold.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(Original_playerGold.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(16).Value = Global.System.DBNull.Value
+            End If
+            If (Original_playerLevel.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(18).Value = CType(Original_playerLevel.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(18).Value = Global.System.DBNull.Value
+            End If
+            If (Original_playerExperience.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(20).Value = CType(Original_playerExperience.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(20).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -25184,7 +27650,7 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal playerid As Global.System.Nullable(Of Integer), ByVal dateSaved As Global.System.Nullable(Of Date), ByVal currentPartyid As Global.System.Nullable(Of Integer), ByVal currentTierid As Global.System.Nullable(Of Integer), ByVal currentQuestid As Global.System.Nullable(Of Integer), ByVal gameDate As Global.System.Nullable(Of Date), ByVal isAmbushed As Global.System.Nullable(Of Boolean)) As Integer
+        Public Overloads Overridable Function Insert(ByVal playerid As Global.System.Nullable(Of Integer), ByVal dateSaved As Global.System.Nullable(Of Date), ByVal currentPartyid As Global.System.Nullable(Of Integer), ByVal currentTierid As Global.System.Nullable(Of Integer), ByVal currentQuestid As Global.System.Nullable(Of Integer), ByVal gameDate As Global.System.Nullable(Of Date), ByVal isAmbushed As Global.System.Nullable(Of Boolean), ByVal playerGold As Global.System.Nullable(Of Integer), ByVal playerLevel As Global.System.Nullable(Of Integer), ByVal playerExperience As Global.System.Nullable(Of Integer)) As Integer
             If (playerid.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(playerid.Value,Integer)
             Else
@@ -25220,6 +27686,21 @@ Namespace GameDatabaseDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
             End If
+            If (playerGold.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(7).Value = CType(playerGold.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
+            End If
+            If (playerLevel.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(8).Value = CType(playerLevel.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(8).Value = Global.System.DBNull.Value
+            End If
+            If (playerExperience.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(9).Value = CType(playerExperience.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(9).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -25247,6 +27728,9 @@ Namespace GameDatabaseDataSetTableAdapters
                     ByVal currentQuestid As Global.System.Nullable(Of Integer),  _
                     ByVal gameDate As Global.System.Nullable(Of Date),  _
                     ByVal isAmbushed As Global.System.Nullable(Of Boolean),  _
+                    ByVal playerGold As Global.System.Nullable(Of Integer),  _
+                    ByVal playerLevel As Global.System.Nullable(Of Integer),  _
+                    ByVal playerExperience As Global.System.Nullable(Of Integer),  _
                     ByVal Original_id As Integer,  _
                     ByVal Original_playerid As Global.System.Nullable(Of Integer),  _
                     ByVal Original_dateSaved As Global.System.Nullable(Of Date),  _
@@ -25255,6 +27739,9 @@ Namespace GameDatabaseDataSetTableAdapters
                     ByVal Original_currentQuestid As Global.System.Nullable(Of Integer),  _
                     ByVal Original_gameDate As Global.System.Nullable(Of Date),  _
                     ByVal Original_isAmbushed As Global.System.Nullable(Of Boolean),  _
+                    ByVal Original_playerGold As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_playerLevel As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_playerExperience As Global.System.Nullable(Of Integer),  _
                     ByVal id As Integer) As Integer
             If (playerid.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = CType(playerid.Value,Integer)
@@ -25291,57 +27778,93 @@ Namespace GameDatabaseDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_id,Integer)
-            If (Original_playerid.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_playerid.Value,Integer)
+            If (playerGold.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(playerGold.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+            End If
+            If (playerLevel.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(playerLevel.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+            End If
+            If (playerExperience.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(playerExperience.Value,Integer)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
             End If
-            If (Original_dateSaved.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_dateSaved.Value,Date)
+            Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_id,Integer)
+            If (Original_playerid.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_playerid.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
+            End If
+            If (Original_dateSaved.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_dateSaved.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
             End If
             If (Original_currentPartyid.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_currentPartyid.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_currentPartyid.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
             End If
             If (Original_currentTierid.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_currentTierid.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_currentTierid.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
             End If
             If (Original_currentQuestid.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_currentQuestid.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_currentQuestid.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
             End If
             If (Original_gameDate.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_gameDate.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_gameDate.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
             End If
             If (Original_isAmbushed.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_isAmbushed.Value,Boolean)
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_isAmbushed.Value,Boolean)
             Else
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(22).Value = CType(id,Integer)
+            If (Original_playerGold.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(Original_playerGold.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(26).Value = Global.System.DBNull.Value
+            End If
+            If (Original_playerLevel.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(Original_playerLevel.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(28).Value = Global.System.DBNull.Value
+            End If
+            If (Original_playerExperience.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(Original_playerExperience.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(30).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(31).Value = CType(id,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -25361,8 +27884,29 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal playerid As Global.System.Nullable(Of Integer), ByVal dateSaved As Global.System.Nullable(Of Date), ByVal currentPartyid As Global.System.Nullable(Of Integer), ByVal currentTierid As Global.System.Nullable(Of Integer), ByVal currentQuestid As Global.System.Nullable(Of Integer), ByVal gameDate As Global.System.Nullable(Of Date), ByVal isAmbushed As Global.System.Nullable(Of Boolean), ByVal Original_id As Integer, ByVal Original_playerid As Global.System.Nullable(Of Integer), ByVal Original_dateSaved As Global.System.Nullable(Of Date), ByVal Original_currentPartyid As Global.System.Nullable(Of Integer), ByVal Original_currentTierid As Global.System.Nullable(Of Integer), ByVal Original_currentQuestid As Global.System.Nullable(Of Integer), ByVal Original_gameDate As Global.System.Nullable(Of Date), ByVal Original_isAmbushed As Global.System.Nullable(Of Boolean)) As Integer
-            Return Me.Update(playerid, dateSaved, currentPartyid, currentTierid, currentQuestid, gameDate, isAmbushed, Original_id, Original_playerid, Original_dateSaved, Original_currentPartyid, Original_currentTierid, Original_currentQuestid, Original_gameDate, Original_isAmbushed, Original_id)
+        Public Overloads Overridable Function Update( _
+                    ByVal playerid As Global.System.Nullable(Of Integer),  _
+                    ByVal dateSaved As Global.System.Nullable(Of Date),  _
+                    ByVal currentPartyid As Global.System.Nullable(Of Integer),  _
+                    ByVal currentTierid As Global.System.Nullable(Of Integer),  _
+                    ByVal currentQuestid As Global.System.Nullable(Of Integer),  _
+                    ByVal gameDate As Global.System.Nullable(Of Date),  _
+                    ByVal isAmbushed As Global.System.Nullable(Of Boolean),  _
+                    ByVal playerGold As Global.System.Nullable(Of Integer),  _
+                    ByVal playerLevel As Global.System.Nullable(Of Integer),  _
+                    ByVal playerExperience As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_id As Integer,  _
+                    ByVal Original_playerid As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_dateSaved As Global.System.Nullable(Of Date),  _
+                    ByVal Original_currentPartyid As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_currentTierid As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_currentQuestid As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_gameDate As Global.System.Nullable(Of Date),  _
+                    ByVal Original_isAmbushed As Global.System.Nullable(Of Boolean),  _
+                    ByVal Original_playerGold As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_playerLevel As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_playerExperience As Global.System.Nullable(Of Integer)) As Integer
+            Return Me.Update(playerid, dateSaved, currentPartyid, currentTierid, currentQuestid, gameDate, isAmbushed, playerGold, playerLevel, playerExperience, Original_id, Original_playerid, Original_dateSaved, Original_currentPartyid, Original_currentTierid, Original_currentQuestid, Original_gameDate, Original_isAmbushed, Original_playerGold, Original_playerLevel, Original_playerExperience, Original_id)
         End Function
     End Class
     
@@ -25494,7 +28038,7 @@ Namespace GameDatabaseDataSetTableAdapters
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "PlayerWeapons"
             tableMapping.ColumnMappings.Add("id", "id")
-            tableMapping.ColumnMappings.Add("playerid", "playerid")
+            tableMapping.ColumnMappings.Add("playerStateid", "playerStateid")
             tableMapping.ColumnMappings.Add("weaponid", "weaponid")
             tableMapping.ColumnMappings.Add("wearerid", "wearerid")
             tableMapping.ColumnMappings.Add("slotWorn", "slotWorn")
@@ -25502,15 +28046,15 @@ Namespace GameDatabaseDataSetTableAdapters
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
             Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[PlayerWeapons] WHERE (([id] = @Original_id) AND ((@IsNull_play"& _ 
-                "erid = 1 AND [playerid] IS NULL) OR ([playerid] = @Original_playerid)) AND ((@Is"& _ 
-                "Null_weaponid = 1 AND [weaponid] IS NULL) OR ([weaponid] = @Original_weaponid)) "& _ 
-                "AND ((@IsNull_wearerid = 1 AND [wearerid] IS NULL) OR ([wearerid] = @Original_we"& _ 
-                "arerid)) AND ((@IsNull_slotWorn = 1 AND [slotWorn] IS NULL) OR ([slotWorn] = @Or"& _ 
-                "iginal_slotWorn)))"
+                "erStateid = 1 AND [playerStateid] IS NULL) OR ([playerStateid] = @Original_playe"& _ 
+                "rStateid)) AND ((@IsNull_weaponid = 1 AND [weaponid] IS NULL) OR ([weaponid] = @"& _ 
+                "Original_weaponid)) AND ((@IsNull_wearerid = 1 AND [wearerid] IS NULL) OR ([wear"& _ 
+                "erid] = @Original_wearerid)) AND ((@IsNull_slotWorn = 1 AND [slotWorn] IS NULL) "& _ 
+                "OR ([slotWorn] = @Original_slotWorn)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_playerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_playerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_weaponid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "weaponid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_weaponid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "weaponid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_wearerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "wearerid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -25519,32 +28063,33 @@ Namespace GameDatabaseDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_slotWorn", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "slotWorn", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[PlayerWeapons] ([playerid], [weaponid], [wearerid], [slotWorn]"& _ 
-                ") VALUES (@playerid, @weaponid, @wearerid, @slotWorn);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, playerid, wea"& _ 
-                "ponid, wearerid, slotWorn FROM PlayerWeapons WHERE (id = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[PlayerWeapons] ([playerStateid], [weaponid], [wearerid], [slot"& _ 
+                "Worn]) VALUES (@playerStateid, @weaponid, @wearerid, @slotWorn);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, pla"& _ 
+                "yerStateid, weaponid, wearerid, slotWorn FROM PlayerWeapons WHERE (id = SCOPE_ID"& _ 
+                "ENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@weaponid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "weaponid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@wearerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "wearerid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@slotWorn", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "slotWorn", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[PlayerWeapons] SET [playerid] = @playerid, [weaponid] = @weaponid, "& _ 
-                "[wearerid] = @wearerid, [slotWorn] = @slotWorn WHERE (([id] = @Original_id) AND "& _ 
-                "((@IsNull_playerid = 1 AND [playerid] IS NULL) OR ([playerid] = @Original_player"& _ 
-                "id)) AND ((@IsNull_weaponid = 1 AND [weaponid] IS NULL) OR ([weaponid] = @Origin"& _ 
-                "al_weaponid)) AND ((@IsNull_wearerid = 1 AND [wearerid] IS NULL) OR ([wearerid] "& _ 
-                "= @Original_wearerid)) AND ((@IsNull_slotWorn = 1 AND [slotWorn] IS NULL) OR ([s"& _ 
-                "lotWorn] = @Original_slotWorn)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, playerid, weaponid, wearerid, slot"& _ 
-                "Worn FROM PlayerWeapons WHERE (id = @id)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[PlayerWeapons] SET [playerStateid] = @playerStateid, [weaponid] = @"& _ 
+                "weaponid, [wearerid] = @wearerid, [slotWorn] = @slotWorn WHERE (([id] = @Origina"& _ 
+                "l_id) AND ((@IsNull_playerStateid = 1 AND [playerStateid] IS NULL) OR ([playerSt"& _ 
+                "ateid] = @Original_playerStateid)) AND ((@IsNull_weaponid = 1 AND [weaponid] IS "& _ 
+                "NULL) OR ([weaponid] = @Original_weaponid)) AND ((@IsNull_wearerid = 1 AND [wear"& _ 
+                "erid] IS NULL) OR ([wearerid] = @Original_wearerid)) AND ((@IsNull_slotWorn = 1 "& _ 
+                "AND [slotWorn] IS NULL) OR ([slotWorn] = @Original_slotWorn)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, play"& _ 
+                "erStateid, weaponid, wearerid, slotWorn FROM PlayerWeapons WHERE (id = @id)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@weaponid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "weaponid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@wearerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "wearerid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@slotWorn", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "slotWorn", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_playerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_playerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_weaponid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "weaponid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_weaponid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "weaponid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_wearerid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "wearerid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -25564,17 +28109,11 @@ Namespace GameDatabaseDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT id, playerid, weaponid, wearerid, slotWorn FROM dbo.PlayerWeapons"
+            Me._commandCollection(0).CommandText = "SELECT id, playerStateid, weaponid, wearerid, slotWorn FROM dbo.PlayerWeapons"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT        id, playerid, weaponid, wearerid, slotWorn"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            PlayerW"& _ 
-                "eapons"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (playerid = @playerid)"
-            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -25596,40 +28135,6 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
         Public Overloads Overridable Function GetData() As GameDatabaseDataSet.PlayerWeaponsDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As GameDatabaseDataSet.PlayerWeaponsDataTable = New GameDatabaseDataSet.PlayerWeaponsDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillByPlayerid(ByVal dataTable As GameDatabaseDataSet.PlayerWeaponsDataTable, ByVal playerid As Global.System.Nullable(Of Integer)) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (playerid.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(playerid.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetWeaponsByPlayerid(ByVal playerid As Global.System.Nullable(Of Integer)) As GameDatabaseDataSet.PlayerWeaponsDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (playerid.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(playerid.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
             Dim dataTable As GameDatabaseDataSet.PlayerWeaponsDataTable = New GameDatabaseDataSet.PlayerWeaponsDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -25667,11 +28172,11 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_id As Integer, ByVal Original_playerid As Global.System.Nullable(Of Integer), ByVal Original_weaponid As Global.System.Nullable(Of Integer), ByVal Original_wearerid As Global.System.Nullable(Of Integer), ByVal Original_slotWorn As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_id As Integer, ByVal Original_playerStateid As Global.System.Nullable(Of Integer), ByVal Original_weaponid As Global.System.Nullable(Of Integer), ByVal Original_wearerid As Global.System.Nullable(Of Integer), ByVal Original_slotWorn As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_id,Integer)
-            If (Original_playerid.HasValue = true) Then
+            If (Original_playerStateid.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_playerid.Value,Integer)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_playerStateid.Value,Integer)
             Else
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
@@ -25716,9 +28221,9 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal playerid As Global.System.Nullable(Of Integer), ByVal weaponid As Global.System.Nullable(Of Integer), ByVal wearerid As Global.System.Nullable(Of Integer), ByVal slotWorn As Global.System.Nullable(Of Integer)) As Integer
-            If (playerid.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(playerid.Value,Integer)
+        Public Overloads Overridable Function Insert(ByVal playerStateid As Global.System.Nullable(Of Integer), ByVal weaponid As Global.System.Nullable(Of Integer), ByVal wearerid As Global.System.Nullable(Of Integer), ByVal slotWorn As Global.System.Nullable(Of Integer)) As Integer
+            If (playerStateid.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(playerStateid.Value,Integer)
             Else
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             End If
@@ -25756,9 +28261,9 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal playerid As Global.System.Nullable(Of Integer), ByVal weaponid As Global.System.Nullable(Of Integer), ByVal wearerid As Global.System.Nullable(Of Integer), ByVal slotWorn As Global.System.Nullable(Of Integer), ByVal Original_id As Integer, ByVal Original_playerid As Global.System.Nullable(Of Integer), ByVal Original_weaponid As Global.System.Nullable(Of Integer), ByVal Original_wearerid As Global.System.Nullable(Of Integer), ByVal Original_slotWorn As Global.System.Nullable(Of Integer), ByVal id As Integer) As Integer
-            If (playerid.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(playerid.Value,Integer)
+        Public Overloads Overridable Function Update(ByVal playerStateid As Global.System.Nullable(Of Integer), ByVal weaponid As Global.System.Nullable(Of Integer), ByVal wearerid As Global.System.Nullable(Of Integer), ByVal slotWorn As Global.System.Nullable(Of Integer), ByVal Original_id As Integer, ByVal Original_playerStateid As Global.System.Nullable(Of Integer), ByVal Original_weaponid As Global.System.Nullable(Of Integer), ByVal Original_wearerid As Global.System.Nullable(Of Integer), ByVal Original_slotWorn As Global.System.Nullable(Of Integer), ByVal id As Integer) As Integer
+            If (playerStateid.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(playerStateid.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             End If
@@ -25778,9 +28283,9 @@ Namespace GameDatabaseDataSetTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
             End If
             Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_id,Integer)
-            If (Original_playerid.HasValue = true) Then
+            If (Original_playerStateid.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_playerid.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_playerStateid.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(5).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
@@ -25826,8 +28331,8 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal playerid As Global.System.Nullable(Of Integer), ByVal weaponid As Global.System.Nullable(Of Integer), ByVal wearerid As Global.System.Nullable(Of Integer), ByVal slotWorn As Global.System.Nullable(Of Integer), ByVal Original_id As Integer, ByVal Original_playerid As Global.System.Nullable(Of Integer), ByVal Original_weaponid As Global.System.Nullable(Of Integer), ByVal Original_wearerid As Global.System.Nullable(Of Integer), ByVal Original_slotWorn As Global.System.Nullable(Of Integer)) As Integer
-            Return Me.Update(playerid, weaponid, wearerid, slotWorn, Original_id, Original_playerid, Original_weaponid, Original_wearerid, Original_slotWorn, Original_id)
+        Public Overloads Overridable Function Update(ByVal playerStateid As Global.System.Nullable(Of Integer), ByVal weaponid As Global.System.Nullable(Of Integer), ByVal wearerid As Global.System.Nullable(Of Integer), ByVal slotWorn As Global.System.Nullable(Of Integer), ByVal Original_id As Integer, ByVal Original_playerStateid As Global.System.Nullable(Of Integer), ByVal Original_weaponid As Global.System.Nullable(Of Integer), ByVal Original_wearerid As Global.System.Nullable(Of Integer), ByVal Original_slotWorn As Global.System.Nullable(Of Integer)) As Integer
+            Return Me.Update(playerStateid, weaponid, wearerid, slotWorn, Original_id, Original_playerStateid, Original_weaponid, Original_wearerid, Original_slotWorn, Original_id)
         End Function
     End Class
     
@@ -25966,6 +28471,11 @@ Namespace GameDatabaseDataSetTableAdapters
             tableMapping.ColumnMappings.Add("camp3Chance", "camp3Chance")
             tableMapping.ColumnMappings.Add("camp4Chance", "camp4Chance")
             tableMapping.ColumnMappings.Add("camp5Chance", "camp5Chance")
+            tableMapping.ColumnMappings.Add("camp1id", "camp1id")
+            tableMapping.ColumnMappings.Add("camp2id", "camp2id")
+            tableMapping.ColumnMappings.Add("camp3id", "camp3id")
+            tableMapping.ColumnMappings.Add("camp4id", "camp4id")
+            tableMapping.ColumnMappings.Add("camp5id", "camp5id")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -25978,7 +28488,12 @@ Namespace GameDatabaseDataSetTableAdapters
                 "Null_camp3Chance = 1 AND [camp3Chance] IS NULL) OR ([camp3Chance] = @Original_ca"& _ 
                 "mp3Chance)) AND ((@IsNull_camp4Chance = 1 AND [camp4Chance] IS NULL) OR ([camp4C"& _ 
                 "hance] = @Original_camp4Chance)) AND ((@IsNull_camp5Chance = 1 AND [camp5Chance]"& _ 
-                " IS NULL) OR ([camp5Chance] = @Original_camp5Chance)))"
+                " IS NULL) OR ([camp5Chance] = @Original_camp5Chance)) AND ((@IsNull_camp1id = 1 "& _ 
+                "AND [camp1id] IS NULL) OR ([camp1id] = @Original_camp1id)) AND ((@IsNull_camp2id"& _ 
+                " = 1 AND [camp2id] IS NULL) OR ([camp2id] = @Original_camp2id)) AND ((@IsNull_ca"& _ 
+                "mp3id = 1 AND [camp3id] IS NULL) OR ([camp3id] = @Original_camp3id)) AND ((@IsNu"& _ 
+                "ll_camp4id = 1 AND [camp4id] IS NULL) OR ([camp4id] = @Original_camp4id)) AND (("& _ 
+                "@IsNull_camp5id = 1 AND [camp5id] IS NULL) OR ([camp5id] = @Original_camp5id)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_dateVisited", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "dateVisited", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -25995,13 +28510,25 @@ Namespace GameDatabaseDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_camp4Chance", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp4Chance", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_camp5Chance", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp5Chance", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_camp5Chance", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp5Chance", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_camp1id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp1id", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_camp1id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp1id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_camp2id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp2id", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_camp2id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp2id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_camp3id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp3id", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_camp3id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp3id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_camp4id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp4id", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_camp4id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp4id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_camp5id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp5id", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_camp5id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp5id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[RoadStates] ([dateVisited], [playerStateid], [camp1Chance], [c"& _ 
-                "amp2Chance], [camp3Chance], [camp4Chance], [camp5Chance]) VALUES (@dateVisited, "& _ 
-                "@playerStateid, @camp1Chance, @camp2Chance, @camp3Chance, @camp4Chance, @camp5Ch"& _ 
-                "ance);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, dateVisited, playerStateid, camp1Chance, camp2Chance, camp3Ch"& _ 
-                "ance, camp4Chance, camp5Chance FROM RoadStates WHERE (id = SCOPE_IDENTITY())"
+                "amp2Chance], [camp3Chance], [camp4Chance], [camp5Chance], [camp1id], [camp2id], "& _ 
+                "[camp3id], [camp4id], [camp5id]) VALUES (@dateVisited, @playerStateid, @camp1Cha"& _ 
+                "nce, @camp2Chance, @camp3Chance, @camp4Chance, @camp5Chance, @camp1id, @camp2id,"& _ 
+                " @camp3id, @camp4id, @camp5id);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, dateVisited, playerStateid, camp1Cha"& _ 
+                "nce, camp2Chance, camp3Chance, camp4Chance, camp5Chance, camp1id, camp2id, camp3"& _ 
+                "id, camp4id, camp5id FROM RoadStates WHERE (id = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@dateVisited", Global.System.Data.SqlDbType.DateTime2, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "dateVisited", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -26010,23 +28537,35 @@ Namespace GameDatabaseDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@camp3Chance", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp3Chance", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@camp4Chance", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp4Chance", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@camp5Chance", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp5Chance", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@camp1id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp1id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@camp2id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp2id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@camp3id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp3id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@camp4id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp4id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@camp5id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp5id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[RoadStates] SET [dateVisited] = @dateVisited, [playerStateid] = @pl"& _ 
                 "ayerStateid, [camp1Chance] = @camp1Chance, [camp2Chance] = @camp2Chance, [camp3C"& _ 
                 "hance] = @camp3Chance, [camp4Chance] = @camp4Chance, [camp5Chance] = @camp5Chanc"& _ 
-                "e WHERE (([id] = @Original_id) AND ((@IsNull_dateVisited = 1 AND [dateVisited] I"& _ 
-                "S NULL) OR ([dateVisited] = @Original_dateVisited)) AND ((@IsNull_playerStateid "& _ 
-                "= 1 AND [playerStateid] IS NULL) OR ([playerStateid] = @Original_playerStateid))"& _ 
-                " AND ((@IsNull_camp1Chance = 1 AND [camp1Chance] IS NULL) OR ([camp1Chance] = @O"& _ 
-                "riginal_camp1Chance)) AND ((@IsNull_camp2Chance = 1 AND [camp2Chance] IS NULL) O"& _ 
-                "R ([camp2Chance] = @Original_camp2Chance)) AND ((@IsNull_camp3Chance = 1 AND [ca"& _ 
-                "mp3Chance] IS NULL) OR ([camp3Chance] = @Original_camp3Chance)) AND ((@IsNull_ca"& _ 
-                "mp4Chance = 1 AND [camp4Chance] IS NULL) OR ([camp4Chance] = @Original_camp4Chan"& _ 
-                "ce)) AND ((@IsNull_camp5Chance = 1 AND [camp5Chance] IS NULL) OR ([camp5Chance] "& _ 
-                "= @Original_camp5Chance)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, dateVisited, playerStateid, camp1Chance,"& _ 
-                " camp2Chance, camp3Chance, camp4Chance, camp5Chance FROM RoadStates WHERE (id = "& _ 
-                "@id)"
+                "e, [camp1id] = @camp1id, [camp2id] = @camp2id, [camp3id] = @camp3id, [camp4id] ="& _ 
+                " @camp4id, [camp5id] = @camp5id WHERE (([id] = @Original_id) AND ((@IsNull_dateV"& _ 
+                "isited = 1 AND [dateVisited] IS NULL) OR ([dateVisited] = @Original_dateVisited)"& _ 
+                ") AND ((@IsNull_playerStateid = 1 AND [playerStateid] IS NULL) OR ([playerStatei"& _ 
+                "d] = @Original_playerStateid)) AND ((@IsNull_camp1Chance = 1 AND [camp1Chance] I"& _ 
+                "S NULL) OR ([camp1Chance] = @Original_camp1Chance)) AND ((@IsNull_camp2Chance = "& _ 
+                "1 AND [camp2Chance] IS NULL) OR ([camp2Chance] = @Original_camp2Chance)) AND ((@"& _ 
+                "IsNull_camp3Chance = 1 AND [camp3Chance] IS NULL) OR ([camp3Chance] = @Original_"& _ 
+                "camp3Chance)) AND ((@IsNull_camp4Chance = 1 AND [camp4Chance] IS NULL) OR ([camp"& _ 
+                "4Chance] = @Original_camp4Chance)) AND ((@IsNull_camp5Chance = 1 AND [camp5Chanc"& _ 
+                "e] IS NULL) OR ([camp5Chance] = @Original_camp5Chance)) AND ((@IsNull_camp1id = "& _ 
+                "1 AND [camp1id] IS NULL) OR ([camp1id] = @Original_camp1id)) AND ((@IsNull_camp2"& _ 
+                "id = 1 AND [camp2id] IS NULL) OR ([camp2id] = @Original_camp2id)) AND ((@IsNull_"& _ 
+                "camp3id = 1 AND [camp3id] IS NULL) OR ([camp3id] = @Original_camp3id)) AND ((@Is"& _ 
+                "Null_camp4id = 1 AND [camp4id] IS NULL) OR ([camp4id] = @Original_camp4id)) AND "& _ 
+                "((@IsNull_camp5id = 1 AND [camp5id] IS NULL) OR ([camp5id] = @Original_camp5id))"& _ 
+                ");"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, dateVisited, playerStateid, camp1Chance, camp2Chance, camp3Chance"& _ 
+                ", camp4Chance, camp5Chance, camp1id, camp2id, camp3id, camp4id, camp5id FROM Roa"& _ 
+                "dStates WHERE (id = @id)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@dateVisited", Global.System.Data.SqlDbType.DateTime2, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "dateVisited", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerStateid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -26035,6 +28574,11 @@ Namespace GameDatabaseDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@camp3Chance", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp3Chance", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@camp4Chance", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp4Chance", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@camp5Chance", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp5Chance", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@camp1id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp1id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@camp2id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp2id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@camp3id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp3id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@camp4id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp4id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@camp5id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp5id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_dateVisited", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "dateVisited", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_dateVisited", Global.System.Data.SqlDbType.DateTime2, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "dateVisited", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -26050,6 +28594,16 @@ Namespace GameDatabaseDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_camp4Chance", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp4Chance", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_camp5Chance", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp5Chance", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_camp5Chance", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp5Chance", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_camp1id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp1id", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_camp1id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp1id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_camp2id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp2id", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_camp2id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp2id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_camp3id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp3id", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_camp3id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp3id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_camp4id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp4id", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_camp4id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp4id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_camp5id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp5id", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_camp5id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "camp5id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
@@ -26063,28 +28617,13 @@ Namespace GameDatabaseDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(2) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT id, dateVisited, playerStateid, camp1Chance, camp2Chance, camp3Chance, cam"& _ 
-                "p4Chance, camp5Chance FROM dbo.RoadStates"
+                "p4Chance, camp5Chance, camp1id, camp2id, camp3id, camp4id, camp5id FROM dbo.Road"& _ 
+                "States"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT        RoadStates.id, RoadStates.dateVisited, RoadStates.playerStateid, Ro"& _ 
-                "adStates.camp1Chance, RoadStates.camp2Chance, RoadStates.camp3Chance, RoadStates"& _ 
-                ".camp4Chance, RoadStates.camp5Chance"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            RoadStates INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"   "& _ 
-                "                      PlayerStates ON RoadStates.playerStateid = PlayerStates.id"& _ 
-                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (PlayerStates.playerid = @playerid)"
-            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT        TOP (1) id, dateVisited, playerStateid, camp1Chance, camp2Chance, c"& _ 
-                "amp3Chance, camp4Chance, camp5Chance"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            RoadStates"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        ("& _ 
-                "playerStateid = @playerStateid)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY id DESC"
-            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerStateid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -26106,56 +28645,6 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
         Public Overloads Overridable Function GetData() As GameDatabaseDataSet.RoadStatesDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As GameDatabaseDataSet.RoadStatesDataTable = New GameDatabaseDataSet.RoadStatesDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillByPlayerid(ByVal dataTable As GameDatabaseDataSet.RoadStatesDataTable, ByVal playerid As Global.System.Nullable(Of Integer)) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (playerid.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(playerid.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetRoadStatesByPlayerid(ByVal playerid As Global.System.Nullable(Of Integer)) As GameDatabaseDataSet.RoadStatesDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (playerid.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(playerid.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
-            Dim dataTable As GameDatabaseDataSet.RoadStatesDataTable = New GameDatabaseDataSet.RoadStatesDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetLastRoadStateByPlayerStateid(ByVal playerStateid As Global.System.Nullable(Of Integer)) As GameDatabaseDataSet.RoadStatesDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(2)
-            If (playerStateid.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(playerStateid.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
             Dim dataTable As GameDatabaseDataSet.RoadStatesDataTable = New GameDatabaseDataSet.RoadStatesDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -26193,7 +28682,7 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_id As Integer, ByVal Original_dateVisited As Global.System.Nullable(Of Date), ByVal Original_playerStateid As Global.System.Nullable(Of Integer), ByVal Original_camp1Chance As Global.System.Nullable(Of Integer), ByVal Original_camp2Chance As Global.System.Nullable(Of Integer), ByVal Original_camp3Chance As Global.System.Nullable(Of Integer), ByVal Original_camp4Chance As Global.System.Nullable(Of Integer), ByVal Original_camp5Chance As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_id As Integer, ByVal Original_dateVisited As Global.System.Nullable(Of Date), ByVal Original_playerStateid As Global.System.Nullable(Of Integer), ByVal Original_camp1Chance As Global.System.Nullable(Of Integer), ByVal Original_camp2Chance As Global.System.Nullable(Of Integer), ByVal Original_camp3Chance As Global.System.Nullable(Of Integer), ByVal Original_camp4Chance As Global.System.Nullable(Of Integer), ByVal Original_camp5Chance As Global.System.Nullable(Of Integer), ByVal Original_camp1id As Global.System.Nullable(Of Integer), ByVal Original_camp2id As Global.System.Nullable(Of Integer), ByVal Original_camp3id As Global.System.Nullable(Of Integer), ByVal Original_camp4id As Global.System.Nullable(Of Integer), ByVal Original_camp5id As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_id,Integer)
             If (Original_dateVisited.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
@@ -26244,6 +28733,41 @@ Namespace GameDatabaseDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
             End If
+            If (Original_camp1id.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(Original_camp1id.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(16).Value = Global.System.DBNull.Value
+            End If
+            If (Original_camp2id.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(18).Value = CType(Original_camp2id.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(18).Value = Global.System.DBNull.Value
+            End If
+            If (Original_camp3id.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(20).Value = CType(Original_camp3id.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(20).Value = Global.System.DBNull.Value
+            End If
+            If (Original_camp4id.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(22).Value = CType(Original_camp4id.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(22).Value = Global.System.DBNull.Value
+            End If
+            If (Original_camp5id.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(23).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(24).Value = CType(Original_camp5id.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(23).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(24).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -26263,7 +28787,7 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal dateVisited As Global.System.Nullable(Of Date), ByVal playerStateid As Global.System.Nullable(Of Integer), ByVal camp1Chance As Global.System.Nullable(Of Integer), ByVal camp2Chance As Global.System.Nullable(Of Integer), ByVal camp3Chance As Global.System.Nullable(Of Integer), ByVal camp4Chance As Global.System.Nullable(Of Integer), ByVal camp5Chance As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Insert(ByVal dateVisited As Global.System.Nullable(Of Date), ByVal playerStateid As Global.System.Nullable(Of Integer), ByVal camp1Chance As Global.System.Nullable(Of Integer), ByVal camp2Chance As Global.System.Nullable(Of Integer), ByVal camp3Chance As Global.System.Nullable(Of Integer), ByVal camp4Chance As Global.System.Nullable(Of Integer), ByVal camp5Chance As Global.System.Nullable(Of Integer), ByVal camp1id As Global.System.Nullable(Of Integer), ByVal camp2id As Global.System.Nullable(Of Integer), ByVal camp3id As Global.System.Nullable(Of Integer), ByVal camp4id As Global.System.Nullable(Of Integer), ByVal camp5id As Global.System.Nullable(Of Integer)) As Integer
             If (dateVisited.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(dateVisited.Value,Date)
             Else
@@ -26299,6 +28823,31 @@ Namespace GameDatabaseDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
             End If
+            If (camp1id.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(7).Value = CType(camp1id.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
+            End If
+            If (camp2id.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(8).Value = CType(camp2id.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(8).Value = Global.System.DBNull.Value
+            End If
+            If (camp3id.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(9).Value = CType(camp3id.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(9).Value = Global.System.DBNull.Value
+            End If
+            If (camp4id.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(10).Value = CType(camp4id.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(10).Value = Global.System.DBNull.Value
+            End If
+            If (camp5id.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(11).Value = CType(camp5id.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(11).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -26326,6 +28875,11 @@ Namespace GameDatabaseDataSetTableAdapters
                     ByVal camp3Chance As Global.System.Nullable(Of Integer),  _
                     ByVal camp4Chance As Global.System.Nullable(Of Integer),  _
                     ByVal camp5Chance As Global.System.Nullable(Of Integer),  _
+                    ByVal camp1id As Global.System.Nullable(Of Integer),  _
+                    ByVal camp2id As Global.System.Nullable(Of Integer),  _
+                    ByVal camp3id As Global.System.Nullable(Of Integer),  _
+                    ByVal camp4id As Global.System.Nullable(Of Integer),  _
+                    ByVal camp5id As Global.System.Nullable(Of Integer),  _
                     ByVal Original_id As Integer,  _
                     ByVal Original_dateVisited As Global.System.Nullable(Of Date),  _
                     ByVal Original_playerStateid As Global.System.Nullable(Of Integer),  _
@@ -26334,6 +28888,11 @@ Namespace GameDatabaseDataSetTableAdapters
                     ByVal Original_camp3Chance As Global.System.Nullable(Of Integer),  _
                     ByVal Original_camp4Chance As Global.System.Nullable(Of Integer),  _
                     ByVal Original_camp5Chance As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_camp1id As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_camp2id As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_camp3id As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_camp4id As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_camp5id As Global.System.Nullable(Of Integer),  _
                     ByVal id As Integer) As Integer
             If (dateVisited.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = CType(dateVisited.Value,Date)
@@ -26370,57 +28929,117 @@ Namespace GameDatabaseDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_id,Integer)
-            If (Original_dateVisited.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_dateVisited.Value,Date)
+            If (camp1id.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(camp1id.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+            End If
+            If (camp2id.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(camp2id.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+            End If
+            If (camp3id.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(camp3id.Value,Integer)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
             End If
-            If (Original_playerStateid.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_playerStateid.Value,Integer)
+            If (camp4id.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(camp4id.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
+            End If
+            If (camp5id.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(camp5id.Value,Integer)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
             End If
-            If (Original_camp1Chance.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_camp1Chance.Value,Integer)
+            Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_id,Integer)
+            If (Original_dateVisited.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_dateVisited.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
+            End If
+            If (Original_playerStateid.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_playerStateid.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
+            End If
+            If (Original_camp1Chance.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_camp1Chance.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
             End If
             If (Original_camp2Chance.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_camp2Chance.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_camp2Chance.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
             End If
             If (Original_camp3Chance.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_camp3Chance.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_camp3Chance.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
             End If
             If (Original_camp4Chance.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_camp4Chance.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_camp4Chance.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = Global.System.DBNull.Value
             End If
             If (Original_camp5Chance.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_camp5Chance.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(Original_camp5Chance.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(26).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(22).Value = CType(id,Integer)
+            If (Original_camp1id.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(Original_camp1id.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(28).Value = Global.System.DBNull.Value
+            End If
+            If (Original_camp2id.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(Original_camp2id.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(30).Value = Global.System.DBNull.Value
+            End If
+            If (Original_camp3id.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(Original_camp3id.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(32).Value = Global.System.DBNull.Value
+            End If
+            If (Original_camp4id.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(Original_camp4id.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(34).Value = Global.System.DBNull.Value
+            End If
+            If (Original_camp5id.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(Original_camp5id.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(36).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(37).Value = CType(id,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -26440,8 +29059,33 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal dateVisited As Global.System.Nullable(Of Date), ByVal playerStateid As Global.System.Nullable(Of Integer), ByVal camp1Chance As Global.System.Nullable(Of Integer), ByVal camp2Chance As Global.System.Nullable(Of Integer), ByVal camp3Chance As Global.System.Nullable(Of Integer), ByVal camp4Chance As Global.System.Nullable(Of Integer), ByVal camp5Chance As Global.System.Nullable(Of Integer), ByVal Original_id As Integer, ByVal Original_dateVisited As Global.System.Nullable(Of Date), ByVal Original_playerStateid As Global.System.Nullable(Of Integer), ByVal Original_camp1Chance As Global.System.Nullable(Of Integer), ByVal Original_camp2Chance As Global.System.Nullable(Of Integer), ByVal Original_camp3Chance As Global.System.Nullable(Of Integer), ByVal Original_camp4Chance As Global.System.Nullable(Of Integer), ByVal Original_camp5Chance As Global.System.Nullable(Of Integer)) As Integer
-            Return Me.Update(dateVisited, playerStateid, camp1Chance, camp2Chance, camp3Chance, camp4Chance, camp5Chance, Original_id, Original_dateVisited, Original_playerStateid, Original_camp1Chance, Original_camp2Chance, Original_camp3Chance, Original_camp4Chance, Original_camp5Chance, Original_id)
+        Public Overloads Overridable Function Update( _
+                    ByVal dateVisited As Global.System.Nullable(Of Date),  _
+                    ByVal playerStateid As Global.System.Nullable(Of Integer),  _
+                    ByVal camp1Chance As Global.System.Nullable(Of Integer),  _
+                    ByVal camp2Chance As Global.System.Nullable(Of Integer),  _
+                    ByVal camp3Chance As Global.System.Nullable(Of Integer),  _
+                    ByVal camp4Chance As Global.System.Nullable(Of Integer),  _
+                    ByVal camp5Chance As Global.System.Nullable(Of Integer),  _
+                    ByVal camp1id As Global.System.Nullable(Of Integer),  _
+                    ByVal camp2id As Global.System.Nullable(Of Integer),  _
+                    ByVal camp3id As Global.System.Nullable(Of Integer),  _
+                    ByVal camp4id As Global.System.Nullable(Of Integer),  _
+                    ByVal camp5id As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_id As Integer,  _
+                    ByVal Original_dateVisited As Global.System.Nullable(Of Date),  _
+                    ByVal Original_playerStateid As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_camp1Chance As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_camp2Chance As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_camp3Chance As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_camp4Chance As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_camp5Chance As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_camp1id As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_camp2id As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_camp3id As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_camp4id As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_camp5id As Global.System.Nullable(Of Integer)) As Integer
+            Return Me.Update(dateVisited, playerStateid, camp1Chance, camp2Chance, camp3Chance, camp4Chance, camp5Chance, camp1id, camp2id, camp3id, camp4id, camp5id, Original_id, Original_dateVisited, Original_playerStateid, Original_camp1Chance, Original_camp2Chance, Original_camp3Chance, Original_camp4Chance, Original_camp5Chance, Original_camp1id, Original_camp2id, Original_camp3id, Original_camp4id, Original_camp5id, Original_id)
         End Function
     End Class
     
@@ -27330,7 +29974,7 @@ Namespace GameDatabaseDataSetTableAdapters
             tableMapping.ColumnMappings.Add("wearableBy", "wearableBy")
             tableMapping.ColumnMappings.Add("isUnique", "isUnique")
             tableMapping.ColumnMappings.Add("minStats", "minStats")
-            tableMapping.ColumnMappings.Add("set", "set")
+            tableMapping.ColumnMappings.Add("setName", "setName")
             tableMapping.ColumnMappings.Add("setBonus", "setBonus")
             tableMapping.ColumnMappings.Add("resistances", "resistances")
             Me._adapter.TableMappings.Add(tableMapping)
@@ -27344,11 +29988,11 @@ Namespace GameDatabaseDataSetTableAdapters
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[StaticArmor] ([name], [attributes], [slotsPossible], [wearable"& _ 
-                "By], [isUnique], [minStats], [set], [setBonus], [resistances]) VALUES (@name, @a"& _ 
-                "ttributes, @slotsPossible, @wearableBy, @isUnique, @minStats, @set, @setBonus, @"& _ 
-                "resistances);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, name, attributes, slotsPossible, wearableBy, isUnique,"& _ 
-                " minStats, [set], setBonus, resistances FROM StaticArmor WHERE (id = SCOPE_IDENT"& _ 
-                "ITY())"
+                "By], [isUnique], [minStats], [setName], [setBonus], [resistances]) VALUES (@name"& _ 
+                ", @attributes, @slotsPossible, @wearableBy, @isUnique, @minStats, @setName, @set"& _ 
+                "Bonus, @resistances);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, name, attributes, slotsPossible, wearableBy, i"& _ 
+                "sUnique, minStats, setName, setBonus, resistances FROM StaticArmor WHERE (id = S"& _ 
+                "COPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@name", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@attributes", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "attributes", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -27356,16 +30000,17 @@ Namespace GameDatabaseDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@wearableBy", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "wearableBy", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@isUnique", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isUnique", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@minStats", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "minStats", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@set", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "set", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@setName", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "setName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@setBonus", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "setBonus", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@resistances", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "resistances", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[StaticArmor] SET [name] = @name, [attributes] = @attributes, [slots"& _ 
                 "Possible] = @slotsPossible, [wearableBy] = @wearableBy, [isUnique] = @isUnique, "& _ 
-                "[minStats] = @minStats, [set] = @set, [setBonus] = @setBonus, [resistances] = @r"& _ 
-                "esistances WHERE (([id] = @Original_id) AND ([isUnique] = @Original_isUnique));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, name, attributes, slotsPossible, wearableBy, isUnique, minStats, [se"& _ 
-                "t], setBonus, resistances FROM StaticArmor WHERE (id = @id)"
+                "[minStats] = @minStats, [setName] = @setName, [setBonus] = @setBonus, [resistanc"& _ 
+                "es] = @resistances WHERE (([id] = @Original_id) AND ([isUnique] = @Original_isUn"& _ 
+                "ique));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, name, attributes, slotsPossible, wearableBy, isUnique, minSt"& _ 
+                "ats, setName, setBonus, resistances FROM StaticArmor WHERE (id = @id)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@name", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@attributes", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "attributes", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -27373,7 +30018,7 @@ Namespace GameDatabaseDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@wearableBy", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "wearableBy", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@isUnique", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isUnique", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@minStats", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "minStats", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@set", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "set", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@setName", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "setName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@setBonus", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "setBonus", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@resistances", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "resistances", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -27391,36 +30036,12 @@ Namespace GameDatabaseDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(3) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT id, name, attributes, slotsPossible, wearableBy, isUnique, minStats, [set]"& _ 
-                ", setBonus, resistances FROM dbo.StaticArmor"
+            Me._commandCollection(0).CommandText = "SELECT id, name, attributes, slotsPossible, wearableBy, isUnique, minStats, setNa"& _ 
+                "me, setBonus, resistances FROM dbo.StaticArmor"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT        id, name, attributes, slotsPossible, wearableBy, isUnique, minStats"& _ 
-                ", [set], setBonus, resistances"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            StaticArmor"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (name "& _ 
-                "LIKE 'helmet') OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (name LIKE 'spaulders') OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"        "& _ 
-                "                 (name LIKE 'sleeves') OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (name LIKE '"& _ 
-                "gauntlets') OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (name LIKE 'breastplate') OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"         "& _ 
-                "                (name LIKE 'belt') OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (name LIKE 'pant"& _ 
-                "s') OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (name LIKE 'greaves') OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                     "& _ 
-                "    (name LIKE 'boots')"
-            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT        id, name, attributes, slotsPossible, wearableBy, isUnique, minStats"& _ 
-                ", [set], setBonus, resistances"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            StaticArmor"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (id = "& _ 
-                "@armorid)"
-            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@armorid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "SELECT        TOP (1) id, name, attributes, slotsPossible, wearableBy, isUnique, "& _ 
-                "minStats, [set], setBonus, resistances"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            StaticArmor"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY id"& _ 
-                " DESC"
-            Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -27442,53 +30063,6 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
         Public Overloads Overridable Function GetData() As GameDatabaseDataSet.StaticArmorDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As GameDatabaseDataSet.StaticArmorDataTable = New GameDatabaseDataSet.StaticArmorDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillWithBlacksmithArmor(ByVal dataTable As GameDatabaseDataSet.StaticArmorDataTable) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetBlacksmithArmor() As GameDatabaseDataSet.StaticArmorDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            Dim dataTable As GameDatabaseDataSet.StaticArmorDataTable = New GameDatabaseDataSet.StaticArmorDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetArmorByid(ByVal armorid As Integer) As GameDatabaseDataSet.StaticArmorDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(2)
-            Me.Adapter.SelectCommand.Parameters(0).Value = CType(armorid,Integer)
-            Dim dataTable As GameDatabaseDataSet.StaticArmorDataTable = New GameDatabaseDataSet.StaticArmorDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetLastRow() As GameDatabaseDataSet.StaticArmorDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(3)
             Dim dataTable As GameDatabaseDataSet.StaticArmorDataTable = New GameDatabaseDataSet.StaticArmorDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -27548,7 +30122,7 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal name As String, ByVal attributes As String, ByVal slotsPossible As String, ByVal wearableBy As String, ByVal isUnique As Boolean, ByVal minStats As String, ByVal _set As String, ByVal setBonus As String, ByVal resistances As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal name As String, ByVal attributes As String, ByVal slotsPossible As String, ByVal wearableBy As String, ByVal isUnique As Boolean, ByVal minStats As String, ByVal setName As String, ByVal setBonus As String, ByVal resistances As String) As Integer
             If (name Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -27575,10 +30149,10 @@ Namespace GameDatabaseDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(5).Value = CType(minStats,String)
             End If
-            If (_set Is Nothing) Then
+            If (setName Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(6).Value = CType(_set,String)
+                Me.Adapter.InsertCommand.Parameters(6).Value = CType(setName,String)
             End If
             If (setBonus Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
@@ -27609,7 +30183,7 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal name As String, ByVal attributes As String, ByVal slotsPossible As String, ByVal wearableBy As String, ByVal isUnique As Boolean, ByVal minStats As String, ByVal _set As String, ByVal setBonus As String, ByVal resistances As String, ByVal Original_id As Integer, ByVal Original_isUnique As Boolean, ByVal id As Integer) As Integer
+        Public Overloads Overridable Function Update(ByVal name As String, ByVal attributes As String, ByVal slotsPossible As String, ByVal wearableBy As String, ByVal isUnique As Boolean, ByVal minStats As String, ByVal setName As String, ByVal setBonus As String, ByVal resistances As String, ByVal Original_id As Integer, ByVal Original_isUnique As Boolean, ByVal id As Integer) As Integer
             If (name Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -27636,10 +30210,10 @@ Namespace GameDatabaseDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(5).Value = CType(minStats,String)
             End If
-            If (_set Is Nothing) Then
+            If (setName Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(_set,String)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(setName,String)
             End If
             If (setBonus Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
@@ -27673,8 +30247,8 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal name As String, ByVal attributes As String, ByVal slotsPossible As String, ByVal wearableBy As String, ByVal isUnique As Boolean, ByVal minStats As String, ByVal _set As String, ByVal setBonus As String, ByVal resistances As String, ByVal Original_id As Integer, ByVal Original_isUnique As Boolean) As Integer
-            Return Me.Update(name, attributes, slotsPossible, wearableBy, isUnique, minStats, _set, setBonus, resistances, Original_id, Original_isUnique, Original_id)
+        Public Overloads Overridable Function Update(ByVal name As String, ByVal attributes As String, ByVal slotsPossible As String, ByVal wearableBy As String, ByVal isUnique As Boolean, ByVal minStats As String, ByVal setName As String, ByVal setBonus As String, ByVal resistances As String, ByVal Original_id As Integer, ByVal Original_isUnique As Boolean) As Integer
+            Return Me.Update(name, attributes, slotsPossible, wearableBy, isUnique, minStats, setName, setBonus, resistances, Original_id, Original_isUnique, Original_id)
         End Function
     End Class
     
@@ -29355,7 +31929,7 @@ Namespace GameDatabaseDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(2) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT id, species, class, [level], experience, maxHealth, health, strength, armo"& _ 
@@ -29368,20 +31942,6 @@ Namespace GameDatabaseDataSetTableAdapters
                 "cCreatures"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (id = @creatureid)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@creatureid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT        StaticCreatures.id, StaticCreatures.species, StaticCreatures.class,"& _ 
-                " StaticCreatures.level, StaticCreatures.experience, StaticCreatures.maxHealth, S"& _ 
-                "taticCreatures.health, StaticCreatures.strength, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Stat"& _ 
-                "icCreatures.armor, StaticCreatures.initiative, StaticCreatures.intelligence, Sta"& _ 
-                "ticCreatures.wisdom, StaticCreatures.dexterity, StaticCreatures.name"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM      "& _ 
-                "      StaticCreatures INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TavernStates ON Stati"& _ 
-                "cCreatures.id = TavernStates.hireSlot1id AND StaticCreatures.id = TavernStates.h"& _ 
-                "ireSlot2id AND StaticCreatures.id = TavernStates.hireSlot3id AND "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"             "& _ 
-                "            StaticCreatures.id = TavernStates.hireSlot4id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (TavernS"& _ 
-                "tates.id = @tavernStateid)"
-            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tavernStateid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -29415,18 +31975,6 @@ Namespace GameDatabaseDataSetTableAdapters
         Public Overloads Overridable Function GetCreatureByid(ByVal creatureid As Integer) As GameDatabaseDataSet.StaticCreaturesDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
             Me.Adapter.SelectCommand.Parameters(0).Value = CType(creatureid,Integer)
-            Dim dataTable As GameDatabaseDataSet.StaticCreaturesDataTable = New GameDatabaseDataSet.StaticCreaturesDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetCreaturesByTavernStateid(ByVal tavernStateid As Integer) As GameDatabaseDataSet.StaticCreaturesDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(2)
-            Me.Adapter.SelectCommand.Parameters(0).Value = CType(tavernStateid,Integer)
             Dim dataTable As GameDatabaseDataSet.StaticCreaturesDataTable = New GameDatabaseDataSet.StaticCreaturesDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -29848,6 +32396,441 @@ Namespace GameDatabaseDataSetTableAdapters
                     ByVal Original_wisdom As Global.System.Nullable(Of Integer),  _
                     ByVal Original_dexterity As Global.System.Nullable(Of Integer)) As Integer
             Return Me.Update(species, _class, level, experience, maxHealth, health, strength, armor, initiative, intelligence, wisdom, dexterity, name, Original_id, Original_level, Original_experience, Original_maxHealth, Original_health, Original_strength, Original_armor, Original_initiative, Original_intelligence, Original_wisdom, Original_dexterity, Original_id)
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class StaticJewelryTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "StaticJewelry"
+            tableMapping.ColumnMappings.Add("id", "id")
+            tableMapping.ColumnMappings.Add("name", "name")
+            tableMapping.ColumnMappings.Add("attributes", "attributes")
+            tableMapping.ColumnMappings.Add("slotsPossible", "slotsPossible")
+            tableMapping.ColumnMappings.Add("wearableBy", "wearableBy")
+            tableMapping.ColumnMappings.Add("isUnique", "isUnique")
+            tableMapping.ColumnMappings.Add("minStats", "minStats")
+            tableMapping.ColumnMappings.Add("setName", "setName")
+            tableMapping.ColumnMappings.Add("setBonus", "setBonus")
+            tableMapping.ColumnMappings.Add("resistances", "resistances")
+            Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.DeleteCommand.Connection = Me.Connection
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[StaticJewelry] WHERE (([id] = @Original_id) AND ((@IsNull_isUn"& _ 
+                "ique = 1 AND [isUnique] IS NULL) OR ([isUnique] = @Original_isUnique)))"
+            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_isUnique", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isUnique", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_isUnique", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isUnique", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.InsertCommand.Connection = Me.Connection
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[StaticJewelry] ([name], [attributes], [slotsPossible], [wearab"& _ 
+                "leBy], [isUnique], [minStats], [setName], [setBonus], [resistances]) VALUES (@na"& _ 
+                "me, @attributes, @slotsPossible, @wearableBy, @isUnique, @minStats, @setName, @s"& _ 
+                "etBonus, @resistances);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, name, attributes, slotsPossible, wearableBy,"& _ 
+                " isUnique, minStats, setName, setBonus, resistances FROM StaticJewelry WHERE (id"& _ 
+                " = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@name", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@attributes", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "attributes", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@slotsPossible", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "slotsPossible", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@wearableBy", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "wearableBy", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@isUnique", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isUnique", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@minStats", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "minStats", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@setName", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "setName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@setBonus", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "setBonus", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@resistances", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "resistances", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.UpdateCommand.Connection = Me.Connection
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[StaticJewelry] SET [name] = @name, [attributes] = @attributes, [slo"& _ 
+                "tsPossible] = @slotsPossible, [wearableBy] = @wearableBy, [isUnique] = @isUnique"& _ 
+                ", [minStats] = @minStats, [setName] = @setName, [setBonus] = @setBonus, [resista"& _ 
+                "nces] = @resistances WHERE (([id] = @Original_id) AND ((@IsNull_isUnique = 1 AND"& _ 
+                " [isUnique] IS NULL) OR ([isUnique] = @Original_isUnique)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, name, a"& _ 
+                "ttributes, slotsPossible, wearableBy, isUnique, minStats, setName, setBonus, res"& _ 
+                "istances FROM StaticJewelry WHERE (id = @id)"
+            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@name", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@attributes", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "attributes", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@slotsPossible", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "slotsPossible", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@wearableBy", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "wearableBy", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@isUnique", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isUnique", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@minStats", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "minStats", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@setName", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "setName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@setBonus", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "setBonus", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@resistances", Global.System.Data.SqlDbType.Text, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "resistances", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_isUnique", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isUnique", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_isUnique", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isUnique", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+            Me._connection.ConnectionString = Global.WindowsApplication1.My.MySettings.Default.GameDatabaseConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT id, name, attributes, slotsPossible, wearableBy, isUnique, minStats, setNa"& _ 
+                "me, setBonus, resistances FROM dbo.StaticJewelry"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As GameDatabaseDataSet.StaticJewelryDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As GameDatabaseDataSet.StaticJewelryDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As GameDatabaseDataSet.StaticJewelryDataTable = New GameDatabaseDataSet.StaticJewelryDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataTable As GameDatabaseDataSet.StaticJewelryDataTable) As Integer
+            Return Me.Adapter.Update(dataTable)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataSet As GameDatabaseDataSet) As Integer
+            Return Me.Adapter.Update(dataSet, "StaticJewelry")
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(dataRows)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
+        Public Overloads Overridable Function Delete(ByVal Original_id As Integer, ByVal Original_isUnique As Global.System.Nullable(Of Boolean)) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_id,Integer)
+            If (Original_isUnique.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_isUnique.Value,Boolean)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
+            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.DeleteCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.DeleteCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
+        Public Overloads Overridable Function Insert(ByVal name As String, ByVal attributes As String, ByVal slotsPossible As String, ByVal wearableBy As String, ByVal isUnique As Global.System.Nullable(Of Boolean), ByVal minStats As String, ByVal setName As String, ByVal setBonus As String, ByVal resistances As String) As Integer
+            If (name Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(name,String)
+            End If
+            If (attributes Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(attributes,String)
+            End If
+            If (slotsPossible Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(slotsPossible,String)
+            End If
+            If (wearableBy Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(wearableBy,String)
+            End If
+            If (isUnique.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(isUnique.Value,Boolean)
+            Else
+                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            If (minStats Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(minStats,String)
+            End If
+            If (setName Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(6).Value = CType(setName,String)
+            End If
+            If (setBonus Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(7).Value = CType(setBonus,String)
+            End If
+            If (resistances Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(8).Value = CType(resistances,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
+            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.InsertCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.InsertCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal name As String, ByVal attributes As String, ByVal slotsPossible As String, ByVal wearableBy As String, ByVal isUnique As Global.System.Nullable(Of Boolean), ByVal minStats As String, ByVal setName As String, ByVal setBonus As String, ByVal resistances As String, ByVal Original_id As Integer, ByVal Original_isUnique As Global.System.Nullable(Of Boolean), ByVal id As Integer) As Integer
+            If (name Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(name,String)
+            End If
+            If (attributes Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(attributes,String)
+            End If
+            If (slotsPossible Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(slotsPossible,String)
+            End If
+            If (wearableBy Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(wearableBy,String)
+            End If
+            If (isUnique.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(isUnique.Value,Boolean)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            If (minStats Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(minStats,String)
+            End If
+            If (setName Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(setName,String)
+            End If
+            If (setBonus Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(setBonus,String)
+            End If
+            If (resistances Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(resistances,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_id,Integer)
+            If (Original_isUnique.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_isUnique.Value,Boolean)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(12).Value = CType(id,Integer)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
+            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.UpdateCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.UpdateCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal name As String, ByVal attributes As String, ByVal slotsPossible As String, ByVal wearableBy As String, ByVal isUnique As Global.System.Nullable(Of Boolean), ByVal minStats As String, ByVal setName As String, ByVal setBonus As String, ByVal resistances As String, ByVal Original_id As Integer, ByVal Original_isUnique As Global.System.Nullable(Of Boolean)) As Integer
+            Return Me.Update(name, attributes, slotsPossible, wearableBy, isUnique, minStats, setName, setBonus, resistances, Original_id, Original_isUnique, Original_id)
         End Function
     End Class
     
@@ -30505,7 +33488,7 @@ Namespace GameDatabaseDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(2) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT id, name, tierid, minLevel, maxLevel, rewardWeaponid, rewardArmorid, rewar"& _ 
@@ -30518,18 +33501,6 @@ Namespace GameDatabaseDataSetTableAdapters
                 ", rewardAugmentid, rewardConsumableid, rewardExperience, rewardGold, isComplete"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            StaticQuests"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (id = @questid)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@questid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT        StaticQuests.id, StaticQuests.name, StaticQuests.tierid, StaticQues"& _ 
-                "ts.minLevel, StaticQuests.maxLevel, StaticQuests.rewardWeaponid, StaticQuests.re"& _ 
-                "wardArmorid, StaticQuests.rewardAugmentid, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         StaticQues"& _ 
-                "ts.rewardConsumableid, StaticQuests.rewardExperience, StaticQuests.rewardGold, S"& _ 
-                "taticQuests.isComplete"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            StaticQuests INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"               "& _ 
-                "          TavernStates ON StaticQuests.id = TavernStates.questSlot1id AND Static"& _ 
-                "Quests.id = TavernStates.questSlot2id AND StaticQuests.id = TavernStates.questSl"& _ 
-                "ot3id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (TavernStates.id = @tavernStateid)"
-            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tavernStateid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -30563,18 +33534,6 @@ Namespace GameDatabaseDataSetTableAdapters
         Public Overloads Overridable Function GetQuestByid(ByVal questid As Integer) As GameDatabaseDataSet.StaticQuestsDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
             Me.Adapter.SelectCommand.Parameters(0).Value = CType(questid,Integer)
-            Dim dataTable As GameDatabaseDataSet.StaticQuestsDataTable = New GameDatabaseDataSet.StaticQuestsDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetQuestsByTavernStateid(ByVal tavernStateid As Integer) As GameDatabaseDataSet.StaticQuestsDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(2)
-            Me.Adapter.SelectCommand.Parameters(0).Value = CType(tavernStateid,Integer)
             Dim dataTable As GameDatabaseDataSet.StaticQuestsDataTable = New GameDatabaseDataSet.StaticQuestsDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -31565,39 +34524,12 @@ Namespace GameDatabaseDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(4) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT id, name, attributes, slotsPossible, wearableBy, isUnique, minStats, isRan"& _ 
                 "ged, isMagic FROM dbo.StaticWeapons"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT        id, name, attributes, slotsPossible, wearableBy, isUnique, minStats"& _ 
-                ", isRanged, isMagic"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            StaticWeapons"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (name LIKE 'swo"& _ 
-                "rd') OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (name LIKE 'shield') OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                     "& _ 
-                "    (name LIKE 'hammer') OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (name LIKE 'crossbow') OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (name LIKE 'bow') OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (name L"& _ 
-                "IKE 'spear')"
-            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT        id, name, attributes, slotsPossible, wearableBy, isUnique, minStats"& _ 
-                ", isRanged, isMagic"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            StaticWeapons"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (name LIKE 'sta"& _ 
-                "ff') OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (name LIKE 'wand') OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                       "& _ 
-                "  (name LIKE 'scepter') OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (name LIKE 'tome')"
-            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "SELECT        TOP (1) id, name, attributes, slotsPossible, wearableBy, isUnique, "& _ 
-                "minStats, isRanged, isMagic"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            StaticWeapons"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY id DESC"
-            Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(4).Connection = Me.Connection
-            Me._commandCollection(4).CommandText = "SELECT        id, name, attributes, slotsPossible, wearableBy, isUnique, minStats"& _ 
-                ", isRanged, isMagic"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            StaticWeapons"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (id = @weaponid"& _ 
-                ")"
-            Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@weaponid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -31619,64 +34551,6 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
         Public Overloads Overridable Function GetData() As GameDatabaseDataSet.StaticWeaponsDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As GameDatabaseDataSet.StaticWeaponsDataTable = New GameDatabaseDataSet.StaticWeaponsDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillWithBlacksmithWeapons(ByVal dataTable As GameDatabaseDataSet.StaticWeaponsDataTable) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetBlacksmithWeapons() As GameDatabaseDataSet.StaticWeaponsDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            Dim dataTable As GameDatabaseDataSet.StaticWeaponsDataTable = New GameDatabaseDataSet.StaticWeaponsDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetCasterWeapons() As GameDatabaseDataSet.StaticWeaponsDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(2)
-            Dim dataTable As GameDatabaseDataSet.StaticWeaponsDataTable = New GameDatabaseDataSet.StaticWeaponsDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetLastRow() As GameDatabaseDataSet.StaticWeaponsDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(3)
-            Dim dataTable As GameDatabaseDataSet.StaticWeaponsDataTable = New GameDatabaseDataSet.StaticWeaponsDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetWeaponByid(ByVal weaponid As Integer) As GameDatabaseDataSet.StaticWeaponsDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(4)
-            Me.Adapter.SelectCommand.Parameters(0).Value = CType(weaponid,Integer)
             Dim dataTable As GameDatabaseDataSet.StaticWeaponsDataTable = New GameDatabaseDataSet.StaticWeaponsDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -32141,21 +35015,13 @@ Namespace GameDatabaseDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT id, playerStateid, hireSlot1id, hireSlot2id, hireSlot3id, hireSlot4id, que"& _ 
                 "stSlot1id, questSlot2id, questSlot3id, dateVisited, hireSlot1Cost, hireSlot2Cost"& _ 
                 ", hireSlot3Cost, hireSlot4Cost FROM dbo.TavernStates"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT        TOP (1) id, playerStateid, hireSlot1id, hireSlot2id, hireSlot3id, h"& _ 
-                "ireSlot4id, questSlot1id, questSlot2id, questSlot3id, dateVisited, hireSlot1Cost"& _ 
-                ", hireSlot2Cost, hireSlot3Cost, hireSlot4Cost"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            TavernStates"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHE"& _ 
-                "RE        (playerStateid = @playerStateid)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY id DESC"
-            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerStateid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "playerStateid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -32177,22 +35043,6 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
         Public Overloads Overridable Function GetData() As GameDatabaseDataSet.TavernStatesDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As GameDatabaseDataSet.TavernStatesDataTable = New GameDatabaseDataSet.TavernStatesDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetLastTavernStateByPlayerStateid(ByVal playerStateid As Global.System.Nullable(Of Integer)) As GameDatabaseDataSet.TavernStatesDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (playerStateid.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(playerStateid.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
             Dim dataTable As GameDatabaseDataSet.TavernStatesDataTable = New GameDatabaseDataSet.TavernStatesDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -33304,19 +36154,11 @@ Namespace GameDatabaseDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT id, weaponid, augmentid FROM dbo.WeaponAugments"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT        WeaponAugments.id, WeaponAugments.weaponid, WeaponAugments.augmenti"& _ 
-                "d"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            WeaponAugments INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         PlayerWea"& _ 
-                "pons ON WeaponAugments.weaponid = PlayerWeapons.id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (PlayerWeapons."& _ 
-                "playerid = @playerid)"
-            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@playerid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "playerid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -33338,40 +36180,6 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
         Public Overloads Overridable Function GetData() As GameDatabaseDataSet.WeaponAugmentsDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As GameDatabaseDataSet.WeaponAugmentsDataTable = New GameDatabaseDataSet.WeaponAugmentsDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillByPlayerid(ByVal dataTable As GameDatabaseDataSet.WeaponAugmentsDataTable, ByVal playerid As Global.System.Nullable(Of Integer)) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (playerid.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(playerid.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetWeaponAugmentsByPlayerid(ByVal playerid As Global.System.Nullable(Of Integer)) As GameDatabaseDataSet.WeaponAugmentsDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (playerid.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(playerid.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
             Dim dataTable As GameDatabaseDataSet.WeaponAugmentsDataTable = New GameDatabaseDataSet.WeaponAugmentsDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -33558,9 +36366,13 @@ Namespace GameDatabaseDataSetTableAdapters
         
         Private _playerArmorTableAdapter As PlayerArmorTableAdapter
         
+        Private _playerAugmentsTableAdapter As PlayerAugmentsTableAdapter
+        
         Private _playerConsumablesTableAdapter As PlayerConsumablesTableAdapter
         
         Private _playerCreaturesTableAdapter As PlayerCreaturesTableAdapter
+        
+        Private _playerJewelryTableAdapter As PlayerJewelryTableAdapter
         
         Private _playerPartiesTableAdapter As PlayerPartiesTableAdapter
         
@@ -33589,6 +36401,8 @@ Namespace GameDatabaseDataSetTableAdapters
         Private _staticConsumablesTableAdapter As StaticConsumablesTableAdapter
         
         Private _staticCreaturesTableAdapter As StaticCreaturesTableAdapter
+        
+        Private _staticJewelryTableAdapter As StaticJewelryTableAdapter
         
         Private _staticMobsTableAdapter As StaticMobsTableAdapter
         
@@ -33764,6 +36578,20 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
+        Public Property PlayerAugmentsTableAdapter() As PlayerAugmentsTableAdapter
+            Get
+                Return Me._playerAugmentsTableAdapter
+            End Get
+            Set
+                Me._playerAugmentsTableAdapter = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
+            "a", "System.Drawing.Design.UITypeEditor")>  _
         Public Property PlayerConsumablesTableAdapter() As PlayerConsumablesTableAdapter
             Get
                 Return Me._playerConsumablesTableAdapter
@@ -33784,6 +36612,20 @@ Namespace GameDatabaseDataSetTableAdapters
             End Get
             Set
                 Me._playerCreaturesTableAdapter = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
+            "a", "System.Drawing.Design.UITypeEditor")>  _
+        Public Property PlayerJewelryTableAdapter() As PlayerJewelryTableAdapter
+            Get
+                Return Me._playerJewelryTableAdapter
+            End Get
+            Set
+                Me._playerJewelryTableAdapter = value
             End Set
         End Property
         
@@ -33988,6 +36830,20 @@ Namespace GameDatabaseDataSetTableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
+        Public Property StaticJewelryTableAdapter() As StaticJewelryTableAdapter
+            Get
+                Return Me._staticJewelryTableAdapter
+            End Get
+            Set
+                Me._staticJewelryTableAdapter = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
+            "a", "System.Drawing.Design.UITypeEditor")>  _
         Public Property StaticMobsTableAdapter() As StaticMobsTableAdapter
             Get
                 Return Me._staticMobsTableAdapter
@@ -34140,6 +36996,10 @@ Namespace GameDatabaseDataSetTableAdapters
                             AndAlso (Not (Me._playerArmorTableAdapter.Connection) Is Nothing)) Then
                     Return Me._playerArmorTableAdapter.Connection
                 End If
+                If ((Not (Me._playerAugmentsTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._playerAugmentsTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._playerAugmentsTableAdapter.Connection
+                End If
                 If ((Not (Me._playerConsumablesTableAdapter) Is Nothing)  _
                             AndAlso (Not (Me._playerConsumablesTableAdapter.Connection) Is Nothing)) Then
                     Return Me._playerConsumablesTableAdapter.Connection
@@ -34147,6 +37007,10 @@ Namespace GameDatabaseDataSetTableAdapters
                 If ((Not (Me._playerCreaturesTableAdapter) Is Nothing)  _
                             AndAlso (Not (Me._playerCreaturesTableAdapter.Connection) Is Nothing)) Then
                     Return Me._playerCreaturesTableAdapter.Connection
+                End If
+                If ((Not (Me._playerJewelryTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._playerJewelryTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._playerJewelryTableAdapter.Connection
                 End If
                 If ((Not (Me._playerPartiesTableAdapter) Is Nothing)  _
                             AndAlso (Not (Me._playerPartiesTableAdapter.Connection) Is Nothing)) Then
@@ -34203,6 +37067,10 @@ Namespace GameDatabaseDataSetTableAdapters
                 If ((Not (Me._staticCreaturesTableAdapter) Is Nothing)  _
                             AndAlso (Not (Me._staticCreaturesTableAdapter.Connection) Is Nothing)) Then
                     Return Me._staticCreaturesTableAdapter.Connection
+                End If
+                If ((Not (Me._staticJewelryTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._staticJewelryTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._staticJewelryTableAdapter.Connection
                 End If
                 If ((Not (Me._staticMobsTableAdapter) Is Nothing)  _
                             AndAlso (Not (Me._staticMobsTableAdapter.Connection) Is Nothing)) Then
@@ -34275,10 +37143,16 @@ Namespace GameDatabaseDataSetTableAdapters
                 If (Not (Me._playerArmorTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
+                If (Not (Me._playerAugmentsTableAdapter) Is Nothing) Then
+                    count = (count + 1)
+                End If
                 If (Not (Me._playerConsumablesTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 If (Not (Me._playerCreaturesTableAdapter) Is Nothing) Then
+                    count = (count + 1)
+                End If
+                If (Not (Me._playerJewelryTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 If (Not (Me._playerPartiesTableAdapter) Is Nothing) Then
@@ -34323,6 +37197,9 @@ Namespace GameDatabaseDataSetTableAdapters
                 If (Not (Me._staticCreaturesTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
+                If (Not (Me._staticJewelryTableAdapter) Is Nothing) Then
+                    count = (count + 1)
+                End If
                 If (Not (Me._staticMobsTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
@@ -34364,102 +37241,12 @@ Namespace GameDatabaseDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._tavernStatesTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.TavernStates.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._scholarStateItemsTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.ScholarStateItems.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._tavernStatesTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._staticWeaponsTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.StaticWeapons.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._staticWeaponsTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._staticSkillsTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.StaticSkills.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._staticSkillsTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._staticQuestsTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.StaticQuests.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._staticQuestsTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._staticMobsTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.StaticMobs.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._staticMobsTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._staticCreaturesTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.StaticCreatures.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._staticCreaturesTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._staticConsumablesTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.StaticConsumables.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._staticConsumablesTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._staticCampTiersTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.StaticCampTiers.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._staticCampTiersTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._staticCampsTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.StaticCamps.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._staticCampsTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._staticAugmentsTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.StaticAugments.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._staticAugmentsTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._staticArmorTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.StaticArmor.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._staticArmorTableAdapter.Update(updatedRows))
+                    result = (result + Me._scholarStateItemsTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -34472,12 +37259,39 @@ Namespace GameDatabaseDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._scholarStateItemsTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.ScholarStateItems.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._staticArmorTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.StaticArmor.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._scholarStateItemsTableAdapter.Update(updatedRows))
+                    result = (result + Me._staticArmorTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._staticAugmentsTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.StaticAugments.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._staticAugmentsTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._staticCampsTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.StaticCamps.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._staticCampsTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._staticCampTiersTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.StaticCampTiers.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._staticCampTiersTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -34490,12 +37304,75 @@ Namespace GameDatabaseDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._turnsTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Turns.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._staticConsumablesTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.StaticConsumables.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._turnsTableAdapter.Update(updatedRows))
+                    result = (result + Me._staticConsumablesTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._staticJewelryTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.StaticJewelry.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._staticJewelryTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._staticMobsTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.StaticMobs.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._staticMobsTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._staticQuestsTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.StaticQuests.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._staticQuestsTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._staticSkillsTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.StaticSkills.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._staticSkillsTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._staticWeaponsTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.StaticWeapons.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._staticWeaponsTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._tavernStatesTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.TavernStates.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._tavernStatesTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._staticCreaturesTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.StaticCreatures.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._staticCreaturesTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -34508,120 +37385,21 @@ Namespace GameDatabaseDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
+            If (Not (Me._playerStatesTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.PlayerStates.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._playerStatesTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
             If (Not (Me._playerSkillsTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.PlayerSkills.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
                     result = (result + Me._playerSkillsTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._playersTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Players.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._playersTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._playerPartiesTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.PlayerParties.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._playerPartiesTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._playerCreaturesTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.PlayerCreatures.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._playerCreaturesTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._playerConsumablesTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.PlayerConsumables.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._playerConsumablesTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._playerArmorTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.PlayerArmor.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._playerArmorTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._farmerStatesTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.FarmerStates.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._farmerStatesTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._farmerStateItemsTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.FarmerStateItems.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._farmerStateItemsTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._enemyPartiesTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.EnemyParties.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._enemyPartiesTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._chemistStatesTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.ChemistStates.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._chemistStatesTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._chemistStateItemsTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.ChemistStateItems.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._chemistStateItemsTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._blacksmithStatesTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.BlacksmithStates.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._blacksmithStatesTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._blacksmithStateItemsTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.BlacksmithStateItems.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._blacksmithStateItemsTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -34634,12 +37412,138 @@ Namespace GameDatabaseDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._playerStatesTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.PlayerStates.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._blacksmithStateItemsTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.BlacksmithStateItems.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._playerStatesTableAdapter.Update(updatedRows))
+                    result = (result + Me._blacksmithStateItemsTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._blacksmithStatesTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.BlacksmithStates.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._blacksmithStatesTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._chemistStateItemsTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.ChemistStateItems.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._chemistStateItemsTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._chemistStatesTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.ChemistStates.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._chemistStatesTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._enemyPartiesTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.EnemyParties.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._enemyPartiesTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._farmerStateItemsTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.FarmerStateItems.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._farmerStateItemsTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._farmerStatesTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.FarmerStates.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._farmerStatesTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._playerArmorTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.PlayerArmor.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._playerArmorTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._playerAugmentsTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.PlayerAugments.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._playerAugmentsTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._playerConsumablesTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.PlayerConsumables.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._playerConsumablesTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._playerCreaturesTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.PlayerCreatures.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._playerCreaturesTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._playerJewelryTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.PlayerJewelry.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._playerJewelryTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._playerPartiesTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.PlayerParties.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._playerPartiesTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._playersTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Players.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._playersTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._turnsTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Turns.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._turnsTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -34670,91 +37574,11 @@ Namespace GameDatabaseDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._tavernStatesTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.TavernStates.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._scholarStateItemsTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.ScholarStateItems.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._tavernStatesTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._staticWeaponsTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.StaticWeapons.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._staticWeaponsTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._staticSkillsTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.StaticSkills.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._staticSkillsTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._staticQuestsTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.StaticQuests.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._staticQuestsTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._staticMobsTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.StaticMobs.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._staticMobsTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._staticCreaturesTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.StaticCreatures.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._staticCreaturesTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._staticConsumablesTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.StaticConsumables.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._staticConsumablesTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._staticCampTiersTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.StaticCampTiers.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._staticCampTiersTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._staticCampsTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.StaticCamps.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._staticCampsTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._staticAugmentsTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.StaticAugments.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._staticAugmentsTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._staticArmorTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.StaticArmor.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._staticArmorTableAdapter.Update(addedRows))
+                    result = (result + Me._scholarStateItemsTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -34766,11 +37590,35 @@ Namespace GameDatabaseDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._scholarStateItemsTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.ScholarStateItems.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._staticArmorTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.StaticArmor.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._scholarStateItemsTableAdapter.Update(addedRows))
+                    result = (result + Me._staticArmorTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._staticAugmentsTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.StaticAugments.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._staticAugmentsTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._staticCampsTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.StaticCamps.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._staticCampsTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._staticCampTiersTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.StaticCampTiers.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._staticCampTiersTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -34782,11 +37630,67 @@ Namespace GameDatabaseDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._turnsTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Turns.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._staticConsumablesTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.StaticConsumables.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._turnsTableAdapter.Update(addedRows))
+                    result = (result + Me._staticConsumablesTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._staticJewelryTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.StaticJewelry.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._staticJewelryTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._staticMobsTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.StaticMobs.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._staticMobsTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._staticQuestsTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.StaticQuests.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._staticQuestsTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._staticSkillsTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.StaticSkills.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._staticSkillsTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._staticWeaponsTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.StaticWeapons.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._staticWeaponsTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._tavernStatesTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.TavernStates.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._tavernStatesTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._staticCreaturesTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.StaticCreatures.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._staticCreaturesTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -34798,107 +37702,19 @@ Namespace GameDatabaseDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
+            If (Not (Me._playerStatesTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.PlayerStates.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._playerStatesTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
             If (Not (Me._playerSkillsTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.PlayerSkills.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
                     result = (result + Me._playerSkillsTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._playersTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Players.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._playersTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._playerPartiesTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.PlayerParties.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._playerPartiesTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._playerCreaturesTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.PlayerCreatures.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._playerCreaturesTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._playerConsumablesTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.PlayerConsumables.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._playerConsumablesTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._playerArmorTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.PlayerArmor.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._playerArmorTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._farmerStatesTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.FarmerStates.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._farmerStatesTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._farmerStateItemsTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.FarmerStateItems.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._farmerStateItemsTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._enemyPartiesTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.EnemyParties.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._enemyPartiesTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._chemistStatesTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.ChemistStates.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._chemistStatesTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._chemistStateItemsTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.ChemistStateItems.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._chemistStateItemsTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._blacksmithStatesTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.BlacksmithStates.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._blacksmithStatesTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._blacksmithStateItemsTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.BlacksmithStateItems.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._blacksmithStateItemsTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -34910,11 +37726,123 @@ Namespace GameDatabaseDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._playerStatesTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.PlayerStates.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._blacksmithStateItemsTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.BlacksmithStateItems.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._playerStatesTableAdapter.Update(addedRows))
+                    result = (result + Me._blacksmithStateItemsTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._blacksmithStatesTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.BlacksmithStates.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._blacksmithStatesTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._chemistStateItemsTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.ChemistStateItems.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._chemistStateItemsTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._chemistStatesTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.ChemistStates.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._chemistStatesTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._enemyPartiesTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.EnemyParties.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._enemyPartiesTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._farmerStateItemsTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.FarmerStateItems.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._farmerStateItemsTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._farmerStatesTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.FarmerStates.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._farmerStatesTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._playerArmorTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.PlayerArmor.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._playerArmorTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._playerAugmentsTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.PlayerAugments.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._playerAugmentsTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._playerConsumablesTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.PlayerConsumables.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._playerConsumablesTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._playerCreaturesTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.PlayerCreatures.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._playerCreaturesTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._playerJewelryTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.PlayerJewelry.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._playerJewelryTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._playerPartiesTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.PlayerParties.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._playerPartiesTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._playersTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Players.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._playersTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._turnsTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Turns.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._turnsTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -34944,107 +37872,11 @@ Namespace GameDatabaseDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._playerStatesTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.PlayerStates.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._turnsTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Turns.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._playerStatesTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._battlesTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Battles.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._battlesTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._blacksmithStateItemsTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.BlacksmithStateItems.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._blacksmithStateItemsTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._blacksmithStatesTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.BlacksmithStates.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._blacksmithStatesTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._chemistStateItemsTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.ChemistStateItems.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._chemistStateItemsTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._chemistStatesTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.ChemistStates.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._chemistStatesTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._enemyPartiesTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.EnemyParties.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._enemyPartiesTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._farmerStateItemsTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.FarmerStateItems.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._farmerStateItemsTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._farmerStatesTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.FarmerStates.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._farmerStatesTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._playerArmorTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.PlayerArmor.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._playerArmorTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._playerConsumablesTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.PlayerConsumables.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._playerConsumablesTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._playerCreaturesTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.PlayerCreatures.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._playerCreaturesTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._playerPartiesTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.PlayerParties.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._playerPartiesTableAdapter.Update(deletedRows))
+                    result = (result + Me._turnsTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -35056,11 +37888,131 @@ Namespace GameDatabaseDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
+            If (Not (Me._playerPartiesTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.PlayerParties.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._playerPartiesTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._playerJewelryTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.PlayerJewelry.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._playerJewelryTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._playerCreaturesTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.PlayerCreatures.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._playerCreaturesTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._playerConsumablesTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.PlayerConsumables.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._playerConsumablesTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._playerAugmentsTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.PlayerAugments.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._playerAugmentsTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._playerArmorTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.PlayerArmor.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._playerArmorTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._farmerStatesTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.FarmerStates.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._farmerStatesTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._farmerStateItemsTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.FarmerStateItems.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._farmerStateItemsTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._enemyPartiesTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.EnemyParties.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._enemyPartiesTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._chemistStatesTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.ChemistStates.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._chemistStatesTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._chemistStateItemsTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.ChemistStateItems.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._chemistStateItemsTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._blacksmithStatesTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.BlacksmithStates.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._blacksmithStatesTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._blacksmithStateItemsTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.BlacksmithStateItems.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._blacksmithStateItemsTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._battlesTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Battles.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._battlesTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
             If (Not (Me._playerSkillsTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.PlayerSkills.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._playerSkillsTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._playerStatesTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.PlayerStates.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._playerStatesTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -35072,78 +38024,6 @@ Namespace GameDatabaseDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._turnsTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Turns.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._turnsTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._roadStatesTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.RoadStates.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._roadStatesTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._scholarStateItemsTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.ScholarStateItems.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._scholarStateItemsTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._scholarStatesTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.ScholarStates.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._scholarStatesTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._staticArmorTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.StaticArmor.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._staticArmorTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._staticAugmentsTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.StaticAugments.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._staticAugmentsTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._staticCampsTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.StaticCamps.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._staticCampsTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._staticCampTiersTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.StaticCampTiers.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._staticCampTiersTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._staticConsumablesTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.StaticConsumables.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._staticConsumablesTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
             If (Not (Me._staticCreaturesTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.StaticCreatures.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
@@ -35152,27 +38032,11 @@ Namespace GameDatabaseDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._staticMobsTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.StaticMobs.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._tavernStatesTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.TavernStates.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._staticMobsTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._staticQuestsTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.StaticQuests.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._staticQuestsTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._staticSkillsTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.StaticSkills.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._staticSkillsTableAdapter.Update(deletedRows))
+                    result = (result + Me._tavernStatesTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -35184,11 +38048,99 @@ Namespace GameDatabaseDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._tavernStatesTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.TavernStates.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._staticSkillsTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.StaticSkills.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._tavernStatesTableAdapter.Update(deletedRows))
+                    result = (result + Me._staticSkillsTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._staticQuestsTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.StaticQuests.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._staticQuestsTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._staticMobsTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.StaticMobs.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._staticMobsTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._staticJewelryTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.StaticJewelry.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._staticJewelryTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._staticConsumablesTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.StaticConsumables.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._staticConsumablesTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._roadStatesTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.RoadStates.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._roadStatesTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._staticCampTiersTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.StaticCampTiers.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._staticCampTiersTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._staticCampsTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.StaticCamps.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._staticCampsTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._staticAugmentsTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.StaticAugments.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._staticAugmentsTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._staticArmorTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.StaticArmor.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._staticArmorTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._scholarStatesTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.ScholarStates.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._scholarStatesTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._scholarStateItemsTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.ScholarStateItems.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._scholarStateItemsTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -35291,6 +38243,11 @@ Namespace GameDatabaseDataSetTableAdapters
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
+            If ((Not (Me._playerAugmentsTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._playerAugmentsTableAdapter.Connection) = false)) Then
+                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
+                        "tring.")
+            End If
             If ((Not (Me._playerConsumablesTableAdapter) Is Nothing)  _
                         AndAlso (Me.MatchTableAdapterConnection(Me._playerConsumablesTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
@@ -35298,6 +38255,11 @@ Namespace GameDatabaseDataSetTableAdapters
             End If
             If ((Not (Me._playerCreaturesTableAdapter) Is Nothing)  _
                         AndAlso (Me.MatchTableAdapterConnection(Me._playerCreaturesTableAdapter.Connection) = false)) Then
+                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
+                        "tring.")
+            End If
+            If ((Not (Me._playerJewelryTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._playerJewelryTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
@@ -35368,6 +38330,11 @@ Namespace GameDatabaseDataSetTableAdapters
             End If
             If ((Not (Me._staticCreaturesTableAdapter) Is Nothing)  _
                         AndAlso (Me.MatchTableAdapterConnection(Me._staticCreaturesTableAdapter.Connection) = false)) Then
+                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
+                        "tring.")
+            End If
+            If ((Not (Me._staticJewelryTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._staticJewelryTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
@@ -35528,6 +38495,15 @@ Namespace GameDatabaseDataSetTableAdapters
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._playerArmorTableAdapter.Adapter)
                     End If
                 End If
+                If (Not (Me._playerAugmentsTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._playerAugmentsTableAdapter, Me._playerAugmentsTableAdapter.Connection)
+                    Me._playerAugmentsTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._playerAugmentsTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._playerAugmentsTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._playerAugmentsTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._playerAugmentsTableAdapter.Adapter)
+                    End If
+                End If
                 If (Not (Me._playerConsumablesTableAdapter) Is Nothing) Then
                     revertConnections.Add(Me._playerConsumablesTableAdapter, Me._playerConsumablesTableAdapter.Connection)
                     Me._playerConsumablesTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
@@ -35544,6 +38520,15 @@ Namespace GameDatabaseDataSetTableAdapters
                     If Me._playerCreaturesTableAdapter.Adapter.AcceptChangesDuringUpdate Then
                         Me._playerCreaturesTableAdapter.Adapter.AcceptChangesDuringUpdate = false
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._playerCreaturesTableAdapter.Adapter)
+                    End If
+                End If
+                If (Not (Me._playerJewelryTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._playerJewelryTableAdapter, Me._playerJewelryTableAdapter.Connection)
+                    Me._playerJewelryTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._playerJewelryTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._playerJewelryTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._playerJewelryTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._playerJewelryTableAdapter.Adapter)
                     End If
                 End If
                 If (Not (Me._playerPartiesTableAdapter) Is Nothing) Then
@@ -35670,6 +38655,15 @@ Namespace GameDatabaseDataSetTableAdapters
                     If Me._staticCreaturesTableAdapter.Adapter.AcceptChangesDuringUpdate Then
                         Me._staticCreaturesTableAdapter.Adapter.AcceptChangesDuringUpdate = false
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._staticCreaturesTableAdapter.Adapter)
+                    End If
+                End If
+                If (Not (Me._staticJewelryTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._staticJewelryTableAdapter, Me._staticJewelryTableAdapter.Connection)
+                    Me._staticJewelryTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._staticJewelryTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._staticJewelryTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._staticJewelryTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._staticJewelryTableAdapter.Adapter)
                     End If
                 End If
                 If (Not (Me._staticMobsTableAdapter) Is Nothing) Then
@@ -35835,6 +38829,10 @@ Namespace GameDatabaseDataSetTableAdapters
                     Me._playerArmorTableAdapter.Connection = CType(revertConnections(Me._playerArmorTableAdapter),Global.System.Data.SqlClient.SqlConnection)
                     Me._playerArmorTableAdapter.Transaction = Nothing
                 End If
+                If (Not (Me._playerAugmentsTableAdapter) Is Nothing) Then
+                    Me._playerAugmentsTableAdapter.Connection = CType(revertConnections(Me._playerAugmentsTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._playerAugmentsTableAdapter.Transaction = Nothing
+                End If
                 If (Not (Me._playerConsumablesTableAdapter) Is Nothing) Then
                     Me._playerConsumablesTableAdapter.Connection = CType(revertConnections(Me._playerConsumablesTableAdapter),Global.System.Data.SqlClient.SqlConnection)
                     Me._playerConsumablesTableAdapter.Transaction = Nothing
@@ -35842,6 +38840,10 @@ Namespace GameDatabaseDataSetTableAdapters
                 If (Not (Me._playerCreaturesTableAdapter) Is Nothing) Then
                     Me._playerCreaturesTableAdapter.Connection = CType(revertConnections(Me._playerCreaturesTableAdapter),Global.System.Data.SqlClient.SqlConnection)
                     Me._playerCreaturesTableAdapter.Transaction = Nothing
+                End If
+                If (Not (Me._playerJewelryTableAdapter) Is Nothing) Then
+                    Me._playerJewelryTableAdapter.Connection = CType(revertConnections(Me._playerJewelryTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._playerJewelryTableAdapter.Transaction = Nothing
                 End If
                 If (Not (Me._playerPartiesTableAdapter) Is Nothing) Then
                     Me._playerPartiesTableAdapter.Connection = CType(revertConnections(Me._playerPartiesTableAdapter),Global.System.Data.SqlClient.SqlConnection)
@@ -35898,6 +38900,10 @@ Namespace GameDatabaseDataSetTableAdapters
                 If (Not (Me._staticCreaturesTableAdapter) Is Nothing) Then
                     Me._staticCreaturesTableAdapter.Connection = CType(revertConnections(Me._staticCreaturesTableAdapter),Global.System.Data.SqlClient.SqlConnection)
                     Me._staticCreaturesTableAdapter.Transaction = Nothing
+                End If
+                If (Not (Me._staticJewelryTableAdapter) Is Nothing) Then
+                    Me._staticJewelryTableAdapter.Connection = CType(revertConnections(Me._staticJewelryTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._staticJewelryTableAdapter.Transaction = Nothing
                 End If
                 If (Not (Me._staticMobsTableAdapter) Is Nothing) Then
                     Me._staticMobsTableAdapter.Connection = CType(revertConnections(Me._staticMobsTableAdapter),Global.System.Data.SqlClient.SqlConnection)

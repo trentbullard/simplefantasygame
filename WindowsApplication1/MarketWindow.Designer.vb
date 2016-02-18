@@ -22,7 +22,6 @@ Partial Class MarketWindow
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.farmerbtn = New System.Windows.Forms.Button()
         Me.chemistbtn = New System.Windows.Forms.Button()
         Me.blacksmithbtn = New System.Windows.Forms.Button()
@@ -35,16 +34,7 @@ Partial Class MarketWindow
         Me.scholarlbl = New System.Windows.Forms.Label()
         Me.farmerlbl = New System.Windows.Forms.Label()
         Me.blacksmithlbl = New System.Windows.Forms.Label()
-        Me.GameDatabaseDataSet = New WindowsApplication1.GameDatabaseDataSet()
-        Me.BlacksmithStatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BlacksmithStatesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.BlacksmithStatesTableAdapter()
-        Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
-        Me.BlacksmithStateItemsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BlacksmithStateItemsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.BlacksmithStateItemsTableAdapter()
         Me.Panel1.SuspendLayout()
-        CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BlacksmithStatesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BlacksmithStateItemsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'farmerbtn
@@ -168,67 +158,6 @@ Partial Class MarketWindow
         Me.blacksmithlbl.TabIndex = 6
         Me.blacksmithlbl.Text = "click here to buy weapons and metal armor!"
         '
-        'GameDatabaseDataSet
-        '
-        Me.GameDatabaseDataSet.DataSetName = "GameDatabaseDataSet"
-        Me.GameDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'BlacksmithStatesBindingSource
-        '
-        Me.BlacksmithStatesBindingSource.DataMember = "BlacksmithStates"
-        Me.BlacksmithStatesBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'BlacksmithStatesTableAdapter
-        '
-        Me.BlacksmithStatesTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.ArmorAugmentsTableAdapter = Nothing
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.BattlesTableAdapter = Nothing
-        Me.TableAdapterManager.BlacksmithStateItemsTableAdapter = Me.BlacksmithStateItemsTableAdapter
-        Me.TableAdapterManager.BlacksmithStatesTableAdapter = Me.BlacksmithStatesTableAdapter
-        Me.TableAdapterManager.ChemistStateItemsTableAdapter = Nothing
-        Me.TableAdapterManager.ChemistStatesTableAdapter = Nothing
-        Me.TableAdapterManager.EnemyPartiesTableAdapter = Nothing
-        Me.TableAdapterManager.FarmerStateItemsTableAdapter = Nothing
-        Me.TableAdapterManager.FarmerStatesTableAdapter = Nothing
-        Me.TableAdapterManager.PlayerArmorTableAdapter = Nothing
-        Me.TableAdapterManager.PlayerConsumablesTableAdapter = Nothing
-        Me.TableAdapterManager.PlayerCreaturesTableAdapter = Nothing
-        Me.TableAdapterManager.PlayerPartiesTableAdapter = Nothing
-        Me.TableAdapterManager.PlayerSkillsTableAdapter = Nothing
-        Me.TableAdapterManager.PlayersTableAdapter = Nothing
-        Me.TableAdapterManager.PlayerStatesTableAdapter = Nothing
-        Me.TableAdapterManager.PlayerWeaponsTableAdapter = Nothing
-        Me.TableAdapterManager.RoadStatesTableAdapter = Nothing
-        Me.TableAdapterManager.ScholarStateItemsTableAdapter = Nothing
-        Me.TableAdapterManager.ScholarStatesTableAdapter = Nothing
-        Me.TableAdapterManager.StaticArmorTableAdapter = Nothing
-        Me.TableAdapterManager.StaticAugmentsTableAdapter = Nothing
-        Me.TableAdapterManager.StaticCampsTableAdapter = Nothing
-        Me.TableAdapterManager.StaticCampTiersTableAdapter = Nothing
-        Me.TableAdapterManager.StaticConsumablesTableAdapter = Nothing
-        Me.TableAdapterManager.StaticCreaturesTableAdapter = Nothing
-        Me.TableAdapterManager.StaticMobsTableAdapter = Nothing
-        Me.TableAdapterManager.StaticQuestsTableAdapter = Nothing
-        Me.TableAdapterManager.StaticSkillsTableAdapter = Nothing
-        Me.TableAdapterManager.StaticWeaponsTableAdapter = Nothing
-        Me.TableAdapterManager.TavernStatesTableAdapter = Nothing
-        Me.TableAdapterManager.TurnsTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager.WeaponAugmentsTableAdapter = Nothing
-        '
-        'BlacksmithStateItemsBindingSource
-        '
-        Me.BlacksmithStateItemsBindingSource.DataMember = "BlacksmithStateItems"
-        Me.BlacksmithStateItemsBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'BlacksmithStateItemsTableAdapter
-        '
-        Me.BlacksmithStateItemsTableAdapter.ClearBeforeFill = True
-        '
         'MarketWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -242,9 +171,6 @@ Partial Class MarketWindow
         Me.Text = "market"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BlacksmithStatesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BlacksmithStateItemsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -261,10 +187,4 @@ Partial Class MarketWindow
     Friend WithEvents farmerlbl As Label
     Friend WithEvents blacksmithlbl As Label
     Friend WithEvents townbtn As Button
-    Friend WithEvents GameDatabaseDataSet As GameDatabaseDataSet
-    Friend WithEvents BlacksmithStatesBindingSource As BindingSource
-    Friend WithEvents BlacksmithStatesTableAdapter As GameDatabaseDataSetTableAdapters.BlacksmithStatesTableAdapter
-    Friend WithEvents TableAdapterManager As GameDatabaseDataSetTableAdapters.TableAdapterManager
-    Friend WithEvents BlacksmithStateItemsTableAdapter As GameDatabaseDataSetTableAdapters.BlacksmithStateItemsTableAdapter
-    Friend WithEvents BlacksmithStateItemsBindingSource As BindingSource
 End Class

@@ -22,7 +22,6 @@ Partial Class RoadWindow
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.camp1lbl = New System.Windows.Forms.Label()
         Me.camp1btn = New System.Windows.Forms.Button()
         Me.camp2btn = New System.Windows.Forms.Button()
@@ -34,26 +33,17 @@ Partial Class RoadWindow
         Me.camp5btn = New System.Windows.Forms.Button()
         Me.camp5lbl = New System.Windows.Forms.Label()
         Me.campSelectionpnl = New System.Windows.Forms.Panel()
-        Me.roadpnl = New System.Windows.Forms.Panel()
+        Me.townbtn = New System.Windows.Forms.Button()
+        Me.playerbtn = New System.Windows.Forms.Button()
+        Me.mainMenubtn = New System.Windows.Forms.Button()
         Me.camp5Chanceslbl = New System.Windows.Forms.Label()
         Me.camp4Chanceslbl = New System.Windows.Forms.Label()
         Me.camp3Chanceslbl = New System.Windows.Forms.Label()
         Me.camp2Chanceslbl = New System.Windows.Forms.Label()
         Me.camp1Chanceslbl = New System.Windows.Forms.Label()
-        Me.GameDatabaseDataSet = New WindowsApplication1.GameDatabaseDataSet()
-        Me.PlayerStatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PlayerStatesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter()
-        Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
-        Me.RoadStatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.RoadStatesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.RoadStatesTableAdapter()
-        Me.townbtn = New System.Windows.Forms.Button()
-        Me.playerbtn = New System.Windows.Forms.Button()
-        Me.mainMenubtn = New System.Windows.Forms.Button()
+        Me.roadpnl = New System.Windows.Forms.Panel()
         Me.campSelectionpnl.SuspendLayout()
         Me.roadpnl.SuspendLayout()
-        CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PlayerStatesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RoadStatesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'camp1lbl
@@ -185,14 +175,35 @@ Partial Class RoadWindow
         Me.campSelectionpnl.Size = New System.Drawing.Size(274, 196)
         Me.campSelectionpnl.TabIndex = 11
         '
-        'roadpnl
+        'townbtn
         '
-        Me.roadpnl.Controls.Add(Me.campSelectionpnl)
-        Me.roadpnl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.roadpnl.Location = New System.Drawing.Point(0, 0)
-        Me.roadpnl.Name = "roadpnl"
-        Me.roadpnl.Size = New System.Drawing.Size(274, 196)
-        Me.roadpnl.TabIndex = 17
+        Me.townbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.townbtn.Location = New System.Drawing.Point(23, 162)
+        Me.townbtn.Name = "townbtn"
+        Me.townbtn.Size = New System.Drawing.Size(77, 23)
+        Me.townbtn.TabIndex = 33
+        Me.townbtn.Text = "back to town"
+        Me.townbtn.UseVisualStyleBackColor = True
+        '
+        'playerbtn
+        '
+        Me.playerbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.playerbtn.Location = New System.Drawing.Point(106, 162)
+        Me.playerbtn.Name = "playerbtn"
+        Me.playerbtn.Size = New System.Drawing.Size(75, 23)
+        Me.playerbtn.TabIndex = 32
+        Me.playerbtn.Text = "player info"
+        Me.playerbtn.UseVisualStyleBackColor = True
+        '
+        'mainMenubtn
+        '
+        Me.mainMenubtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.mainMenubtn.Location = New System.Drawing.Point(187, 161)
+        Me.mainMenubtn.Name = "mainMenubtn"
+        Me.mainMenubtn.Size = New System.Drawing.Size(75, 23)
+        Me.mainMenubtn.TabIndex = 31
+        Me.mainMenubtn.Text = "main menu"
+        Me.mainMenubtn.UseVisualStyleBackColor = True
         '
         'camp5Chanceslbl
         '
@@ -244,96 +255,14 @@ Partial Class RoadWindow
         Me.camp1Chanceslbl.TabIndex = 18
         Me.camp1Chanceslbl.Text = "10% chance for ambush"
         '
-        'GameDatabaseDataSet
+        'roadpnl
         '
-        Me.GameDatabaseDataSet.DataSetName = "GameDatabaseDataSet"
-        Me.GameDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'PlayerStatesBindingSource
-        '
-        Me.PlayerStatesBindingSource.DataMember = "PlayerStates"
-        Me.PlayerStatesBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'PlayerStatesTableAdapter
-        '
-        Me.PlayerStatesTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.ArmorAugmentsTableAdapter = Nothing
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.BattlesTableAdapter = Nothing
-        Me.TableAdapterManager.BlacksmithStateItemsTableAdapter = Nothing
-        Me.TableAdapterManager.BlacksmithStatesTableAdapter = Nothing
-        Me.TableAdapterManager.ChemistStateItemsTableAdapter = Nothing
-        Me.TableAdapterManager.ChemistStatesTableAdapter = Nothing
-        Me.TableAdapterManager.EnemyPartiesTableAdapter = Nothing
-        Me.TableAdapterManager.FarmerStateItemsTableAdapter = Nothing
-        Me.TableAdapterManager.FarmerStatesTableAdapter = Nothing
-        Me.TableAdapterManager.PlayerArmorTableAdapter = Nothing
-        Me.TableAdapterManager.PlayerConsumablesTableAdapter = Nothing
-        Me.TableAdapterManager.PlayerCreaturesTableAdapter = Nothing
-        Me.TableAdapterManager.PlayerPartiesTableAdapter = Nothing
-        Me.TableAdapterManager.PlayerSkillsTableAdapter = Nothing
-        Me.TableAdapterManager.PlayersTableAdapter = Nothing
-        Me.TableAdapterManager.PlayerStatesTableAdapter = Me.PlayerStatesTableAdapter
-        Me.TableAdapterManager.PlayerWeaponsTableAdapter = Nothing
-        Me.TableAdapterManager.RoadStatesTableAdapter = Nothing
-        Me.TableAdapterManager.ScholarStateItemsTableAdapter = Nothing
-        Me.TableAdapterManager.ScholarStatesTableAdapter = Nothing
-        Me.TableAdapterManager.StaticArmorTableAdapter = Nothing
-        Me.TableAdapterManager.StaticAugmentsTableAdapter = Nothing
-        Me.TableAdapterManager.StaticCampsTableAdapter = Nothing
-        Me.TableAdapterManager.StaticCampTiersTableAdapter = Nothing
-        Me.TableAdapterManager.StaticConsumablesTableAdapter = Nothing
-        Me.TableAdapterManager.StaticCreaturesTableAdapter = Nothing
-        Me.TableAdapterManager.StaticMobsTableAdapter = Nothing
-        Me.TableAdapterManager.StaticQuestsTableAdapter = Nothing
-        Me.TableAdapterManager.StaticSkillsTableAdapter = Nothing
-        Me.TableAdapterManager.StaticWeaponsTableAdapter = Nothing
-        Me.TableAdapterManager.TavernStatesTableAdapter = Nothing
-        Me.TableAdapterManager.TurnsTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager.WeaponAugmentsTableAdapter = Nothing
-        '
-        'RoadStatesBindingSource
-        '
-        Me.RoadStatesBindingSource.DataMember = "RoadStates"
-        Me.RoadStatesBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'RoadStatesTableAdapter
-        '
-        Me.RoadStatesTableAdapter.ClearBeforeFill = True
-        '
-        'townbtn
-        '
-        Me.townbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.townbtn.Location = New System.Drawing.Point(23, 162)
-        Me.townbtn.Name = "townbtn"
-        Me.townbtn.Size = New System.Drawing.Size(77, 23)
-        Me.townbtn.TabIndex = 33
-        Me.townbtn.Text = "back to town"
-        Me.townbtn.UseVisualStyleBackColor = True
-        '
-        'playerbtn
-        '
-        Me.playerbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.playerbtn.Location = New System.Drawing.Point(106, 162)
-        Me.playerbtn.Name = "playerbtn"
-        Me.playerbtn.Size = New System.Drawing.Size(75, 23)
-        Me.playerbtn.TabIndex = 32
-        Me.playerbtn.Text = "player info"
-        Me.playerbtn.UseVisualStyleBackColor = True
-        '
-        'mainMenubtn
-        '
-        Me.mainMenubtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.mainMenubtn.Location = New System.Drawing.Point(187, 161)
-        Me.mainMenubtn.Name = "mainMenubtn"
-        Me.mainMenubtn.Size = New System.Drawing.Size(75, 23)
-        Me.mainMenubtn.TabIndex = 31
-        Me.mainMenubtn.Text = "main menu"
-        Me.mainMenubtn.UseVisualStyleBackColor = True
+        Me.roadpnl.Controls.Add(Me.campSelectionpnl)
+        Me.roadpnl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.roadpnl.Location = New System.Drawing.Point(0, 0)
+        Me.roadpnl.Name = "roadpnl"
+        Me.roadpnl.Size = New System.Drawing.Size(274, 196)
+        Me.roadpnl.TabIndex = 17
         '
         'RoadWindow
         '
@@ -353,9 +282,6 @@ Partial Class RoadWindow
         Me.campSelectionpnl.PerformLayout()
         Me.roadpnl.ResumeLayout(False)
         Me.roadpnl.PerformLayout()
-        CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PlayerStatesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RoadStatesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -372,17 +298,11 @@ Partial Class RoadWindow
     Friend WithEvents camp5lbl As Label
     Friend WithEvents campSelectionpnl As Panel
     Friend WithEvents roadpnl As Panel
-    Friend WithEvents GameDatabaseDataSet As GameDatabaseDataSet
-    Friend WithEvents PlayerStatesBindingSource As BindingSource
-    Friend WithEvents PlayerStatesTableAdapter As GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter
-    Friend WithEvents TableAdapterManager As GameDatabaseDataSetTableAdapters.TableAdapterManager
     Friend WithEvents camp5Chanceslbl As Label
     Friend WithEvents camp4Chanceslbl As Label
     Friend WithEvents camp3Chanceslbl As Label
     Friend WithEvents camp2Chanceslbl As Label
     Friend WithEvents camp1Chanceslbl As Label
-    Friend WithEvents RoadStatesBindingSource As BindingSource
-    Friend WithEvents RoadStatesTableAdapter As GameDatabaseDataSetTableAdapters.RoadStatesTableAdapter
     Friend WithEvents townbtn As Button
     Friend WithEvents playerbtn As Button
     Friend WithEvents mainMenubtn As Button

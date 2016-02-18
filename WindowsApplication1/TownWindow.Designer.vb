@@ -45,8 +45,8 @@ Partial Class TownWindow
         Me.PlayerStatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayerStatesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter()
         Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
-        Me.PlayerCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerCreaturesTableAdapter()
         Me.PlayerCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayerCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerCreaturesTableAdapter()
         Me.townpnl.SuspendLayout()
         Me.datepnl.SuspendLayout()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -279,8 +279,10 @@ Partial Class TownWindow
         Me.TableAdapterManager.FarmerStateItemsTableAdapter = Nothing
         Me.TableAdapterManager.FarmerStatesTableAdapter = Nothing
         Me.TableAdapterManager.PlayerArmorTableAdapter = Nothing
+        Me.TableAdapterManager.PlayerAugmentsTableAdapter = Nothing
         Me.TableAdapterManager.PlayerConsumablesTableAdapter = Nothing
         Me.TableAdapterManager.PlayerCreaturesTableAdapter = Me.PlayerCreaturesTableAdapter
+        Me.TableAdapterManager.PlayerJewelryTableAdapter = Nothing
         Me.TableAdapterManager.PlayerPartiesTableAdapter = Nothing
         Me.TableAdapterManager.PlayerSkillsTableAdapter = Nothing
         Me.TableAdapterManager.PlayersTableAdapter = Nothing
@@ -295,6 +297,7 @@ Partial Class TownWindow
         Me.TableAdapterManager.StaticCampTiersTableAdapter = Nothing
         Me.TableAdapterManager.StaticConsumablesTableAdapter = Nothing
         Me.TableAdapterManager.StaticCreaturesTableAdapter = Nothing
+        Me.TableAdapterManager.StaticJewelryTableAdapter = Nothing
         Me.TableAdapterManager.StaticMobsTableAdapter = Nothing
         Me.TableAdapterManager.StaticQuestsTableAdapter = Nothing
         Me.TableAdapterManager.StaticSkillsTableAdapter = Nothing
@@ -304,14 +307,14 @@ Partial Class TownWindow
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.WeaponAugmentsTableAdapter = Nothing
         '
-        'PlayerCreaturesTableAdapter
-        '
-        Me.PlayerCreaturesTableAdapter.ClearBeforeFill = True
-        '
         'PlayerCreaturesBindingSource
         '
         Me.PlayerCreaturesBindingSource.DataMember = "PlayerCreatures"
         Me.PlayerCreaturesBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'PlayerCreaturesTableAdapter
+        '
+        Me.PlayerCreaturesTableAdapter.ClearBeforeFill = True
         '
         'TownWindow
         '

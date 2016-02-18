@@ -29,55 +29,40 @@ Partial Class BlacksmithWindow
         Me.itemsTablepnl = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.weaponslst = New System.Windows.Forms.ListView()
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.armorlst = New System.Windows.Forms.ListView()
+        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.playerGoldlbl = New System.Windows.Forms.Label()
         Me.playerGoldtxt = New System.Windows.Forms.TextBox()
         Me.marketbtn = New System.Windows.Forms.Button()
         Me.playerbtn = New System.Windows.Forms.Button()
         Me.mainMenubtn = New System.Windows.Forms.Button()
         Me.GameDatabaseDataSet = New WindowsApplication1.GameDatabaseDataSet()
-        Me.PlayerWeaponsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PlayerWeaponsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerWeaponsTableAdapter()
-        Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
-        Me.ArmorAugmentsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.ArmorAugmentsTableAdapter()
-        Me.BlacksmithStateItemsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.BlacksmithStateItemsTableAdapter()
-        Me.BlacksmithStatesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.BlacksmithStatesTableAdapter()
-        Me.PlayerArmorTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerArmorTableAdapter()
-        Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
-        Me.PlayerStatesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter()
-        Me.StaticArmorTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticArmorTableAdapter()
-        Me.StaticAugmentsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticAugmentsTableAdapter()
-        Me.StaticWeaponsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticWeaponsTableAdapter()
-        Me.WeaponAugmentsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.WeaponAugmentsTableAdapter()
         Me.BlacksmithStatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BlacksmithStatesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.BlacksmithStatesTableAdapter()
+        Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
         Me.BlacksmithStateItemsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.StaticWeaponsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.StaticArmorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.StaticAugmentsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.WeaponAugmentsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ArmorAugmentsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BlacksmithStateItemsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.BlacksmithStateItemsTableAdapter()
         Me.PlayerStatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PlayerArmorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.PlayerStatesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter()
+        Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
+        Me.StaticArmorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticArmorTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticArmorTableAdapter()
+        Me.StaticWeaponsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticWeaponsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticWeaponsTableAdapter()
         Me.blacksmithpnl.SuspendLayout()
         Me.itemsTablepnl.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PlayerWeaponsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BlacksmithStatesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BlacksmithStateItemsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.StaticWeaponsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.StaticArmorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.StaticAugmentsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.WeaponAugmentsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ArmorAugmentsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayerStatesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PlayerArmorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.StaticArmorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.StaticWeaponsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'blacksmithpnl
@@ -109,7 +94,7 @@ Partial Class BlacksmithWindow
         Me.itemsTablepnl.Name = "itemsTablepnl"
         Me.itemsTablepnl.RowCount = 1
         Me.itemsTablepnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.itemsTablepnl.Size = New System.Drawing.Size(469, 274)
+        Me.itemsTablepnl.Size = New System.Drawing.Size(468, 274)
         Me.itemsTablepnl.TabIndex = 1
         '
         'Panel1
@@ -141,13 +126,18 @@ Partial Class BlacksmithWindow
         Me.weaponslst.UseCompatibleStateImageBehavior = False
         Me.weaponslst.View = System.Windows.Forms.View.Details
         '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "weapons"
+        Me.ColumnHeader1.Width = 213
+        '
         'Panel2
         '
         Me.Panel2.Controls.Add(Me.armorlst)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(247, 3)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(219, 268)
+        Me.Panel2.Size = New System.Drawing.Size(218, 268)
         Me.Panel2.TabIndex = 1
         '
         'armorlst
@@ -164,10 +154,15 @@ Partial Class BlacksmithWindow
         Me.armorlst.MultiSelect = False
         Me.armorlst.Name = "armorlst"
         Me.armorlst.ShowGroups = False
-        Me.armorlst.Size = New System.Drawing.Size(219, 268)
+        Me.armorlst.Size = New System.Drawing.Size(218, 268)
         Me.armorlst.TabIndex = 3
         Me.armorlst.UseCompatibleStateImageBehavior = False
         Me.armorlst.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader2
+        '
+        Me.ColumnHeader2.Text = "armor"
+        Me.ColumnHeader2.Width = 214
         '
         'playerGoldlbl
         '
@@ -224,18 +219,18 @@ Partial Class BlacksmithWindow
         Me.GameDatabaseDataSet.DataSetName = "GameDatabaseDataSet"
         Me.GameDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'PlayerWeaponsBindingSource
+        'BlacksmithStatesBindingSource
         '
-        Me.PlayerWeaponsBindingSource.DataMember = "PlayerWeapons"
-        Me.PlayerWeaponsBindingSource.DataSource = Me.GameDatabaseDataSet
+        Me.BlacksmithStatesBindingSource.DataMember = "BlacksmithStates"
+        Me.BlacksmithStatesBindingSource.DataSource = Me.GameDatabaseDataSet
         '
-        'PlayerWeaponsTableAdapter
+        'BlacksmithStatesTableAdapter
         '
-        Me.PlayerWeaponsTableAdapter.ClearBeforeFill = True
+        Me.BlacksmithStatesTableAdapter.ClearBeforeFill = True
         '
         'TableAdapterManager
         '
-        Me.TableAdapterManager.ArmorAugmentsTableAdapter = Me.ArmorAugmentsTableAdapter
+        Me.TableAdapterManager.ArmorAugmentsTableAdapter = Nothing
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.BattlesTableAdapter = Nothing
         Me.TableAdapterManager.BlacksmithStateItemsTableAdapter = Me.BlacksmithStateItemsTableAdapter
@@ -245,23 +240,26 @@ Partial Class BlacksmithWindow
         Me.TableAdapterManager.EnemyPartiesTableAdapter = Nothing
         Me.TableAdapterManager.FarmerStateItemsTableAdapter = Nothing
         Me.TableAdapterManager.FarmerStatesTableAdapter = Nothing
-        Me.TableAdapterManager.PlayerArmorTableAdapter = Me.PlayerArmorTableAdapter
+        Me.TableAdapterManager.PlayerArmorTableAdapter = Nothing
+        Me.TableAdapterManager.PlayerAugmentsTableAdapter = Nothing
         Me.TableAdapterManager.PlayerConsumablesTableAdapter = Nothing
         Me.TableAdapterManager.PlayerCreaturesTableAdapter = Nothing
+        Me.TableAdapterManager.PlayerJewelryTableAdapter = Nothing
         Me.TableAdapterManager.PlayerPartiesTableAdapter = Nothing
         Me.TableAdapterManager.PlayerSkillsTableAdapter = Nothing
         Me.TableAdapterManager.PlayersTableAdapter = Me.PlayersTableAdapter
         Me.TableAdapterManager.PlayerStatesTableAdapter = Me.PlayerStatesTableAdapter
-        Me.TableAdapterManager.PlayerWeaponsTableAdapter = Me.PlayerWeaponsTableAdapter
+        Me.TableAdapterManager.PlayerWeaponsTableAdapter = Nothing
         Me.TableAdapterManager.RoadStatesTableAdapter = Nothing
         Me.TableAdapterManager.ScholarStateItemsTableAdapter = Nothing
         Me.TableAdapterManager.ScholarStatesTableAdapter = Nothing
         Me.TableAdapterManager.StaticArmorTableAdapter = Me.StaticArmorTableAdapter
-        Me.TableAdapterManager.StaticAugmentsTableAdapter = Me.StaticAugmentsTableAdapter
+        Me.TableAdapterManager.StaticAugmentsTableAdapter = Nothing
         Me.TableAdapterManager.StaticCampsTableAdapter = Nothing
         Me.TableAdapterManager.StaticCampTiersTableAdapter = Nothing
         Me.TableAdapterManager.StaticConsumablesTableAdapter = Nothing
         Me.TableAdapterManager.StaticCreaturesTableAdapter = Nothing
+        Me.TableAdapterManager.StaticJewelryTableAdapter = Nothing
         Me.TableAdapterManager.StaticMobsTableAdapter = Nothing
         Me.TableAdapterManager.StaticQuestsTableAdapter = Nothing
         Me.TableAdapterManager.StaticSkillsTableAdapter = Nothing
@@ -269,107 +267,52 @@ Partial Class BlacksmithWindow
         Me.TableAdapterManager.TavernStatesTableAdapter = Nothing
         Me.TableAdapterManager.TurnsTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager.WeaponAugmentsTableAdapter = Me.WeaponAugmentsTableAdapter
-        '
-        'ArmorAugmentsTableAdapter
-        '
-        Me.ArmorAugmentsTableAdapter.ClearBeforeFill = True
-        '
-        'BlacksmithStateItemsTableAdapter
-        '
-        Me.BlacksmithStateItemsTableAdapter.ClearBeforeFill = True
-        '
-        'BlacksmithStatesTableAdapter
-        '
-        Me.BlacksmithStatesTableAdapter.ClearBeforeFill = True
-        '
-        'PlayerArmorTableAdapter
-        '
-        Me.PlayerArmorTableAdapter.ClearBeforeFill = True
-        '
-        'PlayersTableAdapter
-        '
-        Me.PlayersTableAdapter.ClearBeforeFill = True
-        '
-        'PlayerStatesTableAdapter
-        '
-        Me.PlayerStatesTableAdapter.ClearBeforeFill = True
-        '
-        'StaticArmorTableAdapter
-        '
-        Me.StaticArmorTableAdapter.ClearBeforeFill = True
-        '
-        'StaticAugmentsTableAdapter
-        '
-        Me.StaticAugmentsTableAdapter.ClearBeforeFill = True
-        '
-        'StaticWeaponsTableAdapter
-        '
-        Me.StaticWeaponsTableAdapter.ClearBeforeFill = True
-        '
-        'WeaponAugmentsTableAdapter
-        '
-        Me.WeaponAugmentsTableAdapter.ClearBeforeFill = True
-        '
-        'BlacksmithStatesBindingSource
-        '
-        Me.BlacksmithStatesBindingSource.DataMember = "BlacksmithStates"
-        Me.BlacksmithStatesBindingSource.DataSource = Me.GameDatabaseDataSet
+        Me.TableAdapterManager.WeaponAugmentsTableAdapter = Nothing
         '
         'BlacksmithStateItemsBindingSource
         '
         Me.BlacksmithStateItemsBindingSource.DataMember = "BlacksmithStateItems"
         Me.BlacksmithStateItemsBindingSource.DataSource = Me.GameDatabaseDataSet
         '
-        'StaticWeaponsBindingSource
+        'BlacksmithStateItemsTableAdapter
         '
-        Me.StaticWeaponsBindingSource.DataMember = "StaticWeapons"
-        Me.StaticWeaponsBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'StaticArmorBindingSource
-        '
-        Me.StaticArmorBindingSource.DataMember = "StaticArmor"
-        Me.StaticArmorBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'StaticAugmentsBindingSource
-        '
-        Me.StaticAugmentsBindingSource.DataMember = "StaticAugments"
-        Me.StaticAugmentsBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'WeaponAugmentsBindingSource
-        '
-        Me.WeaponAugmentsBindingSource.DataMember = "WeaponAugments"
-        Me.WeaponAugmentsBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'ArmorAugmentsBindingSource
-        '
-        Me.ArmorAugmentsBindingSource.DataMember = "ArmorAugments"
-        Me.ArmorAugmentsBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'PlayersBindingSource
-        '
-        Me.PlayersBindingSource.DataMember = "Players"
-        Me.PlayersBindingSource.DataSource = Me.GameDatabaseDataSet
+        Me.BlacksmithStateItemsTableAdapter.ClearBeforeFill = True
         '
         'PlayerStatesBindingSource
         '
         Me.PlayerStatesBindingSource.DataMember = "PlayerStates"
         Me.PlayerStatesBindingSource.DataSource = Me.GameDatabaseDataSet
         '
-        'PlayerArmorBindingSource
+        'PlayerStatesTableAdapter
         '
-        Me.PlayerArmorBindingSource.DataMember = "PlayerArmor"
-        Me.PlayerArmorBindingSource.DataSource = Me.GameDatabaseDataSet
+        Me.PlayerStatesTableAdapter.ClearBeforeFill = True
         '
-        'ColumnHeader1
+        'PlayersBindingSource
         '
-        Me.ColumnHeader1.Text = "weapons"
-        Me.ColumnHeader1.Width = 213
+        Me.PlayersBindingSource.DataMember = "Players"
+        Me.PlayersBindingSource.DataSource = Me.GameDatabaseDataSet
         '
-        'ColumnHeader2
+        'PlayersTableAdapter
         '
-        Me.ColumnHeader2.Text = "armor"
-        Me.ColumnHeader2.Width = 214
+        Me.PlayersTableAdapter.ClearBeforeFill = True
+        '
+        'StaticArmorBindingSource
+        '
+        Me.StaticArmorBindingSource.DataMember = "StaticArmor"
+        Me.StaticArmorBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'StaticArmorTableAdapter
+        '
+        Me.StaticArmorTableAdapter.ClearBeforeFill = True
+        '
+        'StaticWeaponsBindingSource
+        '
+        Me.StaticWeaponsBindingSource.DataMember = "StaticWeapons"
+        Me.StaticWeaponsBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'StaticWeaponsTableAdapter
+        '
+        Me.StaticWeaponsTableAdapter.ClearBeforeFill = True
         '
         'BlacksmithWindow
         '
@@ -388,47 +331,18 @@ Partial Class BlacksmithWindow
         Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PlayerWeaponsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BlacksmithStatesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BlacksmithStateItemsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.StaticWeaponsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.StaticArmorBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.StaticAugmentsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.WeaponAugmentsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ArmorAugmentsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayerStatesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PlayerArmorBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.StaticArmorBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.StaticWeaponsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents blacksmithpnl As Panel
     Friend WithEvents weaponslst As ListView
-    Friend WithEvents GameDatabaseDataSet As GameDatabaseDataSet
-    Friend WithEvents PlayerWeaponsBindingSource As BindingSource
-    Friend WithEvents PlayerWeaponsTableAdapter As GameDatabaseDataSetTableAdapters.PlayerWeaponsTableAdapter
-    Friend WithEvents TableAdapterManager As GameDatabaseDataSetTableAdapters.TableAdapterManager
-    Friend WithEvents BlacksmithStatesTableAdapter As GameDatabaseDataSetTableAdapters.BlacksmithStatesTableAdapter
-    Friend WithEvents BlacksmithStatesBindingSource As BindingSource
-    Friend WithEvents BlacksmithStateItemsTableAdapter As GameDatabaseDataSetTableAdapters.BlacksmithStateItemsTableAdapter
-    Friend WithEvents BlacksmithStateItemsBindingSource As BindingSource
-    Friend WithEvents StaticWeaponsTableAdapter As GameDatabaseDataSetTableAdapters.StaticWeaponsTableAdapter
-    Friend WithEvents StaticWeaponsBindingSource As BindingSource
-    Friend WithEvents StaticArmorTableAdapter As GameDatabaseDataSetTableAdapters.StaticArmorTableAdapter
-    Friend WithEvents StaticArmorBindingSource As BindingSource
-    Friend WithEvents StaticAugmentsTableAdapter As GameDatabaseDataSetTableAdapters.StaticAugmentsTableAdapter
-    Friend WithEvents StaticAugmentsBindingSource As BindingSource
-    Friend WithEvents WeaponAugmentsTableAdapter As GameDatabaseDataSetTableAdapters.WeaponAugmentsTableAdapter
-    Friend WithEvents WeaponAugmentsBindingSource As BindingSource
-    Friend WithEvents ArmorAugmentsTableAdapter As GameDatabaseDataSetTableAdapters.ArmorAugmentsTableAdapter
-    Friend WithEvents ArmorAugmentsBindingSource As BindingSource
-    Friend WithEvents PlayersTableAdapter As GameDatabaseDataSetTableAdapters.PlayersTableAdapter
-    Friend WithEvents PlayersBindingSource As BindingSource
-    Friend WithEvents PlayerStatesTableAdapter As GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter
-    Friend WithEvents PlayerStatesBindingSource As BindingSource
-    Friend WithEvents PlayerArmorTableAdapter As GameDatabaseDataSetTableAdapters.PlayerArmorTableAdapter
-    Friend WithEvents PlayerArmorBindingSource As BindingSource
     Friend WithEvents mainMenubtn As Button
     Friend WithEvents armorlst As ListView
     Friend WithEvents playerGoldlbl As Label
@@ -440,4 +354,18 @@ Partial Class BlacksmithWindow
     Friend WithEvents Panel2 As Panel
     Friend WithEvents ColumnHeader1 As ColumnHeader
     Friend WithEvents ColumnHeader2 As ColumnHeader
+    Friend WithEvents GameDatabaseDataSet As GameDatabaseDataSet
+    Friend WithEvents BlacksmithStatesBindingSource As BindingSource
+    Friend WithEvents BlacksmithStatesTableAdapter As GameDatabaseDataSetTableAdapters.BlacksmithStatesTableAdapter
+    Friend WithEvents TableAdapterManager As GameDatabaseDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents BlacksmithStateItemsTableAdapter As GameDatabaseDataSetTableAdapters.BlacksmithStateItemsTableAdapter
+    Friend WithEvents BlacksmithStateItemsBindingSource As BindingSource
+    Friend WithEvents PlayerStatesTableAdapter As GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter
+    Friend WithEvents PlayerStatesBindingSource As BindingSource
+    Friend WithEvents PlayersTableAdapter As GameDatabaseDataSetTableAdapters.PlayersTableAdapter
+    Friend WithEvents PlayersBindingSource As BindingSource
+    Friend WithEvents StaticArmorTableAdapter As GameDatabaseDataSetTableAdapters.StaticArmorTableAdapter
+    Friend WithEvents StaticArmorBindingSource As BindingSource
+    Friend WithEvents StaticWeaponsTableAdapter As GameDatabaseDataSetTableAdapters.StaticWeaponsTableAdapter
+    Friend WithEvents StaticWeaponsBindingSource As BindingSource
 End Class

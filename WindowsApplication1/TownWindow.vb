@@ -1,7 +1,7 @@
 ﻿Public Class TownWindow
     Private Sub TownWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        PlayerStatesTableAdapter.Fill(GameDatabaseDataSet.PlayerStates)
-        PlayerCreaturesTableAdapter.FillByPlayerid(GameDatabaseDataSet.PlayerCreatures, currentPlayer.id)
+        PlayerStatesTableAdapter.FillByPlayerid(GameDatabaseDataSet.PlayerStates, currentPlayer.id)
+        PlayerCreaturesTableAdapter.FillByPlayerStateid(GameDatabaseDataSet.PlayerCreatures, currentState.id)
         datelbl.Text = currentState.dateInGame.ToString
 
         If currentPlayer.exp > 1 Then
@@ -10,7 +10,7 @@
             marketlbl.Hide()
             necromancerlbl.Hide()
             roadlbl.Hide()
-        ElseIf Not PlayerCreaturesTableAdapter.GetCreaturesByPlayerid(currentPlayer.id).Any Then
+        ElseIf Not PlayerCreaturesTableAdapter.GetData.Any Then
             innbtn.Enabled = False
             marketbtn.Enabled = False
             necromancerbtn.Enabled = False
@@ -71,7 +71,7 @@
             necromancerbtn.Enabled = True
             roadlbl.Hide()
             roadbtn.Enabled = True
-        ElseIf Not PlayerCreaturesTableAdapter.GetCreaturesByPlayerid(currentPlayer.id).Any Then
+        ElseIf Not PlayerCreaturesTableAdapter.GetData.Any Then
             innbtn.Enabled = False
             marketbtn.Enabled = False
             necromancerbtn.Enabled = False

@@ -7,28 +7,13 @@
         playerExperiencebar.Maximum = (currentPlayer.level + 1) ^ 5
         playerExperiencebar.Value = currentPlayer.exp
 
-        PlayersTableAdapter.FillByPlayerid(GameDatabaseDataSet.Players, currentPlayer.id)
-        PlayerStatesTableAdapter.FillByPlayerid(GameDatabaseDataSet.PlayerStates, currentPlayer.id)
-        PlayerCreaturesTableAdapter.FillByPlayerid(GameDatabaseDataSet.PlayerCreatures, currentPlayer.id)
-        PlayerPartiesTableAdapter.FillByPlayerid(GameDatabaseDataSet.PlayerParties, currentPlayer.id)
-        PlayerConsumablesTableAdapter.FillByPlayerid(GameDatabaseDataSet.PlayerConsumables, currentPlayer.id)
-        PlayerWeaponsTableAdapter.FillByPlayerid(GameDatabaseDataSet.PlayerWeapons, currentPlayer.id)
-        PlayerArmorTableAdapter.FillByPlayerid(GameDatabaseDataSet.PlayerArmor, currentPlayer.id)
-        ArmorAugmentsTableAdapter.FillByPlayerid(GameDatabaseDataSet.ArmorAugments, currentPlayer.id)
-        WeaponAugmentsTableAdapter.FillByPlayerid(GameDatabaseDataSet.WeaponAugments, currentPlayer.id)
-
+        PlayerCreaturesTableAdapter.FillByPlayerStateid(GameDatabaseDataSet.PlayerCreatures, currentPlayer.id)
         StaticCreaturesTableAdapter.Fill(GameDatabaseDataSet.StaticCreatures)
-        StaticQuestsTableAdapter.Fill(GameDatabaseDataSet.StaticQuests)
-        StaticWeaponsTableAdapter.Fill(GameDatabaseDataSet.StaticWeapons)
-        StaticConsumablesTableAdapter.Fill(GameDatabaseDataSet.StaticConsumables)
-        StaticAugmentsTableAdapter.Fill(GameDatabaseDataSet.StaticAugments)
-        StaticArmorTableAdapter.Fill(GameDatabaseDataSet.StaticArmor)
 
         RefreshQuest()
 
-        For Each row As DataRow In PlayerCreaturesTableAdapter.GetCreaturesByPlayerid(currentPlayer.id)
-            Dim creation As New Creature(StaticCreaturesTableAdapter.GetCreatureByid(row("creatureid"))(0))
-            creation.name = ProperCase(row("name"))
+        For Each row As GameDatabaseDataSet.PlayerCreaturesRow In PlayerCreaturesTableAdapter.GetData
+            Dim creation As New Creature(StaticCreaturesTableAdapter.GetCreatureByid(row.id)(0))
             creaturelst.Items.Add(creation.ToString)
         Next
     End Sub

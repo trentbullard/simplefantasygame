@@ -9,7 +9,6 @@
         itemid = -1
         itemOwner = currentPlayer
         itemName = "item " & itemid
-        itemAttributes = New Collection
     End Sub
 
     Public Sub New(id As Integer)

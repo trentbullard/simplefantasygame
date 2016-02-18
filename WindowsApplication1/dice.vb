@@ -1,5 +1,5 @@
 ﻿Module Dice
-    Dim die = New Random()
+    Dim die = New Random(CDbl(Date.Now.Millisecond))
 
     Public Function Roll(number)
         Return die.Next(1, number + 1)
