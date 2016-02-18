@@ -79,12 +79,10 @@
         armorSlotsPossible = row.slotsPossible
         armorWearableBy = row.wearableBy
 
-        Console.WriteLine("loading armor. row.attributes: " & row.attributes)
         Dim statsArray() As String = row.attributes.Split(" "c)
         Dim stats As New Collection
         For Each stat In statsArray
             Dim statArray() As String = stat.Split(":"c)
-            Console.WriteLine("loading armor. statArray(0): " & statArray(0) & " | statArray(1): " & statArray(1))
             stats.Add(CInt(statArray(1)), statArray(0))
         Next
         MyBase.stats = stats
@@ -97,8 +95,8 @@
         Next
         armorMinStats = stats
 
-        If Not IsDBNull(row("setName")) Then
-            armorSet = row("setName")
+        If Not IsDBNull(row.setName) Then
+            armorSet = row.setName
             armorSetBonus = row.setBonus
         End If
 
@@ -231,7 +229,6 @@
         statString = statString & If(MyBase.stats.Contains("intelligence"), "intelligence:" & MyBase.stats.Item("intelligence") & Space(1), Nothing)
         statString = statString & If(MyBase.stats.Contains("wisdom"), "wisdom:" & MyBase.stats.Item("wisdom") & Space(1), Nothing)
         statString = statString & If(MyBase.stats.Contains("dexterity"), "dexterity:" & MyBase.stats.Item("dexterity") & Space(1), Nothing)
-        Console.WriteLine("saving armor. statString.Trim: " & statString.Trim)
         newRow("attributes") = statString.Trim
 
         newRow("slotsPossible") = armorSlotsPossible

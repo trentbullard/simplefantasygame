@@ -68,13 +68,9 @@ Public Class MainMenu
 
         currentPlayer = New Player(nameString)
         currentPlayer.Save(GameDatabaseDataSet, PlayersBindingSource, PlayersTableAdapter)
-        Try
-            playerSelectlstv.Items.Add(currentPlayer.level)
-            playerSelectlstv.Items(playerSelectlstv.Items.Count - 1).SubItems.Add(currentPlayer.name)
-        Catch ex As Exception
-            MsgBox("Unable to create new player.")
-            Exit Sub
-        End Try
+        currentPlayer = New Player(PlayersTableAdapter.GetData.Last)
+        playerSelectlstv.Items.Add(currentPlayer.level)
+        playerSelectlstv.Items(playerSelectlstv.Items.Count - 1).SubItems.Add(currentPlayer.name)
     End Sub
 
     Private Sub playerSelectlstv_SelectedIndexChanged(sender As Object, e As EventArgs) Handles playerSelectlstv.SelectedIndexChanged

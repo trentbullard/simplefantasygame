@@ -7,6 +7,9 @@
     Private stateQuest As Quest = Nothing
     Private stateGameDate As DateTime
     Private stateIsAmbushed As Boolean
+    Private statePlayerGold As Integer
+    Private statePlayerLevel As Integer
+    Private statePlayerExperience As Integer
     Private stateCombatWindow As CombatWindow
     Private stateDeletePlayersWindow As DeletePlayersWindow
     Private stateInnWindow As InnWindow
@@ -26,6 +29,9 @@
         stateDateSaved = DateTime.Now
         stateGameDate = "01/01/1000"
         stateIsAmbushed = False
+        statePlayerGold = 4
+        statePlayerLevel = 1
+        statePlayerExperience = 1
         stateCombatWindow = New CombatWindow
         stateDeletePlayersWindow = New DeletePlayersWindow
         stateInnWindow = New InnWindow
@@ -45,6 +51,9 @@
         stateDateSaved = DateTime.Now
         stateGameDate = "01/01/1000"
         stateIsAmbushed = False
+        statePlayerGold = 4
+        statePlayerLevel = 1
+        statePlayerExperience = 1
         stateCombatWindow = New CombatWindow
         stateDeletePlayersWindow = New DeletePlayersWindow
         stateInnWindow = New InnWindow
@@ -64,6 +73,9 @@
         stateDateSaved = DateTime.Now
         stateGameDate = "01/01/1000"
         stateIsAmbushed = False
+        statePlayerGold = 4
+        statePlayerLevel = 1
+        statePlayerExperience = 1
         stateCombatWindow = New CombatWindow
         stateDeletePlayersWindow = New DeletePlayersWindow
         stateInnWindow = New InnWindow
@@ -78,7 +90,7 @@
     End Sub
 
     Public Sub New(row As GameDatabaseDataSet.PlayerStatesRow)
-        stateid = row("id")
+        stateid = row.id
         statePlayer = currentPlayer
         stateDateSaved = row("dateSaved")
         stateParty = If(row("currentPartyid") IsNot DBNull.Value, New Party(CInt(row("currentPartyid"))), Nothing)
@@ -86,6 +98,9 @@
         stateQuest = If(row("currentQuestid") IsNot DBNull.Value, New Quest(CInt(row("currentQuestid"))), Nothing)
         stateGameDate = row("gameDate")
         stateIsAmbushed = row("isAmbushed")
+        statePlayerGold = row.playerGold
+        statePlayerLevel = row.playerLevel
+        statePlayerExperience = row.playerExperience
         stateCombatWindow = New CombatWindow
         stateDeletePlayersWindow = New DeletePlayersWindow
         stateInnWindow = New InnWindow
@@ -156,6 +171,33 @@
         End Get
         Set(value As Boolean)
             stateIsAmbushed = value
+        End Set
+    End Property
+
+    Public Property gold() As Integer
+        Get
+            Return statePlayerGold
+        End Get
+        Set(value As Integer)
+            statePlayerGold = value
+        End Set
+    End Property
+
+    Public Property level() As Integer
+        Get
+            Return statePlayerLevel
+        End Get
+        Set(value As Integer)
+            statePlayerLevel = value
+        End Set
+    End Property
+
+    Public Property exp() As Integer
+        Get
+            Return statePlayerExperience
+        End Get
+        Set(value As Integer)
+            statePlayerExperience = value
         End Set
     End Property
 
@@ -286,27 +328,22 @@
     Public Sub Save(ByRef dataSet As GameDatabaseDataSet,
                     ByRef bindingSource As BindingSource,
                     ByRef tableAdapter As GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter)
-        If Not tableAdapter.GetLastPlayerStateByPlayerid(statePlayer.id).Any Then
-            Dim newRow As DataRow = dataSet.Tables("PlayerStates").NewRow()
-            newRow("playerid") = statePlayer.id
-            newRow("dateSaved") = Date.Now
-            newRow("currentPartyid") = If(stateParty IsNot Nothing, stateParty.id, DBNull.Value)
-            newRow("currentTierid") = If(stateTier IsNot Nothing, stateTier.id, DBNull.Value)
-            newRow("currentQuestid") = If(stateQuest IsNot Nothing, stateQuest.id, DBNull.Value)
-            newRow("gameDate") = stateGameDate
-            dataSet.Tables("PlayerStates").Rows.Add(newRow)
-        Else
-            dataSet.Tables("PlayerStates").Rows.Find(stateid)("playerid") = statePlayer.id
-            dataSet.Tables("PlayerStates").Rows.Find(stateid)("dateSaved") = Date.Now
-            dataSet.Tables("PlayerStates").Rows.Find(stateid)("currentPartyid") = If(stateParty IsNot Nothing, stateParty.id, DBNull.Value)
-            dataSet.Tables("PlayerStates").Rows.Find(stateid)("currentTierid") = If(stateTier IsNot Nothing, stateTier.id, DBNull.Value)
-            dataSet.Tables("PlayerStates").Rows.Find(stateid)("currentQuestid") = If(stateQuest IsNot Nothing, stateQuest.id, DBNull.Value)
-            dataSet.Tables("PlayerStates").Rows.Find(stateid)("gameDate") = stateGameDate
-        End If
+        Dim newRow As GameDatabaseDataSet.PlayerStatesRow = dataSet.PlayerStates.NewRow()
+        newRow.playerid = statePlayer.id
+        newRow.dateSaved = Date.Now
+        newRow("currentPartyid") = If(stateParty IsNot Nothing, stateParty.id, DBNull.Value)
+        newRow("currentTierid") = If(stateTier IsNot Nothing, stateTier.id, DBNull.Value)
+        newRow("currentQuestid") = If(stateQuest IsNot Nothing, stateQuest.id, DBNull.Value)
+        newRow.gameDate = stateGameDate
+        newRow.isAmbushed = stateIsAmbushed
+        newRow.playerGold = statePlayerGold
+        newRow.playerLevel = statePlayerLevel
+        newRow.playerExperience = statePlayerExperience
+        dataSet.Tables("PlayerStates").Rows.Add(newRow)
         Try
             bindingSource.EndEdit()
             tableAdapter.Update(dataSet.PlayerStates)
-            stateid = tableAdapter.GetLastPlayerStateByPlayerid(statePlayer.id)(0)("id")
+            stateid = tableAdapter.GetData.Last.id
         Catch ex As Exception
             MsgBox("failed to update database record for " & Me.ToString)
         End Try

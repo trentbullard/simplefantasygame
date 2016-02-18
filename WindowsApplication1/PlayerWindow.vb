@@ -7,13 +7,14 @@
         playerExperiencebar.Maximum = (currentPlayer.level + 1) ^ 5
         playerExperiencebar.Value = currentPlayer.exp
 
-        PlayerCreaturesTableAdapter.FillByPlayerStateid(GameDatabaseDataSet.PlayerCreatures, currentPlayer.id)
+        PlayerCreaturesTableAdapter.FillByPlayerStateid(GameDatabaseDataSet.PlayerCreatures, currentState.id)
         StaticCreaturesTableAdapter.Fill(GameDatabaseDataSet.StaticCreatures)
 
         RefreshQuest()
 
         For Each row As GameDatabaseDataSet.PlayerCreaturesRow In PlayerCreaturesTableAdapter.GetData
             Dim creation As New Creature(StaticCreaturesTableAdapter.GetCreatureByid(row.id)(0))
+            creation.name = row.name
             creaturelst.Items.Add(creation.ToString)
         Next
     End Sub
