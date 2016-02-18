@@ -138,6 +138,7 @@
     <Compile Include="currentBattles.vb" />
     <Compile Include="currentItems.vb" />
     <Compile Include="CurrentPlayers.vb" />
+    <Compile Include="DatasetController.vb" />
     <Compile Include="DeletePlayersWindow.Designer.vb">
       <DependentUpon>DeletePlayersWindow.vb</DependentUpon>
     </Compile>
