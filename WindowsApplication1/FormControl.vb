@@ -1,5 +1,6 @@
 ﻿Module FormControl
     Public currentState As New PlayerState
+    Public currentController As DatasetController
 
     Public Sub OpenMainMenu()
         currentState.mainmenu = New MainMenu

@@ -7,6 +7,7 @@ Public Class MainMenu
         PlayerPartiesTableAdapter.Fill(GameDatabaseDataSet.PlayerParties)
         PlayersTableAdapter.Fill(GameDatabaseDataSet.Players)
         PlayerStatesTableAdapter.Fill(GameDatabaseDataSet.PlayerStates)
+        initDataSetController()
 
         Dim creature As Creature
         For ctr = 1 To 20
@@ -88,7 +89,7 @@ Public Class MainMenu
                     currentState.tier = New Tier() 'TODO (StaticCampTierTableAdapter.GetTierByid(currentState.tier.id).First)
                 End If
             Else
-                currentState.Save(GameDatabaseDataSet, PlayerStatesBindingSource, PlayerStatesTableAdapter)
+                currentController.SaveState()
             End If
             currentState.townwindow = New TownWindow
             currentState.townwindow.Show()
@@ -100,5 +101,17 @@ Public Class MainMenu
         currentState.deletewindow = New DeletePlayersWindow
         currentState.deletewindow.Show()
         Me.Close()
+    End Sub
+
+    Private Sub initDataSetController()
+        currentController = New DatasetController(GameDatabaseDataSet,
+                                                  PlayerStatesBindingSource, PlayerStatesTableAdapter,
+                                                  PlayerCreaturesBindingSource, PlayerCreaturesTableAdapter,
+                                                  PlayerSkillsBindingSource, PlayerSkillsTableAdapter,
+                                                  PlayerArmorBindingSource, PlayerArmorTableAdapter,
+                                                  PlayerWeaponsBindingSource, PlayerWeaponsTableAdapter,
+                                                  PlayerConsumablesBindingSource, PlayerConsumablesTableAdapter,
+                                                  PlayerJewelryBindingSource, PlayerJewelryTableAdapter,
+                                                  PlayerAugmentsBindingSource, PlayerAugmentsTableAdapter)
     End Sub
 End Class

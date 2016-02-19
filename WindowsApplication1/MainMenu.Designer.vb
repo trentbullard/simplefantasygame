@@ -34,32 +34,46 @@ Partial Class MainMenu
         Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
         Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
-        Me.PlayerStatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PlayerStatesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter()
-        Me.PlayerPartiesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayerPartiesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerPartiesTableAdapter()
-        Me.StaticCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.StaticCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticCreaturesTableAdapter()
-        Me.StaticQuestsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.StaticQuestsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticQuestsTableAdapter()
-        Me.StaticCampsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.StaticCampsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticCampsTableAdapter()
-        Me.StaticCampTiersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.StaticCampTiersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticCampTiersTableAdapter()
-        Me.StaticWeaponsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.StaticWeaponsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticWeaponsTableAdapter()
-        Me.StaticArmorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayerStatesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter()
         Me.StaticArmorTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticArmorTableAdapter()
-        Me.StaticConsumablesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.StaticConsumablesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticConsumablesTableAdapter()
-        Me.StaticJewelryBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.StaticJewelryTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticJewelryTableAdapter()
-        Me.StaticSkillsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.StaticSkillsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticSkillsTableAdapter()
-        Me.StaticMobsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.StaticMobsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticMobsTableAdapter()
-        Me.StaticAugmentsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.StaticAugmentsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticAugmentsTableAdapter()
+        Me.StaticCampsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticCampsTableAdapter()
+        Me.StaticCampTiersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticCampTiersTableAdapter()
+        Me.StaticConsumablesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticConsumablesTableAdapter()
+        Me.StaticCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticCreaturesTableAdapter()
+        Me.StaticJewelryTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticJewelryTableAdapter()
+        Me.StaticMobsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticMobsTableAdapter()
+        Me.StaticQuestsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticQuestsTableAdapter()
+        Me.StaticSkillsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticSkillsTableAdapter()
+        Me.StaticWeaponsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticWeaponsTableAdapter()
+        Me.PlayerStatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayerPartiesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticQuestsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticCampsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticCampTiersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticWeaponsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticArmorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticConsumablesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticJewelryBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticSkillsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticMobsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticAugmentsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayerCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayerCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerCreaturesTableAdapter()
+        Me.PlayerSkillsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayerSkillsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerSkillsTableAdapter()
+        Me.PlayerArmorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayerArmorTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerArmorTableAdapter()
+        Me.PlayerWeaponsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayerWeaponsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerWeaponsTableAdapter()
+        Me.PlayerConsumablesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayerConsumablesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerConsumablesTableAdapter()
+        Me.PlayerJewelryBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayerJewelryTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerJewelryTableAdapter()
+        Me.PlayerAugmentsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayerAugmentsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerAugmentsTableAdapter()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayerStatesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -75,6 +89,13 @@ Partial Class MainMenu
         CType(Me.StaticSkillsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StaticMobsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StaticAugmentsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PlayerCreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PlayerSkillsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PlayerArmorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PlayerWeaponsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PlayerConsumablesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PlayerJewelryBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PlayerAugmentsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'titlelbl
@@ -195,122 +216,185 @@ Partial Class MainMenu
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.WeaponAugmentsTableAdapter = Nothing
         '
-        'PlayerStatesBindingSource
+        'PlayerPartiesTableAdapter
         '
-        Me.PlayerStatesBindingSource.DataMember = "PlayerStates"
-        Me.PlayerStatesBindingSource.DataSource = Me.GameDatabaseDataSet
+        Me.PlayerPartiesTableAdapter.ClearBeforeFill = True
         '
         'PlayerStatesTableAdapter
         '
         Me.PlayerStatesTableAdapter.ClearBeforeFill = True
+        '
+        'StaticArmorTableAdapter
+        '
+        Me.StaticArmorTableAdapter.ClearBeforeFill = True
+        '
+        'StaticAugmentsTableAdapter
+        '
+        Me.StaticAugmentsTableAdapter.ClearBeforeFill = True
+        '
+        'StaticCampsTableAdapter
+        '
+        Me.StaticCampsTableAdapter.ClearBeforeFill = True
+        '
+        'StaticCampTiersTableAdapter
+        '
+        Me.StaticCampTiersTableAdapter.ClearBeforeFill = True
+        '
+        'StaticConsumablesTableAdapter
+        '
+        Me.StaticConsumablesTableAdapter.ClearBeforeFill = True
+        '
+        'StaticCreaturesTableAdapter
+        '
+        Me.StaticCreaturesTableAdapter.ClearBeforeFill = True
+        '
+        'StaticJewelryTableAdapter
+        '
+        Me.StaticJewelryTableAdapter.ClearBeforeFill = True
+        '
+        'StaticMobsTableAdapter
+        '
+        Me.StaticMobsTableAdapter.ClearBeforeFill = True
+        '
+        'StaticQuestsTableAdapter
+        '
+        Me.StaticQuestsTableAdapter.ClearBeforeFill = True
+        '
+        'StaticSkillsTableAdapter
+        '
+        Me.StaticSkillsTableAdapter.ClearBeforeFill = True
+        '
+        'StaticWeaponsTableAdapter
+        '
+        Me.StaticWeaponsTableAdapter.ClearBeforeFill = True
+        '
+        'PlayerStatesBindingSource
+        '
+        Me.PlayerStatesBindingSource.DataMember = "PlayerStates"
+        Me.PlayerStatesBindingSource.DataSource = Me.GameDatabaseDataSet
         '
         'PlayerPartiesBindingSource
         '
         Me.PlayerPartiesBindingSource.DataMember = "PlayerParties"
         Me.PlayerPartiesBindingSource.DataSource = Me.GameDatabaseDataSet
         '
-        'PlayerPartiesTableAdapter
-        '
-        Me.PlayerPartiesTableAdapter.ClearBeforeFill = True
-        '
         'StaticCreaturesBindingSource
         '
         Me.StaticCreaturesBindingSource.DataMember = "StaticCreatures"
         Me.StaticCreaturesBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'StaticCreaturesTableAdapter
-        '
-        Me.StaticCreaturesTableAdapter.ClearBeforeFill = True
         '
         'StaticQuestsBindingSource
         '
         Me.StaticQuestsBindingSource.DataMember = "StaticQuests"
         Me.StaticQuestsBindingSource.DataSource = Me.GameDatabaseDataSet
         '
-        'StaticQuestsTableAdapter
-        '
-        Me.StaticQuestsTableAdapter.ClearBeforeFill = True
-        '
         'StaticCampsBindingSource
         '
         Me.StaticCampsBindingSource.DataMember = "StaticCamps"
         Me.StaticCampsBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'StaticCampsTableAdapter
-        '
-        Me.StaticCampsTableAdapter.ClearBeforeFill = True
         '
         'StaticCampTiersBindingSource
         '
         Me.StaticCampTiersBindingSource.DataMember = "StaticCampTiers"
         Me.StaticCampTiersBindingSource.DataSource = Me.GameDatabaseDataSet
         '
-        'StaticCampTiersTableAdapter
-        '
-        Me.StaticCampTiersTableAdapter.ClearBeforeFill = True
-        '
         'StaticWeaponsBindingSource
         '
         Me.StaticWeaponsBindingSource.DataMember = "StaticWeapons"
         Me.StaticWeaponsBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'StaticWeaponsTableAdapter
-        '
-        Me.StaticWeaponsTableAdapter.ClearBeforeFill = True
         '
         'StaticArmorBindingSource
         '
         Me.StaticArmorBindingSource.DataMember = "StaticArmor"
         Me.StaticArmorBindingSource.DataSource = Me.GameDatabaseDataSet
         '
-        'StaticArmorTableAdapter
-        '
-        Me.StaticArmorTableAdapter.ClearBeforeFill = True
-        '
         'StaticConsumablesBindingSource
         '
         Me.StaticConsumablesBindingSource.DataMember = "StaticConsumables"
         Me.StaticConsumablesBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'StaticConsumablesTableAdapter
-        '
-        Me.StaticConsumablesTableAdapter.ClearBeforeFill = True
         '
         'StaticJewelryBindingSource
         '
         Me.StaticJewelryBindingSource.DataMember = "StaticJewelry"
         Me.StaticJewelryBindingSource.DataSource = Me.GameDatabaseDataSet
         '
-        'StaticJewelryTableAdapter
-        '
-        Me.StaticJewelryTableAdapter.ClearBeforeFill = True
-        '
         'StaticSkillsBindingSource
         '
         Me.StaticSkillsBindingSource.DataMember = "StaticSkills"
         Me.StaticSkillsBindingSource.DataSource = Me.GameDatabaseDataSet
-        '
-        'StaticSkillsTableAdapter
-        '
-        Me.StaticSkillsTableAdapter.ClearBeforeFill = True
         '
         'StaticMobsBindingSource
         '
         Me.StaticMobsBindingSource.DataMember = "StaticMobs"
         Me.StaticMobsBindingSource.DataSource = Me.GameDatabaseDataSet
         '
-        'StaticMobsTableAdapter
-        '
-        Me.StaticMobsTableAdapter.ClearBeforeFill = True
-        '
         'StaticAugmentsBindingSource
         '
         Me.StaticAugmentsBindingSource.DataMember = "StaticAugments"
         Me.StaticAugmentsBindingSource.DataSource = Me.GameDatabaseDataSet
         '
-        'StaticAugmentsTableAdapter
+        'PlayerCreaturesBindingSource
         '
-        Me.StaticAugmentsTableAdapter.ClearBeforeFill = True
+        Me.PlayerCreaturesBindingSource.DataMember = "PlayerCreatures"
+        Me.PlayerCreaturesBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'PlayerCreaturesTableAdapter
+        '
+        Me.PlayerCreaturesTableAdapter.ClearBeforeFill = True
+        '
+        'PlayerSkillsBindingSource
+        '
+        Me.PlayerSkillsBindingSource.DataMember = "PlayerSkills"
+        Me.PlayerSkillsBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'PlayerSkillsTableAdapter
+        '
+        Me.PlayerSkillsTableAdapter.ClearBeforeFill = True
+        '
+        'PlayerArmorBindingSource
+        '
+        Me.PlayerArmorBindingSource.DataMember = "PlayerArmor"
+        Me.PlayerArmorBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'PlayerArmorTableAdapter
+        '
+        Me.PlayerArmorTableAdapter.ClearBeforeFill = True
+        '
+        'PlayerWeaponsBindingSource
+        '
+        Me.PlayerWeaponsBindingSource.DataMember = "PlayerWeapons"
+        Me.PlayerWeaponsBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'PlayerWeaponsTableAdapter
+        '
+        Me.PlayerWeaponsTableAdapter.ClearBeforeFill = True
+        '
+        'PlayerConsumablesBindingSource
+        '
+        Me.PlayerConsumablesBindingSource.DataMember = "PlayerConsumables"
+        Me.PlayerConsumablesBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'PlayerConsumablesTableAdapter
+        '
+        Me.PlayerConsumablesTableAdapter.ClearBeforeFill = True
+        '
+        'PlayerJewelryBindingSource
+        '
+        Me.PlayerJewelryBindingSource.DataMember = "PlayerJewelry"
+        Me.PlayerJewelryBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'PlayerJewelryTableAdapter
+        '
+        Me.PlayerJewelryTableAdapter.ClearBeforeFill = True
+        '
+        'PlayerAugmentsBindingSource
+        '
+        Me.PlayerAugmentsBindingSource.DataMember = "PlayerAugments"
+        Me.PlayerAugmentsBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'PlayerAugmentsTableAdapter
+        '
+        Me.PlayerAugmentsTableAdapter.ClearBeforeFill = True
         '
         'MainMenu
         '
@@ -342,6 +426,13 @@ Partial Class MainMenu
         CType(Me.StaticSkillsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StaticMobsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StaticAugmentsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PlayerCreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PlayerSkillsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PlayerArmorBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PlayerWeaponsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PlayerConsumablesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PlayerJewelryBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PlayerAugmentsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -384,4 +475,18 @@ Partial Class MainMenu
     Friend WithEvents StaticMobsBindingSource As BindingSource
     Friend WithEvents StaticAugmentsTableAdapter As GameDatabaseDataSetTableAdapters.StaticAugmentsTableAdapter
     Friend WithEvents StaticAugmentsBindingSource As BindingSource
+    Friend WithEvents PlayerCreaturesBindingSource As BindingSource
+    Friend WithEvents PlayerCreaturesTableAdapter As GameDatabaseDataSetTableAdapters.PlayerCreaturesTableAdapter
+    Friend WithEvents PlayerSkillsBindingSource As BindingSource
+    Friend WithEvents PlayerSkillsTableAdapter As GameDatabaseDataSetTableAdapters.PlayerSkillsTableAdapter
+    Friend WithEvents PlayerArmorBindingSource As BindingSource
+    Friend WithEvents PlayerArmorTableAdapter As GameDatabaseDataSetTableAdapters.PlayerArmorTableAdapter
+    Friend WithEvents PlayerWeaponsBindingSource As BindingSource
+    Friend WithEvents PlayerWeaponsTableAdapter As GameDatabaseDataSetTableAdapters.PlayerWeaponsTableAdapter
+    Friend WithEvents PlayerConsumablesBindingSource As BindingSource
+    Friend WithEvents PlayerConsumablesTableAdapter As GameDatabaseDataSetTableAdapters.PlayerConsumablesTableAdapter
+    Friend WithEvents PlayerJewelryBindingSource As BindingSource
+    Friend WithEvents PlayerJewelryTableAdapter As GameDatabaseDataSetTableAdapters.PlayerJewelryTableAdapter
+    Friend WithEvents PlayerAugmentsBindingSource As BindingSource
+    Friend WithEvents PlayerAugmentsTableAdapter As GameDatabaseDataSetTableAdapters.PlayerAugmentsTableAdapter
 End Class
