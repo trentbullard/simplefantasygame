@@ -13,7 +13,7 @@
         RefreshQuest()
 
         For Each row As GameDatabaseDataSet.PlayerCreaturesRow In PlayerCreaturesTableAdapter.GetData
-            Dim creation As New Creature(StaticCreaturesTableAdapter.GetCreatureByid(row.id)(0))
+            Dim creation As New Creature(StaticCreaturesTableAdapter.GetCreatureByid(row.id).First)
             creation.name = row.name
             creaturelst.Items.Add(creation.ToString)
         Next

@@ -87,7 +87,7 @@
     End Sub
 
     Private Sub HireCreature(creature As Creature, slot As Integer)
-        Dim newRow As GameDatabaseDataSet.PlayerCreaturesRow = GameDatabaseDataSet.PlayerCreatures.NewRow()
+        Dim newRow As GameDatabaseDataSet.PlayerCreaturesRow = GameDatabaseDataSet.PlayerCreatures.NewPlayerCreaturesRow
 
         newRow.playerStateid = currentState.id
         newRow.creatureid = creature.id
@@ -96,30 +96,27 @@
         GameDatabaseDataSet.PlayerCreatures.Rows.Add(newRow)
 
         'Attempts to update the database
+        PlayerCreaturesBindingSource.EndEdit()
+        PlayerCreaturesTableAdapter.Update(GameDatabaseDataSet.PlayerCreatures)
+        currentController.SaveState()
+        ClearCreatureSlot(slot)
         Try
-            PlayerCreaturesBindingSource.EndEdit()
-            PlayerCreaturesTableAdapter.Update(GameDatabaseDataSet.PlayerCreatures)
-            currentState.Save(GameDatabaseDataSet, PlayerStatesBindingSource, PlayerStatesTableAdapter)
-            For Each row As GameDatabaseDataSet.PlayerCreaturesRow In PlayerCreaturesTableAdapter.GetData
-                row.playerStateid = currentState.id
-            Next
-            ClearCreatureSlot(slot)
         Catch ex As Exception
-            MsgBox("Failed to add player creature to database.")
+            MsgBox("failed to save state (TavernWindow.HireCreature)")
             Exit Sub
         End Try
         NewTavernState()
-
         currentState.townwindow.RefreshControls()
     End Sub
 
     Private Sub AcceptQuest(quest As Quest, slot As Integer)
         currentState.AcceptQuest(quest)
-        currentState.Save(GameDatabaseDataSet, PlayerStatesBindingSource, PlayerStatesTableAdapter)
-        For Each row As GameDatabaseDataSet.PlayerCreaturesRow In PlayerCreaturesTableAdapter.GetData
-            row.playerStateid = currentState.id
-        Next
-        ClearQuestSlots()
+        Try
+            currentController.SaveState()
+            ClearQuestSlots()
+        Catch ex As Exception
+            MsgBox("unable to save state (TavernWindow.AcceptQuest)")
+        End Try
         NewTavernState()
     End Sub
 

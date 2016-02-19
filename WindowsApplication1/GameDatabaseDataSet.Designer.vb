@@ -25444,6 +25444,22 @@ Namespace GameDatabaseDataSetTableAdapters
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetCreaturesByPlayerStateid(ByVal playerStateid As Global.System.Nullable(Of Integer)) As GameDatabaseDataSet.PlayerCreaturesDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (playerStateid.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(playerStateid.Value,Integer)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            Dim dataTable As GameDatabaseDataSet.PlayerCreaturesDataTable = New GameDatabaseDataSet.PlayerCreaturesDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
         Public Overloads Overridable Function Update(ByVal dataTable As GameDatabaseDataSet.PlayerCreaturesDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
