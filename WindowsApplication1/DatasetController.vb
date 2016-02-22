@@ -1,5 +1,6 @@
 ﻿Public Class DatasetController
     Private dataSet As GameDatabaseDataSet
+    Private playersTA As GameDatabaseDataSetTableAdapters.PlayersTableAdapter
     Private playerStatesBS As BindingSource
     Private playerStatesTA As GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter
     Private playerCreaturesBS As BindingSource
@@ -17,7 +18,7 @@
     Private playerAugmentsBS As BindingSource
     Private playerAugmentsTA As GameDatabaseDataSetTableAdapters.PlayerAugmentsTableAdapter
 
-    Public Sub New(DS As GameDatabaseDataSet,
+    Public Sub New(DS As GameDatabaseDataSet, playersTA As GameDatabaseDataSetTableAdapters.PlayersTableAdapter,
                    statesBS As BindingSource, statesTA As GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter,
                    creaturesBS As BindingSource, creaturesTA As GameDatabaseDataSetTableAdapters.PlayerCreaturesTableAdapter,
                    skillsBS As BindingSource, skillsTA As GameDatabaseDataSetTableAdapters.PlayerSkillsTableAdapter,
@@ -27,6 +28,7 @@
                    jewelryBS As BindingSource, jewelryTA As GameDatabaseDataSetTableAdapters.PlayerJewelryTableAdapter,
                    augmentsBS As BindingSource, augmentsTA As GameDatabaseDataSetTableAdapters.PlayerAugmentsTableAdapter)
         dataSet = DS
+        Me.playersTA = playersTA
         playerStatesBS = statesBS
         playerStatesTA = statesTA
         playerCreaturesBS = creaturesBS
@@ -46,7 +48,7 @@
     End Sub
 
     Public Sub SaveState()
-        Dim oldStateid As Integer = currentState.id
+        Dim oldState As PlayerState = currentState
 
         Dim stateRow As GameDatabaseDataSet.PlayerStatesRow = dataSet.PlayerStates.NewPlayerStatesRow
         stateRow.playerid = currentPlayer.id
@@ -56,17 +58,17 @@
         stateRow("currentQuestid") = If(currentState.quest Is Nothing, DBNull.Value, currentState.quest.id)
         stateRow.gameDate = currentState.dateInGame
         stateRow.isAmbushed = currentState.isAmbushed
-        stateRow.playerGold = currentState.gold
-        stateRow.playerLevel = currentState.level
-        stateRow.playerExperience = currentState.exp
+        stateRow.playerGold = currentPlayer.gold
+        stateRow.playerLevel = currentPlayer.level
+        stateRow.playerExperience = currentPlayer.exp
         dataSet.PlayerStates.Rows.Add(stateRow)
         playerStatesBS.EndEdit()
         playerStatesTA.Update(dataSet.PlayerStates)
         currentState = New PlayerState(playerStatesTA.GetData.Last)
+        currentState.LoadWindows(oldState)
 
-        playerCreaturesTA.FillByPlayerStateid(dataSet.PlayerCreatures, oldStateid)
-        For Each oldRow As GameDatabaseDataSet.PlayerCreaturesRow In playerCreaturesTA.GetCreaturesByPlayerStateid(oldStateid)
-            MsgBox(oldRow.name)
+        playerCreaturesTA.FillByPlayerStateid(dataSet.PlayerCreatures, oldState.id)
+        For Each oldRow As GameDatabaseDataSet.PlayerCreaturesRow In playerCreaturesTA.GetCreaturesByPlayerStateid(oldState.id)
             Dim newRow As GameDatabaseDataSet.PlayerCreaturesRow = dataSet.PlayerCreatures.NewPlayerCreaturesRow
             newRow.playerStateid = currentState.id
             newRow.creatureid = oldRow.creatureid
@@ -76,7 +78,7 @@
             playerCreaturesTA.Update(dataSet.PlayerCreatures)
         Next
 
-        playerSkillsTA.FillByPlayerStateid(dataSet.PlayerSkills, oldStateid)
+        playerSkillsTA.FillByPlayerStateid(dataSet.PlayerSkills, oldState.id)
         For Each oldRow As GameDatabaseDataSet.PlayerSkillsRow In playerSkillsTA.GetData
             Dim newRow As GameDatabaseDataSet.PlayerSkillsRow = dataSet.PlayerSkills.NewPlayerSkillsRow
             newRow.playerStateid = currentState.id
@@ -86,7 +88,7 @@
             playerSkillsTA.Update(dataSet.PlayerSkills)
         Next
 
-        playerArmorTA.FillByPlayerStateid(dataSet.PlayerArmor, oldStateid)
+        playerArmorTA.FillByPlayerStateid(dataSet.PlayerArmor, oldState.id)
         For Each oldRow As GameDatabaseDataSet.PlayerArmorRow In playerArmorTA.GetData
             Dim newRow As GameDatabaseDataSet.PlayerArmorRow = dataSet.PlayerArmor.NewPlayerArmorRow
             newRow.playerStateid = currentState.id
@@ -98,7 +100,7 @@
             playerArmorTA.Update(dataSet.PlayerArmor)
         Next
 
-        playerWeaponsTA.FillByPlayerStateid(dataSet.PlayerWeapons, oldStateid)
+        playerWeaponsTA.FillByPlayerStateid(dataSet.PlayerWeapons, oldState.id)
         For Each oldRow As GameDatabaseDataSet.PlayerWeaponsRow In playerWeaponsTA.GetData
             Dim newRow As GameDatabaseDataSet.PlayerWeaponsRow = dataSet.PlayerWeapons.NewPlayerWeaponsRow
             newRow.playerStateid = currentState.id
@@ -110,7 +112,7 @@
             playerWeaponsTA.Update(dataSet.PlayerWeapons)
         Next
 
-        playerConsumablesTA.FillByPlayerStateid(dataSet.PlayerConsumables, oldStateid)
+        playerConsumablesTA.FillByPlayerStateid(dataSet.PlayerConsumables, oldState.id)
         For Each oldRow As GameDatabaseDataSet.PlayerConsumablesRow In playerConsumablesTA.GetData
             Dim newRow As GameDatabaseDataSet.PlayerConsumablesRow = dataSet.PlayerConsumables.NewPlayerConsumablesRow
             newRow.playerStateid = currentState.id
@@ -121,7 +123,7 @@
             playerConsumablesTA.Update(dataSet.PlayerConsumables)
         Next
 
-        playerJewelryTA.FillByPlayerStateid(dataSet.PlayerJewelry, oldStateid)
+        playerJewelryTA.FillByPlayerStateid(dataSet.PlayerJewelry, oldState.id)
         For Each oldRow As GameDatabaseDataSet.PlayerJewelryRow In playerJewelryTA.GetData
             Dim newRow As GameDatabaseDataSet.PlayerJewelryRow = dataSet.PlayerJewelry.NewPlayerJewelryRow
             newRow.playerStateid = currentState.id
@@ -133,7 +135,7 @@
             playerJewelryTA.Update(dataSet.PlayerJewelry)
         Next
 
-        playerAugmentsTA.FillByPlayerStateid(dataSet.PlayerAugments, oldStateid)
+        playerAugmentsTA.FillByPlayerStateid(dataSet.PlayerAugments, oldState.id)
         For Each oldRow As GameDatabaseDataSet.PlayerAugmentsRow In playerAugmentsTA.GetData
             Dim newRow As GameDatabaseDataSet.PlayerAugmentsRow = dataSet.PlayerAugments.NewPlayerAugmentsRow
             newRow.playerStateid = currentState.id
@@ -142,5 +144,11 @@
             playerAugmentsBS.EndEdit()
             playerAugmentsTA.Update(dataSet.PlayerAugments)
         Next
+
+        dataSet.Players.FindByid(currentPlayer.id).name = currentPlayer.name
+        dataSet.Players.FindByid(currentPlayer.id).level = currentState.level
+        dataSet.Players.FindByid(currentPlayer.id).experience = currentState.exp
+        dataSet.Players.FindByid(currentPlayer.id).gold = currentState.gold
+        Me.playersTA.Update(dataSet.Players.FindByid(currentPlayer.id))
     End Sub
 End Class

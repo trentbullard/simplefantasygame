@@ -102,17 +102,33 @@
     Public Sub Save(ByRef dataSet As GameDatabaseDataSet,
                     ByRef bindingSource As BindingSource,
                     ByRef tableAdapter As GameDatabaseDataSetTableAdapters.PlayersTableAdapter)
-        Dim newRow As GameDatabaseDataSet.PlayersRow = dataSet.Players.NewRow()
-        newRow.name = playerName
-        newRow.level = playerLevel
-        newRow.experience = playerExperience
-        newRow.gold = playerGold
-        dataSet.Players.Rows.Add(newRow)
-        Try
-            bindingSource.EndEdit()
+        Dim newRow As GameDatabaseDataSet.PlayersRow
+        If tableAdapter.GetPlayerByid(playerid).Any Then
+            dataSet.Players.FindByid(playerid).name = playerName
+            dataSet.Players.FindByid(playerid).level = playerLevel
+            dataSet.Players.FindByid(playerid).experience = playerExperience
+            dataSet.Players.FindByid(playerid).gold = playerGold
             tableAdapter.Update(dataSet.Players)
-        Catch ex As Exception
-            MsgBox("failed to update database record for " & Me.ToString)
-        End Try
+        Else
+            newRow = dataSet.Players.NewPlayersRow
+            newRow.name = playerName
+            newRow.level = playerLevel
+            newRow.experience = playerExperience
+            newRow.gold = playerGold
+            dataSet.Players.Rows.Add(newRow)
+            Try
+                bindingSource.EndEdit()
+                tableAdapter.Update(dataSet.Players)
+            Catch ex As Exception
+                MsgBox("failed to update database record for " & Me.ToString)
+            End Try
+        End If
     End Sub
+
+    Public Sub Load(state As PlayerState)
+        playerLevel = state.level
+        playerExperience = state.exp
+        playerGold = state.gold
+    End Sub
+
 End Class

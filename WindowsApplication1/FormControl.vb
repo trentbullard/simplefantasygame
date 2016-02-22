@@ -15,5 +15,6 @@
         currentState.townwindow.Close()
         currentState.creaturewindow.Close()
         currentState.deletewindow.Close()
+        currentState.blacksmithwindow.Close()
     End Sub
 End Module

@@ -97,13 +97,6 @@
     Private Sub add1Weekbtn_Click(sender As Object, e As EventArgs) Handles add1Weekbtn.Click
         currentState.ChangeDate(TimeSpan.FromDays(7))
         datelbl.Text = currentState.dateInGame.ToString
-        Try
-            Validate()
-            GameDatabaseDataSet.PlayerStates(currentState.id - 1).gameDate = currentState.dateInGame
-            PlayerStatesBindingSource.EndEdit()
-            PlayerStatesTableAdapter.Update(GameDatabaseDataSet.PlayerStates)
-        Catch ex As Exception
-            MsgBox("unable to update playerstate in database.")
-        End Try
+        currentController.SaveState()
     End Sub
 End Class

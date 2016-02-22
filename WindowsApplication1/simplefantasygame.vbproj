@@ -160,6 +160,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GameDatabaseDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="GameDatabaseDataSet.vb">
+      <DependentUpon>GameDatabaseDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="InnWindow.Designer.vb">
       <DependentUpon>InnWindow.vb</DependentUpon>
     </Compile>

@@ -30,6 +30,7 @@ Partial Class MainMenu
         Me.playerLevel = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.playerName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.playerDeletebtn = New System.Windows.Forms.Button()
+        Me.PlayerStatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GameDatabaseDataSet = New WindowsApplication1.GameDatabaseDataSet()
         Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
@@ -47,7 +48,6 @@ Partial Class MainMenu
         Me.StaticQuestsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticQuestsTableAdapter()
         Me.StaticSkillsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticSkillsTableAdapter()
         Me.StaticWeaponsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticWeaponsTableAdapter()
-        Me.PlayerStatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayerPartiesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.StaticCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.StaticQuestsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -74,9 +74,9 @@ Partial Class MainMenu
         Me.PlayerJewelryTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerJewelryTableAdapter()
         Me.PlayerAugmentsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayerAugmentsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerAugmentsTableAdapter()
+        CType(Me.PlayerStatesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PlayerStatesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayerPartiesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StaticCreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StaticQuestsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -160,6 +160,11 @@ Partial Class MainMenu
         Me.playerDeletebtn.TabIndex = 5
         Me.playerDeletebtn.Text = "delete"
         Me.playerDeletebtn.UseVisualStyleBackColor = True
+        '
+        'PlayerStatesBindingSource
+        '
+        Me.PlayerStatesBindingSource.DataMember = "PlayerStates"
+        Me.PlayerStatesBindingSource.DataSource = Me.GameDatabaseDataSet
         '
         'GameDatabaseDataSet
         '
@@ -267,11 +272,6 @@ Partial Class MainMenu
         'StaticWeaponsTableAdapter
         '
         Me.StaticWeaponsTableAdapter.ClearBeforeFill = True
-        '
-        'PlayerStatesBindingSource
-        '
-        Me.PlayerStatesBindingSource.DataMember = "PlayerStates"
-        Me.PlayerStatesBindingSource.DataSource = Me.GameDatabaseDataSet
         '
         'PlayerPartiesBindingSource
         '
@@ -411,9 +411,9 @@ Partial Class MainMenu
         Me.Name = "MainMenu"
         Me.ShowIcon = False
         Me.Text = "main menu"
+        CType(Me.PlayerStatesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PlayerStatesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayerPartiesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StaticCreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StaticQuestsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

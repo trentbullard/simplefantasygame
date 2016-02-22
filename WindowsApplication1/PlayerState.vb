@@ -43,6 +43,7 @@
         stateTavernWindow = New TavernWindow
         stateTownWindow = New TownWindow
         stateCreatureWindow = New CreatureWindow
+        stateBlacksmithWindow = New BlacksmithWindow
     End Sub
 
     Public Sub New(id As Integer)
@@ -65,6 +66,7 @@
         stateTavernWindow = New TavernWindow
         stateTownWindow = New TownWindow
         stateCreatureWindow = New CreatureWindow
+        stateBlacksmithWindow = New BlacksmithWindow
     End Sub
 
     Public Sub New(player As Player)
@@ -73,9 +75,9 @@
         stateDateSaved = DateTime.Now
         stateGameDate = "01/01/1000"
         stateIsAmbushed = False
-        statePlayerGold = 4
-        statePlayerLevel = 1
-        statePlayerExperience = 1
+        statePlayerGold = player.gold
+        statePlayerLevel = player.level
+        statePlayerExperience = player.exp
         stateCombatWindow = New CombatWindow
         stateDeletePlayersWindow = New DeletePlayersWindow
         stateInnWindow = New InnWindow
@@ -87,6 +89,7 @@
         stateTavernWindow = New TavernWindow
         stateTownWindow = New TownWindow
         stateCreatureWindow = New CreatureWindow
+        stateBlacksmithWindow = New BlacksmithWindow
     End Sub
 
     Public Sub New(row As GameDatabaseDataSet.PlayerStatesRow)
@@ -112,6 +115,7 @@
         stateTavernWindow = New TavernWindow
         stateTownWindow = New TownWindow
         stateCreatureWindow = New CreatureWindow
+        stateBlacksmithWindow = New BlacksmithWindow
     End Sub
 
     Public ReadOnly Property id() As Integer
@@ -348,4 +352,20 @@
             MsgBox("failed to update database record for " & Me.ToString)
         End Try
     End Sub
+
+    Public Sub LoadWindows(oldState As PlayerState)
+        stateCombatWindow = oldState.combatwindow
+        stateDeletePlayersWindow = oldState.deletewindow
+        stateInnWindow = oldState.innwindow
+        stateMainMenu = oldState.mainmenu
+        stateMarketWindow = oldState.marketwindow
+        stateNecromancerWindow = oldState.necrowindow
+        statePlayerWindow = oldState.playerwindow
+        stateRoadWindow = oldState.roadwindow
+        stateTavernWindow = oldState.tavernwindow
+        stateTownWindow = oldState.townwindow
+        stateCreatureWindow = oldState.creaturewindow
+        stateBlacksmithWindow = oldState.blacksmithwindow
+    End Sub
+
 End Class

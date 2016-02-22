@@ -7,6 +7,7 @@
         TavernStatesTableAdapter.FillByPlayerStateid(GameDatabaseDataSet.TavernStates, currentState.id)
         StaticCreaturesTableAdapter.Fill(GameDatabaseDataSet.StaticCreatures)
         StaticQuestsTableAdapter.Fill(GameDatabaseDataSet.StaticQuests)
+        PlayerCreaturesTableAdapter.FillByPlayerStateid(GameDatabaseDataSet.PlayerCreatures, currentState.id)
         tavernRandoms()
 
         If TavernStatesTableAdapter.GetLastTavernStateByPlayerStateid(currentState.id).Any Then
@@ -96,16 +97,14 @@
         GameDatabaseDataSet.PlayerCreatures.Rows.Add(newRow)
 
         'Attempts to update the database
-        PlayerCreaturesBindingSource.EndEdit()
-        PlayerCreaturesTableAdapter.Update(GameDatabaseDataSet.PlayerCreatures)
-        currentController.SaveState()
-        ClearCreatureSlot(slot)
         Try
+            PlayerCreaturesBindingSource.EndEdit()
+            PlayerCreaturesTableAdapter.Update(GameDatabaseDataSet.PlayerCreatures)
+            ClearCreatureSlot(slot)
         Catch ex As Exception
             MsgBox("failed to save state (TavernWindow.HireCreature)")
             Exit Sub
         End Try
-        NewTavernState()
         currentState.townwindow.RefreshControls()
     End Sub
 
@@ -391,6 +390,11 @@
                         Or tavernRandomInts(3) = tavernRandomInts(2)
             End Select
         Next
+    End Sub
+
+    Private Sub CloseEventHandler(sender As Object, e As EventArgs) Handles Me.Closed
+        currentController.SaveState()
+        NewTavernState()
     End Sub
 
 End Class
