@@ -305,7 +305,7 @@
         Me.Close()
     End Sub
 
-    Private Sub NewTavernState()
+    Public Sub NewTavernState()
         currentTavernState.changeDate(DateTime.Parse(currentState.dateInGame) - currentTavernState.dateVisited)
         Dim newRow As GameDatabaseDataSet.TavernStatesRow = GameDatabaseDataSet.TavernStates.NewRow()
 

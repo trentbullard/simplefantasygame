@@ -2,7 +2,7 @@
     Private armorSlotsPossible As String
     Private armorWearableBy As String
     Private armorIsUnique As Boolean
-    Private armorMinStats As Collection
+    Private armorMinStats As New Collection
     Private armorSet As String
     Private armorSetBonus As String
     Private armorResistances As New Collection
@@ -12,9 +12,7 @@
         MyBase.name = getArmorName()
         armorWearableBy = getSpecies()
 
-        Dim stats As New Collection
-        stats.Add(Roll(10), getEquipStatName())
-        MyBase.stats = stats
+        MyBase.stats.Add(Roll(10), getEquipStatName())
 
         Select Case MyBase.name
             Case "helmet", "cap"
@@ -49,15 +47,13 @@
             armorSetBonus = getEquipStatName()
         End If
 
-        stats.Clear()
         Dim stat1 = getCoreStatName()
-        stats.Add(50 + Roll(50), stat1)
+        armorMinStats.Add(50 + Roll(50), stat1)
         Dim stat2 As String = stat1
         Do Until stat2 <> stat1
             stat2 = getCoreStatName()
         Loop
-        stats.Add(50 + Roll(50), stat2)
-        armorMinStats = stats
+        armorMinStats.Add(50 + Roll(50), stat2)
 
         Dim resistance1 As String = getResistanceName()
         armorResistances.Add(Roll(10), resistance1)
@@ -74,39 +70,33 @@
     End Sub
 
     Public Sub New(row As GameDatabaseDataSet.StaticArmorRow)
-        MyBase.New(row.id, currentPlayer, row.name & Space(1) & row.id)
+        MyBase.New(row.id, currentPlayer, row.name)
         armorIsUnique = row.isUnique
         armorSlotsPossible = row.slotsPossible
         armorWearableBy = row.wearableBy
 
         Dim statsArray() As String = row.attributes.Split(" "c)
-        Dim stats As New Collection
         For Each stat In statsArray
             Dim statArray() As String = stat.Split(":"c)
-            stats.Add(CInt(statArray(1)), statArray(0))
+            MyBase.stats.Add(CInt(statArray(1)), statArray(0))
         Next
-        MyBase.stats = stats
 
         statsArray = row.minStats.Split(" "c)
-        stats.Clear()
         For Each stat In statsArray
             Dim statArray() As String = stat.Split(":"c)
-            stats.Add(CInt(statArray(1)), statArray(0))
+            armorMinStats.Add(CInt(statArray(1)), statArray(0))
         Next
-        armorMinStats = stats
 
-        If Not IsDBNull(row.setName) Then
+        If Not IsDBNull(row("setName")) Then
             armorSet = row.setName
             armorSetBonus = row.setBonus
         End If
 
         statsArray = row.resistances.Split(" "c)
-        stats.Clear()
         For Each stat In statsArray
             Dim statArray() As String = stat.Split(":"c)
-            stats.Add(CInt(statArray(1)), statArray(0))
+            armorResistances.Add(CInt(statArray(1)), statArray(0))
         Next
-        armorResistances = stats
     End Sub
 
     Public Overrides ReadOnly Property id() As Integer
@@ -187,19 +177,6 @@
         End Set
     End Property
 
-    Public Overrides Function ToString() As String
-        Dim statString As String = Nothing
-        statString = statString & If(MyBase.stats.Contains("maxHealth"), "hp:" & MyBase.stats.Item("maxHealth") & Space(1), Nothing)
-        statString = statString & If(MyBase.stats.Contains("armor"), "armor:" & MyBase.stats.Item("armor") & Space(1), Nothing)
-        statString = statString & If(MyBase.stats.Contains("strength"), "str:" & MyBase.stats.Item("strength") & Space(1), Nothing)
-        statString = statString & If(MyBase.stats.Contains("initiative"), "ini:" & MyBase.stats.Item("initiative") & Space(1), Nothing)
-        statString = statString & If(MyBase.stats.Contains("intelligence"), "int:" & MyBase.stats.Item("intelligence") & Space(1), Nothing)
-        statString = statString & If(MyBase.stats.Contains("wisdom"), "wis:" & MyBase.stats.Item("wisdom") & Space(1), Nothing)
-        statString = statString & If(MyBase.stats.Contains("dexterity"), "dex:" & MyBase.stats.Item("dexterity") & Space(1), Nothing)
-        Console.WriteLine("armor tostring. statString.Trim: " & statString.Trim)
-        Return MyBase.ToString() & " (" & statString.Trim & ")"
-    End Function
-
     Public Function Details() As Collection
         Dim detailCol As New Collection
         detailCol.Add(MyBase.id, "id")
@@ -213,6 +190,25 @@
         detailCol.Add(armorSetBonus, "setBonus")
         detailCol.Add(armorResistances, "resistances")
         Return detailCol
+    End Function
+
+    Public Overrides Function ToString() As String
+        Dim statString As String = Nothing
+        statString = statString & If(MyBase.stats.Contains("maxHealth"), "hp:" & MyBase.stats.Item("maxHealth") & Space(1), Nothing)
+        statString = statString & If(MyBase.stats.Contains("armor"), "armor:" & MyBase.stats.Item("armor") & Space(1), Nothing)
+        statString = statString & If(MyBase.stats.Contains("strength"), "str:" & MyBase.stats.Item("strength") & Space(1), Nothing)
+        statString = statString & If(MyBase.stats.Contains("initiative"), "ini:" & MyBase.stats.Item("initiative") & Space(1), Nothing)
+        statString = statString & If(MyBase.stats.Contains("intelligence"), "int:" & MyBase.stats.Item("intelligence") & Space(1), Nothing)
+        statString = statString & If(MyBase.stats.Contains("wisdom"), "wis:" & MyBase.stats.Item("wisdom") & Space(1), Nothing)
+        statString = statString & If(MyBase.stats.Contains("dexterity"), "dex:" & MyBase.stats.Item("dexterity") & Space(1), Nothing)
+        statString = statString & If(MyBase.stats.Contains("fire"), "fire:" & MyBase.stats.Item("fire") & Space(1), Nothing)
+        statString = statString & If(MyBase.stats.Contains("ice"), "ice:" & MyBase.stats.Item("ice") & Space(1), Nothing)
+        statString = statString & If(MyBase.stats.Contains("mental"), "mental:" & MyBase.stats.Item("mental") & Space(1), Nothing)
+        statString = statString & If(MyBase.stats.Contains("death"), "death:" & MyBase.stats.Item("death") & Space(1), Nothing)
+        statString = statString & If(MyBase.stats.Contains("lightning"), "lightning:" & MyBase.stats.Item("lightning") & Space(1), Nothing)
+        statString = statString & If(MyBase.stats.Contains("nature"), "nature:" & MyBase.stats.Item("nature") & Space(1), Nothing)
+        statString = statString & If(MyBase.stats.Contains("divine"), "divine:" & MyBase.stats.Item("divine") & Space(1), Nothing)
+        Return MyBase.ToString() & " (" & statString.Trim & ")"
     End Function
 
     Public Sub Save(ds As GameDatabaseDataSet,

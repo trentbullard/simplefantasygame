@@ -114,6 +114,7 @@
     <Compile Include="Armor.vb" />
     <Compile Include="Augment.vb" />
     <Compile Include="Battle.vb" />
+    <Compile Include="BlacksmithState.vb" />
     <Compile Include="BlacksmithWindow.Designer.vb">
       <DependentUpon>BlacksmithWindow.vb</DependentUpon>
     </Compile>

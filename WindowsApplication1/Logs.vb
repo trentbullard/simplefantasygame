@@ -19,7 +19,7 @@
         End If
 
         'Add text to the file.
-        logGameText = Now.TimeOfDay.ToString & " - Initializing... " & vbCrLf
+        logGameText = DateTime.Now.ToString & " - Initializing..." & vbCrLf
         My.Computer.FileSystem.WriteAllText(logFilePath, logGameText, True)
     End Sub
 

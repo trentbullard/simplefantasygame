@@ -46,13 +46,13 @@ Public Class MainMenu
             Next
         End If
 
-        For ctr = 1 To 20
-            If Not StaticWeaponsTableAdapter.GetData.Any Then
+        For ctr = 1 To 100
+            If Not StaticWeaponsTableAdapter.GetData.Count >= 100 Then
                 Dim weapon As Weapon
                 weapon = New Weapon()
                 weapon.Save(GameDatabaseDataSet, StaticWeaponsBindingSource, StaticWeaponsTableAdapter)
             End If
-            If Not StaticArmorTableAdapter.GetData.Any Then
+            If Not StaticArmorTableAdapter.GetData.Count >= 100 Then
                 Dim armor As Armor
                 armor = New Armor()
                 armor.Save(GameDatabaseDataSet, StaticArmorBindingSource, StaticArmorTableAdapter)

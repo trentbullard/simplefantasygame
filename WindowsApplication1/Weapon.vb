@@ -2,7 +2,7 @@
     Private weaponSlotsPossible As String
     Private weaponWearableBy As String
     Private weaponIsUnique As Boolean
-    Private weaponMinStats As Collection
+    Private weaponMinStats As New Collection
     Private weaponIsRanged As Boolean
     Private weaponIsMagic As Boolean
 
@@ -39,24 +39,20 @@
                 weaponSlotsPossible = "2"
         End Select
 
-        Dim stats As New Collection
-        stats.Add(Roll(10), getEquipStatName())
-        MyBase.stats = stats
+        MyBase.stats.Add(Roll(10), getEquipStatName())
 
         If Roll(10) = 1 Then
             weaponIsUnique = True
             MyBase.name = getCreatureName() & "'s " & MyBase.name
         End If
 
-        stats.Clear()
         Dim stat1 = getCoreStatName()
-        stats.Add(50 + Roll(50), stat1)
+        weaponMinStats.Add(50 + Roll(50), stat1)
         Dim stat2 As String = stat1
         Do Until stat2 <> stat1
             stat2 = getCoreStatName()
         Loop
-        stats.Add(50 + Roll(50), stat2)
-        weaponMinStats = stats
+        weaponMinStats.Add(50 + Roll(50), stat2)
     End Sub
 
     Public Sub New(id As Integer)
@@ -64,7 +60,7 @@
     End Sub
 
     Public Sub New(row As GameDatabaseDataSet.StaticWeaponsRow)
-        MyBase.New(row.id, currentPlayer, row.name & Space(1) & row.id)
+        MyBase.New(row.id, currentPlayer, row.name)
         weaponIsRanged = row.isRanged
         weaponIsMagic = row.isMagic
         weaponIsUnique = row.isUnique
@@ -72,20 +68,26 @@
         weaponWearableBy = row.wearableBy
 
         Dim statsArray() As String = row.attributes.Split(" "c)
-        Dim stats As New Collection
         For Each stat In statsArray
             Dim statArray() As String = stat.Split(":"c)
-            stats.Add(CInt(statArray(1)), statArray(0))
+            MyBase.stats.Add(CInt(statArray(1)), statArray(0))
         Next
-        MyBase.stats = stats
 
         statsArray = row.minStats.Split(" "c)
-        stats.Clear()
         For Each stat In statsArray
             Dim statArray() As String = stat.Split(":"c)
-            stats.Add(CInt(statArray(1)), statArray(0))
+            weaponMinStats.Add(CInt(statArray(1)), statArray(0))
         Next
-        weaponMinStats = stats
+    End Sub
+
+    Public Sub New(item As Weapon)
+        MyBase.New(item.id, item.owner, item.name, item.stats)
+        weaponSlotsPossible = item.slots
+        weaponWearableBy = item.wearableBy
+        weaponIsUnique = item.isUnique
+        weaponMinStats = item.minStats
+        weaponIsRanged = item.isRanged
+        weaponIsMagic = item.isMagic
     End Sub
 
     Public Overrides ReadOnly Property id() As Integer
@@ -160,6 +162,12 @@
         End Set
     End Property
 
+    Public ReadOnly Property wearableBy() As String
+        Get
+            Return weaponWearableBy
+        End Get
+    End Property
+
     Public Overrides Function ToString() As String
         Dim statString As String = Nothing
         statString = statString & If(MyBase.stats.Contains("maxHealth"), "hp:" & MyBase.stats.Item("maxHealth") & Space(1), Nothing)
@@ -199,7 +207,11 @@
         statString = statString & If(MyBase.stats.Contains("intelligence"), "intelligence:" & MyBase.stats.Item("intelligence") & Space(1), Nothing)
         statString = statString & If(MyBase.stats.Contains("wisdom"), "wisdom:" & MyBase.stats.Item("wisdom") & Space(1), Nothing)
         statString = statString & If(MyBase.stats.Contains("dexterity"), "dexterity:" & MyBase.stats.Item("dexterity") & Space(1), Nothing)
-        newRow("attributes") = statString.Trim
+        If statString IsNot Nothing Then
+            newRow("attributes") = statString.Trim
+        Else
+            newRow("attributes") = DBNull.Value
+        End If
         newRow("slotsPossible") = weaponSlotsPossible
         newRow("wearableBy") = weaponWearableBy
         newRow("isUnique") = weaponIsUnique
@@ -209,7 +221,11 @@
         statString = statString & If(weaponMinStats.Contains("intelligence"), "intelligence:" & weaponMinStats.Item("intelligence") & Space(1), Nothing)
         statString = statString & If(weaponMinStats.Contains("wisdom"), "wisdom:" & weaponMinStats.Item("wisdom") & Space(1), Nothing)
         statString = statString & If(weaponMinStats.Contains("dexterity"), "dexterity:" & weaponMinStats.Item("dexterity") & Space(1), Nothing)
-        newRow("minStats") = statString.Trim
+        If statString IsNot Nothing Then
+            newRow("minStats") = statString.Trim
+        Else
+            newRow("minStats") = DBNull.Value
+        End If
         newRow("isRanged") = weaponIsRanged
         newRow("isMagic") = weaponIsMagic
         ds.StaticWeapons.Rows.Add(newRow)
