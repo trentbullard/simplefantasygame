@@ -35,8 +35,6 @@
                 armorSlotsPossible = "9"
             Case "shoes", "boots"
                 armorSlotsPossible = "10"
-            Case Else
-                armorSlotsPossible = "0"
         End Select
 
         armorIsUnique = False
@@ -177,19 +175,66 @@
         End Set
     End Property
 
-    Public Function Details() As Collection
-        Dim detailCol As New Collection
-        detailCol.Add(MyBase.id, "id")
-        detailCol.Add(MyBase.name, "name")
-        detailCol.Add(MyBase.stats, "stats")
-        detailCol.Add(armorSlotsPossible, "slots")
-        detailCol.Add(armorWearableBy, "wearableBy")
-        detailCol.Add(armorIsUnique, "isUnique")
-        detailCol.Add(armorMinStats, "minStats")
-        detailCol.Add(armorSet, "set")
-        detailCol.Add(armorSetBonus, "setBonus")
-        detailCol.Add(armorResistances, "resistances")
-        Return detailCol
+    Public Function DetailsString() As String
+        Dim detailString As String = Nothing
+        detailString = MyBase.name & vbCrLf
+        detailString = detailString & If(armorIsUnique, "unique" & vbCrLf, Nothing)
+        Dim statsString As String = Nothing
+        statsString = statsString & If(MyBase.stats.Contains("maxHealth"), "max HP: " & MyBase.stats.Item("maxHealth") & Space(1), Nothing)
+        statsString = statsString & If(MyBase.stats.Contains("armor"), "armor: " & MyBase.stats.Item("armor") & Space(1), Nothing)
+        statsString = statsString & If(MyBase.stats.Contains("strength"), "str: " & MyBase.stats.Item("strength") & Space(1), Nothing)
+        statsString = statsString & If(MyBase.stats.Contains("initiative"), "ini: " & MyBase.stats.Item("initiative") & Space(1), Nothing)
+        statsString = statsString & If(MyBase.stats.Contains("intelligence"), "int: " & MyBase.stats.Item("intelligence") & Space(1), Nothing)
+        statsString = statsString & If(MyBase.stats.Contains("wisdom"), "wis: " & MyBase.stats.Item("wisdom") & Space(1), Nothing)
+        statsString = statsString & If(MyBase.stats.Contains("dexterity"), "dex: " & MyBase.stats.Item("dexterity") & Space(1), Nothing)
+        detailString = detailString & statsString & vbCrLf
+        Dim slotArray As String() = armorSlotsPossible.Split(" "c)
+        Dim slotString As String = Nothing
+        For Each slot As Integer In slotArray
+            Select Case slot
+                Case 1
+                    slotString = slotString & "head" & Space(1)
+                Case 2
+                    slotString = slotString & "shoulders" & Space(1)
+                Case 3
+                    slotString = slotString & "arms" & Space(1)
+                Case 4
+                    slotString = slotString & "hands" & Space(1)
+                Case 5
+                    slotString = slotString & "back" & Space(1)
+                Case 6
+                    slotString = slotString & "chest" & Space(1)
+                Case 7
+                    slotString = slotString & "waist" & Space(1)
+                Case 8
+                    slotString = slotString & "legs" & Space(1)
+                Case 9
+                    slotString = slotString & "shins" & Space(1)
+                Case 10
+                    slotString = slotString & "feet" & Space(1)
+            End Select
+        Next
+        detailString = detailString & "wearable on: " & slotString.Trim & vbCrLf
+        detailString = detailString & "wearable by: " & armorWearableBy & vbCrLf
+        statsString = Nothing
+        statsString = statsString & If(armorMinStats.Contains("strength"), "str: " & armorMinStats.Item("strength") & Space(1), Nothing)
+        statsString = statsString & If(armorMinStats.Contains("initiative"), "ini: " & armorMinStats.Item("initiative") & Space(1), Nothing)
+        statsString = statsString & If(armorMinStats.Contains("intelligence"), "int: " & armorMinStats.Item("intelligence") & Space(1), Nothing)
+        statsString = statsString & If(armorMinStats.Contains("wisdom"), "wis: " & armorMinStats.Item("wisdom") & Space(1), Nothing)
+        statsString = statsString & If(armorMinStats.Contains("dexterity"), "dex: " & armorMinStats.Item("dexterity") & Space(1), Nothing)
+        detailString = detailString & "minimum stats: " & statsString & vbCrLf
+        detailString = detailString & If(armorIsUnique, "set name: " & armorSet & vbCrLf, Nothing)
+        detailString = detailString & If(armorIsUnique, "set bonus: " & armorSetBonus & vbCrLf, Nothing)
+        statsString = Nothing
+        statsString = statsString & If(armorResistances.Contains("fire"), "fire: " & armorResistances.Item("fire") & Space(1), Nothing)
+        statsString = statsString & If(armorResistances.Contains("ice"), "ice: " & armorResistances.Item("ice") & Space(1), Nothing)
+        statsString = statsString & If(armorResistances.Contains("mental"), "mental: " & armorResistances.Item("mental") & Space(1), Nothing)
+        statsString = statsString & If(armorResistances.Contains("death"), "death: " & armorResistances.Item("death") & Space(1), Nothing)
+        statsString = statsString & If(armorResistances.Contains("lightning"), "lightning: " & armorResistances.Item("lightning") & Space(1), Nothing)
+        statsString = statsString & If(armorResistances.Contains("nature"), "nature: " & armorResistances.Item("nature") & Space(1), Nothing)
+        statsString = statsString & If(armorResistances.Contains("divine"), "divine: " & armorResistances.Item("divine") & Space(1), Nothing)
+        detailString = detailString & "resistances: " & statsString & vbCrLf
+        Return detailString.Trim
     End Function
 
     Public Overrides Function ToString() As String
@@ -201,13 +246,6 @@
         statString = statString & If(MyBase.stats.Contains("intelligence"), "int:" & MyBase.stats.Item("intelligence") & Space(1), Nothing)
         statString = statString & If(MyBase.stats.Contains("wisdom"), "wis:" & MyBase.stats.Item("wisdom") & Space(1), Nothing)
         statString = statString & If(MyBase.stats.Contains("dexterity"), "dex:" & MyBase.stats.Item("dexterity") & Space(1), Nothing)
-        statString = statString & If(MyBase.stats.Contains("fire"), "fire:" & MyBase.stats.Item("fire") & Space(1), Nothing)
-        statString = statString & If(MyBase.stats.Contains("ice"), "ice:" & MyBase.stats.Item("ice") & Space(1), Nothing)
-        statString = statString & If(MyBase.stats.Contains("mental"), "mental:" & MyBase.stats.Item("mental") & Space(1), Nothing)
-        statString = statString & If(MyBase.stats.Contains("death"), "death:" & MyBase.stats.Item("death") & Space(1), Nothing)
-        statString = statString & If(MyBase.stats.Contains("lightning"), "lightning:" & MyBase.stats.Item("lightning") & Space(1), Nothing)
-        statString = statString & If(MyBase.stats.Contains("nature"), "nature:" & MyBase.stats.Item("nature") & Space(1), Nothing)
-        statString = statString & If(MyBase.stats.Contains("divine"), "divine:" & MyBase.stats.Item("divine") & Space(1), Nothing)
         Return MyBase.ToString() & " (" & statString.Trim & ")"
     End Function
 

@@ -180,18 +180,41 @@
         Return MyBase.ToString() & " (" & statString.Trim & ")"
     End Function
 
-    Public Function Details() As Collection
-        Dim detailCol As New Collection
-        detailCol.Add(MyBase.id, "id")
-        detailCol.Add(MyBase.name, "name")
-        detailCol.Add(MyBase.stats, "stats")
-        detailCol.Add(weaponSlotsPossible, "slots")
-        detailCol.Add(weaponWearableBy, "wearableBy")
-        detailCol.Add(weaponIsUnique, "isUnique")
-        detailCol.Add(weaponMinStats, "minStats")
-        detailCol.Add(weaponIsRanged, "isRanged")
-        detailCol.Add(weaponIsMagic, "isMagic")
-        Return detailCol
+    Public Function DetailsString() As String
+        Dim detailString As String = Nothing
+        detailString = MyBase.name & vbCrLf
+        detailString = detailString & If(weaponIsUnique, "unique" & vbCrLf, Nothing)
+        detailString = detailString & If(weaponIsRanged, "ranged" & vbCrLf, Nothing)
+        detailString = detailString & If(weaponIsMagic, "magic" & vbCrLf, Nothing)
+        Dim statsString As String = Nothing
+        statsString = statsString & If(MyBase.stats.Contains("maxHealth"), "max HP:" & MyBase.stats.Item("maxHealth") & Space(1), Nothing)
+        statsString = statsString & If(MyBase.stats.Contains("armor"), "armor: " & MyBase.stats.Item("armor") & Space(1), Nothing)
+        statsString = statsString & If(MyBase.stats.Contains("strength"), "str: " & MyBase.stats.Item("strength") & Space(1), Nothing)
+        statsString = statsString & If(MyBase.stats.Contains("initiative"), "ini: " & MyBase.stats.Item("initiative") & Space(1), Nothing)
+        statsString = statsString & If(MyBase.stats.Contains("intelligence"), "int: " & MyBase.stats.Item("intelligence") & Space(1), Nothing)
+        statsString = statsString & If(MyBase.stats.Contains("wisdom"), "wis: " & MyBase.stats.Item("wisdom") & Space(1), Nothing)
+        statsString = statsString & If(MyBase.stats.Contains("dexterity"), "dex: " & MyBase.stats.Item("dexterity") & Space(1), Nothing)
+        detailString = detailString & statsString & vbCrLf
+        Dim slotArray As String() = weaponSlotsPossible.Split(" "c)
+        Dim slotString As String = Nothing
+        For Each slot As Integer In slotArray
+            Select Case slot
+                Case 1
+                    slotString = slotString & "primary" & Space(1)
+                Case 2
+                    slotString = slotString & "secondary" & Space(1)
+            End Select
+        Next
+        detailString = detailString & "equipable on: " & slotString.Trim & vbCrLf
+        detailString = detailString & "usable by: " & weaponWearableBy & vbCrLf
+        statsString = Nothing
+        statsString = statsString & If(weaponMinStats.Contains("strength"), "str: " & weaponMinStats.Item("strength") & Space(1), Nothing)
+        statsString = statsString & If(weaponMinStats.Contains("initiative"), "ini: " & weaponMinStats.Item("initiative") & Space(1), Nothing)
+        statsString = statsString & If(weaponMinStats.Contains("intelligence"), "int: " & weaponMinStats.Item("intelligence") & Space(1), Nothing)
+        statsString = statsString & If(weaponMinStats.Contains("wisdom"), "wis: " & weaponMinStats.Item("wisdom") & Space(1), Nothing)
+        statsString = statsString & If(weaponMinStats.Contains("dexterity"), "dex: " & weaponMinStats.Item("dexterity") & Space(1), Nothing)
+        detailString = detailString & "minimum stats: " & statsString & vbCrLf
+        Return detailString
     End Function
 
     Public Sub Save(ds As GameDatabaseDataSet,

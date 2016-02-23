@@ -1,3 +1,3 @@
 ﻿Module currentItems
-    Public currentItem As New Item()
+    Public currentItem As Item
 End Module

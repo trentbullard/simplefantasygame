@@ -132,15 +132,15 @@ Partial Class TavernWindow
         Me.questSlot1btn = New System.Windows.Forms.Button()
         Me.questlbl = New System.Windows.Forms.Label()
         Me.innbtn = New System.Windows.Forms.Button()
-        Me.GameDatabaseDataSet = New WindowsApplication1.GameDatabaseDataSet()
+        Me.GameDatabaseDataSet = New simplefantasygame.GameDatabaseDataSet()
         Me.PlayerStatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PlayerStatesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter()
-        Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
-        Me.PlayerCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerCreaturesTableAdapter()
-        Me.PlayersTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
-        Me.StaticCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticCreaturesTableAdapter()
-        Me.StaticQuestsTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.StaticQuestsTableAdapter()
-        Me.TavernStatesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TavernStatesTableAdapter()
+        Me.PlayerStatesTableAdapter = New simplefantasygame.GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter()
+        Me.TableAdapterManager = New simplefantasygame.GameDatabaseDataSetTableAdapters.TableAdapterManager()
+        Me.PlayerCreaturesTableAdapter = New simplefantasygame.GameDatabaseDataSetTableAdapters.PlayerCreaturesTableAdapter()
+        Me.PlayersTableAdapter = New simplefantasygame.GameDatabaseDataSetTableAdapters.PlayersTableAdapter()
+        Me.StaticCreaturesTableAdapter = New simplefantasygame.GameDatabaseDataSetTableAdapters.StaticCreaturesTableAdapter()
+        Me.StaticQuestsTableAdapter = New simplefantasygame.GameDatabaseDataSetTableAdapters.StaticQuestsTableAdapter()
+        Me.TavernStatesTableAdapter = New simplefantasygame.GameDatabaseDataSetTableAdapters.TavernStatesTableAdapter()
         Me.TavernStatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayerCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -1256,7 +1256,7 @@ Partial Class TavernWindow
         Me.TableAdapterManager.StaticWeaponsTableAdapter = Nothing
         Me.TableAdapterManager.TavernStatesTableAdapter = Me.TavernStatesTableAdapter
         Me.TableAdapterManager.TurnsTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UpdateOrder = simplefantasygame.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.WeaponAugmentsTableAdapter = Nothing
         '
         'PlayerCreaturesTableAdapter

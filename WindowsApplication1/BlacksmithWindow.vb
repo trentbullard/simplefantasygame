@@ -1,42 +1,51 @@
 ﻿Public Class BlacksmithWindow
-    Private currentBlacksmithState As BlacksmithState
 
     Private Sub BlacksmithWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'GameDatabaseDataSet.StaticArmor' table. You can move, or remove it, as needed.
+        Me.StaticArmorTableAdapter.Fill(Me.GameDatabaseDataSet.StaticArmor)
+        'TODO: This line of code loads data into the 'GameDatabaseDataSet.StaticWeapons' table. You can move, or remove it, as needed.
+        Me.StaticWeaponsTableAdapter.Fill(Me.GameDatabaseDataSet.StaticWeapons)
+        'TODO: This line of code loads data into the 'GameDatabaseDataSet.BlacksmithStates' table. You can move, or remove it, as needed.
+        Me.BlacksmithStatesTableAdapter.Fill(Me.GameDatabaseDataSet.BlacksmithStates)
+        'TODO: This line of code loads data into the 'GameDatabaseDataSet.BlacksmithStateItems' table. You can move, or remove it, as needed.
+        Me.BlacksmithStateItemsTableAdapter.Fill(Me.GameDatabaseDataSet.BlacksmithStateItems)
         playerGoldlbl.Text = currentPlayer.name & "'s gold"
         playerGoldtxt.Text = currentPlayer.gold
 
         BlacksmithStatesTableAdapter.FillByPlayerStateid(GameDatabaseDataSet.BlacksmithStates, currentState.id)
 
-        If GameDatabaseDataSet.BlacksmithStates.Any Then
+        Dim weapon As Weapon
+        Dim armor As Armor
+        If GameDatabaseDataSet.BlacksmithStates.Any And currentState.dateInGame = currentBlacksmithState.DateVisited Then
             currentBlacksmithState = New BlacksmithState(GameDatabaseDataSet.BlacksmithStates.Last)
             StaticWeaponsTableAdapter.FillByBlacksmithStateid(GameDatabaseDataSet.StaticWeapons, currentBlacksmithState.id)
             StaticArmorTableAdapter.FillByBlacksmithStateid(GameDatabaseDataSet.StaticArmor, currentBlacksmithState.id)
             For Each row As GameDatabaseDataSet.StaticWeaponsRow In GameDatabaseDataSet.StaticWeapons
-
+                Weapon = New Weapon(row)
+                weaponslst.Items.Add(Weapon.id.ToString, Weapon.ToString, 0)
+                currentBlacksmithState.weapons.Add(Weapon)
             Next
             For Each row As GameDatabaseDataSet.StaticArmorRow In GameDatabaseDataSet.StaticArmor
-
+                Armor = New Armor(row)
+                armorlst.Items.Add(Armor.id.ToString, Armor.ToString, 0)
+                currentBlacksmithState.armor.Add(Armor)
             Next
         Else
             NewBlacksmithState()
-            StaticWeaponsTableAdapter.Fill(GameDatabaseDataSet.StaticWeapons)
-            StaticArmorTableAdapter.Fill(GameDatabaseDataSet.StaticArmor)
-            Dim allWeapons As New Collection
-            Dim allArmor As New Collection
-            Dim weapon As Weapon
-            Dim armor As Armor
-            For ctr = 1 To 20
-                weapon = New Weapon(GameDatabaseDataSet.StaticWeapons.FindByid(ctr))
+            StaticWeaponsTableAdapter.FillWithBlacksmithWeapons(GameDatabaseDataSet.StaticWeapons)
+            StaticArmorTableAdapter.FillWithBlacksmithArmor(GameDatabaseDataSet.StaticArmor)
+            For Each row As GameDatabaseDataSet.StaticWeaponsRow In GameDatabaseDataSet.StaticWeapons
+                weapon = New Weapon(row)
                 NewBlacksmithStateItem(weapon)
-                weaponslst.Items.Add(weapon.ToString)
-                allWeapons.Add(weapon)
-                armor = New Armor(GameDatabaseDataSet.StaticArmor.FindByid(ctr))
-                NewBlacksmithStateItem(armor)
-                armorlst.Items.Add(armor.ToString)
-                allArmor.Add(armor)
+                weaponslst.Items.Add(weapon.id.ToString, weapon.ToString, 0)
+                currentBlacksmithState.weapons.Add(Weapon)
             Next
-            currentBlacksmithState.weapons = allWeapons
-            currentBlacksmithState.armor = allArmor
+            For Each row As GameDatabaseDataSet.StaticArmorRow In GameDatabaseDataSet.StaticArmor
+                armor = New Armor(row)
+                NewBlacksmithStateItem(armor)
+                armorlst.Items.Add(armor.id.ToString, armor.ToString, 0)
+                currentBlacksmithState.armor.Add(Armor)
+            Next
         End If
         weaponslst.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent)
         armorlst.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent)
@@ -55,6 +64,26 @@
         currentState.marketwindow = New MarketWindow
         currentState.marketwindow.Show()
         Me.Close()
+    End Sub
+
+    Private Sub weaponslst_SelectedIndexChanged(sender As Object, e As EventArgs) Handles weaponslst.SelectedIndexChanged
+        If weaponslst.SelectedItems.Count > 0 Then
+            If Not weaponslst.SelectedIndices(0) = -1 Then
+                Dim currentWeapon As Weapon
+                currentWeapon = currentBlacksmithState.weapons(weaponslst.SelectedIndices(0) + 1)
+                MsgBox(currentWeapon.DetailsString)
+            End If
+        End If
+    End Sub
+
+    Private Sub armorlst_SelectedIndexChanged(sender As Object, e As EventArgs) Handles armorlst.SelectedIndexChanged
+        If armorlst.SelectedItems.Count > 0 Then
+            If Not armorlst.SelectedIndices(0) = -1 Then
+                Dim currentArmor As Armor
+                currentArmor = currentBlacksmithState.armor(armorlst.SelectedIndices(0) + 1)
+                MsgBox(currentArmor.DetailsString)
+            End If
+        End If
     End Sub
 
     Public Sub NewBlacksmithState()
@@ -92,7 +121,8 @@
     End Sub
 
     Private Sub CloseEventHandler(sender As Object, e As EventArgs) Handles Me.Closed
-        currentController.SaveState()
-        NewBlacksmithState()
+        'currentController.SaveState()
+        'NewBlacksmithState()
     End Sub
+
 End Class

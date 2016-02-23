@@ -1,5 +1,4 @@
 ﻿Public Class TavernWindow
-    Private currentTavernState As TavernState
     Private tavernRandomInts(4) As Integer
 
     Private Sub TavernWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load

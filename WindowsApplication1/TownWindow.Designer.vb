@@ -41,12 +41,12 @@ Partial Class TownWindow
         Me.marketbtn = New System.Windows.Forms.Button()
         Me.tavernbtn = New System.Windows.Forms.Button()
         Me.innbtn = New System.Windows.Forms.Button()
-        Me.GameDatabaseDataSet = New WindowsApplication1.GameDatabaseDataSet()
+        Me.GameDatabaseDataSet = New simplefantasygame.GameDatabaseDataSet()
         Me.PlayerStatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PlayerStatesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter()
-        Me.TableAdapterManager = New WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager()
+        Me.PlayerStatesTableAdapter = New simplefantasygame.GameDatabaseDataSetTableAdapters.PlayerStatesTableAdapter()
+        Me.TableAdapterManager = New simplefantasygame.GameDatabaseDataSetTableAdapters.TableAdapterManager()
         Me.PlayerCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PlayerCreaturesTableAdapter = New WindowsApplication1.GameDatabaseDataSetTableAdapters.PlayerCreaturesTableAdapter()
+        Me.PlayerCreaturesTableAdapter = New simplefantasygame.GameDatabaseDataSetTableAdapters.PlayerCreaturesTableAdapter()
         Me.townpnl.SuspendLayout()
         Me.datepnl.SuspendLayout()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -304,7 +304,7 @@ Partial Class TownWindow
         Me.TableAdapterManager.StaticWeaponsTableAdapter = Nothing
         Me.TableAdapterManager.TavernStatesTableAdapter = Nothing
         Me.TableAdapterManager.TurnsTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = WindowsApplication1.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UpdateOrder = simplefantasygame.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.WeaponAugmentsTableAdapter = Nothing
         '
         'PlayerCreaturesBindingSource

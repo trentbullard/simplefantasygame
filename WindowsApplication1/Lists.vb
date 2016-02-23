@@ -1,10 +1,15 @@
 ﻿Module Lists
     Dim namesList = New String() {"trent", "john", "matthew", "mark", "luke", "george", "ronald", "paul", "isaac", "abraham", "jacob", "will",
                                   "sarah", "courtney", "jennifer", "tina", "kristina", "anna", "constance"}
-    Dim speciesList = New String() {"human", "elf", "orc", "dwarf", "halfling", "ogre", "troll", "goblin"}
+    Dim speciesList = New String() {"human", "elf", "orc", "dwarf", "halfling", "ogre", "troll", "goblin", "kobold", "gnome"}
+    Dim smallSpecies = New String() {"dwarf", "halfling", "goblin", "gnome"}
+    Dim middleSpecies = New String() {"human", "elf", "kobold"}
+    Dim largeSpecies = New String() {"orc", "ogre", "troll"}
+    Dim goodSpecies = New String() {"elf", "dwarf", "halfling", "gnome", "human", "ogre"}
+    Dim evilSpecies = New String() {"orc", "troll", "goblin", "kobold"}
     Dim statList = New String() {"dexterity", "wisdom", "strength", "initiative", "intelligence", "armor", "maxHealth", "health"}
     Dim weaponNames = New String() {"sword", "shield", "hammer", "staff", "wand", "scepter", "tome", "crossbow", "bow", "spear"}
-    Dim armorNames = New String() {"helmet", "cap", "shoulderpads", "spaulders", "sleaves", "gloves", "gauntlets", "cape", "tunic", "breastplate", "belt", "pants", "shinguards", "greaves", "shoes", "boots"}
+    Dim armorNames = New String() {"helmet", "cap", "shoulderpads", "spaulders", "sleeves", "gloves", "gauntlets", "cape", "tunic", "breastplate", "belt", "pants", "shinguards", "greaves", "shoes", "boots"}
     Dim resistanceNames = New String() {"fire", "ice", "mental", "death", "lightning", "nature", "divine"}
 
     Public Function getCreatureName() As String
@@ -12,7 +17,27 @@
     End Function
 
     Public Function getSpecies() As String
-        Return speciesList(Roll(8) - 1)
+        Return speciesList(Roll(10) - 1)
+    End Function
+
+    Public Function getSmallSpecies() As String
+        Return smallSpecies(Roll(4) - 1)
+    End Function
+
+    Public Function getMiddleSpecies() As String
+        Return middleSpecies(Roll(3) - 1)
+    End Function
+
+    Public Function getLargeSpecies() As String
+        Return largeSpecies(Roll(3) - 1)
+    End Function
+
+    Public Function getGoodSpecies() As String
+        Return goodSpecies(Roll(6) - 1)
+    End Function
+
+    Public Function getEvilSpecies() As String
+        Return evilSpecies(Roll(4) - 1)
     End Function
 
     Public Function getEquipStatName() As String

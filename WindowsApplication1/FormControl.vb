@@ -1,5 +1,7 @@
 ﻿Module FormControl
     Public currentState As New PlayerState
+    Public currentTavernState As New TavernState
+    Public currentBlacksmithState As New BlacksmithState
     Public currentController As DatasetController
 
     Public Sub OpenMainMenu()
