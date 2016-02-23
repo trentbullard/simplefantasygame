@@ -1,14 +1,6 @@
 ﻿Public Class BlacksmithWindow
 
     Private Sub BlacksmithWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'GameDatabaseDataSet.StaticArmor' table. You can move, or remove it, as needed.
-        Me.StaticArmorTableAdapter.Fill(Me.GameDatabaseDataSet.StaticArmor)
-        'TODO: This line of code loads data into the 'GameDatabaseDataSet.StaticWeapons' table. You can move, or remove it, as needed.
-        Me.StaticWeaponsTableAdapter.Fill(Me.GameDatabaseDataSet.StaticWeapons)
-        'TODO: This line of code loads data into the 'GameDatabaseDataSet.BlacksmithStates' table. You can move, or remove it, as needed.
-        Me.BlacksmithStatesTableAdapter.Fill(Me.GameDatabaseDataSet.BlacksmithStates)
-        'TODO: This line of code loads data into the 'GameDatabaseDataSet.BlacksmithStateItems' table. You can move, or remove it, as needed.
-        Me.BlacksmithStateItemsTableAdapter.Fill(Me.GameDatabaseDataSet.BlacksmithStateItems)
         playerGoldlbl.Text = currentPlayer.name & "'s gold"
         playerGoldtxt.Text = currentPlayer.gold
 
