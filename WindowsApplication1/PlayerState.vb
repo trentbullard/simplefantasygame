@@ -45,6 +45,7 @@
         stateTownWindow = New TownWindow
         stateCreatureWindow = New CreatureWindow
         stateBlacksmithWindow = New BlacksmithWindow
+        stateItemWindow = New ItemWindow
     End Sub
 
     Public Sub New(id As Integer)
@@ -68,6 +69,7 @@
         stateTownWindow = New TownWindow
         stateCreatureWindow = New CreatureWindow
         stateBlacksmithWindow = New BlacksmithWindow
+        stateItemWindow = New ItemWindow
     End Sub
 
     Public Sub New(player As Player)
@@ -91,6 +93,7 @@
         stateTownWindow = New TownWindow
         stateCreatureWindow = New CreatureWindow
         stateBlacksmithWindow = New BlacksmithWindow
+        stateItemWindow = New ItemWindow
     End Sub
 
     Public Sub New(row As GameDatabaseDataSet.PlayerStatesRow)
@@ -117,6 +120,7 @@
         stateTownWindow = New TownWindow
         stateCreatureWindow = New CreatureWindow
         stateBlacksmithWindow = New BlacksmithWindow
+        stateItemWindow = New ItemWindow
     End Sub
 
     Public ReadOnly Property id() As Integer
