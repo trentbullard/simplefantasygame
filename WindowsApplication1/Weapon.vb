@@ -176,7 +176,7 @@
         statString = statString & If(MyBase.stats.Contains("intelligence"), "int:" & MyBase.stats.Item("intelligence") & Space(1), Nothing)
         statString = statString & If(MyBase.stats.Contains("wisdom"), "wis:" & MyBase.stats.Item("wisdom") & Space(1), Nothing)
         statString = statString & If(MyBase.stats.Contains("dexterity"), "dex:" & MyBase.stats.Item("dexterity") & Space(1), Nothing)
-        Return MyBase.ToString() & " (" & statString.Trim & ") " & MyBase.index
+        Return MyBase.ToString() & " (" & statString.Trim & ")"
     End Function
 
     Public Function DetailsString() As String

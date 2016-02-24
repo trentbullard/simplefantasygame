@@ -22,6 +22,7 @@
     Private stateTownWindow As TownWindow
     Private stateCreatureWindow As CreatureWindow
     Private stateBlacksmithWindow As BlacksmithWindow
+    Private stateItemWindow As ItemWindow
 
     Public Sub New()
         stateid = -1
@@ -310,6 +311,15 @@
         End Get
         Set(value As BlacksmithWindow)
             stateBlacksmithWindow = value
+        End Set
+    End Property
+
+    Public Property itemwindow As ItemWindow
+        Get
+            Return stateItemWindow
+        End Get
+        Set(value As ItemWindow)
+            stateItemWindow = value
         End Set
     End Property
 

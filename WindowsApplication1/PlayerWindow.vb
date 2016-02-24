@@ -1,4 +1,6 @@
 ﻿Public Class PlayerWindow
+    Dim creatures As New Collection
+
     Private Sub PlayerWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Text = currentPlayer.ToString
         playerLeveltxt.Text = currentPlayer.level
@@ -9,22 +11,46 @@
 
         PlayersTableAdapter.FillByPlayerid(GameDatabaseDataSet.Players, currentPlayer.id)
         PlayerCreaturesTableAdapter.FillByPlayerStateid(GameDatabaseDataSet.PlayerCreatures, currentState.id)
+        PlayerWeaponsTableAdapter.FillByPlayerStateid(GameDatabaseDataSet.PlayerWeapons, currentState.id)
+        PlayerArmorTableAdapter.FillByPlayerStateid(GameDatabaseDataSet.PlayerArmor, currentState.id)
         StaticCreaturesTableAdapter.Fill(GameDatabaseDataSet.StaticCreatures)
+        StaticWeaponsTableAdapter.Fill(GameDatabaseDataSet.StaticWeapons)
+        StaticArmorTableAdapter.Fill(GameDatabaseDataSet.StaticArmor)
 
         RefreshQuest()
 
-        For Each row As GameDatabaseDataSet.PlayerCreaturesRow In PlayerCreaturesTableAdapter.GetCreaturesByPlayerStateid(currentState.id)
-            Dim creation As New Creature(StaticCreaturesTableAdapter.GetCreatureByid(row.id).First)
+        For Each row As GameDatabaseDataSet.PlayerCreaturesRow In GameDatabaseDataSet.PlayerCreatures
+            Dim creation As New Creature(row.id, GameDatabaseDataSet.StaticCreatures.FindByid(row.creatureid))
             creation.name = row.name
             creaturelst.Items.Add(creation.ToString)
+            creatures.Add(creation, creaturelst.Items.Count)
+        Next
+        For Each row As GameDatabaseDataSet.PlayerWeaponsRow In GameDatabaseDataSet.PlayerWeapons
+            Dim weapon As New Weapon(GameDatabaseDataSet.StaticWeapons.FindByid(row.weaponid))
+            itemslst.Items.Add(weapon.ToString)
+        Next
+        For Each row As GameDatabaseDataSet.PlayerArmorRow In GameDatabaseDataSet.PlayerArmor
+            Dim armor As New Armor(GameDatabaseDataSet.StaticArmor.FindByid(row.armorid))
+            itemslst.Items.Add(armor.ToString)
         Next
     End Sub
 
-    Private Sub creaturelst_SelectedIndexChanged(sender As Object, e As EventArgs) Handles creaturelst.SelectedIndexChanged
-        If Not creaturelst.SelectedIndices(0) = -1 Then
-            currentState.creaturewindow = New CreatureWindow
-            currentState.creaturewindow.Show()
-        End If
+    Private Sub creaturelst_Click(sender As Object, e As EventArgs) Handles creaturelst.Click
+        If creaturelst.SelectedIndices.Count = 0 Then Exit Sub
+        If creaturelst.SelectedIndices(0) = -1 Then Exit Sub
+
+        Dim index = creaturelst.SelectedIndex + 1
+        currentState.creaturewindow = New CreatureWindow(creatures(index))
+        currentState.creaturewindow.ShowDialog(Me)
+        RefreshControls()
+    End Sub
+
+    Private Sub itemslst_Click(sender As Object, e As EventArgs) Handles itemslst.Click
+        If itemslst.SelectedIndices.Count = 0 Then Exit Sub
+        If itemslst.SelectedIndices(0) = -1 Then Exit Sub
+
+        currentState.itemwindow = New ItemWindow
+        currentState.itemwindow.ShowDialog(Me)
     End Sub
 
     Private Sub NameToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NameToolStripMenuItem.Click
@@ -41,20 +67,6 @@
         currentPlayer.ReName(nameString)
         Me.Text = currentPlayer.ToString
         currentPlayer.Save(GameDatabaseDataSet, PlayersBindingSource, PlayersTableAdapter)
-    End Sub
-
-    Private Sub PlayersBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
-        Me.Validate()
-        Me.PlayersBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.GameDatabaseDataSet)
-
-    End Sub
-
-    Private Sub PlayersBindingNavigatorSaveItem_Click_1(sender As Object, e As EventArgs)
-        Me.Validate()
-        Me.PlayersBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.GameDatabaseDataSet)
-
     End Sub
 
     Private Sub currentQuestlbl_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles currentQuestlbl.LinkClicked
@@ -87,4 +99,19 @@
     Private Sub QuestsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuestsToolStripMenuItem.Click
         MsgBox("quests are given at the tavern in town." & vbCrLf & "abandon your current quest by clicking ""current quest""")
     End Sub
+
+    Private Sub RefreshControls()
+        For ctr = creaturelst.Items.Count - 1 To 0 Step -1
+            creaturelst.Items.RemoveAt(ctr)
+        Next
+        creatures.Clear()
+        PlayerCreaturesTableAdapter.FillByPlayerStateid(GameDatabaseDataSet.PlayerCreatures, currentState.id)
+        For Each row As GameDatabaseDataSet.PlayerCreaturesRow In GameDatabaseDataSet.PlayerCreatures
+            Dim creation As New Creature(row.id, GameDatabaseDataSet.StaticCreatures.FindByid(row.creatureid))
+            creation.name = row.name
+            creaturelst.Items.Add(creation.ToString)
+            creatures.Add(creation, creaturelst.Items.Count)
+        Next
+    End Sub
+
 End Class

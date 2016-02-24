@@ -24,6 +24,7 @@
         creatureExperience = 1
         creatureArmor = 0
         creatureMaxHealth = 70 + Roll(50)
+        creatureMaxHealth = 10
         creatureHealth = creatureMaxHealth
         creatureStrength = 70 + Roll(50)
         creatureInitiative = 70 + Roll(50)
@@ -37,6 +38,7 @@
         creatureid = -1
         creatureName = name
         creatureSpecies = "species"
+        creatureMaxHealth = 10
         creatureHealth = 1
         creatureStrength = 1
         creatureArmor = 1
@@ -49,37 +51,27 @@
         creatureOwner = currentPlayer
     End Sub
 
-    Public Sub New(id As Integer,
-                   name As String,
-                   species As String,
-                   health As Integer,
-                   strength As Integer,
-                   armor As Integer,
-                   level As Integer,
-                   exp As Integer,
-                   ini As Integer,
-                   int As Integer,
-                   wis As Integer,
-                   dex As Integer,
-                   owner As Player)
-        creatureid = id
-        creatureName = name
-        creatureSpecies = species
-        creatureHealth = health
-        creatureStrength = strength
-        creatureArmor = armor
-        creatureLevel = level
-        creatureExperience = exp
-        creatureInitiative = ini
-        creatureIntelligence = int
-        creatureWisdom = wis
-        creatureDexterity = dex
-        creatureOwner = owner
-    End Sub
-
     Public Sub New(row As GameDatabaseDataSet.StaticCreaturesRow)
         creatureid = row("id")
         creatureSpecies = row("species")
+        creatureMaxHealth = row.maxHealth
+        creatureHealth = row("health")
+        creatureStrength = row("strength")
+        creatureArmor = row("armor")
+        creatureLevel = row("level")
+        creatureExperience = row("experience")
+        creatureInitiative = row("initiative")
+        creatureIntelligence = row("intelligence")
+        creatureWisdom = row("wisdom")
+        creatureDexterity = row("dexterity")
+        creatureName = row("name")
+        creatureOwner = currentPlayer
+    End Sub
+
+    Public Sub New(id As Integer, row As GameDatabaseDataSet.StaticCreaturesRow)
+        creatureid = id
+        creatureSpecies = row("species")
+        creatureMaxHealth = row.maxHealth
         creatureHealth = row("health")
         creatureStrength = row("strength")
         creatureArmor = row("armor")
@@ -112,6 +104,15 @@
         Get
             Return creatureSpecies
         End Get
+    End Property
+
+    Public Property className As String
+        Get
+            Return creatureClass
+        End Get
+        Set(value As String)
+            creatureClass = value
+        End Set
     End Property
 
     Public Property job As String

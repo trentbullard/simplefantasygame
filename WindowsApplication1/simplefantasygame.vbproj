@@ -175,6 +175,12 @@
     </Compile>
     <Compile Include="Inventory.vb" />
     <Compile Include="Item.vb" />
+    <Compile Include="ItemWindow.Designer.vb">
+      <DependentUpon>ItemWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ItemWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Lists.vb" />
     <Compile Include="Logs.vb" />
     <Compile Include="MainMenu.Designer.vb">
@@ -268,6 +274,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InnWindow.resx">
       <DependentUpon>InnWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemWindow.resx">
+      <DependentUpon>ItemWindow.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.vb</DependentUpon>
