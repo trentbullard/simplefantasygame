@@ -14,18 +14,19 @@
             StaticArmorTableAdapter.FillByBlacksmithStateid(GameDatabaseDataSet.StaticArmor, currentBlacksmithState.id)
             BlacksmithStateItemsTableAdapter.FillByBlacksmithStateid(GameDatabaseDataSet.BlacksmithStateItems, currentBlacksmithState.id)
             For Each row As GameDatabaseDataSet.BlacksmithStateItemsRow In GameDatabaseDataSet.BlacksmithStateItems
-                Dim staticWeaponsRow As GameDatabaseDataSet.StaticWeaponsRow = GameDatabaseDataSet.StaticWeapons.FindByid(row.weaponid)
-                weapon = New Weapon(staticWeaponsRow)
-                weaponslst.Items.Add(weapon.ToString)
-                weapon.index = row.id
-                currentBlacksmithState.weapons.Add(weapon, weapon.index)
-            Next
-            For Each row As GameDatabaseDataSet.BlacksmithStateItemsRow In GameDatabaseDataSet.BlacksmithStateItems
-                Dim staticArmorRow As GameDatabaseDataSet.StaticArmorRow = GameDatabaseDataSet.StaticArmor.FindByid(row.armorid)
-                armor = New Armor(staticArmorRow)
-                armorlst.Items.Add(armor.ToString)
-                armor.index = row.id
-                currentBlacksmithState.armor.Add(armor, weapon.index)
+                If IsDBNull(row("armorid")) Then
+                    Dim staticWeaponsRow As GameDatabaseDataSet.StaticWeaponsRow = GameDatabaseDataSet.StaticWeapons.FindByid(row.weaponid)
+                    weapon = New Weapon(staticWeaponsRow)
+                    weapon.index = row.id
+                    weaponslst.Items.Add(weapon.ToString)
+                    currentBlacksmithState.weapons.Add(weapon, weapon.index)
+                Else
+                    Dim staticArmorRow As GameDatabaseDataSet.StaticArmorRow = GameDatabaseDataSet.StaticArmor.FindByid(row.armorid)
+                    armor = New Armor(staticArmorRow)
+                    armor.index = row.id
+                    armorlst.Items.Add(armor.ToString)
+                    currentBlacksmithState.armor.Add(armor, armor.index)
+                End If
             Next
         Else
             NewBlacksmithState()
@@ -36,14 +37,14 @@
                 NewBlacksmithStateItem(weapon)
                 weapon.index = GameDatabaseDataSet.BlacksmithStateItems.Last.id
                 weaponslst.Items.Add(weapon.ToString)
-                currentBlacksmithState.weapons.Add(weapon, weapon.id)
+                currentBlacksmithState.weapons.Add(weapon, weapon.index)
             Next
             For Each row As GameDatabaseDataSet.StaticArmorRow In GameDatabaseDataSet.StaticArmor
                 armor = New Armor(row)
                 NewBlacksmithStateItem(armor)
                 armor.index = GameDatabaseDataSet.BlacksmithStateItems.Last.id
                 armorlst.Items.Add(armor.ToString)
-                currentBlacksmithState.armor.Add(armor, armor.id)
+                currentBlacksmithState.armor.Add(armor, armor.index)
             Next
         End If
         weaponslst.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent)
@@ -78,7 +79,7 @@
             If response = 6 Then
                 BuyWeapon(currentWeapon)
                 weaponslst.Items.RemoveAt(index)
-                currentBlacksmithState.weapons.Remove(currentWeapon.id)
+                currentBlacksmithState.weapons.Remove(currentWeapon.index.ToString)
                 RemoveBlacksmithStateItem(currentWeapon.index)
                 playerGoldtxt.Text = currentPlayer.gold
             End If
@@ -98,7 +99,7 @@
             If response = 6 Then
                 BuyArmor(currentArmor)
                 armorlst.Items.RemoveAt(index)
-                currentBlacksmithState.armor.Remove(currentArmor.id)
+                currentBlacksmithState.armor.Remove(currentArmor.index.ToString)
                 RemoveBlacksmithStateItem(currentArmor.index)
                 playerGoldtxt.Text = currentPlayer.gold
             End If
