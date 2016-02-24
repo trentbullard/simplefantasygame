@@ -14,10 +14,10 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\Trenton\Downloads\publish\</PublishUrl>
+    <PublishUrl>C:\Users\Trenton\Documents\Visual Studio 2015\Projects\WindowsApplication1\publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateEnabled>false</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
@@ -27,8 +27,7 @@
     <UpdateUrl>http://localhost/simplefantasygame/</UpdateUrl>
     <ProductName>simplefantasygame</ProductName>
     <PublisherName>p4ndepravity</PublisherName>
-    <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>4</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -346,6 +345,7 @@
     </Content>
     <Content Include="planning\gameplay flow chart.png" />
     <Content Include="planning\database diagram.png" />
+    <None Include="Resources\megaman_jump.png" />
     <Content Include="todo.txt" />
   </ItemGroup>
   <ItemGroup>

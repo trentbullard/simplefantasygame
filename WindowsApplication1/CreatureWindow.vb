@@ -12,6 +12,8 @@
 
     Private Sub CreatureWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PlayerCreaturesTableAdapter.FillByPlayerStateid(GameDatabaseDataSet.PlayerCreatures, currentState.id)
+        StaticArmorTableAdapter.Fill(GameDatabaseDataSet.StaticArmor)
+        PlayerArmorTableAdapter.FillWithCurrentCreatureArmor(GameDatabaseDataSet.PlayerArmor, currentState.id, creature.id)
 
         Me.Text = creature.ToString
         nametxt.Text = creature.name
@@ -27,6 +29,8 @@
         intelligencetxt.Text = creature.int
         initiativetxt.Text = creature.ini
         wisdomtxt.Text = creature.wis
+
+        headtip.SetToolTip(headpic, (New Weapon).DetailsString)
     End Sub
 
     Private Sub namelbl_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles namelbl.LinkClicked
