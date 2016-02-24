@@ -175,6 +175,15 @@
         End Set
     End Property
 
+    Public Overrides Property index As Integer
+        Get
+            Return MyBase.index
+        End Get
+        Set(value As Integer)
+            MyBase.index = value
+        End Set
+    End Property
+
     Public Function DetailsString() As String
         Dim detailString As String = Nothing
         detailString = MyBase.name & vbCrLf
@@ -234,6 +243,7 @@
         statsString = statsString & If(armorResistances.Contains("nature"), "nature: " & armorResistances.Item("nature") & Space(1), Nothing)
         statsString = statsString & If(armorResistances.Contains("divine"), "divine: " & armorResistances.Item("divine") & Space(1), Nothing)
         detailString = detailString & "resistances: " & statsString & vbCrLf
+        detailString = detailString & "cost: " & Me.cost
         Return detailString.Trim
     End Function
 

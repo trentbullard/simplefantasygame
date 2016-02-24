@@ -4,6 +4,8 @@
     Private statePlayerState As PlayerState
     Private stateWeapons As Collection
     Private stateArmor As Collection
+    Private stateItems As Collection
+    Private stateItemCount As Integer = 0
 
     Public Sub New()
         stateid = -1
@@ -11,6 +13,8 @@
         statePlayerState = currentState
         stateWeapons = New Collection
         stateArmor = New Collection
+        stateItems = New Collection
+        stateItemCount = stateItems.Count
     End Sub
 
     Public Sub New(id As Integer)
@@ -19,6 +23,9 @@
         statePlayerState = currentState
         stateWeapons = New Collection
         stateArmor = New Collection
+        stateItems = New Collection
+        stateItems = New Collection
+        stateItemCount = stateItems.Count
     End Sub
 
     Public Sub New(weapons As Collection, armor As Collection)
@@ -27,6 +34,14 @@
         statePlayerState = currentState
         stateWeapons = weapons
         stateArmor = armor
+        stateItems = New Collection
+        For Each weapon In weapons
+            stateItems.Add(weapon)
+        Next
+        For Each armorItem In armor
+            stateItems.Add(armorItem)
+        Next
+        stateItemCount = stateItems.Count
     End Sub
 
     Public Sub New(row As GameDatabaseDataSet.BlacksmithStatesRow)
@@ -35,6 +50,9 @@
         statePlayerState = New PlayerState(row.playerStateid)
         stateWeapons = New Collection
         stateArmor = New Collection
+        stateItems = New Collection
+        stateItems = New Collection
+        stateItemCount = stateItems.Count
     End Sub
 
     Public ReadOnly Property id() As Integer
@@ -61,6 +79,8 @@
         End Get
         Set(value As Collection)
             stateWeapons = value
+            stateItemCount += 1
+            stateItems.Add(New Item(stateItemCount), stateItemCount)
         End Set
     End Property
 
@@ -70,6 +90,20 @@
         End Get
         Set(value As Collection)
             stateArmor = value
+            stateItemCount += 1
+            stateItems.Add(New Item(stateItemCount), stateItemCount)
         End Set
+    End Property
+
+    Public ReadOnly Property items As Collection
+        Get
+            Return stateItems
+        End Get
+    End Property
+
+    Public ReadOnly Property itemCount As Integer
+        Get
+            Return stateItemCount
+        End Get
     End Property
 End Class

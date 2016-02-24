@@ -12,15 +12,20 @@
             currentBlacksmithState = New BlacksmithState(GameDatabaseDataSet.BlacksmithStates.Last)
             StaticWeaponsTableAdapter.FillByBlacksmithStateid(GameDatabaseDataSet.StaticWeapons, currentBlacksmithState.id)
             StaticArmorTableAdapter.FillByBlacksmithStateid(GameDatabaseDataSet.StaticArmor, currentBlacksmithState.id)
-            For Each row As GameDatabaseDataSet.StaticWeaponsRow In GameDatabaseDataSet.StaticWeapons
-                Weapon = New Weapon(row)
-                weaponslst.Items.Add(Weapon.id.ToString, Weapon.ToString, 0)
-                currentBlacksmithState.weapons.Add(Weapon)
+            BlacksmithStateItemsTableAdapter.FillByBlacksmithStateid(GameDatabaseDataSet.BlacksmithStateItems, currentBlacksmithState.id)
+            For Each row As GameDatabaseDataSet.BlacksmithStateItemsRow In GameDatabaseDataSet.BlacksmithStateItems
+                Dim staticWeaponsRow As GameDatabaseDataSet.StaticWeaponsRow = GameDatabaseDataSet.StaticWeapons.FindByid(row.weaponid)
+                weapon = New Weapon(staticWeaponsRow)
+                weaponslst.Items.Add(weapon.ToString)
+                weapon.index = row.id
+                currentBlacksmithState.weapons.Add(weapon, weapon.index)
             Next
-            For Each row As GameDatabaseDataSet.StaticArmorRow In GameDatabaseDataSet.StaticArmor
-                Armor = New Armor(row)
-                armorlst.Items.Add(Armor.id.ToString, Armor.ToString, 0)
-                currentBlacksmithState.armor.Add(Armor)
+            For Each row As GameDatabaseDataSet.BlacksmithStateItemsRow In GameDatabaseDataSet.BlacksmithStateItems
+                Dim staticArmorRow As GameDatabaseDataSet.StaticArmorRow = GameDatabaseDataSet.StaticArmor.FindByid(row.armorid)
+                armor = New Armor(staticArmorRow)
+                armorlst.Items.Add(armor.ToString)
+                armor.index = row.id
+                currentBlacksmithState.armor.Add(armor, weapon.index)
             Next
         Else
             NewBlacksmithState()
@@ -29,14 +34,16 @@
             For Each row As GameDatabaseDataSet.StaticWeaponsRow In GameDatabaseDataSet.StaticWeapons
                 weapon = New Weapon(row)
                 NewBlacksmithStateItem(weapon)
-                weaponslst.Items.Add(weapon.id.ToString, weapon.ToString, 0)
-                currentBlacksmithState.weapons.Add(Weapon)
+                weapon.index = GameDatabaseDataSet.BlacksmithStateItems.Last.id
+                weaponslst.Items.Add(weapon.ToString)
+                currentBlacksmithState.weapons.Add(weapon, weapon.id)
             Next
             For Each row As GameDatabaseDataSet.StaticArmorRow In GameDatabaseDataSet.StaticArmor
                 armor = New Armor(row)
                 NewBlacksmithStateItem(armor)
-                armorlst.Items.Add(armor.id.ToString, armor.ToString, 0)
-                currentBlacksmithState.armor.Add(Armor)
+                armor.index = GameDatabaseDataSet.BlacksmithStateItems.Last.id
+                armorlst.Items.Add(armor.ToString)
+                currentBlacksmithState.armor.Add(armor, armor.id)
             Next
         End If
         weaponslst.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent)
@@ -58,24 +65,74 @@
         Me.Close()
     End Sub
 
-    Private Sub weaponslst_SelectedIndexChanged(sender As Object, e As EventArgs) Handles weaponslst.SelectedIndexChanged
-        If weaponslst.SelectedItems.Count > 0 Then
-            If Not weaponslst.SelectedIndices(0) = -1 Then
-                Dim currentWeapon As Weapon
-                currentWeapon = currentBlacksmithState.weapons(weaponslst.SelectedIndices(0) + 1)
-                MsgBox(currentWeapon.DetailsString)
+    Private Sub weaponslst_Click(sender As Object, e As EventArgs) Handles weaponslst.Click
+        If weaponslst.SelectedIndices.Count = 0 Then Exit Sub
+        If weaponslst.SelectedIndices(0) = -1 Then Exit Sub
+
+        Dim index As Integer = weaponslst.SelectedIndices(0)
+        Dim currentWeapon As Weapon
+        currentWeapon = currentBlacksmithState.weapons(index + 1)
+        If currentPlayer.SpendGold(currentWeapon.cost) Then
+            Dim style = MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2 Or MsgBoxStyle.Question
+            Dim response = MsgBox(currentWeapon.DetailsString, style, "buy item?")
+            If response = 6 Then
+                BuyWeapon(currentWeapon)
+                weaponslst.Items.RemoveAt(index)
+                currentBlacksmithState.weapons.Remove(currentWeapon.id)
+                RemoveBlacksmithStateItem(currentWeapon.index)
+                playerGoldtxt.Text = currentPlayer.gold
             End If
         End If
     End Sub
 
-    Private Sub armorlst_SelectedIndexChanged(sender As Object, e As EventArgs) Handles armorlst.SelectedIndexChanged
-        If armorlst.SelectedItems.Count > 0 Then
-            If Not armorlst.SelectedIndices(0) = -1 Then
-                Dim currentArmor As Armor
-                currentArmor = currentBlacksmithState.armor(armorlst.SelectedIndices(0) + 1)
-                MsgBox(currentArmor.DetailsString)
+    Private Sub armorlst_Click(sender As Object, e As EventArgs) Handles armorlst.Click
+        If armorlst.SelectedIndices.Count = 0 Then Exit Sub
+        If armorlst.SelectedIndices(0) = -1 Then Exit Sub
+
+        Dim index As Integer = armorlst.SelectedIndices(0)
+        Dim currentArmor As Armor
+        currentArmor = currentBlacksmithState.armor(index + 1)
+        If currentPlayer.SpendGold(currentArmor.cost) Then
+            Dim style = MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2 Or MsgBoxStyle.Question
+            Dim response = MsgBox(currentArmor.DetailsString, style, "buy item?")
+            If response = 6 Then
+                BuyArmor(currentArmor)
+                armorlst.Items.RemoveAt(index)
+                currentBlacksmithState.armor.Remove(currentArmor.id)
+                RemoveBlacksmithStateItem(currentArmor.index)
+                playerGoldtxt.Text = currentPlayer.gold
             End If
         End If
+    End Sub
+
+    Private Sub BuyWeapon(weapon As Weapon)
+        Dim newRow As GameDatabaseDataSet.PlayerWeaponsRow = GameDatabaseDataSet.PlayerWeapons.NewPlayerWeaponsRow
+        newRow.playerStateid = currentState.id
+        newRow.weaponid = weapon.id
+        newRow("wearerid") = DBNull.Value
+        newRow("slotWorn") = DBNull.Value
+        GameDatabaseDataSet.PlayerWeapons.Rows.Add(newRow)
+        PlayerWeaponsBindingSource.EndEdit()
+        PlayerWeaponsTableAdapter.Update(GameDatabaseDataSet.PlayerWeapons)
+        Try
+        Catch ex As Exception
+            MsgBox("unable to add player weapon")
+        End Try
+    End Sub
+
+    Private Sub BuyArmor(armor As Armor)
+        Dim newRow As GameDatabaseDataSet.PlayerArmorRow = GameDatabaseDataSet.PlayerArmor.NewPlayerArmorRow
+        newRow.playerStateid = currentState.id
+        newRow.armorid = armor.id
+        newRow("wearerid") = DBNull.Value
+        newRow("slotWorn") = DBNull.Value
+        GameDatabaseDataSet.PlayerArmor.Rows.Add(newRow)
+        PlayerArmorBindingSource.EndEdit()
+        PlayerArmorTableAdapter.Update(GameDatabaseDataSet.PlayerArmor)
+        Try
+        Catch ex As Exception
+            MsgBox("unable to add player armor")
+        End Try
     End Sub
 
     Public Sub NewBlacksmithState()
@@ -109,6 +166,15 @@
             BlacksmithStateItemsTableAdapter.Update(GameDatabaseDataSet.BlacksmithStateItems)
         Catch ex As Exception
             MsgBox("unable to add blacksmith state item")
+        End Try
+    End Sub
+
+    Private Sub RemoveBlacksmithStateItem(index As Integer)
+        GameDatabaseDataSet.BlacksmithStateItems.FindByid(index).Delete()
+        BlacksmithStateItemsTableAdapter.Update(GameDatabaseDataSet.BlacksmithStateItems)
+        Try
+        Catch ex As Exception
+            MsgBox("unable to remove blacksmith state item")
         End Try
     End Sub
 

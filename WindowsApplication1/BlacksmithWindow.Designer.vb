@@ -47,12 +47,16 @@ Partial Class BlacksmithWindow
         Me.BlacksmithStateItemsBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.BlacksmithStateItemsTableAdapter = New simplefantasygame.GameDatabaseDataSetTableAdapters.BlacksmithStateItemsTableAdapter()
         Me.TableAdapterManager = New simplefantasygame.GameDatabaseDataSetTableAdapters.TableAdapterManager()
-        Me.BlacksmithStatesBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.BlacksmithStatesTableAdapter = New simplefantasygame.GameDatabaseDataSetTableAdapters.BlacksmithStatesTableAdapter()
-        Me.StaticWeaponsBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.StaticWeaponsTableAdapter = New simplefantasygame.GameDatabaseDataSetTableAdapters.StaticWeaponsTableAdapter()
-        Me.StaticArmorBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.StaticArmorTableAdapter = New simplefantasygame.GameDatabaseDataSetTableAdapters.StaticArmorTableAdapter()
+        Me.StaticWeaponsTableAdapter = New simplefantasygame.GameDatabaseDataSetTableAdapters.StaticWeaponsTableAdapter()
+        Me.BlacksmithStatesBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticWeaponsBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaticArmorBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayerArmorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayerArmorTableAdapter = New simplefantasygame.GameDatabaseDataSetTableAdapters.PlayerArmorTableAdapter()
+        Me.PlayerWeaponsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PlayerWeaponsTableAdapter = New simplefantasygame.GameDatabaseDataSetTableAdapters.PlayerWeaponsTableAdapter()
         Me.blacksmithpnl.SuspendLayout()
         Me.itemsTablepnl.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -68,6 +72,8 @@ Partial Class BlacksmithWindow
         CType(Me.BlacksmithStatesBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StaticWeaponsBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StaticArmorBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PlayerArmorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PlayerWeaponsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'blacksmithpnl
@@ -279,32 +285,50 @@ Partial Class BlacksmithWindow
         Me.TableAdapterManager.UpdateOrder = simplefantasygame.GameDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.WeaponAugmentsTableAdapter = Nothing
         '
+        'BlacksmithStatesTableAdapter
+        '
+        Me.BlacksmithStatesTableAdapter.ClearBeforeFill = True
+        '
+        'StaticArmorTableAdapter
+        '
+        Me.StaticArmorTableAdapter.ClearBeforeFill = True
+        '
+        'StaticWeaponsTableAdapter
+        '
+        Me.StaticWeaponsTableAdapter.ClearBeforeFill = True
+        '
         'BlacksmithStatesBindingSource1
         '
         Me.BlacksmithStatesBindingSource1.DataMember = "BlacksmithStates"
         Me.BlacksmithStatesBindingSource1.DataSource = Me.GameDatabaseDataSet
-        '
-        'BlacksmithStatesTableAdapter
-        '
-        Me.BlacksmithStatesTableAdapter.ClearBeforeFill = True
         '
         'StaticWeaponsBindingSource1
         '
         Me.StaticWeaponsBindingSource1.DataMember = "StaticWeapons"
         Me.StaticWeaponsBindingSource1.DataSource = Me.GameDatabaseDataSet
         '
-        'StaticWeaponsTableAdapter
-        '
-        Me.StaticWeaponsTableAdapter.ClearBeforeFill = True
-        '
         'StaticArmorBindingSource1
         '
         Me.StaticArmorBindingSource1.DataMember = "StaticArmor"
         Me.StaticArmorBindingSource1.DataSource = Me.GameDatabaseDataSet
         '
-        'StaticArmorTableAdapter
+        'PlayerArmorBindingSource
         '
-        Me.StaticArmorTableAdapter.ClearBeforeFill = True
+        Me.PlayerArmorBindingSource.DataMember = "PlayerArmor"
+        Me.PlayerArmorBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'PlayerArmorTableAdapter
+        '
+        Me.PlayerArmorTableAdapter.ClearBeforeFill = True
+        '
+        'PlayerWeaponsBindingSource
+        '
+        Me.PlayerWeaponsBindingSource.DataMember = "PlayerWeapons"
+        Me.PlayerWeaponsBindingSource.DataSource = Me.GameDatabaseDataSet
+        '
+        'PlayerWeaponsTableAdapter
+        '
+        Me.PlayerWeaponsTableAdapter.ClearBeforeFill = True
         '
         'BlacksmithWindow
         '
@@ -333,6 +357,8 @@ Partial Class BlacksmithWindow
         CType(Me.BlacksmithStatesBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StaticWeaponsBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StaticArmorBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PlayerArmorBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PlayerWeaponsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -367,4 +393,8 @@ Partial Class BlacksmithWindow
     Friend WithEvents StaticWeaponsBindingSource1 As BindingSource
     Friend WithEvents StaticArmorTableAdapter As GameDatabaseDataSetTableAdapters.StaticArmorTableAdapter
     Friend WithEvents StaticArmorBindingSource1 As BindingSource
+    Friend WithEvents PlayerArmorBindingSource As BindingSource
+    Friend WithEvents PlayerArmorTableAdapter As GameDatabaseDataSetTableAdapters.PlayerArmorTableAdapter
+    Friend WithEvents PlayerWeaponsBindingSource As BindingSource
+    Friend WithEvents PlayerWeaponsTableAdapter As GameDatabaseDataSetTableAdapters.PlayerWeaponsTableAdapter
 End Class

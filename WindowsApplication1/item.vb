@@ -4,11 +4,13 @@
     Private itemName As String
     Private itemAttributes As New Collection
     Private itemCost As Integer
+    Private itemStoreIndex As Integer
 
     Public Sub New()
         itemid = -1
         itemOwner = currentPlayer
         itemName = "item"
+        itemCost = 1
     End Sub
 
     Public Sub New(id As Integer)
@@ -16,6 +18,7 @@
         itemOwner = currentPlayer
         itemName = "item"
         itemAttributes = New Collection
+        itemCost = 1
     End Sub
 
     Public Sub New(id As Integer, owner As Player, name As String)
@@ -23,13 +26,7 @@
         itemOwner = owner
         itemName = name
         itemAttributes = New Collection
-    End Sub
-
-    Public Sub New(id As Integer, owner As Player, name As String, stats As Collection)
-        itemid = id
-        itemOwner = owner
-        itemName = name
-        itemAttributes = stats
+        itemCost = 1
     End Sub
 
     Public Overridable ReadOnly Property id() As Integer
@@ -68,6 +65,15 @@
         End Get
         Set(value As Integer)
             itemCost = value
+        End Set
+    End Property
+
+    Public Overridable Property index As Integer
+        Get
+            Return itemStoreIndex
+        End Get
+        Set(value As Integer)
+            itemStoreIndex = value
         End Set
     End Property
 

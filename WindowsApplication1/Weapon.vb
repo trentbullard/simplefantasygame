@@ -80,16 +80,6 @@
         Next
     End Sub
 
-    Public Sub New(item As Weapon)
-        MyBase.New(item.id, item.owner, item.name, item.stats)
-        weaponSlotsPossible = item.slots
-        weaponWearableBy = item.wearableBy
-        weaponIsUnique = item.isUnique
-        weaponMinStats = item.minStats
-        weaponIsRanged = item.isRanged
-        weaponIsMagic = item.isMagic
-    End Sub
-
     Public Overrides ReadOnly Property id() As Integer
         Get
             Return MyBase.id
@@ -168,6 +158,15 @@
         End Get
     End Property
 
+    Public Overrides Property index As Integer
+        Get
+            Return MyBase.index
+        End Get
+        Set(value As Integer)
+            MyBase.index = value
+        End Set
+    End Property
+
     Public Overrides Function ToString() As String
         Dim statString As String = Nothing
         statString = statString & If(MyBase.stats.Contains("maxHealth"), "hp:" & MyBase.stats.Item("maxHealth") & Space(1), Nothing)
@@ -214,6 +213,7 @@
         statsString = statsString & If(weaponMinStats.Contains("wisdom"), "wis: " & weaponMinStats.Item("wisdom") & Space(1), Nothing)
         statsString = statsString & If(weaponMinStats.Contains("dexterity"), "dex: " & weaponMinStats.Item("dexterity") & Space(1), Nothing)
         detailString = detailString & "minimum stats: " & statsString & vbCrLf
+        detailString = detailString & "cost: " & Me.cost
         Return detailString
     End Function
 
