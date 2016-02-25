@@ -1,4 +1,4 @@
-﻿Public Class Weapon : Inherits Item 'TODO
+﻿Public Class Weapon : Inherits Item
     Private weaponSlotsPossible As String
     Private weaponWearableBy As String
     Private weaponIsUnique As Boolean
@@ -61,6 +61,27 @@
 
     Public Sub New(row As GameDatabaseDataSet.StaticWeaponsRow)
         MyBase.New(row.id, currentPlayer, row.name)
+        weaponIsRanged = row.isRanged
+        weaponIsMagic = row.isMagic
+        weaponIsUnique = row.isUnique
+        weaponSlotsPossible = row.slotsPossible
+        weaponWearableBy = row.wearableBy
+
+        Dim statsArray() As String = row.attributes.Split(" "c)
+        For Each stat In statsArray
+            Dim statArray() As String = stat.Split(":"c)
+            MyBase.stats.Add(CInt(statArray(1)), statArray(0))
+        Next
+
+        statsArray = row.minStats.Split(" "c)
+        For Each stat In statsArray
+            Dim statArray() As String = stat.Split(":"c)
+            weaponMinStats.Add(CInt(statArray(1)), statArray(0))
+        Next
+    End Sub
+
+    Public Sub New(id As Integer, row As GameDatabaseDataSet.StaticWeaponsRow)
+        MyBase.New(id, currentPlayer, row.name)
         weaponIsRanged = row.isRanged
         weaponIsMagic = row.isMagic
         weaponIsUnique = row.isUnique

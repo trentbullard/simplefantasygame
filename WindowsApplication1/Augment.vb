@@ -1,4 +1,4 @@
-﻿Public Class Augment : Inherits Item 'TODO
+﻿Public Class Augment : Inherits Item 'TODO implement augment class
     Private augmentAttributes As New Collection
 
     Public Sub New()

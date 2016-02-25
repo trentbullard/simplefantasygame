@@ -1,5 +1,6 @@
 ﻿Public Class PlayerWindow
     Dim creatures As New Collection
+    Dim items As New Collection
 
     Private Sub PlayerWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Text = currentPlayer.ToString
@@ -23,15 +24,17 @@
             Dim creation As New Creature(row.id, GameDatabaseDataSet.StaticCreatures.FindByid(row.creatureid))
             creation.name = row.name
             creaturelst.Items.Add(creation.ToString)
-            creatures.Add(creation, creaturelst.Items.Count)
+            creatures.Add(creation, creaturelst.Items.IndexOf(creation.ToString))
         Next
         For Each row As GameDatabaseDataSet.PlayerWeaponsRow In GameDatabaseDataSet.PlayerWeapons
             Dim weapon As New Weapon(GameDatabaseDataSet.StaticWeapons.FindByid(row.weaponid))
             itemslst.Items.Add(weapon.ToString)
+            items.Add(weapon, itemslst.Items.IndexOf(weapon.ToString))
         Next
         For Each row As GameDatabaseDataSet.PlayerArmorRow In GameDatabaseDataSet.PlayerArmor
             Dim armor As New Armor(GameDatabaseDataSet.StaticArmor.FindByid(row.armorid))
             itemslst.Items.Add(armor.ToString)
+            items.Add(armor, itemslst.Items.IndexOf(armor.ToString))
         Next
     End Sub
 
@@ -39,8 +42,7 @@
         If creaturelst.SelectedIndices.Count = 0 Then Exit Sub
         If creaturelst.SelectedIndices(0) = -1 Then Exit Sub
 
-        Dim index = creaturelst.SelectedIndex + 1
-        currentState.creaturewindow = New CreatureWindow(creatures(index))
+        currentState.creaturewindow = New CreatureWindow(creatures(CStr(creaturelst.SelectedIndex)))
         currentState.creaturewindow.ShowDialog(Me)
         RefreshControls()
     End Sub
@@ -49,7 +51,7 @@
         If itemslst.SelectedIndices.Count = 0 Then Exit Sub
         If itemslst.SelectedIndices(0) = -1 Then Exit Sub
 
-        currentState.itemwindow = New ItemWindow
+        currentState.itemwindow = New ItemWindow(items(CStr(itemslst.SelectedIndex)))
         currentState.itemwindow.ShowDialog(Me)
     End Sub
 
@@ -104,13 +106,29 @@
         For ctr = creaturelst.Items.Count - 1 To 0 Step -1
             creaturelst.Items.RemoveAt(ctr)
         Next
+        For ctr = itemslst.Items.Count - 1 To 0 Step -1
+            itemslst.Items.RemoveAt(ctr)
+        Next
         creatures.Clear()
+        items.Clear()
         PlayerCreaturesTableAdapter.FillByPlayerStateid(GameDatabaseDataSet.PlayerCreatures, currentState.id)
+        PlayerWeaponsTableAdapter.FillByPlayerStateid(GameDatabaseDataSet.PlayerWeapons, currentState.id)
+        PlayerArmorTableAdapter.FillByPlayerStateid(GameDatabaseDataSet.PlayerArmor, currentState.id)
         For Each row As GameDatabaseDataSet.PlayerCreaturesRow In GameDatabaseDataSet.PlayerCreatures
             Dim creation As New Creature(row.id, GameDatabaseDataSet.StaticCreatures.FindByid(row.creatureid))
             creation.name = row.name
             creaturelst.Items.Add(creation.ToString)
-            creatures.Add(creation, creaturelst.Items.Count)
+            creatures.Add(creation, creaturelst.Items.IndexOf(creation.ToString))
+        Next
+        For Each row As GameDatabaseDataSet.PlayerWeaponsRow In GameDatabaseDataSet.PlayerWeapons
+            Dim weapon As New Weapon(row.id, GameDatabaseDataSet.StaticWeapons.FindByid(row.weaponid))
+            itemslst.Items.Add(weapon.ToString)
+            items.Add(weapon, itemslst.Items.IndexOf(weapon.ToString))
+        Next
+        For Each row As GameDatabaseDataSet.PlayerArmorRow In GameDatabaseDataSet.PlayerArmor
+            Dim armorItem As New Armor(row.id, GameDatabaseDataSet.StaticArmor.FindByid(row.armorid))
+            itemslst.Items.Add(armorItem.ToString)
+            items.Add(armorItem, itemslst.Items.IndexOf(armorItem.ToString))
         Next
     End Sub
 

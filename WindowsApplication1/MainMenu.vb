@@ -112,7 +112,7 @@ Public Class MainMenu
                     currentState.party = New Party(PlayerPartiesTableAdapter.GetLastPlayerPartyByPlayerid(currentPlayer.id).First)
                 End If
                 If currentState.tier IsNot Nothing Then
-                    currentState.tier = New Tier() 'TODO (StaticCampTierTableAdapter.GetTierByid(currentState.tier.id).First)
+                    currentState.tier = New Tier() 'TODO New Tier(StaticCampTiersTableAdapter.GetCampTierByPlayerStateid(currentState.id))
                 End If
             Else
                 currentState = New PlayerState(currentPlayer)

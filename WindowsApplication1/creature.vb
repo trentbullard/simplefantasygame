@@ -20,11 +20,10 @@
         creatureName = getCreatureName()
         creatureSpecies = getSpecies()
         creatureClass = "class"
+        creatureExperience = Roll(31)
         creatureLevel = 1
-        creatureExperience = 1
-        creatureArmor = 0
+        creatureArmor = Roll(20)
         creatureMaxHealth = 70 + Roll(50)
-        creatureMaxHealth = 10
         creatureHealth = creatureMaxHealth
         creatureStrength = 70 + Roll(50)
         creatureInitiative = 70 + Roll(50)
@@ -37,22 +36,24 @@
     Public Sub New(name As String)
         creatureid = -1
         creatureName = name
-        creatureSpecies = "species"
-        creatureMaxHealth = 10
-        creatureHealth = 1
-        creatureStrength = 1
-        creatureArmor = 1
+        creatureSpecies = getSpecies()
+        creatureClass = "class"
+        creatureExperience = Roll(31)
         creatureLevel = 1
-        creatureExperience = 1
-        creatureInitiative = 1
-        creatureIntelligence = 1
-        creatureWisdom = 1
-        creatureDexterity = 1
+        creatureArmor = Roll(20)
+        creatureMaxHealth = 70 + Roll(50)
+        creatureHealth = creatureMaxHealth
+        creatureStrength = 70 + Roll(50)
+        creatureInitiative = 70 + Roll(50)
+        creatureIntelligence = 70 + Roll(50)
+        creatureWisdom = 70 + Roll(50)
+        creatureDexterity = 70 + Roll(50)
         creatureOwner = currentPlayer
     End Sub
 
     Public Sub New(row As GameDatabaseDataSet.StaticCreaturesRow)
         creatureid = row("id")
+        creatureName = row.name
         creatureSpecies = row("species")
         creatureMaxHealth = row.maxHealth
         creatureHealth = row("health")
@@ -70,6 +71,7 @@
 
     Public Sub New(id As Integer, row As GameDatabaseDataSet.StaticCreaturesRow)
         creatureid = id
+        creatureName = row.name
         creatureSpecies = row("species")
         creatureMaxHealth = row.maxHealth
         creatureHealth = row("health")
@@ -198,7 +200,7 @@
         End If
     End Function
 
-    Public Sub TakeDamage(damage)
+    Public Sub TakeDamage(damage As Integer)
         LogCreatureDamageTaken(Me, damage)
         If damage < creatureHealth Then
             creatureHealth = creatureHealth - damage
@@ -213,7 +215,7 @@
         Return Me.name & " the level " & Me.creatureLevel & Space(1) & Me.species
     End Function
 
-    Public Sub GainExp(amount)
+    Public Sub GainExp(amount As Integer)
         creatureExperience += amount
         If creatureExperience >= (creatureLevel + 1) ^ 5 Then
             creatureLevel += 1
@@ -221,12 +223,11 @@
     End Sub
 
     Public Sub Equip(equipment)
-        'add code that reflects this simplification:
-        'creatureAttribute += equipment.attribute
+        'TODO add code that reflects this simplification: creatureAttribute += equipment.attribute
     End Sub
 
-    Public Sub Buff(skill)
-        'add code that applies positive spell effects to creature
+    Public Sub Buff(skill) 'TODO skill as Skill
+        'TODO add code that applies positive spell effects to creature
     End Sub
 
     Public Sub Save(ds As GameDatabaseDataSet,

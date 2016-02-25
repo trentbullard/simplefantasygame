@@ -156,6 +156,12 @@
       <DependentUpon>CombatWindow.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="EquipWindow.Designer.vb">
+      <DependentUpon>EquipWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EquipWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Experience.vb" />
     <Compile Include="FormControl.vb" />
     <Compile Include="GameDatabaseDataSet.Designer.vb">
@@ -270,6 +276,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DeletePlayersWindow.resx">
       <DependentUpon>DeletePlayersWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EquipWindow.resx">
+      <DependentUpon>EquipWindow.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InnWindow.resx">
       <DependentUpon>InnWindow.vb</DependentUpon>

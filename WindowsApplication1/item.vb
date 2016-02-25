@@ -77,6 +77,15 @@
         End Set
     End Property
 
+    Public Overridable Function DetailsString() As String
+    End Function
+
+    Public Overridable ReadOnly Property wearableBy() As String
+        Get
+            Return Nothing
+        End Get
+    End Property
+
     Public Overrides Function ToString() As String
         Return Me.name & Space(1) & Me.id
     End Function

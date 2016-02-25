@@ -29,7 +29,6 @@ Partial Class CreatureWindow
         Me.nametxt = New System.Windows.Forms.TextBox()
         Me.speciestxt = New System.Windows.Forms.TextBox()
         Me.leveltxt = New System.Windows.Forms.TextBox()
-        Me.experiencetxt = New System.Windows.Forms.TextBox()
         Me.maxHPtxt = New System.Windows.Forms.TextBox()
         Me.healthtxt = New System.Windows.Forms.TextBox()
         Me.armortxt = New System.Windows.Forms.TextBox()
@@ -40,7 +39,6 @@ Partial Class CreatureWindow
         Me.wisdomtxt = New System.Windows.Forms.TextBox()
         Me.specieslbl = New System.Windows.Forms.Label()
         Me.levellbl = New System.Windows.Forms.Label()
-        Me.experiencelbl = New System.Windows.Forms.Label()
         Me.maxHealthlbl = New System.Windows.Forms.Label()
         Me.healthlbl = New System.Windows.Forms.Label()
         Me.armorlbl = New System.Windows.Forms.Label()
@@ -54,11 +52,11 @@ Partial Class CreatureWindow
         Me.mainEquipmentpnl = New System.Windows.Forms.TableLayoutPanel()
         Me.leftEquipmentpnl = New System.Windows.Forms.TableLayoutPanel()
         Me.primarylbl = New System.Windows.Forms.Label()
-        Me.headlbl = New System.Windows.Forms.Label()
         Me.shoulderslbl = New System.Windows.Forms.Label()
         Me.sleeveslbl = New System.Windows.Forms.Label()
         Me.handslbl = New System.Windows.Forms.Label()
         Me.feetlbl = New System.Windows.Forms.Label()
+        Me.headpic = New System.Windows.Forms.PictureBox()
         Me.rightEquipmentpnl = New System.Windows.Forms.TableLayoutPanel()
         Me.secondarylbl = New System.Windows.Forms.Label()
         Me.backlbl = New System.Windows.Forms.Label()
@@ -66,7 +64,6 @@ Partial Class CreatureWindow
         Me.waistlbl = New System.Windows.Forms.Label()
         Me.legslbl = New System.Windows.Forms.Label()
         Me.shinslbl = New System.Windows.Forms.Label()
-        Me.headpic = New System.Windows.Forms.PictureBox()
         Me.headtip = New System.Windows.Forms.ToolTip(Me.components)
         Me.GameDatabaseDataSet = New simplefantasygame.GameDatabaseDataSet()
         Me.PlayerCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -86,12 +83,18 @@ Partial Class CreatureWindow
         Me.PlayerArmorTableAdapter = New simplefantasygame.GameDatabaseDataSetTableAdapters.PlayerArmorTableAdapter()
         Me.PlayerWeaponsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayerWeaponsTableAdapter = New simplefantasygame.GameDatabaseDataSetTableAdapters.PlayerWeaponsTableAdapter()
+        Me.headlbl = New System.Windows.Forms.LinkLabel()
+        Me.infopnl = New System.Windows.Forms.Panel()
+        Me.expbar = New System.Windows.Forms.ProgressBar()
+        Me.playerExperiencelbl = New System.Windows.Forms.Label()
+        Me.skillbtn = New System.Windows.Forms.Button()
+        Me.dismissbtn = New System.Windows.Forms.Button()
         Me.mainLayoutpnl.SuspendLayout()
         Me.statspnl.SuspendLayout()
         Me.mainEquipmentpnl.SuspendLayout()
         Me.leftEquipmentpnl.SuspendLayout()
-        Me.rightEquipmentpnl.SuspendLayout()
         CType(Me.headpic, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.rightEquipmentpnl.SuspendLayout()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayerCreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StaticArmorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -101,6 +104,7 @@ Partial Class CreatureWindow
         CType(Me.StaticWeaponsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayerArmorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayerWeaponsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.infopnl.SuspendLayout()
         Me.SuspendLayout()
         '
         'mainLayoutpnl
@@ -111,6 +115,8 @@ Partial Class CreatureWindow
         Me.mainLayoutpnl.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.mainLayoutpnl.Controls.Add(Me.statspnl, 0, 0)
         Me.mainLayoutpnl.Controls.Add(Me.mainEquipmentpnl, 1, 0)
+        Me.mainLayoutpnl.Controls.Add(Me.infopnl, 1, 1)
+        Me.mainLayoutpnl.Controls.Add(Me.dismissbtn, 0, 1)
         Me.mainLayoutpnl.Dock = System.Windows.Forms.DockStyle.Fill
         Me.mainLayoutpnl.Location = New System.Drawing.Point(0, 0)
         Me.mainLayoutpnl.Name = "mainLayoutpnl"
@@ -133,45 +139,42 @@ Partial Class CreatureWindow
         Me.statspnl.Controls.Add(Me.nametxt, 1, 0)
         Me.statspnl.Controls.Add(Me.speciestxt, 1, 2)
         Me.statspnl.Controls.Add(Me.leveltxt, 1, 3)
-        Me.statspnl.Controls.Add(Me.experiencetxt, 1, 4)
-        Me.statspnl.Controls.Add(Me.maxHPtxt, 1, 5)
-        Me.statspnl.Controls.Add(Me.healthtxt, 1, 6)
-        Me.statspnl.Controls.Add(Me.armortxt, 1, 7)
-        Me.statspnl.Controls.Add(Me.strengthtxt, 1, 8)
-        Me.statspnl.Controls.Add(Me.dexteritytxt, 1, 9)
-        Me.statspnl.Controls.Add(Me.intelligencetxt, 1, 10)
-        Me.statspnl.Controls.Add(Me.initiativetxt, 1, 11)
-        Me.statspnl.Controls.Add(Me.wisdomtxt, 1, 12)
+        Me.statspnl.Controls.Add(Me.maxHPtxt, 1, 4)
+        Me.statspnl.Controls.Add(Me.healthtxt, 1, 5)
+        Me.statspnl.Controls.Add(Me.armortxt, 1, 6)
+        Me.statspnl.Controls.Add(Me.strengthtxt, 1, 7)
+        Me.statspnl.Controls.Add(Me.dexteritytxt, 1, 8)
+        Me.statspnl.Controls.Add(Me.intelligencetxt, 1, 9)
+        Me.statspnl.Controls.Add(Me.initiativetxt, 1, 10)
+        Me.statspnl.Controls.Add(Me.wisdomtxt, 1, 11)
         Me.statspnl.Controls.Add(Me.specieslbl, 0, 2)
         Me.statspnl.Controls.Add(Me.levellbl, 0, 3)
-        Me.statspnl.Controls.Add(Me.experiencelbl, 0, 4)
-        Me.statspnl.Controls.Add(Me.maxHealthlbl, 0, 5)
-        Me.statspnl.Controls.Add(Me.healthlbl, 0, 6)
-        Me.statspnl.Controls.Add(Me.armorlbl, 0, 7)
-        Me.statspnl.Controls.Add(Me.strengthlbl, 0, 8)
-        Me.statspnl.Controls.Add(Me.dexteritylbl, 0, 9)
-        Me.statspnl.Controls.Add(Me.intelligencelbl, 0, 10)
-        Me.statspnl.Controls.Add(Me.wisdomlbl, 0, 12)
-        Me.statspnl.Controls.Add(Me.initiativelbl, 0, 11)
+        Me.statspnl.Controls.Add(Me.maxHealthlbl, 0, 4)
+        Me.statspnl.Controls.Add(Me.healthlbl, 0, 5)
+        Me.statspnl.Controls.Add(Me.armorlbl, 0, 6)
+        Me.statspnl.Controls.Add(Me.strengthlbl, 0, 7)
+        Me.statspnl.Controls.Add(Me.dexteritylbl, 0, 8)
+        Me.statspnl.Controls.Add(Me.intelligencelbl, 0, 9)
+        Me.statspnl.Controls.Add(Me.wisdomlbl, 0, 11)
+        Me.statspnl.Controls.Add(Me.initiativelbl, 0, 10)
         Me.statspnl.Controls.Add(Me.namelbl, 0, 0)
         Me.statspnl.Controls.Add(Me.classlbl, 0, 1)
         Me.statspnl.Location = New System.Drawing.Point(4, 4)
         Me.statspnl.MinimumSize = New System.Drawing.Size(189, 378)
         Me.statspnl.Name = "statspnl"
-        Me.statspnl.RowCount = 13
-        Me.statspnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307!))
-        Me.statspnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692308!))
-        Me.statspnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692308!))
-        Me.statspnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692308!))
-        Me.statspnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692308!))
-        Me.statspnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692308!))
-        Me.statspnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692308!))
-        Me.statspnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692308!))
-        Me.statspnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692308!))
-        Me.statspnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692308!))
-        Me.statspnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692308!))
-        Me.statspnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692308!))
-        Me.statspnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692308!))
+        Me.statspnl.RowCount = 12
+        Me.statspnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.statspnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.statspnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.statspnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.statspnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.statspnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.statspnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.statspnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.statspnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.statspnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.statspnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.statspnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
         Me.statspnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.statspnl.Size = New System.Drawing.Size(189, 420)
         Me.statspnl.TabIndex = 0
@@ -180,7 +183,7 @@ Partial Class CreatureWindow
         '
         Me.classtxt.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.classtxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.classtxt.Location = New System.Drawing.Point(83, 38)
+        Me.classtxt.Location = New System.Drawing.Point(83, 41)
         Me.classtxt.Name = "classtxt"
         Me.classtxt.ReadOnly = True
         Me.classtxt.Size = New System.Drawing.Size(102, 20)
@@ -190,7 +193,7 @@ Partial Class CreatureWindow
         '
         Me.nametxt.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.nametxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.nametxt.Location = New System.Drawing.Point(83, 6)
+        Me.nametxt.Location = New System.Drawing.Point(83, 7)
         Me.nametxt.Name = "nametxt"
         Me.nametxt.ReadOnly = True
         Me.nametxt.Size = New System.Drawing.Size(102, 20)
@@ -200,7 +203,7 @@ Partial Class CreatureWindow
         '
         Me.speciestxt.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.speciestxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.speciestxt.Location = New System.Drawing.Point(83, 70)
+        Me.speciestxt.Location = New System.Drawing.Point(83, 75)
         Me.speciestxt.Name = "speciestxt"
         Me.speciestxt.ReadOnly = True
         Me.speciestxt.Size = New System.Drawing.Size(102, 20)
@@ -210,27 +213,17 @@ Partial Class CreatureWindow
         '
         Me.leveltxt.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.leveltxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.leveltxt.Location = New System.Drawing.Point(83, 102)
+        Me.leveltxt.Location = New System.Drawing.Point(83, 109)
         Me.leveltxt.Name = "leveltxt"
         Me.leveltxt.ReadOnly = True
         Me.leveltxt.Size = New System.Drawing.Size(102, 20)
         Me.leveltxt.TabIndex = 7
         '
-        'experiencetxt
-        '
-        Me.experiencetxt.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.experiencetxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.experiencetxt.Location = New System.Drawing.Point(83, 134)
-        Me.experiencetxt.Name = "experiencetxt"
-        Me.experiencetxt.ReadOnly = True
-        Me.experiencetxt.Size = New System.Drawing.Size(102, 20)
-        Me.experiencetxt.TabIndex = 17
-        '
         'maxHPtxt
         '
         Me.maxHPtxt.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.maxHPtxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.maxHPtxt.Location = New System.Drawing.Point(83, 166)
+        Me.maxHPtxt.Location = New System.Drawing.Point(83, 143)
         Me.maxHPtxt.Name = "maxHPtxt"
         Me.maxHPtxt.ReadOnly = True
         Me.maxHPtxt.Size = New System.Drawing.Size(102, 20)
@@ -240,7 +233,7 @@ Partial Class CreatureWindow
         '
         Me.healthtxt.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.healthtxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.healthtxt.Location = New System.Drawing.Point(83, 198)
+        Me.healthtxt.Location = New System.Drawing.Point(83, 177)
         Me.healthtxt.Name = "healthtxt"
         Me.healthtxt.ReadOnly = True
         Me.healthtxt.Size = New System.Drawing.Size(102, 20)
@@ -250,7 +243,7 @@ Partial Class CreatureWindow
         '
         Me.armortxt.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.armortxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.armortxt.Location = New System.Drawing.Point(83, 230)
+        Me.armortxt.Location = New System.Drawing.Point(83, 211)
         Me.armortxt.Name = "armortxt"
         Me.armortxt.ReadOnly = True
         Me.armortxt.Size = New System.Drawing.Size(102, 20)
@@ -260,7 +253,7 @@ Partial Class CreatureWindow
         '
         Me.strengthtxt.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.strengthtxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.strengthtxt.Location = New System.Drawing.Point(83, 262)
+        Me.strengthtxt.Location = New System.Drawing.Point(83, 245)
         Me.strengthtxt.Name = "strengthtxt"
         Me.strengthtxt.ReadOnly = True
         Me.strengthtxt.Size = New System.Drawing.Size(102, 20)
@@ -270,7 +263,7 @@ Partial Class CreatureWindow
         '
         Me.dexteritytxt.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dexteritytxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.dexteritytxt.Location = New System.Drawing.Point(83, 294)
+        Me.dexteritytxt.Location = New System.Drawing.Point(83, 279)
         Me.dexteritytxt.Name = "dexteritytxt"
         Me.dexteritytxt.ReadOnly = True
         Me.dexteritytxt.Size = New System.Drawing.Size(102, 20)
@@ -280,7 +273,7 @@ Partial Class CreatureWindow
         '
         Me.intelligencetxt.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.intelligencetxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.intelligencetxt.Location = New System.Drawing.Point(83, 326)
+        Me.intelligencetxt.Location = New System.Drawing.Point(83, 313)
         Me.intelligencetxt.Name = "intelligencetxt"
         Me.intelligencetxt.ReadOnly = True
         Me.intelligencetxt.Size = New System.Drawing.Size(102, 20)
@@ -290,7 +283,7 @@ Partial Class CreatureWindow
         '
         Me.initiativetxt.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.initiativetxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.initiativetxt.Location = New System.Drawing.Point(83, 358)
+        Me.initiativetxt.Location = New System.Drawing.Point(83, 347)
         Me.initiativetxt.Name = "initiativetxt"
         Me.initiativetxt.ReadOnly = True
         Me.initiativetxt.Size = New System.Drawing.Size(102, 20)
@@ -300,7 +293,7 @@ Partial Class CreatureWindow
         '
         Me.wisdomtxt.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.wisdomtxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.wisdomtxt.Location = New System.Drawing.Point(83, 392)
+        Me.wisdomtxt.Location = New System.Drawing.Point(83, 387)
         Me.wisdomtxt.Name = "wisdomtxt"
         Me.wisdomtxt.ReadOnly = True
         Me.wisdomtxt.Size = New System.Drawing.Size(102, 20)
@@ -310,9 +303,9 @@ Partial Class CreatureWindow
         '
         Me.specieslbl.AutoSize = True
         Me.specieslbl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.specieslbl.Location = New System.Drawing.Point(4, 65)
+        Me.specieslbl.Location = New System.Drawing.Point(4, 69)
         Me.specieslbl.Name = "specieslbl"
-        Me.specieslbl.Size = New System.Drawing.Size(72, 31)
+        Me.specieslbl.Size = New System.Drawing.Size(72, 33)
         Me.specieslbl.TabIndex = 2
         Me.specieslbl.Text = "species"
         Me.specieslbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -321,31 +314,20 @@ Partial Class CreatureWindow
         '
         Me.levellbl.AutoSize = True
         Me.levellbl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.levellbl.Location = New System.Drawing.Point(4, 97)
+        Me.levellbl.Location = New System.Drawing.Point(4, 103)
         Me.levellbl.Name = "levellbl"
-        Me.levellbl.Size = New System.Drawing.Size(72, 31)
+        Me.levellbl.Size = New System.Drawing.Size(72, 33)
         Me.levellbl.TabIndex = 6
         Me.levellbl.Text = "level"
         Me.levellbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'experiencelbl
-        '
-        Me.experiencelbl.AutoSize = True
-        Me.experiencelbl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.experiencelbl.Location = New System.Drawing.Point(4, 129)
-        Me.experiencelbl.Name = "experiencelbl"
-        Me.experiencelbl.Size = New System.Drawing.Size(72, 31)
-        Me.experiencelbl.TabIndex = 4
-        Me.experiencelbl.Text = "experience"
-        Me.experiencelbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'maxHealthlbl
         '
         Me.maxHealthlbl.AutoSize = True
         Me.maxHealthlbl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.maxHealthlbl.Location = New System.Drawing.Point(4, 161)
+        Me.maxHealthlbl.Location = New System.Drawing.Point(4, 137)
         Me.maxHealthlbl.Name = "maxHealthlbl"
-        Me.maxHealthlbl.Size = New System.Drawing.Size(72, 31)
+        Me.maxHealthlbl.Size = New System.Drawing.Size(72, 33)
         Me.maxHealthlbl.TabIndex = 8
         Me.maxHealthlbl.Text = "max health"
         Me.maxHealthlbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -354,9 +336,9 @@ Partial Class CreatureWindow
         '
         Me.healthlbl.AutoSize = True
         Me.healthlbl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.healthlbl.Location = New System.Drawing.Point(4, 193)
+        Me.healthlbl.Location = New System.Drawing.Point(4, 171)
         Me.healthlbl.Name = "healthlbl"
-        Me.healthlbl.Size = New System.Drawing.Size(72, 31)
+        Me.healthlbl.Size = New System.Drawing.Size(72, 33)
         Me.healthlbl.TabIndex = 9
         Me.healthlbl.Text = "current health"
         Me.healthlbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -365,9 +347,9 @@ Partial Class CreatureWindow
         '
         Me.armorlbl.AutoSize = True
         Me.armorlbl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.armorlbl.Location = New System.Drawing.Point(4, 225)
+        Me.armorlbl.Location = New System.Drawing.Point(4, 205)
         Me.armorlbl.Name = "armorlbl"
-        Me.armorlbl.Size = New System.Drawing.Size(72, 31)
+        Me.armorlbl.Size = New System.Drawing.Size(72, 33)
         Me.armorlbl.TabIndex = 15
         Me.armorlbl.Text = "armor"
         Me.armorlbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -376,9 +358,9 @@ Partial Class CreatureWindow
         '
         Me.strengthlbl.AutoSize = True
         Me.strengthlbl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.strengthlbl.Location = New System.Drawing.Point(4, 257)
+        Me.strengthlbl.Location = New System.Drawing.Point(4, 239)
         Me.strengthlbl.Name = "strengthlbl"
-        Me.strengthlbl.Size = New System.Drawing.Size(72, 31)
+        Me.strengthlbl.Size = New System.Drawing.Size(72, 33)
         Me.strengthlbl.TabIndex = 14
         Me.strengthlbl.Text = "strength"
         Me.strengthlbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -387,9 +369,9 @@ Partial Class CreatureWindow
         '
         Me.dexteritylbl.AutoSize = True
         Me.dexteritylbl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dexteritylbl.Location = New System.Drawing.Point(4, 289)
+        Me.dexteritylbl.Location = New System.Drawing.Point(4, 273)
         Me.dexteritylbl.Name = "dexteritylbl"
-        Me.dexteritylbl.Size = New System.Drawing.Size(72, 31)
+        Me.dexteritylbl.Size = New System.Drawing.Size(72, 33)
         Me.dexteritylbl.TabIndex = 13
         Me.dexteritylbl.Text = "dexterity"
         Me.dexteritylbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -398,9 +380,9 @@ Partial Class CreatureWindow
         '
         Me.intelligencelbl.AutoSize = True
         Me.intelligencelbl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.intelligencelbl.Location = New System.Drawing.Point(4, 321)
+        Me.intelligencelbl.Location = New System.Drawing.Point(4, 307)
         Me.intelligencelbl.Name = "intelligencelbl"
-        Me.intelligencelbl.Size = New System.Drawing.Size(72, 31)
+        Me.intelligencelbl.Size = New System.Drawing.Size(72, 33)
         Me.intelligencelbl.TabIndex = 12
         Me.intelligencelbl.Text = "intelligence"
         Me.intelligencelbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -409,9 +391,9 @@ Partial Class CreatureWindow
         '
         Me.wisdomlbl.AutoSize = True
         Me.wisdomlbl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.wisdomlbl.Location = New System.Drawing.Point(4, 385)
+        Me.wisdomlbl.Location = New System.Drawing.Point(4, 375)
         Me.wisdomlbl.Name = "wisdomlbl"
-        Me.wisdomlbl.Size = New System.Drawing.Size(72, 34)
+        Me.wisdomlbl.Size = New System.Drawing.Size(72, 44)
         Me.wisdomlbl.TabIndex = 10
         Me.wisdomlbl.Text = "wisdom"
         Me.wisdomlbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -420,9 +402,9 @@ Partial Class CreatureWindow
         '
         Me.initiativelbl.AutoSize = True
         Me.initiativelbl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.initiativelbl.Location = New System.Drawing.Point(4, 353)
+        Me.initiativelbl.Location = New System.Drawing.Point(4, 341)
         Me.initiativelbl.Name = "initiativelbl"
-        Me.initiativelbl.Size = New System.Drawing.Size(72, 31)
+        Me.initiativelbl.Size = New System.Drawing.Size(72, 33)
         Me.initiativelbl.TabIndex = 11
         Me.initiativelbl.Text = "initiative"
         Me.initiativelbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -433,7 +415,7 @@ Partial Class CreatureWindow
         Me.namelbl.Dock = System.Windows.Forms.DockStyle.Fill
         Me.namelbl.Location = New System.Drawing.Point(4, 1)
         Me.namelbl.Name = "namelbl"
-        Me.namelbl.Size = New System.Drawing.Size(72, 31)
+        Me.namelbl.Size = New System.Drawing.Size(72, 33)
         Me.namelbl.TabIndex = 27
         Me.namelbl.TabStop = True
         Me.namelbl.Text = "name"
@@ -443,9 +425,9 @@ Partial Class CreatureWindow
         '
         Me.classlbl.AutoSize = True
         Me.classlbl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.classlbl.Location = New System.Drawing.Point(4, 33)
+        Me.classlbl.Location = New System.Drawing.Point(4, 35)
         Me.classlbl.Name = "classlbl"
-        Me.classlbl.Size = New System.Drawing.Size(72, 31)
+        Me.classlbl.Size = New System.Drawing.Size(72, 33)
         Me.classlbl.TabIndex = 28
         Me.classlbl.TabStop = True
         Me.classlbl.Text = "class"
@@ -474,12 +456,12 @@ Partial Class CreatureWindow
         Me.leftEquipmentpnl.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.leftEquipmentpnl.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.leftEquipmentpnl.Controls.Add(Me.primarylbl, 0, 5)
-        Me.leftEquipmentpnl.Controls.Add(Me.headlbl, 0, 0)
         Me.leftEquipmentpnl.Controls.Add(Me.shoulderslbl, 0, 1)
         Me.leftEquipmentpnl.Controls.Add(Me.sleeveslbl, 0, 2)
         Me.leftEquipmentpnl.Controls.Add(Me.handslbl, 0, 3)
         Me.leftEquipmentpnl.Controls.Add(Me.feetlbl, 0, 4)
         Me.leftEquipmentpnl.Controls.Add(Me.headpic, 1, 0)
+        Me.leftEquipmentpnl.Controls.Add(Me.headlbl, 0, 0)
         Me.leftEquipmentpnl.Dock = System.Windows.Forms.DockStyle.Fill
         Me.leftEquipmentpnl.Location = New System.Drawing.Point(3, 3)
         Me.leftEquipmentpnl.Name = "leftEquipmentpnl"
@@ -503,17 +485,6 @@ Partial Class CreatureWindow
         Me.primarylbl.TabIndex = 0
         Me.primarylbl.Text = "main hand"
         Me.primarylbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'headlbl
-        '
-        Me.headlbl.AutoSize = True
-        Me.headlbl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.headlbl.Location = New System.Drawing.Point(4, 1)
-        Me.headlbl.Name = "headlbl"
-        Me.headlbl.Size = New System.Drawing.Size(73, 67)
-        Me.headlbl.TabIndex = 1
-        Me.headlbl.Text = "head"
-        Me.headlbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'shoulderslbl
         '
@@ -558,6 +529,19 @@ Partial Class CreatureWindow
         Me.feetlbl.TabIndex = 5
         Me.feetlbl.Text = "feet"
         Me.feetlbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'headpic
+        '
+        Me.headpic.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.headpic.Image = Global.simplefantasygame.My.Resources.Resources.megaman_jump
+        Me.headpic.InitialImage = Global.simplefantasygame.My.Resources.Resources.megaman_jump
+        Me.headpic.Location = New System.Drawing.Point(84, 4)
+        Me.headpic.Name = "headpic"
+        Me.headpic.Size = New System.Drawing.Size(74, 61)
+        Me.headpic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.headpic.TabIndex = 6
+        Me.headpic.TabStop = False
+        Me.headtip.SetToolTip(Me.headpic, "Info" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "more info" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "texty text")
         '
         'rightEquipmentpnl
         '
@@ -649,19 +633,6 @@ Partial Class CreatureWindow
         Me.shinslbl.TabIndex = 5
         Me.shinslbl.Text = "shins"
         Me.shinslbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'headpic
-        '
-        Me.headpic.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.headpic.Image = Global.simplefantasygame.My.Resources.Resources.megaman_jump
-        Me.headpic.InitialImage = Global.simplefantasygame.My.Resources.Resources.megaman_jump
-        Me.headpic.Location = New System.Drawing.Point(84, 4)
-        Me.headpic.Name = "headpic"
-        Me.headpic.Size = New System.Drawing.Size(74, 61)
-        Me.headpic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.headpic.TabIndex = 6
-        Me.headpic.TabStop = False
-        Me.headtip.SetToolTip(Me.headpic, "Info" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "more info" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "texty text")
         '
         'GameDatabaseDataSet
         '
@@ -781,6 +752,68 @@ Partial Class CreatureWindow
         '
         Me.PlayerWeaponsTableAdapter.ClearBeforeFill = True
         '
+        'headlbl
+        '
+        Me.headlbl.AutoSize = True
+        Me.headlbl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.headlbl.Location = New System.Drawing.Point(4, 1)
+        Me.headlbl.Name = "headlbl"
+        Me.headlbl.Size = New System.Drawing.Size(73, 67)
+        Me.headlbl.TabIndex = 7
+        Me.headlbl.TabStop = True
+        Me.headlbl.Text = "head"
+        Me.headlbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'infopnl
+        '
+        Me.infopnl.Controls.Add(Me.skillbtn)
+        Me.infopnl.Controls.Add(Me.playerExperiencelbl)
+        Me.infopnl.Controls.Add(Me.expbar)
+        Me.infopnl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.infopnl.Location = New System.Drawing.Point(200, 431)
+        Me.infopnl.Name = "infopnl"
+        Me.infopnl.Size = New System.Drawing.Size(557, 85)
+        Me.infopnl.TabIndex = 2
+        '
+        'expbar
+        '
+        Me.expbar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.expbar.Location = New System.Drawing.Point(0, 69)
+        Me.expbar.Name = "expbar"
+        Me.expbar.Size = New System.Drawing.Size(557, 13)
+        Me.expbar.Step = 1
+        Me.expbar.TabIndex = 14
+        '
+        'playerExperiencelbl
+        '
+        Me.playerExperiencelbl.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.playerExperiencelbl.AutoSize = True
+        Me.playerExperiencelbl.ForeColor = System.Drawing.Color.Black
+        Me.playerExperiencelbl.Location = New System.Drawing.Point(498, 53)
+        Me.playerExperiencelbl.Name = "playerExperiencelbl"
+        Me.playerExperiencelbl.Size = New System.Drawing.Size(59, 13)
+        Me.playerExperiencelbl.TabIndex = 15
+        Me.playerExperiencelbl.Text = "experience"
+        '
+        'skillbtn
+        '
+        Me.skillbtn.Location = New System.Drawing.Point(0, 0)
+        Me.skillbtn.Name = "skillbtn"
+        Me.skillbtn.Size = New System.Drawing.Size(54, 23)
+        Me.skillbtn.TabIndex = 16
+        Me.skillbtn.Text = "skills"
+        Me.skillbtn.UseVisualStyleBackColor = True
+        '
+        'dismissbtn
+        '
+        Me.dismissbtn.Location = New System.Drawing.Point(4, 431)
+        Me.dismissbtn.Name = "dismissbtn"
+        Me.dismissbtn.Size = New System.Drawing.Size(75, 23)
+        Me.dismissbtn.TabIndex = 3
+        Me.dismissbtn.Text = "dismiss"
+        Me.dismissbtn.UseVisualStyleBackColor = True
+        '
         'CreatureWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -797,9 +830,9 @@ Partial Class CreatureWindow
         Me.mainEquipmentpnl.ResumeLayout(False)
         Me.leftEquipmentpnl.ResumeLayout(False)
         Me.leftEquipmentpnl.PerformLayout()
+        CType(Me.headpic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.rightEquipmentpnl.ResumeLayout(False)
         Me.rightEquipmentpnl.PerformLayout()
-        CType(Me.headpic, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayerCreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StaticArmorBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -809,6 +842,8 @@ Partial Class CreatureWindow
         CType(Me.StaticWeaponsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayerArmorBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayerWeaponsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.infopnl.ResumeLayout(False)
+        Me.infopnl.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -823,7 +858,6 @@ Partial Class CreatureWindow
     Friend WithEvents nametxt As TextBox
     Friend WithEvents speciestxt As TextBox
     Friend WithEvents leveltxt As TextBox
-    Friend WithEvents experiencetxt As TextBox
     Friend WithEvents maxHPtxt As TextBox
     Friend WithEvents healthtxt As TextBox
     Friend WithEvents armortxt As TextBox
@@ -834,7 +868,6 @@ Partial Class CreatureWindow
     Friend WithEvents wisdomtxt As TextBox
     Friend WithEvents specieslbl As Label
     Friend WithEvents levellbl As Label
-    Friend WithEvents experiencelbl As Label
     Friend WithEvents maxHealthlbl As Label
     Friend WithEvents healthlbl As Label
     Friend WithEvents armorlbl As Label
@@ -848,7 +881,6 @@ Partial Class CreatureWindow
     Friend WithEvents mainEquipmentpnl As TableLayoutPanel
     Friend WithEvents leftEquipmentpnl As TableLayoutPanel
     Friend WithEvents primarylbl As Label
-    Friend WithEvents headlbl As Label
     Friend WithEvents shoulderslbl As Label
     Friend WithEvents sleeveslbl As Label
     Friend WithEvents handslbl As Label
@@ -876,4 +908,10 @@ Partial Class CreatureWindow
     Friend WithEvents PlayerArmorTableAdapter As GameDatabaseDataSetTableAdapters.PlayerArmorTableAdapter
     Friend WithEvents PlayerWeaponsBindingSource As BindingSource
     Friend WithEvents PlayerWeaponsTableAdapter As GameDatabaseDataSetTableAdapters.PlayerWeaponsTableAdapter
+    Friend WithEvents headlbl As LinkLabel
+    Friend WithEvents infopnl As Panel
+    Friend WithEvents expbar As ProgressBar
+    Friend WithEvents playerExperiencelbl As Label
+    Friend WithEvents skillbtn As Button
+    Friend WithEvents dismissbtn As Button
 End Class

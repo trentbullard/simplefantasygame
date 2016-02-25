@@ -1,4 +1,4 @@
-﻿Public Class Armor : Inherits Item 'TODO
+﻿Public Class Armor : Inherits Item
     Private armorSlotsPossible As String
     Private armorWearableBy As String
     Private armorIsUnique As Boolean
@@ -69,6 +69,36 @@
 
     Public Sub New(row As GameDatabaseDataSet.StaticArmorRow)
         MyBase.New(row.id, currentPlayer, row.name)
+        armorIsUnique = row.isUnique
+        armorSlotsPossible = row.slotsPossible
+        armorWearableBy = row.wearableBy
+
+        Dim statsArray() As String = row.attributes.Split(" "c)
+        For Each stat In statsArray
+            Dim statArray() As String = stat.Split(":"c)
+            MyBase.stats.Add(CInt(statArray(1)), statArray(0))
+        Next
+
+        statsArray = row.minStats.Split(" "c)
+        For Each stat In statsArray
+            Dim statArray() As String = stat.Split(":"c)
+            armorMinStats.Add(CInt(statArray(1)), statArray(0))
+        Next
+
+        If Not IsDBNull(row("setName")) Then
+            armorSet = row.setName
+            armorSetBonus = row.setBonus
+        End If
+
+        statsArray = row.resistances.Split(" "c)
+        For Each stat In statsArray
+            Dim statArray() As String = stat.Split(":"c)
+            armorResistances.Add(CInt(statArray(1)), statArray(0))
+        Next
+    End Sub
+
+    Public Sub New(id As Integer, row As GameDatabaseDataSet.StaticArmorRow)
+        MyBase.New(id, currentPlayer, row.name)
         armorIsUnique = row.isUnique
         armorSlotsPossible = row.slotsPossible
         armorWearableBy = row.wearableBy
