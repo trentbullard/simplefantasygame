@@ -18,36 +18,36 @@
     Public Sub New()
         creatureid = -1
         creatureName = getCreatureName()
-        creatureSpecies = getSpecies()
+        creatureSpecies = "gnome"
         creatureClass = "class"
         creatureExperience = Roll(31)
         creatureLevel = 1
         creatureArmor = Roll(20)
-        creatureMaxHealth = 70 + Roll(50)
+        creatureMaxHealth = 70 '+ Roll(50)
         creatureHealth = creatureMaxHealth
-        creatureStrength = 70 + Roll(50)
-        creatureInitiative = 70 + Roll(50)
-        creatureIntelligence = 70 + Roll(50)
-        creatureWisdom = 70 + Roll(50)
-        creatureDexterity = 70 + Roll(50)
+        creatureStrength = 70 '+ Roll(50)
+        creatureInitiative = 70 '+ Roll(50)
+        creatureIntelligence = 70 '+ Roll(50)
+        creatureWisdom = 70 '+ Roll(50)
+        creatureDexterity = 70 '+ Roll(50)
         creatureOwner = currentPlayer
     End Sub
 
     Public Sub New(name As String)
         creatureid = -1
         creatureName = name
-        creatureSpecies = getSpecies()
+        creatureSpecies = "gnome"
         creatureClass = "class"
         creatureExperience = Roll(31)
         creatureLevel = 1
         creatureArmor = Roll(20)
-        creatureMaxHealth = 70 + Roll(50)
+        creatureMaxHealth = 70 '+ Roll(50)
         creatureHealth = creatureMaxHealth
-        creatureStrength = 70 + Roll(50)
-        creatureInitiative = 70 + Roll(50)
-        creatureIntelligence = 70 + Roll(50)
-        creatureWisdom = 70 + Roll(50)
-        creatureDexterity = 70 + Roll(50)
+        creatureStrength = 70 '+ Roll(50)
+        creatureInitiative = 70 '+ Roll(50)
+        creatureIntelligence = 70 '+ Roll(50)
+        creatureWisdom = 70 '+ Roll(50)
+        creatureDexterity = 70 '+ Roll(50)
         creatureOwner = currentPlayer
     End Sub
 
@@ -69,9 +69,9 @@
         creatureOwner = currentPlayer
     End Sub
 
-    Public Sub New(id As Integer, row As GameDatabaseDataSet.StaticCreaturesRow)
+    Public Sub New(id As Integer, name As String, row As GameDatabaseDataSet.StaticCreaturesRow)
         creatureid = id
-        creatureName = row.name
+        creatureName = name
         creatureSpecies = row("species")
         creatureMaxHealth = row.maxHealth
         creatureHealth = row("health")
@@ -83,7 +83,6 @@
         creatureIntelligence = row("intelligence")
         creatureWisdom = row("wisdom")
         creatureDexterity = row("dexterity")
-        creatureName = row("name")
         creatureOwner = currentPlayer
     End Sub
 
@@ -202,6 +201,16 @@
         statsString = statsString & "wis: " & creatureWisdom & vbCrLf
         statsString = statsString & "dex: " & creatureDexterity & vbCrLf
         Return statsString
+    End Function
+
+    Public Function statsCol() As Collection
+        Dim statCol As New Collection
+        statCol.Add(creatureStrength, "strength")
+        statCol.Add(creatureInitiative, "initiative")
+        statCol.Add(creatureIntelligence, "intelligence")
+        statCol.Add(creatureWisdom, "wisdom")
+        statCol.Add(creatureDexterity, "dexterity")
+        Return statCol
     End Function
 
     Public Overloads Overrides Function Equals(creature) As Boolean

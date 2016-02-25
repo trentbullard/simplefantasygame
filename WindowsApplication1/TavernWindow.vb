@@ -52,24 +52,28 @@
 
     Private Sub tavernSlot1Hirebtn_Click(sender As Object, e As EventArgs) Handles tavernSlot1Hirebtn.Click
         If currentPlayer.SpendGold(currentTavernState.hires(0).level) Then
+            currentTavernState.hires(0).name = ProperCase(tavernSlot1Nametxt.Text)
             HireCreature(currentTavernState.hires(0), 1)
         End If
     End Sub
 
     Private Sub tavernSlot2Hirebtn_Click(sender As Object, e As EventArgs) Handles tavernSlot2Hirebtn.Click
         If currentPlayer.SpendGold(currentTavernState.hires(1).level) Then
+            currentTavernState.hires(1).name = tavernSlot2Nametxt.Text
             HireCreature(currentTavernState.hires(1), 2)
         End If
     End Sub
 
     Private Sub tavernSlot3Hirebtn_Click(sender As Object, e As EventArgs) Handles tavernSlot3Hirebtn.Click
         If currentPlayer.SpendGold(currentTavernState.hires(2).level) Then
+            currentTavernState.hires(2).name = tavernSlot3Nametxt.Text
             HireCreature(currentTavernState.hires(2), 3)
         End If
     End Sub
 
     Private Sub tavernSlot4Hirebtn_Click(sender As Object, e As EventArgs) Handles tavernSlot4Hirebtn.Click
         If currentPlayer.SpendGold(currentTavernState.hires(3).level) Then
+            currentTavernState.hires(3).name = tavernSlot4Nametxt.Text
             HireCreature(currentTavernState.hires(3), 4)
         End If
     End Sub
@@ -272,30 +276,6 @@
 
     Private Sub townbtn_Click(sender As Object, e As EventArgs) Handles townbtn.Click
         Me.Close()
-    End Sub
-
-    Private Sub tavernSlot1Nametxt_TextChanged(sender As Object, e As EventArgs) Handles tavernSlot1Nametxt.TextChanged
-        If currentTavernState.hires(0) IsNot Nothing Then
-            currentTavernState.hires(0).name = tavernSlot1Nametxt.Text
-        End If
-    End Sub
-
-    Private Sub tavernSlot2Nametxt_TextChanged(sender As Object, e As EventArgs) Handles tavernSlot2Nametxt.TextChanged
-        If currentTavernState.hires(1) IsNot Nothing Then
-            currentTavernState.hires(1).name = tavernSlot2Nametxt.Text
-        End If
-    End Sub
-
-    Private Sub tavernSlot3Nametxt_TextChanged(sender As Object, e As EventArgs) Handles tavernSlot3Nametxt.TextChanged
-        If currentTavernState.hires(2) IsNot Nothing Then
-            currentTavernState.hires(2).name = tavernSlot3Nametxt.Text
-        End If
-    End Sub
-
-    Private Sub tavernSlot4Nametxt_TextChanged(sender As Object, e As EventArgs) Handles tavernSlot4Nametxt.TextChanged
-        If currentTavernState.hires(3) IsNot Nothing Then
-            currentTavernState.hires(3).name = tavernSlot4Nametxt.Text
-        End If
     End Sub
 
     Private Sub innbtn_Click(sender As Object, e As EventArgs) Handles innbtn.Click

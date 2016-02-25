@@ -1,16 +1,16 @@
 ﻿Module Lists
-    Dim namesList = New String() {"trent", "john", "matthew", "mark", "luke", "george", "ronald", "paul", "isaac", "abraham", "jacob", "will",
+    Public namesList = New String() {"trent", "john", "matthew", "mark", "luke", "george", "ronald", "paul", "isaac", "abraham", "jacob", "will",
                                   "sarah", "courtney", "jennifer", "tina", "kristina", "anna", "constance"}
-    Dim speciesList = New String() {"human", "elf", "orc", "dwarf", "halfling", "ogre", "troll", "goblin", "kobold", "gnome"}
-    Dim smallSpecies = New String() {"dwarf", "halfling", "goblin", "gnome"}
-    Dim middleSpecies = New String() {"human", "elf", "kobold"}
-    Dim largeSpecies = New String() {"orc", "ogre", "troll"}
-    Dim goodSpecies = New String() {"elf", "dwarf", "halfling", "gnome", "human", "ogre"}
-    Dim evilSpecies = New String() {"orc", "troll", "goblin", "kobold"}
-    Dim statList = New String() {"dexterity", "wisdom", "strength", "initiative", "intelligence", "armor", "maxHealth", "health"}
-    Dim weaponNames = New String() {"sword", "shield", "hammer", "staff", "wand", "scepter", "tome", "crossbow", "bow", "spear"}
-    Dim armorNames = New String() {"helmet", "cap", "shoulderpads", "spaulders", "sleeves", "gloves", "gauntlets", "cape", "tunic", "breastplate", "belt", "pants", "shinguards", "greaves", "shoes", "boots"}
-    Dim resistanceNames = New String() {"fire", "ice", "mental", "death", "lightning", "nature", "divine"}
+    Public speciesList = New String() {"human", "elf", "orc", "dwarf", "halfling", "ogre", "troll", "goblin", "kobold", "gnome"}
+    Public smallSpecies = New String() {"dwarf", "halfling", "goblin", "gnome"}
+    Public middleSpecies = New String() {"human", "elf", "kobold"}
+    Public largeSpecies = New String() {"orc", "ogre", "troll"}
+    Public goodSpecies = New String() {"elf", "dwarf", "halfling", "gnome", "human", "ogre"}
+    Public evilSpecies = New String() {"orc", "troll", "goblin", "kobold"}
+    Public statList = New String() {"dexterity", "wisdom", "strength", "initiative", "intelligence", "armor", "maxHealth", "health"}
+    Public weaponNames = New String() {"sword", "shield", "hammer", "staff", "wand", "scepter", "tome", "crossbow", "bow", "spear"}
+    Public armorNames = New String() {"helmet", "cap", "shoulderpads", "spaulders", "sleeves", "gloves", "gauntlets", "cape", "tunic", "breastplate", "belt", "pants", "shinguards", "greaves", "shoes", "boots"}
+    Public resistanceNames = New String() {"fire", "ice", "mental", "death", "lightning", "nature", "divine"}
 
     Public Function getCreatureName() As String
         Return namesList(Roll(19) - 1)

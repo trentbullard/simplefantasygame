@@ -98,7 +98,7 @@
             'delete playerCreature record
             'Dim oldRow As GameDatabaseDataSet.PlayerCreaturesRow = GameDatabaseDataSet.PlayerCreatures.FindByid(creature.id)
             'GameDatabaseDataSet.PlayerCreatures.RemovePlayerCreaturesRow(oldRow)
-
+            'me.close()
         End If
     End Sub
 End Class

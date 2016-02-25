@@ -13,7 +13,7 @@
         weaponIsRanged = False
         weaponIsUnique = False
         weaponSlotsPossible = "1 2"
-        weaponWearableBy = getSpecies()
+        weaponWearableBy = If(Roll(2) = 1, "gnome", "human")
 
         Select Case MyBase.name
             Case "staff"
@@ -46,13 +46,13 @@
             MyBase.name = getCreatureName() & "'s " & MyBase.name
         End If
 
-        Dim stat1 = getCoreStatName()
-        weaponMinStats.Add(50 + Roll(50), stat1)
-        Dim stat2 As String = stat1
-        Do Until stat2 <> stat1
-            stat2 = getCoreStatName()
-        Loop
-        weaponMinStats.Add(50 + Roll(50), stat2)
+        Dim stat1 = If(Roll(2) = 1, "strength", "intelligence")
+        weaponMinStats.Add(60 + Roll(20), stat1)
+        Dim stat2 As String = If(Roll(2) = 1, "dexterity", "wisdom")
+        'Do Until stat2 <> stat1
+        '    stat2 = getCoreStatName()
+        'Loop
+        weaponMinStats.Add(60 + Roll(20), stat2)
     End Sub
 
     Public Sub New(id As Integer)

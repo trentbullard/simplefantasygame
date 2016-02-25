@@ -21,8 +21,8 @@
         RefreshQuest()
 
         For Each row As GameDatabaseDataSet.PlayerCreaturesRow In GameDatabaseDataSet.PlayerCreatures
-            Dim creation As New Creature(row.id, GameDatabaseDataSet.StaticCreatures.FindByid(row.creatureid))
-            creation.name = row.name
+            Dim creation As New Creature(row.id, row.name, GameDatabaseDataSet.StaticCreatures.FindByid(row.creatureid))
+            MsgBox(creation.name)
             creaturelst.Items.Add(creation.ToString)
             creatures.Add(creation, creaturelst.Items.IndexOf(creation.ToString))
         Next
@@ -121,8 +121,7 @@
         PlayerWeaponsTableAdapter.FillByPlayerStateid(GameDatabaseDataSet.PlayerWeapons, currentState.id)
         PlayerArmorTableAdapter.FillByPlayerStateid(GameDatabaseDataSet.PlayerArmor, currentState.id)
         For Each row As GameDatabaseDataSet.PlayerCreaturesRow In GameDatabaseDataSet.PlayerCreatures
-            Dim creation As New Creature(row.id, GameDatabaseDataSet.StaticCreatures.FindByid(row.creatureid))
-            creation.name = row.name
+            Dim creation As New Creature(row.id, row.name, GameDatabaseDataSet.StaticCreatures.FindByid(row.creatureid))
             creaturelst.Items.Add(creation.ToString)
             creatures.Add(creation, creaturelst.Items.IndexOf(creation.ToString))
         Next
