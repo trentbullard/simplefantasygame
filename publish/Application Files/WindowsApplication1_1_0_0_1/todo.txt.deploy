@@ -1,6 +1,0 @@
-﻿create npc class
-	inherit from creature class
-create mob class
-	inherit from creature class
-create automation button
-	implement to automate battles
