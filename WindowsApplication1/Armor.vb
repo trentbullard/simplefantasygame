@@ -163,6 +163,12 @@
         End Get
     End Property
 
+    Public ReadOnly Property wearableBy As String
+        Get
+            Return armorWearableBy
+        End Get
+    End Property
+
     Public ReadOnly Property isUnique As Boolean
         Get
             Return armorIsUnique

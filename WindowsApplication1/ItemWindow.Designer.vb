@@ -107,6 +107,7 @@ Partial Class ItemWindow
         Me.detailstxt.ReadOnly = True
         Me.detailstxt.Size = New System.Drawing.Size(148, 142)
         Me.detailstxt.TabIndex = 0
+        Me.detailstxt.TabStop = False
         '
         'detailslbl
         '
@@ -132,7 +133,7 @@ Partial Class ItemWindow
         Me.equipbtn.Location = New System.Drawing.Point(94, 176)
         Me.equipbtn.Name = "equipbtn"
         Me.equipbtn.Size = New System.Drawing.Size(75, 23)
-        Me.equipbtn.TabIndex = 3
+        Me.equipbtn.TabIndex = 0
         Me.equipbtn.Text = "apply"
         Me.equipbtn.UseVisualStyleBackColor = True
         '

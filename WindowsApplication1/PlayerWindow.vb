@@ -27,12 +27,12 @@
             creatures.Add(creation, creaturelst.Items.IndexOf(creation.ToString))
         Next
         For Each row As GameDatabaseDataSet.PlayerWeaponsRow In GameDatabaseDataSet.PlayerWeapons
-            Dim weapon As New Weapon(GameDatabaseDataSet.StaticWeapons.FindByid(row.weaponid))
+            Dim weapon As New Weapon(row.id, GameDatabaseDataSet.StaticWeapons.FindByid(row.weaponid))
             itemslst.Items.Add(weapon.ToString)
             items.Add(weapon, itemslst.Items.IndexOf(weapon.ToString))
         Next
         For Each row As GameDatabaseDataSet.PlayerArmorRow In GameDatabaseDataSet.PlayerArmor
-            Dim armor As New Armor(GameDatabaseDataSet.StaticArmor.FindByid(row.armorid))
+            Dim armor As New Armor(row.id, GameDatabaseDataSet.StaticArmor.FindByid(row.armorid))
             itemslst.Items.Add(armor.ToString)
             items.Add(armor, itemslst.Items.IndexOf(armor.ToString))
         Next
@@ -50,9 +50,15 @@
     Private Sub itemslst_Click(sender As Object, e As EventArgs) Handles itemslst.Click
         If itemslst.SelectedIndices.Count = 0 Then Exit Sub
         If itemslst.SelectedIndices(0) = -1 Then Exit Sub
+        Dim index As String = CStr(itemslst.SelectedIndex)
 
-        currentState.itemwindow = New ItemWindow(items(CStr(itemslst.SelectedIndex)))
-        currentState.itemwindow.ShowDialog(Me)
+        Dim item As ItemWindow
+        item = New ItemWindow(items(index))
+        Dim result As DialogResult = item.ShowDialog()
+        If result = DialogResult.Yes Then
+            item.creature.Equip(items(index))
+        End If
+        item.Close()
     End Sub
 
     Private Sub NameToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NameToolStripMenuItem.Click

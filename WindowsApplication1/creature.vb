@@ -192,6 +192,18 @@
         End Get
     End Property
 
+    Public Function stats() As String
+        Dim statsString As String = Nothing
+        statsString = statsString & "hp: " & creatureMaxHealth & vbCrLf
+        statsString = statsString & "armor: " & creatureArmor & vbCrLf
+        statsString = statsString & "str: " & creatureStrength & vbCrLf
+        statsString = statsString & "ini: " & creatureInitiative & vbCrLf
+        statsString = statsString & "int: " & creatureIntelligence & vbCrLf
+        statsString = statsString & "wis: " & creatureWisdom & vbCrLf
+        statsString = statsString & "dex: " & creatureDexterity & vbCrLf
+        Return statsString
+    End Function
+
     Public Overloads Overrides Function Equals(creature) As Boolean
         If creatureid = creature.id Then
             Return True
@@ -223,7 +235,13 @@
     End Sub
 
     Public Sub Equip(equipment)
-        'TODO add code that reflects this simplification: creatureAttribute += equipment.attribute
+        creatureMaxHealth += If(equipment.stats.Contains("maxHealth"), equipment.stats.Item("maxHealth"), Nothing)
+        creatureArmor += If(equipment.stats.Contains("armor"), equipment.stats.Item("armor"), Nothing)
+        creatureStrength += If(equipment.stats.Contains("strength"), equipment.stats.Item("strength"), Nothing)
+        creatureInitiative += If(equipment.stats.Contains("initiative"), equipment.stats.Item("initiative"), Nothing)
+        creatureIntelligence += If(equipment.stats.Contains("intelligence"), equipment.stats.Item("intelligence"), Nothing)
+        creatureWisdom += If(equipment.stats.Contains("wisdom"), equipment.stats.Item("wisdom"), Nothing)
+        creatureDexterity += If(equipment.stats.Contains("dexterity"), equipment.stats.Item("dexterity"), Nothing)
     End Sub
 
     Public Sub Buff(skill) 'TODO skill as Skill
