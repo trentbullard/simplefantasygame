@@ -213,6 +213,14 @@
         Return statCol
     End Function
 
+    Public Function CanDualWield() As Boolean
+        If creatureDexterity >= 100 Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
     Public Overloads Overrides Function Equals(creature) As Boolean
         If creatureid = creature.id Then
             Return True
@@ -251,6 +259,16 @@
         creatureIntelligence += If(equipment.stats.Contains("intelligence"), equipment.stats.Item("intelligence"), Nothing)
         creatureWisdom += If(equipment.stats.Contains("wisdom"), equipment.stats.Item("wisdom"), Nothing)
         creatureDexterity += If(equipment.stats.Contains("dexterity"), equipment.stats.Item("dexterity"), Nothing)
+    End Sub
+
+    Public Sub Unequip(equipment)
+        creatureMaxHealth -= If(equipment.stats.Contains("maxHealth"), equipment.stats.Item("maxHealth"), Nothing)
+        creatureArmor -= If(equipment.stats.Contains("armor"), equipment.stats.Item("armor"), Nothing)
+        creatureStrength -= If(equipment.stats.Contains("strength"), equipment.stats.Item("strength"), Nothing)
+        creatureInitiative -= If(equipment.stats.Contains("initiative"), equipment.stats.Item("initiative"), Nothing)
+        creatureIntelligence -= If(equipment.stats.Contains("intelligence"), equipment.stats.Item("intelligence"), Nothing)
+        creatureWisdom -= If(equipment.stats.Contains("wisdom"), equipment.stats.Item("wisdom"), Nothing)
+        creatureDexterity -= If(equipment.stats.Contains("dexterity"), equipment.stats.Item("dexterity"), Nothing)
     End Sub
 
     Public Sub Buff(skill) 'TODO skill as Skill

@@ -8,7 +8,7 @@
     Public goodSpecies = New String() {"elf", "dwarf", "halfling", "gnome", "human", "ogre"}
     Public evilSpecies = New String() {"orc", "troll", "goblin", "kobold"}
     Public statList = New String() {"dexterity", "wisdom", "strength", "initiative", "intelligence", "armor", "maxHealth", "health"}
-    Public weaponNames = New String() {"sword", "shield", "hammer", "staff", "wand", "scepter", "tome", "crossbow", "bow", "spear"}
+    Public weaponNames = New String() {"sword", "shield", "hammer", "staff", "wand", "scepter", "tome", "crossbow", "bow", "spear", "axe"}
     Public armorNames = New String() {"helmet", "cap", "shoulderpads", "spaulders", "sleeves", "gloves", "gauntlets", "cape", "tunic", "breastplate", "belt", "pants", "shinguards", "greaves", "shoes", "boots"}
     Public resistanceNames = New String() {"fire", "ice", "mental", "death", "lightning", "nature", "divine"}
 
@@ -53,7 +53,7 @@
     End Function
 
     Public Function getWeaponName() As String
-        Return weaponNames(Roll(10) - 1)
+        Return weaponNames(Roll(11) - 1)
     End Function
 
     Public Function getArmorName() As String

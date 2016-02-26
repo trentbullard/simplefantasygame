@@ -22,7 +22,6 @@
 
         For Each row As GameDatabaseDataSet.PlayerCreaturesRow In GameDatabaseDataSet.PlayerCreatures
             Dim creation As New Creature(row.id, row.name, GameDatabaseDataSet.StaticCreatures.FindByid(row.creatureid))
-            MsgBox(creation.name)
             creaturelst.Items.Add(creation.ToString)
             creatures.Add(creation, creaturelst.Items.IndexOf(creation.ToString))
         Next
@@ -57,6 +56,17 @@
         Dim result As DialogResult = item.ShowDialog()
         If result = DialogResult.Yes Then
             item.creature.Equip(items(index))
+            If items(index).GetType = (New Armor).GetType Then
+                GameDatabaseDataSet.PlayerArmor.FindByid(items(index).id).wearerid = item.creature.id
+                GameDatabaseDataSet.PlayerArmor.FindByid(items(index).id).slotWorn = items(index).slots
+                PlayerArmorTableAdapter.Update(GameDatabaseDataSet.PlayerArmor)
+            ElseIf items(index).GetType = (New Weapon).GetType Then
+                GameDatabaseDataSet.PlayerWeapons.FindByid(items(index).id).wearerid = item.creature.id
+                GameDatabaseDataSet.PlayerWeapons.FindByid(items(index).id).slotWorn = items(index).slots(0)
+                PlayerWeaponsTableAdapter.Update(GameDatabaseDataSet.PlayerWeapons)
+            Else
+                'TODO implement consumables, jewelry, and augments
+            End If
         End If
         item.Close()
     End Sub

@@ -355,6 +355,19 @@
     <Content Include="planning\gameplay flow chart.png" />
     <Content Include="planning\database diagram.png" />
     <None Include="Resources\megaman_jump.png" />
+    <None Include="Resources\spaulders.png" />
+    <None Include="Resources\helmet.png" />
+    <None Include="Resources\axe.png" />
+    <None Include="Resources\belt.jpg" />
+    <None Include="Resources\boots.png" />
+    <None Include="Resources\breastplate.png" />
+    <None Include="Resources\cape.png" />
+    <None Include="Resources\gauntlet.png" />
+    <None Include="Resources\greaves.jpg" />
+    <None Include="Resources\helmet1.png" />
+    <None Include="Resources\pants.png" />
+    <None Include="Resources\sleeves.jpg" />
+    <None Include="Resources\sword.png" />
     <Content Include="todo.txt" />
   </ItemGroup>
   <ItemGroup>

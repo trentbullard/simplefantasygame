@@ -51,19 +51,36 @@ Partial Class CreatureWindow
         Me.classlbl = New System.Windows.Forms.LinkLabel()
         Me.mainEquipmentpnl = New System.Windows.Forms.TableLayoutPanel()
         Me.leftEquipmentpnl = New System.Windows.Forms.TableLayoutPanel()
-        Me.primarylbl = New System.Windows.Forms.Label()
-        Me.shoulderslbl = New System.Windows.Forms.Label()
-        Me.sleeveslbl = New System.Windows.Forms.Label()
-        Me.handslbl = New System.Windows.Forms.Label()
-        Me.feetlbl = New System.Windows.Forms.Label()
         Me.headpic = New System.Windows.Forms.PictureBox()
+        Me.headlbl = New System.Windows.Forms.LinkLabel()
+        Me.shoulderslbl = New System.Windows.Forms.LinkLabel()
+        Me.sleevelbl = New System.Windows.Forms.LinkLabel()
+        Me.handslbl = New System.Windows.Forms.LinkLabel()
+        Me.feetlbl = New System.Windows.Forms.LinkLabel()
+        Me.primarylbl = New System.Windows.Forms.LinkLabel()
+        Me.shoulderspic = New System.Windows.Forms.PictureBox()
+        Me.sleevespic = New System.Windows.Forms.PictureBox()
+        Me.handspic = New System.Windows.Forms.PictureBox()
+        Me.feetpic = New System.Windows.Forms.PictureBox()
+        Me.primarypic = New System.Windows.Forms.PictureBox()
         Me.rightEquipmentpnl = New System.Windows.Forms.TableLayoutPanel()
-        Me.secondarylbl = New System.Windows.Forms.Label()
-        Me.backlbl = New System.Windows.Forms.Label()
-        Me.chestlbl = New System.Windows.Forms.Label()
-        Me.waistlbl = New System.Windows.Forms.Label()
-        Me.legslbl = New System.Windows.Forms.Label()
-        Me.shinslbl = New System.Windows.Forms.Label()
+        Me.backlbl = New System.Windows.Forms.LinkLabel()
+        Me.chestlbl = New System.Windows.Forms.LinkLabel()
+        Me.waistlbl = New System.Windows.Forms.LinkLabel()
+        Me.legslbl = New System.Windows.Forms.LinkLabel()
+        Me.shinslbl = New System.Windows.Forms.LinkLabel()
+        Me.secondarylbl = New System.Windows.Forms.LinkLabel()
+        Me.backpic = New System.Windows.Forms.PictureBox()
+        Me.chestpic = New System.Windows.Forms.PictureBox()
+        Me.waistpic = New System.Windows.Forms.PictureBox()
+        Me.legspic = New System.Windows.Forms.PictureBox()
+        Me.shinspic = New System.Windows.Forms.PictureBox()
+        Me.secondarypic = New System.Windows.Forms.PictureBox()
+        Me.infopnl = New System.Windows.Forms.Panel()
+        Me.skillbtn = New System.Windows.Forms.Button()
+        Me.playerExperiencelbl = New System.Windows.Forms.Label()
+        Me.expbar = New System.Windows.Forms.ProgressBar()
+        Me.dismissbtn = New System.Windows.Forms.Button()
         Me.headtip = New System.Windows.Forms.ToolTip(Me.components)
         Me.GameDatabaseDataSet = New simplefantasygame.GameDatabaseDataSet()
         Me.PlayerCreaturesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -83,18 +100,35 @@ Partial Class CreatureWindow
         Me.PlayerArmorTableAdapter = New simplefantasygame.GameDatabaseDataSetTableAdapters.PlayerArmorTableAdapter()
         Me.PlayerWeaponsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PlayerWeaponsTableAdapter = New simplefantasygame.GameDatabaseDataSetTableAdapters.PlayerWeaponsTableAdapter()
-        Me.headlbl = New System.Windows.Forms.LinkLabel()
-        Me.infopnl = New System.Windows.Forms.Panel()
-        Me.expbar = New System.Windows.Forms.ProgressBar()
-        Me.playerExperiencelbl = New System.Windows.Forms.Label()
-        Me.skillbtn = New System.Windows.Forms.Button()
-        Me.dismissbtn = New System.Windows.Forms.Button()
+        Me.shoulderstip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.sleevestip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.handstip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.feettip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.primarytip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.backtip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.chesttip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.waisttip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.legstip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.shinstip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.secondarytip = New System.Windows.Forms.ToolTip(Me.components)
         Me.mainLayoutpnl.SuspendLayout()
         Me.statspnl.SuspendLayout()
         Me.mainEquipmentpnl.SuspendLayout()
         Me.leftEquipmentpnl.SuspendLayout()
         CType(Me.headpic, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.shoulderspic, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.sleevespic, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.handspic, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.feetpic, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.primarypic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.rightEquipmentpnl.SuspendLayout()
+        CType(Me.backpic, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chestpic, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.waistpic, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.legspic, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.shinspic, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.secondarypic, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.infopnl.SuspendLayout()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayerCreaturesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StaticArmorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -104,7 +138,6 @@ Partial Class CreatureWindow
         CType(Me.StaticWeaponsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayerArmorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PlayerWeaponsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.infopnl.SuspendLayout()
         Me.SuspendLayout()
         '
         'mainLayoutpnl
@@ -455,13 +488,18 @@ Partial Class CreatureWindow
         Me.leftEquipmentpnl.ColumnCount = 2
         Me.leftEquipmentpnl.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.leftEquipmentpnl.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.leftEquipmentpnl.Controls.Add(Me.primarylbl, 0, 5)
-        Me.leftEquipmentpnl.Controls.Add(Me.shoulderslbl, 0, 1)
-        Me.leftEquipmentpnl.Controls.Add(Me.sleeveslbl, 0, 2)
-        Me.leftEquipmentpnl.Controls.Add(Me.handslbl, 0, 3)
-        Me.leftEquipmentpnl.Controls.Add(Me.feetlbl, 0, 4)
         Me.leftEquipmentpnl.Controls.Add(Me.headpic, 1, 0)
         Me.leftEquipmentpnl.Controls.Add(Me.headlbl, 0, 0)
+        Me.leftEquipmentpnl.Controls.Add(Me.shoulderslbl, 0, 1)
+        Me.leftEquipmentpnl.Controls.Add(Me.sleevelbl, 0, 2)
+        Me.leftEquipmentpnl.Controls.Add(Me.handslbl, 0, 3)
+        Me.leftEquipmentpnl.Controls.Add(Me.feetlbl, 0, 4)
+        Me.leftEquipmentpnl.Controls.Add(Me.primarylbl, 0, 5)
+        Me.leftEquipmentpnl.Controls.Add(Me.shoulderspic, 1, 1)
+        Me.leftEquipmentpnl.Controls.Add(Me.sleevespic, 1, 2)
+        Me.leftEquipmentpnl.Controls.Add(Me.handspic, 1, 3)
+        Me.leftEquipmentpnl.Controls.Add(Me.feetpic, 1, 4)
+        Me.leftEquipmentpnl.Controls.Add(Me.primarypic, 1, 5)
         Me.leftEquipmentpnl.Dock = System.Windows.Forms.DockStyle.Fill
         Me.leftEquipmentpnl.Location = New System.Drawing.Point(3, 3)
         Me.leftEquipmentpnl.Name = "leftEquipmentpnl"
@@ -475,16 +513,40 @@ Partial Class CreatureWindow
         Me.leftEquipmentpnl.Size = New System.Drawing.Size(162, 414)
         Me.leftEquipmentpnl.TabIndex = 0
         '
-        'primarylbl
+        'headpic
         '
-        Me.primarylbl.AutoSize = True
-        Me.primarylbl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.primarylbl.Location = New System.Drawing.Point(4, 341)
-        Me.primarylbl.Name = "primarylbl"
-        Me.primarylbl.Size = New System.Drawing.Size(73, 72)
-        Me.primarylbl.TabIndex = 0
-        Me.primarylbl.Text = "main hand"
-        Me.primarylbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.headpic.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.headpic.InitialImage = Nothing
+        Me.headpic.Location = New System.Drawing.Point(84, 4)
+        Me.headpic.Name = "headpic"
+        Me.headpic.Size = New System.Drawing.Size(74, 61)
+        Me.headpic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.headpic.TabIndex = 6
+        Me.headpic.TabStop = False
+        Me.sleevestip.SetToolTip(Me.headpic, "equip an item")
+        Me.primarytip.SetToolTip(Me.headpic, "equip an item")
+        Me.feettip.SetToolTip(Me.headpic, "equip an item")
+        Me.chesttip.SetToolTip(Me.headpic, "equip an item")
+        Me.backtip.SetToolTip(Me.headpic, "equip an item")
+        Me.legstip.SetToolTip(Me.headpic, "equip an item")
+        Me.waisttip.SetToolTip(Me.headpic, "equip an item")
+        Me.handstip.SetToolTip(Me.headpic, "equip an item")
+        Me.shinstip.SetToolTip(Me.headpic, "equip an item")
+        Me.shoulderstip.SetToolTip(Me.headpic, "equip an item")
+        Me.secondarytip.SetToolTip(Me.headpic, "equip an item")
+        Me.headtip.SetToolTip(Me.headpic, "equip an item")
+        '
+        'headlbl
+        '
+        Me.headlbl.AutoSize = True
+        Me.headlbl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.headlbl.Location = New System.Drawing.Point(4, 1)
+        Me.headlbl.Name = "headlbl"
+        Me.headlbl.Size = New System.Drawing.Size(73, 67)
+        Me.headlbl.TabIndex = 7
+        Me.headlbl.TabStop = True
+        Me.headlbl.Text = "head"
+        Me.headlbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'shoulderslbl
         '
@@ -493,20 +555,22 @@ Partial Class CreatureWindow
         Me.shoulderslbl.Location = New System.Drawing.Point(4, 69)
         Me.shoulderslbl.Name = "shoulderslbl"
         Me.shoulderslbl.Size = New System.Drawing.Size(73, 67)
-        Me.shoulderslbl.TabIndex = 2
+        Me.shoulderslbl.TabIndex = 8
+        Me.shoulderslbl.TabStop = True
         Me.shoulderslbl.Text = "shoulders"
         Me.shoulderslbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'sleeveslbl
+        'sleevelbl
         '
-        Me.sleeveslbl.AutoSize = True
-        Me.sleeveslbl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.sleeveslbl.Location = New System.Drawing.Point(4, 137)
-        Me.sleeveslbl.Name = "sleeveslbl"
-        Me.sleeveslbl.Size = New System.Drawing.Size(73, 67)
-        Me.sleeveslbl.TabIndex = 3
-        Me.sleeveslbl.Text = "sleeves"
-        Me.sleeveslbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.sleevelbl.AutoSize = True
+        Me.sleevelbl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.sleevelbl.Location = New System.Drawing.Point(4, 137)
+        Me.sleevelbl.Name = "sleevelbl"
+        Me.sleevelbl.Size = New System.Drawing.Size(73, 67)
+        Me.sleevelbl.TabIndex = 9
+        Me.sleevelbl.TabStop = True
+        Me.sleevelbl.Text = "sleeves"
+        Me.sleevelbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'handslbl
         '
@@ -515,7 +579,8 @@ Partial Class CreatureWindow
         Me.handslbl.Location = New System.Drawing.Point(4, 205)
         Me.handslbl.Name = "handslbl"
         Me.handslbl.Size = New System.Drawing.Size(73, 67)
-        Me.handslbl.TabIndex = 4
+        Me.handslbl.TabIndex = 10
+        Me.handslbl.TabStop = True
         Me.handslbl.Text = "hands"
         Me.handslbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -526,22 +591,72 @@ Partial Class CreatureWindow
         Me.feetlbl.Location = New System.Drawing.Point(4, 273)
         Me.feetlbl.Name = "feetlbl"
         Me.feetlbl.Size = New System.Drawing.Size(73, 67)
-        Me.feetlbl.TabIndex = 5
+        Me.feetlbl.TabIndex = 11
+        Me.feetlbl.TabStop = True
         Me.feetlbl.Text = "feet"
         Me.feetlbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'headpic
+        'primarylbl
         '
-        Me.headpic.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.headpic.Image = Global.simplefantasygame.My.Resources.Resources.megaman_jump
-        Me.headpic.InitialImage = Global.simplefantasygame.My.Resources.Resources.megaman_jump
-        Me.headpic.Location = New System.Drawing.Point(84, 4)
-        Me.headpic.Name = "headpic"
-        Me.headpic.Size = New System.Drawing.Size(74, 61)
-        Me.headpic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.headpic.TabIndex = 6
-        Me.headpic.TabStop = False
-        Me.headtip.SetToolTip(Me.headpic, "Info" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "more info" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "texty text")
+        Me.primarylbl.AutoSize = True
+        Me.primarylbl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.primarylbl.Location = New System.Drawing.Point(4, 341)
+        Me.primarylbl.Name = "primarylbl"
+        Me.primarylbl.Size = New System.Drawing.Size(73, 72)
+        Me.primarylbl.TabIndex = 12
+        Me.primarylbl.TabStop = True
+        Me.primarylbl.Text = "main hand"
+        Me.primarylbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'shoulderspic
+        '
+        Me.shoulderspic.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.shoulderspic.Location = New System.Drawing.Point(84, 72)
+        Me.shoulderspic.Name = "shoulderspic"
+        Me.shoulderspic.Size = New System.Drawing.Size(74, 61)
+        Me.shoulderspic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.shoulderspic.TabIndex = 13
+        Me.shoulderspic.TabStop = False
+        '
+        'sleevespic
+        '
+        Me.sleevespic.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.sleevespic.Location = New System.Drawing.Point(84, 140)
+        Me.sleevespic.Name = "sleevespic"
+        Me.sleevespic.Size = New System.Drawing.Size(74, 61)
+        Me.sleevespic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.sleevespic.TabIndex = 14
+        Me.sleevespic.TabStop = False
+        '
+        'handspic
+        '
+        Me.handspic.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.handspic.Location = New System.Drawing.Point(84, 208)
+        Me.handspic.Name = "handspic"
+        Me.handspic.Size = New System.Drawing.Size(74, 61)
+        Me.handspic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.handspic.TabIndex = 15
+        Me.handspic.TabStop = False
+        '
+        'feetpic
+        '
+        Me.feetpic.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.feetpic.Location = New System.Drawing.Point(84, 276)
+        Me.feetpic.Name = "feetpic"
+        Me.feetpic.Size = New System.Drawing.Size(74, 61)
+        Me.feetpic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.feetpic.TabIndex = 16
+        Me.feetpic.TabStop = False
+        '
+        'primarypic
+        '
+        Me.primarypic.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.primarypic.Location = New System.Drawing.Point(84, 344)
+        Me.primarypic.Name = "primarypic"
+        Me.primarypic.Size = New System.Drawing.Size(74, 66)
+        Me.primarypic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.primarypic.TabIndex = 17
+        Me.primarypic.TabStop = False
         '
         'rightEquipmentpnl
         '
@@ -549,12 +664,18 @@ Partial Class CreatureWindow
         Me.rightEquipmentpnl.ColumnCount = 2
         Me.rightEquipmentpnl.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.rightEquipmentpnl.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.rightEquipmentpnl.Controls.Add(Me.secondarylbl, 1, 5)
         Me.rightEquipmentpnl.Controls.Add(Me.backlbl, 1, 0)
         Me.rightEquipmentpnl.Controls.Add(Me.chestlbl, 1, 1)
         Me.rightEquipmentpnl.Controls.Add(Me.waistlbl, 1, 2)
         Me.rightEquipmentpnl.Controls.Add(Me.legslbl, 1, 3)
         Me.rightEquipmentpnl.Controls.Add(Me.shinslbl, 1, 4)
+        Me.rightEquipmentpnl.Controls.Add(Me.secondarylbl, 1, 5)
+        Me.rightEquipmentpnl.Controls.Add(Me.backpic, 0, 0)
+        Me.rightEquipmentpnl.Controls.Add(Me.chestpic, 0, 1)
+        Me.rightEquipmentpnl.Controls.Add(Me.waistpic, 0, 2)
+        Me.rightEquipmentpnl.Controls.Add(Me.legspic, 0, 3)
+        Me.rightEquipmentpnl.Controls.Add(Me.shinspic, 0, 4)
+        Me.rightEquipmentpnl.Controls.Add(Me.secondarypic, 0, 5)
         Me.rightEquipmentpnl.Dock = System.Windows.Forms.DockStyle.Fill
         Me.rightEquipmentpnl.Location = New System.Drawing.Point(390, 3)
         Me.rightEquipmentpnl.Name = "rightEquipmentpnl"
@@ -568,17 +689,6 @@ Partial Class CreatureWindow
         Me.rightEquipmentpnl.Size = New System.Drawing.Size(164, 414)
         Me.rightEquipmentpnl.TabIndex = 1
         '
-        'secondarylbl
-        '
-        Me.secondarylbl.AutoSize = True
-        Me.secondarylbl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.secondarylbl.Location = New System.Drawing.Point(85, 341)
-        Me.secondarylbl.Name = "secondarylbl"
-        Me.secondarylbl.Size = New System.Drawing.Size(75, 72)
-        Me.secondarylbl.TabIndex = 0
-        Me.secondarylbl.Text = "off-hand"
-        Me.secondarylbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
         'backlbl
         '
         Me.backlbl.AutoSize = True
@@ -586,7 +696,8 @@ Partial Class CreatureWindow
         Me.backlbl.Location = New System.Drawing.Point(85, 1)
         Me.backlbl.Name = "backlbl"
         Me.backlbl.Size = New System.Drawing.Size(75, 67)
-        Me.backlbl.TabIndex = 1
+        Me.backlbl.TabIndex = 6
+        Me.backlbl.TabStop = True
         Me.backlbl.Text = "back"
         Me.backlbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -597,7 +708,8 @@ Partial Class CreatureWindow
         Me.chestlbl.Location = New System.Drawing.Point(85, 69)
         Me.chestlbl.Name = "chestlbl"
         Me.chestlbl.Size = New System.Drawing.Size(75, 67)
-        Me.chestlbl.TabIndex = 2
+        Me.chestlbl.TabIndex = 7
+        Me.chestlbl.TabStop = True
         Me.chestlbl.Text = "chest"
         Me.chestlbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -608,7 +720,8 @@ Partial Class CreatureWindow
         Me.waistlbl.Location = New System.Drawing.Point(85, 137)
         Me.waistlbl.Name = "waistlbl"
         Me.waistlbl.Size = New System.Drawing.Size(75, 67)
-        Me.waistlbl.TabIndex = 3
+        Me.waistlbl.TabIndex = 8
+        Me.waistlbl.TabStop = True
         Me.waistlbl.Text = "waist"
         Me.waistlbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -619,7 +732,8 @@ Partial Class CreatureWindow
         Me.legslbl.Location = New System.Drawing.Point(85, 205)
         Me.legslbl.Name = "legslbl"
         Me.legslbl.Size = New System.Drawing.Size(75, 67)
-        Me.legslbl.TabIndex = 4
+        Me.legslbl.TabIndex = 9
+        Me.legslbl.TabStop = True
         Me.legslbl.Text = "legs"
         Me.legslbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -630,9 +744,132 @@ Partial Class CreatureWindow
         Me.shinslbl.Location = New System.Drawing.Point(85, 273)
         Me.shinslbl.Name = "shinslbl"
         Me.shinslbl.Size = New System.Drawing.Size(75, 67)
-        Me.shinslbl.TabIndex = 5
+        Me.shinslbl.TabIndex = 10
+        Me.shinslbl.TabStop = True
         Me.shinslbl.Text = "shins"
         Me.shinslbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'secondarylbl
+        '
+        Me.secondarylbl.AutoSize = True
+        Me.secondarylbl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.secondarylbl.Location = New System.Drawing.Point(85, 341)
+        Me.secondarylbl.Name = "secondarylbl"
+        Me.secondarylbl.Size = New System.Drawing.Size(75, 72)
+        Me.secondarylbl.TabIndex = 11
+        Me.secondarylbl.TabStop = True
+        Me.secondarylbl.Text = "off-hand"
+        Me.secondarylbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'backpic
+        '
+        Me.backpic.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.backpic.Location = New System.Drawing.Point(4, 4)
+        Me.backpic.Name = "backpic"
+        Me.backpic.Size = New System.Drawing.Size(74, 61)
+        Me.backpic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.backpic.TabIndex = 12
+        Me.backpic.TabStop = False
+        '
+        'chestpic
+        '
+        Me.chestpic.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.chestpic.Location = New System.Drawing.Point(4, 72)
+        Me.chestpic.Name = "chestpic"
+        Me.chestpic.Size = New System.Drawing.Size(74, 61)
+        Me.chestpic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.chestpic.TabIndex = 13
+        Me.chestpic.TabStop = False
+        '
+        'waistpic
+        '
+        Me.waistpic.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.waistpic.Location = New System.Drawing.Point(4, 140)
+        Me.waistpic.Name = "waistpic"
+        Me.waistpic.Size = New System.Drawing.Size(74, 61)
+        Me.waistpic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.waistpic.TabIndex = 14
+        Me.waistpic.TabStop = False
+        '
+        'legspic
+        '
+        Me.legspic.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.legspic.Location = New System.Drawing.Point(4, 208)
+        Me.legspic.Name = "legspic"
+        Me.legspic.Size = New System.Drawing.Size(74, 61)
+        Me.legspic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.legspic.TabIndex = 15
+        Me.legspic.TabStop = False
+        '
+        'shinspic
+        '
+        Me.shinspic.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.shinspic.Location = New System.Drawing.Point(4, 276)
+        Me.shinspic.Name = "shinspic"
+        Me.shinspic.Size = New System.Drawing.Size(74, 61)
+        Me.shinspic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.shinspic.TabIndex = 16
+        Me.shinspic.TabStop = False
+        '
+        'secondarypic
+        '
+        Me.secondarypic.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.secondarypic.Location = New System.Drawing.Point(4, 344)
+        Me.secondarypic.Name = "secondarypic"
+        Me.secondarypic.Size = New System.Drawing.Size(74, 66)
+        Me.secondarypic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.secondarypic.TabIndex = 17
+        Me.secondarypic.TabStop = False
+        '
+        'infopnl
+        '
+        Me.infopnl.Controls.Add(Me.skillbtn)
+        Me.infopnl.Controls.Add(Me.playerExperiencelbl)
+        Me.infopnl.Controls.Add(Me.expbar)
+        Me.infopnl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.infopnl.Location = New System.Drawing.Point(200, 431)
+        Me.infopnl.Name = "infopnl"
+        Me.infopnl.Size = New System.Drawing.Size(557, 85)
+        Me.infopnl.TabIndex = 2
+        '
+        'skillbtn
+        '
+        Me.skillbtn.Location = New System.Drawing.Point(0, 0)
+        Me.skillbtn.Name = "skillbtn"
+        Me.skillbtn.Size = New System.Drawing.Size(54, 23)
+        Me.skillbtn.TabIndex = 16
+        Me.skillbtn.Text = "skills"
+        Me.skillbtn.UseVisualStyleBackColor = True
+        '
+        'playerExperiencelbl
+        '
+        Me.playerExperiencelbl.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.playerExperiencelbl.AutoSize = True
+        Me.playerExperiencelbl.ForeColor = System.Drawing.Color.Black
+        Me.playerExperiencelbl.Location = New System.Drawing.Point(498, 53)
+        Me.playerExperiencelbl.Name = "playerExperiencelbl"
+        Me.playerExperiencelbl.Size = New System.Drawing.Size(59, 13)
+        Me.playerExperiencelbl.TabIndex = 15
+        Me.playerExperiencelbl.Text = "experience"
+        '
+        'expbar
+        '
+        Me.expbar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.expbar.Location = New System.Drawing.Point(0, 69)
+        Me.expbar.Name = "expbar"
+        Me.expbar.Size = New System.Drawing.Size(557, 13)
+        Me.expbar.Step = 1
+        Me.expbar.TabIndex = 14
+        '
+        'dismissbtn
+        '
+        Me.dismissbtn.Location = New System.Drawing.Point(4, 431)
+        Me.dismissbtn.Name = "dismissbtn"
+        Me.dismissbtn.Size = New System.Drawing.Size(75, 23)
+        Me.dismissbtn.TabIndex = 3
+        Me.dismissbtn.Text = "dismiss"
+        Me.dismissbtn.UseVisualStyleBackColor = True
         '
         'GameDatabaseDataSet
         '
@@ -752,68 +989,6 @@ Partial Class CreatureWindow
         '
         Me.PlayerWeaponsTableAdapter.ClearBeforeFill = True
         '
-        'headlbl
-        '
-        Me.headlbl.AutoSize = True
-        Me.headlbl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.headlbl.Location = New System.Drawing.Point(4, 1)
-        Me.headlbl.Name = "headlbl"
-        Me.headlbl.Size = New System.Drawing.Size(73, 67)
-        Me.headlbl.TabIndex = 7
-        Me.headlbl.TabStop = True
-        Me.headlbl.Text = "head"
-        Me.headlbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'infopnl
-        '
-        Me.infopnl.Controls.Add(Me.skillbtn)
-        Me.infopnl.Controls.Add(Me.playerExperiencelbl)
-        Me.infopnl.Controls.Add(Me.expbar)
-        Me.infopnl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.infopnl.Location = New System.Drawing.Point(200, 431)
-        Me.infopnl.Name = "infopnl"
-        Me.infopnl.Size = New System.Drawing.Size(557, 85)
-        Me.infopnl.TabIndex = 2
-        '
-        'expbar
-        '
-        Me.expbar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.expbar.Location = New System.Drawing.Point(0, 69)
-        Me.expbar.Name = "expbar"
-        Me.expbar.Size = New System.Drawing.Size(557, 13)
-        Me.expbar.Step = 1
-        Me.expbar.TabIndex = 14
-        '
-        'playerExperiencelbl
-        '
-        Me.playerExperiencelbl.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.playerExperiencelbl.AutoSize = True
-        Me.playerExperiencelbl.ForeColor = System.Drawing.Color.Black
-        Me.playerExperiencelbl.Location = New System.Drawing.Point(498, 53)
-        Me.playerExperiencelbl.Name = "playerExperiencelbl"
-        Me.playerExperiencelbl.Size = New System.Drawing.Size(59, 13)
-        Me.playerExperiencelbl.TabIndex = 15
-        Me.playerExperiencelbl.Text = "experience"
-        '
-        'skillbtn
-        '
-        Me.skillbtn.Location = New System.Drawing.Point(0, 0)
-        Me.skillbtn.Name = "skillbtn"
-        Me.skillbtn.Size = New System.Drawing.Size(54, 23)
-        Me.skillbtn.TabIndex = 16
-        Me.skillbtn.Text = "skills"
-        Me.skillbtn.UseVisualStyleBackColor = True
-        '
-        'dismissbtn
-        '
-        Me.dismissbtn.Location = New System.Drawing.Point(4, 431)
-        Me.dismissbtn.Name = "dismissbtn"
-        Me.dismissbtn.Size = New System.Drawing.Size(75, 23)
-        Me.dismissbtn.TabIndex = 3
-        Me.dismissbtn.Text = "dismiss"
-        Me.dismissbtn.UseVisualStyleBackColor = True
-        '
         'CreatureWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -831,8 +1006,21 @@ Partial Class CreatureWindow
         Me.leftEquipmentpnl.ResumeLayout(False)
         Me.leftEquipmentpnl.PerformLayout()
         CType(Me.headpic, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.shoulderspic, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.sleevespic, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.handspic, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.feetpic, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.primarypic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.rightEquipmentpnl.ResumeLayout(False)
         Me.rightEquipmentpnl.PerformLayout()
+        CType(Me.backpic, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chestpic, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.waistpic, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.legspic, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.shinspic, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.secondarypic, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.infopnl.ResumeLayout(False)
+        Me.infopnl.PerformLayout()
         CType(Me.GameDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayerCreaturesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StaticArmorBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -842,8 +1030,6 @@ Partial Class CreatureWindow
         CType(Me.StaticWeaponsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayerArmorBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PlayerWeaponsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.infopnl.ResumeLayout(False)
-        Me.infopnl.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -880,18 +1066,7 @@ Partial Class CreatureWindow
     Friend WithEvents classlbl As LinkLabel
     Friend WithEvents mainEquipmentpnl As TableLayoutPanel
     Friend WithEvents leftEquipmentpnl As TableLayoutPanel
-    Friend WithEvents primarylbl As Label
-    Friend WithEvents shoulderslbl As Label
-    Friend WithEvents sleeveslbl As Label
-    Friend WithEvents handslbl As Label
-    Friend WithEvents feetlbl As Label
     Friend WithEvents rightEquipmentpnl As TableLayoutPanel
-    Friend WithEvents secondarylbl As Label
-    Friend WithEvents backlbl As Label
-    Friend WithEvents chestlbl As Label
-    Friend WithEvents waistlbl As Label
-    Friend WithEvents legslbl As Label
-    Friend WithEvents shinslbl As Label
     Friend WithEvents headpic As PictureBox
     Friend WithEvents headtip As ToolTip
     Friend WithEvents StaticArmorBindingSource As BindingSource
@@ -914,4 +1089,37 @@ Partial Class CreatureWindow
     Friend WithEvents playerExperiencelbl As Label
     Friend WithEvents skillbtn As Button
     Friend WithEvents dismissbtn As Button
+    Friend WithEvents shoulderslbl As LinkLabel
+    Friend WithEvents sleevelbl As LinkLabel
+    Friend WithEvents handslbl As LinkLabel
+    Friend WithEvents feetlbl As LinkLabel
+    Friend WithEvents primarylbl As LinkLabel
+    Friend WithEvents backlbl As LinkLabel
+    Friend WithEvents chestlbl As LinkLabel
+    Friend WithEvents waistlbl As LinkLabel
+    Friend WithEvents legslbl As LinkLabel
+    Friend WithEvents shinslbl As LinkLabel
+    Friend WithEvents secondarylbl As LinkLabel
+    Friend WithEvents shoulderspic As PictureBox
+    Friend WithEvents sleevespic As PictureBox
+    Friend WithEvents handspic As PictureBox
+    Friend WithEvents feetpic As PictureBox
+    Friend WithEvents primarypic As PictureBox
+    Friend WithEvents backpic As PictureBox
+    Friend WithEvents chestpic As PictureBox
+    Friend WithEvents waistpic As PictureBox
+    Friend WithEvents legspic As PictureBox
+    Friend WithEvents shinspic As PictureBox
+    Friend WithEvents secondarypic As PictureBox
+    Friend WithEvents shoulderstip As ToolTip
+    Friend WithEvents sleevestip As ToolTip
+    Friend WithEvents handstip As ToolTip
+    Friend WithEvents feettip As ToolTip
+    Friend WithEvents primarytip As ToolTip
+    Friend WithEvents backtip As ToolTip
+    Friend WithEvents chesttip As ToolTip
+    Friend WithEvents waisttip As ToolTip
+    Friend WithEvents legstip As ToolTip
+    Friend WithEvents shinstip As ToolTip
+    Friend WithEvents secondarytip As ToolTip
 End Class

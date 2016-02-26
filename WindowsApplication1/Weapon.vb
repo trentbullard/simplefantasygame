@@ -13,7 +13,7 @@
         weaponIsRanged = False
         weaponIsUnique = False
         weaponSlotsPossible = "1 2"
-        weaponWearableBy = If(Roll(2) = 1, "gnome", "human")
+        weaponWearableBy = "gnome"
 
         Select Case MyBase.name
             Case "staff"
@@ -47,12 +47,12 @@
         End If
 
         Dim stat1 = If(Roll(2) = 1, "strength", "intelligence")
-        weaponMinStats.Add(60 + Roll(20), stat1)
+        weaponMinStats.Add(60, stat1)
         Dim stat2 As String = If(Roll(2) = 1, "dexterity", "wisdom")
         'Do Until stat2 <> stat1
         '    stat2 = getCoreStatName()
         'Loop
-        weaponMinStats.Add(60 + Roll(20), stat2)
+        weaponMinStats.Add(60, stat2)
     End Sub
 
     Public Sub New(id As Integer)
@@ -131,9 +131,10 @@
         End Set
     End Property
 
-    Public ReadOnly Property slots As String
+    Public ReadOnly Property slots As String()
         Get
-            Return weaponSlotsPossible
+            Dim slotArray As String() = weaponSlotsPossible.Split(" ")
+            Return slotArray
         End Get
     End Property
 

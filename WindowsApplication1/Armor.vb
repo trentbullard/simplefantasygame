@@ -10,7 +10,7 @@
     Public Sub New()
         MyBase.New()
         MyBase.name = getArmorName()
-        armorWearableBy = If(Roll(2) = 1, "gnome", "human")
+        armorWearableBy = "gnome"
 
         MyBase.stats.Add(Roll(10), getEquipStatName())
 
@@ -46,12 +46,12 @@
         End If
 
         Dim stat1 = If(Roll(2) = 1, "strength", "intelligence")
-        armorMinStats.Add(60 + Roll(20), stat1)
+        armorMinStats.Add(60, stat1)
         Dim stat2 As String = If(Roll(2) = 1, "dexterity", "wisdom")
         'Do Until stat2 <> stat1
         '    stat2 = getCoreStatName()
         'Loop
-        armorMinStats.Add(60 + Roll(20), stat2)
+        armorMinStats.Add(60, stat2)
 
         Dim resistance1 As String = getResistanceName()
         armorResistances.Add(Roll(10), resistance1)
